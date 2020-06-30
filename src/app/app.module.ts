@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 import { UnidadeService } from './../services/domain/unidade.service';
 import { FornecedorService } from './../services/domain/fornecedor.service';
->>>>>>> 95d8ab5... Git Reset
 import { ColaboradorService } from './../services/domain/colaborador.service';
 import { AuthService } from './../services/auth.service';
 import { CategoriaService } from './../services/domain/categoria.service';
@@ -18,10 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { StorageService } from '../services/storage.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
-<<<<<<< HEAD
-=======
 import { LocalizacaoService } from '../services/domain/localizacao.service';
->>>>>>> 95d8ab5... Git Reset
 
 @NgModule({
   declarations: [
@@ -42,12 +36,9 @@ import { LocalizacaoService } from '../services/domain/localizacao.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CategoriaService,
-<<<<<<< HEAD
-=======
     FornecedorService,
     UnidadeService,
     LocalizacaoService,
->>>>>>> 95d8ab5... Git Reset
     AuthInterceptorProvider,
     ErrorInterceptorProvider,
     AuthService,

@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 684:
+/***/ 687:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(697);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUnidadePageModule", function() { return CadastroUnidadePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__ = __webpack_require__(697);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,19 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HomeModule = /** @class */ (function () {
-    function HomeModule() {
+var CadastroUnidadePageModule = /** @class */ (function () {
+    function CadastroUnidadePageModule() {
     }
-    HomeModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]],
-            imports: [__WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__["b" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */])]
+    CadastroUnidadePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */]),
+            ],
         })
-    ], HomeModule);
-    return HomeModule;
+    ], CadastroUnidadePageModule);
+    return CadastroUnidadePageModule;
 }());
 
-//# sourceMappingURL=home.module.js.map
+//# sourceMappingURL=cadastro-unidade.module.js.map
 
 /***/ }),
 
@@ -38,10 +42,11 @@ var HomeModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(87);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUnidadePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,49 +59,70 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, menu, auth) {
+
+/**
+ * Generated class for the CadastroUnidadePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CadastroUnidadePage = /** @class */ (function () {
+    function CadastroUnidadePage(navCtrl, viewCtrl, alertCtrl, navParams, formBuilder, unidadeService) {
         this.navCtrl = navCtrl;
-        this.menu = menu;
-        this.auth = auth;
-        this.creds = {
-            email: "",
-            senha: ""
-        };
+        this.viewCtrl = viewCtrl;
+        this.alertCtrl = alertCtrl;
+        this.navParams = navParams;
+        this.formBuilder = formBuilder;
+        this.unidadeService = unidadeService;
+        this.formGroup = this.formBuilder.group({
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            sigla: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
+        }, {});
     }
-    HomePage.prototype.ionViewWillEnter = function () {
-        this.menu.swipeEnable(false);
+    CadastroUnidadePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CadastroUnidadePage');
     };
-    HomePage.prototype.ionViewDidLeave = function () {
-        this.menu.swipeEnable(true);
+    CadastroUnidadePage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
     };
-    HomePage.prototype.ionViewDidEnter = function () {
+    CadastroUnidadePage.prototype.cadastrarUnidade = function () {
         var _this = this;
-        this.auth.refreshToken().subscribe(function (response) {
-            _this.auth.successfullLogin(response.headers.get('Authorization'));
-            _this.navCtrl.setRoot('CategoriasPage');
+        this.unidadeService.insert(this.formGroup.value).subscribe(function (response) {
+            _this.showInserOk();
         }, function (error) { });
     };
-    HomePage.prototype.login = function () {
+    CadastroUnidadePage.prototype.showInserOk = function () {
         var _this = this;
-        this.auth.authenticate(this.creds).subscribe(function (response) {
-            _this.auth.successfullLogin(response.headers.get('Authorization'));
-            _this.navCtrl.setRoot('CategoriasPage');
-        }, function (error) { });
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro efetuado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
     };
-    HomePage.prototype.signup = function () {
-        this.navCtrl.push('SignupPage');
-    };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\home\home.html"*/'<ion-content padding>\n\n  <h3>Sistema de Controle de Estoque</h3>\n\n  \n\n  <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>\n\n\n\n  <form>\n\n    <ion-item>\n\n      <ion-label stacked>Email</ion-label>\n\n      <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Senha</ion-label>\n\n      <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>\n\n    </ion-item>\n\n    <button ion-button block (click)="login()">Entrar</button>\n\n  </form>\n\n  <button ion-button block outline (click)="signup()">Registrar</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\home\home.html"*/
+    CadastroUnidadePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-cadastro-unidade',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/'<!--\n\n  Generated template for the CadastroUnidadePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Unidade\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  \n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarUnidade()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Sigla*</ion-label>\n\n      <ion-input formControlName="sigla" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.sigla.dirty && formGroup.controls.sigla.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
-    ], HomePage);
-    return HomePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__["a" /* UnidadeService */]])
+    ], CadastroUnidadePage);
+    return CadastroUnidadePage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=cadastro-unidade.js.map
 
 /***/ })
 

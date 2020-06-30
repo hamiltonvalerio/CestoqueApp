@@ -9,10 +9,7 @@ export interface InsumoDTO{
     essencial: boolean;
     data_validade: Date;
     quantidade: number;
-<<<<<<< HEAD
-=======
     codigo_barra: string;
     qrcode: string;
     rfid: string;
->>>>>>> 95d8ab5... Git Reset
 }

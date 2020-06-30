@@ -25696,8 +25696,8 @@ ion-navbar.toolbar {
   min-height: 46px;
 }
 
-.vertical-center .fixed-content,
-.vertical-center .scroll-content {
+.container2 {
+  height: calc(100vh - 56px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25706,14 +25706,10 @@ ion-navbar.toolbar {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.vertical-center .fixed-content ion-list,
-.vertical-center .scroll-content ion-list {
-  max-width: 300px;
-  width: 100%;
-  margin: auto;
-  text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 page-home h3 {
@@ -25727,6 +25723,53 @@ page-home img {
   margin: auto;
   display: block;
   padding: 10px;
+}
+
+page-home .teste {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+
+page-home .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-home .container3 {
+  height: calc(100vh - 56px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 page-signup .danger {

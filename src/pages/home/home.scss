@@ -11,4 +11,24 @@ page-home {
         padding: 10px;
     }
 
+    .teste {
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+     .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+
+     .container3{
+        height: calc(100vh - 56px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+
 }

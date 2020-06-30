@@ -1,18 +1,21 @@
-<ion-content padding>
-  <h3>Sistema de Controle de Estoque</h3>
-  
-  <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>
+<ion-content>
+  <form class="container2">
+    <div>
+        <h3>Sistema de Controle de Estoque</h3>
+        <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>
 
-  <form>
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Senha</ion-label>
-      <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
-    </ion-item>
-    <button ion-button block (click)="login()">Entrar</button>
+
+      <ion-item >
+        <ion-label stacked>Email</ion-label>
+        <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label stacked>Senha</ion-label>
+        <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
+      </ion-item>
+      <button ion-button block (click)="login()">Entrar</button>
+      <button ion-button block outline (click)="signup()">Registrar</button>
+    </div>
   </form>
-  <button ion-button block outline (click)="signup()">Registrar</button>
+  
 </ion-content>
