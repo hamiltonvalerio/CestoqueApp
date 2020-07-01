@@ -1,7 +1,7 @@
 import { CategoriaDTO } from './../../models/categoria.dto';
 import { CategoriaService } from './../../services/domain/categoria.service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the CategoriasPage page.
@@ -22,16 +22,29 @@ export class CategoriasPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public CategoriaService: CategoriaService) {
+    public CategoriaService: CategoriaService,
+    public modalCtrl: ModalController) {
+  }
+
+  openModal() {
+    console.log("aqui");
+    let modal = this.modalCtrl.create('CadastroCategoriaPage');
+    modal.onDidDismiss(() => {
+      this.getItens();
+    });
+    modal.present();
   }
 
   ionViewDidLoad() {
+    this.getItens();
+  }
+
+  getItens(){
     this.CategoriaService.findAll()
     .subscribe(response => {
       this.itens = response;
     },
     error => {})
-    
   }
 
 }

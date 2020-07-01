@@ -14,8 +14,6 @@ export class FornecedorService {
     findAll() : Observable<FornecedorDTO[]> {
         return this.http.get<FornecedorDTO[]>(`${API_CONFIG.baseUrl}/fornecedores`)
     }
-<<<<<<< HEAD
-=======
 
     insert(obj: FornecedorDTO){
         return this.http.post(`${API_CONFIG.baseUrl}/fornecedores/`,
@@ -25,5 +23,4 @@ export class FornecedorService {
             responseType: 'text'
         });
     }
->>>>>>> 95d8ab5... Git Reset
 }

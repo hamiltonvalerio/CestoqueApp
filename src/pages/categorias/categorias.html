@@ -5,23 +5,28 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class="categoria2">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Categorias</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+      <ion-icon name="add-circle" ></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-  <ion-list>
+<ion-content padding class="categoria2">
+<div class="categoria2">
+  <ion-list >
     
     <button ion-item *ngFor="let item of itens">
       <ion-label>{{ item.nome }}</ion-label>
     </button>
     
   </ion-list>
-  
+</div> 
 
 </ion-content>

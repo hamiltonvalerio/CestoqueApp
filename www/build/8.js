@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 684:
+/***/ 690:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroLocalizacaoPageModule", function() { return CadastroLocalizacaoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasPageModule", function() { return CategoriasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_localizacao__ = __webpack_require__(694);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(704);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroLocalizacaoPageModule = /** @class */ (function () {
-    function CadastroLocalizacaoPageModule() {
+var CategoriasPageModule = /** @class */ (function () {
+    function CategoriasPageModule() {
     }
-    CadastroLocalizacaoPageModule = __decorate([
+    CategoriasPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_localizacao__["a" /* CadastroLocalizacaoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_localizacao__["a" /* CadastroLocalizacaoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
             ],
         })
-    ], CadastroLocalizacaoPageModule);
-    return CadastroLocalizacaoPageModule;
+    ], CategoriasPageModule);
+    return CategoriasPageModule;
 }());
 
-//# sourceMappingURL=cadastro-localizacao.module.js.map
+//# sourceMappingURL=categorias.module.js.map
 
 /***/ }),
 
-/***/ 694:
+/***/ 704:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroLocalizacaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_localizacao_service__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(87);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriasPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_categoria_service__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,69 +58,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the CadastroLocalizacaoPage page.
+ * Generated class for the CategoriasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CadastroLocalizacaoPage = /** @class */ (function () {
-    function CadastroLocalizacaoPage(navCtrl, viewCtrl, alertCtrl, navParams, formBuilder, localizacaoService) {
+var CategoriasPage = /** @class */ (function () {
+    function CategoriasPage(navCtrl, navParams, CategoriaService, modalCtrl) {
         this.navCtrl = navCtrl;
-        this.viewCtrl = viewCtrl;
-        this.alertCtrl = alertCtrl;
         this.navParams = navParams;
-        this.formBuilder = formBuilder;
-        this.localizacaoService = localizacaoService;
-        this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
-        }, {});
+        this.CategoriaService = CategoriaService;
+        this.modalCtrl = modalCtrl;
     }
-    CadastroLocalizacaoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroLocalizacaoPage');
-    };
-    CadastroLocalizacaoPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    CadastroLocalizacaoPage.prototype.cadastrarLocalizacao = function () {
+    CategoriasPage.prototype.openModal = function () {
         var _this = this;
-        this.localizacaoService.insert(this.formGroup.value).subscribe(function (response) {
-            _this.showInserOk();
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroCategoriaPage');
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    CategoriasPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
+    };
+    CategoriasPage.prototype.getItens = function () {
+        var _this = this;
+        this.CategoriaService.findAll()
+            .subscribe(function (response) {
+            _this.itens = response;
         }, function (error) { });
     };
-    CadastroLocalizacaoPage.prototype.showInserOk = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    CadastroLocalizacaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-cadastro-localizacao',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-localizacao\cadastro-localizacao.html"*/'<!--\n\n  Generated template for the CadastroLocalizacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Localização\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarLocalizacao()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-localizacao\cadastro-localizacao.html"*/,
+    CategoriasPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-categorias',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\categorias\categorias.html"*/'<!--\n  Generated template for the CategoriasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar class="categoria2">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Categorias</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openModal()">\n      <ion-icon name="add-circle" ></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="categoria2">\n<div class="categoria2">\n  <ion-list >\n    \n    <button ion-item *ngFor="let item of itens">\n      <ion-label>{{ item.nome }}</ion-label>\n    </button>\n    \n  </ion-list>\n</div> \n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\categorias\categorias.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_localizacao_service__["a" /* LocalizacaoService */]])
-    ], CadastroLocalizacaoPage);
-    return CadastroLocalizacaoPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_categoria_service__["a" /* CategoriaService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* ModalController */]])
+    ], CategoriasPage);
+    return CategoriasPage;
 }());
 
-//# sourceMappingURL=cadastro-localizacao.js.map
+//# sourceMappingURL=categorias.js.map
 
 /***/ })
 

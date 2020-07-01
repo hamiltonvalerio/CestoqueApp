@@ -1,3 +1,4 @@
+import { InsumoService } from './../services/domain/insumo.service';
 import { UnidadeService } from './../services/domain/unidade.service';
 import { FornecedorService } from './../services/domain/fornecedor.service';
 import { ColaboradorService } from './../services/domain/colaborador.service';
@@ -39,6 +40,7 @@ import { LocalizacaoService } from '../services/domain/localizacao.service';
     FornecedorService,
     UnidadeService,
     LocalizacaoService,
+    InsumoService,
     AuthInterceptorProvider,
     ErrorInterceptorProvider,
     AuthService,

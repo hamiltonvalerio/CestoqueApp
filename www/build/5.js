@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 688:
+/***/ 693:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FornecedorPageModule", function() { return FornecedorPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fornecedor__ = __webpack_require__(698);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(707);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,32 +18,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FornecedorPageModule = /** @class */ (function () {
-    function FornecedorPageModule() {
+var HomeModule = /** @class */ (function () {
+    function HomeModule() {
     }
-    FornecedorPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */]),
-            ],
+    HomeModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__["b" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */])]
         })
-    ], FornecedorPageModule);
-    return FornecedorPageModule;
+    ], HomeModule);
+    return HomeModule;
 }());
 
-//# sourceMappingURL=fornecedor.module.js.map
+//# sourceMappingURL=home.module.js.map
 
 /***/ }),
 
-/***/ 698:
+/***/ 707:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(352);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -58,49 +54,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the FornecedorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var FornecedorPage = /** @class */ (function () {
-    function FornecedorPage(navCtrl, navParams, fornecedorService, modalCtrl) {
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, menu, auth) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.fornecedorService = fornecedorService;
-        this.modalCtrl = modalCtrl;
+        this.menu = menu;
+        this.auth = auth;
+        this.creds = {
+            email: "",
+            senha: ""
+        };
     }
-    FornecedorPage.prototype.ionViewDidLoad = function () {
-        this.getItens();
+    HomePage.prototype.ionViewWillEnter = function () {
+        this.menu.swipeEnable(false);
     };
-    FornecedorPage.prototype.openModal = function () {
-        var _this = this;
-        console.log("aqui");
-        var modal = this.modalCtrl.create('CadastroFornecedorPage');
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
+    HomePage.prototype.ionViewDidLeave = function () {
+        this.menu.swipeEnable(true);
     };
-    FornecedorPage.prototype.getItens = function () {
+    HomePage.prototype.ionViewDidEnter = function () {
         var _this = this;
-        this.fornecedorService.findAll()
-            .subscribe(function (response) {
-            _this.itens = response;
+        this.auth.refreshToken().subscribe(function (response) {
+            _this.auth.successfullLogin(response.headers.get('Authorization'));
+            _this.navCtrl.setRoot('CategoriasPage');
         }, function (error) { });
     };
-    FornecedorPage = __decorate([
+    HomePage.prototype.login = function () {
+        var _this = this;
+        this.auth.authenticate(this.creds).subscribe(function (response) {
+            _this.auth.successfullLogin(response.headers.get('Authorization'));
+            _this.navCtrl.setRoot('DashboardPage');
+        }, function (error) { });
+    };
+    HomePage.prototype.signup = function () {
+        this.navCtrl.push('SignupPage');
+    };
+    HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-fornecedor',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/'<!--\n\n  Generated template for the FornecedorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n<<<<<<< HEAD\n\n    <ion-title>fornecedor</ion-title>\n\n=======\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Fornecedores</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n>>>>>>> 95d8ab5... Git Reset\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    \n\n<<<<<<< HEAD\n\n    <button ion-item *ngFor="let item of itens">\n\n      <ion-label>{{ item.nome }}</ion-label>\n\n      <ion-label>{{ item.cnpj }}</ion-label>\n\n    </button>\n\n=======\n\n    <ion-item *ngFor="let item of itens">\n\n      <ion-label>\n\n        <h2>{{ item.nome }}</h2>\n\n        <h3>{{ item.cnpj }}</h3>\n\n        <p></p>\n\n      </ion-label>\n\n    </ion-item>\n\n>>>>>>> 95d8ab5... Git Reset\n\n\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\home\home.html"*/'<ion-content>\n\n  <form class="container2">\n\n    <div>\n\n        <h3>Sistema de Controle de Estoque</h3>\n\n        <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>\n\n\n\n\n\n      <ion-item >\n\n        <ion-label stacked>Email</ion-label>\n\n        <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>\n\n      </ion-item>\n\n      <ion-item >\n\n        <ion-label stacked>Senha</ion-label>\n\n        <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>\n\n      </ion-item>\n\n      <button ion-button block (click)="login()">Entrar</button>\n\n      <button ion-button block outline (click)="signup()">Registrar</button>\n\n    </div>\n\n  </form>\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__["a" /* FornecedorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__["a" /* FornecedorService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* ModalController */]) === "function" && _d || Object])
-    ], FornecedorPage);
-    return FornecedorPage;
-    var _a, _b, _c, _d;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
+    ], HomePage);
+    return HomePage;
 }());
 
-//# sourceMappingURL=fornecedor.js.map
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

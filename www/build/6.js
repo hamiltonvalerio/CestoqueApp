@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 690:
+/***/ 692:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasPageModule", function() { return CategoriasPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FornecedorPageModule", function() { return FornecedorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fornecedor__ = __webpack_require__(706);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,32 +18,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CategoriasPageModule = /** @class */ (function () {
-    function CategoriasPageModule() {
+var FornecedorPageModule = /** @class */ (function () {
+    function FornecedorPageModule() {
     }
-    CategoriasPageModule = __decorate([
+    FornecedorPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */],
+                __WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */]),
             ],
         })
-    ], CategoriasPageModule);
-    return CategoriasPageModule;
+    ], FornecedorPageModule);
+    return FornecedorPageModule;
 }());
 
-//# sourceMappingURL=categorias.module.js.map
+//# sourceMappingURL=fornecedor.module.js.map
 
 /***/ }),
 
-/***/ 700:
+/***/ 706:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_categoria_service__ = __webpack_require__(353);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(350);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -59,36 +59,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the CategoriasPage page.
+ * Generated class for the FornecedorPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CategoriasPage = /** @class */ (function () {
-    function CategoriasPage(navCtrl, navParams, CategoriaService) {
+var FornecedorPage = /** @class */ (function () {
+    function FornecedorPage(navCtrl, navParams, fornecedorService, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.CategoriaService = CategoriaService;
+        this.fornecedorService = fornecedorService;
+        this.modalCtrl = modalCtrl;
     }
-    CategoriasPage.prototype.ionViewDidLoad = function () {
+    FornecedorPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
+    };
+    FornecedorPage.prototype.openModal = function () {
         var _this = this;
-        this.CategoriaService.findAll()
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroFornecedorPage');
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    FornecedorPage.prototype.getItens = function () {
+        var _this = this;
+        this.fornecedorService.findAll()
             .subscribe(function (response) {
             _this.itens = response;
         }, function (error) { });
     };
-    CategoriasPage = __decorate([
+    FornecedorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-categorias',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\categorias\categorias.html"*/'<!--\n  Generated template for the CategoriasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Categorias</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n    \n    <button ion-item *ngFor="let item of itens">\n      <ion-label>{{ item.nome }}</ion-label>\n    </button>\n    \n  </ion-list>\n  \n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\categorias\categorias.html"*/,
+            selector: 'page-fornecedor',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/'<!--\n\n  Generated template for the FornecedorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Fornecedores</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    \n\n    <ion-item *ngFor="let item of itens">\n\n      <ion-label>\n\n        <h2>{{ item.nome }}</h2>\n\n        <h3>{{ item.cnpj }}</h3>\n\n        <p></p>\n\n      </ion-label>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_categoria_service__["a" /* CategoriaService */]])
-    ], CategoriasPage);
-    return CategoriasPage;
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__["a" /* FornecedorService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* ModalController */]])
+    ], FornecedorPage);
+    return FornecedorPage;
 }());
 
-//# sourceMappingURL=categorias.js.map
+//# sourceMappingURL=fornecedor.js.map
 
 /***/ })
 

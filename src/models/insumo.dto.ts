@@ -9,6 +9,7 @@ export interface InsumoDTO{
     essencial: boolean;
     data_validade: Date;
     quantidade: number;
+    taxa_de_consumo: number;
     codigo_barra: string;
     qrcode: string;
     rfid: string;
