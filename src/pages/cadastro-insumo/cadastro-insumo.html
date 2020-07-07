@@ -5,11 +5,26 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>cadastro-insumo</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>
+      Cadastro de Insumo
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()" >
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">
+    <ion-item>
+      <ion-label stacked>Nome*</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>
+    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>
+    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>
+  </form>
 </ion-content>

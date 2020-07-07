@@ -1,5 +1,7 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
+import { InsumoService } from '../../services/domain/insumo.service';
 
 /**
  * Generated class for the CadastroInsumoPage page.
@@ -15,11 +17,52 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CadastroInsumoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  formGroup: FormGroup;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public viewCtrl: ViewController,
+    public alertCtrl: AlertController,
+    public formBuilder: FormBuilder,
+    public insumoService: InsumoService) {
+
+      this.formGroup = this.formBuilder.group({
+        nome: ['',[Validators.required]]
+      }, {});
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroInsumoPage');
+  }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+
+  cadastrarInsumo(){
+    this.insumoService.insert(this.formGroup.value).subscribe(response => {
+      this.showInserOk();
+    },
+    error => {});
+  }
+
+  showInserOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Cadastro efetuado com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }
