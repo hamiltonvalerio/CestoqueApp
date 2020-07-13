@@ -20,15 +20,15 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    
-    <ion-item *ngFor="let item of itens">
-      <ion-label>
-        <h2>{{ item.nome }}</h2>
-        <h3>{{ item.cnpj }}</h3>
-        <p></p>
-      </ion-label>
+  <ion-item-group *ngFor="let item of itensFornecedores">
+
+    <ion-item-divider light>{{item.letra}}</ion-item-divider>
+    <ion-item *ngFor="let forn of item.arrayDeItens">
+      <h3>{{forn.nome}}</h3>
+      <p>{{forn.cnpj}}</p>
     </ion-item>
 
-  </ion-list>
+  </ion-item-group>
+
+
 </ion-content>

@@ -1,3 +1,4 @@
+import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { LocalizacaoDTO } from '../../models/localizacao.dto';
@@ -18,6 +19,7 @@ import { LocalizacaoService } from '../../services/domain/localizacao.service';
 export class LocalizacaoPage {
 
   itens: LocalizacaoDTO[];
+  itensLocalizacoes = [];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -41,7 +43,7 @@ export class LocalizacaoPage {
   getItens(){ 
     this.localizacaoService.findAll()
     .subscribe(response => {
-      this.itens = response;
+      this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },
     error => {})
   }

@@ -1,3 +1,4 @@
+import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { CategoriaDTO } from './../../models/categoria.dto';
 import { CategoriaService } from './../../services/domain/categoria.service';
 import { Component } from '@angular/core';
@@ -18,6 +19,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 export class CategoriasPage {
 
   itens: CategoriaDTO[];
+  itensCategorias = [];
 
   constructor(
     public navCtrl: NavController, 
@@ -42,7 +44,7 @@ export class CategoriasPage {
   getItens(){
     this.CategoriaService.findAll()
     .subscribe(response => {
-      this.itens = response;
+      this.itensCategorias = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());;
     },
     error => {})
   }

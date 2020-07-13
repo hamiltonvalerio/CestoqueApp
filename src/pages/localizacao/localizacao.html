@@ -29,4 +29,14 @@
     </ion-item>
 
   </ion-list>
+
+  <ion-item-group *ngFor="let item of itensLocalizacoes">
+
+    <ion-item-divider light>{{item.letra}}</ion-item-divider>
+    <ion-item *ngFor="let l of item.arrayDeItens">
+      <h3>{{l.nome}}</h3>
+    </ion-item>
+
+  </ion-item-group>
+
 </ion-content>

@@ -25,6 +25,15 @@
       <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>
+    <ion-item>
+      <ion-label stacked>Nomenclatura*</ion-label>
+      <ion-input formControlName="nomenclatura" type="text"></ion-input>
+    </ion-item>
+    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>
+    <ion-item>
+      <ion-label stacked>Valor</ion-label>
+      <ion-input formControlName="valor" type="text"></ion-input>
+    </ion-item>
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>
   </form>
 </ion-content>

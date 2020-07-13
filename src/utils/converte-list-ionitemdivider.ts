@@ -5,15 +5,33 @@ export class ConverteListaIonItemDivider {
     /**
      * name
      */
-    public retornaArrayGroup(ordenado : Object[]) {
-    
+    public retornaArrayGroup(responseSorte : Object[]):Object[] {
 
-        Object.getOwnPropertyNames(ordenado).forEach(function(val, idx, array) {
-            console.log('aqui: '+ordenado[val]);
-        });
+
+        let itens = [];
+        let itensOrdenados = [];
+        let letraAtual = "";
+        let itensAtuaisDeRetorno = [];
+        itensOrdenados = responseSorte;
+
+        itensOrdenados.forEach((value, index) => {
+            if(value.nome.charAt(0) != letraAtual){
+              letraAtual = value.nome.charAt(0);
+              let newGroup = {
+                letra: letraAtual,
+                arrayDeItens: []
+            };
+              itensAtuaisDeRetorno = newGroup.arrayDeItens;
+              itens.push(newGroup);
+            
+            }
+    
+            itensAtuaisDeRetorno.push(value);
+       
         
+        });
+
+        return itens;
 
     }
-
-
 }

@@ -28,7 +28,9 @@ export class CadastroInsumoPage {
     public insumoService: InsumoService) {
 
       this.formGroup = this.formBuilder.group({
-        nome: ['',[Validators.required]]
+        nome: ['',[Validators.required]],
+        nomenclatura: ['',[Validators.required]],
+        valor: ['',[]]
       }, {});
 
   }

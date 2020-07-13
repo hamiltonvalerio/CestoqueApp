@@ -1,3 +1,4 @@
+import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { CadastroFornecedorPage } from './../cadastro-fornecedor/cadastro-fornecedor';
 import { FornecedorService } from './../../services/domain/fornecedor.service';
 import { FornecedorDTO } from './../../models/fornecedor.dto';
@@ -20,6 +21,7 @@ import { Platform } from 'ionic-angular/platform/platform';
 export class FornecedorPage {
 
   itens: FornecedorDTO[];
+  itensFornecedores = [];
 
   constructor(
     public navCtrl: NavController, 
@@ -44,7 +46,7 @@ export class FornecedorPage {
   getItens(){
     this.fornecedorService.findAll()
     .subscribe(response => {
-      this.itens = response;
+      this.itensFornecedores = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());;
     },
     error => {})
   }

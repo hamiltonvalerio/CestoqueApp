@@ -44,31 +44,7 @@ export class InsumosPage {
   getItens(){
     this.insumoService.findAll()
     .subscribe(response => {
-      this.itensInsumos = [];
-      let insumoOrdenado = [];
-      insumoOrdenado = response.sort();
-      let letraAtual = "";
-      let currentInsumos = [];
-
-      insumoOrdenado.forEach((value, index) => {
-        if(value.nome.charAt(0) != letraAtual){
-          letraAtual = value.nome.charAt(0);
-          let newGroup = {
-            letra: letraAtual,
-            insumos: []
-        };
-          currentInsumos = newGroup.insumos;
-          this.itensInsumos.push(newGroup);
-        
-        }
-
-        currentInsumos.push(value);
-        new ConverteListaIonItemDivider().retornaArrayGroup(currentInsumos);
-
-      });
-
-
-
+      this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },
     error => {})
   }
