@@ -32,7 +32,7 @@
     <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>
     <ion-item>
       <ion-label stacked>Valor</ion-label>
-      <ion-input formControlName="valor" type="text"></ion-input>
+      <ion-currency-mask  placeholder="Insira o valor aqui" formControlName="valor" label="Valor R$"></ion-currency-mask>
     </ion-item>
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>
   </form>

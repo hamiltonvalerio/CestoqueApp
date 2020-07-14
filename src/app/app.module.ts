@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import { IonMaskModule } from '@pluritech/ion-mask';
+import { IonCurrencyMaskModule } from '@pluritech/ion-currencymask';
+
 import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -25,6 +28,8 @@ import { LocalizacaoService } from '../services/domain/localizacao.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    IonMaskModule.forRoot(),
+    IonCurrencyMaskModule,
     IonicModule.forRoot(MyApp),
     
   ],

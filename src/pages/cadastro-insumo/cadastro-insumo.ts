@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
-
+import { CurrencyMaskModule } from "ng2-currency-mask";
 /**
  * Generated class for the CadastroInsumoPage page.
  *
