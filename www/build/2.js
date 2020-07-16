@@ -5,10 +5,10 @@ webpackJsonp([2],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FornecedorPageModule", function() { return FornecedorPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fornecedor__ = __webpack_require__(709);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(714);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,27 +18,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FornecedorPageModule = /** @class */ (function () {
-    function FornecedorPageModule() {
+var InsumoPageModule = /** @class */ (function () {
+    function InsumoPageModule() {
     }
-    FornecedorPageModule = __decorate([
+    InsumoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */],
+                __WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */]),
             ],
         })
-    ], FornecedorPageModule);
-    return FornecedorPageModule;
+    ], InsumoPageModule);
+    return InsumoPageModule;
 }());
 
-//# sourceMappingURL=fornecedor.module.js.map
+//# sourceMappingURL=insumos.module.js.map
 
 /***/ }),
 
-/***/ 701:
+/***/ 699:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76,15 +76,15 @@ var ConverteListaIonItemDivider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 709:
+/***/ 714:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(701);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_fornecedor_service__ = __webpack_require__(351);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(699);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,52 +99,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the FornecedorPage page.
+ * Generated class for the InsumoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var FornecedorPage = /** @class */ (function () {
-    function FornecedorPage(navCtrl, navParams, fornecedorService, modalCtrl) {
+var InsumosPage = /** @class */ (function () {
+    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.fornecedorService = fornecedorService;
+        this.insumoService = insumoService;
         this.modalCtrl = modalCtrl;
-        this.itensFornecedores = [];
+        this.itensInsumos = [];
     }
-    FornecedorPage.prototype.ionViewDidLoad = function () {
+    InsumosPage.prototype.ionViewDidLoad = function () {
         this.getItens();
     };
-    FornecedorPage.prototype.openModal = function () {
+    InsumosPage.prototype.openModal = function () {
         var _this = this;
         console.log("aqui");
-        var modal = this.modalCtrl.create('CadastroFornecedorPage');
+        var modal = this.modalCtrl.create('CadastroInsumoPage');
         modal.onDidDismiss(function () {
             _this.getItens();
         });
         modal.present();
     };
-    FornecedorPage.prototype.getItens = function () {
+    InsumosPage.prototype.getItens = function () {
         var _this = this;
-        this.fornecedorService.findAll()
+        this.insumoService.findAll()
             .subscribe(function (response) {
-            _this.itensFornecedores = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
-            ;
+            _this.itensInsumos = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
         }, function (error) { });
     };
-    FornecedorPage = __decorate([
+    InsumosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-fornecedor',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/'<!--\n\n  Generated template for the FornecedorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Fornecedores</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item-group *ngFor="let item of itensFornecedores">\n\n\n\n    <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n    <ion-item *ngFor="let forn of item.arrayDeItens">\n\n      <h3>{{forn.nome}}</h3>\n\n      <p>{{forn.cnpj}}</p>\n\n    </ion-item>\n\n\n\n  </ion-item-group>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/,
+            selector: 'page-insumos',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n  Generated template for the InsumoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Insumos</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openModal()">\n      <ion-icon name="add-circle" ></ion-icon>\n      </button>\n    </ion-buttons>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item-group *ngFor="let item of itensInsumos">\n\n    <ion-item-divider light>{{item.letra}}</ion-item-divider>\n    <ion-item *ngFor="let insumo of item.arrayDeItens">\n      <h3>{{insumo.nome}}</h3>\n      <p>{{insumo.taxa_de_consumo}}</p>\n    </ion-item>\n\n  </ion-item-group>\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["NavController"],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["NavParams"],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_fornecedor_service__["a" /* FornecedorService */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["ModalController"]])
-    ], FornecedorPage);
-    return FornecedorPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* ModalController */]])
+    ], InsumosPage);
+    return InsumosPage;
 }());
 
-//# sourceMappingURL=fornecedor.js.map
+//# sourceMappingURL=insumos.js.map
 
 /***/ })
 

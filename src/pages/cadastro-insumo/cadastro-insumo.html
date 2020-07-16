@@ -32,8 +32,26 @@
     <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>
     <ion-item>
       <ion-label stacked>Valor</ion-label>
-      <ion-currency-mask  placeholder="Insira o valor aqui" formControlName="valor" label="Valor R$"></ion-currency-mask>
+      <ion-input type="text" formControlName="valor"  
+      [brmasker]="{money: true, thousand: '.', decimalCaracter: ',', decimal: '2'}"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label stacked>Código Almoxarifado</ion-label>
+      <ion-input formControlName="codigo_almox" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Observação</ion-label>
+      <ion-textarea formControlName="observacao" type="text"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Essencial?</ion-label>
+      <ion-toggle formControlName="essencial" ></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Data de Validade</ion-label>
+      <ion-datetime formControlName="data_validade" ></ion-datetime>
+    </ion-item>
+    
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>
   </form>
 </ion-content>

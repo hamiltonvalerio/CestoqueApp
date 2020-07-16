@@ -27,11 +27,16 @@
     "@pluritech/ion-currencymask": "^1.0.4",
     "@pluritech/ion-mask": "^1.2.0",
     "angular2-jwt": "^0.2.3",
+    "angular2-text-mask": "^9.0.0",
+    "brmasker-ionic-3": "^1.6.3",
     "ionic-angular": "3.9.9",
     "ionicons": "3.0.0",
+    "js-brasil": "^2.1.0",
+    "ng-brazil": "^2.0.10",
     "ng2-currency-mask": "^9.0.2",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
+    "text-mask-addons": "^3.8.0",
     "zone.js": "0.8.29"
   },
   "devDependencies": {

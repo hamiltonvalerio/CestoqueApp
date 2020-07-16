@@ -1,8 +1,8 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
-import { CurrencyMaskModule } from "ng2-currency-mask";
+import { BrMaskerIonic3, BrMaskModel } from 'brmasker-ionic-3';
 /**
  * Generated class for the CadastroInsumoPage page.
  *
@@ -14,26 +14,34 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 @Component({
   selector: 'page-cadastro-insumo',
   templateUrl: 'cadastro-insumo.html',
+  providers: [BrMaskerIonic3]
 })
 export class CadastroInsumoPage {
 
   formGroup: FormGroup;
-
+  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public alertCtrl: AlertController,
     public formBuilder: FormBuilder,
-    public insumoService: InsumoService) {
+    public insumoService: InsumoService,
+    private brMaskerIonic3: BrMaskerIonic3) {
 
       this.formGroup = this.formBuilder.group({
         nome: ['',[Validators.required]],
         nomenclatura: ['',[Validators.required]],
-        valor: ['',[]]
+        valor: ['',],
+        codigo_almox: ['',],
+        observacao: ['',],
+        essencial: [false,],
+        data_validade: [,],
       }, {});
 
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroInsumoPage');

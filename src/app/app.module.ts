@@ -9,10 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { IonMaskModule } from '@pluritech/ion-mask';
-import { IonCurrencyMaskModule } from '@pluritech/ion-currencymask';
-
 import { MyApp } from './app.component';
+
+import { BrMaskerModule, BrMaskerIonic3 } from 'brmasker-ionic-3';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,6 +19,7 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { StorageService } from '../services/storage.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { LocalizacaoService } from '../services/domain/localizacao.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,7 @@ import { LocalizacaoService } from '../services/domain/localizacao.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonMaskModule.forRoot(),
-    IonCurrencyMaskModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
     
   ],
