@@ -18,8 +18,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
   <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">
+ 
+
+  
+    
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
@@ -51,7 +56,20 @@
       <ion-label stacked>Data de Validade</ion-label>
       <ion-datetime formControlName="data_validade" ></ion-datetime>
     </ion-item>
+    <ion-item>
+      <ion-label stacked>Quantidade</ion-label>
+      <ion-input formControlName="quantidade" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Taxa de Consumo</ion-label>
+      <ion-input formControlName="taxa_de_consumo" type="number"></ion-input>
+    </ion-item>
     
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>
-  </form>
+ 
+  
+
+
+</form>
+
 </ion-content>

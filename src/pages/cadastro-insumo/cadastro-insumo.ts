@@ -37,6 +37,11 @@ export class CadastroInsumoPage {
         observacao: ['',],
         essencial: [false,],
         data_validade: [,],
+        quantidade: [,],
+        taxa_de_consumo: [,],
+        //codigo_barra: [,],
+        //qrcode: [,],
+        //rfid: [,],
       }, {});
 
   }

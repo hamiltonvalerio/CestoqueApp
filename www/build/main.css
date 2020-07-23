@@ -25712,11 +25712,6 @@ ion-navbar.toolbar {
   justify-content: center;
 }
 
-* {
-  overflow-y: hidden !important;
-  overflow-x: hidden !important;
-}
-
 page-home h3 {
   text-align: center;
 }

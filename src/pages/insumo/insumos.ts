@@ -34,10 +34,11 @@ export class InsumosPage {
 
   openModal() {
     console.log("aqui");
-    let modal = this.modalCtrl.create('CadastroInsumoPage');
+    let modal = this.modalCtrl.create('CadastroInsumoPage',{cssClass: 'select-modal' });
     modal.onDidDismiss(() => {
       this.getItens();
     });
+    
     modal.present();
   }
 
