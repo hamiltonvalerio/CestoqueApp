@@ -1,7 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { CredenciaisDTO } from './../../models/credenciais.dto';
-import { Component } from '@angular/core';
-import { NavController, IonicPage, MenuController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, IonicPage, MenuController, Content } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,6 +10,8 @@ import { NavController, IonicPage, MenuController } from 'ionic-angular';
 })
 export class HomePage {
 
+  @ViewChild(Content) content: Content;
+
   creds : CredenciaisDTO = {
     email: "",
     senha: ""
@@ -17,6 +19,15 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public menu: MenuController, public auth: AuthService) {
 
+  }
+
+  ionViewDidLoad(){
+    this.setDisableScroll(true);
+  }
+
+  private setDisableScroll(disable: boolean) : void {
+    let scroll = this.content.getScrollElement();
+    scroll.style.overflowY = disable ? 'hidden' : 'scroll';
   }
   
   ionViewWillEnter() {

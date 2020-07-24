@@ -1,9 +1,9 @@
-import { UnidadeDTO } from './unidade.dto';
 export interface InsumoDTO{
+
     id: string;
     nomenclatura: string;
     nome: string;
-    valor: number;
+    valor: string;
     codigo_almox: number;
     observacao: string;
     essencial: boolean;

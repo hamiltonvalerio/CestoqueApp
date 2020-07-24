@@ -1,3 +1,5 @@
+import { InsumoNewDTO } from './../../models/insumo.new.dto';
+import { InsumoDTO } from './../../models/insumo.dto';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
@@ -57,10 +59,18 @@ export class CadastroInsumoPage {
   }
 
   cadastrarInsumo(){
-    this.insumoService.insert(this.formGroup.value).subscribe(response => {
+    let dto = Object.assign({});
+    dto = Object.assign(dto,this.formGroup.value);
+   
+    //let newDto : InsumoNewDTO;
+    //newDto.nome = dto.nome;
+    //newDto.valor = +dto.valor;
+    console.log("aqui");
+    console.log(dto);
+    /*this.insumoService.insert(this.formGroup.value).subscribe(response => {
       this.showInserOk();
     },
-    error => {});
+    error => {});*/
   }
 
   showInserOk(){
