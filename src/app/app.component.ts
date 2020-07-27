@@ -22,12 +22,16 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: 'DashboardPage' },
-      { title: 'Profile', component: 'ProfilePage' },
+      { title: 'Produção', component: 'ProducaoPage' },
       { title: 'Insumos', component: 'InsumosPage' },
+      { title: 'Produtos', component: 'ProdutoPage' },
       { title: 'Categorias', component: 'CategoriasPage' },
       { title: 'Fornecedores', component: 'FornecedorPage' },
       { title: 'Unidades de Medida', component: 'UnidadePage' },
       { title: 'Localizações', component: 'LocalizacaoPage' },
+      { title: 'Entradas', component: 'EntradaPage' },
+      { title: 'Saídas', component: 'SaidaPage' },
+      { title: 'Profile', component: 'ProfilePage' },
       { title: 'Logout', component: '' },
     ];
 

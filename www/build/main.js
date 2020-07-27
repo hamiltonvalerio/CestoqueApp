@@ -1,4 +1,4 @@
-webpackJsonp([14],{
+webpackJsonp([20],{
 
 /***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -88,58 +88,82 @@ webpackEmptyAsyncContext.id = 164;
 var map = {
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
 		688,
-		13
+		19
+	],
+	"../pages/cadastro-entrada/cadastro-entrada.module": [
+		689,
+		18
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
-		689,
-		12
+		690,
+		17
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
-		690,
+		691,
 		1
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		691,
-		11
+		692,
+		16
+	],
+	"../pages/cadastro-saida/cadastro-saida.module": [
+		693,
+		15
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		692,
-		10
+		694,
+		14
 	],
 	"../pages/categorias/categorias.module": [
-		693,
+		695,
 		4
 	],
 	"../pages/dashboard/dashboard.module": [
-		694,
-		9
+		696,
+		13
+	],
+	"../pages/entrada/entrada.module": [
+		697,
+		12
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		695,
+		698,
 		3
 	],
 	"../pages/home/home.module": [
-		696,
-		8
+		707,
+		11
 	],
 	"../pages/insumo/insumos.module": [
-		697,
+		699,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		698,
+		700,
 		2
 	],
+	"../pages/producao/producao.module": [
+		701,
+		10
+	],
+	"../pages/produto/produto.module": [
+		702,
+		9
+	],
 	"../pages/profile/profile.module": [
-		699,
+		703,
+		8
+	],
+	"../pages/saida/saida.module": [
+		704,
 		7
 	],
 	"../pages/signup/signup.module": [
-		700,
+		705,
 		6
 	],
 	"../pages/unidade/unidade.module": [
-		701,
+		706,
 		5
 	]
 };
@@ -516,19 +540,25 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_18__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
@@ -653,12 +683,16 @@ var MyApp = /** @class */ (function () {
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Dashboard', component: 'DashboardPage' },
-            { title: 'Profile', component: 'ProfilePage' },
+            { title: 'Produção', component: 'ProducaoPage' },
             { title: 'Insumos', component: 'InsumosPage' },
+            { title: 'Produtos', component: 'ProdutoPage' },
             { title: 'Categorias', component: 'CategoriasPage' },
             { title: 'Fornecedores', component: 'FornecedorPage' },
             { title: 'Unidades de Medida', component: 'UnidadePage' },
             { title: 'Localizações', component: 'LocalizacaoPage' },
+            { title: 'Entradas', component: 'EntradaPage' },
+            { title: 'Saídas', component: 'SaidaPage' },
+            { title: 'Profile', component: 'ProfilePage' },
             { title: 'Logout', component: '' },
         ];
     }
