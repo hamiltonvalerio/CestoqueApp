@@ -1,15 +1,15 @@
 webpackJsonp([0],{
 
-/***/ 687:
+/***/ 697:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroInsumoPageModule", function() { return CadastroInsumoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__ = __webpack_require__(705);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_tooltips__ = __webpack_require__(721);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,374 +20,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroInsumoPageModule = /** @class */ (function () {
-    function CadastroInsumoPageModule() {
+var InsumoPageModule = /** @class */ (function () {
+    function InsumoPageModule() {
     }
-    CadastroInsumoPageModule = __decorate([
+    InsumoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__["a" /* CadastroInsumoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__["a" /* CadastroInsumoPage */]),
-                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["b" /* BrMaskerModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic_tooltips__["a" /* TooltipsModule */].forRoot(),
             ],
         })
-    ], CadastroInsumoPageModule);
-    return CadastroInsumoPageModule;
+    ], InsumoPageModule);
+    return InsumoPageModule;
 }());
 
-//# sourceMappingURL=cadastro-insumo.module.js.map
-
-/***/ }),
-
-/***/ 700:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(706);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(707);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__directives__["a"]; });
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 701:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export BrMaskModel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonic3; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(22);
-
-
-var BrMaskModel = (function () {
-    function BrMaskModel() {
-        this.type = 'alfa';
-        this.decimal = 2;
-        this.decimalCaracter = ",";
-        this.userCaracters = false;
-        this.numberAndTousand = false;
-    }
-    return BrMaskModel;
-}());
-
-var BrMaskerIonic3 = (function () {
-    function BrMaskerIonic3(_renderer, _elementRef) {
-        this._renderer = _renderer;
-        this._elementRef = _elementRef;
-        this.brmasker = new BrMaskModel();
-    }
-    BrMaskerIonic3.prototype.inputKeyup = function (event) {
-        var value = this.returnValue(event.target.value);
-        this.writeValue(value);
-        event.target.value = value;
-    };
-    BrMaskerIonic3.prototype.inputOnblur = function (event) {
-        var value = this.returnValue(event.value);
-        this.writeValue(value);
-        event.value = value;
-    };
-    BrMaskerIonic3.prototype.inputFocus = function (event) {
-        var value = this.returnValue(event.value);
-        this.writeValue(value);
-        event.value = value;
-    };
-    BrMaskerIonic3.prototype.ngOnInit = function () {
-        if (!this.brmasker.type) {
-            this.brmasker.type = 'all';
-        }
-        if (!this.brmasker.decimal) {
-            this.brmasker.decimal = 2;
-        }
-        if (!this.brmasker.decimalCaracter) {
-            this.brmasker.decimalCaracter = ',';
-        }
-    };
-    BrMaskerIonic3.prototype.writeValue = function (fn) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', fn);
-    };
-    BrMaskerIonic3.prototype.registerOnChange = function (fn) {
-        return;
-    };
-    BrMaskerIonic3.prototype.registerOnTouched = function (fn) {
-        return;
-    };
-    BrMaskerIonic3.prototype.setDisabledState = function (isDisabled) {
-        if (isDisabled) {
-            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'true');
-        }
-        else {
-            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'false');
-        }
-    };
-    BrMaskerIonic3.prototype.writeCreateValue = function (value, config) {
-        if (config === void 0) { config = new BrMaskModel(); }
-        if (value && config.phone) {
-            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
-        }
-        if (value && config.money) {
-            return this.writeValueMoney(value, config);
-        }
-        if (value && config.person) {
-            return this.writeValuePerson(value);
-        }
-        if (value && config.percent) {
-            return this.writeValuePercent(value);
-        }
-        if (value && config.mask) {
-            this.brmasker.mask = config.mask;
-            if (config.len) {
-                this.brmasker.len = config.len;
-            }
-            return this.onInput(value);
-        }
-        return value;
-    };
-    BrMaskerIonic3.prototype.writeValuePercent = function (value) {
-        value.replace(/\D/gi, '');
-        value.replace(/%/gi, '');
-        return value.replace(/([0-9]{0})$/gi, '%$1');
-    };
-    BrMaskerIonic3.prototype.writeValuePerson = function (value) {
-        if (value.length <= 11) {
-            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
-        }
-        else {
-            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
-        }
-    };
-    BrMaskerIonic3.prototype.writeValueMoney = function (value, config) {
-        if (config === void 0) { config = new BrMaskModel(); }
-        return this.moneyMask(value, config);
-    };
-    BrMaskerIonic3.prototype.returnValue = function (value) {
-        if (!this.brmasker.mask) {
-            this.brmasker.mask = '';
-        }
-        if (value) {
-            var v = value;
-            if (this.brmasker.type == 'alfa') {
-                v = v.replace(/\d/gi, '');
-            }
-            if (this.brmasker.type == 'num') {
-                v = v.replace(/\D/gi, '');
-            }
-            if (this.brmasker.money) {
-                return this.moneyMask(this.onInput(v), this.brmasker);
-            }
-            if (this.brmasker.phone) {
-                return this.phoneMask(v);
-            }
-            if (this.brmasker.phoneNotDDD) {
-                return this.phoneNotDDDMask(v);
-            }
-            if (this.brmasker.person) {
-                return this.peapollMask(v);
-            }
-            if (this.brmasker.percent) {
-                return this.percentMask(v);
-            }
-            if (this.brmasker.numberAndTousand) {
-                return this.thousand(v);
-            }
-            if (this.brmasker.userCaracters) {
-                return this.usingSpecialCharacters(v, this.brmasker.mask, this.brmasker.len);
-            }
-            return this.onInput(v);
-        }
-        else {
-            return '';
-        }
-    };
-    BrMaskerIonic3.prototype.percentMask = function (v) {
-        var tmp = v;
-        tmp = tmp.replace(/\D/gi, '');
-        tmp = tmp.replace(/%/gi, '');
-        tmp = tmp.replace(/([0-9]{0})$/gi, '%$1');
-        return tmp;
-    };
-    BrMaskerIonic3.prototype.phoneMask = function (v) {
-        var n = v;
-        if (n.length > 14) {
-            this.brmasker.len = 15;
-            this.brmasker.mask = '(99) 99999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
-            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 14;
-            this.brmasker.mask = '(99) 9999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.phoneNotDDDMask = function (v) {
-        var n = v;
-        if (n.length > 9) {
-            this.brmasker.len = 10;
-            this.brmasker.mask = '99999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 9;
-            this.brmasker.mask = '9999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.peapollMask = function (v) {
-        var n = v;
-        if (n.length > 14) {
-            this.brmasker.len = 18;
-            this.brmasker.mask = '99.999.999/9999-99';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1/$2');
-            n = n.replace(/(\d{4})(\d{1,4})$/gi, '$1-$2');
-            n = n.replace(/(\d{2})(\d{1,2})$/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 14;
-            this.brmasker.mask = '999.999.999-99';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d{1,2})$/gi, '$1-$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.moneyMask = function (value, config) {
-        var decimal = config.decimal || this.brmasker.decimal;
-        value = value
-            .replace(/\D/gi, '')
-            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
-        if (value.length === decimal + 1) {
-            return "0" + value; // leading 0 so we're not left with something weird like ",50"
-        }
-        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
-            return value.substr(1); // remove leading 0 when we don't need it anymore
-        }
-        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
-        }
-        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
-        }
-        return value;
-    };
-    BrMaskerIonic3.prototype.onInput = function (value) {
-        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
-        return ret;
-        // if (ret) {
-        //   this.element.nativeElement.value = ret;
-        // }
-    };
-    BrMaskerIonic3.prototype.thousand = function (value) {
-        var val = value.replace(/\D/gi, '');
-        var reverse = val.toString().split('').reverse().join('');
-        var thousands = reverse.match(/\d{1,3}/g);
-        if (thousands) {
-            return thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
-        }
-        return val;
-    };
-    BrMaskerIonic3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\,| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    BrMaskerIonic3.prototype.formatField = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    return BrMaskerIonic3;
-}());
-
-BrMaskerIonic3.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: '[brmasker]',
-                providers: [
-                    {
-                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALUE_ACCESSOR */],
-                        useExisting: BrMaskerIonic3,
-                        multi: true
-                    }
-                ]
-            },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-BrMaskerIonic3.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-]; };
-BrMaskerIonic3.propDecorators = {
-    'brmasker': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'inputKeyup': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['keyup', ['$event'],] },],
-    'inputOnblur': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['ionBlur', ['$event'],] },],
-    'inputFocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['ionFocus', ['$event'],] },],
-};
-//# sourceMappingURL=brmasker-ionic-3.js.map
+//# sourceMappingURL=insumos.module.js.map
 
 /***/ }),
 
@@ -395,199 +45,485 @@ BrMaskerIonic3.propDecorators = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export BrMaskServicesModel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonicServices3; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-
-var BrMaskServicesModel = (function () {
-    function BrMaskServicesModel() {
-        this.type = 'alfa';
-        this.decimal = 2;
-        this.decimalCaracter = ",";
-        this.userCaracters = false;
-        this.numberAndTousand = false;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConverteListaIonItemDivider; });
+var ConverteListaIonItemDivider = /** @class */ (function () {
+    function ConverteListaIonItemDivider() {
     }
-    return BrMaskServicesModel;
+    /**
+     * name
+     */
+    ConverteListaIonItemDivider.prototype.retornaArrayGroup = function (responseSorte) {
+        var itens = [];
+        var itensOrdenados = [];
+        var letraAtual = "";
+        var itensAtuaisDeRetorno = [];
+        itensOrdenados = responseSorte;
+        itensOrdenados.forEach(function (value, index) {
+            if (value.nome.charAt(0) != letraAtual) {
+                letraAtual = value.nome.charAt(0);
+                var newGroup = {
+                    letra: letraAtual,
+                    arrayDeItens: []
+                };
+                itensAtuaisDeRetorno = newGroup.arrayDeItens;
+                itens.push(newGroup);
+            }
+            itensAtuaisDeRetorno.push(value);
+        });
+        return itens;
+    };
+    return ConverteListaIonItemDivider;
 }());
 
-var BrMaskerIonicServices3 = (function () {
-    function BrMaskerIonicServices3() {
-        this.brmasker = new BrMaskServicesModel();
-    }
-    BrMaskerIonicServices3.prototype.ngOnInit = function () {
-        if (!this.brmasker.type) {
-            this.brmasker.type = 'all';
-        }
-        if (!this.brmasker.decimal) {
-            this.brmasker.decimal = 2;
-        }
-        if (!this.brmasker.decimalCaracter) {
-            this.brmasker.decimalCaracter = ',';
-        }
-    };
-    BrMaskerIonicServices3.prototype.writeCreateValue = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        if (value && config.phone) {
-            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
-        }
-        if (value && config.money) {
-            return this.writeValueMoney(value, config);
-        }
-        if (value && config.person) {
-            return this.writeValuePerson(value);
-        }
-        if (value && config.percent) {
-            return this.writeValuePercent(value);
-        }
-        if (value && config.numberAndTousand) {
-            return this.writeValueNumberAndThousand(value);
-        }
-        if (value && config.userCaracters) {
-            return this.writeValueusingSpecialCharacters(value);
-        }
-        if (value && config.mask) {
-            this.brmasker.mask = config.mask;
-            if (config.len) {
-                this.brmasker.len = config.len;
-            }
-            return this.onInput(value);
-        }
-        return value;
-    };
-    BrMaskerIonicServices3.prototype.writeValuePercent = function (value) {
-        value.replace(/\D/gi, '');
-        value.replace(/%/gi, '');
-        return value.replace(/([0-9]{0})$/gi, '%$1');
-    };
-    BrMaskerIonicServices3.prototype.writeValuePerson = function (value) {
-        if (value.length <= 11) {
-            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
-        }
-        else {
-            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
-        }
-    };
-    BrMaskerIonicServices3.prototype.writeValueMoney = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.moneyMask(value, config);
-    };
-    BrMaskerIonicServices3.prototype.writeValueNumberAndThousand = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.thousand(value);
-    };
-    BrMaskerIonicServices3.prototype.writeValueusingSpecialCharacters = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.usingSpecialCharacters(value, config.mask, config.len);
-    };
-    BrMaskerIonicServices3.prototype.moneyMask = function (value, config) {
-        var decimal = config.decimal || this.brmasker.decimal;
-        value = value
-            .replace(/\D/gi, '')
-            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
-        if (value.length === decimal + 1) {
-            return "0" + value; // leading 0 so we're not left with something weird like ",50"
-        }
-        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
-            return value.substr(1); // remove leading 0 when we don't need it anymore
-        }
-        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
-        }
-        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
-        }
-        return value;
-    };
-    BrMaskerIonicServices3.prototype.onInput = function (value) {
-        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
-        return ret;
-    };
-    BrMaskerIonicServices3.prototype.thousand = function (value) {
-        var val = value.replace(/\D/gi, '');
-        var reverse = val.toString().split('').reverse().join('');
-        var thousands = reverse.match(/\d{1,3}/g);
-        val = thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
-        return val;
-    };
-    BrMaskerIonicServices3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\,| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    BrMaskerIonicServices3.prototype.formatField = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    return BrMaskerIonicServices3;
-}());
-
-BrMaskerIonicServices3.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: '[brmasker]',
-            },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-BrMaskerIonicServices3.ctorParameters = function () { return []; };
-//# sourceMappingURL=brmasker-ionic-services.js.map
+//# sourceMappingURL=converte-list-ionitemdivider.js.map
 
 /***/ }),
 
-/***/ 705:
+/***/ 703:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroInsumoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(22);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipBox; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_brmasker_ionic_3__ = __webpack_require__(700);
+
+
+var TooltipBox = (function () {
+    function TooltipBox(elementRef, rnd) {
+        var _this = this;
+        this.elementRef = elementRef;
+        this.rnd = rnd;
+        this.fadeState = 'invisible';
+        this.init = new Promise(function (resolve) {
+            _this.initResolve = resolve;
+        });
+    }
+    Object.defineProperty(TooltipBox.prototype, "arrow", {
+        set: function (side) {
+            this.rnd.setAttribute(this.getNativeElement(), 'class', 'has-arrow ' + 'arrow-' + side);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TooltipBox.prototype, "posTop", {
+        set: function (val) {
+            this.rnd.setStyle(this.getNativeElement(), 'top', val + 'px');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TooltipBox.prototype, "posLeft", {
+        set: function (val) {
+            this.rnd.setStyle(this.getNativeElement(), 'left', val + 'px');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TooltipBox.prototype.getNativeElement = function () {
+        return this.elementRef.nativeElement;
+    };
+    TooltipBox.prototype.ngAfterViewInit = function () {
+        this.initResolve();
+    };
+    TooltipBox.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"], args: [{
+                    selector: 'tooltip-box',
+                    template: "\n    <div *ngIf=\"tooltipHtml; else txt\" [innerHTML]=\"tooltipHtml\"></div>\n    <ng-template #txt>{{ text }}</ng-template>\n  ",
+                    animations: [
+                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* trigger */])('fade', [
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 1 })),
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 0 })),
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('visible <=> invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('300ms linear')),
+                        ]),
+                    ],
+                    styles: [
+                        "\n          :host {\n              background-color: rgba(0, 0, 0, 0.8);\n              color: white;\n              display: inline-block;\n              position: fixed;\n              padding: 15px 25px;\n              font-size: 15px;\n          }\n    ",
+                        "\n          :host.has-arrow:before {\n              content: '';\n              border: 5px solid transparent;\n              position: absolute;\n              width: 0;\n              height: 0;\n          }\n    ",
+                        ':host.has-arrow.arrow-top:before { border-bottom: 5px solid rgba(0,0,0,0.8); top: -10px; }',
+                        ':host.has-arrow.arrow-left:before { border-right: 5px solid rgba(0,0,0,0.8); left: -10px; }',
+                        ':host.has-arrow.arrow-right:before { border-left: 5px solid rgba(0,0,0,0.8); right: -10px; }',
+                        ':host.has-arrow.arrow-bottom:before { border-top: 5px solid rgba(0,0,0,0.8); bottom: -10px; }',
+                    ],
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ChangeDetectionStrategy"].OnPush,
+                },] },
+    ];
+    /** @nocollapse */
+    TooltipBox.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer2"], },
+    ]; };
+    TooltipBox.propDecorators = {
+        "fadeState": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["HostBinding"], args: ['@fade',] },],
+        "text": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "posTop": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "posLeft": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    };
+    return TooltipBox;
+}());
+
+//# sourceMappingURL=tooltip-box.component.js.map
+
+/***/ }),
+
+/***/ 704:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipController; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+
+var TooltipController = (function () {
+    function TooltipController() {
+        this.allowMultiple = true;
+        this.activeTooltips = [];
+    }
+    TooltipController.prototype.addTooltip = function (instance) {
+        if (instance.hideOthers || !this.allowMultiple && this.activeTooltips.length > 0) {
+            this.hideAll();
+        }
+        this.activeTooltips.push(instance);
+    };
+    TooltipController.prototype.removeTooltip = function (instance) {
+        this.activeTooltips.splice(this.activeTooltips.indexOf(instance), 1);
+    };
+    TooltipController.prototype.hideAll = function () {
+        this.activeTooltips.forEach(function (tooltip) {
+            tooltip.removeTooltip();
+        });
+    };
+    TooltipController.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+    ];
+    return TooltipController;
+}());
+
+//# sourceMappingURL=tooltip.cotroller.js.map
+
+/***/ }),
+
+/***/ 708:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tooltip; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__ = __webpack_require__(703);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(704);
+
+
+
+
+var Tooltip = (function () {
+    function Tooltip(el, appRef, platform, _componentFactoryResolver, tooltipCtrl) {
+        this.el = el;
+        this.appRef = appRef;
+        this.platform = platform;
+        this._componentFactoryResolver = _componentFactoryResolver;
+        this.tooltipCtrl = tooltipCtrl;
+        this.mobileEvent = 'press';
+        this.desktopEvent = 'hover';
+        this.duration = 3000;
+        this._arrow = false;
+        this._navTooltip = false;
+        this._canShow = true;
+        this._active = false;
+    }
+    Object.defineProperty(Tooltip.prototype, "navTooltip", {
+        get: function () {
+            return this._navTooltip;
+        },
+        set: function (val) {
+            this._navTooltip = typeof val !== 'boolean' || val !== false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Tooltip.prototype, "arrow", {
+        get: function () {
+            return this._arrow;
+        },
+        set: function (val) {
+            this._arrow = typeof val !== 'boolean' || val !== false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Tooltip.prototype, "active", {
+        get: function () {
+            return this._active;
+        },
+        set: function (val) {
+            this._active = typeof val !== 'boolean' || val !== false;
+            this._active ? this.canShow && this.showTooltip() : this.removeTooltip();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Tooltip.prototype.ngAfterViewInit = function () {
+        // Show the tooltip immediately after initiating view if set to
+        if (this._active) {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.ngOnInit = function () {
+        // Set default event type by platform if event is not defined
+        if (!this.event) {
+            this.event = this.platform.is('mobile') ? this.mobileEvent : this.desktopEvent;
+        }
+    };
+    Object.defineProperty(Tooltip.prototype, "canShow", {
+        /**
+         * @return {boolean} TRUE if the tooltip can be shown
+         */
+        get: /**
+           * @return {boolean} TRUE if the tooltip can be shown
+           */
+        function () {
+            return this._canShow && ((typeof this.tooltip === 'string' && this.tooltip !== '') || (typeof this.tooltipHtml === 'string' && this.tooltipHtml !== ''));
+        },
+        /**
+         * Set the canShow property
+         * Ensure that tooltip is shown only if the tooltip string is not falsey
+         */
+        set: /**
+           * Set the canShow property
+           * Ensure that tooltip is shown only if the tooltip string is not falsey
+           */
+        function (show) {
+            this._canShow = show;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Handles the click/press event and shows a tooltip.
+     * If a tooltip already exists, it will just reset it's timer.
+     */
+    /**
+       * Handles the click/press event and shows a tooltip.
+       * If a tooltip already exists, it will just reset it's timer.
+       */
+    Tooltip.prototype.trigger = /**
+       * Handles the click/press event and shows a tooltip.
+       * If a tooltip already exists, it will just reset it's timer.
+       */
+    function () {
+        if (!this.canShow) {
+            return;
+        }
+        if (this.tooltipElement) {
+            this._resetTimer();
+        }
+        else {
+            this.showTooltip();
+        }
+    };
+    /**
+     * Creates a new tooltip component and adjusts it's properties to show properly.
+     */
+    /**
+       * Creates a new tooltip component and adjusts it's properties to show properly.
+       */
+    Tooltip.prototype.showTooltip = /**
+       * Creates a new tooltip component and adjusts it's properties to show properly.
+       */
+    function () {
+        var _this = this;
+        this._createTooltipComponent();
+        var tooltipComponent = this.tooltipElement.instance;
+        tooltipComponent.text = this.tooltip;
+        tooltipComponent.tooltipHtml = this.tooltipHtml;
+        tooltipComponent.init.then(function () {
+            var tooltipPosition = _this._getTooltipPosition();
+            tooltipComponent.posLeft = tooltipPosition.left;
+            tooltipComponent.posTop = tooltipPosition.top;
+            tooltipComponent.fadeState = 'visible';
+            if (_this.arrow) {
+                var arrowPosition = void 0;
+                if (_this.positionV === 'top') {
+                    arrowPosition = 'bottom';
+                }
+                else if (_this.positionV === 'bottom') {
+                    arrowPosition = 'top';
+                }
+                else if (_this.positionH === 'left') {
+                    arrowPosition = 'right';
+                }
+                else {
+                    arrowPosition = 'left';
+                }
+                tooltipComponent.arrow = arrowPosition;
+            }
+            if (!_this._active) {
+                _this.tooltipTimeout = setTimeout(_this.removeTooltip.bind(_this), _this.duration);
+            }
+        });
+    };
+    Tooltip.prototype.onClick = function () {
+        if (this.event === 'click') {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.onPress = function () {
+        if (this.event === 'press') {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.onMouseEnter = function () {
+        if (this.event === 'hover') {
+            this.active = true;
+        }
+    };
+    Tooltip.prototype.onMouseLeave = function () {
+        if (this.event === 'hover') {
+            this.active = false;
+        }
+    };
+    Tooltip.prototype._createTooltipComponent = function () {
+        var viewport = this.appRef.components[0]._component
+            ._viewport, componentFactory = this._componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__["a" /* TooltipBox */]);
+        this.tooltipElement = viewport.createComponent(componentFactory);
+        this.tooltipCtrl.addTooltip(this);
+    };
+    Tooltip.prototype._getTooltipPosition = function () {
+        var tooltipNativeElement = this.tooltipElement.instance.getNativeElement(), el = this.el.nativeElement, rect = el.getBoundingClientRect();
+        var positionLeft, positionTop, spacing = 10;
+        if (this.navTooltip) {
+            this.positionV = 'bottom';
+            this.arrow = false;
+            spacing = 20;
+        }
+        if (this.positionH === 'right') {
+            positionLeft = rect.right + spacing;
+        }
+        else if (this.positionH === 'left') {
+            positionLeft = rect.left - spacing - tooltipNativeElement.offsetWidth;
+        }
+        else if (this.navTooltip) {
+            positionLeft = rect.left + el.offsetWidth / 2;
+        }
+        else {
+            positionLeft = rect.left;
+        }
+        if (this.positionV === 'top') {
+            positionTop = rect.top - spacing - tooltipNativeElement.offsetHeight;
+        }
+        else if (this.positionV === 'bottom') {
+            positionTop = rect.bottom + spacing;
+        }
+        else {
+            positionTop =
+                rect.top + el.offsetHeight / 2 - tooltipNativeElement.offsetHeight / 2;
+        }
+        if (+this.topOffset) {
+            positionTop += +this.topOffset;
+        }
+        if (+this.leftOffset) {
+            positionLeft += +this.leftOffset;
+        }
+        if (positionLeft + tooltipNativeElement.offsetWidth + spacing >
+            this.platform.width()) {
+            positionLeft =
+                this.platform.width() - tooltipNativeElement.offsetWidth - spacing;
+        }
+        else if (positionLeft + tooltipNativeElement.offsetWidth - spacing < 0) {
+            positionLeft = spacing;
+        }
+        if (positionTop + tooltipNativeElement.offsetHeight + spacing > this.platform.height()) {
+            positionTop = this.platform.height() - tooltipNativeElement.offsetHeight - spacing;
+        }
+        else if (positionTop + tooltipNativeElement.offsetHeight - spacing < 0) {
+            positionTop = spacing;
+        }
+        return {
+            left: positionLeft,
+            top: positionTop,
+        };
+    };
+    Tooltip.prototype.removeTooltip = function () {
+        var _this = this;
+        if (!this.tooltipElement) {
+            this.tooltipElement = undefined;
+            this.tooltipTimeout = undefined;
+            return;
+        }
+        this.tooltipElement.instance.fadeState = 'invisible';
+        this.canShow = false;
+        // wait for animation to finish then clear everything out
+        setTimeout(function () {
+            if (_this.tooltipElement &&
+                typeof _this.tooltipElement.destroy === 'function') {
+                _this.tooltipElement.destroy();
+            }
+            _this.tooltipCtrl.removeTooltip(_this);
+            _this.tooltipElement = _this.tooltipTimeout = undefined;
+            _this.canShow = true;
+        }, 300);
+    };
+    Tooltip.prototype._resetTimer = function () {
+        var _this = this;
+        clearTimeout(this.tooltipTimeout);
+        this.tooltipTimeout = setTimeout(function () {
+            _this.active = false;
+        }, this.duration);
+    };
+    Tooltip.prototype.ngOnDestroy = function () {
+        // if the timer hasn't expired or active is true when the component gets destroyed, the tooltip will remain in the DOM
+        // this removes it
+        this.removeTooltip();
+    };
+    Tooltip.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: '[tooltip]',
+                },] },
+    ];
+    /** @nocollapse */
+    Tooltip.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+        { type: __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__["a" /* TooltipController */], },
+    ]; };
+    Tooltip.propDecorators = {
+        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "tooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "positionV": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "positionH": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "event": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "mobileEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "desktopEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "topOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "leftOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "hideOthers": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "navTooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "duration": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "active": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "onClick": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['click',] },],
+        "onPress": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['press',] },],
+        "onMouseEnter": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseenter',] },],
+        "onMouseLeave": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseleave',] },],
+    };
+    return Tooltip;
+}());
+
+//# sourceMappingURL=tooltip.directive.js.map
+
+/***/ }),
+
+/***/ 720:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(702);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -601,145 +537,111 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the CadastroInsumoPage page.
+ * Generated class for the InsumoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CadastroInsumoPage = /** @class */ (function () {
-    function CadastroInsumoPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, brMaskerIonic3) {
+var InsumosPage = /** @class */ (function () {
+    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.alertCtrl = alertCtrl;
-        this.formBuilder = formBuilder;
         this.insumoService = insumoService;
-        this.brMaskerIonic3 = brMaskerIonic3;
-        this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["f" /* Validators */].required]],
-            nomenclatura: ['', [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["f" /* Validators */].required]],
-            valor: ['',],
-            codigo_almox: ['',],
-            observacao: ['',],
-            essencial: [false,],
-            data_validade: [,],
-            quantidade: [,],
-            taxa_de_consumo: [,],
-        }, {});
+        this.modalCtrl = modalCtrl;
+        this.itensInsumos = [];
     }
-    CadastroInsumoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroInsumoPage');
+    InsumosPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
     };
-    CadastroInsumoPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    CadastroInsumoPage.prototype.cadastrarInsumo = function () {
-        var dto = Object.assign({});
-        dto = Object.assign(dto, this.formGroup.value);
-        //let newDto : InsumoNewDTO;
-        //newDto.nome = dto.nome;
-        //newDto.valor = +dto.valor;
-        console.log("aqui");
-        console.log(dto);
-        /*this.insumoService.insert(this.formGroup.value).subscribe(response => {
-          this.showInserOk();
-        },
-        error => {});*/
-    };
-    CadastroInsumoPage.prototype.showInserOk = function () {
+    InsumosPage.prototype.openModal = function () {
         var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroInsumoPage', { cssClass: 'select-modal' });
+        modal.onDidDismiss(function () {
+            _this.getItens();
         });
-        alert.present();
+        modal.present();
     };
-    CadastroInsumoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-cadastro-insumo',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/'<!--\n  Generated template for the CadastroInsumoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Cadastro de Insumo\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">\n     <ion-item>\n      <ion-label stacked>Nome*</ion-label>\n      <ion-input formControlName="nome" type="text"></ion-input>\n    </ion-item>\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n    <ion-item>\n      <ion-label stacked>Nomenclatura*</ion-label>\n      <ion-input formControlName="nomenclatura" type="text"></ion-input>\n    </ion-item>\n    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>\n    <ion-item>\n      <ion-label stacked>Valor</ion-label>\n      <ion-input type="number" formControlName="valor"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Código Almoxarifado</ion-label>\n      <ion-input formControlName="codigo_almox" type="number"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Observação</ion-label>\n      <ion-textarea formControlName="observacao" type="text"></ion-textarea>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Essencial?</ion-label>\n      <ion-toggle formControlName="essencial" ></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Data de Validade</ion-label>\n      <ion-datetime formControlName="data_validade" ></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Quantidade</ion-label>\n      <ion-input formControlName="quantidade" type="number"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Taxa de Consumo</ion-label>\n      <ion-input formControlName="taxa_de_consumo" type="number"></ion-input>\n    </ion-item>\n    \n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_4_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]]
+    InsumosPage.prototype.getItens = function () {
+        var _this = this;
+        this.insumoService.findAll()
+            .subscribe(function (response) {
+            _this.itensInsumos = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
+        }, function (error) { });
+    };
+    InsumosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-insumos',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n  Generated template for the InsumoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Insumos</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openModal()">\n      <ion-icon name="add-circle" ></ion-icon>\n      </button>\n    </ion-buttons>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content >\n  \n  <ion-list>\n    <ion-item-group *ngFor="let item of itensInsumos">\n      <ion-item-divider light>{{item.letra}}</ion-item-divider>\n      <ion-item-sliding *ngFor="let insumo of item.arrayDeItens">\n        <ion-item>\n          <h3>{{insumo.nome}}</h3>\n          <p>{{insumo.taxa_de_consumo}}</p>\n        </ion-item>\n        <ion-item-options>\n          \n          <button ion-button icon-only tooltip="ENTRADA" positionV="bottom" >\n            <ion-icon name="return-right"></ion-icon>\n          </button>\n          <!-- just pass the avatar here. the index is just \'0\', \'1\', \'2\'... -->\n          <button ion-button color="secondary" icon-only tooltip="SAÍDA" positionV="bottom" >\n            <ion-icon name="return-left"></ion-icon>\n          </button>\n          <button ion-button color="dark" icon-only tooltip="MOVIMENTAÇÃO" positionV="bottom"  >\n            <ion-icon name="shuffle"></ion-icon>\n          </button>\n        </ion-item-options>\n      </ion-item-sliding>\n    </ion-item-group>\n</ion-list>\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_4_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]])
-    ], CadastroInsumoPage);
-    return CadastroInsumoPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]])
+    ], InsumosPage);
+    return InsumosPage;
 }());
 
-//# sourceMappingURL=cadastro-insumo.js.map
+//# sourceMappingURL=insumos.js.map
 
 /***/ }),
 
-/***/ 706:
+/***/ 721:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(701);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(702);
-
-
-
-
-var BrMaskerModule = (function () {
-    function BrMaskerModule() {
-    }
-    return BrMaskerModule;
-}());
-
-BrMaskerModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"], args: [{
-                declarations: [
-                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
-                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
-                ],
-                exports: [
-                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
-                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
-                ],
-                imports: [
-                    __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* CommonModule */]
-                ],
-                schemas: [
-                    __WEBPACK_IMPORTED_MODULE_1__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]
-                ],
-                providers: [__WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]]
-            },] },
-];
-/** @nocollapse */
-BrMaskerModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 707:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(701);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(702);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_box_component__ = __webpack_require__(703);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(708);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(722);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__tooltips_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(704);
 /* unused harmony namespace reexport */
 
 
+
+
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 722:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__ = __webpack_require__(704);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__ = __webpack_require__(703);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_directive__ = __webpack_require__(708);
+
+
+
+
+
+var TooltipsModule = (function () {
+    function TooltipsModule() {
+    }
+    TooltipsModule.forRoot = function () {
+        return {
+            ngModule: TooltipsModule,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__["a" /* TooltipController */]]
+        };
+    };
+    TooltipsModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                    entryComponents: [__WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
+                    declarations: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */], __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
+                    imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicModule */]],
+                    exports: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */]]
+                },] },
+    ];
+    return TooltipsModule;
+}());
+
+//# sourceMappingURL=tooltips.module.js.map
 
 /***/ })
 

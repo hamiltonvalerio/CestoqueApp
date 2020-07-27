@@ -25772,6 +25772,14 @@ page-home .container3 {
   justify-content: center;
 }
 
+page-insumos {
+  --ion-color-btn: #ef5365;
+}
+
+page-insumos .btncolor {
+  --background: var(--ion-color-btn);
+}
+
 page-signup .danger {
   color: red;
 }

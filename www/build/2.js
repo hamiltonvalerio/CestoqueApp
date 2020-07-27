@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 694:
+/***/ 698:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocalizacaoPageModule", function() { return LocalizacaoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(715);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localizacao__ = __webpack_require__(723);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,27 +18,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var InsumoPageModule = /** @class */ (function () {
-    function InsumoPageModule() {
+var LocalizacaoPageModule = /** @class */ (function () {
+    function LocalizacaoPageModule() {
     }
-    InsumoPageModule = __decorate([
+    LocalizacaoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */],
+                __WEBPACK_IMPORTED_MODULE_2__localizacao__["a" /* LocalizacaoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__localizacao__["a" /* LocalizacaoPage */]),
             ],
         })
-    ], InsumoPageModule);
-    return InsumoPageModule;
+    ], LocalizacaoPageModule);
+    return LocalizacaoPageModule;
 }());
 
-//# sourceMappingURL=insumos.module.js.map
+//# sourceMappingURL=localizacao.module.js.map
 
 /***/ }),
 
-/***/ 699:
+/***/ 702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76,15 +76,15 @@ var ConverteListaIonItemDivider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 715:
+/***/ 723:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(699);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(87);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(702);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__ = __webpack_require__(355);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,51 +99,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the InsumoPage page.
+ * Generated class for the LocalizacaoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var InsumosPage = /** @class */ (function () {
-    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl) {
+var LocalizacaoPage = /** @class */ (function () {
+    function LocalizacaoPage(navCtrl, navParams, localizacaoService, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.insumoService = insumoService;
+        this.localizacaoService = localizacaoService;
         this.modalCtrl = modalCtrl;
-        this.itensInsumos = [];
+        this.itensLocalizacoes = [];
     }
-    InsumosPage.prototype.ionViewDidLoad = function () {
+    LocalizacaoPage.prototype.ionViewDidLoad = function () {
         this.getItens();
     };
-    InsumosPage.prototype.openModal = function () {
+    LocalizacaoPage.prototype.openModal = function () {
         var _this = this;
         console.log("aqui");
-        var modal = this.modalCtrl.create('CadastroInsumoPage', { cssClass: 'select-modal' });
+        var modal = this.modalCtrl.create('CadastroLocalizacaoPage');
         modal.onDidDismiss(function () {
             _this.getItens();
         });
         modal.present();
     };
-    InsumosPage.prototype.getItens = function () {
+    LocalizacaoPage.prototype.getItens = function () {
         var _this = this;
-        this.insumoService.findAll()
+        this.localizacaoService.findAll()
             .subscribe(function (response) {
-            _this.itensInsumos = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
+            _this.itensLocalizacoes = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
         }, function (error) { });
     };
-    InsumosPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-insumos',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n  Generated template for the InsumoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Insumos</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openModal()">\n      <ion-icon name="add-circle" ></ion-icon>\n      </button>\n    </ion-buttons>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item-group *ngFor="let item of itensInsumos">\n\n    <ion-item-divider light>{{item.letra}}</ion-item-divider>\n    <ion-item *ngFor="let insumo of item.arrayDeItens">\n      <h3>{{insumo.nome}}</h3>\n      <p>{{insumo.taxa_de_consumo}}</p>\n    </ion-item>\n\n  </ion-item-group>\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/,
+    LocalizacaoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-localizacao',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\localizacao\localizacao.html"*/'<!--\n\n  Generated template for the LocalizacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Localizações</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    \n\n    <ion-item *ngFor="let item of itens">\n\n      <ion-label>\n\n        <h2>{{ item.nome }}</h2>\n\n        <p></p>\n\n      </ion-label>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <ion-item-group *ngFor="let item of itensLocalizacoes">\n\n\n\n    <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n    <ion-item *ngFor="let l of item.arrayDeItens">\n\n      <h3>{{l.nome}}</h3>\n\n    </ion-item>\n\n\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\localizacao\localizacao.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]])
-    ], InsumosPage);
-    return InsumosPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* ModalController */]])
+    ], LocalizacaoPage);
+    return LocalizacaoPage;
 }());
 
-//# sourceMappingURL=insumos.js.map
+//# sourceMappingURL=localizacao.js.map
 
 /***/ })
 

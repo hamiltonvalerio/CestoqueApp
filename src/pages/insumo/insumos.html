@@ -19,16 +19,32 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-item-group *ngFor="let item of itensInsumos">
-
-    <ion-item-divider light>{{item.letra}}</ion-item-divider>
-    <ion-item *ngFor="let insumo of item.arrayDeItens">
-      <h3>{{insumo.nome}}</h3>
-      <p>{{insumo.taxa_de_consumo}}</p>
-    </ion-item>
-
-  </ion-item-group>
+<ion-content >
+  
+  <ion-list>
+    <ion-item-group *ngFor="let item of itensInsumos">
+      <ion-item-divider light>{{item.letra}}</ion-item-divider>
+      <ion-item-sliding *ngFor="let insumo of item.arrayDeItens">
+        <ion-item>
+          <h3>{{insumo.nome}}</h3>
+          <p>{{insumo.taxa_de_consumo}}</p>
+        </ion-item>
+        <ion-item-options>
+          
+          <button ion-button icon-only tooltip="ENTRADA" positionV="bottom" >
+            <ion-icon name="return-right"></ion-icon>
+          </button>
+          <!-- just pass the avatar here. the index is just '0', '1', '2'... -->
+          <button ion-button color="secondary" icon-only tooltip="SAÍDA" positionV="bottom" >
+            <ion-icon name="return-left"></ion-icon>
+          </button>
+          <button ion-button color="dark" icon-only tooltip="MOVIMENTAÇÃO" positionV="bottom"  >
+            <ion-icon name="shuffle"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+</ion-list>
 </ion-content>
 
 

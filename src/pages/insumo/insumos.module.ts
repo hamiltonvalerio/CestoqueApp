@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { InsumosPage } from './insumos';
+import { TooltipsModule } from 'ionic-tooltips';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,7 @@ import { InsumosPage } from './insumos';
   ],
   imports: [
     IonicPageModule.forChild(InsumosPage),
+    TooltipsModule.forRoot(),
   ],
 })
 export class InsumoPageModule {}

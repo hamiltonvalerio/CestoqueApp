@@ -1,3 +1,6 @@
 page-insumos {
-
+    --ion-color-btn: #ef5365;
+    .btncolor {
+        --background: var(--ion-color-btn);
+      }
 }

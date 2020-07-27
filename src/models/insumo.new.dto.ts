@@ -1,4 +1,7 @@
+import { UnidadeDTO } from './unidade.dto';
+import { RefDTO } from './ref.dto';
 import { InsumoDTO } from "./insumo.dto";
+import { LocalizacaoDTO } from './localizacao.dto';
 
 export interface InsumoNewDTO{
 
@@ -15,6 +18,7 @@ export interface InsumoNewDTO{
     codigo_barra: string;
     qrcode: string;
     rfid: string;
-
+    unidade: UnidadeDTO;
+    localizacoes: LocalizacaoDTO[];
     
 }

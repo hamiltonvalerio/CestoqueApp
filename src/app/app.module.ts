@@ -21,6 +21,8 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { LocalizacaoService } from '../services/domain/localizacao.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     MyApp
@@ -30,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
+    BrowserAnimationsModule,
     
   ],
   bootstrap: [IonicApp],
