@@ -1,5 +1,8 @@
+import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
+import { EntradaService } from './../../services/domain/entrada.service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { EntradaDTO } from '../../models/entrada.dto';
 
 /**
  * Generated class for the EntradaPage page.
@@ -15,11 +18,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EntradaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  itens: EntradaDTO[];
+  itensEntradas = [];
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public entradaService: EntradaService,
+    public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EntradaPage');
+    this.getItens();
+  }
+
+  getItens(){
+    this.entradaService.findAll()
+    .subscribe(response => {
+      this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());;
+    },
+    error => {})
   }
 
 }

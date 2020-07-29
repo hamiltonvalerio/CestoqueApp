@@ -1,3 +1,4 @@
+import { EntradaService } from './../services/domain/entrada.service';
 import { InsumoService } from './../services/domain/insumo.service';
 import { UnidadeService } from './../services/domain/unidade.service';
 import { FornecedorService } from './../services/domain/fornecedor.service';
@@ -52,7 +53,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ErrorInterceptorProvider,
     AuthService,
     StorageService, 
-    ColaboradorService
+    ColaboradorService,
+    EntradaService
   ]
 })
 export class AppModule {}
