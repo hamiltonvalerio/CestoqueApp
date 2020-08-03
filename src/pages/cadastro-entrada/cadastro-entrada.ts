@@ -1,5 +1,6 @@
+import { FormBuilder } from '@angular/forms';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the CadastroEntradaPage page.
@@ -15,11 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CadastroEntradaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public viewCtrl: ViewController,
+    public alertCtrl: AlertController,
+    public formBuilder: FormBuilder) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroEntradaPage');
+  }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 
 }

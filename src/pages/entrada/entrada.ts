@@ -1,7 +1,8 @@
+import { CadastroEntradaPage } from './../cadastro-entrada/cadastro-entrada';
 import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { EntradaService } from './../../services/domain/entrada.service';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ModalController, NavPush } from 'ionic-angular';
 import { EntradaDTO } from '../../models/entrada.dto';
 
 /**
@@ -18,14 +19,18 @@ import { EntradaDTO } from '../../models/entrada.dto';
 })
 export class EntradaPage {
 
+  @ViewChild('myNav') nav;
+
   itens: EntradaDTO[];
   itensEntradas = [];
+
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public entradaService: EntradaService,
     public modalCtrl: ModalController) {
+   
   }
 
   ionViewDidLoad() {
@@ -38,6 +43,20 @@ export class EntradaPage {
       this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());;
     },
     error => {})
+  }
+
+  openModal() {
+    console.log("aqui");
+    let modal = this.modalCtrl.create('CadastroEntradaPage');
+    modal.onDidDismiss(() => {
+      this.getItens();
+    });
+    modal.present();
+  }
+
+  openTeste(){
+    this.navCtrl.push('CadastroEntradaPage', {}, {animate: true, direction: 'forward'});
+   
   }
 
 }
