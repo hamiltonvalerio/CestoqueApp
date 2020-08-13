@@ -54,7 +54,7 @@ export class EntradaPage {
     modal.present();
   }
 
-  openTeste(){
+  openCadastroEntrada(){
     this.navCtrl.push('CadastroEntradaPage', {}, {animate: true, direction: 'forward'});
    
   }

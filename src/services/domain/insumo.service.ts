@@ -23,4 +23,9 @@ export class InsumoService {
             responseType: 'text'
         });
     }
+
+    findTodos(){
+        return this.http.get<InsumoDTO[]>(`${API_CONFIG.baseUrl}/insumos`)
+    }
+
 }

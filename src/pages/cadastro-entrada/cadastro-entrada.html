@@ -16,9 +16,23 @@
       </button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-searchbar (ionInput)="filtraInsumo($event)"></ion-searchbar>
 </ion-header>
 <ion-content padding>
-  <ion-toolbar>
-    <ion-searchbar></ion-searchbar>
-  </ion-toolbar>
+  <ion-scroll scrollX="false" scrollY="true" style="width: 100%; height: 50%">
+     <ion-list>
+       <ion-item *ngFor="let ins of itensEntrada">
+          <ion-label floating>{{ins.insumo.nome}}</ion-label>
+          <ion-input type="number"></ion-input>
+          <button ion-button small (click)="insereLista()" item-end>
+            <ion-icon name="add"></ion-icon>
+          </button>
+            
+        </ion-item>
+  </ion-list>
+</ion-scroll>
+
+<ion-scroll scrollX="false" scrollY="true" style="width: 100%; height: 50%">
+  
+</ion-scroll>
 </ion-content>

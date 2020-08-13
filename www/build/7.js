@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 707:
+/***/ 706:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupPageModule", function() { return SignupPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup__ = __webpack_require__(738);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup__ = __webpack_require__(737);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var SignupPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__signup__["a" /* SignupPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__signup__["a" /* SignupPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__signup__["a" /* SignupPage */]),
             ],
         })
     ], SignupPageModule);
@@ -38,7 +38,7 @@ var SignupPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 738:
+/***/ 737:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -137,8 +137,8 @@ var SignupPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'page-signup',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\signup\signup.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>signup</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="signupUser()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>CPF*</ion-label>\n\n      <ion-input formControlName="cpf" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.cpf.dirty && formGroup.controls.cpf.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Email*</ion-label>\n\n      <ion-input formControlName="email"  type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Senha*</ion-label>\n\n      <ion-input formControlName="senha"  type="password"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Confirmar Senha*</ion-label>\n\n      <ion-input formControlName="confirmarsenha" id="confirmarsenha" type="password"></ion-input>\n\n    </ion-item> \n\n      <ion-label *ngIf="formGroup.controls[\'confirmarsenha\'].errors?.MatchPassword" class="danger">\n\n        Senhas não conferem!\n\n  </ion-label>\n\n    \n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\signup\signup.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])

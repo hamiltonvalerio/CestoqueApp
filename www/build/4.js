@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 698:
+/***/ 695:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntradaPageModule", function() { return EntradaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(724);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var EntradaPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */]),
             ],
         })
     ], EntradaPageModule);
@@ -76,7 +76,7 @@ var ConverteListaIonItemDivider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 727:
+/***/ 724:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -132,7 +132,7 @@ var EntradaPage = /** @class */ (function () {
         });
         modal.present();
     };
-    EntradaPage.prototype.openTeste = function () {
+    EntradaPage.prototype.openCadastroEntrada = function () {
         this.navCtrl.push('CadastroEntradaPage', {}, { animate: true, direction: 'forward' });
     };
     __decorate([
@@ -141,12 +141,14 @@ var EntradaPage = /** @class */ (function () {
     ], EntradaPage.prototype, "nav", void 0);
     EntradaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n  Generated template for the EntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Entradas</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openTeste()">\n      <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/,
+            selector: 'page-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n  Generated template for the EntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Entradas</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n      <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_entrada_service__["a" /* EntradaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_entrada_service__["a" /* EntradaService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_entrada_service__["a" /* EntradaService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* ModalController */]])
     ], EntradaPage);
     return EntradaPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=entrada.js.map

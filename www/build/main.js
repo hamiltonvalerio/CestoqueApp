@@ -87,43 +87,43 @@ webpackEmptyAsyncContext.id = 164;
 
 var map = {
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
-		689,
+		692,
 		19
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
-		690,
+		707,
 		18
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
-		691,
+		689,
 		17
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
-		692,
+		690,
 		1
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		693,
+		694,
 		16
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
-		694,
+		691,
 		15
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		695,
+		696,
 		14
 	],
 	"../pages/categorias/categorias.module": [
-		696,
+		693,
 		5
 	],
 	"../pages/dashboard/dashboard.module": [
-		697,
+		708,
 		13
 	],
 	"../pages/entrada/entrada.module": [
-		698,
+		695,
 		4
 	],
 	"../pages/fornecedor/fornecedor.module": [
@@ -131,11 +131,11 @@ var map = {
 		3
 	],
 	"../pages/home/home.module": [
-		700,
+		698,
 		12
 	],
 	"../pages/insumo/insumos.module": [
-		701,
+		697,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
@@ -143,27 +143,27 @@ var map = {
 		2
 	],
 	"../pages/producao/producao.module": [
-		703,
+		700,
 		11
 	],
 	"../pages/produto/produto.module": [
-		704,
+		701,
 		10
 	],
 	"../pages/profile/profile.module": [
-		705,
+		704,
 		9
 	],
 	"../pages/saida/saida.module": [
-		706,
+		703,
 		8
 	],
 	"../pages/signup/signup.module": [
-		707,
+		706,
 		7
 	],
 	"../pages/unidade/unidade.module": [
-		708,
+		705,
 		6
 	]
 };
@@ -227,6 +227,9 @@ var InsumoService = /** @class */ (function () {
             observe: 'response',
             responseType: 'text'
         });
+    };
+    InsumoService.prototype.findTodos = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos");
     };
     InsumoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
@@ -583,40 +586,40 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["c" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_18__angular_forms__["e" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_10_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_10_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_19__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_10_ionic_angular__["c" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_10_ionic_angular__["d" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_9__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_10_ionic_angular__["d" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_9__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_10_ionic_angular__["e" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_6__services_domain_categoria_service__["a" /* CategoriaService */],
                 __WEBPACK_IMPORTED_MODULE_3__services_domain_fornecedor_service__["a" /* FornecedorService */],
                 __WEBPACK_IMPORTED_MODULE_2__services_domain_unidade_service__["a" /* UnidadeService */],
@@ -720,13 +723,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen, auth) {
+    function MyApp(platform, app, statusBar, splashScreen, auth) {
+        var _this = this;
         this.platform = platform;
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
         this.auth = auth;
         this.rootPage = 'HomePage';
         this.initializeApp();
+        this.platform.ready().then(function () {
+            _this.platform.registerBackButtonAction(function () {
+                app.navPop();
+            });
+        });
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Dashboard', component: 'DashboardPage' },
@@ -762,13 +771,13 @@ var MyApp = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\app\app.html"*/'<ion-menu [content]="content" type="overlay">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content >\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* Platform */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
     ], MyApp);
     return MyApp;
 }());

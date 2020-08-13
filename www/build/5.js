@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 696:
+/***/ 693:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasPageModule", function() { return CategoriasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(725);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(722);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var CategoriasPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
             ],
         })
     ], CategoriasPageModule);
@@ -76,7 +76,7 @@ var ConverteListaIonItemDivider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 725:
+/***/ 722:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -136,10 +136,10 @@ var CategoriasPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'page-categorias',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\categorias\categorias.html"*/'<!--\n  Generated template for the CategoriasPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar class="categoria2">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Categorias</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openModal()">\n      <ion-icon name="add-circle" ></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="categoria2">\n\n\n\n<ion-item-group *ngFor="let item of itensCategorias">\n\n  <ion-item-divider light>{{item.letra}}</ion-item-divider>\n  <ion-item *ngFor="let it of item.arrayDeItens">\n    <h3>{{it.nome}}</h3>\n  </ion-item>\n\n</ion-item-group>\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\categorias\categorias.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__["a" /* CategoriaService */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* ModalController */]])
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* ModalController */]])
     ], CategoriasPage);
     return CategoriasPage;
 }());

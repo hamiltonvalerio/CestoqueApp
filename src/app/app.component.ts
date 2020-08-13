@@ -1,6 +1,6 @@
 import { AuthService } from './../services/auth.service';
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -16,8 +16,14 @@ export class MyApp {
 
   pages: Array<{title: string, component: string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public auth: AuthService) {
+  constructor(public platform: Platform, app: App, public statusBar: StatusBar, public splashScreen: SplashScreen, public auth: AuthService) {
     this.initializeApp();
+
+    this.platform.ready().then(() => {
+      this.platform.registerBackButtonAction(() => {
+          app.navPop();
+      });
+  }) 
 
     // used for an example of ngFor and navigation
     this.pages = [

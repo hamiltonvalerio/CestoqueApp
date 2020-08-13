@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 692:
+/***/ 690:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroInsumoPageModule", function() { return CadastroInsumoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__ = __webpack_require__(717);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(712);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -29,7 +29,7 @@ var CadastroInsumoPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__["a" /* CadastroInsumoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__["a" /* CadastroInsumoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_insumo__["a" /* CadastroInsumoPage */]),
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["b" /* BrMaskerModule */]
             ],
         })
@@ -45,9 +45,9 @@ var CadastroInsumoPageModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(718);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(721);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(719);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__directives__["a"]; });
 
 
@@ -578,7 +578,7 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 719:
+/***/ 717:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -670,9 +670,9 @@ var CadastroInsumoPage = /** @class */ (function () {
             selector: 'page-cadastro-insumo',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/'<!--\n  Generated template for the CadastroInsumoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Cadastro de Insumo\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">\n     <ion-item>\n      <ion-label stacked>Nome*</ion-label>\n      <ion-input formControlName="nome" type="text"></ion-input>\n    </ion-item>\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n    <ion-item>\n      <ion-label stacked>Nomenclatura*</ion-label>\n      <ion-input formControlName="nomenclatura" type="text"></ion-input>\n    </ion-item>\n    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>\n    <ion-item>\n      <ion-label stacked>Valor</ion-label>\n      <ion-input type="number" formControlName="valor"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Código Almoxarifado</ion-label>\n      <ion-input formControlName="codigo_almox" type="number"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Observação</ion-label>\n      <ion-textarea formControlName="observacao" type="text"></ion-textarea>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Essencial?</ion-label>\n      <ion-toggle formControlName="essencial" ></ion-toggle>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Data de Validade</ion-label>\n      <ion-datetime formControlName="data_validade" ></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Quantidade</ion-label>\n      <ion-input formControlName="quantidade" type="number"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Taxa de Consumo</ion-label>\n      <ion-input formControlName="taxa_de_consumo" type="number"></ion-input>\n    </ion-item>\n    \n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n </form>\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_4_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* ViewController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */],
@@ -685,7 +685,7 @@ var CadastroInsumoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 720:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -729,7 +729,7 @@ BrMaskerModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 721:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

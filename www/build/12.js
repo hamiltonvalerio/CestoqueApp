@@ -1,6 +1,6 @@
 webpackJsonp([12],{
 
-/***/ 700:
+/***/ 698:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -95,14 +95,14 @@ var HomePage = /** @class */ (function () {
         this.navCtrl.push('SignupPage');
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* Content */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */])
     ], HomePage.prototype, "content", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'page-home',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\home\home.html"*/'<ion-content>\n\n  <form class="container2">\n\n    <div>\n\n        <h3>Sistema de Controle de Estoque</h3>\n\n        <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>\n\n\n\n\n\n      <ion-item >\n\n        <ion-label stacked>Email</ion-label>\n\n        <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>\n\n      </ion-item>\n\n      <ion-item >\n\n        <ion-label stacked>Senha</ion-label>\n\n        <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>\n\n      </ion-item>\n\n      <button ion-button block (click)="login()">Entrar</button>\n\n      <button ion-button block outline (click)="signup()">Registrar</button>\n\n    </div>\n\n  </form>\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
     ], HomePage);
     return HomePage;
 }());
