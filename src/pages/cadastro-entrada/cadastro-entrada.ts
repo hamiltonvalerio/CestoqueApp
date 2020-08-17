@@ -65,7 +65,7 @@ export class CadastroEntradaPage {
           itensIns.push(insEnt);
         }); 
         this.itensEntrada = itensIns;
-        console.log(this.itensEntrada);
+        //console.log(this.itensEntrada);
         loader.dismiss();
       },
       error => {
@@ -83,9 +83,7 @@ export class CadastroEntradaPage {
     }
 
     entradaTeste(o:InsumoEntradaDTO){
-      for(var x in o) {
-        console.log(x);
-      }
+      console.log(o);
     }
 
 
@@ -109,11 +107,12 @@ export class CadastroEntradaPage {
 
   filtraInsumo(evt){
     const busca = evt.srcElement.value;
+    //console.log(busca);
     if (!busca) {
       return this.loadData();
     }
-    return this.itensInsumosxa = this.itensInsumosxa.filter((insumo) => {
-      return (insumo.nome.toLowerCase().includes(busca.toLowerCase()));
+    return this.itensEntrada = this.itensEntrada.filter((ine) => {
+      return (ine.insumo.nome.toLowerCase().includes(busca.toLowerCase()));
     });
 
   }
