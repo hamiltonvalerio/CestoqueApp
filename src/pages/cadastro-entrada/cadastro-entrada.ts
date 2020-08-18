@@ -3,12 +3,13 @@ import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
 import { EntradaDTO } from './../../models/entrada.dto';
 import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { InsumoDTO } from './../../models/insumo.dto';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { IonicSelectableComponent } from 'ionic-selectable';
 
 /**
  * Generated class for the CadastroEntradaPage page.
@@ -26,8 +27,12 @@ export class CadastroEntradaPage {
 
   itensInsumosxa : InsumoDTO[] = [];
   entrada : EntradaDTO;
-  itensEntrada : InsumoEntradaDTO[] = [];
+  itensEntradas : InsumoEntradaDTO[] = [];
   cate : CategoriaDTO[] = [{id:"1",nome: "nome"}];
+  itensEntrada : InsumoEntradaDTO;
+  itensInsumosx : InsumoDTO;
+  form : FormGroup;
+  formControl : FormControl;
 
   constructor(
     public navCtrl: NavController, 
@@ -38,7 +43,10 @@ export class CadastroEntradaPage {
     public insumoService: InsumoService,
     public loadingCtrl: LoadingController) {
       
-      
+      this.form = this.formBuilder.group({
+      port: this.formControl
+    });
+    
   }
 
   ionViewDidLoad() {
@@ -64,7 +72,7 @@ export class CadastroEntradaPage {
           
           itensIns.push(insEnt);
         }); 
-        this.itensEntrada = itensIns;
+        this.itensEntradas = itensIns;
         //console.log(this.itensEntrada);
         loader.dismiss();
       },
@@ -84,6 +92,13 @@ export class CadastroEntradaPage {
 
     entradaTeste(o:InsumoEntradaDTO){
       console.log(o);
+    }
+
+    portChange(event: {
+      component: IonicSelectableComponent,
+      value: any
+    }) {
+      console.log('itensEntrada::', event.value);
     }
 
 
@@ -111,7 +126,7 @@ export class CadastroEntradaPage {
     if (!busca) {
       return this.loadData();
     }
-    return this.itensEntrada = this.itensEntrada.filter((ine) => {
+    return this.itensEntradas = this.itensEntradas.filter((ine) => {
       return (ine.insumo.nome.toLowerCase().includes(busca.toLowerCase()));
     });
 

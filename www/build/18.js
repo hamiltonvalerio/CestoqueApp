@@ -1,20 +1,22 @@
 webpackJsonp([18],{
 
-/***/ 690:
+/***/ 691:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroEntradaPageModule", function() { return CadastroEntradaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_entrada__ = __webpack_require__(717);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_entrada__ = __webpack_require__(718);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_selectable__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -27,7 +29,8 @@ var CadastroEntradaPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__cadastro_entrada__["a" /* CadastroEntradaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_entrada__["a" /* CadastroEntradaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_entrada__["a" /* CadastroEntradaPage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic_selectable__["a" /* IonicSelectableModule */],
             ],
         })
     ], CadastroEntradaPageModule);
@@ -38,14 +41,14 @@ var CadastroEntradaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 717:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroEntradaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__ = __webpack_require__(350);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -76,8 +79,11 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.insumoService = insumoService;
         this.loadingCtrl = loadingCtrl;
         this.itensInsumosxa = [];
-        this.itensEntrada = [];
+        this.itensEntradas = [];
         this.cate = [{ id: "1", nome: "nome" }];
+        this.form = this.formBuilder.group({
+            port: this.formControl
+        });
     }
     CadastroEntradaPage.prototype.ionViewDidLoad = function () {
         //console.log('ionViewDidLoad CadastroEntradaPage');
@@ -97,7 +103,7 @@ var CadastroEntradaPage = /** @class */ (function () {
                 var insEnt = { insumo: value, quantidade: 0, valor: 0 };
                 itensIns.push(insEnt);
             });
-            _this.itensEntrada = itensIns;
+            _this.itensEntradas = itensIns;
             //console.log(this.itensEntrada);
             loader.dismiss();
         }, function (error) {
@@ -113,6 +119,9 @@ var CadastroEntradaPage = /** @class */ (function () {
     };
     CadastroEntradaPage.prototype.entradaTeste = function (o) {
         console.log(o);
+    };
+    CadastroEntradaPage.prototype.portChange = function (event) {
+        console.log('itensEntrada::', event.value);
     };
     /*async filtraInsumo(evt){
       this.itensInsumos = this.getInsumos();
@@ -137,7 +146,7 @@ var CadastroEntradaPage = /** @class */ (function () {
         if (!busca) {
             return this.loadData();
         }
-        return this.itensEntrada = this.itensEntrada.filter(function (ine) {
+        return this.itensEntradas = this.itensEntradas.filter(function (ine) {
             return (ine.insumo.nome.toLowerCase().includes(busca.toLowerCase()));
         });
     };
@@ -145,15 +154,15 @@ var CadastroEntradaPage = /** @class */ (function () {
     };
     CadastroEntradaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n  <ion-searchbar (ionInput)="filtraInsumo($event)"></ion-searchbar>\n</ion-header>\n<ion-content padding>\n  <ion-scroll scrollX="false" scrollY="true" style="width: 100%; height: 50%">\n     <ion-list >\n       <ion-item *ngFor="let ins of itensEntrada">\n\n          <ion-label stacked>{{ins.insumo.nome}}</ion-label>\n          <ion-input type="number" [(ngModel)]="ins.quantidade" ></ion-input>\n     \n\n          <button ion-button small (click)="entradaTeste(ins)" item-end>\n            <ion-icon name="add"></ion-icon>\n          </button>\n\n        </ion-item>\n  </ion-list>\n</ion-scroll>\n\n<ion-scroll scrollX="false" scrollY="true" style="width: 100%; height: 50%">\n  \n</ion-scroll>\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
+            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n  <form [formGroup]="form" margin-bottom>\n  <ion-item>\n    <ion-label>Insumos</ion-label>\n    <ionic-selectable\n      item-content \n      [(ngModel)]="itensEntrada"\n      [items]="itensEntradas"\n      formControlName="port"\n      itemValueField="insumo.id"\n      itemTextField="labec"\n      [canSearch]="true"\n      (onChange)="portChange($event)">\n    </ionic-selectable>\n  </ion-item>\n\n</form>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* ViewController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */]])
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
     ], CadastroEntradaPage);
     return CadastroEntradaPage;
 }());

@@ -16,26 +16,24 @@
       </button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-searchbar (ionInput)="filtraInsumo($event)"></ion-searchbar>
 </ion-header>
 <ion-content padding>
-  <ion-scroll scrollX="false" scrollY="true" style="width: 100%; height: 50%">
-     <ion-list >
-       <ion-item *ngFor="let ins of itensEntrada">
+  <form [formGroup]="form" margin-bottom>
+  <ion-item>
+    <ion-label>Insumos</ion-label>
+    <ionic-selectable
+      item-content 
+      [(ngModel)]="itensEntrada"
+      [items]="itensEntradas"
+      formControlName="port"
+      itemValueField="insumo.id"
+      itemTextField="labec"
+      [canSearch]="true"
+      (onChange)="portChange($event)">
+    </ionic-selectable>
+  </ion-item>
 
-          <ion-label stacked>{{ins.insumo.nome}}</ion-label>
-          <ion-input type="number" [(ngModel)]="ins.quantidade" ></ion-input>
-     
+</form>
 
-          <button ion-button small (click)="entradaTeste(ins)" item-end>
-            <ion-icon name="add"></ion-icon>
-          </button>
 
-        </ion-item>
-  </ion-list>
-</ion-scroll>
-
-<ion-scroll scrollX="false" scrollY="true" style="width: 100%; height: 50%">
-  
-</ion-scroll>
 </ion-content>

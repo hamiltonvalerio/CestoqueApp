@@ -24,6 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { IonicSelectableModule } from 'ionic-selectable';
+
 @NgModule({
   declarations: [
     MyApp
@@ -34,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
     BrowserAnimationsModule,
+    IonicSelectableModule,
     
   ],
   bootstrap: [IonicApp],
