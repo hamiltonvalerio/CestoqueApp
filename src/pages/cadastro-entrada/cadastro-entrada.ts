@@ -3,7 +3,7 @@ import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
 import { EntradaDTO } from './../../models/entrada.dto';
 import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { InsumoDTO } from './../../models/insumo.dto';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
@@ -31,8 +31,13 @@ export class CadastroEntradaPage {
   cate : CategoriaDTO[] = [{id:"1",nome: "nome"}];
   itensEntrada : InsumoEntradaDTO;
   itensInsumosx : InsumoDTO;
-  form : FormGroup;
+  
   formControl : FormControl;
+  formGroup : FormGroup;
+
+  quantidade : number;
+  valor: number;
+
 
   constructor(
     public navCtrl: NavController, 
@@ -43,9 +48,13 @@ export class CadastroEntradaPage {
     public insumoService: InsumoService,
     public loadingCtrl: LoadingController) {
       
-      this.form = this.formBuilder.group({
-      port: this.formControl
-    });
+     
+
+    this.formGroup = this.formBuilder.group({
+      port: this.formControl,
+      quantidade: ['',[Validators.required]],
+      valor: ['',],
+    }, {});
     
   }
 
@@ -101,6 +110,26 @@ export class CadastroEntradaPage {
       console.log('itensEntrada::', event.value);
     }
 
+    cadastrarInsumo(){
+      let dto = Object.assign({});
+      dto = Object.assign(dto,this.formGroup.value);
+     
+      //let newDto : InsumoNewDTO;
+      //newDto.nome = dto.nome;
+      //newDto.valor = +dto.valor;
+      console.log("aqui");
+      console.log(dto);
+      /*this.insumoService.insert(this.formGroup.value).subscribe(response => {
+        this.showInserOk();
+      },
+      error => {});*/
+    }
+
+    reset() {
+      this.formGroup.reset();
+    }
+
+  
 
   /*async filtraInsumo(evt){
     this.itensInsumos = this.getInsumos();

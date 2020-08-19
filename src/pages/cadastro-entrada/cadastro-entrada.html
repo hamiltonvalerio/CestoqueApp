@@ -18,21 +18,39 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <form [formGroup]="form" margin-bottom>
+  <form [formGroup]="formGroup" margin-bottom>
   <ion-item>
     <ion-label>Insumos</ion-label>
-    <ionic-selectable
+    <ionic-selectable 
       item-content 
-      [(ngModel)]="itensEntrada"
-      [items]="itensEntradas"
+      [(ngModel)]="itensInsumosx"
+      [items]="itensInsumosxa"
       formControlName="port"
-      itemValueField="insumo.id"
-      itemTextField="labec"
+      itemValueField="id"
+      itemTextField="nome"
       [canSearch]="true"
       (onChange)="portChange($event)">
+      <ng-template ionicSelectableItemTemplate let-port="item" >
+				{{itensInsumosx.nome}} <br> ({{itensInsumosx.quantidade}}) 
+			</ng-template>
     </ionic-selectable>
   </ion-item>
-
+  <ion-item>
+    <ion-label floating>Quantidade</ion-label>
+    <ion-input type="number" formControlName="quantidade"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Valor</ion-label>
+    <ion-input type="number" formControlName="valor">  </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>
+    <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Valido</ion-badge>
+    <button ion-button (click)="reset()" [disabled]="!formGroup.valid">
+      Limpar
+    </button>
+    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>
+  </ion-item>
 </form>
 
 
