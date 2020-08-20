@@ -1,3 +1,4 @@
+import { CInsumoDTO } from './../../models/cinsumo.dto';
 import { CategoriaDTO } from './../../models/categoria.dto';
 import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
 import { EntradaDTO } from './../../models/entrada.dto';
@@ -25,12 +26,12 @@ import { IonicSelectableComponent } from 'ionic-selectable';
 })
 export class CadastroEntradaPage {
 
-  itensInsumosxa : InsumoDTO[] = [];
+  //itensInsumosxa : InsumoDTO[] = [];
   entrada : EntradaDTO;
   itensEntradas : InsumoEntradaDTO[] = [];
   cate : CategoriaDTO[] = [{id:"1",nome: "nome"}];
   itensEntrada : InsumoEntradaDTO;
-  itensInsumosx : InsumoDTO;
+  //itensInsumosx : InsumoDTO;
   
   formControl : FormControl;
   formGroup : FormGroup;
@@ -38,6 +39,9 @@ export class CadastroEntradaPage {
   quantidade : number;
   valor: number;
 
+  //usando classe
+  citensInsumos : CInsumoDTO[] = [];
+  citemInsumo : InsumoDTO;
 
   constructor(
     public navCtrl: NavController, 
@@ -75,8 +79,8 @@ export class CadastroEntradaPage {
     
     this.insumoService.findTodos()
       .subscribe((response) => {
-        this.itensInsumosxa = response.sort();
-        this.itensInsumosxa.forEach(function (value) {
+        this.citensInsumos = response.sort();
+        this.citensInsumos.forEach(function (value) {
           let insEnt : InsumoEntradaDTO = {insumo: value, quantidade: 0, valor: 0};
           
           itensIns.push(insEnt);
@@ -89,7 +93,6 @@ export class CadastroEntradaPage {
         loader.dismiss();
       })
     }
-
 
     presentLoading() {
       let loader = this.loadingCtrl.create({

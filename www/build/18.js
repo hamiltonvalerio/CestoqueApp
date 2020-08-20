@@ -1,6 +1,6 @@
 webpackJsonp([18],{
 
-/***/ 697:
+/***/ 691:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroEntradaPageModule", function() { return CadastroEntradaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_entrada__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_entrada__ = __webpack_require__(718);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_selectable__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var CadastroEntradaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 726:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78,9 +78,10 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.insumoService = insumoService;
         this.loadingCtrl = loadingCtrl;
-        this.itensInsumosxa = [];
         this.itensEntradas = [];
         this.cate = [{ id: "1", nome: "nome" }];
+        //usando classe
+        this.citensInsumos = [];
         this.formGroup = this.formBuilder.group({
             port: this.formControl,
             quantidade: ['', [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["f" /* Validators */].required]],
@@ -100,8 +101,8 @@ var CadastroEntradaPage = /** @class */ (function () {
         var itensIns = [];
         this.insumoService.findTodos()
             .subscribe(function (response) {
-            _this.itensInsumosxa = response.sort();
-            _this.itensInsumosxa.forEach(function (value) {
+            _this.citensInsumos = response.sort();
+            _this.citensInsumos.forEach(function (value) {
                 var insEnt = { insumo: value, quantidade: 0, valor: 0 };
                 itensIns.push(insEnt);
             });
@@ -172,17 +173,12 @@ var CadastroEntradaPage = /** @class */ (function () {
     };
     CadastroEntradaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n  <form [formGroup]="formGroup" margin-bottom>\n  <ion-item>\n    <ion-label>Insumos</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="itensInsumosx"\n      [items]="itensInsumosxa"\n      formControlName="port"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      (onChange)="portChange($event)">\n      <ng-template ionicSelectableItemTemplate let-port="item" >\n				{{itensInsumosx.nome}} <br> ({{itensInsumosx.quantidade}}) \n			</ng-template>\n    </ionic-selectable>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Quantidade</ion-label>\n    <ion-input type="number" formControlName="quantidade"> </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Valor</ion-label>\n    <ion-input type="number" formControlName="valor">  </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>\n    <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Valido</ion-badge>\n    <button ion-button (click)="reset()" [disabled]="!formGroup.valid">\n      Limpar\n    </button>\n    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>\n  </ion-item>\n</form>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
+            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n  <form [formGroup]="formGroup" margin-bottom>\n  <ion-item>\n    <ion-label>Insumos</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="citemInsumo"\n      [items]="citensInsumos"\n      formControlName="port"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      (onChange)="portChange($event)">\n\n      <ng-template ionicSelectableItemTemplate let-port="item">\n       \n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.pesquisaNomeCodAlmox}} \n          </ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label class="label_14">\n            Cod Almox: {{port.codigo_almox}}  -  Quantidade atual: {{port.quantidade}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Quantidade</ion-label>\n    <ion-input type="number" formControlName="quantidade"> </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Valor</ion-label>\n    <ion-input type="number" formControlName="valor">  </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>\n    <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Valido</ion-badge>\n    <button ion-button (click)="reset()" [disabled]="!formGroup.valid">\n      Limpar\n    </button>\n    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>\n  </ion-item>\n</form>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]) === "function" && _g || Object])
     ], CadastroEntradaPage);
     return CadastroEntradaPage;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=cadastro-entrada.js.map

@@ -3,6 +3,4 @@ export interface InsumoEntradaDTO{
     insumo: InsumoDTO;
     quantidade: number;
     valor: number;
-
-
 }

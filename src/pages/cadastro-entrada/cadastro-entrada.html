@@ -23,16 +23,29 @@
     <ion-label>Insumos</ion-label>
     <ionic-selectable 
       item-content 
-      [(ngModel)]="itensInsumosx"
-      [items]="itensInsumosxa"
+      [(ngModel)]="citemInsumo"
+      [items]="citensInsumos"
       formControlName="port"
       itemValueField="id"
       itemTextField="nome"
       [canSearch]="true"
       (onChange)="portChange($event)">
-      <ng-template ionicSelectableItemTemplate let-port="item" >
-				{{itensInsumosx.nome}} <br> ({{itensInsumosx.quantidade}}) 
-			</ng-template>
+
+      <ng-template ionicSelectableItemTemplate let-port="item">
+       
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{port.pesquisaNomeCodAlmox}} 
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label_14">
+            Cod Almox: {{port.codigo_almox}}  -  Quantidade atual: {{port.quantidade}}
+          </ion-label>
+        </ion-item>
+
+      </ng-template>
+
     </ionic-selectable>
   </ion-item>
   <ion-item>

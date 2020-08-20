@@ -25907,6 +25907,27 @@ ion-navbar.toolbar {
   justify-content: center;
 }
 
+.label_12 {
+  font-size: 12px;
+}
+
+.label_12_b {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.label_13 {
+  font-size: 13px;
+}
+
+.label_14 {
+  font-size: 14px;
+}
+
+.label_15 {
+  font-size: 15px;
+}
+
 page-home h3 {
   text-align: center;
 }

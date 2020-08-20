@@ -13,4 +13,5 @@ export interface InsumoDTO{
     codigo_barra: string;
     qrcode: string;
     rfid: string;
+
 }
