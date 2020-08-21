@@ -78,12 +78,12 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.insumoService = insumoService;
         this.loadingCtrl = loadingCtrl;
-        this.itensEntradas = [];
-        this.cate = [{ id: "1", nome: "nome" }];
         //usando classe
         this.citensInsumos = [];
+        this.citensEntradas = [];
+        this.citensnovaentrada = [];
         this.formGroup = this.formBuilder.group({
-            port: this.formControl,
+            insumo: this.formControl,
             quantidade: ['', [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["f" /* Validators */].required]],
             valor: ['',],
         }, {});
@@ -102,11 +102,12 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.insumoService.findTodos()
             .subscribe(function (response) {
             _this.citensInsumos = response.sort();
+            //console.log(this.citensInsumos);
             _this.citensInsumos.forEach(function (value) {
                 var insEnt = { insumo: value, quantidade: 0, valor: 0 };
                 itensIns.push(insEnt);
             });
-            _this.itensEntradas = itensIns;
+            _this.citensEntradas = itensIns;
             //console.log(this.itensEntrada);
             loader.dismiss();
         }, function (error) {
@@ -120,11 +121,14 @@ var CadastroEntradaPage = /** @class */ (function () {
         loader.present();
         return loader;
     };
-    CadastroEntradaPage.prototype.entradaTeste = function (o) {
-        console.log(o);
+    CadastroEntradaPage.prototype.insereListaEntrada = function () {
+        this.citensnovaentrada.push(this.formGroup.value);
+        this.reset();
+        console.log('this.formGroup.value', this.citensnovaentrada);
     };
-    CadastroEntradaPage.prototype.portChange = function (event) {
-        console.log('itensEntrada::', event.value);
+    CadastroEntradaPage.prototype.insereInsumoEntradaDTO = function (event) {
+        this.citensEntrada = { insumo: event.value, quantidade: 0, valor: 0 };
+        //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     };
     CadastroEntradaPage.prototype.cadastrarInsumo = function () {
         var dto = Object.assign({});
@@ -165,7 +169,7 @@ var CadastroEntradaPage = /** @class */ (function () {
         if (!busca) {
             return this.loadData();
         }
-        return this.itensEntradas = this.itensEntradas.filter(function (ine) {
+        return this.citensEntradas = this.citensEntradas.filter(function (ine) {
             return (ine.insumo.nome.toLowerCase().includes(busca.toLowerCase()));
         });
     };
@@ -173,7 +177,7 @@ var CadastroEntradaPage = /** @class */ (function () {
     };
     CadastroEntradaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n  <form [formGroup]="formGroup" margin-bottom>\n  <ion-item>\n    <ion-label>Insumos</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="citemInsumo"\n      [items]="citensInsumos"\n      formControlName="port"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      (onChange)="portChange($event)">\n\n      <ng-template ionicSelectableItemTemplate let-port="item">\n       \n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.pesquisaNomeCodAlmox}} \n          </ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label class="label_14">\n            Cod Almox: {{port.codigo_almox}}  -  Quantidade atual: {{port.quantidade}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Quantidade</ion-label>\n    <ion-input type="number" formControlName="quantidade"> </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Valor</ion-label>\n    <ion-input type="number" formControlName="valor">  </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>\n    <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Valido</ion-badge>\n    <button ion-button (click)="reset()" [disabled]="!formGroup.valid">\n      Limpar\n    </button>\n    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>\n  </ion-item>\n</form>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
+            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content padding>\n  <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereListaEntrada()">\n  <ion-item>\n    <ion-label>Insumos</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="citemInsumo"\n      [items]="citensInsumos"\n      formControlName="insumo"\n      itemValueField="id"\n      itemTextField="nome_codalmox"\n      [canSearch]="true"\n      (onChange)="insereInsumoEntradaDTO($event)">\n\n      <ng-template ionicSelectableItemTemplate let-port="item">\n       \n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}} \n          </ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label class="label_14">\n            Cod Almox: {{port.codigo_almox}}  -  Quantidade atual: {{port.quantidade}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Quantidade</ion-label>\n    <ion-input type="number" formControlName="quantidade"> </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Valor</ion-label>\n    <ion-input type="number" formControlName="valor">  </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>\n    <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Valido</ion-badge>\n    <button ion-button (click)="reset()" [disabled]="!formGroup.valid">\n      Limpar\n    </button>\n    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>\n  </ion-item>\n</form>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]) === "function" && _g || Object])
     ], CadastroEntradaPage);

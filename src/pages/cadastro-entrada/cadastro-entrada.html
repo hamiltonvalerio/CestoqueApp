@@ -18,24 +18,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <form [formGroup]="formGroup" margin-bottom>
+  <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereListaEntrada()">
   <ion-item>
     <ion-label>Insumos</ion-label>
     <ionic-selectable 
       item-content 
       [(ngModel)]="citemInsumo"
       [items]="citensInsumos"
-      formControlName="port"
+      formControlName="insumo"
       itemValueField="id"
-      itemTextField="nome"
+      itemTextField="nome_codalmox"
       [canSearch]="true"
-      (onChange)="portChange($event)">
+      (onChange)="insereInsumoEntradaDTO($event)">
 
       <ng-template ionicSelectableItemTemplate let-port="item">
        
         <ion-item>
           <ion-label text-wrap class="label_12_b">
-            {{port.pesquisaNomeCodAlmox}} 
+            {{port.nome}} 
           </ion-label>
         </ion-item>
         <ion-item>
@@ -66,5 +66,5 @@
   </ion-item>
 </form>
 
-
+  
 </ion-content>

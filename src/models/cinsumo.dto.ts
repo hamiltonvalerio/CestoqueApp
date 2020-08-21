@@ -13,7 +13,7 @@ export class CInsumoDTO implements InsumoDTO{
     codigo_barra: string;
     qrcode: string;
     rfid: string;
-    _pesquisaNomeCodAlmox?: string;
+    nome_codalmox: string;
 
       constructor(insumo: InsumoDTO){
         this.id= insumo.id;
@@ -29,7 +29,8 @@ export class CInsumoDTO implements InsumoDTO{
         this.codigo_barra= insumo.codigo_barra;
         this.qrcode= insumo.qrcode;
         this.rfid= insumo.rfid;
-
+        this.nome_codalmox = insumo.nome_codalmox;
     }
+
 
 }

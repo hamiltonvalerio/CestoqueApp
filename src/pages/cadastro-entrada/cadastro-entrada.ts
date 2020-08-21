@@ -1,3 +1,4 @@
+import { CInsumoEntradaDTO } from './../../models/cinsumoentrada.dto';
 import { CInsumoDTO } from './../../models/cinsumo.dto';
 import { CategoriaDTO } from './../../models/categoria.dto';
 import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
@@ -11,6 +12,7 @@ import { InsumoService } from '../../services/domain/insumo.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { IonicSelectableComponent } from 'ionic-selectable';
+import { TestScheduler } from 'rxjs';
 
 /**
  * Generated class for the CadastroEntradaPage page.
@@ -28,9 +30,10 @@ export class CadastroEntradaPage {
 
   //itensInsumosxa : InsumoDTO[] = [];
   entrada : EntradaDTO;
-  itensEntradas : InsumoEntradaDTO[] = [];
-  cate : CategoriaDTO[] = [{id:"1",nome: "nome"}];
-  itensEntrada : InsumoEntradaDTO;
+  
+ 
+
+  
   //itensInsumosx : InsumoDTO;
   
   formControl : FormControl;
@@ -42,6 +45,10 @@ export class CadastroEntradaPage {
   //usando classe
   citensInsumos : CInsumoDTO[] = [];
   citemInsumo : InsumoDTO;
+
+  citensEntrada : CInsumoEntradaDTO;
+  citensEntradas : CInsumoEntradaDTO[] = [];
+  citensnovaentrada : CInsumoEntradaDTO[] = []; 
 
   constructor(
     public navCtrl: NavController, 
@@ -55,7 +62,7 @@ export class CadastroEntradaPage {
      
 
     this.formGroup = this.formBuilder.group({
-      port: this.formControl,
+      insumo: this.formControl,
       quantidade: ['',[Validators.required]],
       valor: ['',],
     }, {});
@@ -80,12 +87,13 @@ export class CadastroEntradaPage {
     this.insumoService.findTodos()
       .subscribe((response) => {
         this.citensInsumos = response.sort();
+        //console.log(this.citensInsumos);
         this.citensInsumos.forEach(function (value) {
-          let insEnt : InsumoEntradaDTO = {insumo: value, quantidade: 0, valor: 0};
+          let insEnt : CInsumoEntradaDTO = {insumo: value, quantidade: 0, valor: 0};
           
           itensIns.push(insEnt);
         }); 
-        this.itensEntradas = itensIns;
+        this.citensEntradas = itensIns;
         //console.log(this.itensEntrada);
         loader.dismiss();
       },
@@ -102,16 +110,23 @@ export class CadastroEntradaPage {
       return loader;
     }
 
-    entradaTeste(o:InsumoEntradaDTO){
-      console.log(o);
-    }
+    
 
-    portChange(event: {
+    insereListaEntrada() {
+      this.citensnovaentrada.push(this.formGroup.value);
+      this.reset();
+      console.log('this.formGroup.value',this.citensnovaentrada);
+    }
+  
+    insereInsumoEntradaDTO(event: {
       component: IonicSelectableComponent,
       value: any
     }) {
-      console.log('itensEntrada::', event.value);
+     this.citensEntrada = {insumo: event.value, quantidade: 0, valor: 0};
+
+      //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }
+
 
     cadastrarInsumo(){
       let dto = Object.assign({});
@@ -158,7 +173,7 @@ export class CadastroEntradaPage {
     if (!busca) {
       return this.loadData();
     }
-    return this.itensEntradas = this.itensEntradas.filter((ine) => {
+    return this.citensEntradas = this.citensEntradas.filter((ine) => {
       return (ine.insumo.nome.toLowerCase().includes(busca.toLowerCase()));
     });
 

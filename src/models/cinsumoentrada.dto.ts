@@ -11,4 +11,6 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
         this.quantidade= ie.quantidade;
         this.valor= ie.valor;
     }
+
+   
 }
