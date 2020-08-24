@@ -18,6 +18,15 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
+  <ion-item>
+    <ion-label>Número da Nota Fiscal</ion-label>
+    <ion-input type="number" [(ngModel)]="numnf"> </ion-input>
+  </ion-item>
+
+
+
+
+
   <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereListaEntrada()">
   <ion-item>
     <ion-label>Insumos</ion-label>
@@ -49,11 +58,11 @@
     </ionic-selectable>
   </ion-item>
   <ion-item>
-    <ion-label floating>Quantidade</ion-label>
+    <ion-label >Quantidade</ion-label>
     <ion-input type="number" formControlName="quantidade"> </ion-input>
   </ion-item>
   <ion-item>
-    <ion-label floating>Valor</ion-label>
+    <ion-label >Valor</ion-label>
     <ion-input type="number" formControlName="valor">  </ion-input>
   </ion-item>
   <ion-item>
@@ -65,6 +74,15 @@
     <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>
   </ion-item>
 </form>
-
+<ion-list *ngFor="let ient of citensnovaentrada">
+  <ion-row>
+    <ion-col>
+      {{ient.insumo.nome}}
+    </ion-col>
+    <ion-col>
+      Qtd entrada:  {{ient.quantidade}}
+    </ion-col>
+  </ion-row>
+</ion-list>
   
 </ion-content>

@@ -31,7 +31,7 @@ export class CadastroEntradaPage {
   //itensInsumosxa : InsumoDTO[] = [];
   entrada : EntradaDTO;
   
- 
+  numnf : number;
 
   
   //itensInsumosx : InsumoDTO;
@@ -77,7 +77,9 @@ export class CadastroEntradaPage {
   
 
   dismiss() {
-    this.viewCtrl.dismiss();
+    //this.navCtrl.push('EntradaPage', {}, {animate: true, direction: 'forward'});
+    this.navCtrl.popToRoot();
+    //this.viewCtrl.dismiss();
   }
 
   loadData(){
@@ -115,6 +117,7 @@ export class CadastroEntradaPage {
     insereListaEntrada() {
       this.citensnovaentrada.push(this.formGroup.value);
       this.reset();
+      console.log('this.numnf',this.numnf);
       console.log('this.formGroup.value',this.citensnovaentrada);
     }
   
