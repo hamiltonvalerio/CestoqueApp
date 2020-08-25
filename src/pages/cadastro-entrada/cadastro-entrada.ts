@@ -7,7 +7,7 @@ import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitem
 import { InsumoDTO } from './../../models/insumo.dto';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController, ScrollEvent } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
@@ -57,7 +57,8 @@ export class CadastroEntradaPage {
     public alertCtrl: AlertController,
     public formBuilder: FormBuilder,
     public insumoService: InsumoService,
-    public loadingCtrl: LoadingController) {
+    public loadingCtrl: LoadingController,
+    ) {
       
      
 
