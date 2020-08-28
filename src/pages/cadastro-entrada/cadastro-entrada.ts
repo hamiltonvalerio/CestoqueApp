@@ -1,3 +1,5 @@
+import { FornecedorDTO } from './../../models/fornecedor.dto';
+import { FornecedorService } from './../../services/domain/fornecedor.service';
 import { CInsumoEntradaDTO } from './../../models/cinsumoentrada.dto';
 import { CInsumoDTO } from './../../models/cinsumo.dto';
 import { CategoriaDTO } from './../../models/categoria.dto';
@@ -13,6 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { IonicSelectableComponent } from 'ionic-selectable';
 import { TestScheduler } from 'rxjs';
+
 
 /**
  * Generated class for the CadastroEntradaPage page.
@@ -50,6 +53,10 @@ export class CadastroEntradaPage {
   citensEntradas : CInsumoEntradaDTO[] = [];
   citensnovaentrada : CInsumoEntradaDTO[] = []; 
 
+  fornecedores: FornecedorDTO[] = [];
+  fornecedor : FornecedorDTO;
+
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -58,6 +65,7 @@ export class CadastroEntradaPage {
     public formBuilder: FormBuilder,
     public insumoService: InsumoService,
     public loadingCtrl: LoadingController,
+    public fornecedorService: FornecedorService,
     ) {
       
      
@@ -73,6 +81,7 @@ export class CadastroEntradaPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad CadastroEntradaPage');
     this.loadData();
+    this.loadFornecedor();
   }
 
   
@@ -105,6 +114,16 @@ export class CadastroEntradaPage {
       })
     }
 
+    loadFornecedor(){
+      let loader = this.presentLoading();
+
+      this.fornecedorService.findAll().subscribe((response) => {
+        this.fornecedores = response.sort();
+        //console.log(this.fornecedores);
+        loader.dismiss();
+      });    
+    }
+
     presentLoading() {
       let loader = this.loadingCtrl.create({
         content: "Aguarde..."
@@ -130,6 +149,16 @@ export class CadastroEntradaPage {
 
       //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }
+
+    insereFornecedorEntradaDTO(event: {
+      component: IonicSelectableComponent,
+      value: any
+    }) {
+     //this.fornecedor = {insumo: event.value, quantidade: 0, valor: 0};
+
+      //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
+    }
+
 
 
     cadastrarInsumo(){

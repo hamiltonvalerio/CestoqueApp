@@ -17,6 +17,30 @@
     </ion-buttons>
   </ion-toolbar>
 
+  
+  <ion-item>
+    <ion-label>Fornecedor</ion-label>
+    <ionic-selectable 
+      item-content 
+      [(ngModel)]="fornecedor"
+      [items]="fornecedores"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      (onChange)="insereFornecedorEntradaDTO($event)">
+
+      <ng-template ionicSelectableItemTemplate let-port="item">
+       
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{port.nome}} 
+          </ion-label>
+        </ion-item>
+
+      </ng-template>
+
+    </ionic-selectable>
+  </ion-item>
 
   <ion-item>
     <ion-label>Número da Nota Fiscal</ion-label>
