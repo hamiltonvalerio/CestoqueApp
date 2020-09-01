@@ -27,7 +27,8 @@
       itemValueField="id"
       itemTextField="nome"
       [canSearch]="true"
-      (onChange)="insereFornecedorEntradaDTO($event)">
+      (onSearch)="buscaFornecedor($event)"
+     >
 
       <ng-template ionicSelectableItemTemplate let-port="item">
        

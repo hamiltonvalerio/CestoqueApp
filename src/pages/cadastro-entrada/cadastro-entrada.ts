@@ -81,7 +81,7 @@ export class CadastroEntradaPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad CadastroEntradaPage');
     this.loadData();
-    this.loadFornecedor();
+    //this.loadFornecedor();
   }
 
   
@@ -114,7 +114,7 @@ export class CadastroEntradaPage {
       })
     }
 
-    loadFornecedor(){
+    /*loadFornecedor(){
       let loader = this.presentLoading();
 
       this.fornecedorService.findAll().subscribe((response) => {
@@ -122,6 +122,15 @@ export class CadastroEntradaPage {
         //console.log(this.fornecedores);
         loader.dismiss();
       });    
+    }*/
+
+    buscaFornecedor(event: {
+      component: IonicSelectableComponent,
+      text: string
+    }) {
+     //this.fornecedor = {insumo: event.value, quantidade: 0, valor: 0};
+     let text = event.text.trim().toLowerCase();
+      console.log('buscaFornecedor::', text);
     }
 
     presentLoading() {
