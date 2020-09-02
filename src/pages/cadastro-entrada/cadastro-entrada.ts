@@ -130,6 +130,13 @@ export class CadastroEntradaPage {
     }) {
      //this.fornecedor = {insumo: event.value, quantidade: 0, valor: 0};
      let text = event.text.trim().toLowerCase();
+     this.fornecedorService.findByNome(text).subscribe((response) => {
+      this.fornecedores = response.sort();
+      //console.log(this.fornecedores);
+    }); 
+      
+
+
       console.log('buscaFornecedor::', text);
     }
 

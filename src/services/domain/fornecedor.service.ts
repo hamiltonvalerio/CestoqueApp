@@ -23,4 +23,12 @@ export class FornecedorService {
             responseType: 'text'
         });
     }
+
+    findByNome(nome : string) {
+        console.log(nome);
+
+            return this.http.get<FornecedorDTO[]>(`${API_CONFIG.baseUrl}/fornecedores/buscanome/?nome=${nome}`);
+
+        
+      }
 }
