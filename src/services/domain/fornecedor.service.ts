@@ -24,6 +24,10 @@ export class FornecedorService {
         });
     }
 
+    findTotosPaginado(page : number = 0, linesPerPage : number = 30){
+        return this.http.get(`${API_CONFIG.baseUrl}/fornecedores/page/?page=${page}&linesPerPage=${linesPerPage}`);
+    }
+
     findByNome(nome : string) {
         console.log(nome);
 

@@ -3,7 +3,7 @@ import { CadastroFornecedorPage } from './../cadastro-fornecedor/cadastro-fornec
 import { FornecedorService } from './../../services/domain/fornecedor.service';
 import { FornecedorDTO } from './../../models/fornecedor.dto';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, LoadingController } from 'ionic-angular';
 import { Platform } from 'ionic-angular/platform/platform';
 
 /**
@@ -22,12 +22,14 @@ export class FornecedorPage {
 
   itens: FornecedorDTO[];
   itensFornecedores = [];
+  page : number = 0;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public fornecedorService: FornecedorService,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -44,11 +46,44 @@ export class FornecedorPage {
   }
 
   getItens(){
-    this.fornecedorService.findAll()
+    let loader = this.presentLoading();
+
+    this.fornecedorService.findTotosPaginado(this.page, 10)
     .subscribe(response => {
-      this.itensFornecedores = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());;
+      //this.itensFornecedores = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+      let start = this.itensFornecedores.length;
+      this.itensFornecedores = this.itensFornecedores.concat(response['content']);
+      let end = this.itensFornecedores.length - 1;
+      loader.dismiss();
+      console.log("pagina"+this.page);
+      console.log("fornecedor"+this.itensFornecedores);
     },
-    error => {})
+    error => {
+      loader.dismiss();
+    })
+  }
+
+  presentLoading(){
+    let loader = this.loadingCtrl.create({content: "Aguarde..."});
+    loader.present();
+    return loader;
+  }
+
+  doRefresh(refresher){
+    this.page = 0;
+    this.itensFornecedores = [];
+    this.getItens();
+    setTimeout(()=>{
+      refresher.complete();
+    },1000);
+  }
+
+  doInfinite(infiniteScroll){
+    this.page++;
+    this.getItens();
+    setTimeout(() => {
+      infiniteScroll.complete();
+    }, 1000);
   }
 
 }
