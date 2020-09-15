@@ -81,7 +81,7 @@ export class CadastroEntradaPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad CadastroEntradaPage');
     this.loadData();
-    //this.loadFornecedor();
+    this.loadFornecedor();
   }
 
   
@@ -114,7 +114,7 @@ export class CadastroEntradaPage {
       })
     }
 
-    /*loadFornecedor(){
+    loadFornecedor(){
       let loader = this.presentLoading();
 
       this.fornecedorService.findAll().subscribe((response) => {
@@ -122,7 +122,7 @@ export class CadastroEntradaPage {
         //console.log(this.fornecedores);
         loader.dismiss();
       });    
-    }*/
+    }
 
     buscaFornecedor(event: {
       component: IonicSelectableComponent,
@@ -130,6 +130,7 @@ export class CadastroEntradaPage {
     }) {
      //this.fornecedor = {insumo: event.value, quantidade: 0, valor: 0};
      let text = event.text.trim().toLowerCase();
+     console.log("Busca esse:"+text);
      this.fornecedorService.findByNome(text).subscribe((response) => {
       this.fornecedores = response.sort();
       //console.log(this.fornecedores);
@@ -193,7 +194,18 @@ export class CadastroEntradaPage {
     }
 
     reset() {
+      console.log("teste");
       this.formGroup.reset();
+    }
+
+    excluiItem(cInsumoEntradaDTO: CInsumoEntradaDTO){
+
+      this.citensnovaentrada.forEach(function(item, index, object) {
+        if (item === cInsumoEntradaDTO) {
+          object.splice(index, 1);
+        }
+      });
+    this.loadData();
     }
 
   
