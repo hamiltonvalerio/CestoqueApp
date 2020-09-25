@@ -98,20 +98,38 @@
 </form>
 </ion-header>
 <ion-content padding >
-<ion-list>
-  <ion-item *ngFor="let ient of citensnovaentrada">
+  <ion-grid>
     <ion-row>
-      <h3>{{ient.insumo.nome}}</h3>
-    </ion-row>
-  <ion-row>
-        <p>Quantidade:{{ient.quantidade}}</p>
-        <p>Valor: {{ient.valor}}</p>
-
-      <ion-col col-1>
-          <ion-icon name="close-circle" (click)="excluiItem(ient)"></ion-icon>
+      <ion-col col-6>
+        Insumo
+      </ion-col>
+      <ion-col col-2>
+        Quant
+      </ion-col>
+      <ion-col col-2>
+        Valor
+      </ion-col>
+      <ion-col col-2>
+        Exc
       </ion-col>
     </ion-row>
-  </ion-item>
-</ion-list>
+    <ion-row *ngFor="let ient of citensnovaentrada">
+      <ion-col col-6>
+        {{ient.insumo.nome}}
+      </ion-col>
+      <ion-col col-2>
+        {{ient.quantidade}}
+      </ion-col>
+      <ion-col col-2>
+        {{ient.valor}}
+      </ion-col>
+      <ion-col col-2>
+        <ion-icon name="close-circle" (click)="excluiItem(ient)"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 style="text-align: right;" ><button ion-button [disabled]="botaoEntrada" (click)="inserirEntrada()">Inserir entrada</button></ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

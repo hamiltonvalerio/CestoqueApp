@@ -44,6 +44,7 @@ export class CadastroEntradaPage {
 
   quantidade : number;
   valor: number;
+  botaoEntrada: boolean = true;
 
   //usando classe
   citensInsumos : CInsumoDTO[] = [];
@@ -82,6 +83,7 @@ export class CadastroEntradaPage {
     //console.log('ionViewDidLoad CadastroEntradaPage');
     this.loadData();
     this.loadFornecedor();
+    console.log("oia"+this.fornecedor);
   }
 
   
@@ -101,7 +103,15 @@ export class CadastroEntradaPage {
         this.citensInsumos = response.sort();
         //console.log(this.citensInsumos);
         this.citensInsumos.forEach(function (value) {
-          let insEnt : CInsumoEntradaDTO = {insumo: value, quantidade: 0, valor: 0};
+          let insEnt : CInsumoEntradaDTO = {
+            insumo: value, 
+            loteFornecedor: '', 
+            loteCR: '', 
+            dataIrradiacao: null, 
+            dataVencIrradiacao: null,
+            quantidade: 0, 
+            valor: 0,
+            valorTotal: 0};
           
           itensIns.push(insEnt);
         }); 
@@ -119,6 +129,9 @@ export class CadastroEntradaPage {
 
       this.fornecedorService.findAll().subscribe((response) => {
         this.fornecedores = response.sort();
+        this.fornecedorService.findByNome("almoxarifado central").subscribe((resp)=>{
+          this.fornecedor = resp[0];
+        })
         //console.log(this.fornecedores);
         loader.dismiss();
       });    
@@ -153,6 +166,7 @@ export class CadastroEntradaPage {
 
     insereListaEntrada() {
       this.citensnovaentrada.push(this.formGroup.value);
+      this.botaoEntrada = false;
       this.reset();
       console.log('this.numnf',this.numnf);
       console.log('this.formGroup.value',this.citensnovaentrada);
@@ -162,7 +176,15 @@ export class CadastroEntradaPage {
       component: IonicSelectableComponent,
       value: any
     }) {
-     this.citensEntrada = {insumo: event.value, quantidade: 0, valor: 0};
+     this.citensEntrada = {
+      insumo: event.value,
+      loteFornecedor: '', 
+      loteCR: '', 
+      dataIrradiacao: null, 
+      dataVencIrradiacao: null,
+      quantidade: 0, 
+      valor: 0,
+      valorTotal: 0};
 
       //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }
@@ -205,7 +227,14 @@ export class CadastroEntradaPage {
           object.splice(index, 1);
         }
       });
+    if(this.citensnovaentrada.length == 0){
+      this.botaoEntrada = true;
+    }
     this.loadData();
+    }
+
+    inserirEntrada(){
+      
     }
 
   
