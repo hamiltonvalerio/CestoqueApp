@@ -34,8 +34,11 @@ export class CadastroEntradaPage {
   //itensInsumosxa : InsumoDTO[] = [];
   entrada : EntradaDTO;
   
-  numnf : number;
-
+  numeronf : number;
+  numLIA : string;
+  numProcesso: string;
+  numRequisicao: string;
+  data_entrada: Date;
   
   //itensInsumosx : InsumoDTO;
   
@@ -75,6 +78,7 @@ export class CadastroEntradaPage {
       insumo: this.formControl,
       quantidade: ['',[Validators.required]],
       valor: ['',],
+      valorTotal: ['',],
     }, {});
     
   }
@@ -146,7 +150,7 @@ export class CadastroEntradaPage {
      console.log("Busca esse:"+text);
      this.fornecedorService.findByNome(text).subscribe((response) => {
       this.fornecedores = response.sort();
-      //console.log(this.fornecedores);
+      console.log(this.fornecedores);
     }); 
       
 
@@ -168,7 +172,7 @@ export class CadastroEntradaPage {
       this.citensnovaentrada.push(this.formGroup.value);
       this.botaoEntrada = false;
       this.reset();
-      console.log('this.numnf',this.numnf);
+      console.log('this.numeronf',this.numeronf);
       console.log('this.formGroup.value',this.citensnovaentrada);
     }
   

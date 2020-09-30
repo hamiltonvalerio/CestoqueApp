@@ -18,7 +18,7 @@
   </ion-toolbar>
 
   
-  <ion-item>
+  <ion-item color="item_entrada">
     <ion-label>Fornecedor</ion-label>
     <ionic-selectable 
       item-content 
@@ -27,8 +27,8 @@
       itemValueField="id"
       itemTextField="nome"
       [canSearch]="true"
-      [hasVirtualScroll]="true">
-      <ng-template ionicSelectableItemTemplate let-port="item">
+      [hasVirtualScroll]="true" >
+      <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">
         <ion-item>
           <ion-label text-wrap class="label_12_b">
             {{port.nome}}
@@ -39,11 +39,23 @@
 
     </ionic-selectable>
   </ion-item>
-
-  <ion-item>
-    <ion-label>Número da Nota Fiscal</ion-label>
-    <ion-input type="number" [(ngModel)]="numnf"> </ion-input>
+  <ion-item color="item_entrada">
+    <ion-label>Data emissão</ion-label>
+    <ion-input type="date" [(ngModel)]="data_entrada"> </ion-input>
   </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Número requisição</ion-label>
+    <ion-input type="text" [(ngModel)]="numRequisicao"> </ion-input>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Número documento (LIA)</ion-label>
+    <ion-input type="text" [(ngModel)]="numLIA"> </ion-input>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Número processo</ion-label>
+    <ion-input type="text" [(ngModel)]="numProcesso"> </ion-input>
+  </ion-item>
+
 
 
 
@@ -84,8 +96,8 @@
     <ion-input type="number" formControlName="quantidade"> </ion-input>
   </ion-item>
   <ion-item>
-    <ion-label >Valor</ion-label>
-    <ion-input type="number" formControlName="valor">  </ion-input>
+    <ion-label >Valor Total</ion-label>
+    <ion-input type="number" formControlName="valorTotal">  </ion-input>
   </ion-item>
   <ion-item>
     <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>
@@ -100,28 +112,34 @@
 <ion-content padding >
   <ion-grid>
     <ion-row>
-      <ion-col col-6>
+      <ion-col col-1>
+        Código
+      </ion-col>
+      <ion-col col-5>
         Insumo
       </ion-col>
       <ion-col col-2>
         Quant
       </ion-col>
       <ion-col col-2>
-        Valor
+        Valor Total
       </ion-col>
       <ion-col col-2>
         Exc
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let ient of citensnovaentrada">
-      <ion-col col-6>
+      <ion-col col-1>
+        {{ient.insumo.codigo_almox}}
+      </ion-col>
+      <ion-col col-5>
         {{ient.insumo.nome}}
       </ion-col>
       <ion-col col-2>
         {{ient.quantidade}}
       </ion-col>
       <ion-col col-2>
-        {{ient.valor}}
+        {{ient.valorTotal}}
       </ion-col>
       <ion-col col-2>
         <ion-icon name="close-circle" (click)="excluiItem(ient)"></ion-icon>
