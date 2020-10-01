@@ -1,3 +1,4 @@
+import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { FornecedorDTO } from './../../models/fornecedor.dto';
 import { FornecedorService } from './../../services/domain/fornecedor.service';
 import { CInsumoEntradaDTO } from './../../models/cinsumoentrada.dto';
@@ -15,6 +16,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { IonicSelectableComponent } from 'ionic-selectable';
 import { TestScheduler } from 'rxjs';
+import { LocalizacaoDTO } from '../../models/localizacao.dto';
 
 
 /**
@@ -60,6 +62,9 @@ export class CadastroEntradaPage {
   fornecedores: FornecedorDTO[] = [];
   fornecedor : FornecedorDTO;
 
+  localizacoes: LocalizacaoDTO[] = [];
+  localizacao: LocalizacaoDTO;
+
 
   constructor(
     public navCtrl: NavController, 
@@ -70,6 +75,7 @@ export class CadastroEntradaPage {
     public insumoService: InsumoService,
     public loadingCtrl: LoadingController,
     public fornecedorService: FornecedorService,
+    public localizacaoService: LocalizacaoService,
     ) {
       
      
@@ -87,6 +93,7 @@ export class CadastroEntradaPage {
     //console.log('ionViewDidLoad CadastroEntradaPage');
     this.loadData();
     this.loadFornecedor();
+    this.loadLocalizacao();
     console.log("oia"+this.fornecedor);
   }
 
@@ -150,12 +157,18 @@ export class CadastroEntradaPage {
      console.log("Busca esse:"+text);
      this.fornecedorService.findByNome(text).subscribe((response) => {
       this.fornecedores = response.sort();
-      console.log(this.fornecedores);
-    }); 
-      
+      //console.log(this.fornecedores);
+    });
+          //console.log('buscaFornecedor::', text);
+    }
 
-
-      console.log('buscaFornecedor::', text);
+    
+    loadLocalizacao(){
+      let loader = this.presentLoading();
+      this.localizacaoService.findAll().subscribe((response) => {
+        this.localizacoes = response.sort();
+        loader.dismiss();
+      });
     }
 
     presentLoading() {
@@ -172,8 +185,8 @@ export class CadastroEntradaPage {
       this.citensnovaentrada.push(this.formGroup.value);
       this.botaoEntrada = false;
       this.reset();
-      console.log('this.numeronf',this.numeronf);
-      console.log('this.formGroup.value',this.citensnovaentrada);
+      //console.log('this.numeronf',this.numeronf);
+      //console.log('this.formGroup.value',this.citensnovaentrada);
     }
   
     insereInsumoEntradaDTO(event: {
@@ -220,7 +233,7 @@ export class CadastroEntradaPage {
     }
 
     reset() {
-      console.log("teste");
+      //console.log("teste");
       this.formGroup.reset();
     }
 
@@ -238,7 +251,12 @@ export class CadastroEntradaPage {
     }
 
     inserirEntrada(){
-      
+      this.entrada.data_entrada = this.data_entrada;
+      this.entrada.numLIA = this.numLIA;
+      this.entrada.numProcesso = this.numProcesso;
+      this.entrada.numRequisicao = this.numRequisicao;
+      this.entrada.itens = this.citensnovaentrada;
+      console.log(this.entrada)
     }
 
   

@@ -1,3 +1,4 @@
+import { CInsumoEntradaDTO } from './cinsumoentrada.dto';
 import { InsumoEntradaDTO } from "./insumoentrada.dto";
 
 export interface EntradaDTO{
@@ -7,5 +8,5 @@ export interface EntradaDTO{
     numLIA: string;
     numProcesso: string;
     numRequisicao: string;
-    itens: InsumoEntradaDTO[];
+    itens: CInsumoEntradaDTO[];
 }

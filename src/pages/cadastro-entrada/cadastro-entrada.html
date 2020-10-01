@@ -39,6 +39,30 @@
 
     </ionic-selectable>
   </ion-item>
+
+  <ion-item color="item_entrada">
+    <ion-label>Localização</ion-label>
+    <ionic-selectable 
+      item-content 
+      [(ngModel)]="localizacao"
+      [items]="localizacoes"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      [hasVirtualScroll]="true" >
+      <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{port.nome}}
+          </ion-label>
+        </ion-item>
+
+      </ng-template>
+
+    </ionic-selectable>
+  </ion-item>
+
+
   <ion-item color="item_entrada">
     <ion-label>Data emissão</ion-label>
     <ion-input type="date" [(ngModel)]="data_entrada"> </ion-input>
@@ -109,13 +133,15 @@
   </ion-item>
 </form>
 </ion-header>
-<ion-content padding >
+
+
+<ion-content padding hide-header>
   <ion-grid>
     <ion-row>
-      <ion-col col-1>
-        Código
+      <ion-col col-2>
+        Cod
       </ion-col>
-      <ion-col col-5>
+      <ion-col col-4>
         Insumo
       </ion-col>
       <ion-col col-2>
@@ -129,10 +155,10 @@
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let ient of citensnovaentrada">
-      <ion-col col-1>
+      <ion-col col-2>
         {{ient.insumo.codigo_almox}}
       </ion-col>
-      <ion-col col-5>
+      <ion-col col-4>
         {{ient.insumo.nome}}
       </ion-col>
       <ion-col col-2>

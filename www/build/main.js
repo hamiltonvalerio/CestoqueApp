@@ -92,11 +92,11 @@ var map = {
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
 		691,
-		18
+		2
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
 		692,
-		17
+		18
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
 		693,
@@ -104,35 +104,35 @@ var map = {
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
 		694,
-		16
+		17
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
 		695,
-		15
+		16
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
 		696,
-		14
+		15
 	],
 	"../pages/categorias/categorias.module": [
 		697,
-		4
+		5
 	],
 	"../pages/dashboard/dashboard.module": [
 		698,
-		13
+		14
 	],
 	"../pages/entrada/entrada.module": [
 		699,
-		3
+		4
 	],
 	"../pages/fornecedor/fornecedor.module": [
 		700,
-		12
+		13
 	],
 	"../pages/home/home.module": [
 		701,
-		11
+		12
 	],
 	"../pages/insumo/insumos.module": [
 		702,
@@ -140,31 +140,31 @@ var map = {
 	],
 	"../pages/localizacao/localizacao.module": [
 		703,
-		2
+		3
 	],
 	"../pages/producao/producao.module": [
 		704,
-		10
+		11
 	],
 	"../pages/produto/produto.module": [
 		705,
-		9
+		10
 	],
 	"../pages/profile/profile.module": [
 		706,
-		8
+		9
 	],
 	"../pages/saida/saida.module": [
 		707,
-		7
+		8
 	],
 	"../pages/signup/signup.module": [
 		708,
-		6
+		7
 	],
 	"../pages/unidade/unidade.module": [
 		709,
-		5
+		6
 	]
 };
 function webpackAsyncContext(req) {
@@ -299,6 +299,50 @@ var FornecedorService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(25);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LocalizacaoService = /** @class */ (function () {
+    function LocalizacaoService(http) {
+        this.http = http;
+    }
+    LocalizacaoService.prototype.findAll = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes");
+    };
+    LocalizacaoService.prototype.insert = function (obj) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/", obj, {
+            observe: 'response',
+            responseType: 'text'
+        });
+    };
+    LocalizacaoService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */]])
+    ], LocalizacaoService);
+    return LocalizacaoService;
+}());
+
+//# sourceMappingURL=localizacao.service.js.map
+
+/***/ }),
+
+/***/ 353:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UnidadeService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
@@ -339,7 +383,7 @@ var UnidadeService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 353:
+/***/ 354:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -386,7 +430,7 @@ var ColaboradorService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 354:
+/***/ 355:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -427,50 +471,6 @@ var CategoriaService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=categoria.service.js.map
-
-/***/ }),
-
-/***/ 355:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(25);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var LocalizacaoService = /** @class */ (function () {
-    function LocalizacaoService(http) {
-        this.http = http;
-    }
-    LocalizacaoService.prototype.findAll = function () {
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes");
-    };
-    LocalizacaoService.prototype.insert = function (obj) {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/", obj, {
-            observe: 'response',
-            responseType: 'text'
-        });
-    };
-    LocalizacaoService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */]])
-    ], LocalizacaoService);
-    return LocalizacaoService;
-}());
-
-//# sourceMappingURL=localizacao.service.js.map
 
 /***/ }),
 
@@ -539,11 +539,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_unidade_service__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_unidade_service__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_fornecedor_service__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_colaborador_service__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_colaborador_service__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_categoria_service__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_categoria_service__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_core__ = __webpack_require__(1);
@@ -554,7 +554,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__interceptors_error_interceptor__ = __webpack_require__(686);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_storage_service__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__interceptors_auth_interceptor__ = __webpack_require__(687);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_domain_localizacao_service__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_domain_localizacao_service__ = __webpack_require__(352);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_platform_browser_animations__ = __webpack_require__(688);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ionic_selectable__ = __webpack_require__(357);
