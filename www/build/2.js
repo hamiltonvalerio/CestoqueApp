@@ -1,15 +1,15 @@
 webpackJsonp([2],{
 
-/***/ 691:
+/***/ 692:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroEntradaPageModule", function() { return CadastroEntradaPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(718);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(719);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_entrada__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_entrada__ = __webpack_require__(721);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_selectable__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,13 +44,13 @@ var CadastroEntradaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 718:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectivesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(720);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -78,7 +78,7 @@ var DirectivesModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 719:
+/***/ 720:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -144,27 +144,27 @@ var HideHeaderDirective = /** @class */ (function () {
                 "(ionScroll)": "onScrooll($event)"
             }
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]])
     ], HideHeaderDirective);
     return HideHeaderDirective;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=hide-header.js.map
 
 /***/ }),
 
-/***/ 720:
+/***/ 721:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroEntradaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_localizacao_service__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_fornecedor_service__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_insumo_service__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_fornecedor_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__ = __webpack_require__(350);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -180,6 +180,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the CadastroEntradaPage page.
  *
@@ -187,7 +188,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var CadastroEntradaPage = /** @class */ (function () {
-    function CadastroEntradaPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, loadingCtrl, fornecedorService, localizacaoService) {
+    function CadastroEntradaPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, loadingCtrl, fornecedorService, localizacaoService, entradaService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
@@ -197,6 +198,7 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.loadingCtrl = loadingCtrl;
         this.fornecedorService = fornecedorService;
         this.localizacaoService = localizacaoService;
+        this.entradaService = entradaService;
         this.botaoEntrada = true;
         //usando classe
         this.citensInsumos = [];
@@ -206,7 +208,7 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.localizacoes = [];
         this.formGroup = this.formBuilder.group({
             insumo: this.formControl,
-            quantidade: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]],
+            quantidade: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]],
             valor: ['',],
             valorTotal: ['',],
         }, {});
@@ -342,12 +344,39 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.loadData();
     };
     CadastroEntradaPage.prototype.inserirEntrada = function () {
+        var _this = this;
+        this.entrada = {};
+        this.citensnovaentrada.forEach(function (item, index, object) {
+            if (item.valorTotal != null && item.quantidade != null) {
+                item.valor = item.valorTotal / item.quantidade;
+            }
+        });
         this.entrada.data_entrada = this.data_entrada;
         this.entrada.numLIA = this.numLIA;
         this.entrada.numProcesso = this.numProcesso;
         this.entrada.numRequisicao = this.numRequisicao;
         this.entrada.itens = this.citensnovaentrada;
+        this.entradaService.insert(this.entrada).subscribe(function (response) {
+            _this.showInserOk();
+        }, function (error) { });
         console.log(this.entrada);
+    };
+    CadastroEntradaPage.prototype.showInserOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro efetuado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
     };
     /*async filtraInsumo(evt){
       this.itensInsumos = this.getInsumos();
@@ -379,20 +408,13 @@ var CadastroEntradaPage = /** @class */ (function () {
     CadastroEntradaPage.prototype.insereLista = function () {
     };
     CadastroEntradaPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <ion-item color="item_entrada">\n    <ion-label>Fornecedor</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="fornecedor"\n      [items]="fornecedores"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n\n  <ion-item color="item_entrada">\n    <ion-label>Localização</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="localizacao"\n      [items]="localizacoes"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n\n\n  <ion-item color="item_entrada">\n    <ion-label>Data emissão</ion-label>\n    <ion-input type="date" [(ngModel)]="data_entrada"> </ion-input>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Número requisição</ion-label>\n    <ion-input type="text" [(ngModel)]="numRequisicao"> </ion-input>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Número documento (LIA)</ion-label>\n    <ion-input type="text" [(ngModel)]="numLIA"> </ion-input>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Número processo</ion-label>\n    <ion-input type="text" [(ngModel)]="numProcesso"> </ion-input>\n  </ion-item>\n\n\n\n\n\n\n  <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereListaEntrada()">\n  <ion-item>\n    <ion-label>Insumos</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="citemInsumo"\n      [items]="citensInsumos"\n      formControlName="insumo"\n      itemValueField="id"\n      itemTextField="nome_codalmox"\n      [canSearch]="true"\n      (onChange)="insereInsumoEntradaDTO($event)">\n\n      <ng-template ionicSelectableItemTemplate let-port="item">\n       \n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}} \n          </ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label class="label_14">\n            Cod Almox: {{port.codigo_almox}}  -  Quantidade atual: {{port.quantidade}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n  <ion-item>\n    <ion-label >Quantidade</ion-label>\n    <ion-input type="number" formControlName="quantidade"> </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label >Valor Total</ion-label>\n    <ion-input type="number" formControlName="valorTotal">  </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>\n    <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Valido</ion-badge>\n    <button ion-button (click)="reset()" [disabled]="!formGroup.valid">\n      Limpar\n    </button>\n    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>\n  </ion-item>\n</form>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-2>\n        Cod\n      </ion-col>\n      <ion-col col-4>\n        Insumo\n      </ion-col>\n      <ion-col col-2>\n        Quant\n      </ion-col>\n      <ion-col col-2>\n        Valor Total\n      </ion-col>\n      <ion-col col-2>\n        Exc\n      </ion-col>\n    </ion-row>\n    <ion-row *ngFor="let ient of citensnovaentrada">\n      <ion-col col-2>\n        {{ient.insumo.codigo_almox}}\n      </ion-col>\n      <ion-col col-4>\n        {{ient.insumo.nome}}\n      </ion-col>\n      <ion-col col-2>\n        {{ient.quantidade}}\n      </ion-col>\n      <ion-col col-2>\n        {{ient.valorTotal}}\n      </ion-col>\n      <ion-col col-2>\n        <ion-icon name="close-circle" (click)="excluiItem(ient)"></ion-icon>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 style="text-align: right;" ><button ion-button [disabled]="botaoEntrada" (click)="inserirEntrada()">Inserir entrada</button></ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+            selector: 'page-cadastro-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/'<!--\n  Generated template for the CadastroEntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Entrada de Insumos\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <ion-item color="item_entrada">\n    <ion-label>Fornecedor</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="fornecedor"\n      [items]="fornecedores"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n\n  <ion-item color="item_entrada">\n    <ion-label>Localização</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="localizacao"\n      [items]="localizacoes"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n\n\n  <ion-item color="item_entrada">\n    <ion-label>Data emissão</ion-label>\n    <ion-input type="date" [(ngModel)]="data_entrada"> </ion-input>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Número requisição</ion-label>\n    <ion-input type="text" [(ngModel)]="numRequisicao"> </ion-input>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Número documento (LIA)</ion-label>\n    <ion-input type="text" [(ngModel)]="numLIA"> </ion-input>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Número processo</ion-label>\n    <ion-input type="text" [(ngModel)]="numProcesso"> </ion-input>\n  </ion-item>\n\n\n\n\n\n\n  <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereListaEntrada()">\n  <ion-item>\n    <ion-label>Insumos</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="citemInsumo"\n      [items]="citensInsumos"\n      formControlName="insumo"\n      itemValueField="id"\n      itemTextField="nome_codalmox"\n      [canSearch]="true"\n      (onChange)="insereInsumoEntradaDTO($event)">\n\n      <ng-template ionicSelectableItemTemplate let-port="item">\n       \n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}} \n          </ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label class="label_14">\n            Cod Almox: {{port.codigo_almox}}  -  Quantidade atual: {{port.quantidade}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n  <ion-item>\n    <ion-label >Quantidade</ion-label>\n    <ion-input type="number" formControlName="quantidade"> </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label >Valor Total</ion-label>\n    <ion-input type="number" formControlName="valorTotal">  </ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>\n    <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Válido</ion-badge>\n    <button ion-button (click)="reset()" [disabled]="!formGroup.valid">\n      Limpar\n    </button>\n    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>\n  </ion-item>\n</form>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-2>\n        Cod\n      </ion-col>\n      <ion-col col-4>\n        Insumo\n      </ion-col>\n      <ion-col col-2>\n        Quant\n      </ion-col>\n      <ion-col col-2>\n        Valor Total\n      </ion-col>\n      <ion-col col-2>\n        Exc\n      </ion-col>\n    </ion-row>\n    <ion-row *ngFor="let ient of citensnovaentrada">\n      <ion-col col-2>\n        {{ient.insumo.codigo_almox}}\n      </ion-col>\n      <ion-col col-4>\n        {{ient.insumo.nome}}\n      </ion-col>\n      <ion-col col-2>\n        {{ient.quantidade}}\n      </ion-col>\n      <ion-col col-2>\n        {{ient.valorTotal}}\n      </ion-col>\n      <ion-col col-2>\n        <ion-icon name="close-circle" (click)="excluiItem(ient)"></ion-icon>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 style="text-align: right;" ><button ion-button [disabled]="botaoEntrada" (click)="inserirEntrada()">Inserir entrada</button></ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-entrada\cadastro-entrada.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_5__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_fornecedor_service__["a" /* FornecedorService */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_localizacao_service__["a" /* LocalizacaoService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* LoadingController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__services_domain_fornecedor_service__["a" /* FornecedorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_domain_fornecedor_service__["a" /* FornecedorService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__["a" /* EntradaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__["a" /* EntradaService */]) === "function" && _k || Object])
     ], CadastroEntradaPage);
     return CadastroEntradaPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 }());
 
 //# sourceMappingURL=cadastro-entrada.js.map

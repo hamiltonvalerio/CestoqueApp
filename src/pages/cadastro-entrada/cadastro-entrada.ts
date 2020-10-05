@@ -1,3 +1,4 @@
+import { EntradaService } from './../../services/domain/entrada.service';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { FornecedorDTO } from './../../models/fornecedor.dto';
 import { FornecedorService } from './../../services/domain/fornecedor.service';
@@ -76,6 +77,7 @@ export class CadastroEntradaPage {
     public loadingCtrl: LoadingController,
     public fornecedorService: FornecedorService,
     public localizacaoService: LocalizacaoService,
+    public entradaService: EntradaService,
     ) {
       
      
@@ -251,12 +253,40 @@ export class CadastroEntradaPage {
     }
 
     inserirEntrada(){
+      this.entrada = {} as any;    
+      this.citensnovaentrada.forEach(function(item, index, object){
+        if(item.valorTotal != null && item.quantidade != null){
+          item.valor = item.valorTotal / item.quantidade;
+        }
+      });
       this.entrada.data_entrada = this.data_entrada;
       this.entrada.numLIA = this.numLIA;
       this.entrada.numProcesso = this.numProcesso;
       this.entrada.numRequisicao = this.numRequisicao;
       this.entrada.itens = this.citensnovaentrada;
+
+      this.entradaService.insert(this.entrada).subscribe(response => {
+        this.showInserOk();
+      },
+      error => {});
       console.log(this.entrada)
+    }
+
+    showInserOk(){
+      let alert = this.alertCtrl.create({
+        title: 'Sucesso',
+        message: 'Cadastro efetuado com sucesso!',
+        enableBackdropDismiss: false,
+        buttons: [
+          {
+            text: 'Ok',
+            handler: () => {
+              this.navCtrl.pop();
+            }
+          }
+        ]
+      });
+      alert.present();
     }
 
   
