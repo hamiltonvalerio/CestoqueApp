@@ -1,3 +1,5 @@
+import { DateTimeFormatPipe } from './../../utils/date-time-format';
+import { Constants } from './../../utils/contants';
 import { EntradaService } from './../../services/domain/entrada.service';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { FornecedorDTO } from './../../models/fornecedor.dto';
@@ -78,12 +80,16 @@ export class CadastroEntradaPage {
     public fornecedorService: FornecedorService,
     public localizacaoService: LocalizacaoService,
     public entradaService: EntradaService,
+    public dateTimeFormatPipe: DateTimeFormatPipe,
     ) {
       
      
 
     this.formGroup = this.formBuilder.group({
       insumo: this.formControl,
+      loteFornecedor: ['',], 
+      loteCR: ['',], 
+      dataIrradiacao: ['',],
       quantidade: ['',[Validators.required]],
       valor: ['',],
       valorTotal: ['',],
@@ -96,7 +102,7 @@ export class CadastroEntradaPage {
     this.loadData();
     this.loadFornecedor();
     this.loadLocalizacao();
-    console.log("oia"+this.fornecedor);
+    //console.log("oia"+this.fornecedor);
   }
 
   
@@ -259,7 +265,8 @@ export class CadastroEntradaPage {
           item.valor = item.valorTotal / item.quantidade;
         }
       });
-      this.entrada.data_entrada = this.data_entrada;
+      console.log(this.dateTimeFormatPipe.transform(this.data_entrada));
+      this.entrada.data_entrada = this.dateTimeFormatPipe.transform(this.data_entrada);
       this.entrada.numLIA = this.numLIA;
       this.entrada.numProcesso = this.numProcesso;
       this.entrada.numRequisicao = this.numRequisicao;

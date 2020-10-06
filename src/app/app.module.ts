@@ -1,3 +1,4 @@
+import { DateTimeFormatPipe } from './../utils/date-time-format';
 import { EntradaService } from './../services/domain/entrada.service';
 import { InsumoService } from './../services/domain/insumo.service';
 import { UnidadeService } from './../services/domain/unidade.service';
@@ -57,7 +58,8 @@ import { IonicSelectableModule } from 'ionic-selectable';
     AuthService,
     StorageService, 
     ColaboradorService,
-    EntradaService
+    EntradaService,
+    DateTimeFormatPipe
   ]
 })
 export class AppModule {}
