@@ -1,9 +1,10 @@
+import { EntradaDTO } from './../../models/entrada.dto';
 import { CadastroEntradaPage } from './../cadastro-entrada/cadastro-entrada';
 import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { EntradaService } from './../../services/domain/entrada.service';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, NavPush } from 'ionic-angular';
-import { EntradaDTO } from '../../models/entrada.dto';
+
 
 /**
  * Generated class for the EntradaPage page.
@@ -22,7 +23,10 @@ export class EntradaPage {
   @ViewChild('myNav') nav;
 
   itens: EntradaDTO[];
-  itensEntradas = [];
+  itensEntradas : EntradaDTO[];
+  page : number = 0;
+
+  showDetails: boolean = false;
 
 
   constructor(
@@ -38,9 +42,12 @@ export class EntradaPage {
   }
 
   getItens(){
+    
     this.entradaService.findAll()
     .subscribe(response => {
-      this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());;
+      //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+      this.itensEntradas = response.sort();
+      console.log(this.itensEntradas);
     },
     error => {})
   }
@@ -58,5 +65,28 @@ export class EntradaPage {
     this.navCtrl.push('CadastroEntradaPage', {}, {animate: true, direction: 'forward'});
    
   }
+
+  doRefresh(refresher){
+    this.page = 0;
+    this.getItens();
+    setTimeout(()=>{
+      refresher.complete();
+    },1000);
+  }
+
+  doInfinite(infiniteScroll){
+    this.page++;
+    this.getItens();
+    setTimeout(() => {
+      infiniteScroll.complete();
+    }, 1000);
+  }
+
+  toggleDetails(show, i) {
+    this.itensEntradas.map(( _ , index ) => { 
+      if (index == i ) {
+         _.show = !_.show 
+        }});
+ }
 
 }

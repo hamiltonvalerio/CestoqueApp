@@ -17,7 +17,32 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+<ion-content>
+  <ion-card *ngFor="let ent of itensEntradas; let i = index;">
+    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">
+      <ion-icon name="arrow-down"></ion-icon>
+      <ion-item>
+        <p>Número da Requisição: {{ent.numRequisicao}}</p>
+        <p>Data de Entrada: {{ent.dataEntrada}}</p>
+      </ion-item>
+    </ion-card-header>
 
-<ion-content padding>
-
+    <ion-card-content>
+      <ion-item>
+      <ion-list *ngIf="ent.show">
+        <ion-label>Detalhes</ion-label>
+        <p>Nº do Documento LIA: {{ent.numLIA}}</p>
+        <ion-list *ngFor="let ient of ent.itens">
+          <ion-row>Produto: {{ient.insumo.nome}}</ion-row>
+          <ion-row>Quantidade Entrada: {{ient.quantidade}}</ion-row>
+          <ion-row>Quantidade Atual: {{ient.insumo.quantidade}}</ion-row>
+          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>
+          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>
+        </ion-list>
+      </ion-list>
+    </ion-item>
+    
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

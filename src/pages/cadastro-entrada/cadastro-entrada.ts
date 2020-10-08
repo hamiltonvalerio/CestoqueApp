@@ -43,7 +43,7 @@ export class CadastroEntradaPage {
   numLIA : string;
   numProcesso: string;
   numRequisicao: string;
-  data_entrada: Date;
+  dataEntrada: Date;
   
   //itensInsumosx : InsumoDTO;
   
@@ -265,8 +265,8 @@ export class CadastroEntradaPage {
           item.valor = item.valorTotal / item.quantidade;
         }
       });
-      console.log(this.dateTimeFormatPipe.transform(this.data_entrada));
-      this.entrada.data_entrada = this.dateTimeFormatPipe.transform(this.data_entrada);
+      console.log(this.dateTimeFormatPipe.transform(this.dataEntrada));
+      this.entrada.dataEntrada = this.dateTimeFormatPipe.transform(this.dataEntrada);
       this.entrada.numLIA = this.numLIA;
       this.entrada.numProcesso = this.numProcesso;
       this.entrada.numRequisicao = this.numRequisicao;

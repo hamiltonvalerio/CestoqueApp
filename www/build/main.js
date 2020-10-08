@@ -116,7 +116,7 @@ var map = {
 	],
 	"../pages/categorias/categorias.module": [
 		699,
-		5
+		4
 	],
 	"../pages/dashboard/dashboard.module": [
 		700,
@@ -124,15 +124,15 @@ var map = {
 	],
 	"../pages/entrada/entrada.module": [
 		701,
-		4
+		13
 	],
 	"../pages/fornecedor/fornecedor.module": [
 		702,
-		13
+		12
 	],
 	"../pages/home/home.module": [
 		703,
-		12
+		11
 	],
 	"../pages/insumo/insumos.module": [
 		704,
@@ -144,27 +144,27 @@ var map = {
 	],
 	"../pages/producao/producao.module": [
 		706,
-		11
+		10
 	],
 	"../pages/produto/produto.module": [
 		707,
-		10
+		9
 	],
 	"../pages/profile/profile.module": [
 		708,
-		9
+		8
 	],
 	"../pages/saida/saida.module": [
 		709,
-		8
+		7
 	],
 	"../pages/signup/signup.module": [
 		710,
-		7
+		6
 	],
 	"../pages/unidade/unidade.module": [
 		711,
-		6
+		5
 	]
 };
 function webpackAsyncContext(req) {

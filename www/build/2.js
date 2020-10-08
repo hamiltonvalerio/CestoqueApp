@@ -357,8 +357,8 @@ var CadastroEntradaPage = /** @class */ (function () {
                 item.valor = item.valorTotal / item.quantidade;
             }
         });
-        console.log(this.dateTimeFormatPipe.transform(this.data_entrada));
-        this.entrada.data_entrada = this.dateTimeFormatPipe.transform(this.data_entrada);
+        console.log(this.dateTimeFormatPipe.transform(this.dataEntrada));
+        this.entrada.dataEntrada = this.dateTimeFormatPipe.transform(this.dataEntrada);
         this.entrada.numLIA = this.numLIA;
         this.entrada.numProcesso = this.numProcesso;
         this.entrada.numRequisicao = this.numRequisicao;
