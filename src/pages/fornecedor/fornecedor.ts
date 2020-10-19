@@ -60,7 +60,7 @@ export class FornecedorPage {
     },
     error => {
       loader.dismiss();
-    })
+    });
   }
 
   presentLoading(){

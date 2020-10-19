@@ -28,4 +28,8 @@ export class InsumoService {
         return this.http.get<InsumoDTO[]>(`${API_CONFIG.baseUrl}/insumos`)
     }
 
+    findTotosPaginado(page : number = 0, linesPerPage : number = 30){
+        return this.http.get(`${API_CONFIG.baseUrl}/insumos/page/?page=${page}&linesPerPage=${linesPerPage}`);
+    }
+
 }

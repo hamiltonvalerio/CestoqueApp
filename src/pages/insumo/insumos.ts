@@ -2,7 +2,7 @@ import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitem
 import { InsumoService } from '../../services/domain/insumo.service';
 import { InsumoDTO } from '../../models/insumo.dto';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the InsumoPage page.
@@ -20,12 +20,14 @@ export class InsumosPage {
 
   itens: InsumoDTO[];
   itensInsumos = [];
+  page : number = 0;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public insumoService: InsumoService,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -48,6 +50,26 @@ export class InsumosPage {
       this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },
     error => {})
+  }
+
+  getItens2(){
+    let loader = this.presentLoading();
+    this.itensInsumos = [];
+    this.insumoService.findTotosPaginado(this.page, 10)
+    .subscribe(response => {
+      let start = this.itensInsumos.length;
+
+
+    },
+    error => {
+      loader.dismiss();
+    });
+  }
+
+  presentLoading(){
+    let loader = this.loadingCtrl.create({content: "Aguarde..."});
+    loader.present();
+    return loader;
   }
 
 

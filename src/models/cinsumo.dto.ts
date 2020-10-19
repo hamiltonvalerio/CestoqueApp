@@ -4,32 +4,32 @@ export class CInsumoDTO implements InsumoDTO{
     nomenclatura: string;
     nome: string;
     valor: string;
-    codigo_almox: number;
+    codigoalmox: number;
     observacao: string;
     essencial: boolean;
-    data_validade: Date;
+    datavalidade: Date;
     quantidade: number;
-    taxa_de_consumo: number;
-    codigo_barra: string;
+    taxadeconsumo: number;
+    codigobarra: string;
     qrcode: string;
     rfid: string;
-    nome_codalmox: string;
+    nomecodalmox: string;
 
       constructor(insumo: InsumoDTO){
         this.id= insumo.id;
         this.nomenclatura= insumo.nomenclatura;
         this.nome= insumo.nome;
         this.valor= insumo.valor;
-        this.codigo_almox= insumo.codigo_almox;
+        this.codigoalmox= insumo.codigoalmox;
         this.observacao= insumo.observacao;
         this.essencial= insumo.essencial;
-        this.data_validade= insumo.data_validade;
+        this.datavalidade= insumo.datavalidade;
         this.quantidade= insumo.quantidade;
-        this.taxa_de_consumo= insumo.taxa_de_consumo;
-        this.codigo_barra= insumo.codigo_barra;
+        this.taxadeconsumo= insumo.taxadeconsumo;
+        this.codigobarra= insumo.codigobarra;
         this.qrcode= insumo.qrcode;
         this.rfid= insumo.rfid;
-        this.nome_codalmox = insumo.nome_codalmox;
+        this.nomecodalmox = insumo.nomecodalmox;
     }
 
 

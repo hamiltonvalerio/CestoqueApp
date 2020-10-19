@@ -4,14 +4,14 @@ export interface InsumoDTO{
     nomenclatura: string;
     nome: string;
     valor: string;
-    codigo_almox: number;
+    codigoalmox: number;
     observacao: string;
     essencial: boolean;
-    data_validade: Date;
+    datavalidade: Date;
     quantidade: number;
-    taxa_de_consumo: number;
-    codigo_barra: string;
+    taxadeconsumo: number;
+    codigobarra: string;
     qrcode: string;
     rfid: string;
-    nome_codalmox: string;
+    nomecodalmox: string;
 }

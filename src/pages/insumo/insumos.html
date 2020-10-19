@@ -19,6 +19,31 @@
   </ion-navbar>
 </ion-header>
 
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item *ngFor="let item of itensInsumos">
+      <h3>{{forn.nome}}</h3>
+      <p>{{forn.cnpj}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+
+
+
+
+
 <ion-content >
   
   <ion-list>
