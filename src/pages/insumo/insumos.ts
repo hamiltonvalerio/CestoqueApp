@@ -44,20 +44,23 @@ export class InsumosPage {
     modal.present();
   }
 
-  getItens(){
+  /*getItens(){
     this.insumoService.findAll()
     .subscribe(response => {
       this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },
     error => {})
-  }
+  }*/
 
-  getItens2(){
+  getItens(){
     let loader = this.presentLoading();
     this.itensInsumos = [];
-    this.insumoService.findTotosPaginado(this.page, 10)
+    this.insumoService.findTotosPaginado(this.page, 30)
     .subscribe(response => {
       let start = this.itensInsumos.length;
+      this.itensInsumos = this.itensInsumos.concat(response['content']);
+      let end = this.itensInsumos.length -1;
+      loader.dismiss();
 
 
     },
@@ -70,6 +73,23 @@ export class InsumosPage {
     let loader = this.loadingCtrl.create({content: "Aguarde..."});
     loader.present();
     return loader;
+  }
+
+  doRefresh(refresher){
+    this.page = 0;
+    this.itensInsumos = [];
+    this.getItens();
+    setTimeout(()=>{
+      refresher.complete();
+    },1000);
+  }
+
+  doInfinite(infiniteScroll){
+    this.page++;
+    this.getItens();
+    setTimeout(() => {
+      infiniteScroll.complete();
+    }, 1000);
   }
 
 

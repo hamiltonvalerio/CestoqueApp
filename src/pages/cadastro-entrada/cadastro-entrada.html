@@ -68,7 +68,7 @@
 
   <ion-item color="item_entrada">
     <ion-label>Data emissão</ion-label>
-    <ion-input type="date" [(ngModel)]="data_entrada"> </ion-input>
+    <ion-input type="date" [(ngModel)]="dataEntrada"> </ion-input>
   </ion-item>
   <ion-item color="item_entrada">
     <ion-label>Número requisição</ion-label>
@@ -97,7 +97,7 @@
       [items]="citensInsumos"
       formControlName="insumo"
       itemValueField="id"
-      itemTextField="nome_codalmox"
+      itemTextField="nome"
       [canSearch]="true"
       (onChange)="insereInsumoEntradaDTO($event)">
 
@@ -119,16 +119,73 @@
     </ionic-selectable>
   </ion-item>
   <ion-item>
+    <ion-label>Unidade Recebida</ion-label>
+    <ionic-selectable 
+      item-content 
+      [(ngModel)]="unidadeRecebida"
+      [items]="unidadesRecebida"
+      formControlName="unidadeRecebida"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      (onChange)="insereunidadeRecebidaDTO($event)">
+
+      <ng-template ionicSelectableItemTemplate let-port="item">
+       
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{port.nome}} 
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label_14">
+            Sigla: {{port.sigla}}
+          </ion-label>
+        </ion-item>
+      </ng-template>
+
+    </ionic-selectable>
+  </ion-item>
+  <ion-item>
+    <ion-label >Quantidade Recebida</ion-label>
+    <ion-input type="number" formControlName="quantidade"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Unidade de Entrada</ion-label>
+    <ionic-selectable 
+      item-content 
+      [(ngModel)]="unidadeEntrada"
+      [items]="unidadesEntrada"
+      formControlName="unidadeEntrada"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      (onChange)="insereunidadeEntradaDTO($event)">
+
+      <ng-template ionicSelectableItemTemplate let-port="item">
+       
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{port.nome}} 
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label_14">
+            Sigla: {{port.sigla}}
+          </ion-label>
+        </ion-item>
+
+      </ng-template>
+
+    </ionic-selectable>
+  </ion-item>
+  <ion-item>
     <ion-label>Lote Fornecedor</ion-label>
     <ion-input type="text" formControlName="loteFornecedor"> </ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Data Irradiação</ion-label>
     <ion-input type="date" formControlName="dataIrradiacao"> </ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label >Quantidade</ion-label>
-    <ion-input type="number" formControlName="quantidade"> </ion-input>
   </ion-item>
   <ion-item>
     <ion-label >Valor Total</ion-label>
@@ -164,7 +221,7 @@
     </ion-row>
     <ion-row *ngFor="let ient of citensnovaentrada">
       <ion-col col-2>
-        {{ient.insumo.codigo_almox}}
+        {{ient.insumo.codigoalmox}}
       </ion-col>
       <ion-col col-4>
         {{ient.insumo.nome}}

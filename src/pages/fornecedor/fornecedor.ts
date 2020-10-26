@@ -48,7 +48,7 @@ export class FornecedorPage {
   getItens(){
     let loader = this.presentLoading();
     this.itensFornecedores = [];
-    this.fornecedorService.findTotosPaginado(this.page, 10)
+    this.fornecedorService.findTotosPaginado(this.page, 30)
     .subscribe(response => {
       //this.itensFornecedores = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
       let start = this.itensFornecedores.length;

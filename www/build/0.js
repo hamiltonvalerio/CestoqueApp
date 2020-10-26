@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 704:
+/***/ 711:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(735);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_tooltips__ = __webpack_require__(736);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(742);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_tooltips__ = __webpack_require__(743);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,44 +38,6 @@ var InsumoPageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=insumos.module.js.map
-
-/***/ }),
-
-/***/ 712:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConverteListaIonItemDivider; });
-var ConverteListaIonItemDivider = /** @class */ (function () {
-    function ConverteListaIonItemDivider() {
-    }
-    /**
-     * name
-     */
-    ConverteListaIonItemDivider.prototype.retornaArrayGroup = function (responseSorte) {
-        var itens = [];
-        var itensOrdenados = [];
-        var letraAtual = "";
-        var itensAtuaisDeRetorno = [];
-        itensOrdenados = responseSorte;
-        itensOrdenados.forEach(function (value, index) {
-            if (value.nome.charAt(0) != letraAtual) {
-                letraAtual = value.nome.charAt(0);
-                var newGroup = {
-                    letra: letraAtual,
-                    arrayDeItens: []
-                };
-                itensAtuaisDeRetorno = newGroup.arrayDeItens;
-                itens.push(newGroup);
-            }
-            itensAtuaisDeRetorno.push(value);
-        });
-        return itens;
-    };
-    return ConverteListaIonItemDivider;
-}());
-
-//# sourceMappingURL=converte-list-ionitemdivider.js.map
 
 /***/ }),
 
@@ -515,15 +477,14 @@ var Tooltip = (function () {
 
 /***/ }),
 
-/***/ 735:
+/***/ 742:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(712);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -536,7 +497,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
  * Generated class for the InsumoPage page.
  *
@@ -544,12 +504,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var InsumosPage = /** @class */ (function () {
-    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl) {
+    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.insumoService = insumoService;
         this.modalCtrl = modalCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.itensInsumos = [];
+        this.page = 0;
     }
     InsumosPage.prototype.ionViewDidLoad = function () {
         this.getItens();
@@ -563,21 +525,56 @@ var InsumosPage = /** @class */ (function () {
         });
         modal.present();
     };
+    /*getItens(){
+      this.insumoService.findAll()
+      .subscribe(response => {
+        this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+      },
+      error => {})
+    }*/
     InsumosPage.prototype.getItens = function () {
         var _this = this;
-        this.insumoService.findAll()
+        var loader = this.presentLoading();
+        this.itensInsumos = [];
+        this.insumoService.findTotosPaginado(this.page, 30)
             .subscribe(function (response) {
-            _this.itensInsumos = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
-        }, function (error) { });
+            var start = _this.itensInsumos.length;
+            _this.itensInsumos = _this.itensInsumos.concat(response['content']);
+            var end = _this.itensInsumos.length - 1;
+            loader.dismiss();
+        }, function (error) {
+            loader.dismiss();
+        });
+    };
+    InsumosPage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
+        loader.present();
+        return loader;
+    };
+    InsumosPage.prototype.doRefresh = function (refresher) {
+        this.page = 0;
+        this.itensInsumos = [];
+        this.getItens();
+        setTimeout(function () {
+            refresher.complete();
+        }, 1000);
+    };
+    InsumosPage.prototype.doInfinite = function (infiniteScroll) {
+        this.page++;
+        this.getItens();
+        setTimeout(function () {
+            infiniteScroll.complete();
+        }, 1000);
     };
     InsumosPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-insumos',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n  Generated template for the InsumoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Insumos</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openModal()">\n      <ion-icon name="add-circle" ></ion-icon>\n      </button>\n    </ion-buttons>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content >\n  \n  <ion-list>\n    <ion-item-group *ngFor="let item of itensInsumos">\n      <ion-item-divider light>{{item.letra}}</ion-item-divider>\n      <ion-item-sliding *ngFor="let insumo of item.arrayDeItens">\n        <ion-item>\n          <h3>{{insumo.nome}}</h3>\n          <p>{{insumo.taxa_de_consumo}}</p>\n        </ion-item>\n        <ion-item-options>\n          \n          <button ion-button icon-only tooltip="ENTRADA" positionV="bottom" >\n            <ion-icon name="return-right"></ion-icon>\n          </button>\n          <!-- just pass the avatar here. the index is just \'0\', \'1\', \'2\'... -->\n          <button ion-button color="secondary" icon-only tooltip="SAÍDA" positionV="bottom" >\n            <ion-icon name="return-left"></ion-icon>\n          </button>\n          <button ion-button color="dark" icon-only tooltip="MOVIMENTAÇÃO" positionV="bottom"  >\n            <ion-icon name="shuffle"></ion-icon>\n          </button>\n        </ion-item-options>\n      </ion-item-sliding>\n    </ion-item-group>\n</ion-list>\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-insumos',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n  Generated template for the InsumoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Insumos</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openModal()">\n      <ion-icon name="add-circle" ></ion-icon>\n      </button>\n    </ion-buttons>\n    \n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list>\n    <ion-item *ngFor="let item of itensInsumos">\n      <h3>{{item.nome}}</h3>\n    </ion-item>\n  </ion-list>\n\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\insumo\insumos.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ModalController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
     ], InsumosPage);
     return InsumosPage;
 }());
@@ -586,7 +583,7 @@ var InsumosPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 736:
+/***/ 743:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -594,7 +591,7 @@ var InsumosPage = /** @class */ (function () {
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(718);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(737);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(744);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__tooltips_module__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(714);
 /* unused harmony namespace reexport */
@@ -606,7 +603,7 @@ var InsumosPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 737:
+/***/ 744:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

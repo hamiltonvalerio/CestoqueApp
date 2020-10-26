@@ -1,3 +1,5 @@
+import { UnidadeService } from './../../services/domain/unidade.service';
+import { UnidadeDTO } from './../../models/unidade.dto';
 import { DateTimeFormatPipe } from './../../utils/date-time-format';
 import { Constants } from './../../utils/contants';
 import { EntradaService } from './../../services/domain/entrada.service';
@@ -68,6 +70,11 @@ export class CadastroEntradaPage {
   localizacoes: LocalizacaoDTO[] = [];
   localizacao: LocalizacaoDTO;
 
+  unidadesRecebida: UnidadeDTO[] = [];
+  unidadeRecebida: UnidadeDTO;
+
+  unidadesEntrada: UnidadeDTO[] = [];
+  unidadeEntrada: UnidadeDTO;
 
   constructor(
     public navCtrl: NavController, 
@@ -81,6 +88,7 @@ export class CadastroEntradaPage {
     public localizacaoService: LocalizacaoService,
     public entradaService: EntradaService,
     public dateTimeFormatPipe: DateTimeFormatPipe,
+    public unidadeService: UnidadeService,
     ) {
       
      
@@ -93,6 +101,8 @@ export class CadastroEntradaPage {
       quantidade: ['',[Validators.required]],
       valor: ['',],
       valorTotal: ['',],
+      unidadeRecebida: ['',],
+      unidadeEntrada: ['',],
     }, {});
     
   }
@@ -102,6 +112,7 @@ export class CadastroEntradaPage {
     this.loadData();
     this.loadFornecedor();
     this.loadLocalizacao();
+    this.loadUnidades();
     //console.log("oia"+this.fornecedor);
   }
 
@@ -154,6 +165,16 @@ export class CadastroEntradaPage {
         //console.log(this.fornecedores);
         loader.dismiss();
       });    
+    }
+
+    loadUnidades(){
+      let loader = this.presentLoading();
+      this.unidadeService.findAll().subscribe((response) => {
+        this.unidadesRecebida = response.sort();
+        this.unidadesEntrada = response.sort();
+        loader.dismiss();
+      });
+        
     }
 
     buscaFornecedor(event: {
@@ -210,6 +231,27 @@ export class CadastroEntradaPage {
       quantidade: 0, 
       valor: 0,
       valorTotal: 0};
+
+      if(this.citensEntrada.insumo.unidade != null){
+        console.log(this.citensEntrada.insumo.unidade);
+      }
+      console.log('insereInsumoEntradaDTO::', this.citensEntrada);
+    }
+
+    insereunidadeRecebidaDTO(event: {
+      component: IonicSelectableComponent,
+      value: any
+    }) {
+     this.unidadeRecebida = event.value;
+
+      //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
+    }
+
+    insereunidadeEntradaDTO(event: {
+      component: IonicSelectableComponent,
+      value: any
+    }) {
+     this.unidadeEntrada = event.value;
 
       //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }

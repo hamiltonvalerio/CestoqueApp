@@ -1,3 +1,5 @@
+import { UnidadeDTO } from "./unidade.dto";
+
 export interface InsumoDTO{
 
     id: string;
@@ -13,5 +15,6 @@ export interface InsumoDTO{
     codigobarra: string;
     qrcode: string;
     rfid: string;
+    unidade: UnidadeDTO;
     nomecodalmox: string;
 }
