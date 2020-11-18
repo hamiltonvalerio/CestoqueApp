@@ -55,8 +55,8 @@ export class FornecedorPage {
       this.itensFornecedores = this.itensFornecedores.concat(response['content']);
       let end = this.itensFornecedores.length - 1;
       loader.dismiss();
-      console.log("pagina"+this.page);
-      console.log("fornecedor"+this.itensFornecedores);
+      //console.log("pagina"+this.page);
+      //console.log("fornecedor"+this.itensFornecedores);
     },
     error => {
       loader.dismiss();
@@ -82,7 +82,7 @@ export class FornecedorPage {
     this.page++;
     this.getItens();
     setTimeout(() => {
-      infiniteScroll.complete();
+      infiniteScroll.component.endInfiniteScroll();
     }, 1000);
   }
 

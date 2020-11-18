@@ -20,7 +20,7 @@ import { InsumoService } from '../../services/domain/insumo.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { IonicSelectableComponent } from 'ionic-selectable';
-import { TestScheduler } from 'rxjs';
+import { Subscription, TestScheduler } from 'rxjs';
 import { LocalizacaoDTO } from '../../models/localizacao.dto';
 
 
@@ -39,6 +39,9 @@ import { LocalizacaoDTO } from '../../models/localizacao.dto';
 export class CadastroEntradaPage {
 
   //itensInsumosxa : InsumoDTO[] = [];
+
+  insumoEntrada : InsumoDTO;
+
   entrada : EntradaDTO;
   
   numeronf : number;
@@ -63,6 +66,7 @@ export class CadastroEntradaPage {
   citensEntrada : CInsumoEntradaDTO;
   citensEntradas : CInsumoEntradaDTO[] = [];
   citensnovaentrada : CInsumoEntradaDTO[] = []; 
+  cie : CInsumoEntradaDTO;
 
   fornecedores: FornecedorDTO[] = [];
   fornecedor : FornecedorDTO;
@@ -75,6 +79,10 @@ export class CadastroEntradaPage {
 
   unidadesEntrada: UnidadeDTO[] = [];
   unidadeEntrada: UnidadeDTO;
+
+  page : number = 0;
+
+  portsSubscription: Subscription;
 
   constructor(
     public navCtrl: NavController, 
@@ -124,14 +132,67 @@ export class CadastroEntradaPage {
     //this.viewCtrl.dismiss();
   }
 
+  searchInsumo(event: {
+    component: IonicSelectableComponent,
+    text: string
+  }) {
+    let text = event.text.trim().toLowerCase();
+    event.component.startSearch();
+    if (this.portsSubscription) {
+      this.portsSubscription.unsubscribe();
+    }
+
+    if (!text) {
+      // Close any running subscription.
+      if (this.portsSubscription) {
+        this.portsSubscription.unsubscribe();
+      }
+
+      //event.component.items = this.portService.getPorts(1, 15);
+      
+      // Enable and start infinite scroll from the beginning.
+      //this.page = 2;
+      event.component.endSearch();
+      event.component.enableInfiniteScroll();
+      return;
+    }
+  
+    this.portsSubscription = this.insumoService.findAll().subscribe(ports => {
+      // Subscription will be closed when unsubscribed manually.
+      if (this.portsSubscription.closed) {
+        return;
+      }
+
+      event.component.items = this.filterPorts(ports, text);
+      event.component.endSearch();
+    });
+  }
+
+  filterPorts(ports: InsumoDTO[], text: string) {
+    return ports.filter(port => {
+      return port.nomecodalmox.toLowerCase().indexOf(text) !== -1 ;
+    });
+  }
+
+
+  doInfinite(infiniteScroll){
+    this.page++;
+    this.loadData();
+    setTimeout(() => {
+      infiniteScroll.component.endInfiniteScroll();
+    }, 1000);
+  }
+
+
   loadData(){
     let loader = this.presentLoading();
     let itensIns : InsumoEntradaDTO[] = [];
     
-    this.insumoService.findTodos()
+    this.insumoService.findTotosPaginado(this.page, 30)
       .subscribe((response) => {
-        this.citensInsumos = response.sort();
-        //console.log(this.citensInsumos);
+        let start = this.citensEntradas.length;
+          this.citensInsumos = this.citensInsumos.concat(response['content']);
+        let end = this.citensEntradas.length - 1;
         this.citensInsumos.forEach(function (value) {
           let insEnt : CInsumoEntradaDTO = {
             insumo: value, 
@@ -145,6 +206,9 @@ export class CadastroEntradaPage {
           
           itensIns.push(insEnt);
         }); 
+
+        console.log("ITENSS "+itensIns[1].insumo.codigoalmox);
+
         this.citensEntradas = itensIns;
         //console.log(this.itensEntrada);
         loader.dismiss();
@@ -211,7 +275,18 @@ export class CadastroEntradaPage {
     
 
     insereListaEntrada() {
+      
+      this.cie = this.formGroup.value;
+      this.cie.insumo.unidade = this.unidadeRecebida;
+      console.log(this.cie);
+
+
       this.citensnovaentrada.push(this.formGroup.value);
+      
+      
+      //calcular e gravar unidades
+
+
       this.botaoEntrada = false;
       this.reset();
       //console.log('this.numeronf',this.numeronf);
@@ -222,8 +297,12 @@ export class CadastroEntradaPage {
       component: IonicSelectableComponent,
       value: any
     }) {
+    
+    this.insumoEntrada = event.value;
+    this.insumoEntrada.unidade = this.unidadeEntrada;
+
      this.citensEntrada = {
-      insumo: event.value,
+      insumo: this.insumoEntrada,
       loteFornecedor: '', 
       loteCR: '', 
       dataIrradiacao: null, 
@@ -232,8 +311,9 @@ export class CadastroEntradaPage {
       valor: 0,
       valorTotal: 0};
 
-      if(this.citensEntrada.insumo.unidade != null){
-        console.log(this.citensEntrada.insumo.unidade);
+     if(this.citensEntrada.insumo.unidade != null){
+        console.log("olha isso:"+this.citensEntrada.insumo.unidade);
+        this.unidadeEntrada = this.citensEntrada.insumo.unidade;
       }
       console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }
@@ -244,7 +324,7 @@ export class CadastroEntradaPage {
     }) {
      this.unidadeRecebida = event.value;
 
-      //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
+     //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }
 
     insereunidadeEntradaDTO(event: {
@@ -253,7 +333,7 @@ export class CadastroEntradaPage {
     }) {
      this.unidadeEntrada = event.value;
 
-      //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
+     //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }
 
     insereFornecedorEntradaDTO(event: {
@@ -262,7 +342,7 @@ export class CadastroEntradaPage {
     }) {
      //this.fornecedor = {insumo: event.value, quantidade: 0, valor: 0};
 
-      //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
+     //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
     }
 
 
@@ -306,6 +386,7 @@ export class CadastroEntradaPage {
         if(item.valorTotal != null && item.quantidade != null){
           item.valor = item.valorTotal / item.quantidade;
         }
+
       });
       console.log(this.dateTimeFormatPipe.transform(this.dataEntrada));
       this.entrada.dataEntrada = this.dateTimeFormatPipe.transform(this.dataEntrada);
@@ -375,6 +456,8 @@ export class CadastroEntradaPage {
     
 
   }
+
+
 
 
     

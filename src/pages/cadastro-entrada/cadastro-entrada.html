@@ -97,9 +97,12 @@
       [items]="citensInsumos"
       formControlName="insumo"
       itemValueField="id"
-      itemTextField="nome"
+      itemTextField="nomecodalmox"
       [canSearch]="true"
-      (onChange)="insereInsumoEntradaDTO($event)">
+      (onSearch)="searchInsumo($event)"
+      (onChange)="insereInsumoEntradaDTO($event)"
+      [hasInfiniteScroll]="true"
+      (onInfiniteScroll)="doInfinite($event)">
 
       <ng-template ionicSelectableItemTemplate let-port="item">
        
@@ -110,7 +113,7 @@
         </ion-item>
         <ion-item>
           <ion-label class="label_14">
-            Cod Almox: {{port.codigo_almox}}  -  Quantidade atual: {{port.quantidade}}
+            Cod Almox: {{port.codigoalmox}}  -  Quantidade atual: {{port.quantidade}}
           </ion-label>
         </ion-item>
 
@@ -197,7 +200,7 @@
     <button ion-button (click)="reset()" [disabled]="!formGroup.valid">
       Limpar
     </button>
-    <button ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>
+    <button   ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>
   </ion-item>
 </form>
 

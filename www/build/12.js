@@ -1,6 +1,6 @@
 webpackJsonp([12],{
 
-/***/ 709:
+/***/ 701:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FornecedorPageModule", function() { return FornecedorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fornecedor__ = __webpack_require__(740);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fornecedor__ = __webpack_require__(732);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,12 +38,12 @@ var FornecedorPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 740:
+/***/ 732:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(352);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -97,8 +97,8 @@ var FornecedorPage = /** @class */ (function () {
             _this.itensFornecedores = _this.itensFornecedores.concat(response['content']);
             var end = _this.itensFornecedores.length - 1;
             loader.dismiss();
-            console.log("pagina" + _this.page);
-            console.log("fornecedor" + _this.itensFornecedores);
+            //console.log("pagina"+this.page);
+            //console.log("fornecedor"+this.itensFornecedores);
         }, function (error) {
             loader.dismiss();
         });
@@ -120,7 +120,7 @@ var FornecedorPage = /** @class */ (function () {
         this.page++;
         this.getItens();
         setTimeout(function () {
-            infiniteScroll.complete();
+            infiniteScroll.component.endInfiniteScroll();
         }, 1000);
     };
     FornecedorPage = __decorate([
