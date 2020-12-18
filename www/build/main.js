@@ -119,51 +119,51 @@ var map = {
 		4
 	],
 	"../pages/dashboard/dashboard.module": [
-		711,
+		700,
 		14
 	],
 	"../pages/entrada/entrada.module": [
-		700,
+		701,
 		13
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		701,
+		702,
 		12
 	],
 	"../pages/home/home.module": [
-		702,
+		703,
 		11
 	],
 	"../pages/insumo/insumos.module": [
-		703,
+		704,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		704,
+		705,
 		3
 	],
 	"../pages/producao/producao.module": [
-		705,
+		706,
 		10
 	],
 	"../pages/produto/produto.module": [
-		706,
+		707,
 		9
 	],
 	"../pages/profile/profile.module": [
-		707,
+		708,
 		8
 	],
 	"../pages/saida/saida.module": [
-		708,
+		709,
 		7
 	],
 	"../pages/signup/signup.module": [
-		709,
+		710,
 		6
 	],
 	"../pages/unidade/unidade.module": [
-		710,
+		711,
 		5
 	]
 };
@@ -661,6 +661,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
@@ -671,8 +672,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_20__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
