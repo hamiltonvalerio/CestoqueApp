@@ -33,5 +33,7 @@ export class InsumoService {
         return this.http.get(`${API_CONFIG.baseUrl}/insumos/page/?page=${page}&linesPerPage=${linesPerPage}`);
     }
 
+    //findByLocalizacao()
+
 
 }

@@ -1,14 +1,14 @@
 webpackJsonp([13],{
 
-/***/ 701:
+/***/ 702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntradaPageModule", function() { return EntradaPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FornecedorPageModule", function() { return FornecedorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(732);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fornecedor__ = __webpack_require__(734);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,32 +18,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EntradaPageModule = /** @class */ (function () {
-    function EntradaPageModule() {
+var FornecedorPageModule = /** @class */ (function () {
+    function FornecedorPageModule() {
     }
-    EntradaPageModule = __decorate([
+    FornecedorPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */],
+                __WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */]),
             ],
         })
-    ], EntradaPageModule);
-    return EntradaPageModule;
+    ], FornecedorPageModule);
+    return FornecedorPageModule;
 }());
 
-//# sourceMappingURL=entrada.module.js.map
+//# sourceMappingURL=fornecedor.module.js.map
 
 /***/ }),
 
-/***/ 732:
+/***/ 734:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntradaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__ = __webpack_require__(354);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -59,82 +59,84 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the EntradaPage page.
+ * Generated class for the FornecedorPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var EntradaPage = /** @class */ (function () {
-    function EntradaPage(navCtrl, navParams, entradaService, modalCtrl) {
+var FornecedorPage = /** @class */ (function () {
+    function FornecedorPage(navCtrl, navParams, fornecedorService, modalCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.entradaService = entradaService;
+        this.fornecedorService = fornecedorService;
         this.modalCtrl = modalCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.itensFornecedores = [];
         this.page = 0;
-        this.showDetails = false;
     }
-    EntradaPage.prototype.ionViewDidLoad = function () {
+    FornecedorPage.prototype.ionViewDidLoad = function () {
         this.getItens();
     };
-    EntradaPage.prototype.getItens = function () {
-        var _this = this;
-        this.entradaService.findAll()
-            .subscribe(function (response) {
-            //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
-            _this.itensEntradas = response.sort();
-            console.log(_this.itensEntradas);
-        }, function (error) { });
-    };
-    EntradaPage.prototype.openModal = function () {
+    FornecedorPage.prototype.openModal = function () {
         var _this = this;
         console.log("aqui");
-        var modal = this.modalCtrl.create('CadastroEntradaPage');
+        var modal = this.modalCtrl.create('CadastroFornecedorPage');
         modal.onDidDismiss(function () {
             _this.getItens();
         });
         modal.present();
     };
-    EntradaPage.prototype.openCadastroEntrada = function () {
-        this.navCtrl.push('CadastroEntradaPage', {}, { animate: true, direction: 'forward' });
+    FornecedorPage.prototype.getItens = function () {
+        var _this = this;
+        var loader = this.presentLoading();
+        this.itensFornecedores = [];
+        this.fornecedorService.findTotosPaginado(this.page, 30)
+            .subscribe(function (response) {
+            //this.itensFornecedores = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+            var start = _this.itensFornecedores.length;
+            _this.itensFornecedores = _this.itensFornecedores.concat(response['content']);
+            var end = _this.itensFornecedores.length - 1;
+            loader.dismiss();
+            //console.log("pagina"+this.page);
+            //console.log("fornecedor"+this.itensFornecedores);
+        }, function (error) {
+            loader.dismiss();
+        });
     };
-    EntradaPage.prototype.doRefresh = function (refresher) {
+    FornecedorPage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
+        loader.present();
+        return loader;
+    };
+    FornecedorPage.prototype.doRefresh = function (refresher) {
         this.page = 0;
+        this.itensFornecedores = [];
         this.getItens();
         setTimeout(function () {
             refresher.complete();
         }, 1000);
     };
-    EntradaPage.prototype.doInfinite = function (infiniteScroll) {
+    FornecedorPage.prototype.doInfinite = function (infiniteScroll) {
         this.page++;
         this.getItens();
         setTimeout(function () {
-            infiniteScroll.complete();
+            infiniteScroll.component.endInfiniteScroll();
         }, 1000);
     };
-    EntradaPage.prototype.toggleDetails = function (show, i) {
-        this.itensEntradas.map(function (_, index) {
-            if (index == i) {
-                _.show = !_.show;
-            }
-        });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('myNav'),
-        __metadata("design:type", Object)
-    ], EntradaPage.prototype, "nav", void 0);
-    EntradaPage = __decorate([
+    FornecedorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n  Generated template for the EntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Entradas</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n      <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n      <ion-icon name="arrow-down"></ion-icon>\n      <ion-item>\n        <p>Número da Requisição: {{ent.numRequisicao}}</p>\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n      </ion-item>\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-item>\n      <ion-list *ngIf="ent.show">\n        <ion-label>Detalhes</ion-label>\n        <p>Nº do Documento LIA: {{ent.numLIA}}</p>\n        <ion-list *ngFor="let ient of ent.itens">\n          <ion-row>Produto: {{ient.insumo.nome}}</ion-row>\n          <ion-row>Quantidade Entrada: {{ient.quantidade}}</ion-row>\n          <ion-row>Quantidade Atual: {{ient.insumo.quantidade}}</ion-row>\n          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>\n          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>\n        </ion-list>\n      </ion-list>\n    </ion-item>\n    \n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/,
+            selector: 'page-fornecedor',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/'<!--\n\n  Generated template for the FornecedorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Fornecedores</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content></ion-refresher-content>\n\n  </ion-refresher>\n\n\n\n  <ion-list>\n\n    <ion-item *ngFor="let forn of itensFornecedores">\n\n      <h3>{{forn.nome}}</h3>\n\n      <p>{{forn.cnpj}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n  </ion-infinite-scroll>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__["a" /* EntradaService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */]])
-    ], EntradaPage);
-    return EntradaPage;
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__["a" /* FornecedorService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
+    ], FornecedorPage);
+    return FornecedorPage;
 }());
 
-//# sourceMappingURL=entrada.js.map
+//# sourceMappingURL=fornecedor.js.map
 
 /***/ })
 

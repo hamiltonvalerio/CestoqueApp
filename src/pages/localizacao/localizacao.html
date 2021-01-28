@@ -21,12 +21,12 @@
 <ion-content padding>
   <ion-list>
     
-    <ion-item *ngFor="let item of itens">
+    <button ion-item *ngFor="let item of itens" (click)="openItem(item.id)">
       <ion-label>
         <h2>{{ item.nome }}</h2>
         <p></p>
       </ion-label>
-    </ion-item>
+    </button>
 
   </ion-list>
 

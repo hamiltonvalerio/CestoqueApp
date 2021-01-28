@@ -394,7 +394,7 @@ export class CadastroEntradaPage {
       this.entrada.numProcesso = this.numProcesso;
       this.entrada.numRequisicao = this.numRequisicao;
       this.entrada.itens = this.citensnovaentrada;
-
+      this.entrada.localizacao = this.localizacao;
       this.entradaService.insert(this.entrada).subscribe(response => {
         this.showInserOk();
       },

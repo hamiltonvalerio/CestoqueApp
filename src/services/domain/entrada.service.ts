@@ -9,7 +9,6 @@ export class EntradaService{
     constructor(public http: HttpClient){
 
     }
-
     
     findAll() : Observable<EntradaDTO[]> {
         return this.http.get<EntradaDTO[]>(`${API_CONFIG.baseUrl}/entradas`)

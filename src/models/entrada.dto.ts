@@ -1,3 +1,4 @@
+import { LocalizacaoDTO } from './localizacao.dto';
 import { CInsumoEntradaDTO } from './cinsumoentrada.dto';
 import { InsumoEntradaDTO } from "./insumoentrada.dto";
 
@@ -10,4 +11,5 @@ export interface EntradaDTO{
     numRequisicao: string;
     itens: CInsumoEntradaDTO[];
     show: Boolean;
+    localizacao: LocalizacaoDTO;
 }
