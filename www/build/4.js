@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 699:
+/***/ 705:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasPageModule", function() { return CategoriasPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocalizacaoInsumosPageModule", function() { return LocalizacaoInsumosPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(731);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localizacao_insumos__ = __webpack_require__(739);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CategoriasPageModule = /** @class */ (function () {
-    function CategoriasPageModule() {
+var LocalizacaoInsumosPageModule = /** @class */ (function () {
+    function LocalizacaoInsumosPageModule() {
     }
-    CategoriasPageModule = __decorate([
+    LocalizacaoInsumosPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */],
+                __WEBPACK_IMPORTED_MODULE_2__localizacao_insumos__["a" /* LocalizacaoInsumosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__localizacao_insumos__["a" /* LocalizacaoInsumosPage */]),
             ],
         })
-    ], CategoriasPageModule);
-    return CategoriasPageModule;
+    ], LocalizacaoInsumosPageModule);
+    return LocalizacaoInsumosPageModule;
 }());
 
-//# sourceMappingURL=categorias.module.js.map
+//# sourceMappingURL=localizacao-insumos.module.js.map
 
 /***/ }),
 
@@ -76,15 +76,16 @@ var ConverteListaIonItemDivider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 731:
+/***/ 739:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(713);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__ = __webpack_require__(356);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoInsumosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_converte_list_ionitemdivider__ = __webpack_require__(713);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -98,53 +99,75 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the CategoriasPage page.
+ * Generated class for the LocalizacaoInsumosPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CategoriasPage = /** @class */ (function () {
-    function CategoriasPage(navCtrl, navParams, CategoriaService, modalCtrl) {
+var LocalizacaoInsumosPage = /** @class */ (function () {
+    function LocalizacaoInsumosPage(navCtrl, navParams, localizacaoService, insumoService, LoadingController) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.CategoriaService = CategoriaService;
-        this.modalCtrl = modalCtrl;
-        this.itensCategorias = [];
+        this.localizacaoService = localizacaoService;
+        this.insumoService = insumoService;
+        this.LoadingController = LoadingController;
+        this.page = 0;
+        this.itens = [];
     }
-    CategoriasPage.prototype.openModal = function () {
-        var _this = this;
-        console.log("aqui");
-        var modal = this.modalCtrl.create('CadastroCategoriaPage');
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
-    };
-    CategoriasPage.prototype.ionViewDidLoad = function () {
+    LocalizacaoInsumosPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LocalizacaoInsumosPage');
+        //this.loadData();
         this.getItens();
     };
-    CategoriasPage.prototype.getItens = function () {
+    LocalizacaoInsumosPage.prototype.loadData = function () {
         var _this = this;
-        this.CategoriaService.findAll()
+        var localizacaoId = this.navParams.get('localizacao_id');
+        console.log("aqui: " + localizacaoId);
+        this.insumoService.findByLocalizacao(localizacaoId, this.page, 30)
             .subscribe(function (response) {
-            _this.itensCategorias = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
-            ;
+            _this.itens = new __WEBPACK_IMPORTED_MODULE_4__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
         }, function (error) { });
+        console.log(this.itens);
+        this.itens.forEach(function (value) {
+            console.log(value);
+        });
     };
-    CategoriasPage = __decorate([
+    LocalizacaoInsumosPage.prototype.getItens = function () {
+        var _this = this;
+        var localizacaoId = this.navParams.get('localizacao_id');
+        var loader = this.presentLoading();
+        this.itens = [];
+        this.insumoService.findByLocalizacao(localizacaoId, this.page, 30)
+            .subscribe(function (response) {
+            var start = _this.itens.length;
+            _this.itens = _this.itens.concat(response['content']);
+            var end = _this.itens.length - 1;
+            console.log(_this.itens);
+            loader.dismiss();
+        }, function (error) {
+            loader.dismiss();
+        });
+    };
+    LocalizacaoInsumosPage.prototype.presentLoading = function () {
+        var loader = this.LoadingController.create({
+            content: "Aguarde..."
+        });
+        loader.present();
+        return loader;
+    };
+    LocalizacaoInsumosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-categorias',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/'<!--\n\n  Generated template for the CategoriasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar class="categoria2">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="categoria2">\n\n\n\n\n\n\n\n<ion-item-group *ngFor="let item of itensCategorias">\n\n\n\n  <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n  <ion-item *ngFor="let it of item.arrayDeItens">\n\n    <h3>{{it.nome}}</h3>\n\n  </ion-item>\n\n\n\n</ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/,
+            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>localizacao-insumos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__["a" /* CategoriaService */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ModalController */]])
-    ], CategoriasPage);
-    return CategoriasPage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */]) === "function" && _e || Object])
+    ], LocalizacaoInsumosPage);
+    return LocalizacaoInsumosPage;
+    var _a, _b, _c, _d, _e;
 }());
 
-//# sourceMappingURL=categorias.js.map
+//# sourceMappingURL=localizacao-insumos.js.map
 
 /***/ })
 

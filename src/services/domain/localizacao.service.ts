@@ -24,4 +24,8 @@ export class LocalizacaoService{
         });
     }
 
+    findByLocalizacao(localizacao_id : string){
+        //return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/buscaporlocalizacao/?localizacao_id=${localizacao_id}`);
+    }
+
 }

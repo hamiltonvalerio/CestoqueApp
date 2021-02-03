@@ -44,7 +44,7 @@ export class CategoriasPage {
   getItens(){
     this.CategoriaService.findAll()
     .subscribe(response => {
-      this.itensCategorias = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());;
+      this.itensCategorias = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },
     error => {})
   }

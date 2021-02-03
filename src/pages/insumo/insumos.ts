@@ -60,6 +60,7 @@ export class InsumosPage {
       let start = this.itensInsumos.length;
       this.itensInsumos = this.itensInsumos.concat(response['content']);
       let end = this.itensInsumos.length -1;
+      console.log( this.itensInsumos);
       loader.dismiss();
 
 
@@ -67,6 +68,8 @@ export class InsumosPage {
     error => {
       loader.dismiss();
     });
+
+    
   }
 
   presentLoading(){

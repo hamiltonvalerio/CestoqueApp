@@ -19,23 +19,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    
-    <button ion-item *ngFor="let item of itens" (click)="openItem(item.id)">
-      <ion-label>
-        <h2>{{ item.nome }}</h2>
-        <p></p>
-      </ion-label>
-    </button>
-
-  </ion-list>
-
   <ion-item-group *ngFor="let item of itensLocalizacoes">
 
     <ion-item-divider light>{{item.letra}}</ion-item-divider>
-    <ion-item *ngFor="let l of item.arrayDeItens">
+    <button ion-item *ngFor="let l of item.arrayDeItens" (click)="openItem(l.id)">
       <h3>{{l.nome}}</h3>
-    </ion-item>
+      <h2>{{l.id}}</h2>
+    </button>
 
   </ion-item-group>
 

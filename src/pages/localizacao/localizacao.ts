@@ -46,9 +46,12 @@ export class LocalizacaoPage {
       this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },
     error => {})
+    
+   
   }
 
   public openItem(itemId: string): void {
+    console.log("aqui"+itemId);
     this.navCtrl.push('LocalizacaoInsumosPage', {
       localizacao_id: itemId
     });

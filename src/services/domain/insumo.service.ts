@@ -33,7 +33,9 @@ export class InsumoService {
         return this.http.get(`${API_CONFIG.baseUrl}/insumos/page/?page=${page}&linesPerPage=${linesPerPage}`);
     }
 
-    //findByLocalizacao()
+    findByLocalizacao(localizacao_id : string, page : number = 0, linesPerPage : number = 30){
+        return this.http.get(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacao/?localizacao_id=${localizacao_id}&page=${page}&linesPerPage=${linesPerPage}`);
+    }
 
 
 }
