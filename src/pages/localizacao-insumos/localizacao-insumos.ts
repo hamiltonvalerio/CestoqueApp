@@ -19,7 +19,7 @@ import { ConverteListaIonItemDivider } from '../../utils/converte-list-ionitemdi
 })
 export class LocalizacaoInsumosPage {
   page : number = 0;
-  itens = [];
+  insumosLocalizacao = [];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -34,7 +34,7 @@ export class LocalizacaoInsumosPage {
     this.getItens();
   }
 
-  loadData(){
+  /*loadData(){
     let localizacaoId = this.navParams.get('localizacao_id');
     console.log("aqui: "+localizacaoId);
 
@@ -52,18 +52,18 @@ export class LocalizacaoInsumosPage {
       console.log(value);
     })
 
-  }
+  }*/
 
   getItens(){
     let localizacaoId = this.navParams.get('localizacao_id');
     let loader = this.presentLoading();
-    this.itens = [];
+    this.insumosLocalizacao = [];
     this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
     .subscribe(response => {
-      let start = this.itens.length;
-      this.itens = this.itens.concat(response['content']);
-      let end = this.itens.length -1;
-      console.log(this.itens);
+      let start = this.insumosLocalizacao.length;
+      this.insumosLocalizacao = this.insumosLocalizacao.concat(response['content']);
+      let end = this.insumosLocalizacao.length -1;
+      console.log(this.insumosLocalizacao);
       loader.dismiss();
     },
     error => {
