@@ -12,10 +12,17 @@
 
 <ion-content padding>
 
-     <ion-list>
-      <ion-item *ngFor="let ins of insumosLocalizacao">
-        <h3>{{ins.nome}}</h3>
-      </ion-item>
-    </ion-list>
+    <ion-grid *ngFor="let ins of insumosLocalizacao">
+      <ion-row>
+        <h6>{{ins.nome}}</h6>
+      </ion-row>
+      <ion-row>
+        Unidade: {{ins.unidade.nome}}
+      </ion-row>
+      <ion-row>
+        Quantidade: {{ins.quantidade}}
+      </ion-row>
+    </ion-grid>
+
 
 </ion-content>

@@ -95,7 +95,16 @@ var EntradaPage = /** @class */ (function () {
         modal.present();
     };
     EntradaPage.prototype.openCadastroEntrada = function () {
-        this.navCtrl.push('CadastroEntradaPage', {}, { animate: true, direction: 'forward' });
+        var _this = this;
+        this.navCtrl.push('CadastroEntradaPage', {}, {
+            animate: true,
+            direction: 'forward'
+        }).then(function () {
+            _this.navCtrl.getActive().onDidDismiss(function (data) {
+                //console.log(data);
+                _this.getItens();
+            });
+        });
     };
     EntradaPage.prototype.doRefresh = function (refresher) {
         this.page = 0;
@@ -124,7 +133,7 @@ var EntradaPage = /** @class */ (function () {
     ], EntradaPage.prototype, "nav", void 0);
     EntradaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n  Generated template for the EntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Entradas</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n      <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n      <ion-icon name="arrow-down"></ion-icon>\n      <ion-item>\n        <p>Número da Requisição: {{ent.numRequisicao}}</p>\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n      </ion-item>\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-item>\n      <ion-list *ngIf="ent.show">\n        <ion-label>Detalhes</ion-label>\n        <p>Nº do Documento LIA: {{ent.numLIA}}</p>\n        <ion-list *ngFor="let ient of ent.itens">\n          <ion-row>Produto: {{ient.insumo.nome}}</ion-row>\n          <ion-row>Quantidade Entrada: {{ient.quantidade}}</ion-row>\n          <ion-row>Quantidade Atual: {{ient.insumo.quantidade}}</ion-row>\n          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>\n          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>\n        </ion-list>\n      </ion-list>\n    </ion-item>\n    \n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/,
+            selector: 'page-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n  Generated template for the EntradaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Entradas</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n      <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n      <ion-icon name="arrow-down"></ion-icon>\n      <ion-item>\n        <p>Número da Requisição: {{ent.numRequisicao}}</p>\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n      </ion-item>\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-item>\n      <ion-list *ngIf="ent.show">\n        <ion-label>Detalhes</ion-label>\n        <p>Nº do Documento LIA: {{ent.numLIA}}</p>\n        <ion-list *ngFor="let ient of ent.itens">\n          <ion-row>Produto: {{ient.insumo.nome}}</ion-row>\n          <ion-row>Quantidade Entrada: {{ient.quantidade}}</ion-row>\n          <ion-row>Quantidade Atual: {{ient.insumo.quantidade}}</ion-row>\n          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>\n          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>\n          <ion-row><br></ion-row>\n        </ion-list>\n      </ion-list>\n    </ion-item>\n    \n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],

@@ -62,11 +62,18 @@ export class EntradaPage {
   }
 
   openCadastroEntrada(){
-    this.navCtrl.push('CadastroEntradaPage', {}, {animate: true, direction: 'forward'});
-   
+    this.navCtrl.push('CadastroEntradaPage', {}, {
+      animate: true, 
+      direction: 'forward'}).then(() => {
+        this.navCtrl.getActive().onDidDismiss(data => {
+          //console.log(data);
+          this.getItens();
+        });
+      });
   }
-
+0
   doRefresh(refresher){
+
     this.page = 0;
     this.getItens();
     setTimeout(()=>{
