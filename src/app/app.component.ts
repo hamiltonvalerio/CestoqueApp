@@ -35,6 +35,7 @@ export class MyApp {
       { title: 'Fornecedores', component: 'FornecedorPage' },
       { title: 'Unidades de Medida', component: 'UnidadePage' },
       { title: 'Localizações', component: 'LocalizacaoPage' },
+      { title: 'Movimentações', component: 'MovimentacaoPage' },
       { title: 'Entradas', component: 'EntradaPage' },
       { title: 'Saídas', component: 'SaidaPage' },
       { title: 'Profile', component: 'ProfilePage' },
