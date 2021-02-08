@@ -17,6 +17,7 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+
 <ion-content>
   <ion-card *ngFor="let ent of itensEntradas; let i = index;">
     <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">

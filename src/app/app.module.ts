@@ -1,3 +1,4 @@
+import { MovimentacaoService } from './../services/domain/movimentacao.service';
 import { DateTimeFormatPipe } from './../utils/date-time-format';
 import { EntradaService } from './../services/domain/entrada.service';
 import { InsumoService } from './../services/domain/insumo.service';
@@ -59,6 +60,7 @@ import { IonicSelectableModule } from 'ionic-selectable';
     StorageService, 
     ColaboradorService,
     EntradaService,
+    MovimentacaoService,
     DateTimeFormatPipe
   ]
 })

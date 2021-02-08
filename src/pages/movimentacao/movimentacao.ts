@@ -22,4 +22,15 @@ export class MovimentacaoPage {
     console.log('ionViewDidLoad MovimentacaoPage');
   }
 
+  openCadastroMovimentacao(){
+    this.navCtrl.push('CadastroMovimentacaoPage', {}, {
+      animate: true, 
+      direction: 'forward'}).then(() => {
+        this.navCtrl.getActive().onDidDismiss(data => {
+          //console.log(data);
+          //this.getItens();
+        });
+      });
+  }
+
 }

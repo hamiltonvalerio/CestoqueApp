@@ -71,7 +71,7 @@ export class EntradaPage {
         });
       });
   }
-0
+
   doRefresh(refresher){
 
     this.page = 0;
