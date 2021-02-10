@@ -21,6 +21,11 @@
 <ion-content padding>
 
   <ion-item color="item_entrada">
+    <ion-label>Data da Movimentação</ion-label>
+    <ion-input type="date" [(ngModel)]="datamovimentacao"> </ion-input>
+  </ion-item>
+
+  <ion-item color="item_entrada">
     <ion-label>Localização</ion-label>
     <ionic-selectable 
       #localizacoesComponent
@@ -42,11 +47,11 @@
     </ionic-selectable>
   </ion-item>
 
-  <ion-item>
+  <ion-item color="item_entrada">
     <ion-label>Insumos</ion-label>
     <ionic-selectable 
       item-content 
-      [(ngModel)]="citemInsumo"
+      [(ngModel)]="citemInsumoSelecionados"
       [items]="citensInsumos"
       itemValueField="id"
       itemTextField="nomecodalmox"
@@ -55,6 +60,7 @@
       (onChange)="imprimeItem($event)"
       [isMultiple]="true" 
       [isEnabled]="localizacoesComponent.value"
+      [canClear]="true"
 		  [placeholder]="localizacoesComponent.value ? '' : 'Selecione a localização primeiro'">
 
       <ng-template ionicSelectableItemTemplate let-item="item">
@@ -74,6 +80,82 @@
 
     </ionic-selectable>
   </ion-item>
+  
+  <ion-item color="item_entrada">
+    <ion-label>Movimentar para</ion-label>
+    <ionic-selectable 
+      item-content
+      [(ngModel)]="paralocalizacao"
+      [items]="paralocalizacoes"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      [hasVirtualScroll]="true" >
+      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{item.nome}}
+          </ion-label>
+        </ion-item>
+      </ng-template>
+    </ionic-selectable>
+  </ion-item>
 
+  <ion-item class text-center>
+    <button ion-button (click)="gerarGridMovimentacao()">Gerar grid de movimentação</button>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1>
+        Cod
+      </ion-col>
+      <ion-col col-3>
+        Insumo
+      </ion-col>
+      <ion-col col-1>
+        Quant Atual
+      </ion-col>
+      <ion-col col-2>
+        Quant de Movimentação
+      </ion-col>
+      <ion-col col-2>
+        Localização de Origem
+      </ion-col>
+      <ion-col col-2>
+        Localização de Destino
+      </ion-col>
+      <ion-col col-1>
+        Exc
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let mov of movimentacao.itens" class="vertical-align-content">
+      <ion-col col-1>
+        {{mov.insumo.codigoalmox}}
+      </ion-col>
+      <ion-col col-3>
+        {{mov.insumo.nome}}
+      </ion-col>
+      <ion-col col-1>
+        {{mov.quantidadeOrigem}}
+      </ion-col>
+      <ion-col col-2>
+        <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
+      </ion-col>
+      <ion-col col-2>
+        {{localizacao.nome}}
+      </ion-col>
+      <ion-col col-2>
+        {{paralocalizacao.nome}}
+      </ion-col>
+      <ion-col col-1>
+        <ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 style="text-align: right;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Inserir Movimentação</button></ion-col>
+    </ion-row>
+   
+  </ion-grid>
 
 </ion-content>

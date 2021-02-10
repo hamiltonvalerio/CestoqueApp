@@ -1,3 +1,5 @@
+import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
+import { MovimentacaoDTO } from './../../models/movimentacao.dto';
 import { CInsumoDTO } from './../../models/cinsumo.dto';
 import { IonicSelectableComponent } from 'ionic-selectable';
 import { DateTimeFormatPipe } from './../../utils/date-time-format';
@@ -27,13 +29,24 @@ export class CadastroMovimentacaoPage {
 
   localizacoes: LocalizacaoDTO[] = [];
   localizacao: LocalizacaoDTO;
+  paralocalizacoes: LocalizacaoDTO[] = [];
+  paralocalizacao: LocalizacaoDTO;
+
+  te : LocalizacaoDTO = {} as any;;
 
   page : number = 0;
 
   citensInsumos : InsumoDTO[] = [];
-  citemInsumo : InsumoDTO;
+  citemInsumoSelecionados : InsumoDTO[];
 
-  teste = [];
+  movimentacao: MovimentacaoDTO = {} as any;
+  movimentacaogrid: MovimentacaoDTO = {} as any; 
+  datamovimentacao: Date = new Date();
+
+  de: LocalizacaoDTO;
+  para: LocalizacaoDTO;
+
+  botaoMovimenta: boolean = true;
 
   constructor(
     public navCtrl: NavController, 
@@ -50,6 +63,7 @@ export class CadastroMovimentacaoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroMovimentacaoPage');
     this.loadLocalizacao();
+    this.loadParaLocalizacao();
   }
 
   dismiss() {
@@ -71,6 +85,14 @@ export class CadastroMovimentacaoPage {
     });
   }
 
+  loadParaLocalizacao(){
+    let loader = this.presentLoading();
+    this.localizacaoService.findAll().subscribe((response) => {
+      this.paralocalizacoes = response.sort();
+      loader.dismiss();
+    });
+  }
+
   insumoChange(event: {
     component: IonicSelectableComponent;
     value: LocalizacaoDTO;
@@ -78,10 +100,10 @@ export class CadastroMovimentacaoPage {
     if (event.value) {
       this.citensInsumos = [];
       this.insumoService.findByLocalizacaoNoPage(event.value.id).subscribe(response => {
-        let start = this.teste.length;
+       
         //this.teste = this.teste.concat(response['content']);
         this.citensInsumos = response.sort();
-        let end = this.teste.length -1;
+
       },
       error => {
         //loader.dismiss();
@@ -106,9 +128,7 @@ export class CadastroMovimentacaoPage {
     component: IonicSelectableComponent;
     value: CInsumoDTO;
   }) {
-    console.log("this.citemInsumo: "+this.citemInsumo);
-    this.citemInsumo = event.value;
-    console.log(event.value);
+    //this.citemInsumo = event.value;
   }
 
   presentLoading() {
@@ -124,6 +144,52 @@ export class CadastroMovimentacaoPage {
     setTimeout(() => {
       infiniteScroll.component.endInfiniteScroll();
     }, 1000);
+  }
+  
+  gerarGridMovimentacao(){
+    console.log(this.dateTimeFormatPipe.transform(this.datamovimentacao));
+    this.movimentacao = {} as any; 
+    let itensInsumosMovimentacao : InsumomovimentacaoDTO[] = [];
+
+    this.de = this.localizacao;
+    this.movimentacao.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
+    this.citemInsumoSelecionados.forEach(function (value){
+      let itemMov : InsumomovimentacaoDTO = {
+        insumo: value, 
+        quantidadeOrigem: value.quantidade,
+        quantidadeMovimentada: 0
+      };
+      itensInsumosMovimentacao.push(itemMov);
+    });
+    this.movimentacao.localizacaoOrigem = this.localizacao;
+    this.movimentacao.localizacaoDestino = this.paralocalizacao;
+    this.movimentacao.itens = itensInsumosMovimentacao;
+    this.te = this.localizacao;
+    this.botaoMovimenta = false;
+    
+    //console.log(this.movimentacao);
+
+    //console.log(this.localizacao)
+    //console.log(this.citemInsumoSelecionados);
+    //console.log(this.paralocalizacao);
+    //console.log(this.movimentacao);
+  }
+
+  inserirMovimentacao(){
+    console.log(this.movimentacao);
+  }
+
+  excluiItem(insumomovimentacaoDTO: InsumomovimentacaoDTO){
+
+   /* this.citensnovaentrada.forEach(function(item, index, object) {
+      if (item === cInsumoEntradaDTO) {
+        object.splice(index, 1);
+      }
+    });
+  if(this.citensnovaentrada.length == 0){
+    this.botaoEntrada = true;
+  }
+  this.loadData();*/
   }
   
 

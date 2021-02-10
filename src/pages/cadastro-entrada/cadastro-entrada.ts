@@ -388,7 +388,7 @@ export class CadastroEntradaPage {
         }
 
       });
-      console.log(this.dateTimeFormatPipe.transform(this.dataEntrada));
+      //console.log(this.dateTimeFormatPipe.transform(this.dataEntrada));
       this.entrada.dataEntrada = this.dateTimeFormatPipe.transform(this.dataEntrada);
       this.entrada.numLIA = this.numLIA;
       this.entrada.numProcesso = this.numProcesso;
@@ -399,7 +399,7 @@ export class CadastroEntradaPage {
         this.showInserOk();
       },
       error => {});
-      console.log(this.entrada)
+      //console.log(this.entrada)
     }
 
     showInserOk(){
