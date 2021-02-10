@@ -158,12 +158,13 @@ var HideHeaderDirective = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroMovimentacaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_insumo_service__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -179,6 +180,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the CadastroMovimentacaoPage page.
  *
@@ -186,7 +188,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var CadastroMovimentacaoPage = /** @class */ (function () {
-    function CadastroMovimentacaoPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, loadingCtrl, localizacaoService, dateTimeFormatPipe) {
+    function CadastroMovimentacaoPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, loadingCtrl, localizacaoService, dateTimeFormatPipe, movimentacaoService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
@@ -196,6 +198,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         this.loadingCtrl = loadingCtrl;
         this.localizacaoService = localizacaoService;
         this.dateTimeFormatPipe = dateTimeFormatPipe;
+        this.movimentacaoService = movimentacaoService;
         this.localizacoes = [];
         this.paralocalizacoes = [];
         this.te = {};
@@ -302,7 +305,34 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         //console.log(this.movimentacao);
     };
     CadastroMovimentacaoPage.prototype.inserirMovimentacao = function () {
-        console.log(this.movimentacao);
+        //console.log(this.movimentacao);
+        var _this = this;
+        this.mov = {};
+        this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
+        this.mov.localizacaoOrigem = this.localizacao;
+        this.mov.localizacaoDestino = this.paralocalizacao;
+        this.mov.itens = this.movimentacao.itens;
+        console.log(this.mov);
+        this.movimentacaoService.insert(this.mov).subscribe(function (response) {
+            _this.showInsertOk();
+        }, function (error) { });
+    };
+    CadastroMovimentacaoPage.prototype.showInsertOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro efetuado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
     };
     CadastroMovimentacaoPage.prototype.excluiItem = function (insumomovimentacaoDTO) {
         /* this.citensnovaentrada.forEach(function(item, index, object) {
@@ -316,13 +346,13 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
        this.loadData();*/
     };
     CadastroMovimentacaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
             selector: 'page-cadastro-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/'<!--\n\n  Generated template for the CadastroMovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n     Movimentação de Insumos\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Data da Movimentação</ion-label>\n\n    <ion-input type="date" [(ngModel)]="datamovimentacao"> </ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Localização</ion-label>\n\n    <ionic-selectable \n\n      #localizacoesComponent\n\n      item-content\n\n      [(ngModel)]="localizacao"\n\n      [items]="localizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      (onChange)="insumoChange($event)"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Insumos</ion-label>\n\n    <ionic-selectable \n\n      item-content \n\n      [(ngModel)]="citemInsumoSelecionados"\n\n      [items]="citensInsumos"\n\n      itemValueField="id"\n\n      itemTextField="nomecodalmox"\n\n      [hasInfiniteScroll]="true"\n\n      [canSearch]="true"\n\n      (onChange)="imprimeItem($event)"\n\n      [isMultiple]="true" \n\n      [isEnabled]="localizacoesComponent.value"\n\n      [canClear]="true"\n\n		  [placeholder]="localizacoesComponent.value ? \'\' : \'Selecione a localização primeiro\'">\n\n\n\n      <ng-template ionicSelectableItemTemplate let-item="item">\n\n       \n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}} \n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label class="label_14">\n\n            Cod Almox: {{item.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}\n\n          </ion-label>\n\n        </ion-item>\n\n\n\n      </ng-template>\n\n\n\n    </ionic-selectable>\n\n  </ion-item>\n\n  \n\n  <ion-item color="item_entrada">\n\n    <ion-label>Movimentar para</ion-label>\n\n    <ionic-selectable \n\n      item-content\n\n      [(ngModel)]="paralocalizacao"\n\n      [items]="paralocalizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item class text-center>\n\n    <button ion-button (click)="gerarGridMovimentacao()">Gerar grid de movimentação</button>\n\n  </ion-item>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-1>\n\n        Cod\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        Insumo\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Quant Atual\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Quant de Movimentação\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Localização de Origem\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Localização de Destino\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Exc\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngFor="let mov of movimentacao.itens" class="vertical-align-content">\n\n      <ion-col col-1>\n\n        {{mov.insumo.codigoalmox}}\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        {{mov.insumo.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        {{mov.quantidadeOrigem}}\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        {{localizacao.nome}}\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        {{paralocalizacao.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-12 style="text-align: right;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Inserir Movimentação</button></ion-col>\n\n    </ion-row>\n\n   \n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* LoadingController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__["a" /* DateTimeFormatPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__["a" /* DateTimeFormatPipe */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* LoadingController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__["a" /* DateTimeFormatPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__["a" /* DateTimeFormatPipe */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__["a" /* MovimentacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__["a" /* MovimentacaoService */]) === "function" && _k || Object])
     ], CadastroMovimentacaoPage);
     return CadastroMovimentacaoPage;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 }());
 
 //# sourceMappingURL=cadastro-movimentacao.js.map

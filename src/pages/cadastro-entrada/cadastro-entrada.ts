@@ -381,6 +381,7 @@ export class CadastroEntradaPage {
     }
 
     inserirEntrada(){
+      console.log("this.entrada: "+this.entrada);
       this.entrada = {} as any;    
       this.citensnovaentrada.forEach(function(item, index, object){
         if(item.valorTotal != null && item.quantidade != null){
@@ -395,14 +396,15 @@ export class CadastroEntradaPage {
       this.entrada.numRequisicao = this.numRequisicao;
       this.entrada.itens = this.citensnovaentrada;
       this.entrada.localizacao = this.localizacao;
+      console.log("this.entrada2: "+this.entrada);
       this.entradaService.insert(this.entrada).subscribe(response => {
-        this.showInserOk();
+        this.showInsertOk();
       },
       error => {});
       //console.log(this.entrada)
     }
 
-    showInserOk(){
+    showInsertOk(){
       let alert = this.alertCtrl.create({
         title: 'Sucesso',
         message: 'Cadastro efetuado com sucesso!',

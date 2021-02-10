@@ -1,3 +1,4 @@
+import { MovimentacaoService } from './../../services/domain/movimentacao.service';
 import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
 import { MovimentacaoDTO } from './../../models/movimentacao.dto';
 import { CInsumoDTO } from './../../models/cinsumo.dto';
@@ -40,6 +41,8 @@ export class CadastroMovimentacaoPage {
   citemInsumoSelecionados : InsumoDTO[];
 
   movimentacao: MovimentacaoDTO = {} as any;
+  mov : MovimentacaoDTO;
+
   movimentacaogrid: MovimentacaoDTO = {} as any; 
   datamovimentacao: Date = new Date();
 
@@ -57,7 +60,8 @@ export class CadastroMovimentacaoPage {
     public insumoService: InsumoService,
     public loadingCtrl: LoadingController,
     public localizacaoService: LocalizacaoService,
-    public dateTimeFormatPipe: DateTimeFormatPipe,) {
+    public dateTimeFormatPipe: DateTimeFormatPipe,
+    public movimentacaoService: MovimentacaoService,) {
   }
 
   ionViewDidLoad() {
@@ -176,7 +180,39 @@ export class CadastroMovimentacaoPage {
   }
 
   inserirMovimentacao(){
-    console.log(this.movimentacao);
+    //console.log(this.movimentacao);
+
+    this.mov  = {} as any;
+
+    this. mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
+    this.mov.localizacaoOrigem = this.localizacao;
+    this.mov.localizacaoDestino = this.paralocalizacao;
+    this.mov.itens = this.movimentacao.itens;
+
+
+    console.log(this.mov);
+
+    this.movimentacaoService.insert(this.mov).subscribe(response => {
+      this.showInsertOk();
+    },
+    error => {});
+  }
+
+  showInsertOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Cadastro efetuado com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   excluiItem(insumomovimentacaoDTO: InsumomovimentacaoDTO){

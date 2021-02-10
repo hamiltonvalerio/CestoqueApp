@@ -429,6 +429,7 @@ var CadastroEntradaPage = /** @class */ (function () {
     };
     CadastroEntradaPage.prototype.inserirEntrada = function () {
         var _this = this;
+        console.log("this.entrada: " + this.entrada);
         this.entrada = {};
         this.citensnovaentrada.forEach(function (item, index, object) {
             if (item.valorTotal != null && item.quantidade != null) {
@@ -442,12 +443,13 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.entrada.numRequisicao = this.numRequisicao;
         this.entrada.itens = this.citensnovaentrada;
         this.entrada.localizacao = this.localizacao;
+        console.log("this.entrada2: " + this.entrada);
         this.entradaService.insert(this.entrada).subscribe(function (response) {
-            _this.showInserOk();
+            _this.showInsertOk();
         }, function (error) { });
         //console.log(this.entrada)
     };
-    CadastroEntradaPage.prototype.showInserOk = function () {
+    CadastroEntradaPage.prototype.showInsertOk = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
             title: 'Sucesso',
