@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 711:
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupPageModule", function() { return SignupPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasPageModule", function() { return CategoriasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup__ = __webpack_require__(745);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(735);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,73 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SignupPageModule = /** @class */ (function () {
-    function SignupPageModule() {
+var CategoriasPageModule = /** @class */ (function () {
+    function CategoriasPageModule() {
     }
-    SignupPageModule = __decorate([
+    CategoriasPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__signup__["a" /* SignupPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
             ],
         })
-    ], SignupPageModule);
-    return SignupPageModule;
+    ], CategoriasPageModule);
+    return CategoriasPageModule;
 }());
 
-//# sourceMappingURL=signup.module.js.map
+//# sourceMappingURL=categorias.module.js.map
 
 /***/ }),
 
-/***/ 745:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(21);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConverteListaIonItemDivider; });
+var ConverteListaIonItemDivider = /** @class */ (function () {
+    function ConverteListaIonItemDivider() {
+    }
+    /**
+     * name
+     */
+    ConverteListaIonItemDivider.prototype.retornaArrayGroup = function (responseSorte) {
+        var itens = [];
+        var itensOrdenados = [];
+        var letraAtual = "";
+        var itensAtuaisDeRetorno = [];
+        itensOrdenados = responseSorte;
+        itensOrdenados.forEach(function (value, index) {
+            if (value.nome.charAt(0) != letraAtual) {
+                letraAtual = value.nome.charAt(0);
+                var newGroup = {
+                    letra: letraAtual,
+                    arrayDeItens: []
+                };
+                itensAtuaisDeRetorno = newGroup.arrayDeItens;
+                itens.push(newGroup);
+            }
+            itensAtuaisDeRetorno.push(value);
+        });
+        return itens;
+    };
+    return ConverteListaIonItemDivider;
+}());
+
+//# sourceMappingURL=converte-list-ionitemdivider.js.map
+
+/***/ }),
+
+/***/ 735:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriasPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,92 +99,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the SignupPage page.
+ * Generated class for the CategoriasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var SignupPage = /** @class */ (function () {
-    function SignupPage(navCtrl, navParams, formBuilder, alertCtrl, colaboradorService) {
+var CategoriasPage = /** @class */ (function () {
+    function CategoriasPage(navCtrl, navParams, CategoriaService, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.formBuilder = formBuilder;
-        this.alertCtrl = alertCtrl;
-        this.colaboradorService = colaboradorService;
-        this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]],
-            cpf: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]],
-            email: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].email]],
-            senha: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]],
-            confirmarsenha: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]]
-        }, { validator: this.MatchPassword });
+        this.CategoriaService = CategoriaService;
+        this.modalCtrl = modalCtrl;
+        this.itensCategorias = [];
     }
-    SignupPage.prototype.MatchPassword = function (AC) {
-        var newPassword = AC.get('senha').value; // to get value in input tag
-        var confirmPassword = AC.get('confirmarsenha').value; // to get value in input tag
-        if (newPassword != confirmPassword) {
-            AC.get('confirmarsenha').setErrors({ MatchPassword: true });
-        }
-        else {
-            AC.get('confirmarsenha').setErrors(null);
-        }
-    };
-    SignupPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SignupPage');
-    };
-    SignupPage.prototype.signupUser = function () {
+    CategoriasPage.prototype.openModal = function () {
         var _this = this;
-        this.colaboradorService.insert(this.formGroup.value).subscribe(function (response) {
-            _this.showInserOk();
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroCategoriaPage');
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    CategoriasPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
+    };
+    CategoriasPage.prototype.getItens = function () {
+        var _this = this;
+        this.CategoriaService.findAll()
+            .subscribe(function (response) {
+            _this.itensCategorias = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
         }, function (error) { });
     };
-    SignupPage.prototype.showInserOk = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    SignupPage.prototype.focused = function () {
-        console.log("focussed");
-    };
-    SignupPage.prototype.passwordAlert = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Erro 401: Falha de autenticação',
-            message: 'Email ou senha incorretos',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok'
-                }
-            ]
-        });
-        alert.present();
-    };
-    SignupPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-signup',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\signup\signup.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>signup</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="signupUser()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>CPF*</ion-label>\n\n      <ion-input formControlName="cpf" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.cpf.dirty && formGroup.controls.cpf.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Email*</ion-label>\n\n      <ion-input formControlName="email"  type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Senha*</ion-label>\n\n      <ion-input formControlName="senha"  type="password"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Confirmar Senha*</ion-label>\n\n      <ion-input formControlName="confirmarsenha" id="confirmarsenha" type="password"></ion-input>\n\n    </ion-item> \n\n      <ion-label *ngIf="formGroup.controls[\'confirmarsenha\'].errors?.MatchPassword" class="danger">\n\n        Senhas não conferem!\n\n  </ion-label>\n\n    \n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\signup\signup.html"*/,
+    CategoriasPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-categorias',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/'<!--\n\n  Generated template for the CategoriasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar class="categoria2">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="categoria2">\n\n\n\n\n\n\n\n<ion-item-group *ngFor="let item of itensCategorias">\n\n\n\n  <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n  <ion-item *ngFor="let it of item.arrayDeItens">\n\n    <h3>{{it.nome}}</h3>\n\n  </ion-item>\n\n\n\n</ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])
-    ], SignupPage);
-    return SignupPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__["a" /* CategoriaService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ModalController */]])
+    ], CategoriasPage);
+    return CategoriasPage;
 }());
 
-//# sourceMappingURL=signup.js.map
+//# sourceMappingURL=categorias.js.map
 
 /***/ })
 

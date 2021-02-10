@@ -1,3 +1,5 @@
+import { DirectivesModule } from './../../directives/directives.module';
+import { IonicSelectableModule } from 'ionic-selectable';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CadastroMovimentacaoPage } from './cadastro-movimentacao';
@@ -8,6 +10,8 @@ import { CadastroMovimentacaoPage } from './cadastro-movimentacao';
   ],
   imports: [
     IonicPageModule.forChild(CadastroMovimentacaoPage),
+    IonicSelectableModule,
+    DirectivesModule
   ],
 })
 export class CadastroMovimentacaoPageModule {}

@@ -5,11 +5,75 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>cadastro-movimentacao</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>
+     Movimentação de Insumos
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()" >
+        <span ion-text color="primary" showWhen="ios">Cancel </span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-item color="item_entrada">
+    <ion-label>Localização</ion-label>
+    <ionic-selectable 
+      #localizacoesComponent
+      item-content
+      [(ngModel)]="localizacao"
+      [items]="localizacoes"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      (onChange)="insumoChange($event)"
+      [hasVirtualScroll]="true" >
+      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{item.nome}}
+          </ion-label>
+        </ion-item>
+      </ng-template>
+    </ionic-selectable>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Insumos</ion-label>
+    <ionic-selectable 
+      item-content 
+      [(ngModel)]="citemInsumo"
+      [items]="citensInsumos"
+      itemValueField="id"
+      itemTextField="nomecodalmox"
+      [hasInfiniteScroll]="true"
+      [canSearch]="true"
+      (onChange)="imprimeItem($event)"
+      [isMultiple]="true" 
+      [isEnabled]="localizacoesComponent.value"
+		  [placeholder]="localizacoesComponent.value ? '' : 'Selecione a localização primeiro'">
+
+      <ng-template ionicSelectableItemTemplate let-item="item">
+       
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{item.nome}} 
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label_14">
+            Cod Almox: {{item.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}
+          </ion-label>
+        </ion-item>
+
+      </ng-template>
+
+    </ionic-selectable>
+  </ion-item>
+
 
 </ion-content>

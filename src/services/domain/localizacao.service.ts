@@ -15,6 +15,10 @@ export class LocalizacaoService{
         return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes`)
     }
 
+    findAllInsumoLocalizacao() : Observable<LocalizacaoDTO[]> {
+        return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/findAllInsumoLocalizacao`)
+    }
+
     insert(obj: LocalizacaoDTO){
         return this.http.post(`${API_CONFIG.baseUrl}/localizacoes/`,
         obj,

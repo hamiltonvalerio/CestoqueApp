@@ -1,14 +1,14 @@
 webpackJsonp([16],{
 
-/***/ 698:
+/***/ 703:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUnidadePageModule", function() { return CadastroUnidadePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FornecedorPageModule", function() { return FornecedorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__ = __webpack_require__(730);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fornecedor__ = __webpack_require__(738);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroUnidadePageModule = /** @class */ (function () {
-    function CadastroUnidadePageModule() {
+var FornecedorPageModule = /** @class */ (function () {
+    function FornecedorPageModule() {
     }
-    CadastroUnidadePageModule = __decorate([
+    FornecedorPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */],
+                __WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fornecedor__["a" /* FornecedorPage */]),
             ],
         })
-    ], CadastroUnidadePageModule);
-    return CadastroUnidadePageModule;
+    ], FornecedorPageModule);
+    return FornecedorPageModule;
 }());
 
-//# sourceMappingURL=cadastro-unidade.module.js.map
+//# sourceMappingURL=fornecedor.module.js.map
 
 /***/ }),
 
-/***/ 730:
+/***/ 738:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUnidadePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,70 +58,85 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the CadastroUnidadePage page.
+ * Generated class for the FornecedorPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CadastroUnidadePage = /** @class */ (function () {
-    function CadastroUnidadePage(navCtrl, viewCtrl, alertCtrl, navParams, formBuilder, unidadeService) {
+var FornecedorPage = /** @class */ (function () {
+    function FornecedorPage(navCtrl, navParams, fornecedorService, modalCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
-        this.viewCtrl = viewCtrl;
-        this.alertCtrl = alertCtrl;
         this.navParams = navParams;
-        this.formBuilder = formBuilder;
-        this.unidadeService = unidadeService;
-        this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
-            sigla: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
-        }, {});
+        this.fornecedorService = fornecedorService;
+        this.modalCtrl = modalCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.itensFornecedores = [];
+        this.page = 0;
     }
-    CadastroUnidadePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroUnidadePage');
+    FornecedorPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
     };
-    CadastroUnidadePage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    CadastroUnidadePage.prototype.cadastrarUnidade = function () {
+    FornecedorPage.prototype.openModal = function () {
         var _this = this;
-        this.unidadeService.insert(this.formGroup.value).subscribe(function (response) {
-            _this.showInserOk();
-        }, function (error) { });
-    };
-    CadastroUnidadePage.prototype.showInserOk = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroFornecedorPage');
+        modal.onDidDismiss(function () {
+            _this.getItens();
         });
-        alert.present();
+        modal.present();
     };
-    CadastroUnidadePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-cadastro-unidade',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/'<!--\n\n  Generated template for the CadastroUnidadePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Unidade\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  \n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarUnidade()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Sigla*</ion-label>\n\n      <ion-input formControlName="sigla" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.sigla.dirty && formGroup.controls.sigla.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/,
+    FornecedorPage.prototype.getItens = function () {
+        var _this = this;
+        var loader = this.presentLoading();
+        this.itensFornecedores = [];
+        this.fornecedorService.findTotosPaginado(this.page, 30)
+            .subscribe(function (response) {
+            //this.itensFornecedores = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+            var start = _this.itensFornecedores.length;
+            _this.itensFornecedores = _this.itensFornecedores.concat(response['content']);
+            var end = _this.itensFornecedores.length - 1;
+            loader.dismiss();
+            //console.log("pagina"+this.page);
+            //console.log("fornecedor"+this.itensFornecedores);
+        }, function (error) {
+            loader.dismiss();
+        });
+    };
+    FornecedorPage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
+        loader.present();
+        return loader;
+    };
+    FornecedorPage.prototype.doRefresh = function (refresher) {
+        this.page = 0;
+        this.itensFornecedores = [];
+        this.getItens();
+        setTimeout(function () {
+            refresher.complete();
+        }, 1000);
+    };
+    FornecedorPage.prototype.doInfinite = function (infiniteScroll) {
+        this.page++;
+        this.getItens();
+        setTimeout(function () {
+            infiniteScroll.component.endInfiniteScroll();
+        }, 1000);
+    };
+    FornecedorPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-fornecedor',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/'<!--\n\n  Generated template for the FornecedorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Fornecedores</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content></ion-refresher-content>\n\n  </ion-refresher>\n\n\n\n  <ion-list>\n\n    <ion-item *ngFor="let forn of itensFornecedores">\n\n      <h3>{{forn.nome}}</h3>\n\n      <p>{{forn.cnpj}}</p>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n  </ion-infinite-scroll>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\fornecedor\fornecedor.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__["a" /* UnidadeService */]])
-    ], CadastroUnidadePage);
-    return CadastroUnidadePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__["a" /* FornecedorService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
+    ], FornecedorPage);
+    return FornecedorPage;
 }());
 
-//# sourceMappingURL=cadastro-unidade.js.map
+//# sourceMappingURL=fornecedor.js.map
 
 /***/ })
 

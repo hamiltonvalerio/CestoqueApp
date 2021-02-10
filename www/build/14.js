@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 702:
+/***/ 706:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntradaPageModule", function() { return EntradaPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocalizacaoInsumosPageModule", function() { return LocalizacaoInsumosPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(734);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localizacao_insumos__ = __webpack_require__(743);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EntradaPageModule = /** @class */ (function () {
-    function EntradaPageModule() {
+var LocalizacaoInsumosPageModule = /** @class */ (function () {
+    function LocalizacaoInsumosPageModule() {
     }
-    EntradaPageModule = __decorate([
+    LocalizacaoInsumosPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */],
+                __WEBPACK_IMPORTED_MODULE_2__localizacao_insumos__["a" /* LocalizacaoInsumosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__localizacao_insumos__["a" /* LocalizacaoInsumosPage */]),
             ],
         })
-    ], EntradaPageModule);
-    return EntradaPageModule;
+    ], LocalizacaoInsumosPageModule);
+    return LocalizacaoInsumosPageModule;
 }());
 
-//# sourceMappingURL=entrada.module.js.map
+//# sourceMappingURL=localizacao-insumos.module.js.map
 
 /***/ }),
 
-/***/ 734:
+/***/ 743:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntradaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoInsumosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,92 +59,84 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the EntradaPage page.
+ * Generated class for the LocalizacaoInsumosPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var EntradaPage = /** @class */ (function () {
-    function EntradaPage(navCtrl, navParams, entradaService, modalCtrl) {
+var LocalizacaoInsumosPage = /** @class */ (function () {
+    function LocalizacaoInsumosPage(navCtrl, navParams, localizacaoService, insumoService, LoadingController) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.entradaService = entradaService;
-        this.modalCtrl = modalCtrl;
+        this.localizacaoService = localizacaoService;
+        this.insumoService = insumoService;
+        this.LoadingController = LoadingController;
         this.page = 0;
-        this.showDetails = false;
+        this.insumosLocalizacao = [];
     }
-    EntradaPage.prototype.ionViewDidLoad = function () {
+    LocalizacaoInsumosPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LocalizacaoInsumosPage');
+        //this.loadData();
         this.getItens();
     };
-    EntradaPage.prototype.getItens = function () {
+    /*loadData(){
+      let localizacaoId = this.navParams.get('localizacao_id');
+      console.log("aqui: "+localizacaoId);
+  
+      this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
+      .subscribe(response => {
+        
+        this.itens = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+        
+      },
+      error => {})
+  
+      console.log(this.itens);
+  
+      this.itens.forEach(function (value){
+        console.log(value);
+      })
+  
+    }*/
+    LocalizacaoInsumosPage.prototype.getItens = function () {
         var _this = this;
-        this.entradaService.findAll()
+        var localizacaoId = this.navParams.get('localizacao_id');
+        var loader = this.presentLoading();
+        this.insumosLocalizacao = [];
+        this.insumoService.findByLocalizacao(localizacaoId, this.page, 30)
             .subscribe(function (response) {
-            //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
-            _this.itensEntradas = response.sort();
-            console.log(_this.itensEntradas);
-        }, function (error) { });
-    };
-    EntradaPage.prototype.openModal = function () {
-        var _this = this;
-        console.log("aqui");
-        var modal = this.modalCtrl.create('CadastroEntradaPage');
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
-    };
-    EntradaPage.prototype.openCadastroEntrada = function () {
-        var _this = this;
-        this.navCtrl.push('CadastroEntradaPage', {}, {
-            animate: true,
-            direction: 'forward'
-        }).then(function () {
-            _this.navCtrl.getActive().onDidDismiss(function (data) {
-                //console.log(data);
-                _this.getItens();
-            });
+            var start = _this.insumosLocalizacao.length;
+            _this.insumosLocalizacao = _this.insumosLocalizacao.concat(response['content']);
+            var end = _this.insumosLocalizacao.length - 1;
+            console.log(_this.insumosLocalizacao);
+            loader.dismiss();
+        }, function (error) {
+            loader.dismiss();
         });
     };
-    EntradaPage.prototype.doRefresh = function (refresher) {
-        this.page = 0;
-        this.getItens();
-        setTimeout(function () {
-            refresher.complete();
-        }, 1000);
-    };
-    EntradaPage.prototype.doInfinite = function (infiniteScroll) {
-        this.page++;
-        this.getItens();
-        setTimeout(function () {
-            infiniteScroll.complete();
-        }, 1000);
-    };
-    EntradaPage.prototype.toggleDetails = function (show, i) {
-        this.itensEntradas.map(function (_, index) {
-            if (index == i) {
-                _.show = !_.show;
-            }
+    LocalizacaoInsumosPage.prototype.presentLoading = function () {
+        var loader = this.LoadingController.create({
+            content: "Aguarde..."
         });
+        loader.present();
+        return loader;
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('myNav'),
-        __metadata("design:type", Object)
-    ], EntradaPage.prototype, "nav", void 0);
-    EntradaPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-entrada',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n\n  Generated template for the EntradaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Entradas</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Número da Requisição: {{ent.numRequisicao}}</p>\n\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="ent.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <p>Nº do Documento LIA: {{ent.numLIA}}</p>\n\n        <ion-list *ngFor="let ient of ent.itens">\n\n          <ion-row>Produto: {{ient.insumo.nome}}</ion-row>\n\n          <ion-row>Quantidade Entrada: {{ient.quantidade}}</ion-row>\n\n          <ion-row>Quantidade Atual: {{ient.insumo.quantidade}}</ion-row>\n\n          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>\n\n          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>\n\n          <ion-row><br></ion-row>\n\n        </ion-list>\n\n      </ion-list>\n\n    </ion-item>\n\n    \n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/,
+    LocalizacaoInsumosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Insumos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid *ngFor="let ins of insumosLocalizacao">\n\n      <ion-row>\n\n        <h6>{{ins.nome}}</h6>\n\n      </ion-row>\n\n      <ion-row>\n\n        Unidade: {{ins.unidade.nome}}\n\n      </ion-row>\n\n      <ion-row>\n\n        Quantidade: {{ins.quantidade}}\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__["a" /* EntradaService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */]])
-    ], EntradaPage);
-    return EntradaPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */]])
+    ], LocalizacaoInsumosPage);
+    return LocalizacaoInsumosPage;
 }());
 
-//# sourceMappingURL=entrada.js.map
+//# sourceMappingURL=localizacao-insumos.js.map
 
 /***/ })
 

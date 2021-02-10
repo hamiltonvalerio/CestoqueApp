@@ -37,5 +37,14 @@ export class InsumoService {
         return this.http.get(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacao/?localizacao_id=${localizacao_id}&page=${page}&linesPerPage=${linesPerPage}`);
     }
 
+    
+    /*findByLocalizacaoNoPage(localizacao_id : string){
+        return this.http.get(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacaonopage/?localizacao_id=${localizacao_id}`);
+    }*/
+
+    findByLocalizacaoNoPage(localizacao_id : string): Observable<InsumoDTO[]>{
+        return this.http.get<InsumoDTO[]>(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacaonopage/?localizacao_id=${localizacao_id}`);
+    }
+
 
 }
