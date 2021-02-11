@@ -1,3 +1,5 @@
+import { MovimentacaoService } from './../../services/domain/movimentacao.service';
+import { MovimentacaoDTO } from './../../models/movimentacao.dto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,12 +17,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MovimentacaoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  itensMovimentacoes : MovimentacaoDTO[];
+  page : number = 0;
+
+  showDetails: boolean = false;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public movimentacaoService: MovimentacaoService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MovimentacaoPage');
+    console.log("aqui")
+   this.getItens();
   }
+
+  getItens(){
+    console.log("aqui2")
+    this.movimentacaoService.findAll()
+    .subscribe(response => {
+      this.itensMovimentacoes = response.sort();
+      console.log(this.itensMovimentacoes);
+    },
+    error => {})
+  }
+
+  toggleDetails(show, i) {
+    this.itensMovimentacoes.map(( _ , index ) => { 
+      if (index == i ) {
+         _.show = !_.show 
+        }});
+ }
+
 
   openCadastroMovimentacao(){
     this.navCtrl.push('CadastroMovimentacaoPage', {}, {

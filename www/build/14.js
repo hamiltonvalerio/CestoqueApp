@@ -1,6 +1,6 @@
 webpackJsonp([14],{
 
-/***/ 712:
+/***/ 711:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43,8 +43,9 @@ var MovimentacaoPageModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovimentacaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,6 +57,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the MovimentacaoPage page.
  *
@@ -63,12 +65,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var MovimentacaoPage = /** @class */ (function () {
-    function MovimentacaoPage(navCtrl, navParams) {
+    function MovimentacaoPage(navCtrl, navParams, movimentacaoService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.movimentacaoService = movimentacaoService;
+        this.page = 0;
+        this.showDetails = false;
     }
     MovimentacaoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad MovimentacaoPage');
+        console.log("aqui");
+        this.getItens();
+    };
+    MovimentacaoPage.prototype.getItens = function () {
+        var _this = this;
+        console.log("aqui2");
+        this.movimentacaoService.findAll()
+            .subscribe(function (response) {
+            _this.itensMovimentacoes = response.sort();
+            console.log(_this.itensMovimentacoes);
+        }, function (error) { });
+    };
+    MovimentacaoPage.prototype.toggleDetails = function (show, i) {
+        this.itensMovimentacoes.map(function (_, index) {
+            if (index == i) {
+                _.show = !_.show;
+            }
+        });
     };
     MovimentacaoPage.prototype.openCadastroMovimentacao = function () {
         var _this = this;
@@ -83,10 +105,12 @@ var MovimentacaoPage = /** @class */ (function () {
         });
     };
     MovimentacaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/'<!--\n\n  Generated template for the MovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Movimentação de Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroMovimentacao()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/'<!--\n\n  Generated template for the MovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Movimentação de Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroMovimentacao()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let mov of itensMovimentacoes; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(mov.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Data da Movimentação: {{mov.datamovimentacao}}</p>\n\n        \n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__["a" /* MovimentacaoService */]])
     ], MovimentacaoPage);
     return MovimentacaoPage;
 }());

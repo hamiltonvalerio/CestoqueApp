@@ -8,5 +8,6 @@ export interface MovimentacaoDTO{
     localizacaoOrigem: LocalizacaoDTO;
     localizacaoDestino: LocalizacaoDTO;
     itens: InsumomovimentacaoDTO[];
+    show: Boolean;
 
 }

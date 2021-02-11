@@ -11,7 +11,7 @@ export class EntradaService{
     }
     
     findAll() : Observable<EntradaDTO[]> {
-        return this.http.get<EntradaDTO[]>(`${API_CONFIG.baseUrl}/entradas`)
+        return this.http.get<EntradaDTO[]>(`${API_CONFIG.baseUrl}/entradas`);
     }
 
     insert(obj: EntradaDTO){
