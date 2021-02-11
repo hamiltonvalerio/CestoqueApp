@@ -5,9 +5,17 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Insumos</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>
+      Cadastro de Quantidades Mínimas do Insumo
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()" >
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
@@ -17,11 +25,26 @@
         <h6>{{ins.nome}}</h6>
       </ion-row>
       <ion-row>
-        Unidade: {{ins.unidade.nome}}
+        <ion-col>Unidade: {{ins.unidade.nome}}</ion-col>
       </ion-row>
       <ion-row>
-        Quantidade: {{ins.quantidade}}
+        <ion-col>
+          Quantidade: {{ins.quantidade}}
+        </ion-col>
+        <ion-col>
+          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>
+        </ion-col>  
       </ion-row>
+      <ion-row>
+        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima
+        </button>
+      </ion-row>
+      <ion-row>
+        <ion-item-divider>
+          
+        </ion-item-divider>
+      </ion-row>
+
     </ion-grid>
 
 

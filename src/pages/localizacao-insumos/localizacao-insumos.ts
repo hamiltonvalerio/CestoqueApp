@@ -1,7 +1,8 @@
+import { ModalQuantidademinimaPage } from './../modal-quantidademinima/modal-quantidademinima';
 import { InsumoService } from './../../services/domain/insumo.service';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ModalController, ViewController, AlertController } from 'ionic-angular';
 import { InsumoDTO } from '../../models/insumo.dto';
 import { ConverteListaIonItemDivider } from '../../utils/converte-list-ionitemdivider';
 
@@ -25,7 +26,10 @@ export class LocalizacaoInsumosPage {
     public navParams: NavParams,
     public localizacaoService: LocalizacaoService,
     public insumoService: InsumoService,
-    public LoadingController: LoadingController) {
+    public LoadingController: LoadingController,
+    public modal: ModalController,
+    public viewCtrl: ViewController,
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -33,6 +37,21 @@ export class LocalizacaoInsumosPage {
     //this.loadData();
     this.getItens();
   }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+
+  atualizaQtdMinima(event: Event){
+
+    let modalQuantidademinimaPage =  this.modal.create(ModalQuantidademinimaPage, {evento: event});
+    modalQuantidademinimaPage.present();
+    modalQuantidademinimaPage.onDidDismiss(data => {
+      this.getItens(); 
+    });
+  }
+
+  
 
   /*loadData(){
     let localizacaoId = this.navParams.get('localizacao_id');
@@ -72,10 +91,6 @@ export class LocalizacaoInsumosPage {
     
   }
   
-
-
-
-
   presentLoading() {
     let loader = this.LoadingController.create({
       content: "Aguarde..."

@@ -1,3 +1,4 @@
+import { LocalizacaoInsumosPage } from './../localizacao-insumos/localizacao-insumos';
 import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
@@ -46,8 +47,6 @@ export class LocalizacaoPage {
       this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },
     error => {})
-    
-   
   }
 
   public openItem(itemId: string): void {

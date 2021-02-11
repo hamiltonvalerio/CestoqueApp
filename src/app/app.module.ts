@@ -1,3 +1,4 @@
+import { ModalQuantidademinimaPage } from './../pages/modal-quantidademinima/modal-quantidademinima';
 import { MovimentacaoService } from './../services/domain/movimentacao.service';
 import { DateTimeFormatPipe } from './../utils/date-time-format';
 import { EntradaService } from './../services/domain/entrada.service';
@@ -30,7 +31,8 @@ import { IonicSelectableModule } from 'ionic-selectable';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    ModalQuantidademinimaPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { IonicSelectableModule } from 'ionic-selectable';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp, ModalQuantidademinimaPage
   ],
   providers: [
     StatusBar,
@@ -61,7 +63,7 @@ import { IonicSelectableModule } from 'ionic-selectable';
     ColaboradorService,
     EntradaService,
     MovimentacaoService,
-    DateTimeFormatPipe
+    DateTimeFormatPipe,
   ]
 })
 export class AppModule {}

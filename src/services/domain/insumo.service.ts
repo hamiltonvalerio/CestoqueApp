@@ -46,5 +46,14 @@ export class InsumoService {
         return this.http.get<InsumoDTO[]>(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacaonopage/?localizacao_id=${localizacao_id}`);
     }
 
+    updateQuantidadeMinima(insumo_id : string, localizacao_id : string, quantidademinima : string, ){
+        return this.http.post(`${API_CONFIG.baseUrl}/insumos/updateQuantidadeMinima/?insumo_id=${insumo_id}&localizacao_id=${localizacao_id}&quantidademinima=${quantidademinima}`,
+        {
+            observe: 'response',
+            responseType: 'text'
+
+        });
+    }
+
 
 }
