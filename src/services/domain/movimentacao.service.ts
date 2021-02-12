@@ -24,4 +24,16 @@ export class MovimentacaoService {
         });
     }
 
+    findTotosPaginado(page : number = 0, linesPerPage : number = 30){
+        return this.http.get(`${API_CONFIG.baseUrl}/movimentacoes/page/?page=${page}&linesPerPage=${linesPerPage}`);
+    }
+
+    findString(){
+        return this.http.get(`${API_CONFIG.baseUrl}/movimentacoes/string`);
+    }
+
+    findTodos() : Observable<MovimentacaoDTO[]> {
+        return this.http.get<MovimentacaoDTO[]>(`${API_CONFIG.baseUrl}/movimentacoes/findTodos`);
+    }
+
 }

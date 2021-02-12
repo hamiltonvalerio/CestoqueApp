@@ -1,7 +1,7 @@
 import { MovimentacaoService } from './../../services/domain/movimentacao.service';
 import { MovimentacaoDTO } from './../../models/movimentacao.dto';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the MovimentacaoPage page.
@@ -17,15 +17,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MovimentacaoPage {
 
-  itensMovimentacoes : MovimentacaoDTO[];
+  itensMovimentacoes = [];
   page : number = 0;
+  str : string ;
 
   showDetails: boolean = false;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public movimentacaoService: MovimentacaoService) {
+    public movimentacaoService: MovimentacaoService,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -33,7 +35,7 @@ export class MovimentacaoPage {
    this.getItens();
   }
 
-  getItens(){
+  /*getItens(){
     console.log("aqui2")
     this.movimentacaoService.findAll()
     .subscribe(response => {
@@ -41,13 +43,44 @@ export class MovimentacaoPage {
       console.log(this.itensMovimentacoes);
     },
     error => {})
+  }*/
+
+  getItens(){
+    console.log("teste");
+    /*this.movimentacaoService.findString().subscribe(resp => {
+      console.log("entrou");
+    });*/
+    this.movimentacaoService.findTodos().subscribe(resp => {
+      console.log("entrou");
+    });
+    /*let loader = this.presentLoading();
+    this.itensMovimentacoes = [];
+    this.movimentacaoService.findTotosPaginado(this.page, 30)
+    .subscribe(response => {
+      let start = this.itensMovimentacoes.length;
+      this.itensMovimentacoes = this.itensMovimentacoes.concat(response['content']);
+      let end = this.itensMovimentacoes.length -1;
+      console.log( this.itensMovimentacoes);
+      loader.dismiss();
+
+
+    },
+    error => {
+      loader.dismiss();
+    });*/
+  }
+
+  presentLoading(){
+    let loader = this.loadingCtrl.create({content: "Aguarde..."});
+    loader.present();
+    return loader;
   }
 
   toggleDetails(show, i) {
-    this.itensMovimentacoes.map(( _ , index ) => { 
+    /*this.itensMovimentacoes.map(( _ , index ) => { 
       if (index == i ) {
          _.show = !_.show 
-        }});
+        }});*/
  }
 
 
