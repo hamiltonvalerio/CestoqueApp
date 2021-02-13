@@ -11,6 +11,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController } from 'ionic-angular';
 import { InsumoDTO } from '../../models/insumo.dto';
+import { Console } from '@angular/core/src/console';
 
 /**
  * Generated class for the CadastroMovimentacaoPage page.
@@ -152,6 +153,7 @@ export class CadastroMovimentacaoPage {
   
   gerarGridMovimentacao(){
     console.log(this.dateTimeFormatPipe.transform(this.datamovimentacao));
+    console.log(this.localizacao);
     this.movimentacao = {} as any; 
     let itensInsumosMovimentacao : InsumomovimentacaoDTO[] = [];
 

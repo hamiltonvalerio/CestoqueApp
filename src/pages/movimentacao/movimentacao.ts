@@ -17,7 +17,7 @@ import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-an
 })
 export class MovimentacaoPage {
 
-  itensMovimentacoes = [];
+  itensMovimentacoes : MovimentacaoDTO[];
   page : number = 0;
   str : string ;
 
@@ -50,9 +50,10 @@ export class MovimentacaoPage {
     /*this.movimentacaoService.findString().subscribe(resp => {
       console.log("entrou");
     });*/
-    this.movimentacaoService.findTodos().subscribe(resp => {
-      console.log("entrou");
-    });
+    this.movimentacaoService.findAll().subscribe(resp => {
+      this.itensMovimentacoes = resp.sort();
+    },
+    error => {});
     /*let loader = this.presentLoading();
     this.itensMovimentacoes = [];
     this.movimentacaoService.findTotosPaginado(this.page, 30)

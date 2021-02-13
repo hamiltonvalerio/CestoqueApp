@@ -70,7 +70,6 @@ var MovimentacaoPage = /** @class */ (function () {
         this.navParams = navParams;
         this.movimentacaoService = movimentacaoService;
         this.loadingCtrl = loadingCtrl;
-        this.itensMovimentacoes = [];
         this.page = 0;
         this.showDetails = false;
     }
@@ -88,13 +87,14 @@ var MovimentacaoPage = /** @class */ (function () {
       error => {})
     }*/
     MovimentacaoPage.prototype.getItens = function () {
+        var _this = this;
         console.log("teste");
         /*this.movimentacaoService.findString().subscribe(resp => {
           console.log("entrou");
         });*/
-        this.movimentacaoService.findTodos().subscribe(function (resp) {
-            console.log("entrou");
-        });
+        this.movimentacaoService.findAll().subscribe(function (resp) {
+            _this.itensMovimentacoes = resp.sort();
+        }, function (error) { });
         /*let loader = this.presentLoading();
         this.itensMovimentacoes = [];
         this.movimentacaoService.findTotosPaginado(this.page, 30)
@@ -136,7 +136,7 @@ var MovimentacaoPage = /** @class */ (function () {
     };
     MovimentacaoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-movimentacao',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/'<!--\n\n  Generated template for the MovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Movimentação de Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroMovimentacao()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/,
+            selector: 'page-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/'<!--\n\n  Generated template for the MovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Movimentação de Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroMovimentacao()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n \n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
