@@ -28241,6 +28241,10 @@ page-cadastro-movimentacao .vertical-align-content > * {
   align-items: center !important;
 }
 
+page-cadastro-movimentacao ion-row {
+  text-align: center;
+}
+
 page-home h3 {
   text-align: center;
 }

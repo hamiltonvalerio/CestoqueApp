@@ -6,6 +6,7 @@ export interface InsumoEntradaDTO{
     loteCR: string;
     dataIrradiacao: Date;
     dataVencIrradiacao: Date;
+    dataValidade: Date;
 
     quantidade: number;
     valor: number;

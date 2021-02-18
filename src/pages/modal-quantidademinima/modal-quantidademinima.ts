@@ -26,12 +26,11 @@ export class ModalQuantidademinimaPage{
     public insumoService: InsumoService) {
 
     this.evento = this.navParams.get('evento');
-
+    
   }
 
-
   ionViewDidLoad() {
-    console.log(this.evento);
+    console.log("EVENTO"+this.evento);
   }
 
   dismiss() {
@@ -39,7 +38,7 @@ export class ModalQuantidademinimaPage{
   }
 
   salvarQuantidadeMinima(ev){
-    this.insumoService.updateQuantidadeMinima(ev.id, ev.codlocalizacaoIE, ev.quantidademinima).subscribe(response => {
+    this.insumoService.updateQuantidadeMinima(ev.id, ev.quantidademinima).subscribe(response => {
       this.showInserOk();
     },
     error => {});

@@ -106,6 +106,7 @@ export class CadastroEntradaPage {
       loteFornecedor: ['',], 
       loteCR: ['',], 
       dataIrradiacao: ['',],
+      dataValidade: ['',],
       quantidade: ['',[Validators.required]],
       valor: ['',],
       valorTotal: ['',],
@@ -200,6 +201,7 @@ export class CadastroEntradaPage {
             loteCR: '', 
             dataIrradiacao: null, 
             dataVencIrradiacao: null,
+            dataValidade: null,
             quantidade: 0, 
             valor: 0,
             valorTotal: 0};
@@ -307,6 +309,7 @@ export class CadastroEntradaPage {
       loteCR: '', 
       dataIrradiacao: null, 
       dataVencIrradiacao: null,
+      dataValidade: null,
       quantidade: 0, 
       valor: 0,
       valorTotal: 0};

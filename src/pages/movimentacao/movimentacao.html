@@ -19,5 +19,30 @@
 </ion-header>
 
 <ion-content>
- 
+  <ion-card *ngFor="let mv of movimentacoes; let i = index;">
+    <ion-card-header type="button" (click)="toggleDetails(mv.show,i)">
+      <ion-icon name="arrow-down"></ion-icon>
+      <ion-item>
+        <p>Data de Movimentação: {{mv.datamovimentacao}}</p>
+      </ion-item>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+      <ion-list *ngIf="mv.show">
+        <ion-label>Detalhes</ion-label>
+        <ion-list *ngFor="let ient of mv.itens">
+          <ion-row>Insumo: {{ient.insumo.nome}}</ion-row>
+          <ion-row>Quantidade Movimentada: {{ient.quantidadeMovimentada}}</ion-row>
+          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>
+          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>
+          <ion-row>Data de Irradiação: {{ient.dataIrradiacao}}</ion-row>
+          <ion-row>Data de Validade: {{ient.dataValidade}}</ion-row>
+          <ion-row><br></ion-row>
+        </ion-list>
+      </ion-list>
+    </ion-item>
+    
+    </ion-card-content>
+  </ion-card>
 </ion-content>

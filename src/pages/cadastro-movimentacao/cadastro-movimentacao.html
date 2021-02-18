@@ -51,10 +51,10 @@
     <ion-label>Insumos</ion-label>
     <ionic-selectable 
       item-content 
-      [(ngModel)]="citemInsumoSelecionados"
-      [items]="citensInsumos"
+      [(ngModel)]="insumosLocalizacoesSelecionados"
+      [items]="insumosLocalizacoes"
       itemValueField="id"
-      itemTextField="nomecodalmox"
+      itemTextField="nomedoinsumo"
       [hasInfiniteScroll]="true"
       [canSearch]="true"
       (onChange)="imprimeItem($event)"
@@ -67,15 +67,27 @@
        
         <ion-item>
           <ion-label text-wrap class="label_12_b">
-            {{item.nome}} 
+            {{item.insumo.nome}} 
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label class="label_14">
-            Cod Almox: {{item.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}
+            Cod Almox: {{item.insumo.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}
           </ion-label>
         </ion-item>
-
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            Lote Fornecedor: {{item.loteFornecedor}} 
+          </ion-label>
+          <ion-label text-wrap class="label_12_b">
+            Lote CR: {{item.loteCR}} 
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            Data de Validade: {{item.dataValidade}} 
+          </ion-label>
+        </ion-item>
       </ng-template>
 
     </ionic-selectable>
@@ -114,13 +126,13 @@
         Insumo
       </ion-col>
       <ion-col col-1>
-        Quant Atual
+       Lote Fornecedor
+      </ion-col>
+      <ion-col col-1>
+        Quant Movimentação
       </ion-col>
       <ion-col col-2>
-        Quant de Movimentação
-      </ion-col>
-      <ion-col col-2>
-        Localização de Origem
+        Aprovado
       </ion-col>
       <ion-col col-2>
         Localização de Destino
@@ -129,7 +141,7 @@
         Exc
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let mov of movimentacao.itens" class="vertical-align-content">
+    <ion-row *ngFor="let mov of movimentacao.itens" >
       <ion-col col-1>
         {{mov.insumo.codigoalmox}}
       </ion-col>
@@ -137,13 +149,22 @@
         {{mov.insumo.nome}}
       </ion-col>
       <ion-col col-1>
-        {{mov.quantidadeOrigem}}
+        {{mov.loteFornecedor}}
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-1>
         <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
       </ion-col>
       <ion-col col-2>
-        {{localizacao.nome}}
+        <ion-list radio-group [(ngModel)]="mov.aprovado" name="case" [hidden]="fieldsGarantiaQualidade">
+          <ion-item>
+            <ion-label>Sim</ion-label>
+            <ion-radio value="true"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Não</ion-label>
+            <ion-radio value="false"></ion-radio>
+          </ion-item>
+        </ion-list>
       </ion-col>
       <ion-col col-2>
         {{paralocalizacao.nome}}

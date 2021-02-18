@@ -22,17 +22,40 @@
 
     <ion-grid *ngFor="let ins of insumosLocalizacao">
       <ion-row>
-        <h6>{{ins.nome}}</h6>
-      </ion-row>
-      <ion-row>
-        <ion-col>Unidade: {{ins.unidade.nome}}</ion-col>
+        <h6>{{ins.insumo.nome}}</h6>
       </ion-row>
       <ion-row>
         <ion-col>
-          Quantidade: {{ins.quantidade}}
+          <h6>Quantidade: {{ins.quantidade}}</h6>
+        </ion-col>
+        <ion-col>
+          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>
+        </ion-col>
+        <ion-col>
+          <h6>Lote CR: {{ins.loteCR}}</h6>
+        </ion-col>
+        <ion-col>
+          <h6>Lote Produção: {{ins.loteProducao}}</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h6>Data de Validade: {{ins.dataValidade}}</h6>
+        </ion-col>
+        <ion-col>
+          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>
+        </ion-col>
+        <ion-col>
+          <h6>Data de Aprovação GQ: {{ins.dataAprovacao}}</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
         </ion-col>
         <ion-col>
           <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>
+        </ion-col>
+        <ion-col>
         </ion-col>  
       </ion-row>
       <ion-row>

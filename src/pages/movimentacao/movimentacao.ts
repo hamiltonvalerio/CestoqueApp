@@ -1,3 +1,5 @@
+import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
+import { InsumoService } from './../../services/domain/insumo.service';
 import { MovimentacaoService } from './../../services/domain/movimentacao.service';
 import { MovimentacaoDTO } from './../../models/movimentacao.dto';
 import { Component } from '@angular/core';
@@ -17,7 +19,7 @@ import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-an
 })
 export class MovimentacaoPage {
 
-  itensMovimentacoes : MovimentacaoDTO[];
+  movimentacoes : MovimentacaoDTO[] = [];
   page : number = 0;
   str : string ;
 
@@ -27,48 +29,22 @@ export class MovimentacaoPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public movimentacaoService: MovimentacaoService,
+    public insumoService: InsumoService,
     public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
-    console.log("aqui")
    this.getItens();
   }
 
-  /*getItens(){
+  getItens(){
     console.log("aqui2")
     this.movimentacaoService.findAll()
     .subscribe(response => {
-      this.itensMovimentacoes = response.sort();
-      console.log(this.itensMovimentacoes);
+      this.movimentacoes = response.sort();
+      console.log(this.movimentacoes);
     },
     error => {})
-  }*/
-
-  getItens(){
-    console.log("teste");
-    /*this.movimentacaoService.findString().subscribe(resp => {
-      console.log("entrou");
-    });*/
-    this.movimentacaoService.findAll().subscribe(resp => {
-      this.itensMovimentacoes = resp.sort();
-    },
-    error => {});
-    /*let loader = this.presentLoading();
-    this.itensMovimentacoes = [];
-    this.movimentacaoService.findTotosPaginado(this.page, 30)
-    .subscribe(response => {
-      let start = this.itensMovimentacoes.length;
-      this.itensMovimentacoes = this.itensMovimentacoes.concat(response['content']);
-      let end = this.itensMovimentacoes.length -1;
-      console.log( this.itensMovimentacoes);
-      loader.dismiss();
-
-
-    },
-    error => {
-      loader.dismiss();
-    });*/
   }
 
   presentLoading(){
@@ -78,12 +54,11 @@ export class MovimentacaoPage {
   }
 
   toggleDetails(show, i) {
-    /*this.itensMovimentacoes.map(( _ , index ) => { 
+    this.movimentacoes.map(( _ , index ) => { 
       if (index == i ) {
          _.show = !_.show 
-        }});*/
+        }});
  }
-
 
   openCadastroMovimentacao(){
     this.navCtrl.push('CadastroMovimentacaoPage', {}, {
@@ -91,7 +66,7 @@ export class MovimentacaoPage {
       direction: 'forward'}).then(() => {
         this.navCtrl.getActive().onDidDismiss(data => {
           //console.log(data);
-          //this.getItens();
+          this.getItens();
         });
       });
   }

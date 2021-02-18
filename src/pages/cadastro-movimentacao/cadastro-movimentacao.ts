@@ -1,3 +1,4 @@
+import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
 import { MovimentacaoService } from './../../services/domain/movimentacao.service';
 import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
 import { MovimentacaoDTO } from './../../models/movimentacao.dto';
@@ -41,6 +42,10 @@ export class CadastroMovimentacaoPage {
   citensInsumos : InsumoDTO[] = [];
   citemInsumoSelecionados : InsumoDTO[];
 
+  insumosLocalizacoes : InsumolocalizacaoDTO[] = [];
+  insumosLocalizacoesSelecionados : InsumolocalizacaoDTO[];
+
+
   movimentacao: MovimentacaoDTO = {} as any;
   mov : MovimentacaoDTO;
 
@@ -51,6 +56,10 @@ export class CadastroMovimentacaoPage {
   para: LocalizacaoDTO;
 
   botaoMovimenta: boolean = true;
+
+  fieldsGarantiaQualidade: boolean = true;
+
+  aprovacao: string;
 
   constructor(
     public navCtrl: NavController, 
@@ -63,10 +72,11 @@ export class CadastroMovimentacaoPage {
     public localizacaoService: LocalizacaoService,
     public dateTimeFormatPipe: DateTimeFormatPipe,
     public movimentacaoService: MovimentacaoService,) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroMovimentacaoPage');
+    //console.log('ionViewDidLoad CadastroMovimentacaoPage');
     this.loadLocalizacao();
     this.loadParaLocalizacao();
   }
@@ -103,29 +113,24 @@ export class CadastroMovimentacaoPage {
     value: LocalizacaoDTO;
   }) {
     if (event.value) {
+      if(event.value.nome === "GARANTIA DA QUALIDADE"){
+        this.fieldsGarantiaQualidade = false;
+        console.log("teste: "+this.fieldsGarantiaQualidade);
+      }else{
+        this.fieldsGarantiaQualidade = true;
+      }
       this.citensInsumos = [];
       this.insumoService.findByLocalizacaoNoPage(event.value.id).subscribe(response => {
-       
-        //this.teste = this.teste.concat(response['content']);
-        this.citensInsumos = response.sort();
-
+        //this.citensInsumos = response.sort();
+        this.insumosLocalizacoes = response.sort();
       },
       error => {
         //loader.dismiss();
       });
 
-      //this.citensInsumos = this.insumoService.findByLocalizacaoNoPage(event.value.id);
-
-      /*this.citensInsumos = this.insumoService.findByLocalizacaoNoPage(event.value.id).filter(il => {
-        return il.il.id.localizacao_id  === event.value.id;
-      });*/
-
-      /*if (this.port && this.port.id !== event.value.id) {
-        this.port = null;
-      }*/
     } else {
       this.citensInsumos = [];
-      //this.citemInsumo = null;
+      this.insumosLocalizacoes = [];
     }
   }
 
@@ -152,27 +157,46 @@ export class CadastroMovimentacaoPage {
   }
   
   gerarGridMovimentacao(){
-    console.log(this.dateTimeFormatPipe.transform(this.datamovimentacao));
-    console.log(this.localizacao);
+    if(this.datamovimentacao == null || this.localizacao == null || this.paralocalizacao == null || (typeof this.insumosLocalizacoesSelecionados == 'undefined')){
+     
+      console.log("entrou")
+      return;
+    }
+
+
     this.movimentacao = {} as any; 
     let itensInsumosMovimentacao : InsumomovimentacaoDTO[] = [];
 
     this.de = this.localizacao;
     this.movimentacao.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
-    this.citemInsumoSelecionados.forEach(function (value){
+    this.insumosLocalizacoesSelecionados.forEach(function (value){
       let itemMov : InsumomovimentacaoDTO = {
-        insumo: value, 
+        insumo: value.insumo, 
         quantidadeOrigem: value.quantidade,
-        quantidadeMovimentada: 0
+        quantidadeMovimentada: 0,
+        loteFornecedor: value.loteFornecedor,
+        loteCR: value.loteCR,
+        loteProducao: value.loteProducao,
+        dataIrradiacao: value.dataIrradiacao,
+        dataValidade: value.dataValidade,
+        dataAprovacao: value.dataAprovacao,
+        dataReproprovacao: value.dataReproprovacao,
+        aprovado: value.aprovado,
+        fieldsGarantiaQualidade: true,
       };
       itensInsumosMovimentacao.push(itemMov);
     });
+    
     this.movimentacao.localizacaoOrigem = this.localizacao;
+    if(this.localizacao.nome === "GARANTIA DA QUALIDADE"){
+      //this.movimentacao.fieldsGarantiaQualidade = false;
+    }else{
+      //this.movimentacao.fieldsGarantiaQualidade = true;
+    }
     this.movimentacao.localizacaoDestino = this.paralocalizacao;
     this.movimentacao.itens = itensInsumosMovimentacao;
     this.te = this.localizacao;
     this.botaoMovimenta = false;
-    
     //console.log(this.movimentacao);
 
     //console.log(this.localizacao)
@@ -186,13 +210,10 @@ export class CadastroMovimentacaoPage {
 
     this.mov  = {} as any;
 
-    this. mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
+    this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
     this.mov.localizacaoOrigem = this.localizacao;
     this.mov.localizacaoDestino = this.paralocalizacao;
     this.mov.itens = this.movimentacao.itens;
-
-
-    console.log(this.mov);
 
     this.movimentacaoService.insert(this.mov).subscribe(response => {
       this.showInsertOk();
@@ -219,15 +240,22 @@ export class CadastroMovimentacaoPage {
 
   excluiItem(insumomovimentacaoDTO: InsumomovimentacaoDTO){
 
-   /* this.citensnovaentrada.forEach(function(item, index, object) {
-      if (item === cInsumoEntradaDTO) {
+  this.movimentacao.itens.forEach(function(item, index, object) {
+      if (item === insumomovimentacaoDTO) {
         object.splice(index, 1);
       }
     });
-  if(this.citensnovaentrada.length == 0){
-    this.botaoEntrada = true;
+  if(this.movimentacao.itens.length == 0){
+    this.botaoMovimenta = true;
   }
-  this.loadData();*/
+  //this.loadData();
+  }
+
+  limpar(){
+    this.datamovimentacao = null;
+    this.localizacao = null;
+    this.paralocalizacao = null;
+    this.insumosLocalizacoesSelecionados = [];
   }
   
 

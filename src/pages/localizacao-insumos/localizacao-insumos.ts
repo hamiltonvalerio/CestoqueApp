@@ -1,3 +1,4 @@
+import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
 import { ModalQuantidademinimaPage } from './../modal-quantidademinima/modal-quantidademinima';
 import { InsumoService } from './../../services/domain/insumo.service';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
@@ -20,7 +21,7 @@ import { ConverteListaIonItemDivider } from '../../utils/converte-list-ionitemdi
 })
 export class LocalizacaoInsumosPage {
   page : number = 0;
-  insumosLocalizacao = [];
+  insumosLocalizacao : InsumolocalizacaoDTO[];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -43,7 +44,7 @@ export class LocalizacaoInsumosPage {
   }
 
   atualizaQtdMinima(event: Event){
-
+    console.log(event)
     let modalQuantidademinimaPage =  this.modal.create(ModalQuantidademinimaPage, {evento: event});
     modalQuantidademinimaPage.present();
     modalQuantidademinimaPage.onDidDismiss(data => {
@@ -53,21 +54,21 @@ export class LocalizacaoInsumosPage {
 
   
 
-  /*loadData(){
+  /*getItens(){
     let localizacaoId = this.navParams.get('localizacao_id');
     console.log("aqui: "+localizacaoId);
 
-    this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
+    this.insumoService.findInsumoLocalizacaoByLocalizacao(localizacaoId,this.page, 30)
     .subscribe(response => {
       
-      this.itens = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+      this.insumosLocalizacao = response.sort();
       
     },
     error => {})
 
-    console.log(this.itens);
+    console.log(this.insumosLocalizacao);
 
-    this.itens.forEach(function (value){
+    this.insumosLocalizacao.forEach(function (value){
       console.log(value);
     })
 
@@ -77,12 +78,12 @@ export class LocalizacaoInsumosPage {
     let localizacaoId = this.navParams.get('localizacao_id');
     let loader = this.presentLoading();
     this.insumosLocalizacao = [];
-    this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
+    //this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
+    this.insumoService.findInsumoLocalizacaoByLocalizacao(localizacaoId)
     .subscribe(response => {
       let start = this.insumosLocalizacao.length;
       this.insumosLocalizacao = this.insumosLocalizacao.concat(response['content']);
       let end = this.insumosLocalizacao.length -1;
-      console.log(this.insumosLocalizacao);
       loader.dismiss();
     },
     error => {
