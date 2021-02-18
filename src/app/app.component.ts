@@ -14,7 +14,7 @@ export class MyApp {
 
   rootPage: string = 'HomePage';
 
-  pages: Array<{title: string, component: string}>;
+  pages: Array<{title: string, component: string, img: string}>;
 
   constructor(public platform: Platform, app: App, public statusBar: StatusBar, public splashScreen: SplashScreen, public auth: AuthService) {
     this.initializeApp();
@@ -27,19 +27,19 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Dashboard', component: 'DashboardPage' },
-      { title: 'Produção', component: 'ProducaoPage' },
-      { title: 'Insumos', component: 'InsumosPage' },
-      { title: 'Produtos', component: 'ProdutoPage' },
-      { title: 'Categorias', component: 'CategoriasPage' },
-      { title: 'Fornecedores', component: 'FornecedorPage' },
-      { title: 'Unidades de Medida', component: 'UnidadePage' },
-      { title: 'Localizações', component: 'LocalizacaoPage' },
-      { title: 'Movimentações', component: 'MovimentacaoPage' },
-      { title: 'Entradas', component: 'EntradaPage' },
-      { title: 'Saídas', component: 'SaidaPage' },
-      { title: 'Profile', component: 'ProfilePage' },
-      { title: 'Logout', component: '' },
+      { title: 'Dashboard', component: 'DashboardPage', img: 'assets/icon/desktop-outline.svg'},
+      { title: 'Produção', component: 'ProducaoPage', img: 'assets/icon/flask-outline.svg' },
+      { title: 'Insumos', component: 'InsumosPage', img: 'assets/icon/eyedrop-outline.svg' },
+      { title: 'Produtos', component: 'ProdutoPage', img: 'assets/icon/medkit-outline.svg' },
+      { title: 'Categorias', component: 'CategoriasPage', img: 'assets/icon/folder-outline.svg' },
+      { title: 'Fornecedores', component: 'FornecedorPage', img: 'assets/icon/briefcase-outline.svg' },
+      { title: 'Unidades de Medida', component: 'UnidadePage', img: 'assets/icon/beaker-outline.svg' },
+      { title: 'Localizações', component: 'LocalizacaoPage', img: 'assets/icon/trail-sign-outline.svg' },
+      { title: 'Movimentações', component: 'MovimentacaoPage', img: 'assets/icon/repeat-outline.svg' },
+      { title: 'Entradas', component: 'EntradaPage', img: 'assets/icon/share-outline.svg' },
+      { title: 'Saídas', component: 'SaidaPage', img: 'assets/icon/exit-outline.svg' },
+      { title: 'Profile', component: 'ProfilePage', img: 'assets/icon/person-outline.svg' },
+      { title: 'Logout', component: '', img: 'assets/icon/log-out-outline.svg' },
     ];
 
   }
