@@ -56,4 +56,16 @@ export class LocalizacaoPage {
     });
   }
 
+  excluirItem(itemId: string){
+    this.getItens();
+  }
+
+  editarItem(itemId: string){
+    let modal = this.modalCtrl.create('CadastroLocalizacaoPage', {itemId: itemId});
+    modal.onDidDismiss(() => {
+      this.getItens();
+    });
+    modal.present();
+  }
+
 }

@@ -1,6 +1,6 @@
 webpackJsonp([18],{
 
-/***/ 701:
+/***/ 702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(739);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(740);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,13 +38,14 @@ var DashboardPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 739:
+/***/ 740:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,6 +57,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the DashboardPage page.
  *
@@ -63,20 +65,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var DashboardPage = /** @class */ (function () {
-    function DashboardPage(navCtrl, navParams) {
+    function DashboardPage(navCtrl, navParams, insumoService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.insumoService = insumoService;
     }
     DashboardPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DashboardPage');
+        var _this = this;
+        this.insumoService.findAll().subscribe(function (tot) {
+            _this.totalinsumos = tot.length;
+        });
     };
     DashboardPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\nDashboard\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\dashboard\dashboard.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-dashboard',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-grid>\n\n      <ion-row>\n\n\n\n        <ion-col col-4>\n\n          <ion-card>\n\n            <div class="alinha">\n\n              <img src="assets/icon/eyedrop-outline.svg" style="width: 75px; height: 75px;"/>\n\n            </div>\n\n            <ion-card-header>\n\n              <ion-card-title>INSUMOS</ion-card-title>\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n              <h1>{{totalinsumos}} Insumos Cadastrados</h1>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </ion-col>\n\n\n\n        <ion-col col-4>\n\n          <ion-card>\n\n            <div class="alinha">\n\n              <img src="assets/icon/eyedrop-outline.svg" style="width: 75px; height: 75px;"/>\n\n            </div>\n\n            <ion-card-header>\n\n              <ion-card-title>INSUMOS</ion-card-title>\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n              <h1>2054 Insumos Cadastrados</h1>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </ion-col>\n\n\n\n        <ion-col col-4>\n\n          <ion-card>\n\n            <div class="alinha">\n\n              <img src="assets/icon/eyedrop-outline.svg" style="width: 75px; height: 75px;"/>\n\n            </div>\n\n            <ion-card-header>\n\n              <ion-card-title>INSUMOS</ion-card-title>\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n              <h1>2054 Insumos Cadastrados</h1>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </ion-col>\n\n\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\dashboard\dashboard.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _c || Object])
     ], DashboardPage);
     return DashboardPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=dashboard.js.map

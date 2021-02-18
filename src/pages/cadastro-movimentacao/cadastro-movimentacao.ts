@@ -113,7 +113,7 @@ export class CadastroMovimentacaoPage {
     value: LocalizacaoDTO;
   }) {
     if (event.value) {
-      if(event.value.nome === "GARANTIA DA QUALIDADE"){
+      if(event.value.aprovacao === true){
         this.fieldsGarantiaQualidade = false;
         console.log("teste: "+this.fieldsGarantiaQualidade);
       }else{

@@ -22,7 +22,12 @@
   <form [formGroup]="formGroup" (ngSubmit)="cadastrarLocalizacao()">
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
-      <ion-input formControlName="nome" type="text"></ion-input>
+      <ion-input formControlName="nome" type="text" ></ion-input>
+      <ion-input formControlName="id" type="hidden"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Participa de alguma aprovação?</ion-label>
+      <ion-checkbox item-right danger checked formControlName="aprovacao"></ion-checkbox>
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>

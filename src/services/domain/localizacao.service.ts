@@ -19,8 +19,22 @@ export class LocalizacaoService{
         return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/findAllInsumoLocalizacao`)
     }
 
+    findById(localizacao_id : string) : Observable<LocalizacaoDTO> {
+        return this.http.get<LocalizacaoDTO>(`${API_CONFIG.baseUrl}/localizacoes/?id=${localizacao_id}`)
+    }
+
     insert(obj: LocalizacaoDTO){
+        console.log(obj)
         return this.http.post(`${API_CONFIG.baseUrl}/localizacoes/`,
+        obj,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
+    }
+
+    update(obj: LocalizacaoDTO){
+        return this.http.put(`${API_CONFIG.baseUrl}/localizacoes/`,
         obj,
         {
             observe: 'response',

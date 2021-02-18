@@ -1,5 +1,7 @@
+import { InsumoService } from './../../services/domain/insumo.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { createThis } from 'typescript';
 
 /**
  * Generated class for the DashboardPage page.
@@ -15,11 +17,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DashboardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  totalinsumos : number;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public insumoService: InsumoService,) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DashboardPage');
+    this.insumoService.findAll().subscribe((tot) => {
+      this.totalinsumos = tot.length;
+    })
   }
 
 }
