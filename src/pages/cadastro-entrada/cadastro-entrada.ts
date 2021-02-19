@@ -197,8 +197,8 @@ export class CadastroEntradaPage {
         this.citensInsumos.forEach(function (value) {
           let insEnt : CInsumoEntradaDTO = {
             insumo: value, 
-            loteFornecedor: '', 
-            loteCR: '', 
+            loteFornecedor: null, 
+            loteCR: null, 
             dataIrradiacao: null, 
             dataVencIrradiacao: null,
             dataValidade: null,
@@ -305,8 +305,8 @@ export class CadastroEntradaPage {
 
      this.citensEntrada = {
       insumo: this.insumoEntrada,
-      loteFornecedor: '', 
-      loteCR: '', 
+      loteFornecedor: null, 
+      loteCR: null, 
       dataIrradiacao: null, 
       dataVencIrradiacao: null,
       dataValidade: null,
@@ -315,7 +315,6 @@ export class CadastroEntradaPage {
       valorTotal: 0};
 
      if(this.citensEntrada.insumo.unidade != null){
-        console.log("olha isso:"+this.citensEntrada.insumo.unidade);
         this.unidadeEntrada = this.citensEntrada.insumo.unidade;
       }
       console.log('insereInsumoEntradaDTO::', this.citensEntrada);
@@ -387,9 +386,19 @@ export class CadastroEntradaPage {
       console.log("this.entrada: "+this.entrada);
       this.entrada = {} as any;    
       this.citensnovaentrada.forEach(function(item, index, object){
+        if(item.loteFornecedor === null || item.loteFornecedor === ""){
+          item.loteFornecedor = null;
+        }else if(item.loteFornecedor.trim() === ""){
+          item.loteFornecedor = null;
+        }
+        if(item.loteCR === null || item.loteCR === "" ){
+          item.loteCR = null;
+        }
+        
         if(item.valorTotal != null && item.quantidade != null){
           item.valor = item.valorTotal / item.quantidade;
         }
+
 
       });
       //console.log(this.dateTimeFormatPipe.transform(this.dataEntrada));
