@@ -34,6 +34,7 @@
     "ionic-tooltips": "^3.1.0",
     "ionicons": "3.0.0",
     "js-brasil": "^2.1.0",
+    "moment": "^2.29.1",
     "ng-brazil": "^2.0.10",
     "ng2-currency-mask": "^9.0.2",
     "rxjs": "5.5.11",

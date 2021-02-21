@@ -30,6 +30,7 @@
       itemValueField="id"
       itemTextField="nome"
       [canSearch]="true"
+      [focusSearchbar]="true"
       [hasVirtualScroll]="true" >
       <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">
         <ion-item>
@@ -52,6 +53,7 @@
       itemValueField="id"
       itemTextField="nome"
       [canSearch]="true"
+      [focusSearchbar]="true"
       [hasVirtualScroll]="true" >
       <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">
         <ion-item>
@@ -68,7 +70,9 @@
 
   <ion-item color="item_entrada">
     <ion-label>Data emissão</ion-label>
-    <ion-input type="date" [(ngModel)]="dataEntrada"> </ion-input>
+    <ion-datetime [(ngModel)]="dataEntrada" displayFormat="DD/MMM/YYYY HH:mm"
+    pickerFormat="DD/MMM/YYYY HH:mm"></ion-datetime>
+   
   </ion-item>
   <ion-item color="item_entrada">
     <ion-label>Número requisição</ion-label>
@@ -101,6 +105,7 @@
       [canSearch]="true"
       (onSearch)="searchInsumo($event)"
       (onChange)="insereInsumoEntradaDTO($event)"
+      [focusSearchbar]="true"
       [hasInfiniteScroll]="true"
       (onInfiniteScroll)="doInfinite($event)">
 
@@ -131,6 +136,7 @@
       itemValueField="id"
       itemTextField="nome"
       [canSearch]="true"
+      [focusSearchbar]="true"
       (onChange)="insereunidadeRecebidaDTO($event)">
 
       <ng-template ionicSelectableItemTemplate let-port="item">
@@ -163,6 +169,7 @@
       itemValueField="id"
       itemTextField="nome"
       [canSearch]="true"
+      [focusSearchbar]="true"
       (onChange)="insereunidadeEntradaDTO($event)">
 
       <ng-template ionicSelectableItemTemplate let-port="item">

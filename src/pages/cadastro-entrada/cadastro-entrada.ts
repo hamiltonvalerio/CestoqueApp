@@ -15,13 +15,14 @@ import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitem
 import { InsumoDTO } from './../../models/insumo.dto';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController, ScrollEvent } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController, ScrollEvent, DateTime } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { IonicSelectableComponent } from 'ionic-selectable';
 import { Subscription, TestScheduler } from 'rxjs';
 import { LocalizacaoDTO } from '../../models/localizacao.dto';
+import * as moment from 'moment';
 
 
 /**
@@ -96,7 +97,7 @@ export class CadastroEntradaPage {
     public localizacaoService: LocalizacaoService,
     public entradaService: EntradaService,
     public dateTimeFormatPipe: DateTimeFormatPipe,
-    public unidadeService: UnidadeService,
+    public unidadeService: UnidadeService
     ) {
       
      
@@ -383,7 +384,6 @@ export class CadastroEntradaPage {
     }
 
     inserirEntrada(){
-      console.log("this.entrada: "+this.entrada);
       this.entrada = {} as any;    
       this.citensnovaentrada.forEach(function(item, index, object){
         if(item.loteFornecedor === null || item.loteFornecedor === ""){
@@ -401,8 +401,9 @@ export class CadastroEntradaPage {
 
 
       });
-      //console.log(this.dateTimeFormatPipe.transform(this.dataEntrada));
+      console.log(this.dataEntrada);
       this.entrada.dataEntrada = this.dateTimeFormatPipe.transform(this.dataEntrada);
+      //this.entrada.dataEntrada = moment(this.dataEntrada).format('MM/DD/YYYY HH:mm');
       this.entrada.numLIA = this.numLIA;
       this.entrada.numProcesso = this.numProcesso;
       this.entrada.numRequisicao = this.numRequisicao;
