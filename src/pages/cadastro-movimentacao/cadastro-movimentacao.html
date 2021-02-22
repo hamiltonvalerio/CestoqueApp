@@ -137,6 +137,9 @@
       <ion-col col-2>
         Aprovado
       </ion-col>
+      <ion-col col-1>
+        Lote Produção
+      </ion-col>
       <ion-col col-2>
         Localização de Destino
       </ion-col>
@@ -168,6 +171,9 @@
             <ion-radio value="false"></ion-radio>
           </ion-item>
         </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-input type="text" [(ngModel)]="mov.loteProducao"> </ion-input>
       </ion-col>
       <ion-col col-2>
         {{paralocalizacao.nome}}
