@@ -28260,6 +28260,22 @@ page-cadastro-movimentacao ion-row {
   text-align: center;
 }
 
+.card-vermelho {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.card-amarelo {
+  background-color: rgba(255, 255, 153, 0.6);
+}
+
+.card-verde {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+.card-azul {
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
 .center-icons {
   display: -webkit-box;
   display: -webkit-flex;
