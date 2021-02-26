@@ -41,7 +41,6 @@ import { IonicSelectableModule } from 'ionic-selectable';
     IonicModule.forRoot(MyApp),
     BrowserAnimationsModule,
     IonicSelectableModule,
-    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
