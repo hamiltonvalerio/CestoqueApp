@@ -183,6 +183,7 @@ export class CadastroMovimentacaoPage {
         dataReproprovacao: value.dataReproprovacao,
         aprovado: value.aprovado,
         fieldsGarantiaQualidade: true,
+        loteRecebimento: value.loteRecebimento,
       };
       itensInsumosMovimentacao.push(itemMov);
     });

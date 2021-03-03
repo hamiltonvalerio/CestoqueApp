@@ -1,14 +1,15 @@
 webpackJsonp([8],{
 
-/***/ 718:
+/***/ 710:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnidadePageModule", function() { return UnidadePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__unidade__ = __webpack_require__(755);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalQuantidademinimaPageModule", function() { return ModalQuantidademinimaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(719);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_quantidademinima__ = __webpack_require__(355);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +19,68 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var UnidadePageModule = /** @class */ (function () {
-    function UnidadePageModule() {
+
+var ModalQuantidademinimaPageModule = /** @class */ (function () {
+    function ModalQuantidademinimaPageModule() {
     }
-    UnidadePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+    ModalQuantidademinimaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__unidade__["a" /* UnidadePage */],
+                __WEBPACK_IMPORTED_MODULE_3__modal_quantidademinima__["a" /* ModalQuantidademinimaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__unidade__["a" /* UnidadePage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__modal_quantidademinima__["a" /* ModalQuantidademinimaPage */]),
+                __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__["a" /* DirectivesModule */]
             ],
         })
-    ], UnidadePageModule);
-    return UnidadePageModule;
+    ], ModalQuantidademinimaPageModule);
+    return ModalQuantidademinimaPageModule;
 }());
 
-//# sourceMappingURL=unidade.module.js.map
+//# sourceMappingURL=modal-quantidademinima.module.js.map
 
 /***/ }),
 
-/***/ 755:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UnidadePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectivesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(720);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var DirectivesModule = /** @class */ (function () {
+    function DirectivesModule() {
+    }
+    DirectivesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */],
+                __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */]],
+            imports: [],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */],
+                __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */]]
+        })
+    ], DirectivesModule);
+    return DirectivesModule;
+}());
+
+//# sourceMappingURL=directives.module.js.map
+
+/***/ }),
+
+/***/ 720:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HideHeaderDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,53 +91,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
-
 /**
- * Generated class for the UnidadePage page.
+ * Generated class for the HideHeaderDirective directive.
  *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * See https://angular.io/api/core/Directive for more info on Angular
+ * Directives.
  */
-var UnidadePage = /** @class */ (function () {
-    function UnidadePage(navCtrl, navParams, unidadeService, modalCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.unidadeService = unidadeService;
-        this.modalCtrl = modalCtrl;
+var HideHeaderDirective = /** @class */ (function () {
+    function HideHeaderDirective(element, renderer) {
+        this.element = element;
+        this.renderer = renderer;
+        this.transitionTime = "400";
+        console.log(element);
+        console.log(renderer);
     }
-    UnidadePage.prototype.ionViewDidLoad = function () {
-        this.getItens();
+    HideHeaderDirective.prototype.ngOnInit = function () {
+        this.scrollContent = this.element.nativeElement.getElementsByClassName("scroll-content")[0];
+        this.fixedContent = this.element.nativeElement.getElementsByClassName("fixed-content")[0];
+        this.renderer.setElementStyle(this.scrollContent, "transition", "margin-top " + this.transitionTime);
+        this.renderer.setElementStyle(this.fixedContent, "transition", "margin-top " + this.transitionTime);
     };
-    UnidadePage.prototype.openModal = function () {
+    HideHeaderDirective.prototype.onScrooll = function (event) {
         var _this = this;
-        console.log("aqui");
-        var modal = this.modalCtrl.create('CadastroUnidadePage');
-        modal.onDidDismiss(function () {
-            _this.getItens();
+        console.log(event);
+        if (!this.header) {
+            this.header = event.headerElement;
+            this.headerHeight = this.header.clientHeight;
+            this.renderer.setElementStyle(this.header, "transition", "top " + this.transitionTime);
+            //console.log(this.headerHeight);
+        }
+        event.domWrite(function () {
+            console.log(event.directionY);
+            if (event.directionY == "down") {
+                _this.renderer.setElementStyle(_this.header, "top", "-" + _this.headerHeight + "px");
+                _this.renderer.setElementStyle(_this.scrollContent, "margin-top", "0px");
+                _this.renderer.setElementStyle(_this.fixedContent, "margin-top", "0px");
+            }
+            else {
+                _this.renderer.setElementStyle(_this.header, "top", "0px");
+                _this.renderer.setElementStyle(_this.scrollContent, "margin-top", _this.headerHeight + "px");
+                _this.renderer.setElementStyle(_this.fixedContent, "margin-top", _this.headerHeight + "px");
+            }
         });
-        modal.present();
     };
-    UnidadePage.prototype.getItens = function () {
-        var _this = this;
-        this.unidadeService.findAll()
-            .subscribe(function (response) {
-            _this.itens = response;
-        }, function (error) { });
-    };
-    UnidadePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-unidade',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\unidade\unidade.html"*/'<!--\n\n  Generated template for the UnidadePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Unidades de Medida</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    \n\n    <ion-item *ngFor="let item of itens">\n\n      <ion-label>\n\n        <h2>{{ item.nome }}</h2>\n\n        <h3>{{ item.sigla }}</h3>\n\n        <p></p>\n\n      </ion-label>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\unidade\unidade.html"*/,
+    HideHeaderDirective = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
+            selector: '[hide-header]',
+            host: {
+                "(ionScroll)": "onScrooll($event)"
+            }
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__["a" /* UnidadeService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */]])
-    ], UnidadePage);
-    return UnidadePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]])
+    ], HideHeaderDirective);
+    return HideHeaderDirective;
 }());
 
-//# sourceMappingURL=unidade.js.map
+//# sourceMappingURL=hide-header.js.map
 
 /***/ })
 

@@ -49,7 +49,7 @@ export class EntradaPage {
       this.itensEntradas = response.sort();
       console.log(this.itensEntradas);
     },
-    error => {})
+    error => {}) 
   }
 
   openModal() {

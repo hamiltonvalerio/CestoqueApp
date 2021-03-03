@@ -40,12 +40,11 @@ import { IonicSelectableModule } from 'ionic-selectable';
     ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
     BrowserAnimationsModule,
-    IonicSelectableModule,
-    
+    IonicSelectableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp, ModalQuantidademinimaPage
+    MyApp, ModalQuantidademinimaPage,
   ],
   providers: [
     StatusBar,

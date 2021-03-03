@@ -16,5 +16,6 @@ export interface InsumolocalizacaoDTO{
     dataAprovacao: Date;
     dataReproprovacao: Date;
     aprovado: boolean;
+    loteRecebimento: string;
 
 }

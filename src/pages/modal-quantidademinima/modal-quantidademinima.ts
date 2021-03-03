@@ -2,6 +2,7 @@ import { InsumoService } from './../../services/domain/insumo.service';
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
+
 /**
  * Generated class for the ModalQuantidademinimaPage page.
  *

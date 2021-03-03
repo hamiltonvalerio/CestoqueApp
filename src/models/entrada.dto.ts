@@ -12,4 +12,5 @@ export interface EntradaDTO{
     itens: CInsumoEntradaDTO[];
     show: Boolean;
     localizacao: LocalizacaoDTO;
+    loteRecebimento: string;
 }

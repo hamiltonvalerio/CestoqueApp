@@ -15,5 +15,6 @@ export interface InsumomovimentacaoDTO{
     dataReproprovacao: Date;
     aprovado: boolean;
     fieldsGarantiaQualidade: boolean;
+    loteRecebimento: string;
 
 }
