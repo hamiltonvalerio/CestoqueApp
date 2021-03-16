@@ -82,7 +82,7 @@ export class FornecedorPage {
     this.page++;
     this.getItens();
     setTimeout(() => {
-      infiniteScroll.component.endInfiniteScroll();
+      infiniteScroll.complete();
     }, 1000);
   }
 

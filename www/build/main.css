@@ -28237,6 +28237,10 @@ ion-navbar.toolbar {
   align-items: center;
 }
 
+page-alterar-senha .danger {
+  color: red;
+}
+
 page-cadastro-entrada .my-center-text {
   text-align: left;
   width: 100%;

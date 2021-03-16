@@ -21,7 +21,11 @@ export class ProfilePage {
 
   colaborador: ColaboradorDTO;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: StorageService, public colaboradorService: ColaboradorService) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public storage: StorageService, 
+    public colaboradorService: ColaboradorService) {
   }
 
   ionViewDidLoad() {
@@ -40,6 +44,10 @@ export class ProfilePage {
     }else{
       this.navCtrl.setRoot('HomePage');
     }
+  }
+
+  alterarSenha(){
+    this.navCtrl.push('AlterarSenhaPage',{item : this.colaborador});  
   }
 
 }

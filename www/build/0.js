@@ -6,10 +6,10 @@ webpackJsonp([0],{
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocalizacaoInsumosPageModule", function() { return LocalizacaoInsumosPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_tooltips__ = __webpack_require__(725);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_tooltips__ = __webpack_require__(727);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__ = __webpack_require__(749);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ var LocalizacaoInsumosPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 721:
+/***/ 723:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -129,7 +129,7 @@ var TooltipBox = (function () {
 
 /***/ }),
 
-/***/ 722:
+/***/ 724:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -165,15 +165,15 @@ var TooltipController = (function () {
 
 /***/ }),
 
-/***/ 723:
+/***/ 725:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tooltip; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__ = __webpack_require__(721);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(722);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__ = __webpack_require__(723);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(724);
 
 
 
@@ -477,17 +477,17 @@ var Tooltip = (function () {
 
 /***/ }),
 
-/***/ 725:
+/***/ 727:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_box_component__ = __webpack_require__(721);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_box_component__ = __webpack_require__(723);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(723);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(725);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(728);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__tooltips_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(722);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(724);
 /* unused harmony namespace reexport */
 
 
@@ -497,16 +497,16 @@ var Tooltip = (function () {
 
 /***/ }),
 
-/***/ 726:
+/***/ 728:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__ = __webpack_require__(722);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__ = __webpack_require__(721);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_directive__ = __webpack_require__(723);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__ = __webpack_require__(724);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__ = __webpack_require__(723);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_directive__ = __webpack_require__(725);
 
 
 
@@ -536,12 +536,12 @@ var TooltipsModule = (function () {
 
 /***/ }),
 
-/***/ 747:
+/***/ 749:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoInsumosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal_quantidademinima_modal_quantidademinima__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal_quantidademinima_modal_quantidademinima__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
@@ -639,7 +639,7 @@ var LocalizacaoInsumosPage = /** @class */ (function () {
     };
     LocalizacaoInsumosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Quantidades Mínimas do Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid *ngFor="let ins of insumosLocalizacao">\n\n      <ion-row>\n\n        <h6>{{ins.insumo.nome}}</h6>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Quantidade: {{ins.quantidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote CR: {{ins.loteCR}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Produção: {{ins.loteProducao}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Data de Validade: {{ins.dataValidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Data de Aprovação GQ: {{ins.dataAprovacao}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>\n\n        </ion-col>\n\n        <ion-col>\n\n        </ion-col>  \n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-item-divider>\n\n          \n\n        </ion-item-divider>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
+            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Quantidades Mínimas do Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid *ngFor="let ins of insumosLocalizacao">\n\n      <ion-row>\n\n        <h6>{{ins.insumo.nome}}</h6>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Quantidade: {{ins.quantidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote CR: {{ins.loteCR}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Produção: {{ins.loteProducao}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Data de Validade: {{ins.dataValidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>\n\n        </ion-col>\n\n        <ion-col>\n\n        </ion-col>  \n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-item-divider>\n\n          \n\n        </ion-item-divider>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */],

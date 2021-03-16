@@ -35,13 +35,13 @@
         <ion-label>Detalhes</ion-label>
         <p>Nº do Documento LIA: {{ent.numLIA}}</p>
         <ion-list *ngFor="let ient of ent.itens">
-          <ion-row>Produto: {{ient.insumo.nome}}</ion-row>
-          <ion-row>Quantidade Entrada: {{ient.quantidade}}</ion-row>
-          <ion-row>Quantidade Atual: {{ient.insumo.quantidade}}</ion-row>
-          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>
-          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>
-          <ion-row>Data de Irradiação: {{ient.dataIrradiacao}}</ion-row>
-          <ion-row>Data de Validade: {{ient.dataValidade}}</ion-row>
+          <ion-row> <ion-col col-2>Produto:</ion-col> <ion-col col-8>{{ient.insumo.nome}}</ion-col>  </ion-row>
+          <ion-row><ion-col col-2>Quantidade Entrada:</ion-col> <ion-col col-8>{{ient.quantidade}}</ion-col></ion-row>
+          <ion-row><ion-col col-2>Quantidade Atual:</ion-col> <ion-col col-8>{{ient.insumo.quantidade}}</ion-col></ion-row>
+          <ion-row><ion-col col-2>Lote Fornecedor:</ion-col> <ion-col col-8>{{ient.loteFornecedor}}</ion-col></ion-row>
+          <ion-row><ion-col col-2>Lote CR: </ion-col><ion-col col-8>{{ient.loteCR}}</ion-col></ion-row>
+          <ion-row><ion-col col-2>Data de Irradiação: </ion-col><ion-col col-8>{{ient.dataIrradiacao}}</ion-col></ion-row>
+          <ion-row><ion-col col-2>Data de Validade: </ion-col><ion-col col-8>{{ient.dataValidade}}</ion-col></ion-row>
           <ion-row><br></ion-row>
         </ion-list>
       </ion-list>

@@ -1,3 +1,4 @@
+import { RecuperaSenhaPage } from './../recupera-senha/recupera-senha';
 import { AuthService } from './../../services/auth.service';
 import { CredenciaisDTO } from './../../models/credenciais.dto';
 import { Component, ViewChild } from '@angular/core';
@@ -57,6 +58,10 @@ export class HomePage {
 
   signup(){
     this.navCtrl.push('SignupPage');  
+  }
+
+  recuperarSenha(){
+    this.navCtrl.push('RecuperaSenhaPage');  
   }
 
 }
