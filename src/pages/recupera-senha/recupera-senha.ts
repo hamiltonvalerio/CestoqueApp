@@ -18,6 +18,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class RecuperaSenhaPage {
 
   formGroup: FormGroup;
+  botao: boolean = true;
 
   constructor(
     public navCtrl: NavController, 
@@ -28,7 +29,8 @@ export class RecuperaSenhaPage {
 
       this.formGroup = this.formBuilder.group({
         email: ['',[Validators.required, Validators.email]]
-      }, {}); 
+      }, {
+      }); 
 
   }
 
@@ -37,12 +39,24 @@ export class RecuperaSenhaPage {
   }
 
   recuperaSenhaUser(){
+    this.botao = false;
+    this.validFormAndPreventMultipleClicks();
     this.colaboradorService.recuperarSenha(this.formGroup.value).subscribe(response => {
       this.showInserOk();
     },
     error => {
       this.showErro();
     });
+  }
+
+  validFormAndPreventMultipleClicks(){
+    if(this.formGroup.invalid == true && this.botao == true){
+      return true;
+    }else if(this.formGroup.invalid == false && this.botao == false){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   showInserOk(){

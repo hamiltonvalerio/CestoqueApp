@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 706:
+/***/ 709:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_tooltips__ = __webpack_require__(727);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__ = __webpack_require__(746);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__ = __webpack_require__(749);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -536,7 +536,7 @@ var TooltipsModule = (function () {
 
 /***/ }),
 
-/***/ 746:
+/***/ 749:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -639,7 +639,7 @@ var LocalizacaoInsumosPage = /** @class */ (function () {
     };
     LocalizacaoInsumosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Quantidades Mínimas do Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid *ngFor="let ins of insumosLocalizacao">\n\n      <ion-row>\n\n        <h6>{{ins.insumo.nome}}</h6>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Quantidade: {{ins.quantidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote CR: {{ins.loteCR}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Produção: {{ins.loteProducao}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Data de Validade: {{ins.dataValidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>\n\n        </ion-col>\n\n        <ion-col>\n\n        </ion-col>  \n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-item-divider>\n\n          \n\n        </ion-item-divider>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
+            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Quantidades Mínimas do Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid *ngFor="let ins of insumosLocalizacao">\n\n      <ion-row>\n\n        <h6>{{ins.insumo.nome}}</h6>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Quantidade: {{ins.quantidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote CR: {{ins.loteCR}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Produção: {{ins.loteProducao}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Data de Validade: {{ins.dataValidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>\n\n        </ion-col>\n\n        <ion-col>\n\n        </ion-col>  \n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-item-divider>\n\n          \n\n        </ion-item-divider>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */],

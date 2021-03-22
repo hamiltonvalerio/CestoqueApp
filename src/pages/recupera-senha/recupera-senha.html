@@ -17,6 +17,6 @@
       <ion-input formControlName="email"  type="text"></ion-input>
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left >Valor inválido</p>
-    <button ion-button block type="submit" [disabled]="formGroup.invalid">Recuperar</button>
+    <button ion-button block type="submit" [disabled]="validFormAndPreventMultipleClicks()">Recuperar</button>
   </form>
 </ion-content>
