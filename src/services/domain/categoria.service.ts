@@ -1,3 +1,4 @@
+import { CategoriaNewDTO } from './../../models/categorianew.dto';
 import { CategoriaDTO } from './../../models/categoria.dto';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
@@ -15,7 +16,7 @@ export class CategoriaService {
         return this.http.get<CategoriaDTO[]>(`${API_CONFIG.baseUrl}/categorias`)
     }
 
-    insert(obj: CategoriaDTO){
+    insert(obj: CategoriaNewDTO){
         return this.http.post(`${API_CONFIG.baseUrl}/categorias/`,
         obj,
         {
