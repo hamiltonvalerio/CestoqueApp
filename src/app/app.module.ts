@@ -29,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { IonicSelectableModule } from 'ionic-selectable';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -63,6 +65,7 @@ import { IonicSelectableModule } from 'ionic-selectable';
     EntradaService,
     MovimentacaoService,
     DateTimeFormatPipe,
+    InAppBrowser,
   ]
 })
 export class AppModule {}

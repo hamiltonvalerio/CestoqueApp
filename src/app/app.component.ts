@@ -39,6 +39,7 @@ export class MyApp {
       { title: 'Entradas', component: 'EntradaPage', img: 'assets/icon/share-outline.svg' },
       { title: 'Saídas', component: 'SaidaPage', img: 'assets/icon/exit-outline.svg' },
       { title: 'Profile', component: 'ProfilePage', img: 'assets/icon/person-outline.svg' },
+      { title: 'Manual', component: 'ManualPage', img: 'assets/icon/book-outline.svg' },
       { title: 'Logout', component: '', img: 'assets/icon/log-out-outline.svg' },
     ];
 
