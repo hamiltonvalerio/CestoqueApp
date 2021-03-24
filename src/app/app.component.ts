@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -16,7 +17,12 @@ export class MyApp {
 
   pages: Array<{title: string, component: string, img: string}>;
 
-  constructor(public platform: Platform, app: App, public statusBar: StatusBar, public splashScreen: SplashScreen, public auth: AuthService) {
+  constructor(
+    public platform: Platform, 
+    app: App, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen, 
+    public auth: AuthService) {
     this.initializeApp();
 
     this.platform.ready().then(() => {
