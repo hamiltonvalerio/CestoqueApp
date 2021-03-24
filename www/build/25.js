@@ -43,7 +43,7 @@ var CadastroFornecedorPageModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroFornecedorPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(46);

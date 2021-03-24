@@ -1,3 +1,4 @@
+import { CategoriaDTO } from "./categoria.dto";
 import { UnidadeDTO } from "./unidade.dto";
 
 export interface InsumoDTO{
@@ -17,4 +18,5 @@ export interface InsumoDTO{
     rfid: string;
     unidade: UnidadeDTO;
     nomecodalmox: string;
+    categorias: CategoriaDTO[];
 }

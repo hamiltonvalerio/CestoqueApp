@@ -19,8 +19,6 @@
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content padding>
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
@@ -28,9 +26,19 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-item *ngFor="let item of itensInsumos">
-      <h3>{{item.nome}}</h3>
-    </ion-item>
+
+    <ion-row *ngFor="let item of itensInsumos">
+      <ion-col>
+        <h3>{{item.nome}}</h3>
+      </ion-col>
+      <ion-col col-1>
+        <ion-icon name="create" (click)="editarItem(item.id)" title="Editar Insumo" positionV="bottom"></ion-icon>
+      </ion-col>
+      <ion-col col-1>
+        <ion-icon name="close-circle" (click)="excluirItem(item.id)" title="Excluir Insumo" positionV="bottom"></ion-icon>
+      </ion-col>
+    </ion-row>
+
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">

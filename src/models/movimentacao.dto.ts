@@ -10,7 +10,5 @@ export interface MovimentacaoDTO{
     localizacaoDestino: LocalizacaoDTO;
     itens: InsumomovimentacaoDTO[];
     show: Boolean;
-    
-    
 
 }

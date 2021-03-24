@@ -44,12 +44,12 @@ export class CadastroLocalizacaoPage {
   ionViewDidLoad() {
     this.itemId = this.navParams.get('itemId');
     if(this.itemId != null){
-      this.localizacaoService.findById(this.itemId).subscribe((resp) => {
+      this.localizacaoService.findLocalizacaoById(this.itemId).subscribe((resp) => {
         this.updateLocalizacaoDTO = resp;
         this.formGroup = this.formBuilder.group({
-          id: [this.updateLocalizacaoDTO[0].id,''],
-          nome: [this.updateLocalizacaoDTO[0].nome,[Validators.required]],
-          aprovacao: [this.updateLocalizacaoDTO[0].aprovacao,'']
+          id: [this.updateLocalizacaoDTO.id,''],
+          nome: [this.updateLocalizacaoDTO.nome,[Validators.required]],
+          aprovacao: [this.updateLocalizacaoDTO.aprovacao,'']
         }, {}); 
       });
     }

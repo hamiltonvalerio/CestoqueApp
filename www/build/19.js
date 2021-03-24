@@ -43,7 +43,7 @@ var FornecedorPageModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

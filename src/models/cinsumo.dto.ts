@@ -1,3 +1,4 @@
+import { CategoriaDTO } from './categoria.dto';
 import { InsumoDTO } from './insumo.dto';
 import { UnidadeDTO } from './unidade.dto';
 export class CInsumoDTO implements InsumoDTO{
@@ -16,6 +17,7 @@ export class CInsumoDTO implements InsumoDTO{
     rfid: string;
     unidade: UnidadeDTO;
     nomecodalmox: string;
+    categorias: CategoriaDTO[];
 
       constructor(insumo: InsumoDTO){
         this.id= insumo.id;
@@ -33,6 +35,7 @@ export class CInsumoDTO implements InsumoDTO{
         this.rfid= insumo.rfid;
         this.unidade = insumo.unidade;
         this.nomecodalmox = insumo.nomecodalmox;
+        this.categorias = insumo.categorias;
     }
 
 

@@ -27,6 +27,14 @@ export class InsumoService {
         });
     }
 
+    findById(insumo_id : string) : Observable<InsumoDTO> {
+        return this.http.get<InsumoDTO>(`${API_CONFIG.baseUrl}/insumos/?id=${insumo_id}`)
+    }
+
+    findInsumoById(insumo_id : string) : Observable<InsumoDTO> {
+        return this.http.get<InsumoDTO>(`${API_CONFIG.baseUrl}/insumos/findbyid/?insumo_id=${insumo_id}`)
+    }
+
     findTodos(){
         return this.http.get<InsumoDTO[]>(`${API_CONFIG.baseUrl}/insumos`)
     }
@@ -62,6 +70,15 @@ export class InsumoService {
             observe: 'response',
             responseType: 'text'
 
+        });
+    }
+
+    update(obj: InsumoDTO){
+        return this.http.put(`${API_CONFIG.baseUrl}/insumos/`,
+        obj,
+        {
+            observe: 'response',
+            responseType: 'text'
         });
     }
 

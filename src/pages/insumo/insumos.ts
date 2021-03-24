@@ -59,8 +59,9 @@ export class InsumosPage {
     .subscribe(response => {
       let start = this.itensInsumos.length;
       this.itensInsumos = this.itensInsumos.concat(response['content']);
+      
       let end = this.itensInsumos.length -1;
-      console.log( this.itensInsumos);
+      //console.log( this.itensInsumos);
       loader.dismiss();
 
 
@@ -95,6 +96,17 @@ export class InsumosPage {
     }, 1000);
   }
 
+  excluirItem(itemId: string){
+    this.getItens();
+  }
+
+  editarItem(itemId: string){
+    let modal = this.modalCtrl.create('CadastroInsumoPage', {itemId: itemId});
+    modal.onDidDismiss(() => {
+      this.getItens();
+    });
+    modal.present();
+  }
 
 
 }

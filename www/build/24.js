@@ -84,12 +84,12 @@ var CadastroLocalizacaoPage = /** @class */ (function () {
         var _this = this;
         this.itemId = this.navParams.get('itemId');
         if (this.itemId != null) {
-            this.localizacaoService.findById(this.itemId).subscribe(function (resp) {
+            this.localizacaoService.findLocalizacaoById(this.itemId).subscribe(function (resp) {
                 _this.updateLocalizacaoDTO = resp;
                 _this.formGroup = _this.formBuilder.group({
-                    id: [_this.updateLocalizacaoDTO[0].id, ''],
-                    nome: [_this.updateLocalizacaoDTO[0].nome, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
-                    aprovacao: [_this.updateLocalizacaoDTO[0].aprovacao, '']
+                    id: [_this.updateLocalizacaoDTO.id, ''],
+                    nome: [_this.updateLocalizacaoDTO.nome, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+                    aprovacao: [_this.updateLocalizacaoDTO.aprovacao, '']
                 }, {});
             });
         }

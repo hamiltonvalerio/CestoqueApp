@@ -23,6 +23,11 @@ export class LocalizacaoService{
         return this.http.get<LocalizacaoDTO>(`${API_CONFIG.baseUrl}/localizacoes/?id=${localizacao_id}`)
     }
 
+    findLocalizacaoById(localizacao_id : string) : Observable<LocalizacaoDTO> {
+        return this.http.get<LocalizacaoDTO>(`${API_CONFIG.baseUrl}/localizacoes/findbyid/?localizacao_id=${localizacao_id}`)
+    }
+
+
     insert(obj: LocalizacaoDTO){
         console.log(obj)
         return this.http.post(`${API_CONFIG.baseUrl}/localizacoes/`,

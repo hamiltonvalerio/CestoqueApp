@@ -1,8 +1,12 @@
+import { CCategoriaDTO } from './../../models/ccategoria.dto';
+import { CategoriaService } from './../../services/domain/categoria.service';
+import { IonicSelectableComponent } from 'ionic-selectable';
+import { CategoriaDTO } from './../../models/categoria.dto';
 import { InsumoNewDTO } from './../../models/insumo.new.dto';
 import { InsumoDTO } from './../../models/insumo.dto';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ViewController, LoadingController } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
 import { BrMaskerIonic3, BrMaskModel } from 'brmasker-ionic-3';
 /**
@@ -21,6 +25,14 @@ import { BrMaskerIonic3, BrMaskModel } from 'brmasker-ionic-3';
 export class CadastroInsumoPage {
 
   formGroup: FormGroup;
+  formControl : FormControl;
+
+  updateInsumoDTO: InsumoDTO;
+
+  itemId;
+
+  categoriasInsumos : CategoriaDTO[] = [];
+  categoriasInsumosSelecionados : CategoriaDTO[];
   
   constructor(
     public navCtrl: NavController, 
@@ -29,18 +41,23 @@ export class CadastroInsumoPage {
     public alertCtrl: AlertController,
     public formBuilder: FormBuilder,
     public insumoService: InsumoService,
+    public categoriaService: CategoriaService,
+    public loadingCtrl: LoadingController,
     private brMaskerIonic3: BrMaskerIonic3) {
 
       this.formGroup = this.formBuilder.group({
+        id: ['',''],
         nome: ['',[Validators.required]],
         nomenclatura: ['',[Validators.required]],
         valor: ['',],
-        codigo_almox: ['',],
+        codigoalmox: ['',],
         observacao: ['',],
         essencial: [false,],
-        data_validade: [,],
+        datavalidade: [,],
         quantidade: [,],
-        taxa_de_consumo: [,],
+        taxadeconsumo: [,],
+        categorias: this.formControl,
+
         //codigo_barra: [,],
         //qrcode: [,],
         //rfid: [,],
@@ -48,10 +65,46 @@ export class CadastroInsumoPage {
 
   }
 
-
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroInsumoPage');
+    this.loadCategorias();
+    this.itemId = this.navParams.get('itemId');
+    if(this.itemId != null){
+      this.insumoService.findInsumoById(this.itemId).subscribe((resp) => {
+        this.updateInsumoDTO = resp;
+        console.log(this.updateInsumoDTO.categorias);
+        this.formGroup = this.formBuilder.group({
+          id: [this.updateInsumoDTO.id,''],
+          nome: [this.updateInsumoDTO.nome,''],
+          nomenclatura: [this.updateInsumoDTO.nomenclatura,''],
+          valor: [this.updateInsumoDTO.valor,''],
+          codigoalmox: [this.updateInsumoDTO.codigoalmox,],
+          observacao: [this.updateInsumoDTO.observacao,''],
+          essencial: [this.updateInsumoDTO.essencial,''],
+          datavalidade: [this.updateInsumoDTO.datavalidade,],
+          quantidade: [this.updateInsumoDTO.quantidade,''],
+          taxadeconsumo: [this.updateInsumoDTO.taxadeconsumo,],
+          categorias: [this.updateInsumoDTO.categorias,],
+        }, {}); 
+      });
+      
+    }
+    
+  }
+
+  loadCategorias(){
+    let loader = this.presentLoading();
+    this.categoriaService.findAll().subscribe((response) => {
+      this.categoriasInsumos = response.sort();
+      loader.dismiss();
+    });
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Aguarde..."
+    });
+    loader.present();
+    return loader;
   }
 
   dismiss() {
@@ -59,18 +112,20 @@ export class CadastroInsumoPage {
   }
 
   cadastrarInsumo(){
-    let dto = Object.assign({});
-    dto = Object.assign(dto,this.formGroup.value);
-   
-    //let newDto : InsumoNewDTO;
-    //newDto.nome = dto.nome;
-    //newDto.valor = +dto.valor;
-    console.log("aqui");
-    console.log(dto);
-    /*this.insumoService.insert(this.formGroup.value).subscribe(response => {
-      this.showInserOk();
-    },
-    error => {});*/
+
+    let ins: InsumoDTO = this.formGroup.value;
+    if(ins.id === null || ins.id === ''){
+      this.insumoService.insert(this.formGroup.value).subscribe(response => {
+        this.showInserOk();
+      },
+      error => {});
+    }else{
+      console.log(ins)
+      this.insumoService.update(ins).subscribe(response => {
+        this.showUpdateOk();
+      },
+      error => {});
+    }
   }
 
   showInserOk(){
@@ -89,5 +144,30 @@ export class CadastroInsumoPage {
     });
     alert.present();
   }
+
+  showUpdateOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Cadastro atualizado com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  imprimeItem(event: {
+    component: IonicSelectableComponent;
+    value: CategoriaDTO;
+  }) {
+    //this.citemInsumo = event.value;
+  }
+
 
 }

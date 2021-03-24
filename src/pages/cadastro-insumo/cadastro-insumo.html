@@ -24,6 +24,7 @@
      <ion-item>
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
+      <ion-input formControlName="id" type="hidden"></ion-input>
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>
     <ion-item>
@@ -31,13 +32,46 @@
       <ion-input formControlName="nomenclatura" type="text"></ion-input>
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>
+    
+    
+    <ion-item>
+      <ion-label>Categorias</ion-label>
+      <ionic-selectable 
+        item-content 
+        [items]="categoriasInsumos"
+        itemValueField="id"
+        itemTextField="nome"
+        formControlName="categorias"
+        [hasInfiniteScroll]="true"
+        [canSearch]="true"
+        [focusSearchbar]="true"
+        (onChange)="imprimeItem($event)"
+        [isMultiple]="true"
+        [canClear]="true"
+        [placeholder]="'Selecione a categoria'">
+  
+        <ng-template ionicSelectableItemTemplate let-item="item">
+         
+          <ion-item>
+            <ion-label text-wrap class="label_12_b">
+              {{item.nome}} 
+            </ion-label>
+          </ion-item>
+        </ng-template>
+  
+      </ionic-selectable>
+    </ion-item>
+    
+    
+    
+    
     <ion-item>
       <ion-label stacked>Valor</ion-label>
-      <ion-input type="number" formControlName="valor"></ion-input>
+      <ion-input disabled type="number" formControlName="valor"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Código Almoxarifado</ion-label>
-      <ion-input formControlName="codigo_almox" type="number"></ion-input>
+      <ion-input formControlName="codigoalmox" type="number"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Observação</ion-label>
@@ -49,15 +83,15 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>Data de Validade</ion-label>
-      <ion-datetime formControlName="data_validade" ></ion-datetime>
+      <ion-datetime disabled formControlName="datavalidade" ></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label stacked>Quantidade</ion-label>
-      <ion-input formControlName="quantidade" type="number"></ion-input>
+      <ion-input disabled formControlName="quantidade" type="number"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Taxa de Consumo</ion-label>
-      <ion-input formControlName="taxa_de_consumo" type="number"></ion-input>
+      <ion-input formControlName="taxadeconsumo" type="number"></ion-input>
     </ion-item>
     
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>

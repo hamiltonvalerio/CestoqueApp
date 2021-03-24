@@ -33,6 +33,12 @@ var InsumoService = /** @class */ (function () {
             responseType: 'text'
         });
     };
+    InsumoService.prototype.findById = function (insumo_id) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/?id=" + insumo_id);
+    };
+    InsumoService.prototype.findInsumoById = function (insumo_id) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/findbyid/?insumo_id=" + insumo_id);
+    };
     InsumoService.prototype.findTodos = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos");
     };
@@ -62,6 +68,12 @@ var InsumoService = /** @class */ (function () {
     };
     InsumoService.prototype.updateQuantidadeMinima = function (insumolocalizacao_id, quantidademinima) {
         return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/updateQuantidadeMinima/?insumolocalizacao_id=" + insumolocalizacao_id + "&quantidademinima=" + quantidademinima, {
+            observe: 'response',
+            responseType: 'text'
+        });
+    };
+    InsumoService.prototype.update = function (obj) {
+        return this.http.put(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/", obj, {
             observe: 'response',
             responseType: 'text'
         });
@@ -181,7 +193,7 @@ var map = {
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
 		699,
-		2
+		0
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
 		700,
@@ -221,11 +233,11 @@ var map = {
 	],
 	"../pages/insumo/insumos.module": [
 		709,
-		1
+		2
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
 		710,
-		0
+		1
 	],
 	"../pages/localizacao/localizacao.module": [
 		711,
@@ -339,6 +351,9 @@ var LocalizacaoService = /** @class */ (function () {
     LocalizacaoService.prototype.findById = function (localizacao_id) {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/?id=" + localizacao_id);
     };
+    LocalizacaoService.prototype.findLocalizacaoById = function (localizacao_id) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/findbyid/?localizacao_id=" + localizacao_id);
+    };
     LocalizacaoService.prototype.insert = function (obj) {
         console.log(obj);
         return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/", obj, {
@@ -425,7 +440,51 @@ var ColaboradorService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 353:
+/***/ 354:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriaService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CategoriaService = /** @class */ (function () {
+    function CategoriaService(http) {
+        this.http = http;
+    }
+    CategoriaService.prototype.findAll = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/categorias");
+    };
+    CategoriaService.prototype.insert = function (obj) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/categorias/", obj, {
+            observe: 'response',
+            responseType: 'text'
+        });
+    };
+    CategoriaService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+    ], CategoriaService);
+    return CategoriaService;
+}());
+
+//# sourceMappingURL=categoria.service.js.map
+
+/***/ }),
+
+/***/ 355:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -469,7 +528,7 @@ var UnidadeService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 354:
+/***/ 356:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -522,7 +581,7 @@ var FornecedorService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 356:
+/***/ 357:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -601,50 +660,6 @@ var ModalQuantidademinimaPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=modal-quantidademinima.js.map
-
-/***/ }),
-
-/***/ 357:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriaService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(29);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var CategoriaService = /** @class */ (function () {
-    function CategoriaService(http) {
-        this.http = http;
-    }
-    CategoriaService.prototype.findAll = function () {
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/categorias");
-    };
-    CategoriaService.prototype.insert = function (obj) {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/categorias/", obj, {
-            observe: 'response',
-            responseType: 'text'
-        });
-    };
-    CategoriaService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
-    ], CategoriaService);
-    return CategoriaService;
-}());
-
-//# sourceMappingURL=categoria.service.js.map
 
 /***/ }),
 
@@ -813,16 +828,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_modal_quantidademinima_modal_quantidademinima__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_modal_quantidademinima_modal_quantidademinima__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_entrada_service__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_insumo_service__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_unidade_service__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_fornecedor_service__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_unidade_service__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_fornecedor_service__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_domain_colaborador_service__ = __webpack_require__(352);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_auth_service__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_categoria_service__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_categoria_service__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common_http__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_core__ = __webpack_require__(1);
@@ -836,7 +851,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_domain_localizacao_service__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_platform_browser_animations__ = __webpack_require__(693);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ionic_selectable__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ionic_selectable__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_in_app_browser__ = __webpack_require__(362);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
