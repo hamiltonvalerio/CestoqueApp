@@ -67,11 +67,11 @@
     </ionic-selectable>
   </ion-item>
 
-
   <ion-item color="item_entrada">
     <ion-label>Data emissão</ion-label>
-    <ion-datetime [(ngModel)]="dataEntrada" displayFormat="DD/MMM/YYYY HH:mm"
-    pickerFormat="DD/MMM/YYYY HH:mm"></ion-datetime>
+    <ion-datetime [(ngModel)]="dataEntrada" displayFormat="DD/MMM/YYYY" displayTimezone="utc"></ion-datetime>
+
+
    
   </ion-item>
   <ion-item color="item_entrada">
@@ -199,11 +199,11 @@
   </ion-item>
   <ion-item>
     <ion-label>Data Irradiação</ion-label>
-    <ion-input type="date" formControlName="dataIrradiacao"> </ion-input>
+    <ion-datetime formControlName="dataIrradiacao" displayFormat="DD/MMM/YYYY HH:mm" max="2099" pickerFormat="DD/MMM/YYYY HH:mm"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>Data Validade do Fornecedor</ion-label>
-    <ion-input type="date" formControlName="dataValidade"> </ion-input>
+    <ion-datetime formControlName="dataValidade" displayFormat="DD/MMM/YYYY" max="2099" pickerFormat="DD/MMM/YYYY"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label >Valor Total</ion-label>
@@ -221,16 +221,31 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col col-2>
+      <ion-col col-1>
         Cod
       </ion-col>
-      <ion-col col-4>
+      <ion-col col-2>
         Insumo
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-1>
+        Un. Entrada
+      </ion-col>
+      <ion-col col-1>
         Quant
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-1>
+        Lote Fornecedor
+      </ion-col>
+      <ion-col col-1>
+        Lote CR
+      </ion-col>
+      <ion-col col-1>
+        Dt Irradiação
+      </ion-col>
+      <ion-col col-1>
+        Dt Validade do Forn.
+      </ion-col>
+      <ion-col col-1>
         Valor Total
       </ion-col>
       <ion-col col-2>
@@ -238,16 +253,31 @@
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let ient of citensnovaentrada">
-      <ion-col col-2>
+      <ion-col col-1>
         {{ient.insumo.codigoalmox}}
       </ion-col>
-      <ion-col col-4>
+      <ion-col col-2>
         {{ient.insumo.nome}}
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-1>
+        {{ient.insumo.unidade.sigla}}
+      </ion-col>
+      <ion-col col-1>
         {{ient.quantidade}}
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-1>
+        {{ient.loteFornecedor}}
+      </ion-col>
+      <ion-col col-1>
+        {{ient.loteCR}}
+      </ion-col>
+      <ion-col col-1>
+        {{ient.dataIrradiacao | date: 'dd/MM/yyyy H:mm'}}
+      </ion-col>
+      <ion-col col-1>
+        {{ient.dataValidade | date: 'dd/MM/yyyy'}}
+      </ion-col>
+      <ion-col col-1>
         {{ient.valorTotal}}
       </ion-col>
       <ion-col col-2>

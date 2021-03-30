@@ -49,7 +49,8 @@ export class CadastroEntradaPage {
   numLIA : string;
   numProcesso: string;
   numRequisicao: string;
-  dataEntrada: Date;
+
+  dataEntrada= moment().format();;
   
   //itensInsumosx : InsumoDTO;
   
@@ -115,10 +116,11 @@ export class CadastroEntradaPage {
       unidadeEntrada: ['',],
     }, {});
     
+    
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad CadastroEntradaPage');
+    console.log('Data entrada:'+ this.dataEntrada);
     this.loadData();
     this.loadFornecedor();
     this.loadLocalizacao();
@@ -280,7 +282,7 @@ export class CadastroEntradaPage {
     insereListaEntrada() {
       
       this.cie = this.formGroup.value;
-      this.cie.insumo.unidade = this.unidadeRecebida;
+      this.cie.insumo.unidade = this.unidadeEntrada;
       console.log(this.cie);
 
 
@@ -409,7 +411,8 @@ export class CadastroEntradaPage {
       this.entrada.numRequisicao = this.numRequisicao;
       this.entrada.itens = this.citensnovaentrada;
       this.entrada.localizacao = this.localizacao;
-      console.log("this.entrada2: "+this.entrada);
+      console.log("this.entrada2: "+this.entrada.dataEntrada);
+      console.log("this.entrada2: "+this.entrada.itens[0].dataIrradiacao);
       this.entradaService.insert(this.entrada).subscribe(response => {
         this.showInsertOk();
       },

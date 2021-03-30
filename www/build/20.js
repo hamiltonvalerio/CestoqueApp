@@ -1,6 +1,6 @@
 webpackJsonp([20],{
 
-/***/ 706:
+/***/ 708:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntradaPageModule", function() { return EntradaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(887);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var EntradaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 747:
+/***/ 887:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133,7 +133,7 @@ var EntradaPage = /** @class */ (function () {
     ], EntradaPage.prototype, "nav", void 0);
     EntradaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-entrada',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n\n  Generated template for the EntradaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Entradas</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Número da Requisição: {{ent.numRequisicao}}</p>\n\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n\n        <p>Lote de Recebimento: {{ent.loteRecebimento}}</p>\n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="ent.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <p>Nº do Documento LIA: {{ent.numLIA}}</p>\n\n        <ion-list *ngFor="let ient of ent.itens">\n\n          <ion-row> <ion-col col-2>Produto:</ion-col> <ion-col col-8>{{ient.insumo.nome}}</ion-col>  </ion-row>\n\n          <ion-row><ion-col col-2>Quantidade Entrada:</ion-col> <ion-col col-8>{{ient.quantidade}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Quantidade Atual:</ion-col> <ion-col col-8>{{ient.insumo.quantidade}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Lote Fornecedor:</ion-col> <ion-col col-8>{{ient.loteFornecedor}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Lote CR: </ion-col><ion-col col-8>{{ient.loteCR}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Data de Irradiação: </ion-col><ion-col col-8>{{ient.dataIrradiacao}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Data de Validade: </ion-col><ion-col col-8>{{ient.dataValidade}}</ion-col></ion-row>\n\n          <ion-row><br></ion-row>\n\n        </ion-list>\n\n      </ion-list>\n\n    </ion-item>\n\n    \n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\entrada\entrada.html"*/,
+            selector: 'page-entrada',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n\n  Generated template for the EntradaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Entradas</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Número da Requisição: {{ent.numRequisicao}}</p>\n\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n\n        <p>Lote de Recebimento: {{ent.loteRecebimento}}</p>\n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="ent.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <p>Nº do Documento LIA: {{ent.numLIA}}</p>\n\n        <ion-list *ngFor="let ient of ent.itens">\n\n          <ion-row> <ion-col col-2>Produto:</ion-col> <ion-col col-8>{{ient.insumo.nome}}</ion-col>  </ion-row>\n\n          <ion-row><ion-col col-2>Quantidade Entrada:</ion-col> <ion-col col-8>{{ient.quantidade}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Quantidade Atual:</ion-col> <ion-col col-8>{{ient.insumo.quantidade}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Lote Fornecedor:</ion-col> <ion-col col-8>{{ient.loteFornecedor}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Lote CR: </ion-col><ion-col col-8>{{ient.loteCR}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Data de Irradiação: </ion-col><ion-col col-8>{{ient.dataIrradiacao | date: \'dd/MM/yyyy H:mm\'}}</ion-col></ion-row>\n\n          <ion-row><ion-col col-2>Data de Validade: </ion-col><ion-col col-8>{{ient.dataValidade | date: \'dd/MM/yyyy\'}}</ion-col></ion-row>\n\n          <ion-row><br></ion-row>\n\n        </ion-list>\n\n      </ion-list>\n\n    </ion-item>\n\n    \n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],

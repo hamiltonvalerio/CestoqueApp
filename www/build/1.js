@@ -1,15 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 710:
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocalizacaoInsumosPageModule", function() { return LocalizacaoInsumosPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_tooltips__ = __webpack_require__(729);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__ = __webpack_require__(751);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroInsumoPageModule", function() { return CadastroInsumoPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(724);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_insumo__ = __webpack_require__(877);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__ = __webpack_require__(867);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,24 +22,62 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LocalizacaoInsumosPageModule = /** @class */ (function () {
-    function LocalizacaoInsumosPageModule() {
+
+
+var CadastroInsumoPageModule = /** @class */ (function () {
+    function CadastroInsumoPageModule() {
     }
-    LocalizacaoInsumosPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+    CadastroInsumoPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__["a" /* LocalizacaoInsumosPage */]
+                __WEBPACK_IMPORTED_MODULE_4__cadastro_insumo__["a" /* CadastroInsumoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__["a" /* LocalizacaoInsumosPage */]),
-                __WEBPACK_IMPORTED_MODULE_0_ionic_tooltips__["a" /* TooltipsModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_4__cadastro_insumo__["a" /* CadastroInsumoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__["a" /* IonicSelectableModule */],
+                __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__["a" /* DirectivesModule */],
+                __WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__["b" /* BrMaskerModule */]
             ],
         })
-    ], LocalizacaoInsumosPageModule);
-    return LocalizacaoInsumosPageModule;
+    ], CadastroInsumoPageModule);
+    return CadastroInsumoPageModule;
 }());
 
-//# sourceMappingURL=localizacao-insumos.module.js.map
+//# sourceMappingURL=cadastro-insumo.module.js.map
+
+/***/ }),
+
+/***/ 724:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectivesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(725);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var DirectivesModule = /** @class */ (function () {
+    function DirectivesModule() {
+    }
+    DirectivesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */],
+                __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */]],
+            imports: [],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */],
+                __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__["a" /* HideHeaderDirective */]]
+        })
+    ], DirectivesModule);
+    return DirectivesModule;
+}());
+
+//# sourceMappingURL=directives.module.js.map
 
 /***/ }),
 
@@ -45,507 +85,625 @@ var LocalizacaoInsumosPageModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipBox; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-
-
-var TooltipBox = (function () {
-    function TooltipBox(elementRef, rnd) {
-        var _this = this;
-        this.elementRef = elementRef;
-        this.rnd = rnd;
-        this.fadeState = 'invisible';
-        this.init = new Promise(function (resolve) {
-            _this.initResolve = resolve;
-        });
-    }
-    Object.defineProperty(TooltipBox.prototype, "arrow", {
-        set: function (side) {
-            this.rnd.setAttribute(this.getNativeElement(), 'class', 'has-arrow ' + 'arrow-' + side);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(TooltipBox.prototype, "posTop", {
-        set: function (val) {
-            this.rnd.setStyle(this.getNativeElement(), 'top', val + 'px');
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(TooltipBox.prototype, "posLeft", {
-        set: function (val) {
-            this.rnd.setStyle(this.getNativeElement(), 'left', val + 'px');
-        },
-        enumerable: true,
-        configurable: true
-    });
-    TooltipBox.prototype.getNativeElement = function () {
-        return this.elementRef.nativeElement;
-    };
-    TooltipBox.prototype.ngAfterViewInit = function () {
-        this.initResolve();
-    };
-    TooltipBox.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"], args: [{
-                    selector: 'tooltip-box',
-                    template: "\n    <div *ngIf=\"tooltipHtml; else txt\" [innerHTML]=\"tooltipHtml\"></div>\n    <ng-template #txt>{{ text }}</ng-template>\n  ",
-                    animations: [
-                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* trigger */])('fade', [
-                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 1 })),
-                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 0 })),
-                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('visible <=> invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('300ms linear')),
-                        ]),
-                    ],
-                    styles: [
-                        "\n          :host {\n              background-color: rgba(0, 0, 0, 0.8);\n              color: white;\n              display: inline-block;\n              position: fixed;\n              padding: 15px 25px;\n              font-size: 15px;\n          }\n    ",
-                        "\n          :host.has-arrow:before {\n              content: '';\n              border: 5px solid transparent;\n              position: absolute;\n              width: 0;\n              height: 0;\n          }\n    ",
-                        ':host.has-arrow.arrow-top:before { border-bottom: 5px solid rgba(0,0,0,0.8); top: -10px; }',
-                        ':host.has-arrow.arrow-left:before { border-right: 5px solid rgba(0,0,0,0.8); left: -10px; }',
-                        ':host.has-arrow.arrow-right:before { border-left: 5px solid rgba(0,0,0,0.8); right: -10px; }',
-                        ':host.has-arrow.arrow-bottom:before { border-top: 5px solid rgba(0,0,0,0.8); bottom: -10px; }',
-                    ],
-                    changeDetection: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ChangeDetectionStrategy"].OnPush,
-                },] },
-    ];
-    /** @nocollapse */
-    TooltipBox.ctorParameters = function () { return [
-        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
-        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer2"], },
-    ]; };
-    TooltipBox.propDecorators = {
-        "fadeState": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["HostBinding"], args: ['@fade',] },],
-        "text": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-        "posTop": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-        "posLeft": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-    };
-    return TooltipBox;
-}());
-
-//# sourceMappingURL=tooltip-box.component.js.map
-
-/***/ }),
-
-/***/ 726:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HideHeaderDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
-var TooltipController = (function () {
-    function TooltipController() {
-        this.allowMultiple = true;
-        this.activeTooltips = [];
+/**
+ * Generated class for the HideHeaderDirective directive.
+ *
+ * See https://angular.io/api/core/Directive for more info on Angular
+ * Directives.
+ */
+var HideHeaderDirective = /** @class */ (function () {
+    function HideHeaderDirective(element, renderer) {
+        this.element = element;
+        this.renderer = renderer;
+        this.transitionTime = "400";
+        console.log(element);
+        console.log(renderer);
     }
-    TooltipController.prototype.addTooltip = function (instance) {
-        if (instance.hideOthers || !this.allowMultiple && this.activeTooltips.length > 0) {
-            this.hideAll();
-        }
-        this.activeTooltips.push(instance);
+    HideHeaderDirective.prototype.ngOnInit = function () {
+        this.scrollContent = this.element.nativeElement.getElementsByClassName("scroll-content")[0];
+        this.fixedContent = this.element.nativeElement.getElementsByClassName("fixed-content")[0];
+        this.renderer.setElementStyle(this.scrollContent, "transition", "margin-top " + this.transitionTime);
+        this.renderer.setElementStyle(this.fixedContent, "transition", "margin-top " + this.transitionTime);
     };
-    TooltipController.prototype.removeTooltip = function (instance) {
-        this.activeTooltips.splice(this.activeTooltips.indexOf(instance), 1);
-    };
-    TooltipController.prototype.hideAll = function () {
-        this.activeTooltips.forEach(function (tooltip) {
-            tooltip.removeTooltip();
-        });
-    };
-    TooltipController.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-    ];
-    return TooltipController;
-}());
-
-//# sourceMappingURL=tooltip.cotroller.js.map
-
-/***/ }),
-
-/***/ 727:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tooltip; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__ = __webpack_require__(725);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(726);
-
-
-
-
-var Tooltip = (function () {
-    function Tooltip(el, appRef, platform, _componentFactoryResolver, tooltipCtrl) {
-        this.el = el;
-        this.appRef = appRef;
-        this.platform = platform;
-        this._componentFactoryResolver = _componentFactoryResolver;
-        this.tooltipCtrl = tooltipCtrl;
-        this.mobileEvent = 'press';
-        this.desktopEvent = 'hover';
-        this.duration = 3000;
-        this._arrow = false;
-        this._navTooltip = false;
-        this._canShow = true;
-        this._active = false;
-    }
-    Object.defineProperty(Tooltip.prototype, "navTooltip", {
-        get: function () {
-            return this._navTooltip;
-        },
-        set: function (val) {
-            this._navTooltip = typeof val !== 'boolean' || val !== false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Tooltip.prototype, "arrow", {
-        get: function () {
-            return this._arrow;
-        },
-        set: function (val) {
-            this._arrow = typeof val !== 'boolean' || val !== false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Tooltip.prototype, "active", {
-        get: function () {
-            return this._active;
-        },
-        set: function (val) {
-            this._active = typeof val !== 'boolean' || val !== false;
-            this._active ? this.canShow && this.showTooltip() : this.removeTooltip();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Tooltip.prototype.ngAfterViewInit = function () {
-        // Show the tooltip immediately after initiating view if set to
-        if (this._active) {
-            this.trigger();
-        }
-    };
-    Tooltip.prototype.ngOnInit = function () {
-        // Set default event type by platform if event is not defined
-        if (!this.event) {
-            this.event = this.platform.is('mobile') ? this.mobileEvent : this.desktopEvent;
-        }
-    };
-    Object.defineProperty(Tooltip.prototype, "canShow", {
-        /**
-         * @return {boolean} TRUE if the tooltip can be shown
-         */
-        get: /**
-           * @return {boolean} TRUE if the tooltip can be shown
-           */
-        function () {
-            return this._canShow && ((typeof this.tooltip === 'string' && this.tooltip !== '') || (typeof this.tooltipHtml === 'string' && this.tooltipHtml !== ''));
-        },
-        /**
-         * Set the canShow property
-         * Ensure that tooltip is shown only if the tooltip string is not falsey
-         */
-        set: /**
-           * Set the canShow property
-           * Ensure that tooltip is shown only if the tooltip string is not falsey
-           */
-        function (show) {
-            this._canShow = show;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Handles the click/press event and shows a tooltip.
-     * If a tooltip already exists, it will just reset it's timer.
-     */
-    /**
-       * Handles the click/press event and shows a tooltip.
-       * If a tooltip already exists, it will just reset it's timer.
-       */
-    Tooltip.prototype.trigger = /**
-       * Handles the click/press event and shows a tooltip.
-       * If a tooltip already exists, it will just reset it's timer.
-       */
-    function () {
-        if (!this.canShow) {
-            return;
-        }
-        if (this.tooltipElement) {
-            this._resetTimer();
-        }
-        else {
-            this.showTooltip();
-        }
-    };
-    /**
-     * Creates a new tooltip component and adjusts it's properties to show properly.
-     */
-    /**
-       * Creates a new tooltip component and adjusts it's properties to show properly.
-       */
-    Tooltip.prototype.showTooltip = /**
-       * Creates a new tooltip component and adjusts it's properties to show properly.
-       */
-    function () {
+    HideHeaderDirective.prototype.onScrooll = function (event) {
         var _this = this;
-        this._createTooltipComponent();
-        var tooltipComponent = this.tooltipElement.instance;
-        tooltipComponent.text = this.tooltip;
-        tooltipComponent.tooltipHtml = this.tooltipHtml;
-        tooltipComponent.init.then(function () {
-            var tooltipPosition = _this._getTooltipPosition();
-            tooltipComponent.posLeft = tooltipPosition.left;
-            tooltipComponent.posTop = tooltipPosition.top;
-            tooltipComponent.fadeState = 'visible';
-            if (_this.arrow) {
-                var arrowPosition = void 0;
-                if (_this.positionV === 'top') {
-                    arrowPosition = 'bottom';
-                }
-                else if (_this.positionV === 'bottom') {
-                    arrowPosition = 'top';
-                }
-                else if (_this.positionH === 'left') {
-                    arrowPosition = 'right';
-                }
-                else {
-                    arrowPosition = 'left';
-                }
-                tooltipComponent.arrow = arrowPosition;
+        console.log(event);
+        if (!this.header) {
+            this.header = event.headerElement;
+            this.headerHeight = this.header.clientHeight;
+            this.renderer.setElementStyle(this.header, "transition", "top " + this.transitionTime);
+            //console.log(this.headerHeight);
+        }
+        event.domWrite(function () {
+            console.log(event.directionY);
+            if (event.directionY == "down") {
+                _this.renderer.setElementStyle(_this.header, "top", "-" + _this.headerHeight + "px");
+                _this.renderer.setElementStyle(_this.scrollContent, "margin-top", "0px");
+                _this.renderer.setElementStyle(_this.fixedContent, "margin-top", "0px");
             }
-            if (!_this._active) {
-                _this.tooltipTimeout = setTimeout(_this.removeTooltip.bind(_this), _this.duration);
+            else {
+                _this.renderer.setElementStyle(_this.header, "top", "0px");
+                _this.renderer.setElementStyle(_this.scrollContent, "margin-top", _this.headerHeight + "px");
+                _this.renderer.setElementStyle(_this.fixedContent, "margin-top", _this.headerHeight + "px");
             }
         });
     };
-    Tooltip.prototype.onClick = function () {
-        if (this.event === 'click') {
-            this.trigger();
-        }
-    };
-    Tooltip.prototype.onPress = function () {
-        if (this.event === 'press') {
-            this.trigger();
-        }
-    };
-    Tooltip.prototype.onMouseEnter = function () {
-        if (this.event === 'hover') {
-            this.active = true;
-        }
-    };
-    Tooltip.prototype.onMouseLeave = function () {
-        if (this.event === 'hover') {
-            this.active = false;
-        }
-    };
-    Tooltip.prototype._createTooltipComponent = function () {
-        var viewport = this.appRef.components[0]._component
-            ._viewport, componentFactory = this._componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__["a" /* TooltipBox */]);
-        this.tooltipElement = viewport.createComponent(componentFactory);
-        this.tooltipCtrl.addTooltip(this);
-    };
-    Tooltip.prototype._getTooltipPosition = function () {
-        var tooltipNativeElement = this.tooltipElement.instance.getNativeElement(), el = this.el.nativeElement, rect = el.getBoundingClientRect();
-        var positionLeft, positionTop, spacing = 10;
-        if (this.navTooltip) {
-            this.positionV = 'bottom';
-            this.arrow = false;
-            spacing = 20;
-        }
-        if (this.positionH === 'right') {
-            positionLeft = rect.right + spacing;
-        }
-        else if (this.positionH === 'left') {
-            positionLeft = rect.left - spacing - tooltipNativeElement.offsetWidth;
-        }
-        else if (this.navTooltip) {
-            positionLeft = rect.left + el.offsetWidth / 2;
-        }
-        else {
-            positionLeft = rect.left;
-        }
-        if (this.positionV === 'top') {
-            positionTop = rect.top - spacing - tooltipNativeElement.offsetHeight;
-        }
-        else if (this.positionV === 'bottom') {
-            positionTop = rect.bottom + spacing;
-        }
-        else {
-            positionTop =
-                rect.top + el.offsetHeight / 2 - tooltipNativeElement.offsetHeight / 2;
-        }
-        if (+this.topOffset) {
-            positionTop += +this.topOffset;
-        }
-        if (+this.leftOffset) {
-            positionLeft += +this.leftOffset;
-        }
-        if (positionLeft + tooltipNativeElement.offsetWidth + spacing >
-            this.platform.width()) {
-            positionLeft =
-                this.platform.width() - tooltipNativeElement.offsetWidth - spacing;
-        }
-        else if (positionLeft + tooltipNativeElement.offsetWidth - spacing < 0) {
-            positionLeft = spacing;
-        }
-        if (positionTop + tooltipNativeElement.offsetHeight + spacing > this.platform.height()) {
-            positionTop = this.platform.height() - tooltipNativeElement.offsetHeight - spacing;
-        }
-        else if (positionTop + tooltipNativeElement.offsetHeight - spacing < 0) {
-            positionTop = spacing;
-        }
-        return {
-            left: positionLeft,
-            top: positionTop,
-        };
-    };
-    Tooltip.prototype.removeTooltip = function () {
-        var _this = this;
-        if (!this.tooltipElement) {
-            this.tooltipElement = undefined;
-            this.tooltipTimeout = undefined;
-            return;
-        }
-        this.tooltipElement.instance.fadeState = 'invisible';
-        this.canShow = false;
-        // wait for animation to finish then clear everything out
-        setTimeout(function () {
-            if (_this.tooltipElement &&
-                typeof _this.tooltipElement.destroy === 'function') {
-                _this.tooltipElement.destroy();
+    HideHeaderDirective = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
+            selector: '[hide-header]',
+            host: {
+                "(ionScroll)": "onScrooll($event)"
             }
-            _this.tooltipCtrl.removeTooltip(_this);
-            _this.tooltipElement = _this.tooltipTimeout = undefined;
-            _this.canShow = true;
-        }, 300);
-    };
-    Tooltip.prototype._resetTimer = function () {
-        var _this = this;
-        clearTimeout(this.tooltipTimeout);
-        this.tooltipTimeout = setTimeout(function () {
-            _this.active = false;
-        }, this.duration);
-    };
-    Tooltip.prototype.ngOnDestroy = function () {
-        // if the timer hasn't expired or active is true when the component gets destroyed, the tooltip will remain in the DOM
-        // this removes it
-        this.removeTooltip();
-    };
-    Tooltip.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                    selector: '[tooltip]',
-                },] },
-    ];
-    /** @nocollapse */
-    Tooltip.ctorParameters = function () { return [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], },
-        { type: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */], },
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
-        { type: __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__["a" /* TooltipController */], },
-    ]; };
-    Tooltip.propDecorators = {
-        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "tooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "positionV": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "positionH": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "event": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "mobileEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "desktopEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "topOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "leftOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "hideOthers": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "navTooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "duration": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "active": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-        "onClick": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['click',] },],
-        "onPress": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['press',] },],
-        "onMouseEnter": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseenter',] },],
-        "onMouseLeave": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseleave',] },],
-    };
-    return Tooltip;
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]])
+    ], HideHeaderDirective);
+    return HideHeaderDirective;
 }());
 
-//# sourceMappingURL=tooltip.directive.js.map
+//# sourceMappingURL=hide-header.js.map
 
 /***/ }),
 
-/***/ 729:
+/***/ 867:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_box_component__ = __webpack_require__(725);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(727);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(730);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__tooltips_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(726);
-/* unused harmony namespace reexport */
-
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(878);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(879);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__directives__["a"]; });
 
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 730:
+/***/ 868:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipsModule; });
+/* unused harmony export BrMaskModel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonic3; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__ = __webpack_require__(726);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__ = __webpack_require__(725);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_directive__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
 
 
-
-
-
-var TooltipsModule = (function () {
-    function TooltipsModule() {
+var BrMaskModel = (function () {
+    function BrMaskModel() {
+        this.type = 'alfa';
+        this.decimal = 2;
+        this.decimalCaracter = ",";
+        this.userCaracters = false;
+        this.numberAndTousand = false;
     }
-    TooltipsModule.forRoot = function () {
-        return {
-            ngModule: TooltipsModule,
-            providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__["a" /* TooltipController */]]
-        };
-    };
-    TooltipsModule.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
-                    entryComponents: [__WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
-                    declarations: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */], __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
-                    imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicModule */]],
-                    exports: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */]]
-                },] },
-    ];
-    return TooltipsModule;
+    return BrMaskModel;
 }());
 
-//# sourceMappingURL=tooltips.module.js.map
+var BrMaskerIonic3 = (function () {
+    function BrMaskerIonic3(_renderer, _elementRef) {
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this.brmasker = new BrMaskModel();
+    }
+    BrMaskerIonic3.prototype.inputKeyup = function (event) {
+        var value = this.returnValue(event.target.value);
+        this.writeValue(value);
+        event.target.value = value;
+    };
+    BrMaskerIonic3.prototype.inputOnblur = function (event) {
+        var value = this.returnValue(event.value);
+        this.writeValue(value);
+        event.value = value;
+    };
+    BrMaskerIonic3.prototype.inputFocus = function (event) {
+        var value = this.returnValue(event.value);
+        this.writeValue(value);
+        event.value = value;
+    };
+    BrMaskerIonic3.prototype.ngOnInit = function () {
+        if (!this.brmasker.type) {
+            this.brmasker.type = 'all';
+        }
+        if (!this.brmasker.decimal) {
+            this.brmasker.decimal = 2;
+        }
+        if (!this.brmasker.decimalCaracter) {
+            this.brmasker.decimalCaracter = ',';
+        }
+    };
+    BrMaskerIonic3.prototype.writeValue = function (fn) {
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', fn);
+    };
+    BrMaskerIonic3.prototype.registerOnChange = function (fn) {
+        return;
+    };
+    BrMaskerIonic3.prototype.registerOnTouched = function (fn) {
+        return;
+    };
+    BrMaskerIonic3.prototype.setDisabledState = function (isDisabled) {
+        if (isDisabled) {
+            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'true');
+        }
+        else {
+            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'false');
+        }
+    };
+    BrMaskerIonic3.prototype.writeCreateValue = function (value, config) {
+        if (config === void 0) { config = new BrMaskModel(); }
+        if (value && config.phone) {
+            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
+        }
+        if (value && config.money) {
+            return this.writeValueMoney(value, config);
+        }
+        if (value && config.person) {
+            return this.writeValuePerson(value);
+        }
+        if (value && config.percent) {
+            return this.writeValuePercent(value);
+        }
+        if (value && config.mask) {
+            this.brmasker.mask = config.mask;
+            if (config.len) {
+                this.brmasker.len = config.len;
+            }
+            return this.onInput(value);
+        }
+        return value;
+    };
+    BrMaskerIonic3.prototype.writeValuePercent = function (value) {
+        value.replace(/\D/gi, '');
+        value.replace(/%/gi, '');
+        return value.replace(/([0-9]{0})$/gi, '%$1');
+    };
+    BrMaskerIonic3.prototype.writeValuePerson = function (value) {
+        if (value.length <= 11) {
+            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
+        }
+        else {
+            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
+        }
+    };
+    BrMaskerIonic3.prototype.writeValueMoney = function (value, config) {
+        if (config === void 0) { config = new BrMaskModel(); }
+        return this.moneyMask(value, config);
+    };
+    BrMaskerIonic3.prototype.returnValue = function (value) {
+        if (!this.brmasker.mask) {
+            this.brmasker.mask = '';
+        }
+        if (value) {
+            var v = value;
+            if (this.brmasker.type == 'alfa') {
+                v = v.replace(/\d/gi, '');
+            }
+            if (this.brmasker.type == 'num') {
+                v = v.replace(/\D/gi, '');
+            }
+            if (this.brmasker.money) {
+                return this.moneyMask(this.onInput(v), this.brmasker);
+            }
+            if (this.brmasker.phone) {
+                return this.phoneMask(v);
+            }
+            if (this.brmasker.phoneNotDDD) {
+                return this.phoneNotDDDMask(v);
+            }
+            if (this.brmasker.person) {
+                return this.peapollMask(v);
+            }
+            if (this.brmasker.percent) {
+                return this.percentMask(v);
+            }
+            if (this.brmasker.numberAndTousand) {
+                return this.thousand(v);
+            }
+            if (this.brmasker.userCaracters) {
+                return this.usingSpecialCharacters(v, this.brmasker.mask, this.brmasker.len);
+            }
+            return this.onInput(v);
+        }
+        else {
+            return '';
+        }
+    };
+    BrMaskerIonic3.prototype.percentMask = function (v) {
+        var tmp = v;
+        tmp = tmp.replace(/\D/gi, '');
+        tmp = tmp.replace(/%/gi, '');
+        tmp = tmp.replace(/([0-9]{0})$/gi, '%$1');
+        return tmp;
+    };
+    BrMaskerIonic3.prototype.phoneMask = function (v) {
+        var n = v;
+        if (n.length > 14) {
+            this.brmasker.len = 15;
+            this.brmasker.mask = '(99) 99999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
+            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 14;
+            this.brmasker.mask = '(99) 9999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.phoneNotDDDMask = function (v) {
+        var n = v;
+        if (n.length > 9) {
+            this.brmasker.len = 10;
+            this.brmasker.mask = '99999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 9;
+            this.brmasker.mask = '9999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.peapollMask = function (v) {
+        var n = v;
+        if (n.length > 14) {
+            this.brmasker.len = 18;
+            this.brmasker.mask = '99.999.999/9999-99';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1/$2');
+            n = n.replace(/(\d{4})(\d{1,4})$/gi, '$1-$2');
+            n = n.replace(/(\d{2})(\d{1,2})$/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 14;
+            this.brmasker.mask = '999.999.999-99';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d{1,2})$/gi, '$1-$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.moneyMask = function (value, config) {
+        var decimal = config.decimal || this.brmasker.decimal;
+        value = value
+            .replace(/\D/gi, '')
+            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
+        if (value.length === decimal + 1) {
+            return "0" + value; // leading 0 so we're not left with something weird like ",50"
+        }
+        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
+            return value.substr(1); // remove leading 0 when we don't need it anymore
+        }
+        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
+        }
+        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
+        }
+        return value;
+    };
+    BrMaskerIonic3.prototype.onInput = function (value) {
+        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
+        return ret;
+        // if (ret) {
+        //   this.element.nativeElement.value = ret;
+        // }
+    };
+    BrMaskerIonic3.prototype.thousand = function (value) {
+        var val = value.replace(/\D/gi, '');
+        var reverse = val.toString().split('').reverse().join('');
+        var thousands = reverse.match(/\d{1,3}/g);
+        if (thousands) {
+            return thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
+        }
+        return val;
+    };
+    BrMaskerIonic3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\,| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    BrMaskerIonic3.prototype.formatField = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    return BrMaskerIonic3;
+}());
+
+BrMaskerIonic3.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: '[brmasker]',
+                providers: [
+                    {
+                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALUE_ACCESSOR */],
+                        useExisting: BrMaskerIonic3,
+                        multi: true
+                    }
+                ]
+            },] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+BrMaskerIonic3.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+]; };
+BrMaskerIonic3.propDecorators = {
+    'brmasker': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'inputKeyup': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['keyup', ['$event'],] },],
+    'inputOnblur': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['ionBlur', ['$event'],] },],
+    'inputFocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['ionFocus', ['$event'],] },],
+};
+//# sourceMappingURL=brmasker-ionic-3.js.map
 
 /***/ }),
 
-/***/ 751:
+/***/ 869:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoInsumosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal_quantidademinima_modal_quantidademinima__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(46);
+/* unused harmony export BrMaskServicesModel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonicServices3; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+
+var BrMaskServicesModel = (function () {
+    function BrMaskServicesModel() {
+        this.type = 'alfa';
+        this.decimal = 2;
+        this.decimalCaracter = ",";
+        this.userCaracters = false;
+        this.numberAndTousand = false;
+    }
+    return BrMaskServicesModel;
+}());
+
+var BrMaskerIonicServices3 = (function () {
+    function BrMaskerIonicServices3() {
+        this.brmasker = new BrMaskServicesModel();
+    }
+    BrMaskerIonicServices3.prototype.ngOnInit = function () {
+        if (!this.brmasker.type) {
+            this.brmasker.type = 'all';
+        }
+        if (!this.brmasker.decimal) {
+            this.brmasker.decimal = 2;
+        }
+        if (!this.brmasker.decimalCaracter) {
+            this.brmasker.decimalCaracter = ',';
+        }
+    };
+    BrMaskerIonicServices3.prototype.writeCreateValue = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        if (value && config.phone) {
+            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
+        }
+        if (value && config.money) {
+            return this.writeValueMoney(value, config);
+        }
+        if (value && config.person) {
+            return this.writeValuePerson(value);
+        }
+        if (value && config.percent) {
+            return this.writeValuePercent(value);
+        }
+        if (value && config.numberAndTousand) {
+            return this.writeValueNumberAndThousand(value);
+        }
+        if (value && config.userCaracters) {
+            return this.writeValueusingSpecialCharacters(value);
+        }
+        if (value && config.mask) {
+            this.brmasker.mask = config.mask;
+            if (config.len) {
+                this.brmasker.len = config.len;
+            }
+            return this.onInput(value);
+        }
+        return value;
+    };
+    BrMaskerIonicServices3.prototype.writeValuePercent = function (value) {
+        value.replace(/\D/gi, '');
+        value.replace(/%/gi, '');
+        return value.replace(/([0-9]{0})$/gi, '%$1');
+    };
+    BrMaskerIonicServices3.prototype.writeValuePerson = function (value) {
+        if (value.length <= 11) {
+            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
+        }
+        else {
+            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
+        }
+    };
+    BrMaskerIonicServices3.prototype.writeValueMoney = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.moneyMask(value, config);
+    };
+    BrMaskerIonicServices3.prototype.writeValueNumberAndThousand = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.thousand(value);
+    };
+    BrMaskerIonicServices3.prototype.writeValueusingSpecialCharacters = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.usingSpecialCharacters(value, config.mask, config.len);
+    };
+    BrMaskerIonicServices3.prototype.moneyMask = function (value, config) {
+        var decimal = config.decimal || this.brmasker.decimal;
+        value = value
+            .replace(/\D/gi, '')
+            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
+        if (value.length === decimal + 1) {
+            return "0" + value; // leading 0 so we're not left with something weird like ",50"
+        }
+        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
+            return value.substr(1); // remove leading 0 when we don't need it anymore
+        }
+        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
+        }
+        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
+        }
+        return value;
+    };
+    BrMaskerIonicServices3.prototype.onInput = function (value) {
+        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
+        return ret;
+    };
+    BrMaskerIonicServices3.prototype.thousand = function (value) {
+        var val = value.replace(/\D/gi, '');
+        var reverse = val.toString().split('').reverse().join('');
+        var thousands = reverse.match(/\d{1,3}/g);
+        val = thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
+        return val;
+    };
+    BrMaskerIonicServices3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\,| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    BrMaskerIonicServices3.prototype.formatField = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    return BrMaskerIonicServices3;
+}());
+
+BrMaskerIonicServices3.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: '[brmasker]',
+            },] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+BrMaskerIonicServices3.ctorParameters = function () { return []; };
+//# sourceMappingURL=brmasker-ionic-services.js.map
+
+/***/ }),
+
+/***/ 877:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroInsumoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_categoria_service__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_insumo_service__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__ = __webpack_require__(867);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -560,100 +718,210 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the LocalizacaoInsumosPage page.
+ * Generated class for the CadastroInsumoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var LocalizacaoInsumosPage = /** @class */ (function () {
-    function LocalizacaoInsumosPage(navCtrl, navParams, localizacaoService, insumoService, LoadingController, modal, viewCtrl, alertCtrl) {
+var CadastroInsumoPage = /** @class */ (function () {
+    function CadastroInsumoPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, categoriaService, loadingCtrl, brMaskerIonic3) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.localizacaoService = localizacaoService;
-        this.insumoService = insumoService;
-        this.LoadingController = LoadingController;
-        this.modal = modal;
         this.viewCtrl = viewCtrl;
         this.alertCtrl = alertCtrl;
-        this.page = 0;
+        this.formBuilder = formBuilder;
+        this.insumoService = insumoService;
+        this.categoriaService = categoriaService;
+        this.loadingCtrl = loadingCtrl;
+        this.brMaskerIonic3 = brMaskerIonic3;
+        this.categoriasInsumos = [];
+        this.formGroup = this.formBuilder.group({
+            id: ['', ''],
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            nomenclatura: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            valor: ['',],
+            codigoalmox: ['',],
+            observacao: ['',],
+            essencial: [false,],
+            datavalidade: [,],
+            quantidade: [,],
+            taxadeconsumo: [,],
+            categorias: this.formControl,
+        }, {});
     }
-    LocalizacaoInsumosPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LocalizacaoInsumosPage');
-        //this.loadData();
-        this.getItens();
-    };
-    LocalizacaoInsumosPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    LocalizacaoInsumosPage.prototype.atualizaQtdMinima = function (event) {
+    CadastroInsumoPage.prototype.ionViewDidLoad = function () {
         var _this = this;
-        console.log(event);
-        var modalQuantidademinimaPage = this.modal.create(__WEBPACK_IMPORTED_MODULE_0__modal_quantidademinima_modal_quantidademinima__["a" /* ModalQuantidademinimaPage */], { evento: event });
-        modalQuantidademinimaPage.present();
-        modalQuantidademinimaPage.onDidDismiss(function (data) {
-            _this.getItens();
-        });
+        this.loadCategorias();
+        this.itemId = this.navParams.get('itemId');
+        if (this.itemId != null) {
+            this.insumoService.findInsumoById(this.itemId).subscribe(function (resp) {
+                _this.updateInsumoDTO = resp;
+                console.log(_this.updateInsumoDTO.categorias);
+                _this.formGroup = _this.formBuilder.group({
+                    id: [_this.updateInsumoDTO.id, ''],
+                    nome: [_this.updateInsumoDTO.nome, ''],
+                    nomenclatura: [_this.updateInsumoDTO.nomenclatura, ''],
+                    valor: [_this.updateInsumoDTO.valor, ''],
+                    codigoalmox: [_this.updateInsumoDTO.codigoalmox,],
+                    observacao: [_this.updateInsumoDTO.observacao, ''],
+                    essencial: [_this.updateInsumoDTO.essencial, ''],
+                    datavalidade: [_this.updateInsumoDTO.datavalidade,],
+                    quantidade: [_this.updateInsumoDTO.quantidade, ''],
+                    taxadeconsumo: [_this.updateInsumoDTO.taxadeconsumo,],
+                    categorias: [_this.updateInsumoDTO.categorias,],
+                }, {});
+            });
+        }
     };
-    /*getItens(){
-      let localizacaoId = this.navParams.get('localizacao_id');
-      console.log("aqui: "+localizacaoId);
-  
-      this.insumoService.findInsumoLocalizacaoByLocalizacao(localizacaoId,this.page, 30)
-      .subscribe(response => {
-        
-        this.insumosLocalizacao = response.sort();
-        
-      },
-      error => {})
-  
-      console.log(this.insumosLocalizacao);
-  
-      this.insumosLocalizacao.forEach(function (value){
-        console.log(value);
-      })
-  
-    }*/
-    LocalizacaoInsumosPage.prototype.getItens = function () {
+    CadastroInsumoPage.prototype.loadCategorias = function () {
         var _this = this;
-        var localizacaoId = this.navParams.get('localizacao_id');
         var loader = this.presentLoading();
-        this.insumosLocalizacao = [];
-        //this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
-        this.insumoService.findInsumoLocalizacaoByLocalizacao(localizacaoId)
-            .subscribe(function (response) {
-            var start = _this.insumosLocalizacao.length;
-            _this.insumosLocalizacao = _this.insumosLocalizacao.concat(response['content']);
-            var end = _this.insumosLocalizacao.length - 1;
-            loader.dismiss();
-        }, function (error) {
+        this.categoriaService.findAll().subscribe(function (response) {
+            _this.categoriasInsumos = response.sort();
             loader.dismiss();
         });
     };
-    LocalizacaoInsumosPage.prototype.presentLoading = function () {
-        var loader = this.LoadingController.create({
+    CadastroInsumoPage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({
             content: "Aguarde..."
         });
         loader.present();
         return loader;
     };
-    LocalizacaoInsumosPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Quantidades Mínimas do Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid *ngFor="let ins of insumosLocalizacao">\n\n      <ion-row>\n\n        <h6>{{ins.insumo.nome}}</h6>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Quantidade: {{ins.quantidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote CR: {{ins.loteCR}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Produção: {{ins.loteProducao}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Data de Validade: {{ins.dataValidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>\n\n        </ion-col>\n\n        <ion-col>\n\n        </ion-col>  \n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-item-divider>\n\n          \n\n        </ion-item-divider>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
+    CadastroInsumoPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    CadastroInsumoPage.prototype.cadastrarInsumo = function () {
+        var _this = this;
+        var ins = this.formGroup.value;
+        if (ins.id === null || ins.id === '') {
+            this.insumoService.insert(this.formGroup.value).subscribe(function (response) {
+                _this.showInserOk();
+            }, function (error) { });
+        }
+        else {
+            console.log(ins);
+            this.insumoService.update(ins).subscribe(function (response) {
+                _this.showUpdateOk();
+            }, function (error) { });
+        }
+    };
+    CadastroInsumoPage.prototype.showInserOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro efetuado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    CadastroInsumoPage.prototype.showUpdateOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro atualizado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    CadastroInsumoPage.prototype.imprimeItem = function (event) {
+        //this.citemInsumo = event.value;
+    };
+    CadastroInsumoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-cadastro-insumo',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/'<!--\n\n  Generated template for the CadastroInsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">\n\n     <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n      <ion-input formControlName="id" type="hidden"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Nomenclatura*</ion-label>\n\n      <ion-input formControlName="nomenclatura" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>\n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label>Categorias</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="categoriasInsumos"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        formControlName="categorias"\n\n        [hasInfiniteScroll]="true"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="imprimeItem($event)"\n\n        [isMultiple]="true"\n\n        [canClear]="true"\n\n        [placeholder]="\'Selecione a categoria\'">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-item="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{item.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n    \n\n    \n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label stacked>Valor</ion-label>\n\n      <ion-input disabled type="number" formControlName="valor"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Código Almoxarifado</ion-label>\n\n      <ion-input formControlName="codigoalmox" type="number"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Observação</ion-label>\n\n      <ion-textarea formControlName="observacao" type="text"></ion-textarea>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Essencial?</ion-label>\n\n      <ion-toggle formControlName="essencial" ></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Data de Validade</ion-label>\n\n      <ion-datetime disabled formControlName="datavalidade" ></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Quantidade</ion-label>\n\n      <ion-input disabled formControlName="quantidade" type="number"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Taxa de Consumo</ion-label>\n\n      <ion-input formControlName="taxadeconsumo" type="number"></ion-input>\n\n    </ion-item>\n\n    \n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__["a" /* LocalizacaoService */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */]])
-    ], LocalizacaoInsumosPage);
-    return LocalizacaoInsumosPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_categoria_service__["a" /* CategoriaService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]])
+    ], CadastroInsumoPage);
+    return CadastroInsumoPage;
 }());
 
-//# sourceMappingURL=localizacao-insumos.js.map
+//# sourceMappingURL=cadastro-insumo.js.map
+
+/***/ }),
+
+/***/ 878:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(868);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(869);
+
+
+
+
+var BrMaskerModule = (function () {
+    function BrMaskerModule() {
+    }
+    return BrMaskerModule;
+}());
+
+BrMaskerModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"], args: [{
+                declarations: [
+                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
+                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
+                ],
+                exports: [
+                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
+                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
+                ],
+                imports: [
+                    __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* CommonModule */]
+                ],
+                schemas: [
+                    __WEBPACK_IMPORTED_MODULE_1__angular_core__["CUSTOM_ELEMENTS_SCHEMA"]
+                ],
+                providers: [__WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]]
+            },] },
+];
+/** @nocollapse */
+BrMaskerModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 879:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(868);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(869);
+/* unused harmony namespace reexport */
+
+
+//# sourceMappingURL=index.js.map
 
 /***/ })
 

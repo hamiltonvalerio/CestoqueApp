@@ -40,8 +40,8 @@
           <ion-row><ion-col col-2>Quantidade Atual:</ion-col> <ion-col col-8>{{ient.insumo.quantidade}}</ion-col></ion-row>
           <ion-row><ion-col col-2>Lote Fornecedor:</ion-col> <ion-col col-8>{{ient.loteFornecedor}}</ion-col></ion-row>
           <ion-row><ion-col col-2>Lote CR: </ion-col><ion-col col-8>{{ient.loteCR}}</ion-col></ion-row>
-          <ion-row><ion-col col-2>Data de Irradiação: </ion-col><ion-col col-8>{{ient.dataIrradiacao}}</ion-col></ion-row>
-          <ion-row><ion-col col-2>Data de Validade: </ion-col><ion-col col-8>{{ient.dataValidade}}</ion-col></ion-row>
+          <ion-row><ion-col col-2>Data de Irradiação: </ion-col><ion-col col-8>{{ient.dataIrradiacao | date: 'dd/MM/yyyy H:mm'}}</ion-col></ion-row>
+          <ion-row><ion-col col-2>Data de Validade: </ion-col><ion-col col-8>{{ient.dataValidade | date: 'dd/MM/yyyy'}}</ion-col></ion-row>
           <ion-row><br></ion-row>
         </ion-list>
       </ion-list>
