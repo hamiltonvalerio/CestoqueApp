@@ -1,1 +1,660 @@
-webpackJsonp([2],{675:function(l,n,u){"use strict";function e(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,105,"ion-grid",[["class","grid"]],null,null,null,null,null)),o["ɵdid"](1,16384,null,0,w.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](3,0,null,null,5,"ion-row",[["class","row"]],null,null,null,null,null)),o["ɵdid"](4,16384,null,0,R.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](6,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](7,null,["",""])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](10,0,null,null,30,"ion-row",[["class","row"]],null,null,null,null,null)),o["ɵdid"](11,16384,null,0,R.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](13,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](14,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](16,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](17,null,["Quantidade: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](20,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](21,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](23,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](24,null,["Lote Fornecedor: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](27,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](28,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](30,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](31,null,["Lote CR: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](34,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](35,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](37,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](38,null,["Lote Produção: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](42,0,null,null,23,"ion-row",[["class","row"]],null,null,null,null,null)),o["ɵdid"](43,16384,null,0,R.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](45,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](46,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](48,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](49,null,["Data de Validade: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](52,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](53,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](55,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](56,null,["Data de Irradiação: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](59,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](60,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](62,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),o["ɵted"](63,null,["Aprovado pelo Controle da Qualidade: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](67,0,null,null,17,"ion-row",[["class","row"]],null,null,null,null,null)),o["ɵdid"](68,16384,null,0,R.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](70,0,null,null,2,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](71,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](74,0,null,null,5,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](75,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n          "])),(l()(),o["ɵeld"](77,0,null,null,1,"h3",[],null,null,null,null,null)),(l()(),o["ɵted"](78,null,["Quantidade mínima: ",""])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](81,0,null,null,2,"ion-col",[["class","col"]],null,null,null,null,null)),o["ɵdid"](82,16384,null,0,x.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵted"](-1,null,["  \n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](86,0,null,null,6,"ion-row",[["class","row"]],null,null,null,null,null)),o["ɵdid"](87,16384,null,0,R.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](89,0,null,null,2,"button",[["class","submit-btn"],["ion-button",""],["type","submit"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.atualizaQtdMinima(l.context.$implicit)&&e}return e},C.b,C.a)),o["ɵdid"](90,1097728,null,0,L.a,[[8,""],E.a,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,0,["Atualizar Quantidade Mínima\n        "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](94,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),o["ɵdid"](95,16384,null,0,R.a,[],null,null),(l()(),o["ɵted"](-1,null,["\n        "])),(l()(),o["ɵeld"](97,0,null,null,6,"ion-item-divider",[["class","item item-divider"]],null,null,null,P.b,P.a)),o["ɵdid"](98,1097728,null,3,M.a,[z.a,E.a,o.ElementRef,o.Renderer,[2,I.a]],null,null),o["ɵqud"](335544320,2,{contentLabel:0}),o["ɵqud"](603979776,3,{_buttons:1}),o["ɵqud"](603979776,4,{_icons:1}),o["ɵdid"](102,16384,null,0,O.a,[E.a,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,2,["\n          \n        "])),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵted"](-1,null,["\n\n    "]))],null,function(l,n){l(n,7,0,n.context.$implicit.insumo.nome);l(n,17,0,n.context.$implicit.quantidade);l(n,24,0,n.context.$implicit.loteFornecedor);l(n,31,0,n.context.$implicit.loteCR);l(n,38,0,n.context.$implicit.loteProducao);l(n,49,0,n.context.$implicit.dataValidade);l(n,56,0,n.context.$implicit.dataIrradiacao);l(n,63,0,n.context.$implicit.foiaprovado);l(n,78,0,n.context.$implicit.quantidademinima)})}function t(l){return o["ɵvid"](0,[(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵeld"](1,0,null,null,27,"ion-header",[],null,null,null,null,null)),o["ɵdid"](2,16384,null,0,T.a,[E.a,o.ElementRef,o.Renderer,[2,_.a]],null,null),(l()(),o["ɵted"](-1,null,["\n  "])),(l()(),o["ɵeld"](4,0,null,null,23,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,$.b,$.a)),o["ɵdid"](5,49152,null,0,N.a,[E.a,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](7,0,null,3,2,"ion-title",[],null,null,null,k.b,k.a)),o["ɵdid"](8,49152,null,0,A.a,[E.a,o.ElementRef,o.Renderer,[2,N.a],[2,D.a]],null,null),(l()(),o["ɵted"](-1,0,["\n      Cadastro de Quantidades Mínimas do Insumo\n    "])),(l()(),o["ɵted"](-1,3,["\n    "])),(l()(),o["ɵeld"](11,0,null,2,15,"ion-buttons",[["end",""]],null,null,null,null,null)),o["ɵdid"](12,16384,null,1,F.a,[E.a,o.ElementRef,o.Renderer,[2,N.a],[2,D.a]],null,null),o["ɵqud"](603979776,1,{_buttons:1}),(l()(),o["ɵted"](-1,null,["\n      "])),(l()(),o["ɵeld"](15,0,null,null,10,"button",[["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.dismiss()&&e}return e},C.b,C.a)),o["ɵdid"](16,1097728,[[1,4]],0,L.a,[[8,""],E.a,o.ElementRef,o.Renderer],null,null),(l()(),o["ɵted"](-1,0,["\n        "])),(l()(),o["ɵeld"](18,0,null,0,3,"span",[["color","primary"],["ion-text",""],["showWhen","ios"]],[[2,"hidden-show-when",null]],null,null,null,null)),o["ɵdid"](19,147456,null,0,Q.a,[[8,"ios"],S.a,o.NgZone],null,null),o["ɵdid"](20,16384,null,0,V.a,[E.a,o.ElementRef,o.Renderer],{color:[0,"color"]},null),(l()(),o["ɵted"](-1,null,["Cancel"])),(l()(),o["ɵted"](-1,0,["\n        "])),(l()(),o["ɵeld"](23,0,null,0,1,"ion-icon",[["name","md-close"],["role","img"]],[[2,"hide",null]],null,null,null,null)),o["ɵdid"](24,147456,null,0,q.a,[E.a,o.ElementRef,o.Renderer],{name:[0,"name"]},null),(l()(),o["ɵted"](-1,0,["\n      "])),(l()(),o["ɵted"](-1,null,["\n    "])),(l()(),o["ɵted"](-1,3,["\n  "])),(l()(),o["ɵted"](-1,null,["\n"])),(l()(),o["ɵted"](-1,null,["\n\n"])),(l()(),o["ɵeld"](30,0,null,null,5,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,j.b,j.a)),o["ɵdid"](31,4374528,null,0,H.a,[E.a,S.a,Z.a,o.ElementRef,o.Renderer,B.a,J.a,o.NgZone,[2,_.a],[2,U.a]],null,null),(l()(),o["ɵted"](-1,1,["\n\n    "])),(l()(),o["ɵand"](16777216,null,1,1,null,e)),o["ɵdid"](34,802816,null,0,W.i,[o.ViewContainerRef,o.TemplateRef,o.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),o["ɵted"](-1,1,["\n\n\n"])),(l()(),o["ɵted"](-1,null,["\n"]))],function(l,n){var u=n.component;l(n,20,0,"primary");l(n,24,0,"md-close");l(n,34,0,u.insumosLocalizacao)},function(l,n){l(n,4,0,o["ɵnov"](n,5)._sbPadding);l(n,18,0,!o["ɵnov"](n,19).isMatch);l(n,23,0,o["ɵnov"](n,24)._hidden);l(n,30,0,o["ɵnov"](n,31).statusbarPadding,o["ɵnov"](n,31)._hasRefresher)})}Object.defineProperty(n,"__esModule",{value:!0});var o=u(1),i=(u(0),u(698),u(81),u(199)),a=u(201),d=function(){function l(l,n,u,e,t,o,i,a){this.navCtrl=l,this.navParams=n,this.localizacaoService=u,this.insumoService=e,this.LoadingController=t,this.modal=o,this.viewCtrl=i,this.alertCtrl=a,this.page=0}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad LocalizacaoInsumosPage"),this.getItens()},l.prototype.dismiss=function(){this.viewCtrl.dismiss()},l.prototype.atualizaQtdMinima=function(l){var n=this;console.log("ENTROU"),console.log(l);var u=this.modal.create("ModalQuantidademinimaPage",{evento:l});u.onDidDismiss(function(){n.getItens()}),u.present()},l.prototype.getItens=function(){var l=this,n=this.navParams.get("localizacao_id"),u=this.presentLoading();this.insumosLocalizacao=[],this.insumoService.findInsumoLocalizacaoByLocalizacao(n).subscribe(function(n){l.insumosLocalizacao=l.insumosLocalizacao.concat(n.content);u.dismiss()},function(l){u.dismiss()})},l.prototype.presentLoading=function(){var l=this.LoadingController.create({content:"Aguarde..."});return l.present(),l},l}(),r=function(){return function(){}}(),s=u(187),c=u(188),p=u(189),f=u(190),m=u(191),h=u(192),b=u(193),v=u(194),g=u(195),y=u(699),w=u(211),R=u(125),x=u(128),C=u(41),L=u(27),E=u(3),P=u(122),M=u(24),z=u(21),I=u(53),O=u(131),T=u(82),_=u(7),$=u(202),N=u(42),k=u(197),A=u(60),D=u(38),F=u(121),Q=u(126),S=u(6),V=u(127),q=u(43),j=u(196),H=u(31),Z=u(13),B=u(12),J=u(33),U=u(29),W=u(15),G=u(16),K=u(129),X=u(83),Y=u(123),ll=o["ɵcrt"]({encapsulation:2,styles:[],data:{}}),nl=o["ɵccf"]("page-localizacao-insumos",d,function(l){return o["ɵvid"](0,[(l()(),o["ɵeld"](0,0,null,null,1,"page-localizacao-insumos",[],null,null,null,t,ll)),o["ɵdid"](1,49152,null,0,d,[U.a,G.a,a.a,i.a,K.a,X.a,_.a,Y.a],null,null)],null,null)},{},{},[]),ul=u(19),el=u(692),tl=u(120),ol=u(694),il=u(52);u.d(n,"LocalizacaoInsumosPageModuleNgFactory",function(){return al});var al=o["ɵcmf"](r,[],function(l){return o["ɵmod"]([o["ɵmpd"](512,o.ComponentFactoryResolver,o["ɵCodegenComponentFactoryResolver"],[[8,[s.a,c.a,p.a,f.a,m.a,h.a,b.a,v.a,g.a,y.a,nl]],[3,o.ComponentFactoryResolver],o.NgModuleRef]),o["ɵmpd"](4608,W.l,W.k,[o.LOCALE_ID,[2,W.u]]),o["ɵmpd"](4608,ul.r,ul.r,[]),o["ɵmpd"](4608,ul.d,ul.d,[]),o["ɵmpd"](4608,el.a,el.a,[]),o["ɵmpd"](512,W.b,W.b,[]),o["ɵmpd"](512,ul.p,ul.p,[]),o["ɵmpd"](512,ul.g,ul.g,[]),o["ɵmpd"](512,ul.n,ul.n,[]),o["ɵmpd"](512,tl.a,tl.a,[]),o["ɵmpd"](512,tl.b,tl.b,[]),o["ɵmpd"](512,ol.a,ol.a,[]),o["ɵmpd"](512,r,r,[]),o["ɵmpd"](256,il.a,d,[])])})},691:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(134);var e=function(){function l(l,n){var u=this;this.elementRef=l,this.rnd=n,this.fadeState="invisible",this.init=new Promise(function(l){u.initResolve=l})}return Object.defineProperty(l.prototype,"arrow",{set:function(l){this.rnd.setAttribute(this.getNativeElement(),"class","has-arrow arrow-"+l)},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"posTop",{set:function(l){this.rnd.setStyle(this.getNativeElement(),"top",l+"px")},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"posLeft",{set:function(l){this.rnd.setStyle(this.getNativeElement(),"left",l+"px")},enumerable:!0,configurable:!0}),l.prototype.getNativeElement=function(){return this.elementRef.nativeElement},l.prototype.ngAfterViewInit=function(){this.initResolve()},l}()},692:function(l,n,u){"use strict";u.d(n,"a",function(){return e});var e=function(){function l(){this.allowMultiple=!0,this.activeTooltips=[]}return l.prototype.addTooltip=function(l){(l.hideOthers||!this.allowMultiple&&this.activeTooltips.length>0)&&this.hideAll(),this.activeTooltips.push(l)},l.prototype.removeTooltip=function(l){this.activeTooltips.splice(this.activeTooltips.indexOf(l),1)},l.prototype.hideAll=function(){this.activeTooltips.forEach(function(l){l.removeTooltip()})},l}()},693:function(l,n,u){"use strict";u(81),u(692)},694:function(l,n,u){"use strict";u.d(n,"a",function(){return t});u(81);var e=u(692),t=(u(693),function(){function l(){}return l.forRoot=function(){return{ngModule:l,providers:[e.a]}},l}())},698:function(l,n,u){"use strict";u(693),u(694),u(692)},699:function(l,n,u){"use strict";function e(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,0,"div",[],[[8,"innerHTML",1]],null,null,null,null))],null,function(l,n){l(n,0,0,n.component.tooltipHtml)})}function t(l){return i["ɵvid"](0,[(l()(),i["ɵted"](0,null,["",""]))],null,function(l,n){l(n,0,0,n.component.text)})}function o(l){return i["ɵvid"](2,[(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵand"](16777216,null,null,1,null,e)),i["ɵdid"](2,16384,null,0,a.j,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"],ngIfElse:[1,"ngIfElse"]},null),(l()(),i["ɵted"](-1,null,["\n    "])),(l()(),i["ɵand"](0,[["txt",2]],null,0,null,t)),(l()(),i["ɵted"](-1,null,["\n  "]))],function(l,n){l(n,2,0,n.component.tooltipHtml,i["ɵnov"](n,4))},null)}u.d(n,"a",function(){return s});var i=u(1),a=u(15),d=u(691),r=i["ɵcrt"]({encapsulation:0,styles:["[_nghost-%COMP%] {\n              background-color: rgba(0, 0, 0, 0.8);\n              color: white;\n              display: inline-block;\n              position: fixed;\n              padding: 15px 25px;\n              font-size: 15px;\n          }",".has-arrow[_nghost-%COMP%]:before {\n              content: '';\n              border: 5px solid transparent;\n              position: absolute;\n              width: 0;\n              height: 0;\n          }",".has-arrow.arrow-top[_nghost-%COMP%]:before { border-bottom: 5px solid rgba(0,0,0,0.8); top: -10px; }",".has-arrow.arrow-left[_nghost-%COMP%]:before { border-right: 5px solid rgba(0,0,0,0.8); left: -10px; }",".has-arrow.arrow-right[_nghost-%COMP%]:before { border-left: 5px solid rgba(0,0,0,0.8); right: -10px; }",".has-arrow.arrow-bottom[_nghost-%COMP%]:before { border-top: 5px solid rgba(0,0,0,0.8); bottom: -10px; }"],data:{animation:[{type:7,name:"fade",definitions:[{type:0,name:"visible",styles:{type:6,styles:{opacity:1},offset:null},options:void 0},{type:0,name:"invisible",styles:{type:6,styles:{opacity:0},offset:null},options:void 0},{type:1,expr:"visible <=> invisible",animation:{type:4,styles:null,timings:"300ms linear"},options:null}],options:{}}]}}),s=i["ɵccf"]("tooltip-box",d.a,function(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"tooltip-box",[],[[40,"@fade",0]],null,null,o,r)),i["ɵdid"](1,4243456,null,0,d.a,[i.ElementRef,i.Renderer2],null,null)],null,function(l,n){l(n,0,0,i["ɵnov"](n,1).fadeState)})},{text:"text",tooltipHtml:"tooltipHtml",arrow:"arrow",posTop:"posTop",posLeft:"posLeft"},{},[])}});
+webpackJsonp([2],{
+
+/***/ 709:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocalizacaoInsumosPageModule", function() { return LocalizacaoInsumosPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_tooltips__ = __webpack_require__(730);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__ = __webpack_require__(888);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var LocalizacaoInsumosPageModule = /** @class */ (function () {
+    function LocalizacaoInsumosPageModule() {
+    }
+    LocalizacaoInsumosPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__["a" /* LocalizacaoInsumosPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__localizacao_insumos__["a" /* LocalizacaoInsumosPage */]),
+                __WEBPACK_IMPORTED_MODULE_0_ionic_tooltips__["a" /* TooltipsModule */].forRoot(),
+            ],
+        })
+    ], LocalizacaoInsumosPageModule);
+    return LocalizacaoInsumosPageModule;
+}());
+
+//# sourceMappingURL=localizacao-insumos.module.js.map
+
+/***/ }),
+
+/***/ 726:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipBox; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+
+
+var TooltipBox = (function () {
+    function TooltipBox(elementRef, rnd) {
+        var _this = this;
+        this.elementRef = elementRef;
+        this.rnd = rnd;
+        this.fadeState = 'invisible';
+        this.init = new Promise(function (resolve) {
+            _this.initResolve = resolve;
+        });
+    }
+    Object.defineProperty(TooltipBox.prototype, "arrow", {
+        set: function (side) {
+            this.rnd.setAttribute(this.getNativeElement(), 'class', 'has-arrow ' + 'arrow-' + side);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TooltipBox.prototype, "posTop", {
+        set: function (val) {
+            this.rnd.setStyle(this.getNativeElement(), 'top', val + 'px');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TooltipBox.prototype, "posLeft", {
+        set: function (val) {
+            this.rnd.setStyle(this.getNativeElement(), 'left', val + 'px');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TooltipBox.prototype.getNativeElement = function () {
+        return this.elementRef.nativeElement;
+    };
+    TooltipBox.prototype.ngAfterViewInit = function () {
+        this.initResolve();
+    };
+    TooltipBox.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"], args: [{
+                    selector: 'tooltip-box',
+                    template: "\n    <div *ngIf=\"tooltipHtml; else txt\" [innerHTML]=\"tooltipHtml\"></div>\n    <ng-template #txt>{{ text }}</ng-template>\n  ",
+                    animations: [
+                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* trigger */])('fade', [
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 1 })),
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 0 })),
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('visible <=> invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('300ms linear')),
+                        ]),
+                    ],
+                    styles: [
+                        "\n          :host {\n              background-color: rgba(0, 0, 0, 0.8);\n              color: white;\n              display: inline-block;\n              position: fixed;\n              padding: 15px 25px;\n              font-size: 15px;\n          }\n    ",
+                        "\n          :host.has-arrow:before {\n              content: '';\n              border: 5px solid transparent;\n              position: absolute;\n              width: 0;\n              height: 0;\n          }\n    ",
+                        ':host.has-arrow.arrow-top:before { border-bottom: 5px solid rgba(0,0,0,0.8); top: -10px; }',
+                        ':host.has-arrow.arrow-left:before { border-right: 5px solid rgba(0,0,0,0.8); left: -10px; }',
+                        ':host.has-arrow.arrow-right:before { border-left: 5px solid rgba(0,0,0,0.8); right: -10px; }',
+                        ':host.has-arrow.arrow-bottom:before { border-top: 5px solid rgba(0,0,0,0.8); bottom: -10px; }',
+                    ],
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ChangeDetectionStrategy"].OnPush,
+                },] },
+    ];
+    /** @nocollapse */
+    TooltipBox.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer2"], },
+    ]; };
+    TooltipBox.propDecorators = {
+        "fadeState": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["HostBinding"], args: ['@fade',] },],
+        "text": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "posTop": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "posLeft": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    };
+    return TooltipBox;
+}());
+
+//# sourceMappingURL=tooltip-box.component.js.map
+
+/***/ }),
+
+/***/ 727:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipController; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+
+var TooltipController = (function () {
+    function TooltipController() {
+        this.allowMultiple = true;
+        this.activeTooltips = [];
+    }
+    TooltipController.prototype.addTooltip = function (instance) {
+        if (instance.hideOthers || !this.allowMultiple && this.activeTooltips.length > 0) {
+            this.hideAll();
+        }
+        this.activeTooltips.push(instance);
+    };
+    TooltipController.prototype.removeTooltip = function (instance) {
+        this.activeTooltips.splice(this.activeTooltips.indexOf(instance), 1);
+    };
+    TooltipController.prototype.hideAll = function () {
+        this.activeTooltips.forEach(function (tooltip) {
+            tooltip.removeTooltip();
+        });
+    };
+    TooltipController.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+    ];
+    return TooltipController;
+}());
+
+//# sourceMappingURL=tooltip.cotroller.js.map
+
+/***/ }),
+
+/***/ 728:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tooltip; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(727);
+
+
+
+
+var Tooltip = (function () {
+    function Tooltip(el, appRef, platform, _componentFactoryResolver, tooltipCtrl) {
+        this.el = el;
+        this.appRef = appRef;
+        this.platform = platform;
+        this._componentFactoryResolver = _componentFactoryResolver;
+        this.tooltipCtrl = tooltipCtrl;
+        this.mobileEvent = 'press';
+        this.desktopEvent = 'hover';
+        this.duration = 3000;
+        this._arrow = false;
+        this._navTooltip = false;
+        this._canShow = true;
+        this._active = false;
+    }
+    Object.defineProperty(Tooltip.prototype, "navTooltip", {
+        get: function () {
+            return this._navTooltip;
+        },
+        set: function (val) {
+            this._navTooltip = typeof val !== 'boolean' || val !== false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Tooltip.prototype, "arrow", {
+        get: function () {
+            return this._arrow;
+        },
+        set: function (val) {
+            this._arrow = typeof val !== 'boolean' || val !== false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Tooltip.prototype, "active", {
+        get: function () {
+            return this._active;
+        },
+        set: function (val) {
+            this._active = typeof val !== 'boolean' || val !== false;
+            this._active ? this.canShow && this.showTooltip() : this.removeTooltip();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Tooltip.prototype.ngAfterViewInit = function () {
+        // Show the tooltip immediately after initiating view if set to
+        if (this._active) {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.ngOnInit = function () {
+        // Set default event type by platform if event is not defined
+        if (!this.event) {
+            this.event = this.platform.is('mobile') ? this.mobileEvent : this.desktopEvent;
+        }
+    };
+    Object.defineProperty(Tooltip.prototype, "canShow", {
+        /**
+         * @return {boolean} TRUE if the tooltip can be shown
+         */
+        get: /**
+           * @return {boolean} TRUE if the tooltip can be shown
+           */
+        function () {
+            return this._canShow && ((typeof this.tooltip === 'string' && this.tooltip !== '') || (typeof this.tooltipHtml === 'string' && this.tooltipHtml !== ''));
+        },
+        /**
+         * Set the canShow property
+         * Ensure that tooltip is shown only if the tooltip string is not falsey
+         */
+        set: /**
+           * Set the canShow property
+           * Ensure that tooltip is shown only if the tooltip string is not falsey
+           */
+        function (show) {
+            this._canShow = show;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Handles the click/press event and shows a tooltip.
+     * If a tooltip already exists, it will just reset it's timer.
+     */
+    /**
+       * Handles the click/press event and shows a tooltip.
+       * If a tooltip already exists, it will just reset it's timer.
+       */
+    Tooltip.prototype.trigger = /**
+       * Handles the click/press event and shows a tooltip.
+       * If a tooltip already exists, it will just reset it's timer.
+       */
+    function () {
+        if (!this.canShow) {
+            return;
+        }
+        if (this.tooltipElement) {
+            this._resetTimer();
+        }
+        else {
+            this.showTooltip();
+        }
+    };
+    /**
+     * Creates a new tooltip component and adjusts it's properties to show properly.
+     */
+    /**
+       * Creates a new tooltip component and adjusts it's properties to show properly.
+       */
+    Tooltip.prototype.showTooltip = /**
+       * Creates a new tooltip component and adjusts it's properties to show properly.
+       */
+    function () {
+        var _this = this;
+        this._createTooltipComponent();
+        var tooltipComponent = this.tooltipElement.instance;
+        tooltipComponent.text = this.tooltip;
+        tooltipComponent.tooltipHtml = this.tooltipHtml;
+        tooltipComponent.init.then(function () {
+            var tooltipPosition = _this._getTooltipPosition();
+            tooltipComponent.posLeft = tooltipPosition.left;
+            tooltipComponent.posTop = tooltipPosition.top;
+            tooltipComponent.fadeState = 'visible';
+            if (_this.arrow) {
+                var arrowPosition = void 0;
+                if (_this.positionV === 'top') {
+                    arrowPosition = 'bottom';
+                }
+                else if (_this.positionV === 'bottom') {
+                    arrowPosition = 'top';
+                }
+                else if (_this.positionH === 'left') {
+                    arrowPosition = 'right';
+                }
+                else {
+                    arrowPosition = 'left';
+                }
+                tooltipComponent.arrow = arrowPosition;
+            }
+            if (!_this._active) {
+                _this.tooltipTimeout = setTimeout(_this.removeTooltip.bind(_this), _this.duration);
+            }
+        });
+    };
+    Tooltip.prototype.onClick = function () {
+        if (this.event === 'click') {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.onPress = function () {
+        if (this.event === 'press') {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.onMouseEnter = function () {
+        if (this.event === 'hover') {
+            this.active = true;
+        }
+    };
+    Tooltip.prototype.onMouseLeave = function () {
+        if (this.event === 'hover') {
+            this.active = false;
+        }
+    };
+    Tooltip.prototype._createTooltipComponent = function () {
+        var viewport = this.appRef.components[0]._component
+            ._viewport, componentFactory = this._componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__["a" /* TooltipBox */]);
+        this.tooltipElement = viewport.createComponent(componentFactory);
+        this.tooltipCtrl.addTooltip(this);
+    };
+    Tooltip.prototype._getTooltipPosition = function () {
+        var tooltipNativeElement = this.tooltipElement.instance.getNativeElement(), el = this.el.nativeElement, rect = el.getBoundingClientRect();
+        var positionLeft, positionTop, spacing = 10;
+        if (this.navTooltip) {
+            this.positionV = 'bottom';
+            this.arrow = false;
+            spacing = 20;
+        }
+        if (this.positionH === 'right') {
+            positionLeft = rect.right + spacing;
+        }
+        else if (this.positionH === 'left') {
+            positionLeft = rect.left - spacing - tooltipNativeElement.offsetWidth;
+        }
+        else if (this.navTooltip) {
+            positionLeft = rect.left + el.offsetWidth / 2;
+        }
+        else {
+            positionLeft = rect.left;
+        }
+        if (this.positionV === 'top') {
+            positionTop = rect.top - spacing - tooltipNativeElement.offsetHeight;
+        }
+        else if (this.positionV === 'bottom') {
+            positionTop = rect.bottom + spacing;
+        }
+        else {
+            positionTop =
+                rect.top + el.offsetHeight / 2 - tooltipNativeElement.offsetHeight / 2;
+        }
+        if (+this.topOffset) {
+            positionTop += +this.topOffset;
+        }
+        if (+this.leftOffset) {
+            positionLeft += +this.leftOffset;
+        }
+        if (positionLeft + tooltipNativeElement.offsetWidth + spacing >
+            this.platform.width()) {
+            positionLeft =
+                this.platform.width() - tooltipNativeElement.offsetWidth - spacing;
+        }
+        else if (positionLeft + tooltipNativeElement.offsetWidth - spacing < 0) {
+            positionLeft = spacing;
+        }
+        if (positionTop + tooltipNativeElement.offsetHeight + spacing > this.platform.height()) {
+            positionTop = this.platform.height() - tooltipNativeElement.offsetHeight - spacing;
+        }
+        else if (positionTop + tooltipNativeElement.offsetHeight - spacing < 0) {
+            positionTop = spacing;
+        }
+        return {
+            left: positionLeft,
+            top: positionTop,
+        };
+    };
+    Tooltip.prototype.removeTooltip = function () {
+        var _this = this;
+        if (!this.tooltipElement) {
+            this.tooltipElement = undefined;
+            this.tooltipTimeout = undefined;
+            return;
+        }
+        this.tooltipElement.instance.fadeState = 'invisible';
+        this.canShow = false;
+        // wait for animation to finish then clear everything out
+        setTimeout(function () {
+            if (_this.tooltipElement &&
+                typeof _this.tooltipElement.destroy === 'function') {
+                _this.tooltipElement.destroy();
+            }
+            _this.tooltipCtrl.removeTooltip(_this);
+            _this.tooltipElement = _this.tooltipTimeout = undefined;
+            _this.canShow = true;
+        }, 300);
+    };
+    Tooltip.prototype._resetTimer = function () {
+        var _this = this;
+        clearTimeout(this.tooltipTimeout);
+        this.tooltipTimeout = setTimeout(function () {
+            _this.active = false;
+        }, this.duration);
+    };
+    Tooltip.prototype.ngOnDestroy = function () {
+        // if the timer hasn't expired or active is true when the component gets destroyed, the tooltip will remain in the DOM
+        // this removes it
+        this.removeTooltip();
+    };
+    Tooltip.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: '[tooltip]',
+                },] },
+    ];
+    /** @nocollapse */
+    Tooltip.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+        { type: __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__["a" /* TooltipController */], },
+    ]; };
+    Tooltip.propDecorators = {
+        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "tooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "positionV": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "positionH": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "event": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "mobileEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "desktopEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "topOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "leftOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "hideOthers": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "navTooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "duration": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "active": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "onClick": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['click',] },],
+        "onPress": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['press',] },],
+        "onMouseEnter": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseenter',] },],
+        "onMouseLeave": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseleave',] },],
+    };
+    return Tooltip;
+}());
+
+//# sourceMappingURL=tooltip.directive.js.map
+
+/***/ }),
+
+/***/ 730:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_box_component__ = __webpack_require__(726);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(728);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(731);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__tooltips_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(727);
+/* unused harmony namespace reexport */
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 731:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_directive__ = __webpack_require__(728);
+
+
+
+
+
+var TooltipsModule = (function () {
+    function TooltipsModule() {
+    }
+    TooltipsModule.forRoot = function () {
+        return {
+            ngModule: TooltipsModule,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__["a" /* TooltipController */]]
+        };
+    };
+    TooltipsModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                    entryComponents: [__WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
+                    declarations: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */], __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
+                    imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicModule */]],
+                    exports: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */]]
+                },] },
+    ];
+    return TooltipsModule;
+}());
+
+//# sourceMappingURL=tooltips.module.js.map
+
+/***/ }),
+
+/***/ 888:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoInsumosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the LocalizacaoInsumosPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LocalizacaoInsumosPage = /** @class */ (function () {
+    function LocalizacaoInsumosPage(navCtrl, navParams, localizacaoService, insumoService, LoadingController, modal, viewCtrl, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.localizacaoService = localizacaoService;
+        this.insumoService = insumoService;
+        this.LoadingController = LoadingController;
+        this.modal = modal;
+        this.viewCtrl = viewCtrl;
+        this.alertCtrl = alertCtrl;
+        this.page = 0;
+    }
+    LocalizacaoInsumosPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LocalizacaoInsumosPage');
+        //this.loadData();
+        this.getItens();
+    };
+    LocalizacaoInsumosPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    LocalizacaoInsumosPage.prototype.atualizaQtdMinima = function (event) {
+        var _this = this;
+        console.log("ENTROU");
+        console.log(event);
+        var modalQuantidademinimaPage = this.modal.create('ModalQuantidademinimaPage', { evento: event });
+        modalQuantidademinimaPage.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modalQuantidademinimaPage.present();
+    };
+    /*getItens(){
+      let localizacaoId = this.navParams.get('localizacao_id');
+      console.log("aqui: "+localizacaoId);
+  
+      this.insumoService.findInsumoLocalizacaoByLocalizacao(localizacaoId,this.page, 30)
+      .subscribe(response => {
+        
+        this.insumosLocalizacao = response.sort();
+        
+      },
+      error => {})
+  
+      console.log(this.insumosLocalizacao);
+  
+      this.insumosLocalizacao.forEach(function (value){
+        console.log(value);
+      })
+  
+    }*/
+    LocalizacaoInsumosPage.prototype.getItens = function () {
+        var _this = this;
+        var localizacaoId = this.navParams.get('localizacao_id');
+        var loader = this.presentLoading();
+        this.insumosLocalizacao = [];
+        //this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
+        this.insumoService.findInsumoLocalizacaoByLocalizacao(localizacaoId)
+            .subscribe(function (response) {
+            var start = _this.insumosLocalizacao.length;
+            _this.insumosLocalizacao = _this.insumosLocalizacao.concat(response['content']);
+            var end = _this.insumosLocalizacao.length - 1;
+            loader.dismiss();
+        }, function (error) {
+            loader.dismiss();
+        });
+    };
+    LocalizacaoInsumosPage.prototype.presentLoading = function () {
+        var loader = this.LoadingController.create({
+            content: "Aguarde..."
+        });
+        loader.present();
+        return loader;
+    };
+    LocalizacaoInsumosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-localizacao-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/'<!--\n\n  Generated template for the LocalizacaoInsumosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Quantidades Mínimas do Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid *ngFor="let ins of insumosLocalizacao">\n\n      <ion-row>\n\n        <h6>{{ins.insumo.nome}}</h6>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Quantidade: {{ins.quantidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote CR: {{ins.loteCR}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Lote Produção: {{ins.loteProducao}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n          <h6>Data de Validade: {{ins.dataValidade}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h6>Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</h6>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col>\n\n        </ion-col>\n\n        <ion-col>\n\n          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>\n\n        </ion-col>\n\n        <ion-col>\n\n        </ion-col>  \n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-item-divider>\n\n          \n\n        </ion-item-divider>\n\n      </ion-row>\n\n\n\n    </ion-grid>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao-insumos\localizacao-insumos.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]])
+    ], LocalizacaoInsumosPage);
+    return LocalizacaoInsumosPage;
+}());
+
+//# sourceMappingURL=localizacao-insumos.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=2.js.map

@@ -1,1 +1,658 @@
-webpackJsonp([3],{664:function(l,n,e){"use strict";function u(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,1,"div",[["class","toggle-icon"]],null,null,null,null,null)),(l()(),d["ɵeld"](1,0,null,null,0,"div",[["class","toggle-inner"]],null,null,null,null,null)),(l()(),d["ɵeld"](2,0,null,null,1,"button",[["class","item-cover"],["disable-activated",""],["ion-button","item-cover"],["role","checkbox"],["type","button"]],[[8,"id",0],[1,"aria-checked",0],[1,"aria-labelledby",0],[1,"aria-disabled",0]],null,null,z.b,z.a)),d["ɵdid"](3,1097728,null,0,J.a,[[8,"item-cover"],S.a,d.ElementRef,d.Renderer],null,null)],null,function(l,n){var e=n.component;l(n,2,0,e.id,e._value,e._labelId,e._disabled)})}function t(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,1,"p",[["class","danger"],["margin-left",""]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["Valor inválido"]))],null,null)}function a(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,1,"p",[["class","danger"],["margin-left",""]],null,null,null,null,null)),(l()(),d["ɵted"](-1,null,["Valor inválido"]))],null,null)}function i(l){return d["ɵvid"](0,[(l()(),d["ɵted"](-1,null,["\n         \n          "])),(l()(),d["ɵeld"](1,0,null,null,10,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](2,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,26,{contentLabel:0}),d["ɵqud"](603979776,27,{_buttons:1}),d["ɵqud"](603979776,28,{_icons:1}),d["ɵdid"](6,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n            "])),(l()(),d["ɵeld"](8,0,null,1,2,"ion-label",[["class","label_12_b"],["text-wrap",""]],null,null,null,null,null)),d["ɵdid"](9,16384,[[26,4],[8,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),d["ɵted"](10,null,["\n              "," \n            "])),(l()(),d["ɵted"](-1,2,["\n          "])),(l()(),d["ɵted"](-1,null,["\n        "]))],null,function(l,n){l(n,10,0,n.context.item.nome)})}function r(l){return d["ɵvid"](0,[(l()(),d["ɵted"](-1,null,["\n"])),(l()(),d["ɵeld"](1,0,null,null,27,"ion-header",[],null,null,null,null,null)),d["ɵdid"](2,16384,null,0,M.a,[S.a,d.ElementRef,d.Renderer,[2,F.a]],null,null),(l()(),d["ɵted"](-1,null,["\n  "])),(l()(),d["ɵeld"](4,0,null,null,23,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,L.b,L.a)),d["ɵdid"](5,49152,null,0,U.a,[S.a,d.ElementRef,d.Renderer],null,null),(l()(),d["ɵted"](-1,3,["\n    "])),(l()(),d["ɵeld"](7,0,null,3,2,"ion-title",[],null,null,null,G.b,G.a)),d["ɵdid"](8,49152,null,0,B.a,[S.a,d.ElementRef,d.Renderer,[2,U.a],[2,K.a]],null,null),(l()(),d["ɵted"](-1,0,["\n      Cadastro de Insumo\n    "])),(l()(),d["ɵted"](-1,3,["\n    "])),(l()(),d["ɵeld"](11,0,null,2,15,"ion-buttons",[["end",""]],null,null,null,null,null)),d["ɵdid"](12,16384,null,1,Z.a,[S.a,d.ElementRef,d.Renderer,[2,U.a],[2,K.a]],null,null),d["ɵqud"](603979776,1,{_buttons:1}),(l()(),d["ɵted"](-1,null,["\n      "])),(l()(),d["ɵeld"](15,0,null,null,10,"button",[["ion-button",""]],null,[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.dismiss()&&u}return u},z.b,z.a)),d["ɵdid"](16,1097728,[[1,4]],0,J.a,[[8,""],S.a,d.ElementRef,d.Renderer],null,null),(l()(),d["ɵted"](-1,0,["\n        "])),(l()(),d["ɵeld"](18,0,null,0,3,"span",[["color","primary"],["ion-text",""],["showWhen","ios"]],[[2,"hidden-show-when",null]],null,null,null,null)),d["ɵdid"](19,147456,null,0,Q.a,[[8,"ios"],W.a,d.NgZone],null,null),d["ɵdid"](20,16384,null,0,H.a,[S.a,d.ElementRef,d.Renderer],{color:[0,"color"]},null),(l()(),d["ɵted"](-1,null,["Cancel"])),(l()(),d["ɵted"](-1,0,["\n        "])),(l()(),d["ɵeld"](23,0,null,0,1,"ion-icon",[["name","md-close"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](24,147456,null,0,X.a,[S.a,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(l()(),d["ɵted"](-1,0,["\n      "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵted"](-1,3,["\n  "])),(l()(),d["ɵted"](-1,null,["\n"])),(l()(),d["ɵted"](-1,null,["\n\n"])),(l()(),d["ɵeld"](30,0,null,null,227,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Y.b,Y.a)),d["ɵdid"](31,4374528,null,0,ll.a,[S.a,W.a,nl.a,d.ElementRef,d.Renderer,el.a,ul.a,d.NgZone,[2,F.a],[2,tl.a]],null,null),(l()(),d["ɵted"](-1,1,["\n\n  "])),(l()(),d["ɵeld"](33,0,null,1,223,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngSubmit"],[null,"submit"],[null,"reset"]],function(l,n,e){var u=!0,t=l.component;if("submit"===n){u=!1!==d["ɵnov"](l,35).onSubmit(e)&&u}if("reset"===n){u=!1!==d["ɵnov"](l,35).onReset()&&u}if("ngSubmit"===n){u=!1!==t.cadastrarInsumo()&&u}return u},null,null)),d["ɵdid"](34,16384,null,0,m.q,[],null,null),d["ɵdid"](35,540672,null,0,m.f,[[8,null],[8,null]],{form:[0,"form"]},{ngSubmit:"ngSubmit"}),d["ɵprd"](2048,null,m.b,null,[m.f]),d["ɵdid"](37,16384,null,0,m.k,[m.b],null,null),(l()(),d["ɵted"](-1,null,["\n     "])),(l()(),d["ɵeld"](39,0,null,null,22,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](40,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,2,{contentLabel:0}),d["ɵqud"](603979776,3,{_buttons:1}),d["ɵqud"](603979776,4,{_icons:1}),d["ɵdid"](44,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](46,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](47,16384,[[2,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Nome*"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](50,0,null,3,4,"ion-input",[["formControlName","nome"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](51,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](53,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](54,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{type:[0,"type"]},null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](56,0,null,3,4,"ion-input",[["formControlName","id"],["type","hidden"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](57,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](59,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](60,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{type:[0,"type"]},null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵand"](16777216,null,null,1,null,t)),d["ɵdid"](64,16384,null,0,g.j,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](66,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](67,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,5,{contentLabel:0}),d["ɵqud"](603979776,6,{_buttons:1}),d["ɵqud"](603979776,7,{_icons:1}),d["ɵdid"](71,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](73,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](74,16384,[[5,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Nomenclatura*"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](77,0,null,3,4,"ion-input",[["formControlName","nomenclatura"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](78,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](80,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](81,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{type:[0,"type"]},null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵand"](16777216,null,null,1,null,a)),d["ɵdid"](85,16384,null,0,g.j,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵted"](-1,null,["\n    \n    \n    "])),(l()(),d["ɵeld"](87,0,null,null,36,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](88,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](603979776,8,{contentLabel:0}),d["ɵqud"](603979776,9,{_buttons:1}),d["ɵqud"](603979776,10,{_icons:1}),d["ɵdid"](92,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](94,0,null,1,2,"ion-label",[],null,null,null,null,null)),d["ɵdid"](95,16384,[[8,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Categorias"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](98,0,null,3,24,"ionic-selectable",[["formControlName","categorias"],["item-content",""],["itemTextField","nome"],["itemValueField","id"]],[[2,"ionic-selectable",null],[2,"ionic-selectable-ios",null],[2,"ionic-selectable-md",null],[2,"ionic-selectable-is-multiple",null],[2,"ionic-selectable-has-value",null],[2,"ionic-selectable-has-placeholder",null],[2,"ionic-selectable-is-enabled",null],[2,"ionic-selectable-can-clear",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"onChange"],[null,"click"]],function(l,n,e){var u=!0,t=l.component;if("click"===n){u=!1!==d["ɵnov"](l,99)._click(e)&&u}if("onChange"===n){u=!1!==t.imprimeItem(e)&&u}return u},A.d,A.c)),d["ɵdid"](99,507904,null,15,s.a,[rl.a,P.a,W.a,[2,x.a],d.IterableDiffers,d.ElementRef],{items:[0,"items"],itemValueField:[1,"itemValueField"],itemTextField:[2,"itemTextField"],canSearch:[3,"canSearch"],canClear:[4,"canClear"],hasInfiniteScroll:[5,"hasInfiniteScroll"],placeholder:[6,"placeholder"],isMultiple:[7,"isMultiple"],focusSearchbar:[8,"focusSearchbar"]},{onChange:"onChange"}),d["ɵqud"](335544320,11,{valueTemplate:0}),d["ɵqud"](335544320,12,{itemTemplate:0}),d["ɵqud"](335544320,13,{itemEndTemplate:0}),d["ɵqud"](335544320,14,{titleTemplate:0}),d["ɵqud"](335544320,15,{placeholderTemplate:0}),d["ɵqud"](335544320,16,{messageTemplate:0}),d["ɵqud"](335544320,17,{groupTemplate:0}),d["ɵqud"](335544320,18,{groupEndTemplate:0}),d["ɵqud"](335544320,19,{closeButtonTemplate:0}),d["ɵqud"](335544320,20,{searchFailTemplate:0}),d["ɵqud"](335544320,21,{addItemTemplate:0}),d["ɵqud"](335544320,22,{footerTemplate:0}),d["ɵqud"](335544320,23,{headerTemplate:0}),d["ɵqud"](335544320,24,{itemIconTemplate:0}),d["ɵqud"](335544320,25,{iconTemplate:0}),d["ɵprd"](1024,null,m.h,function(l){return[l]},[s.a]),d["ɵdid"](116,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[2,m.h]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](118,16384,null,0,m.j,[m.i],null,null),(l()(),d["ɵted"](-1,null,["\n  \n        "])),(l()(),d["ɵand"](0,[[12,2]],null,1,null,i)),d["ɵdid"](121,16384,null,0,s.b,[],null,null),(l()(),d["ɵted"](-1,null,["\n  \n      "])),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    \n    \n    \n    \n    "])),(l()(),d["ɵeld"](125,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](126,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,29,{contentLabel:0}),d["ɵqud"](603979776,30,{_buttons:1}),d["ɵqud"](603979776,31,{_icons:1}),d["ɵdid"](130,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](132,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](133,16384,[[29,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Valor"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](136,0,null,3,4,"ion-input",[["disabled",""],["formControlName","valor"],["type","number"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](137,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"],isDisabled:[1,"isDisabled"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](139,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](140,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{disabled:[0,"disabled"],type:[1,"type"]},null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](143,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](144,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,32,{contentLabel:0}),d["ɵqud"](603979776,33,{_buttons:1}),d["ɵqud"](603979776,34,{_icons:1}),d["ɵdid"](148,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](150,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](151,16384,[[32,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Código Almoxarifado"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](154,0,null,3,4,"ion-input",[["formControlName","codigoalmox"],["type","number"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](155,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](157,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](158,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{type:[0,"type"]},null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](161,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](162,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,35,{contentLabel:0}),d["ɵqud"](603979776,36,{_buttons:1}),d["ɵqud"](603979776,37,{_icons:1}),d["ɵdid"](166,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](168,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](169,16384,[[35,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Observação"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](172,0,null,3,4,"ion-textarea",[["formControlName","observacao"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](173,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](175,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](176,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{type:[0,"type"]},null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](179,0,null,null,17,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](180,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,38,{contentLabel:0}),d["ɵqud"](603979776,39,{_buttons:1}),d["ɵqud"](603979776,40,{_icons:1}),d["ɵdid"](184,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](186,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](187,16384,[[38,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Essencial?"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](190,0,null,4,5,"ion-toggle",[["formControlName","essencial"]],[[2,"toggle-disabled",null],[2,"toggle-checked",null],[2,"toggle-activated",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"keyup"]],function(l,n,e){var u=!0;if("keyup"===n){u=!1!==d["ɵnov"](l,191)._keyup(e)&&u}return u},u,cl)),d["ɵdid"](191,1228800,null,0,dl.a,[P.a,S.a,W.a,d.ElementRef,d.Renderer,ol.a,[2,x.a],sl.l,nl.a,d.NgZone],null,null),d["ɵprd"](1024,null,m.h,function(l){return[l]},[dl.a]),d["ɵdid"](193,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[2,m.h]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](195,16384,null,0,m.j,[m.i],null,null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](198,0,null,null,17,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](199,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,41,{contentLabel:0}),d["ɵqud"](603979776,42,{_buttons:1}),d["ɵqud"](603979776,43,{_icons:1}),d["ɵdid"](203,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](205,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](206,16384,[[41,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Data de Validade"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](209,0,null,3,5,"ion-datetime",[["disabled",""],["formControlName","datavalidade"]],[[2,"datetime-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"click"],[null,"keyup.space"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==d["ɵnov"](l,210)._click(e)&&u}if("keyup.space"===n){u=!1!==d["ɵnov"](l,210)._keyup()&&u}return u},ml.b,ml.a)),d["ɵdid"](210,1228800,null,0,pl.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,x.a],[2,gl.a]],{disabled:[0,"disabled"]},null),d["ɵprd"](1024,null,m.h,function(l){return[l]},[pl.a]),d["ɵdid"](212,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[2,m.h]],{name:[0,"name"],isDisabled:[1,"isDisabled"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](214,16384,null,0,m.j,[m.i],null,null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](217,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](218,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,44,{contentLabel:0}),d["ɵqud"](603979776,45,{_buttons:1}),d["ɵqud"](603979776,46,{_icons:1}),d["ɵdid"](222,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](224,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](225,16384,[[44,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Quantidade"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](228,0,null,3,4,"ion-input",[["disabled",""],["formControlName","quantidade"],["type","number"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](229,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"],isDisabled:[1,"isDisabled"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](231,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](232,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{disabled:[0,"disabled"],type:[1,"type"]},null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    "])),(l()(),d["ɵeld"](235,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,V.b,V.a)),d["ɵdid"](236,1097728,null,3,x.a,[P.a,S.a,d.ElementRef,d.Renderer,[2,N.a]],null,null),d["ɵqud"](335544320,47,{contentLabel:0}),d["ɵqud"](603979776,48,{_buttons:1}),d["ɵqud"](603979776,49,{_icons:1}),d["ɵdid"](240,16384,null,0,O.a,[],null,null),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](242,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d["ɵdid"](243,16384,[[47,4]],0,j.a,[S.a,d.ElementRef,d.Renderer,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d["ɵted"](-1,null,["Taxa de Consumo"])),(l()(),d["ɵted"](-1,2,["\n      "])),(l()(),d["ɵeld"](246,0,null,3,4,"ion-input",[["formControlName","taxadeconsumo"],["type","number"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,al.b,al.a)),d["ɵdid"](247,671744,null,0,m.e,[[3,m.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),d["ɵprd"](2048,null,m.i,null,[m.e]),d["ɵdid"](249,16384,null,0,m.j,[m.i],null,null),d["ɵdid"](250,5423104,null,0,il.a,[S.a,W.a,P.a,el.a,d.ElementRef,d.Renderer,[2,ll.a],[2,x.a],[2,m.i],nl.a],{type:[0,"type"]},null),(l()(),d["ɵted"](-1,2,["\n    "])),(l()(),d["ɵted"](-1,null,["\n    \n    "])),(l()(),d["ɵeld"](253,0,null,null,2,"button",[["block",""],["ion-button",""],["type","submit"]],[[8,"disabled",0]],null,null,z.b,z.a)),d["ɵdid"](254,1097728,null,0,J.a,[[8,""],S.a,d.ElementRef,d.Renderer],{block:[0,"block"]},null),(l()(),d["ɵted"](-1,0,["Registrar"])),(l()(),d["ɵted"](-1,null,["\n "])),(l()(),d["ɵted"](-1,1,["\n\n"])),(l()(),d["ɵted"](-1,null,["\n"]))],function(l,n){var e=n.component;l(n,20,0,"primary");l(n,24,0,"md-close");l(n,35,0,e.formGroup);l(n,51,0,"nome");l(n,54,0,"text");l(n,57,0,"id");l(n,60,0,"hidden");l(n,64,0,e.formGroup.controls.nome.dirty&&e.formGroup.controls.nome.errors);l(n,78,0,"nomenclatura");l(n,81,0,"text");l(n,85,0,e.formGroup.controls.nomenclatura.dirty&&e.formGroup.controls.nomenclatura.errors);l(n,99,0,e.categoriasInsumos,"id","nome",!0,!0,!0,"Selecione a categoria",!0,!0);l(n,116,0,"categorias");l(n,137,0,"valor","");l(n,140,0,"","number");l(n,155,0,"codigoalmox");l(n,158,0,"number");l(n,173,0,"observacao");l(n,176,0,"text");l(n,193,0,"essencial");l(n,210,0,"");l(n,212,0,"datavalidade","");l(n,229,0,"quantidade","");l(n,232,0,"","number");l(n,247,0,"taxadeconsumo");l(n,250,0,"number");l(n,254,0,"")},function(l,n){var e=n.component;l(n,4,0,d["ɵnov"](n,5)._sbPadding);l(n,18,0,!d["ɵnov"](n,19).isMatch);l(n,23,0,d["ɵnov"](n,24)._hidden);l(n,30,0,d["ɵnov"](n,31).statusbarPadding,d["ɵnov"](n,31)._hasRefresher);l(n,33,0,d["ɵnov"](n,37).ngClassUntouched,d["ɵnov"](n,37).ngClassTouched,d["ɵnov"](n,37).ngClassPristine,d["ɵnov"](n,37).ngClassDirty,d["ɵnov"](n,37).ngClassValid,d["ɵnov"](n,37).ngClassInvalid,d["ɵnov"](n,37).ngClassPending);l(n,50,0,d["ɵnov"](n,53).ngClassUntouched,d["ɵnov"](n,53).ngClassTouched,d["ɵnov"](n,53).ngClassPristine,d["ɵnov"](n,53).ngClassDirty,d["ɵnov"](n,53).ngClassValid,d["ɵnov"](n,53).ngClassInvalid,d["ɵnov"](n,53).ngClassPending);l(n,56,0,d["ɵnov"](n,59).ngClassUntouched,d["ɵnov"](n,59).ngClassTouched,d["ɵnov"](n,59).ngClassPristine,d["ɵnov"](n,59).ngClassDirty,d["ɵnov"](n,59).ngClassValid,d["ɵnov"](n,59).ngClassInvalid,d["ɵnov"](n,59).ngClassPending);l(n,77,0,d["ɵnov"](n,80).ngClassUntouched,d["ɵnov"](n,80).ngClassTouched,d["ɵnov"](n,80).ngClassPristine,d["ɵnov"](n,80).ngClassDirty,d["ɵnov"](n,80).ngClassValid,d["ɵnov"](n,80).ngClassInvalid,d["ɵnov"](n,80).ngClassPending);l(n,98,1,[d["ɵnov"](n,99)._cssClass,d["ɵnov"](n,99)._isIos,d["ɵnov"](n,99)._isMD,d["ɵnov"](n,99)._isMultipleCssClass,d["ɵnov"](n,99)._hasValueCssClass,d["ɵnov"](n,99)._hasPlaceholderCssClass,d["ɵnov"](n,99).isEnabled,d["ɵnov"](n,99).canClear,d["ɵnov"](n,118).ngClassUntouched,d["ɵnov"](n,118).ngClassTouched,d["ɵnov"](n,118).ngClassPristine,d["ɵnov"](n,118).ngClassDirty,d["ɵnov"](n,118).ngClassValid,d["ɵnov"](n,118).ngClassInvalid,d["ɵnov"](n,118).ngClassPending]);l(n,136,0,d["ɵnov"](n,139).ngClassUntouched,d["ɵnov"](n,139).ngClassTouched,d["ɵnov"](n,139).ngClassPristine,d["ɵnov"](n,139).ngClassDirty,d["ɵnov"](n,139).ngClassValid,d["ɵnov"](n,139).ngClassInvalid,d["ɵnov"](n,139).ngClassPending);l(n,154,0,d["ɵnov"](n,157).ngClassUntouched,d["ɵnov"](n,157).ngClassTouched,d["ɵnov"](n,157).ngClassPristine,d["ɵnov"](n,157).ngClassDirty,d["ɵnov"](n,157).ngClassValid,d["ɵnov"](n,157).ngClassInvalid,d["ɵnov"](n,157).ngClassPending);l(n,172,0,d["ɵnov"](n,175).ngClassUntouched,d["ɵnov"](n,175).ngClassTouched,d["ɵnov"](n,175).ngClassPristine,d["ɵnov"](n,175).ngClassDirty,d["ɵnov"](n,175).ngClassValid,d["ɵnov"](n,175).ngClassInvalid,d["ɵnov"](n,175).ngClassPending);l(n,190,0,d["ɵnov"](n,191)._disabled,d["ɵnov"](n,191)._value,d["ɵnov"](n,191)._activated,d["ɵnov"](n,195).ngClassUntouched,d["ɵnov"](n,195).ngClassTouched,d["ɵnov"](n,195).ngClassPristine,d["ɵnov"](n,195).ngClassDirty,d["ɵnov"](n,195).ngClassValid,d["ɵnov"](n,195).ngClassInvalid,d["ɵnov"](n,195).ngClassPending);l(n,209,0,d["ɵnov"](n,210)._disabled,d["ɵnov"](n,214).ngClassUntouched,d["ɵnov"](n,214).ngClassTouched,d["ɵnov"](n,214).ngClassPristine,d["ɵnov"](n,214).ngClassDirty,d["ɵnov"](n,214).ngClassValid,d["ɵnov"](n,214).ngClassInvalid,d["ɵnov"](n,214).ngClassPending);l(n,228,0,d["ɵnov"](n,231).ngClassUntouched,d["ɵnov"](n,231).ngClassTouched,d["ɵnov"](n,231).ngClassPristine,d["ɵnov"](n,231).ngClassDirty,d["ɵnov"](n,231).ngClassValid,d["ɵnov"](n,231).ngClassInvalid,d["ɵnov"](n,231).ngClassPending);l(n,246,0,d["ɵnov"](n,249).ngClassUntouched,d["ɵnov"](n,249).ngClassTouched,d["ɵnov"](n,249).ngClassPristine,d["ɵnov"](n,249).ngClassDirty,d["ɵnov"](n,249).ngClassValid,d["ɵnov"](n,249).ngClassInvalid,d["ɵnov"](n,249).ngClassPending);l(n,253,0,e.formGroup.invalid)})}Object.defineProperty(n,"__esModule",{value:!0});var d=e(1),o=(e(0),e(690)),s=e(124),c=(e(81),e(206)),m=e(19),p=e(199),g=e(15),h=function(){return function(){this.type="alfa",this.decimal=2,this.decimalCaracter=",",this.userCaracters=!1,this.numberAndTousand=!1}}(),f=function(){function l(l,n){this._renderer=l,this._elementRef=n,this.brmasker=new h}return l.prototype.inputKeyup=function(l){var n=this.returnValue(l.target.value);this.writeValue(n),l.target.value=n},l.prototype.inputOnblur=function(l){var n=this.returnValue(l.value);this.writeValue(n),l.value=n},l.prototype.inputFocus=function(l){var n=this.returnValue(l.value);this.writeValue(n),l.value=n},l.prototype.ngOnInit=function(){this.brmasker.type||(this.brmasker.type="all"),this.brmasker.decimal||(this.brmasker.decimal=2),this.brmasker.decimalCaracter||(this.brmasker.decimalCaracter=",")},l.prototype.writeValue=function(l){this._renderer.setElementProperty(this._elementRef.nativeElement,"value",l)},l.prototype.registerOnChange=function(l){},l.prototype.registerOnTouched=function(l){},l.prototype.setDisabledState=function(l){this._renderer.setElementAttribute(this._elementRef.nativeElement,"disabled",l?"true":"false")},l.prototype.writeCreateValue=function(l,n){return void 0===n&&(n=new h),l&&n.phone?l.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi,"$1 ($2) $3-$4"):l&&n.money?this.writeValueMoney(l,n):l&&n.person?this.writeValuePerson(l):l&&n.percent?this.writeValuePercent(l):l&&n.mask?(this.brmasker.mask=n.mask,n.len&&(this.brmasker.len=n.len),this.onInput(l)):l},l.prototype.writeValuePercent=function(l){return l.replace(/\D/gi,""),l.replace(/%/gi,""),l.replace(/([0-9]{0})$/gi,"%$1")},l.prototype.writeValuePerson=function(l){return l.length<=11?l.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi,"$1.$2.$3-$4"):l.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi,"$1.$2.$3/$4-$5")},l.prototype.writeValueMoney=function(l,n){return void 0===n&&(n=new h),this.moneyMask(l,n)},l.prototype.returnValue=function(l){if(this.brmasker.mask||(this.brmasker.mask=""),l){var n=l;return"alfa"==this.brmasker.type&&(n=n.replace(/\d/gi,"")),"num"==this.brmasker.type&&(n=n.replace(/\D/gi,"")),this.brmasker.money?this.moneyMask(this.onInput(n),this.brmasker):this.brmasker.phone?this.phoneMask(n):this.brmasker.phoneNotDDD?this.phoneNotDDDMask(n):this.brmasker.person?this.peapollMask(n):this.brmasker.percent?this.percentMask(n):this.brmasker.numberAndTousand?this.thousand(n):this.brmasker.userCaracters?this.usingSpecialCharacters(n,this.brmasker.mask,this.brmasker.len):this.onInput(n)}return""},l.prototype.percentMask=function(l){var n=l;return n=n.replace(/\D/gi,""),n=n.replace(/%/gi,""),n=n.replace(/([0-9]{0})$/gi,"%$1")},l.prototype.phoneMask=function(l){var n=l;return n.length>14?(this.brmasker.len=15,this.brmasker.mask="(99) 99999-9999",n=(n=(n=(n=n.replace(/\D/gi,"")).replace(/(\d{2})(\d)/gi,"$1 $2")).replace(/(\d{5})(\d)/gi,"$1-$2")).replace(/(\d{4})(\d)/gi,"$1$2")):(this.brmasker.len=14,this.brmasker.mask="(99) 9999-9999",n=(n=(n=(n=n.replace(/\D/gi,"")).replace(/(\d{2})(\d)/gi,"$1 $2")).replace(/(\d{4})(\d)/gi,"$1-$2")).replace(/(\d{4})(\d)/gi,"$1$2")),this.onInput(n)},l.prototype.phoneNotDDDMask=function(l){var n=l;return n.length>9?(this.brmasker.len=10,this.brmasker.mask="99999-9999",n=(n=(n=n.replace(/\D/gi,"")).replace(/(\d{5})(\d)/gi,"$1-$2")).replace(/(\d{4})(\d)/gi,"$1$2")):(this.brmasker.len=9,this.brmasker.mask="9999-9999",n=(n=(n=n.replace(/\D/gi,"")).replace(/(\d{4})(\d)/gi,"$1-$2")).replace(/(\d{4})(\d)/gi,"$1$2")),this.onInput(n)},l.prototype.peapollMask=function(l){var n=l;return n.length>14?(this.brmasker.len=18,this.brmasker.mask="99.999.999/9999-99",n=(n=(n=(n=(n=(n=n.replace(/\D/gi,"")).replace(/(\d{2})(\d)/gi,"$1.$2")).replace(/(\d{3})(\d)/gi,"$1.$2")).replace(/(\d{3})(\d)/gi,"$1/$2")).replace(/(\d{4})(\d{1,4})$/gi,"$1-$2")).replace(/(\d{2})(\d{1,2})$/gi,"$1$2")):(this.brmasker.len=14,this.brmasker.mask="999.999.999-99",n=(n=(n=(n=n.replace(/\D/gi,"")).replace(/(\d{3})(\d)/gi,"$1.$2")).replace(/(\d{3})(\d)/gi,"$1.$2")).replace(/(\d{3})(\d{1,2})$/gi,"$1-$2")),this.onInput(n)},l.prototype.moneyMask=function(l,n){var e=n.decimal||this.brmasker.decimal;return(l=l.replace(/\D/gi,"").replace(new RegExp("([0-9]{"+e+"})$","g"),n.decimalCaracter+"$1")).length===e+1?"0"+l:l.length>e+2&&"0"===l.charAt(0)?l.substr(1):(n.thousand&&l.length>Number(4)+Number(n.decimal)&&(l=l.replace(new RegExp("([0-9]{3})"+n.decimalCaracter+"([0-9]{"+n.decimal+"}$)","g"),n.thousand+"$1"+n.decimalCaracter+"$2")),n.thousand&&l.length>Number(8)+Number(n.decimal)&&(l=l.replace(new RegExp("([0-9]{3})"+n.thousand+"([0-9]{3})"+n.decimalCaracter+"([0-9]{"+n.decimal+"}$)","g"),n.thousand+"$1"+n.thousand+"$2"+n.decimalCaracter+"$3")),l)},l.prototype.onInput=function(l){return this.formatField(l,this.brmasker.mask,this.brmasker.len)},l.prototype.thousand=function(l){var n=l.replace(/\D/gi,""),e=n.toString().split("").reverse().join("").match(/\d{1,3}/g);return e?e.join(""+(this.brmasker.thousand||".")).split("").reverse().join(""):n},l.prototype.usingSpecialCharacters=function(l,n,e){e||(e=99999999999);for(var u=l.toString().replace(/\-|\.|\,| /gi,""),t=0,a="",i=u.length,r=0;r<i;r++)r<e&&("-"===n.charAt(r)||"."===n.charAt(r)||","===n.charAt(r)?(a+=n.charAt(r),i++):(a+=u.charAt(t),t++));return a},l.prototype.formatField=function(l,n,e){e||(e=99999999999);for(var u=l.toString().replace(/\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi,""),t=0,a="",i=u.length,r=0;r<i;r++)r<e&&("-"===n.charAt(r)||"."===n.charAt(r)||"/"===n.charAt(r)||"("===n.charAt(r)||")"===n.charAt(r)||" "===n.charAt(r)||","===n.charAt(r)||"*"===n.charAt(r)||"+"===n.charAt(r)||"@"===n.charAt(r)||"#"===n.charAt(r)||":"===n.charAt(r)||"$"===n.charAt(r)||"&"===n.charAt(r)||"%"===n.charAt(r)?(a+=n.charAt(r),i++):(a+=u.charAt(t),t++));return a},l}(),b=function(){return function(){this.type="alfa",this.decimal=2,this.decimalCaracter=",",this.userCaracters=!1,this.numberAndTousand=!1}}(),v=function(){function l(){this.brmasker=new b}return l.prototype.ngOnInit=function(){this.brmasker.type||(this.brmasker.type="all"),this.brmasker.decimal||(this.brmasker.decimal=2),this.brmasker.decimalCaracter||(this.brmasker.decimalCaracter=",")},l.prototype.writeCreateValue=function(l,n){return void 0===n&&(n=new b),l&&n.phone?l.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi,"$1 ($2) $3-$4"):l&&n.money?this.writeValueMoney(l,n):l&&n.person?this.writeValuePerson(l):l&&n.percent?this.writeValuePercent(l):l&&n.numberAndTousand?this.writeValueNumberAndThousand(l):l&&n.userCaracters?this.writeValueusingSpecialCharacters(l):l&&n.mask?(this.brmasker.mask=n.mask,n.len&&(this.brmasker.len=n.len),this.onInput(l)):l},l.prototype.writeValuePercent=function(l){return l.replace(/\D/gi,""),l.replace(/%/gi,""),l.replace(/([0-9]{0})$/gi,"%$1")},l.prototype.writeValuePerson=function(l){return l.length<=11?l.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi,"$1.$2.$3-$4"):l.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi,"$1.$2.$3/$4-$5")},l.prototype.writeValueMoney=function(l,n){return void 0===n&&(n=new b),this.moneyMask(l,n)},l.prototype.writeValueNumberAndThousand=function(l,n){return void 0===n&&(n=new b),this.thousand(l)},l.prototype.writeValueusingSpecialCharacters=function(l,n){return void 0===n&&(n=new b),this.usingSpecialCharacters(l,n.mask,n.len)},l.prototype.moneyMask=function(l,n){var e=n.decimal||this.brmasker.decimal;return(l=l.replace(/\D/gi,"").replace(new RegExp("([0-9]{"+e+"})$","g"),n.decimalCaracter+"$1")).length===e+1?"0"+l:l.length>e+2&&"0"===l.charAt(0)?l.substr(1):(n.thousand&&l.length>Number(4)+Number(n.decimal)&&(l=l.replace(new RegExp("([0-9]{3})"+n.decimalCaracter+"([0-9]{"+n.decimal+"}$)","g"),n.thousand+"$1"+n.decimalCaracter+"$2")),n.thousand&&l.length>Number(8)+Number(n.decimal)&&(l=l.replace(new RegExp("([0-9]{3})"+n.thousand+"([0-9]{3})"+n.decimalCaracter+"([0-9]{"+n.decimal+"}$)","g"),n.thousand+"$1"+n.thousand+"$2"+n.decimalCaracter+"$3")),l)},l.prototype.onInput=function(l){return this.formatField(l,this.brmasker.mask,this.brmasker.len)},l.prototype.thousand=function(l){var n=l.replace(/\D/gi,"");return n=n.toString().split("").reverse().join("").match(/\d{1,3}/g).join(""+(this.brmasker.thousand||".")).split("").reverse().join("")},l.prototype.usingSpecialCharacters=function(l,n,e){e||(e=99999999999);for(var u=l.toString().replace(/\-|\.|\,| /gi,""),t=0,a="",i=u.length,r=0;r<i;r++)r<e&&("-"===n.charAt(r)||"."===n.charAt(r)||","===n.charAt(r)?(a+=n.charAt(r),i++):(a+=u.charAt(t),t++));return a},l.prototype.formatField=function(l,n,e){e||(e=99999999999);for(var u=l.toString().replace(/\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi,""),t=0,a="",i=u.length,r=0;r<i;r++)r<e&&("-"===n.charAt(r)||"."===n.charAt(r)||"/"===n.charAt(r)||"("===n.charAt(r)||")"===n.charAt(r)||" "===n.charAt(r)||","===n.charAt(r)||"*"===n.charAt(r)||"+"===n.charAt(r)||"@"===n.charAt(r)||"#"===n.charAt(r)||":"===n.charAt(r)||"$"===n.charAt(r)||"&"===n.charAt(r)||"%"===n.charAt(r)?(a+=n.charAt(r),i++):(a+=u.charAt(t),t++));return a},l}(),C=function(){return function(){}}(),y=function(){function l(l,n,e,u,t,a,i,r,d){this.navCtrl=l,this.navParams=n,this.viewCtrl=e,this.alertCtrl=u,this.formBuilder=t,this.insumoService=a,this.categoriaService=i,this.loadingCtrl=r,this.brMaskerIonic3=d,this.categoriasInsumos=[],this.formGroup=this.formBuilder.group({id:["",""],nome:["",[m.o.required]],nomenclatura:["",[m.o.required]],valor:[""],codigoalmox:[""],observacao:[""],essencial:[!1],datavalidade:[,],quantidade:[,],taxadeconsumo:[,],categorias:this.formControl},{})}return l.prototype.ionViewDidLoad=function(){var l=this;this.loadCategorias(),this.itemId=this.navParams.get("itemId"),null!=this.itemId&&this.insumoService.findInsumoById(this.itemId).subscribe(function(n){l.updateInsumoDTO=n,console.log(l.updateInsumoDTO.categorias),l.formGroup=l.formBuilder.group({id:[l.updateInsumoDTO.id,""],nome:[l.updateInsumoDTO.nome,""],nomenclatura:[l.updateInsumoDTO.nomenclatura,""],valor:[l.updateInsumoDTO.valor,""],codigoalmox:[l.updateInsumoDTO.codigoalmox],observacao:[l.updateInsumoDTO.observacao,""],essencial:[l.updateInsumoDTO.essencial,""],datavalidade:[l.updateInsumoDTO.datavalidade],quantidade:[l.updateInsumoDTO.quantidade,""],taxadeconsumo:[l.updateInsumoDTO.taxadeconsumo],categorias:[l.updateInsumoDTO.categorias]},{})})},l.prototype.loadCategorias=function(){var l=this,n=this.presentLoading();this.categoriaService.findAll().subscribe(function(e){l.categoriasInsumos=e.sort(),n.dismiss()})},l.prototype.presentLoading=function(){var l=this.loadingCtrl.create({content:"Aguarde..."});return l.present(),l},l.prototype.dismiss=function(){this.viewCtrl.dismiss()},l.prototype.cadastrarInsumo=function(){var l=this,n=this.formGroup.value;null===n.id||""===n.id?this.insumoService.insert(this.formGroup.value).subscribe(function(n){l.showInserOk()},function(l){}):(console.log(n),this.insumoService.update(n).subscribe(function(n){l.showUpdateOk()},function(l){}))},l.prototype.showInserOk=function(){var l=this;this.alertCtrl.create({title:"Sucesso",message:"Cadastro efetuado com sucesso!",enableBackdropDismiss:!1,buttons:[{text:"Ok",handler:function(){l.navCtrl.pop()}}]}).present()},l.prototype.showUpdateOk=function(){var l=this;this.alertCtrl.create({title:"Sucesso",message:"Cadastro atualizado com sucesso!",enableBackdropDismiss:!1,buttons:[{text:"Ok",handler:function(){l.navCtrl.pop()}}]}).present()},l.prototype.imprimeItem=function(l){},l}(),k=function(){return function(){}}(),R=e(187),$=e(188),I=e(189),_=e(190),w=e(191),D=e(192),E=e(193),T=e(194),q=e(195),A=e(369),V=e(122),x=e(24),P=e(21),S=e(3),N=e(53),O=e(61),j=e(62),M=e(82),F=e(7),L=e(202),U=e(42),G=e(197),B=e(60),K=e(38),Z=e(121),z=e(41),J=e(27),Q=e(126),W=e(6),H=e(127),X=e(43),Y=e(196),ll=e(31),nl=e(13),el=e(12),ul=e(33),tl=e(29),al=e(689),il=e(198),rl=e(83),dl=e(217),ol=e(44),sl=e(10),cl=d["ɵcrt"]({encapsulation:2,styles:[],data:{}}),ml=e(695),pl=e(210),gl=e(84),hl=e(16),fl=e(123),bl=e(129),vl=d["ɵcrt"]({encapsulation:2,styles:[],data:{}}),Cl=d["ɵccf"]("page-cadastro-insumo",y,function(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,2,"page-cadastro-insumo",[],null,null,null,r,vl)),d["ɵprd"](512,null,f,f,[d.Renderer,d.ElementRef]),d["ɵdid"](2,49152,null,0,y,[tl.a,hl.a,F.a,fl.a,m.d,p.a,c.a,bl.a,f],null,null)],null,null)},{},{},[]),yl=e(120),kl=e(52);e.d(n,"CadastroInsumoPageModuleNgFactory",function(){return Rl});var Rl=d["ɵcmf"](k,[],function(l){return d["ɵmod"]([d["ɵmpd"](512,d.ComponentFactoryResolver,d["ɵCodegenComponentFactoryResolver"],[[8,[R.a,$.a,I.a,_.a,w.a,D.a,E.a,T.a,q.a,A.a,A.b,Cl]],[3,d.ComponentFactoryResolver],d.NgModuleRef]),d["ɵmpd"](4608,g.l,g.k,[d.LOCALE_ID,[2,g.u]]),d["ɵmpd"](4608,m.r,m.r,[]),d["ɵmpd"](4608,m.d,m.d,[]),d["ɵmpd"](4608,v,v,[]),d["ɵmpd"](512,g.b,g.b,[]),d["ɵmpd"](512,m.p,m.p,[]),d["ɵmpd"](512,m.g,m.g,[]),d["ɵmpd"](512,m.n,m.n,[]),d["ɵmpd"](512,yl.a,yl.a,[]),d["ɵmpd"](512,yl.b,yl.b,[]),d["ɵmpd"](512,s.d,s.d,[]),d["ɵmpd"](512,o.a,o.a,[]),d["ɵmpd"](512,C,C,[]),d["ɵmpd"](512,k,k,[]),d["ɵmpd"](256,kl.a,y,[])])})},689:function(l,n,e){"use strict";function u(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,[[1,0],["textInput",1]],null,1,"input",[["class","text-input"],["dir","auto"]],[[8,"type",0],[1,"aria-labelledby",0],[1,"min",0],[1,"max",0],[1,"step",0],[1,"autocomplete",0],[1,"autocorrect",0],[8,"placeholder",0],[8,"disabled",0],[8,"readOnly",0]],[[null,"input"],[null,"blur"],[null,"focus"],[null,"keydown"]],function(l,n,e){var u=!0,t=l.component;if("input"===n){u=!1!==t.onInput(e)&&u}if("blur"===n){u=!1!==t.onBlur(e)&&u}if("focus"===n){u=!1!==t.onFocus(e)&&u}if("keydown"===n){u=!1!==t.onKeydown(e)&&u}return u},null,null)),d["ɵdid"](1,278528,null,0,o.h,[d.IterableDiffers,d.KeyValueDiffers,d.ElementRef,d.Renderer2],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null)],function(l,n){l(n,1,0,"text-input","text-input-"+n.component._mode)},function(l,n){var e=n.component;l(n,0,0,e._type,e._labelId,e.min,e.max,e.step,e.autocomplete,e.autocorrect,e.placeholder,e._disabled,e._readonly)})}function t(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,[[1,0],["textInput",1]],null,1,"textarea",[["class","text-input"]],[[1,"aria-labelledby",0],[1,"autocomplete",0],[1,"autocorrect",0],[8,"placeholder",0],[8,"disabled",0],[8,"readOnly",0]],[[null,"input"],[null,"blur"],[null,"focus"],[null,"keydown"]],function(l,n,e){var u=!0,t=l.component;if("input"===n){u=!1!==t.onInput(e)&&u}if("blur"===n){u=!1!==t.onBlur(e)&&u}if("focus"===n){u=!1!==t.onFocus(e)&&u}if("keydown"===n){u=!1!==t.onKeydown(e)&&u}return u},null,null)),d["ɵdid"](1,278528,null,0,o.h,[d.IterableDiffers,d.KeyValueDiffers,d.ElementRef,d.Renderer2],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null)],function(l,n){l(n,1,0,"text-input","text-input-"+n.component._mode)},function(l,n){var e=n.component;l(n,0,0,e._labelId,e.autocomplete,e.autocorrect,e.placeholder,e._disabled,e._readonly)})}function a(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,1,"button",[["class","text-input-clear-icon"],["clear",""],["ion-button",""],["tabindex","-1"],["type","button"]],null,[[null,"click"],[null,"mousedown"]],function(l,n,e){var u=!0,t=l.component;if("click"===n){u=!1!==t.clearTextInput(e)&&u}if("mousedown"===n){u=!1!==t.clearTextInput(e)&&u}return u},s.b,s.a)),d["ɵdid"](1,1097728,null,0,c.a,[[8,""],m.a,d.ElementRef,d.Renderer],{clear:[0,"clear"]},null)],function(l,n){l(n,1,0,"")},null)}function i(l){return d["ɵvid"](0,[(l()(),d["ɵeld"](0,0,null,null,0,"div",[["class","input-cover"]],null,[[null,"touchstart"],[null,"touchend"],[null,"mousedown"],[null,"mouseup"]],function(l,n,e){var u=!0,t=l.component;if("touchstart"===n){u=!1!==t._pointerStart(e)&&u}if("touchend"===n){u=!1!==t._pointerEnd(e)&&u}if("mousedown"===n){u=!1!==t._pointerStart(e)&&u}if("mouseup"===n){u=!1!==t._pointerEnd(e)&&u}return u},null,null))],null,null)}function r(l){return d["ɵvid"](2,[d["ɵqud"](671088640,1,{_native:0}),(l()(),d["ɵand"](16777216,null,null,1,null,u)),d["ɵdid"](2,16384,null,0,o.j,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵand"](16777216,null,null,1,null,t)),d["ɵdid"](4,16384,null,0,o.j,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵand"](16777216,null,null,1,null,a)),d["ɵdid"](6,16384,null,0,o.j,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),d["ɵand"](16777216,null,null,1,null,i)),d["ɵdid"](8,16384,null,0,o.j,[d.ViewContainerRef,d.TemplateRef],{ngIf:[0,"ngIf"]},null)],function(l,n){var e=n.component;l(n,2,0,!e._isTextarea);l(n,4,0,e._isTextarea);l(n,6,0,e._clearInput);l(n,8,0,e._useAssist)},null)}e.d(n,"a",function(){return p}),n.b=r;var d=e(1),o=e(15),s=e(41),c=e(27),m=e(3),p=(e(6),e(21),e(13),d["ɵcrt"]({encapsulation:2,styles:[],data:{}}))},690:function(l,n,e){"use strict";e(0),e(1);e.d(n,"a",function(){return u});var u=function(){return function(){}}()},695:function(l,n,e){"use strict";function u(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"div",[["class","datetime-text datetime-placeholder"]],null,null,null,null,null)),(l()(),i["ɵted"](1,null,["",""]))],null,function(l,n){l(n,1,0,n.component.placeholder)})}function t(l){return i["ɵvid"](0,[(l()(),i["ɵeld"](0,0,null,null,1,"div",[["class","datetime-text"]],null,null,null,null,null)),(l()(),i["ɵted"](1,null,["",""]))],null,function(l,n){l(n,1,0,n.component._text)})}function a(l){return i["ɵvid"](0,[(l()(),i["ɵand"](16777216,null,null,1,null,u)),i["ɵdid"](1,16384,null,0,r.j,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵand"](16777216,null,null,1,null,t)),i["ɵdid"](3,16384,null,0,r.j,[i.ViewContainerRef,i.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),i["ɵeld"](4,0,null,null,1,"button",[["aria-haspopup","true"],["class","item-cover"],["ion-button","item-cover"],["type","button"]],[[8,"id",0],[1,"aria-labelledby",0],[1,"aria-disabled",0]],null,null,d.b,d.a)),i["ɵdid"](5,1097728,null,0,o.a,[[8,"item-cover"],s.a,i.ElementRef,i.Renderer],null,null)],function(l,n){var e=n.component;l(n,1,0,!e._text);l(n,3,0,e._text)},function(l,n){var e=n.component;l(n,4,0,e.id,e._labelId,e._disabled)})}e.d(n,"a",function(){return c}),n.b=a;var i=e(1),r=e(15),d=e(41),o=e(27),s=e(3),c=(e(21),i["ɵcrt"]({encapsulation:2,styles:[],data:{}}))}});
+webpackJsonp([3],{
+
+/***/ 708:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(887);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_tooltips__ = __webpack_require__(730);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var InsumoPageModule = /** @class */ (function () {
+    function InsumoPageModule() {
+    }
+    InsumoPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic_tooltips__["a" /* TooltipsModule */].forRoot(),
+            ],
+        })
+    ], InsumoPageModule);
+    return InsumoPageModule;
+}());
+
+//# sourceMappingURL=insumos.module.js.map
+
+/***/ }),
+
+/***/ 726:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipBox; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+
+
+var TooltipBox = (function () {
+    function TooltipBox(elementRef, rnd) {
+        var _this = this;
+        this.elementRef = elementRef;
+        this.rnd = rnd;
+        this.fadeState = 'invisible';
+        this.init = new Promise(function (resolve) {
+            _this.initResolve = resolve;
+        });
+    }
+    Object.defineProperty(TooltipBox.prototype, "arrow", {
+        set: function (side) {
+            this.rnd.setAttribute(this.getNativeElement(), 'class', 'has-arrow ' + 'arrow-' + side);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TooltipBox.prototype, "posTop", {
+        set: function (val) {
+            this.rnd.setStyle(this.getNativeElement(), 'top', val + 'px');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TooltipBox.prototype, "posLeft", {
+        set: function (val) {
+            this.rnd.setStyle(this.getNativeElement(), 'left', val + 'px');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TooltipBox.prototype.getNativeElement = function () {
+        return this.elementRef.nativeElement;
+    };
+    TooltipBox.prototype.ngAfterViewInit = function () {
+        this.initResolve();
+    };
+    TooltipBox.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"], args: [{
+                    selector: 'tooltip-box',
+                    template: "\n    <div *ngIf=\"tooltipHtml; else txt\" [innerHTML]=\"tooltipHtml\"></div>\n    <ng-template #txt>{{ text }}</ng-template>\n  ",
+                    animations: [
+                        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* trigger */])('fade', [
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 1 })),
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ opacity: 0 })),
+                            Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('visible <=> invisible', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('300ms linear')),
+                        ]),
+                    ],
+                    styles: [
+                        "\n          :host {\n              background-color: rgba(0, 0, 0, 0.8);\n              color: white;\n              display: inline-block;\n              position: fixed;\n              padding: 15px 25px;\n              font-size: 15px;\n          }\n    ",
+                        "\n          :host.has-arrow:before {\n              content: '';\n              border: 5px solid transparent;\n              position: absolute;\n              width: 0;\n              height: 0;\n          }\n    ",
+                        ':host.has-arrow.arrow-top:before { border-bottom: 5px solid rgba(0,0,0,0.8); top: -10px; }',
+                        ':host.has-arrow.arrow-left:before { border-right: 5px solid rgba(0,0,0,0.8); left: -10px; }',
+                        ':host.has-arrow.arrow-right:before { border-left: 5px solid rgba(0,0,0,0.8); right: -10px; }',
+                        ':host.has-arrow.arrow-bottom:before { border-top: 5px solid rgba(0,0,0,0.8); bottom: -10px; }',
+                    ],
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ChangeDetectionStrategy"].OnPush,
+                },] },
+    ];
+    /** @nocollapse */
+    TooltipBox.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer2"], },
+    ]; };
+    TooltipBox.propDecorators = {
+        "fadeState": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["HostBinding"], args: ['@fade',] },],
+        "text": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "posTop": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+        "posLeft": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    };
+    return TooltipBox;
+}());
+
+//# sourceMappingURL=tooltip-box.component.js.map
+
+/***/ }),
+
+/***/ 727:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipController; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+
+var TooltipController = (function () {
+    function TooltipController() {
+        this.allowMultiple = true;
+        this.activeTooltips = [];
+    }
+    TooltipController.prototype.addTooltip = function (instance) {
+        if (instance.hideOthers || !this.allowMultiple && this.activeTooltips.length > 0) {
+            this.hideAll();
+        }
+        this.activeTooltips.push(instance);
+    };
+    TooltipController.prototype.removeTooltip = function (instance) {
+        this.activeTooltips.splice(this.activeTooltips.indexOf(instance), 1);
+    };
+    TooltipController.prototype.hideAll = function () {
+        this.activeTooltips.forEach(function (tooltip) {
+            tooltip.removeTooltip();
+        });
+    };
+    TooltipController.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+    ];
+    return TooltipController;
+}());
+
+//# sourceMappingURL=tooltip.cotroller.js.map
+
+/***/ }),
+
+/***/ 728:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tooltip; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(727);
+
+
+
+
+var Tooltip = (function () {
+    function Tooltip(el, appRef, platform, _componentFactoryResolver, tooltipCtrl) {
+        this.el = el;
+        this.appRef = appRef;
+        this.platform = platform;
+        this._componentFactoryResolver = _componentFactoryResolver;
+        this.tooltipCtrl = tooltipCtrl;
+        this.mobileEvent = 'press';
+        this.desktopEvent = 'hover';
+        this.duration = 3000;
+        this._arrow = false;
+        this._navTooltip = false;
+        this._canShow = true;
+        this._active = false;
+    }
+    Object.defineProperty(Tooltip.prototype, "navTooltip", {
+        get: function () {
+            return this._navTooltip;
+        },
+        set: function (val) {
+            this._navTooltip = typeof val !== 'boolean' || val !== false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Tooltip.prototype, "arrow", {
+        get: function () {
+            return this._arrow;
+        },
+        set: function (val) {
+            this._arrow = typeof val !== 'boolean' || val !== false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Tooltip.prototype, "active", {
+        get: function () {
+            return this._active;
+        },
+        set: function (val) {
+            this._active = typeof val !== 'boolean' || val !== false;
+            this._active ? this.canShow && this.showTooltip() : this.removeTooltip();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Tooltip.prototype.ngAfterViewInit = function () {
+        // Show the tooltip immediately after initiating view if set to
+        if (this._active) {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.ngOnInit = function () {
+        // Set default event type by platform if event is not defined
+        if (!this.event) {
+            this.event = this.platform.is('mobile') ? this.mobileEvent : this.desktopEvent;
+        }
+    };
+    Object.defineProperty(Tooltip.prototype, "canShow", {
+        /**
+         * @return {boolean} TRUE if the tooltip can be shown
+         */
+        get: /**
+           * @return {boolean} TRUE if the tooltip can be shown
+           */
+        function () {
+            return this._canShow && ((typeof this.tooltip === 'string' && this.tooltip !== '') || (typeof this.tooltipHtml === 'string' && this.tooltipHtml !== ''));
+        },
+        /**
+         * Set the canShow property
+         * Ensure that tooltip is shown only if the tooltip string is not falsey
+         */
+        set: /**
+           * Set the canShow property
+           * Ensure that tooltip is shown only if the tooltip string is not falsey
+           */
+        function (show) {
+            this._canShow = show;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Handles the click/press event and shows a tooltip.
+     * If a tooltip already exists, it will just reset it's timer.
+     */
+    /**
+       * Handles the click/press event and shows a tooltip.
+       * If a tooltip already exists, it will just reset it's timer.
+       */
+    Tooltip.prototype.trigger = /**
+       * Handles the click/press event and shows a tooltip.
+       * If a tooltip already exists, it will just reset it's timer.
+       */
+    function () {
+        if (!this.canShow) {
+            return;
+        }
+        if (this.tooltipElement) {
+            this._resetTimer();
+        }
+        else {
+            this.showTooltip();
+        }
+    };
+    /**
+     * Creates a new tooltip component and adjusts it's properties to show properly.
+     */
+    /**
+       * Creates a new tooltip component and adjusts it's properties to show properly.
+       */
+    Tooltip.prototype.showTooltip = /**
+       * Creates a new tooltip component and adjusts it's properties to show properly.
+       */
+    function () {
+        var _this = this;
+        this._createTooltipComponent();
+        var tooltipComponent = this.tooltipElement.instance;
+        tooltipComponent.text = this.tooltip;
+        tooltipComponent.tooltipHtml = this.tooltipHtml;
+        tooltipComponent.init.then(function () {
+            var tooltipPosition = _this._getTooltipPosition();
+            tooltipComponent.posLeft = tooltipPosition.left;
+            tooltipComponent.posTop = tooltipPosition.top;
+            tooltipComponent.fadeState = 'visible';
+            if (_this.arrow) {
+                var arrowPosition = void 0;
+                if (_this.positionV === 'top') {
+                    arrowPosition = 'bottom';
+                }
+                else if (_this.positionV === 'bottom') {
+                    arrowPosition = 'top';
+                }
+                else if (_this.positionH === 'left') {
+                    arrowPosition = 'right';
+                }
+                else {
+                    arrowPosition = 'left';
+                }
+                tooltipComponent.arrow = arrowPosition;
+            }
+            if (!_this._active) {
+                _this.tooltipTimeout = setTimeout(_this.removeTooltip.bind(_this), _this.duration);
+            }
+        });
+    };
+    Tooltip.prototype.onClick = function () {
+        if (this.event === 'click') {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.onPress = function () {
+        if (this.event === 'press') {
+            this.trigger();
+        }
+    };
+    Tooltip.prototype.onMouseEnter = function () {
+        if (this.event === 'hover') {
+            this.active = true;
+        }
+    };
+    Tooltip.prototype.onMouseLeave = function () {
+        if (this.event === 'hover') {
+            this.active = false;
+        }
+    };
+    Tooltip.prototype._createTooltipComponent = function () {
+        var viewport = this.appRef.components[0]._component
+            ._viewport, componentFactory = this._componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_2__tooltip_box_component__["a" /* TooltipBox */]);
+        this.tooltipElement = viewport.createComponent(componentFactory);
+        this.tooltipCtrl.addTooltip(this);
+    };
+    Tooltip.prototype._getTooltipPosition = function () {
+        var tooltipNativeElement = this.tooltipElement.instance.getNativeElement(), el = this.el.nativeElement, rect = el.getBoundingClientRect();
+        var positionLeft, positionTop, spacing = 10;
+        if (this.navTooltip) {
+            this.positionV = 'bottom';
+            this.arrow = false;
+            spacing = 20;
+        }
+        if (this.positionH === 'right') {
+            positionLeft = rect.right + spacing;
+        }
+        else if (this.positionH === 'left') {
+            positionLeft = rect.left - spacing - tooltipNativeElement.offsetWidth;
+        }
+        else if (this.navTooltip) {
+            positionLeft = rect.left + el.offsetWidth / 2;
+        }
+        else {
+            positionLeft = rect.left;
+        }
+        if (this.positionV === 'top') {
+            positionTop = rect.top - spacing - tooltipNativeElement.offsetHeight;
+        }
+        else if (this.positionV === 'bottom') {
+            positionTop = rect.bottom + spacing;
+        }
+        else {
+            positionTop =
+                rect.top + el.offsetHeight / 2 - tooltipNativeElement.offsetHeight / 2;
+        }
+        if (+this.topOffset) {
+            positionTop += +this.topOffset;
+        }
+        if (+this.leftOffset) {
+            positionLeft += +this.leftOffset;
+        }
+        if (positionLeft + tooltipNativeElement.offsetWidth + spacing >
+            this.platform.width()) {
+            positionLeft =
+                this.platform.width() - tooltipNativeElement.offsetWidth - spacing;
+        }
+        else if (positionLeft + tooltipNativeElement.offsetWidth - spacing < 0) {
+            positionLeft = spacing;
+        }
+        if (positionTop + tooltipNativeElement.offsetHeight + spacing > this.platform.height()) {
+            positionTop = this.platform.height() - tooltipNativeElement.offsetHeight - spacing;
+        }
+        else if (positionTop + tooltipNativeElement.offsetHeight - spacing < 0) {
+            positionTop = spacing;
+        }
+        return {
+            left: positionLeft,
+            top: positionTop,
+        };
+    };
+    Tooltip.prototype.removeTooltip = function () {
+        var _this = this;
+        if (!this.tooltipElement) {
+            this.tooltipElement = undefined;
+            this.tooltipTimeout = undefined;
+            return;
+        }
+        this.tooltipElement.instance.fadeState = 'invisible';
+        this.canShow = false;
+        // wait for animation to finish then clear everything out
+        setTimeout(function () {
+            if (_this.tooltipElement &&
+                typeof _this.tooltipElement.destroy === 'function') {
+                _this.tooltipElement.destroy();
+            }
+            _this.tooltipCtrl.removeTooltip(_this);
+            _this.tooltipElement = _this.tooltipTimeout = undefined;
+            _this.canShow = true;
+        }, 300);
+    };
+    Tooltip.prototype._resetTimer = function () {
+        var _this = this;
+        clearTimeout(this.tooltipTimeout);
+        this.tooltipTimeout = setTimeout(function () {
+            _this.active = false;
+        }, this.duration);
+    };
+    Tooltip.prototype.ngOnDestroy = function () {
+        // if the timer hasn't expired or active is true when the component gets destroyed, the tooltip will remain in the DOM
+        // this removes it
+        this.removeTooltip();
+    };
+    Tooltip.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                    selector: '[tooltip]',
+                },] },
+    ];
+    /** @nocollapse */
+    Tooltip.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], },
+        { type: __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+        { type: __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__["a" /* TooltipController */], },
+    ]; };
+    Tooltip.propDecorators = {
+        "tooltipHtml": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "tooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "positionV": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "positionH": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "event": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "mobileEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "desktopEvent": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "topOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "leftOffset": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "hideOthers": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "navTooltip": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "arrow": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "duration": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "active": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+        "onClick": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['click',] },],
+        "onPress": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['press',] },],
+        "onMouseEnter": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseenter',] },],
+        "onMouseLeave": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseleave',] },],
+    };
+    return Tooltip;
+}());
+
+//# sourceMappingURL=tooltip.directive.js.map
+
+/***/ }),
+
+/***/ 730:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_box_component__ = __webpack_require__(726);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(728);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltips_module__ = __webpack_require__(731);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__tooltips_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_cotroller__ = __webpack_require__(727);
+/* unused harmony namespace reexport */
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 731:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TooltipsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__ = __webpack_require__(726);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_directive__ = __webpack_require__(728);
+
+
+
+
+
+var TooltipsModule = (function () {
+    function TooltipsModule() {
+    }
+    TooltipsModule.forRoot = function () {
+        return {
+            ngModule: TooltipsModule,
+            providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip_cotroller__["a" /* TooltipController */]]
+        };
+    };
+    TooltipsModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                    entryComponents: [__WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
+                    declarations: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */], __WEBPACK_IMPORTED_MODULE_3__tooltip_box_component__["a" /* TooltipBox */]],
+                    imports: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicModule */]],
+                    exports: [__WEBPACK_IMPORTED_MODULE_4__tooltip_directive__["a" /* Tooltip */]]
+                },] },
+    ];
+    return TooltipsModule;
+}());
+
+//# sourceMappingURL=tooltips.module.js.map
+
+/***/ }),
+
+/***/ 887:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the InsumoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var InsumosPage = /** @class */ (function () {
+    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl, loadingCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.insumoService = insumoService;
+        this.modalCtrl = modalCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.itensInsumos = [];
+        this.page = 0;
+    }
+    InsumosPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
+    };
+    InsumosPage.prototype.openModal = function () {
+        var _this = this;
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroInsumoPage', { cssClass: 'select-modal' });
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    /*getItens(){
+      this.insumoService.findAll()
+      .subscribe(response => {
+        this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+      },
+      error => {})
+    }*/
+    InsumosPage.prototype.getItens = function () {
+        var _this = this;
+        var loader = this.presentLoading();
+        this.itensInsumos = [];
+        this.insumoService.findTotosPaginado(this.page, 30)
+            .subscribe(function (response) {
+            var start = _this.itensInsumos.length;
+            _this.itensInsumos = _this.itensInsumos.concat(response['content']);
+            var end = _this.itensInsumos.length - 1;
+            //console.log( this.itensInsumos);
+            loader.dismiss();
+        }, function (error) {
+            loader.dismiss();
+        });
+    };
+    InsumosPage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
+        loader.present();
+        return loader;
+    };
+    InsumosPage.prototype.doRefresh = function (refresher) {
+        this.page = 0;
+        this.itensInsumos = [];
+        this.getItens();
+        setTimeout(function () {
+            refresher.complete();
+        }, 1000);
+    };
+    InsumosPage.prototype.doInfinite = function (infiniteScroll) {
+        this.page++;
+        this.getItens();
+        setTimeout(function () {
+            infiniteScroll.complete();
+        }, 1000);
+    };
+    InsumosPage.prototype.excluirItem = function (itemId) {
+        this.getItens();
+    };
+    InsumosPage.prototype.editarItem = function (itemId) {
+        var _this = this;
+        var modal = this.modalCtrl.create('CadastroInsumoPage', { itemId: itemId });
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    InsumosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n\n  Generated template for the InsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content></ion-refresher-content>\n\n  </ion-refresher>\n\n\n\n  <ion-list>\n\n\n\n    <ion-row *ngFor="let item of itensInsumos">\n\n      <ion-col>\n\n        <h3>{{item.nome}}</h3>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="create" (click)="editarItem(item.id)" title="Editar Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluirItem(item.id)" title="Excluir Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-list>\n\n\n\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n  </ion-infinite-scroll>\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
+    ], InsumosPage);
+    return InsumosPage;
+}());
+
+//# sourceMappingURL=insumos.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=3.js.map

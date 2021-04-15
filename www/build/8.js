@@ -1,1 +1,151 @@
-webpackJsonp([8],{670:function(n,l,e){"use strict";function u(n){return d["ɵvid"](0,[(n()(),d["ɵeld"](0,0,null,null,9,"ion-item",[["class","item item-block"]],null,null,null,C.b,C.a)),d["ɵdid"](1,1097728,null,3,y.a,[E.a,_.a,d.ElementRef,d.Renderer,[2,q.a]],null,null),d["ɵqud"](335544320,6,{contentLabel:0}),d["ɵqud"](603979776,7,{_buttons:1}),d["ɵqud"](603979776,8,{_icons:1}),d["ɵdid"](5,16384,null,0,D.a,[],null,null),(n()(),d["ɵted"](-1,2,["\n    "])),(n()(),d["ɵeld"](7,0,null,2,1,"h3",[],null,null,null,null,null)),(n()(),d["ɵted"](8,null,["",""])),(n()(),d["ɵted"](-1,2,["\n  "]))],null,function(n,l){n(l,8,0,l.context.$implicit.nome)})}function t(n){return d["ɵvid"](0,[(n()(),d["ɵeld"](0,0,null,null,13,"ion-item-group",[],null,null,null,null,null)),d["ɵdid"](1,16384,null,0,I.a,[],null,null),(n()(),d["ɵted"](-1,null,["\n\n  "])),(n()(),d["ɵeld"](3,0,null,null,6,"ion-item-divider",[["class","item item-divider"],["light",""]],null,null,null,C.b,C.a)),d["ɵdid"](4,1097728,null,3,y.a,[E.a,_.a,d.ElementRef,d.Renderer,[2,q.a]],null,null),d["ɵqud"](335544320,3,{contentLabel:0}),d["ɵqud"](603979776,4,{_buttons:1}),d["ɵqud"](603979776,5,{_icons:1}),d["ɵdid"](8,16384,null,0,F.a,[_.a,d.ElementRef,d.Renderer],null,null),(n()(),d["ɵted"](9,2,["",""])),(n()(),d["ɵted"](-1,null,["\n  "])),(n()(),d["ɵand"](16777216,null,null,1,null,u)),d["ɵdid"](12,802816,null,0,k.i,[d.ViewContainerRef,d.TemplateRef,d.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(n()(),d["ɵted"](-1,null,["\n\n"]))],function(n,l){n(l,12,0,l.context.$implicit.arrayDeItens)},function(n,l){n(l,9,0,l.context.$implicit.letra)})}function a(n){return d["ɵvid"](0,[(n()(),d["ɵted"](-1,null,["\n"])),(n()(),d["ɵeld"](1,0,null,null,32,"ion-header",[],null,null,null,null,null)),d["ɵdid"](2,16384,null,0,A.a,[_.a,d.ElementRef,d.Renderer,[2,O.a]],null,null),(n()(),d["ɵted"](-1,null,["\n  "])),(n()(),d["ɵeld"](4,0,null,null,28,"ion-navbar",[["class","categoria2 toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,P.b,P.a)),d["ɵdid"](5,49152,null,0,w.a,[L.a,[2,O.a],[2,M.a],_.a,d.ElementRef,d.Renderer],null,null),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](7,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,l,e){var u=!0;if("click"===l){u=!1!==d["ɵnov"](n,9).toggle()&&u}return u},T.b,T.a)),d["ɵdid"](8,1097728,[[1,4]],0,x.a,[[8,""],_.a,d.ElementRef,d.Renderer],null,null),d["ɵdid"](9,1064960,null,0,N.a,[V.a,[2,O.a],[2,x.a],[2,w.a]],{menuToggle:[0,"menuToggle"]},null),d["ɵdid"](10,16384,null,1,$.a,[_.a,d.ElementRef,d.Renderer,[2,G.a],[2,w.a]],null,null),d["ɵqud"](603979776,1,{_buttons:1}),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵeld"](13,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](14,147456,null,0,S.a,[_.a,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(n()(),d["ɵted"](-1,0,["\n    "])),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](17,0,null,3,2,"ion-title",[],null,null,null,j.b,j.a)),d["ɵdid"](18,49152,null,0,H.a,[_.a,d.ElementRef,d.Renderer,[2,G.a],[2,w.a]],null,null),(n()(),d["ɵted"](-1,0,["Categorias"])),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](21,0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),d["ɵdid"](22,16384,null,1,$.a,[_.a,d.ElementRef,d.Renderer,[2,G.a],[2,w.a]],null,null),d["ɵqud"](603979776,2,{_buttons:1}),(n()(),d["ɵted"](-1,null,["\n      "])),(n()(),d["ɵeld"](25,0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(n,l,e){var u=!0;if("click"===l){u=!1!==n.component.openModal()&&u}return u},T.b,T.a)),d["ɵdid"](26,1097728,[[2,4]],0,x.a,[[8,""],_.a,d.ElementRef,d.Renderer],null,null),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵeld"](28,0,null,0,1,"ion-icon",[["name","add-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](29,147456,null,0,S.a,[_.a,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵted"](-1,null,["\n    "])),(n()(),d["ɵted"](-1,3,["\n  "])),(n()(),d["ɵted"](-1,null,["\n"])),(n()(),d["ɵted"](-1,null,["\n\n"])),(n()(),d["ɵeld"](35,0,null,null,5,"ion-content",[["class","categoria2"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,J.b,J.a)),d["ɵdid"](36,4374528,null,0,Z.a,[_.a,z.a,B.a,d.ElementRef,d.Renderer,L.a,K.a,d.NgZone,[2,O.a],[2,M.a]],null,null),(n()(),d["ɵted"](-1,1,["\n\n\n\n"])),(n()(),d["ɵand"](16777216,null,1,1,null,t)),d["ɵdid"](39,802816,null,0,k.i,[d.ViewContainerRef,d.TemplateRef,d.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(n()(),d["ɵted"](-1,1,["\n\n"])),(n()(),d["ɵted"](-1,null,["\n"]))],function(n,l){var e=l.component;n(l,9,0,"");n(l,14,0,"menu");n(l,29,0,"add-circle");n(l,39,0,e.itensCategorias)},function(n,l){n(l,4,0,d["ɵnov"](l,5)._hidden,d["ɵnov"](l,5)._sbPadding);n(l,7,0,d["ɵnov"](l,9).isHidden);n(l,13,0,d["ɵnov"](l,14)._hidden);n(l,28,0,d["ɵnov"](l,29)._hidden);n(l,35,0,d["ɵnov"](l,36).statusbarPadding,d["ɵnov"](l,36)._hasRefresher)})}Object.defineProperty(l,"__esModule",{value:!0});var d=e(1),i=(e(0),e(81),e(696)),o=e(206),r=function(){function n(n,l,e,u){this.navCtrl=n,this.navParams=l,this.CategoriaService=e,this.modalCtrl=u,this.itensCategorias=[]}return n.prototype.openModal=function(){var n=this;console.log("aqui");var l=this.modalCtrl.create("CadastroCategoriaPage");l.onDidDismiss(function(){n.getItens()}),l.present()},n.prototype.ionViewDidLoad=function(){this.getItens()},n.prototype.getItens=function(){var n=this;this.CategoriaService.findAll().subscribe(function(l){n.itensCategorias=(new i.a).retornaArrayGroup(l.sort())},function(n){})},n}(),c=function(){return function(){}}(),s=e(187),f=e(188),m=e(189),p=e(190),g=e(191),b=e(192),R=e(193),v=e(194),h=e(195),C=e(122),y=e(24),E=e(21),_=e(3),q=e(53),D=e(61),I=e(132),F=e(131),k=e(15),A=e(82),O=e(7),P=e(368),w=e(38),L=e(12),M=e(29),T=e(41),x=e(27),N=e(200),V=e(34),$=e(121),G=e(42),S=e(43),j=e(197),H=e(60),J=e(196),Z=e(31),z=e(6),B=e(13),K=e(33),Q=e(16),U=e(83),W=d["ɵcrt"]({encapsulation:2,styles:[],data:{}}),X=d["ɵccf"]("page-categorias",r,function(n){return d["ɵvid"](0,[(n()(),d["ɵeld"](0,0,null,null,1,"page-categorias",[],null,null,null,a,W)),d["ɵdid"](1,49152,null,0,r,[M.a,Q.a,o.a,U.a],null,null)],null,null)},{},{},[]),Y=e(19),nn=e(120),ln=e(52);e.d(l,"CategoriasPageModuleNgFactory",function(){return en});var en=d["ɵcmf"](c,[],function(n){return d["ɵmod"]([d["ɵmpd"](512,d.ComponentFactoryResolver,d["ɵCodegenComponentFactoryResolver"],[[8,[s.a,f.a,m.a,p.a,g.a,b.a,R.a,v.a,h.a,X]],[3,d.ComponentFactoryResolver],d.NgModuleRef]),d["ɵmpd"](4608,k.l,k.k,[d.LOCALE_ID,[2,k.u]]),d["ɵmpd"](4608,Y.r,Y.r,[]),d["ɵmpd"](4608,Y.d,Y.d,[]),d["ɵmpd"](512,k.b,k.b,[]),d["ɵmpd"](512,Y.p,Y.p,[]),d["ɵmpd"](512,Y.g,Y.g,[]),d["ɵmpd"](512,Y.n,Y.n,[]),d["ɵmpd"](512,nn.a,nn.a,[]),d["ɵmpd"](512,nn.b,nn.b,[]),d["ɵmpd"](512,c,c,[]),d["ɵmpd"](256,ln.a,r,[])])})},696:function(n,l,e){"use strict";e.d(l,"a",function(){return u});var u=function(){function n(){}return n.prototype.retornaArrayGroup=function(n){var l=[],e="",u=[];return n.forEach(function(n,t){if(n.nome.charAt(0)!=e){var a={letra:e=n.nome.charAt(0),arrayDeItens:[]};u=a.arrayDeItens,l.push(a)}u.push(n)}),l},n}()}});
+webpackJsonp([8],{
+
+/***/ 704:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasPageModule", function() { return CategoriasPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(883);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var CategoriasPageModule = /** @class */ (function () {
+    function CategoriasPageModule() {
+    }
+    CategoriasPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
+            ],
+        })
+    ], CategoriasPageModule);
+    return CategoriasPageModule;
+}());
+
+//# sourceMappingURL=categorias.module.js.map
+
+/***/ }),
+
+/***/ 729:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConverteListaIonItemDivider; });
+var ConverteListaIonItemDivider = /** @class */ (function () {
+    function ConverteListaIonItemDivider() {
+    }
+    /**
+     * name
+     */
+    ConverteListaIonItemDivider.prototype.retornaArrayGroup = function (responseSorte) {
+        var itens = [];
+        var itensOrdenados = [];
+        var letraAtual = "";
+        var itensAtuaisDeRetorno = [];
+        itensOrdenados = responseSorte;
+        itensOrdenados.forEach(function (value, index) {
+            if (value.nome.charAt(0) != letraAtual) {
+                letraAtual = value.nome.charAt(0);
+                var newGroup = {
+                    letra: letraAtual,
+                    arrayDeItens: []
+                };
+                itensAtuaisDeRetorno = newGroup.arrayDeItens;
+                itens.push(newGroup);
+            }
+            itensAtuaisDeRetorno.push(value);
+        });
+        return itens;
+    };
+    return ConverteListaIonItemDivider;
+}());
+
+//# sourceMappingURL=converte-list-ionitemdivider.js.map
+
+/***/ }),
+
+/***/ 883:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriasPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(729);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the CategoriasPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CategoriasPage = /** @class */ (function () {
+    function CategoriasPage(navCtrl, navParams, CategoriaService, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.CategoriaService = CategoriaService;
+        this.modalCtrl = modalCtrl;
+        this.itensCategorias = [];
+    }
+    CategoriasPage.prototype.openModal = function () {
+        var _this = this;
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroCategoriaPage');
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    CategoriasPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
+    };
+    CategoriasPage.prototype.getItens = function () {
+        var _this = this;
+        this.CategoriaService.findAll()
+            .subscribe(function (response) {
+            _this.itensCategorias = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
+        }, function (error) { });
+    };
+    CategoriasPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-categorias',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/'<!--\n\n  Generated template for the CategoriasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar class="categoria2">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="categoria2">\n\n\n\n\n\n\n\n<ion-item-group *ngFor="let item of itensCategorias">\n\n\n\n  <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n  <ion-item *ngFor="let it of item.arrayDeItens">\n\n    <h3>{{it.nome}}</h3>\n\n  </ion-item>\n\n\n\n</ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__["a" /* CategoriaService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ModalController */]])
+    ], CategoriasPage);
+    return CategoriasPage;
+}());
+
+//# sourceMappingURL=categorias.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=8.js.map

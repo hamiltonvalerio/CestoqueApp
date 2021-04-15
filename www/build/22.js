@@ -1,1 +1,130 @@
-webpackJsonp([22],{679:function(n,l,e){"use strict";function u(n){return d["ɵvid"](0,[(n()(),d["ɵted"](-1,null,["\n"])),(n()(),d["ɵeld"](1,0,null,null,32,"ion-header",[],null,null,null,null,null)),d["ɵdid"](2,16384,null,0,R.a,[b.a,d.ElementRef,d.Renderer,[2,v.a]],null,null),(n()(),d["ɵted"](-1,null,["\n  "])),(n()(),d["ɵeld"](4,0,null,null,28,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,h.b,h.a)),d["ɵdid"](5,49152,null,0,E.a,[_.a,[2,v.a],[2,P.a],b.a,d.ElementRef,d.Renderer],null,null),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](7,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,l,e){var u=!0;if("click"===l){u=!1!==d["ɵnov"](n,9).toggle()&&u}return u},y.b,y.a)),d["ɵdid"](8,1097728,[[1,4]],0,C.a,[[8,""],b.a,d.ElementRef,d.Renderer],null,null),d["ɵdid"](9,1064960,null,0,k.a,[F.a,[2,v.a],[2,C.a],[2,E.a]],{menuToggle:[0,"menuToggle"]},null),d["ɵdid"](10,16384,null,1,L.a,[b.a,d.ElementRef,d.Renderer,[2,w.a],[2,E.a]],null,null),d["ɵqud"](603979776,1,{_buttons:1}),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵeld"](13,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](14,147456,null,0,D.a,[b.a,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(n()(),d["ɵted"](-1,0,["\n    "])),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](17,0,null,3,2,"ion-title",[],null,null,null,M.b,M.a)),d["ɵdid"](18,49152,null,0,N.a,[b.a,d.ElementRef,d.Renderer,[2,w.a],[2,E.a]],null,null),(n()(),d["ɵted"](-1,0,["Produção"])),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](21,0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),d["ɵdid"](22,16384,null,1,L.a,[b.a,d.ElementRef,d.Renderer,[2,w.a],[2,E.a]],null,null),d["ɵqud"](603979776,2,{_buttons:1}),(n()(),d["ɵted"](-1,null,["\n      "])),(n()(),d["ɵeld"](25,0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,null,null,y.b,y.a)),d["ɵdid"](26,1097728,[[2,4]],0,C.a,[[8,""],b.a,d.ElementRef,d.Renderer],null,null),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵeld"](28,0,null,0,1,"ion-icon",[["name","add-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](29,147456,null,0,D.a,[b.a,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵted"](-1,null,["\n    "])),(n()(),d["ɵted"](-1,3,["\n  "])),(n()(),d["ɵted"](-1,null,["\n"])),(n()(),d["ɵted"](-1,null,["\n\n"])),(n()(),d["ɵeld"](35,0,null,null,2,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,T.b,T.a)),d["ɵdid"](36,4374528,null,0,q.a,[b.a,O.a,V.a,d.ElementRef,d.Renderer,_.a,j.a,d.NgZone,[2,v.a],[2,P.a]],null,null),(n()(),d["ɵted"](-1,1,["\n\n"])),(n()(),d["ɵted"](-1,null,["\n"]))],function(n,l){n(l,9,0,"");n(l,14,0,"menu");n(l,29,0,"add-circle")},function(n,l){n(l,4,0,d["ɵnov"](l,5)._hidden,d["ɵnov"](l,5)._sbPadding);n(l,7,0,d["ɵnov"](l,9).isHidden);n(l,13,0,d["ɵnov"](l,14)._hidden);n(l,28,0,d["ɵnov"](l,29)._hidden);n(l,35,0,d["ɵnov"](l,36).statusbarPadding,d["ɵnov"](l,36)._hasRefresher)})}Object.defineProperty(l,"__esModule",{value:!0});var d=e(1),a=(e(0),e(81),function(){function n(n,l){this.navCtrl=n,this.navParams=l}return n.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad ProducaoPage")},n}()),t=function(){return function(){}}(),o=e(187),r=e(188),i=e(189),c=e(190),m=e(191),s=e(192),f=e(193),p=e(194),g=e(195),R=e(82),b=e(3),v=e(7),h=e(368),E=e(38),_=e(12),P=e(29),y=e(41),C=e(27),k=e(200),F=e(34),L=e(121),w=e(42),D=e(43),M=e(197),N=e(60),T=e(196),q=e(31),O=e(6),V=e(13),j=e(33),A=e(16),H=d["ɵcrt"]({encapsulation:2,styles:[],data:{}}),I=d["ɵccf"]("page-producao",a,function(n){return d["ɵvid"](0,[(n()(),d["ɵeld"](0,0,null,null,1,"page-producao",[],null,null,null,u,H)),d["ɵdid"](1,49152,null,0,a,[P.a,A.a],null,null)],null,null)},{},{},[]),J=e(15),Z=e(19),x=e(120),z=e(52);e.d(l,"ProducaoPageModuleNgFactory",function(){return B});var B=d["ɵcmf"](t,[],function(n){return d["ɵmod"]([d["ɵmpd"](512,d.ComponentFactoryResolver,d["ɵCodegenComponentFactoryResolver"],[[8,[o.a,r.a,i.a,c.a,m.a,s.a,f.a,p.a,g.a,I]],[3,d.ComponentFactoryResolver],d.NgModuleRef]),d["ɵmpd"](4608,J.l,J.k,[d.LOCALE_ID,[2,J.u]]),d["ɵmpd"](4608,Z.r,Z.r,[]),d["ɵmpd"](4608,Z.d,Z.d,[]),d["ɵmpd"](512,J.b,J.b,[]),d["ɵmpd"](512,Z.p,Z.p,[]),d["ɵmpd"](512,Z.g,Z.g,[]),d["ɵmpd"](512,Z.n,Z.n,[]),d["ɵmpd"](512,x.a,x.a,[]),d["ɵmpd"](512,x.b,x.b,[]),d["ɵmpd"](512,t,t,[]),d["ɵmpd"](256,z.a,a,[])])})}});
+webpackJsonp([22],{
+
+/***/ 703:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUnidadePageModule", function() { return CadastroUnidadePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__ = __webpack_require__(882);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var CadastroUnidadePageModule = /** @class */ (function () {
+    function CadastroUnidadePageModule() {
+    }
+    CadastroUnidadePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */]),
+            ],
+        })
+    ], CadastroUnidadePageModule);
+    return CadastroUnidadePageModule;
+}());
+
+//# sourceMappingURL=cadastro-unidade.module.js.map
+
+/***/ }),
+
+/***/ 882:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUnidadePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the CadastroUnidadePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CadastroUnidadePage = /** @class */ (function () {
+    function CadastroUnidadePage(navCtrl, viewCtrl, alertCtrl, navParams, formBuilder, unidadeService) {
+        this.navCtrl = navCtrl;
+        this.viewCtrl = viewCtrl;
+        this.alertCtrl = alertCtrl;
+        this.navParams = navParams;
+        this.formBuilder = formBuilder;
+        this.unidadeService = unidadeService;
+        this.formGroup = this.formBuilder.group({
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            sigla: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
+        }, {});
+    }
+    CadastroUnidadePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CadastroUnidadePage');
+    };
+    CadastroUnidadePage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    CadastroUnidadePage.prototype.cadastrarUnidade = function () {
+        var _this = this;
+        this.unidadeService.insert(this.formGroup.value).subscribe(function (response) {
+            _this.showInserOk();
+        }, function (error) { });
+    };
+    CadastroUnidadePage.prototype.showInserOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro efetuado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    CadastroUnidadePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-cadastro-unidade',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/'<!--\n\n  Generated template for the CadastroUnidadePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Unidade\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  \n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarUnidade()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Sigla*</ion-label>\n\n      <ion-input formControlName="sigla" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.sigla.dirty && formGroup.controls.sigla.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__["a" /* UnidadeService */]])
+    ], CadastroUnidadePage);
+    return CadastroUnidadePage;
+}());
+
+//# sourceMappingURL=cadastro-unidade.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=22.js.map

@@ -1,1 +1,95 @@
-webpackJsonp([21],{680:function(n,l,e){"use strict";function u(n){return d["ɵvid"](0,[(n()(),d["ɵted"](-1,null,["\n"])),(n()(),d["ɵeld"](1,0,null,null,32,"ion-header",[],null,null,null,null,null)),d["ɵdid"](2,16384,null,0,R.a,[b.a,d.ElementRef,d.Renderer,[2,v.a]],null,null),(n()(),d["ɵted"](-1,null,["\n  "])),(n()(),d["ɵeld"](4,0,null,null,28,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,h.b,h.a)),d["ɵdid"](5,49152,null,0,E.a,[_.a,[2,v.a],[2,P.a],b.a,d.ElementRef,d.Renderer],null,null),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](7,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(n,l,e){var u=!0;if("click"===l){u=!1!==d["ɵnov"](n,9).toggle()&&u}return u},y.b,y.a)),d["ɵdid"](8,1097728,[[1,4]],0,C.a,[[8,""],b.a,d.ElementRef,d.Renderer],null,null),d["ɵdid"](9,1064960,null,0,k.a,[F.a,[2,v.a],[2,C.a],[2,E.a]],{menuToggle:[0,"menuToggle"]},null),d["ɵdid"](10,16384,null,1,L.a,[b.a,d.ElementRef,d.Renderer,[2,w.a],[2,E.a]],null,null),d["ɵqud"](603979776,1,{_buttons:1}),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵeld"](13,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](14,147456,null,0,D.a,[b.a,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(n()(),d["ɵted"](-1,0,["\n    "])),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](17,0,null,3,2,"ion-title",[],null,null,null,M.b,M.a)),d["ɵdid"](18,49152,null,0,N.a,[b.a,d.ElementRef,d.Renderer,[2,w.a],[2,E.a]],null,null),(n()(),d["ɵted"](-1,0,["Produtos"])),(n()(),d["ɵted"](-1,3,["\n    "])),(n()(),d["ɵeld"](21,0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),d["ɵdid"](22,16384,null,1,L.a,[b.a,d.ElementRef,d.Renderer,[2,w.a],[2,E.a]],null,null),d["ɵqud"](603979776,2,{_buttons:1}),(n()(),d["ɵted"](-1,null,["\n      "])),(n()(),d["ɵeld"](25,0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,null,null,y.b,y.a)),d["ɵdid"](26,1097728,[[2,4]],0,C.a,[[8,""],b.a,d.ElementRef,d.Renderer],null,null),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵeld"](28,0,null,0,1,"ion-icon",[["name","add-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d["ɵdid"](29,147456,null,0,D.a,[b.a,d.ElementRef,d.Renderer],{name:[0,"name"]},null),(n()(),d["ɵted"](-1,0,["\n      "])),(n()(),d["ɵted"](-1,null,["\n    "])),(n()(),d["ɵted"](-1,3,["\n  "])),(n()(),d["ɵted"](-1,null,["\n"])),(n()(),d["ɵted"](-1,null,["\n\n"])),(n()(),d["ɵeld"](35,0,null,null,2,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,T.b,T.a)),d["ɵdid"](36,4374528,null,0,q.a,[b.a,O.a,V.a,d.ElementRef,d.Renderer,_.a,j.a,d.NgZone,[2,v.a],[2,P.a]],null,null),(n()(),d["ɵted"](-1,1,["\n\n"])),(n()(),d["ɵted"](-1,null,["\n"]))],function(n,l){n(l,9,0,"");n(l,14,0,"menu");n(l,29,0,"add-circle")},function(n,l){n(l,4,0,d["ɵnov"](l,5)._hidden,d["ɵnov"](l,5)._sbPadding);n(l,7,0,d["ɵnov"](l,9).isHidden);n(l,13,0,d["ɵnov"](l,14)._hidden);n(l,28,0,d["ɵnov"](l,29)._hidden);n(l,35,0,d["ɵnov"](l,36).statusbarPadding,d["ɵnov"](l,36)._hasRefresher)})}Object.defineProperty(l,"__esModule",{value:!0});var d=e(1),a=(e(0),e(81),function(){function n(n,l){this.navCtrl=n,this.navParams=l}return n.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad ProdutoPage")},n}()),t=function(){return function(){}}(),o=e(187),r=e(188),i=e(189),m=e(190),c=e(191),s=e(192),f=e(193),p=e(194),g=e(195),R=e(82),b=e(3),v=e(7),h=e(368),E=e(38),_=e(12),P=e(29),y=e(41),C=e(27),k=e(200),F=e(34),L=e(121),w=e(42),D=e(43),M=e(197),N=e(60),T=e(196),q=e(31),O=e(6),V=e(13),j=e(33),A=e(16),H=d["ɵcrt"]({encapsulation:2,styles:[],data:{}}),I=d["ɵccf"]("page-produto",a,function(n){return d["ɵvid"](0,[(n()(),d["ɵeld"](0,0,null,null,1,"page-produto",[],null,null,null,u,H)),d["ɵdid"](1,49152,null,0,a,[P.a,A.a],null,null)],null,null)},{},{},[]),J=e(15),Z=e(19),x=e(120),z=e(52);e.d(l,"ProdutoPageModuleNgFactory",function(){return B});var B=d["ɵcmf"](t,[],function(n){return d["ɵmod"]([d["ɵmpd"](512,d.ComponentFactoryResolver,d["ɵCodegenComponentFactoryResolver"],[[8,[o.a,r.a,i.a,m.a,c.a,s.a,f.a,p.a,g.a,I]],[3,d.ComponentFactoryResolver],d.NgModuleRef]),d["ɵmpd"](4608,J.l,J.k,[d.LOCALE_ID,[2,J.u]]),d["ɵmpd"](4608,Z.r,Z.r,[]),d["ɵmpd"](4608,Z.d,Z.d,[]),d["ɵmpd"](512,J.b,J.b,[]),d["ɵmpd"](512,Z.p,Z.p,[]),d["ɵmpd"](512,Z.g,Z.g,[]),d["ɵmpd"](512,Z.n,Z.n,[]),d["ɵmpd"](512,x.a,x.a,[]),d["ɵmpd"](512,x.b,x.b,[]),d["ɵmpd"](512,t,t,[]),d["ɵmpd"](256,z.a,a,[])])})}});
+webpackJsonp([21],{
+
+/***/ 705:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(884);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var DashboardPageModule = /** @class */ (function () {
+    function DashboardPageModule() {
+    }
+    DashboardPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]),
+            ],
+        })
+    ], DashboardPageModule);
+    return DashboardPageModule;
+}());
+
+//# sourceMappingURL=dashboard.module.js.map
+
+/***/ }),
+
+/***/ 884:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the DashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DashboardPage = /** @class */ (function () {
+    function DashboardPage(navCtrl, navParams, insumoService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.insumoService = insumoService;
+    }
+    DashboardPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.insumoService.findAll().subscribe(function (tot) {
+            _this.totalinsumos = tot.length;
+        });
+    };
+    DashboardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-dashboard',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n          <ion-card class="card-azul">\n\n\n\n            <ion-card-header>\n\n              <ion-card-title>INSUMOS</ion-card-title>\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n              <h1>{{totalinsumos}} Insumos Cadastrados</h1>\n\n            </ion-card-content>\n\n          </ion-card>\n\n\n\n\n\n          <ion-card class="card-amarelo">\n\n\n\n            <ion-card-header>\n\n              <ion-card-title>INSUMOS</ion-card-title>\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n              <h1>0 Perto do Vencimento</h1>\n\n            </ion-card-content>\n\n          </ion-card>\n\n\n\n          <ion-card class="card-amarelo">\n\n\n\n            <ion-card-header >\n\n              <ion-card-title>INSUMOS</ion-card-title>\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n              <h1>0 Insumos com quantidade mínima ultrapassada</h1>\n\n            </ion-card-content>\n\n          </ion-card>\n\n\n\n          <ion-card class="card-vermelho">\n\n\n\n            <ion-card-header>\n\n              <ion-card-title>INSUMOS</ion-card-title>\n\n            </ion-card-header>\n\n            <ion-card-content>\n\n              <h1>0 Insumos Vencidos</h1>\n\n            </ion-card-content>\n\n          </ion-card>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\dashboard\dashboard.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */]])
+    ], DashboardPage);
+    return DashboardPage;
+}());
+
+//# sourceMappingURL=dashboard.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=21.js.map
