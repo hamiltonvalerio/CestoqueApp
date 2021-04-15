@@ -1,27 +1,26 @@
 {
-  "_from": "cordova-plugin-inappbrowser",
+  "_from": "cordova-plugin-inappbrowser@^5.0.0",
   "_id": "cordova-plugin-inappbrowser@5.0.0",
   "_inBundle": false,
   "_integrity": "sha512-MqnpmUQ/iy6hxtIGDdlIhy8aNi1pNanLATpbnkk7uCqW9YQ4rH/dGK9zESbZ50pUi2A2D2QMjBXNV175TJK5OQ==",
   "_location": "/cordova-plugin-inappbrowser",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-inappbrowser",
+    "raw": "cordova-plugin-inappbrowser@^5.0.0",
     "name": "cordova-plugin-inappbrowser",
     "escapedName": "cordova-plugin-inappbrowser",
-    "rawSpec": "",
+    "rawSpec": "^5.0.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^5.0.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-inappbrowser/-/cordova-plugin-inappbrowser-5.0.0.tgz",
   "_shasum": "2f1cf3ebfecf43bdd175a74743ee426832054951",
-  "_spec": "cordova-plugin-inappbrowser",
+  "_spec": "cordova-plugin-inappbrowser@^5.0.0",
   "_where": "C:\\DesenvolvimentoApp\\CestoqueApp",
   "author": {
     "name": "Apache Software Foundation"

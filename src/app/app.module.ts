@@ -1,4 +1,4 @@
-import { ModalQuantidademinimaPage } from './../pages/modal-quantidademinima/modal-quantidademinima';
+import { DateFormatPipe } from './../utils/date-format';
 import { MovimentacaoService } from './../services/domain/movimentacao.service';
 import { DateTimeFormatPipe } from './../utils/date-time-format';
 import { EntradaService } from './../services/domain/entrada.service';
@@ -31,10 +31,13 @@ import { IonicSelectableModule } from 'ionic-selectable';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
+
 @NgModule({
   declarations: [
     MyApp,
-    ModalQuantidademinimaPage
+    DateTimeFormatPipe,
+    DateFormatPipe
+
   ],
   imports: [
     BrowserModule,
@@ -42,11 +45,11 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
     BrowserAnimationsModule,
-    IonicSelectableModule
+    IonicSelectableModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp, ModalQuantidademinimaPage,
+    MyApp, 
   ],
   providers: [
     StatusBar,
@@ -65,6 +68,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     EntradaService,
     MovimentacaoService,
     DateTimeFormatPipe,
+    DateFormatPipe,
     InAppBrowser,
   ]
 })

@@ -1,5 +1,5 @@
 {
-  "_from": "cordova-plugin-ionic-webview@^4.0.0",
+  "_from": "cordova-plugin-ionic-webview@^4.2.1",
   "_id": "cordova-plugin-ionic-webview@4.2.1",
   "_inBundle": false,
   "_integrity": "sha512-7KrmqLaOGq1RP8N2z1ezN1kqkWFzTwwMvQ3/qAkd+exxFZuOe3DIN4eaU1gdNphsxdirI8Ajnr9q4So5vQbWqw==",
@@ -8,21 +8,20 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-ionic-webview@^4.0.0",
+    "raw": "cordova-plugin-ionic-webview@^4.2.1",
     "name": "cordova-plugin-ionic-webview",
     "escapedName": "cordova-plugin-ionic-webview",
-    "rawSpec": "^4.0.0",
+    "rawSpec": "^4.2.1",
     "saveSpec": null,
-    "fetchSpec": "^4.0.0"
+    "fetchSpec": "^4.2.1"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-ionic-webview/-/cordova-plugin-ionic-webview-4.2.1.tgz",
   "_shasum": "42a67bef248472659d421494feb8245ef27becfa",
-  "_spec": "cordova-plugin-ionic-webview@^4.0.0",
-  "_where": "C:\\Desenvolvimento_ipen_ionic\\CestoqueApp",
+  "_spec": "cordova-plugin-ionic-webview@^4.2.1",
+  "_where": "C:\\DesenvolvimentoApp\\CestoqueApp",
   "author": {
     "name": "Ionic Team"
   },

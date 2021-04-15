@@ -31,7 +31,6 @@
     "angular2-jwt": "^0.2.3",
     "angular2-text-mask": "^9.0.0",
     "brmasker-ionic-3": "^1.6.3",
-    "cordova-android": "8.1.0",
     "cordova-plugin-android-permissions": "1.1.2",
     "cordova-plugin-inappbrowser": "^5.0.0",
     "ionic-angular": "3.9.9",
@@ -50,6 +49,8 @@
   "devDependencies": {
     "@ionic/app-scripts": "3.2.4",
     "@ionic/lab": "3.2.10",
+    "cordova-android": "^9.1.0",
+    "cordova-browser": "^6.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
@@ -73,7 +74,8 @@
       "cordova-plugin-android-permissions": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

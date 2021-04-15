@@ -36,6 +36,10 @@
               "count": 1
             },
             {
+              "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+              "count": 1
+            },
+            {
               "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             },
@@ -89,6 +93,9 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "br.ipen.cestoque"
+    },
     "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
@@ -122,6 +129,14 @@
       "pluginId": "cordova-plugin-device",
       "clobbers": [
         "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
       ]
     },
     {
@@ -159,11 +174,12 @@
   ],
   "plugin_metadata": {
     "cordova-plugin-android-permissions": "1.1.2",
-    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-device": "2.0.3",
+    "cordova-plugin-inappbrowser": "5.0.0",
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "cordova-plugin-ionic-webview": "4.2.1",
-    "cordova-plugin-splashscreen": "5.0.2",
-    "cordova-plugin-statusbar": "2.4.2",
-    "cordova-plugin-whitelist": "1.3.3"
+    "cordova-plugin-splashscreen": "5.0.4",
+    "cordova-plugin-statusbar": "2.4.3",
+    "cordova-plugin-whitelist": "1.3.4"
   }
 }

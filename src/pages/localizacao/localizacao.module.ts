@@ -1,13 +1,15 @@
+import { ModalQuantidademinimaPage } from './../modal-quantidademinima/modal-quantidademinima';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { LocalizacaoPage } from './localizacao';
 
 @NgModule({
   declarations: [
-    LocalizacaoPage,
+    LocalizacaoPage
   ],
   imports: [
     IonicPageModule.forChild(LocalizacaoPage),
   ],
+  
 })
 export class LocalizacaoPageModule {}

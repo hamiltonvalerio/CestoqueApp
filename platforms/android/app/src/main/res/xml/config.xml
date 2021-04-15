@@ -6,6 +6,9 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
@@ -30,7 +33,7 @@
     <name>Sistema de Controle de Estoque</name>
     <description>Controle de estoque e rastreamento de insumos.</description>
     <author email="hamilton@valerio.eti.br" href="http://www.valerio.eti.br/">Hamilton Valério Filho</author>
-    <content original-src="index.html" src="http://10.0.34.238:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -65,7 +68,7 @@
     <preference name="loglevel" value="DEBUG" />
     <preference name="webView" value="com.ionicframework.cordova.webview.IonicWebViewEngine" />
     <preference name="ScrollEnabled" value="false" />
-    <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-minSdkVersion" value="28" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="FadeSplashScreenDuration" value="300" />

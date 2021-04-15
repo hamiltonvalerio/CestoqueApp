@@ -3,9 +3,8 @@ import { ModalQuantidademinimaPage } from './../modal-quantidademinima/modal-qua
 import { InsumoService } from './../../services/domain/insumo.service';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ModalController, ViewController, AlertController } from 'ionic-angular';
-import { InsumoDTO } from '../../models/insumo.dto';
-import { ConverteListaIonItemDivider } from '../../utils/converte-list-ionitemdivider';
+import { IonicPage, NavController, NavParams, LoadingController, ModalController, ViewController, AlertController} from 'ionic-angular';
+
 
 /**
  * Generated class for the LocalizacaoInsumosPage page.
@@ -44,15 +43,16 @@ export class LocalizacaoInsumosPage {
   }
 
   atualizaQtdMinima(event: Event){
+    console.log("ENTROU")
     console.log(event)
-    let modalQuantidademinimaPage =  this.modal.create(ModalQuantidademinimaPage, {evento: event});
-    modalQuantidademinimaPage.present();
-    modalQuantidademinimaPage.onDidDismiss(data => {
+    let modalQuantidademinimaPage  =  this.modal.create('ModalQuantidademinimaPage', {evento: event});
+    modalQuantidademinimaPage.onDidDismiss(() => {
       this.getItens(); 
     });
+    modalQuantidademinimaPage.present();
   }
 
-  
+ 
 
   /*getItens(){
     let localizacaoId = this.navParams.get('localizacao_id');

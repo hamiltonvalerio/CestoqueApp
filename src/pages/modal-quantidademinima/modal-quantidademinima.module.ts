@@ -11,5 +11,6 @@ import { ModalQuantidademinimaPage } from './modal-quantidademinima';
     IonicPageModule.forChild(ModalQuantidademinimaPage),
     DirectivesModule
   ],
+  exports: [ModalQuantidademinimaPage]
 })
 export class ModalQuantidademinimaPageModule {}

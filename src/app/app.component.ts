@@ -23,12 +23,13 @@ export class MyApp {
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen, 
     public auth: AuthService) {
-    this.initializeApp();
+    
 
     this.platform.ready().then(() => {
       this.platform.registerBackButtonAction(() => {
           app.navPop();
       });
+      this.initializeApp();
   }) 
 
     // used for an example of ngFor and navigation

@@ -12,5 +12,6 @@ import { LocalizacaoInsumosPage } from './localizacao-insumos';
     IonicPageModule.forChild(LocalizacaoInsumosPage),
     TooltipsModule.forRoot(),
   ],
+  
 })
 export class LocalizacaoInsumosPageModule {}

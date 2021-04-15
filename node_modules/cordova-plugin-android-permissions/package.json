@@ -1,28 +1,27 @@
 {
-  "_from": "cordova-plugin-android-permissions",
+  "_from": "cordova-plugin-android-permissions@1.1.2",
   "_id": "cordova-plugin-android-permissions@1.1.2",
   "_inBundle": false,
   "_integrity": "sha512-vJd56gLaSgQnB/4+uUjyVwVAii5TszBPAgjVkGvM8658cP5rjiNFAWmoOYkjeSe1I6dJk+MGrh/GbPkn0a+2OA==",
   "_location": "/cordova-plugin-android-permissions",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-android-permissions",
+    "raw": "cordova-plugin-android-permissions@1.1.2",
     "name": "cordova-plugin-android-permissions",
     "escapedName": "cordova-plugin-android-permissions",
-    "rawSpec": "",
+    "rawSpec": "1.1.2",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "1.1.2"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-android-permissions/-/cordova-plugin-android-permissions-1.1.2.tgz",
   "_shasum": "ef1ef9a3e596066bf27b1bb4fb96f2331ed48d19",
-  "_spec": "cordova-plugin-android-permissions",
-  "_where": "C:\\Desenvolvimento_ipen_ionic\\CestoqueApp",
+  "_spec": "cordova-plugin-android-permissions@1.1.2",
+  "_where": "C:\\DesenvolvimentoApp\\CestoqueApp",
   "author": {
     "name": "Jason Yang"
   },
