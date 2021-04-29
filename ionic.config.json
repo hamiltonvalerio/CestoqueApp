@@ -1,8 +1,8 @@
 {
   "name": "CestoqueApp",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
-  "type": "ionic-angular",
-  "app_id": ""
+  "type": "ionic-angular"
 }

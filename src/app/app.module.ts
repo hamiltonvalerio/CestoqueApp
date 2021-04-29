@@ -32,6 +32,7 @@ import { IonicSelectableModule } from 'ionic-selectable';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -70,6 +71,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     DateTimeFormatPipe,
     DateFormatPipe,
     InAppBrowser,
+
   ]
 })
 export class AppModule {}

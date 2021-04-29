@@ -74,27 +74,15 @@
 
    
   </ion-item>
+
   <ion-item color="item_entrada">
-    <ion-label>Número requisição</ion-label>
-    <ion-input type="text" [(ngModel)]="numRequisicao"> </ion-input>
-  </ion-item>
-  <ion-item color="item_entrada">
-    <ion-label>Número documento (LIA)</ion-label>
+    <ion-label>Número requisição (LIA)</ion-label>
     <ion-input type="text" [(ngModel)]="numLIA"> </ion-input>
   </ion-item>
-  <ion-item color="item_entrada">
-    <ion-label>Número processo</ion-label>
-    <ion-input type="text" [(ngModel)]="numProcesso"> </ion-input>
-  </ion-item>
-
-
-
-
-
-
+ 
   <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereListaEntrada()">
   <ion-item>
-    <ion-label>Insumos</ion-label>
+    <ion-label>Descrição do Insumo</ion-label>
     <ionic-selectable 
       item-content 
       [(ngModel)]="citemInsumo"
@@ -190,7 +178,7 @@
     </ionic-selectable>
   </ion-item>
   <ion-item>
-    <ion-label>Lote Fornecedor</ion-label>
+    <ion-label>Lote Fabricante</ion-label>
     <ion-input type="text" formControlName="loteFornecedor"> </ion-input>
   </ion-item>
   <ion-item>
@@ -202,12 +190,8 @@
     <ion-datetime formControlName="dataIrradiacao" displayFormat="DD/MMM/YYYY" max="2099" pickerFormat="DD/MMM/YYYY"></ion-datetime>
   </ion-item>
   <ion-item>
-    <ion-label>Data Validade do Fornecedor</ion-label>
+    <ion-label>Data Validade do Fabricante</ion-label>
     <ion-datetime formControlName="dataValidade" displayFormat="DD/MMM/YYYY" max="2099" pickerFormat="DD/MMM/YYYY"></ion-datetime>
-  </ion-item>
-  <ion-item>
-    <ion-label >Valor Total</ion-label>
-    <ion-input type="number" formControlName="valorTotal">  </ion-input>
   </ion-item>
   <ion-item>
     <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>
@@ -245,9 +229,6 @@
       <ion-col col-1>
         Dt Validade do Forn.
       </ion-col>
-      <ion-col col-1>
-        Valor Total
-      </ion-col>
       <ion-col col-2>
         Exc
       </ion-col>
@@ -276,9 +257,6 @@
       </ion-col>
       <ion-col col-1>
         {{ient.dataValidade | date: 'dd/MM/yyyy'}}
-      </ion-col>
-      <ion-col col-1>
-        {{ient.valorTotal}}
       </ion-col>
       <ion-col col-2>
         <ion-icon name="close-circle" (click)="excluiItem(ient)"></ion-icon>

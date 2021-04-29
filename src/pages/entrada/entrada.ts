@@ -6,6 +6,8 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, NavPush } from 'ionic-angular';
 
 
+
+
 /**
  * Generated class for the EntradaPage page.
  *
@@ -33,12 +35,16 @@ export class EntradaPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public entradaService: EntradaService,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    ) {
    
   }
 
   ionViewDidLoad() {
     this.getItens();
+    /*this.printer.pick().then(result => {
+      console.log(result);
+    });*/
   }
 
   getItens(){
