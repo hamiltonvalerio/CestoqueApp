@@ -98,7 +98,7 @@ export class CadastroEntradaPage {
     public localizacaoService: LocalizacaoService,
     public entradaService: EntradaService,
     public dateTimeFormatPipe: DateTimeFormatPipe,
-    public unidadeService: UnidadeService
+    public unidadeService: UnidadeService,
     ) {
       
      
@@ -477,6 +477,15 @@ export class CadastroEntradaPage {
 
 
 
+  onUploadChange(ev) {
+    let myFile = ev.target.files;
+    console.log(myFile);
+    //let url = URL.createObjectURL(myFile);
+  
+    for (let i=0; i<myFile.length; i++) {
+      //this.readFile(myFile[i]);
+    }
+  }
 
     
   

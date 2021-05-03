@@ -1,3 +1,4 @@
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { DateFormatPipe } from './../utils/date-format';
 import { MovimentacaoService } from './../services/domain/movimentacao.service';
 import { DateTimeFormatPipe } from './../utils/date-time-format';
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IonicSelectableModule } from 'ionic-selectable';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 
 
@@ -71,7 +73,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     DateTimeFormatPipe,
     DateFormatPipe,
     InAppBrowser,
-
+    FileTransfer,
   ]
 })
 export class AppModule {}
