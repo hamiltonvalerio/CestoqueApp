@@ -76,10 +76,13 @@
     <ion-label>Número requisição (LIA)</ion-label>
     <ion-input type="text" [(ngModel)]="numLIA"> </ion-input>
   </ion-item>
+  
 
-  <ion-item color="item_entrada">
-    <input type="file"  (change)="onUploadChange($event)" multiple/>
-  </ion-item>
+    <ion-item color="item_entrada">
+      <input type="file"  (change)="onUploadChange($event)" multiple/>
+    </ion-item>
+
+  
 
 
   <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereListaEntrada()">

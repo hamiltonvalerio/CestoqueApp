@@ -44,6 +44,11 @@ export class CadastroEntradaPage {
   insumoEntrada : InsumoDTO;
 
   entrada : EntradaDTO;
+
+  formData = new FormData();
+  quantarquivos : number = 0;
+
+  testeFile : string;
   
   numeronf : number;
   numLIA : string;
@@ -56,6 +61,7 @@ export class CadastroEntradaPage {
   
   formControl : FormControl;
   formGroup : FormGroup;
+
 
   quantidade : number;
   valor: number;
@@ -120,15 +126,12 @@ export class CadastroEntradaPage {
   }
 
   ionViewDidLoad() {
-    console.log('Data entrada:'+ this.dataEntrada);
     this.loadData();
     this.loadFornecedor();
     this.loadLocalizacao();
     this.loadUnidades();
     //console.log("oia"+this.fornecedor);
   }
-
-  
 
   dismiss() {
     //this.navCtrl.push('EntradaPage', {}, {animate: true, direction: 'forward'});
@@ -195,7 +198,7 @@ export class CadastroEntradaPage {
     this.insumoService.findTotosPaginado(this.page, 30)
       .subscribe((response) => {
         let start = this.citensEntradas.length;
-          this.citensInsumos = this.citensInsumos.concat(response['content']);
+        this.citensInsumos = this.citensInsumos.concat(response['content']);
         let end = this.citensEntradas.length - 1;
         this.citensInsumos.forEach(function (value) {
           let insEnt : CInsumoEntradaDTO = {
@@ -212,7 +215,6 @@ export class CadastroEntradaPage {
           itensIns.push(insEnt);
         }); 
 
-        console.log("ITENSS "+itensIns[1].insumo.codigoalmox);
 
         this.citensEntradas = itensIns;
         //console.log(this.itensEntrada);
@@ -252,7 +254,6 @@ export class CadastroEntradaPage {
     }) {
      //this.fornecedor = {insumo: event.value, quantidade: 0, valor: 0};
      let text = event.text.trim().toLowerCase();
-     console.log("Busca esse:"+text);
      this.fornecedorService.findByNome(text).subscribe((response) => {
       this.fornecedores = response.sort();
       //console.log(this.fornecedores);
@@ -283,7 +284,7 @@ export class CadastroEntradaPage {
       
       this.cie = this.formGroup.value;
       this.cie.insumo.unidade = this.unidadeEntrada;
-      console.log(this.cie);
+    
 
 
       this.citensnovaentrada.push(this.formGroup.value);
@@ -320,7 +321,7 @@ export class CadastroEntradaPage {
      if(this.citensEntrada.insumo.unidade != null){
         this.unidadeEntrada = this.citensEntrada.insumo.unidade;
       }
-      console.log('insereInsumoEntradaDTO::', this.citensEntrada);
+      
     }
 
     insereunidadeRecebidaDTO(event: {
@@ -403,7 +404,7 @@ export class CadastroEntradaPage {
 
 
       });
-      console.log(this.dataEntrada);
+      
       this.entrada.dataEntrada = this.dateTimeFormatPipe.transform(this.dataEntrada);
       //this.entrada.dataEntrada = moment(this.dataEntrada).format('MM/DD/YYYY HH:mm');
       this.entrada.numLIA = this.numLIA;
@@ -411,13 +412,20 @@ export class CadastroEntradaPage {
       this.entrada.numRequisicao = this.numRequisicao;
       this.entrada.itens = this.citensnovaentrada;
       this.entrada.localizacao = this.localizacao;
-      console.log("this.entrada2: "+this.entrada.dataEntrada);
-      console.log("this.entrada2: "+this.entrada.itens[0].dataIrradiacao);
       this.entradaService.insert(this.entrada).subscribe(response => {
+       let msc = response;
+       console.log(msc);
+        if(this.quantarquivos > 0){
+          this.entradaService.insertArquivos(this.formData, 's').subscribe(response => {
+            this.showInsertOk();
+          },
+          error => {});
+        }
+
+
         this.showInsertOk();
       },
       error => {});
-      //console.log(this.entrada)
     }
 
     showInsertOk(){
@@ -475,16 +483,13 @@ export class CadastroEntradaPage {
 
   }
 
-
-
   onUploadChange(ev) {
-    let myFile = ev.target.files;
-    console.log(myFile);
-    //let url = URL.createObjectURL(myFile);
-  
-    for (let i=0; i<myFile.length; i++) {
-      //this.readFile(myFile[i]);
+    this.quantarquivos = 0;
+    for(let i=0;i<ev.target.files.length;i++){
+        this.formData.append('files', ev.target.files.item(i), ev.target.files.item(i).name);
     }
+    this.quantarquivos = ev.target.files.length;
+
   }
 
     

@@ -106,8 +106,8 @@ var Constants = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_CONFIG; });
 var API_CONFIG = {
     //baseUrl: "http://10.0.14.7:8080/cestoque-ipen"
-    //baseUrl: "http://localhost:8080"
-    baseUrl: "http://localhost:8080/cestoque"
+    baseUrl: "http://localhost:8080"
+    //baseUrl: "http://localhost:8080/cestoque"
     //baseUrl: "http://192.168.1.107:8080/cestoque"
 };
 //# sourceMappingURL=api.config.js.map
@@ -127,11 +127,11 @@ var map = {
 		26
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
-		699,
+		698,
 		0
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
-		698,
+		699,
 		25
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
@@ -187,15 +187,15 @@ var map = {
 		7
 	],
 	"../pages/manual/manual.module": [
-		715,
+		713,
 		17
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		713,
+		714,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		714,
+		715,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
@@ -729,7 +729,20 @@ var EntradaService = /** @class */ (function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/entradas");
     };
     EntradaService.prototype.insert = function (obj) {
+        console.log(obj);
         return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/entradas/", obj, {
+            observe: 'response',
+            responseType: 'text'
+        });
+    };
+    EntradaService.prototype.getFormData = function (object) {
+        var formData = new FormData();
+        Object.keys(object).forEach(function (key) { return formData.append(key, object[key]); });
+        return formData;
+    };
+    EntradaService.prototype.insertArquivos = function (obj, identrada) {
+        obj.append('identrada', identrada);
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/entradas/inserarquivos/", obj, {
             observe: 'response',
             responseType: 'text'
         });
@@ -840,8 +853,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
@@ -855,9 +868,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },

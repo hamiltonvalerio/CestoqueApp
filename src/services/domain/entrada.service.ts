@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/Rx';
 import { API_CONFIG } from './../../config/api.config';
 import { EntradaDTO } from './../../models/entrada.dto';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable()
@@ -15,7 +15,24 @@ export class EntradaService{
     }
 
     insert(obj: EntradaDTO){
+        console.log(obj);
         return this.http.post(`${API_CONFIG.baseUrl}/entradas/`,
+        obj,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
+    }
+
+    getFormData(object) {
+        const formData = new FormData();
+        Object.keys(object).forEach(key => formData.append(key, object[key]));
+        return formData;
+    }
+
+    insertArquivos(obj: FormData, identrada: string){
+        obj.append('identrada', identrada);
+        return this.http.post(`${API_CONFIG.baseUrl}/entradas/inserarquivos/`,
         obj,
         {
             observe: 'response',
