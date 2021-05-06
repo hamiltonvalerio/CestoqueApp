@@ -1,3 +1,4 @@
+import { EntradaArquivoDTO } from './entradaarquivo.dto';
 import { LocalizacaoDTO } from './localizacao.dto';
 import { CInsumoEntradaDTO } from './cinsumoentrada.dto';
 import { InsumoEntradaDTO } from "./insumoentrada.dto";
@@ -13,4 +14,5 @@ export interface EntradaDTO{
     show: Boolean;
     localizacao: LocalizacaoDTO;
     loteRecebimento: string;
+    arquivos: EntradaArquivoDTO[];
 }

@@ -47,6 +47,7 @@ export class CadastroEntradaPage {
 
   formData = new FormData();
   quantarquivos : number = 0;
+  ent : string = '';
 
   testeFile : string;
   
@@ -413,11 +414,12 @@ export class CadastroEntradaPage {
       this.entrada.itens = this.citensnovaentrada;
       this.entrada.localizacao = this.localizacao;
       this.entradaService.insert(this.entrada).subscribe(response => {
-      let ent = response['body'];
-      console.log(ent);
+      this.ent = '';
+      this.ent = response['body'];
+      console.log(this.ent);
         if(this.quantarquivos > 0){
-          this.entradaService.insertArquivos(this.formData, ent).subscribe(response => {
-            //this.showInsertOk();
+          this.entradaService.insertArquivos(this.formData, this.ent).subscribe(response => {
+            this.showInsertOk();
           },
           error => {});
         }else{
