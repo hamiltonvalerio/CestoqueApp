@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 698:
+/***/ 697:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(725);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_entrada__ = __webpack_require__(873);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_entrada__ = __webpack_require__(872);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_selectable__ = __webpack_require__(354);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2138,7 +2138,7 @@ var CadastroEntradaPageModule = /** @class */ (function () {
             try {
                 oldLocale = globalLocale._abbr;
                 aliasedRequire = require;
-                __webpack_require__(875)("./" + name);
+                __webpack_require__(874)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {
                 // mark as not found to avoid repeating expensive file require call causing high CPU
@@ -5718,7 +5718,7 @@ var CadastroEntradaPageModule = /** @class */ (function () {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(874)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(873)(module)))
 
 /***/ }),
 
@@ -21014,7 +21014,7 @@ var HideHeaderDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 873:
+/***/ 872:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21317,14 +21317,16 @@ var CadastroEntradaPage = /** @class */ (function () {
         this.entrada.itens = this.citensnovaentrada;
         this.entrada.localizacao = this.localizacao;
         this.entradaService.insert(this.entrada).subscribe(function (response) {
-            var msc = response;
-            console.log(msc);
+            var ent = response['body'];
+            console.log(ent);
             if (_this.quantarquivos > 0) {
-                _this.entradaService.insertArquivos(_this.formData, 's').subscribe(function (response) {
-                    _this.showInsertOk();
+                _this.entradaService.insertArquivos(_this.formData, ent).subscribe(function (response) {
+                    //this.showInsertOk();
                 }, function (error) { });
             }
-            _this.showInsertOk();
+            else {
+                _this.showInsertOk();
+            }
         }, function (error) { });
     };
     CadastroEntradaPage.prototype.showInsertOk = function () {
@@ -21394,7 +21396,7 @@ var CadastroEntradaPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 874:
+/***/ 873:
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -21423,7 +21425,7 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 875:
+/***/ 874:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -21712,7 +21714,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 875;
+webpackContext.id = 874;
 
 /***/ })
 

@@ -413,17 +413,17 @@ export class CadastroEntradaPage {
       this.entrada.itens = this.citensnovaentrada;
       this.entrada.localizacao = this.localizacao;
       this.entradaService.insert(this.entrada).subscribe(response => {
-       let msc = response;
-       console.log(msc);
+      let ent = response['body'];
+      console.log(ent);
         if(this.quantarquivos > 0){
-          this.entradaService.insertArquivos(this.formData, 's').subscribe(response => {
-            this.showInsertOk();
+          this.entradaService.insertArquivos(this.formData, ent).subscribe(response => {
+            //this.showInsertOk();
           },
           error => {});
+        }else{
+          this.showInsertOk();
         }
-
-
-        this.showInsertOk();
+        
       },
       error => {});
     }
