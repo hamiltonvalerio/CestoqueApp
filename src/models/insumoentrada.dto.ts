@@ -7,9 +7,12 @@ export interface InsumoEntradaDTO{
     dataIrradiacao: Date;
     dataVencIrradiacao: Date;
     dataValidade: Date;
+    dataFabricacao: Date;
 
     quantidade: number;
     valor: number;
 
     valorTotal: number;
+
+    quantidadeetiquetas: number;
 }

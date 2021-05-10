@@ -28309,6 +28309,10 @@ page-cadastro-movimentacao ion-row {
   align-items: center;
 }
 
+.tamanho-da-font {
+  font-size: 1.2rem;
+}
+
 page-home h3 {
   text-align: center;
 }

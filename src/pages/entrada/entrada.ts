@@ -102,4 +102,11 @@ export class EntradaPage {
         }});
  }
 
+ imprimirEtiquetas(ent : EntradaDTO){
+    this.entradaService.gerarEtiquetas(ent).subscribe(response => {
+     
+    },
+    error => {});
+ }
+
 }

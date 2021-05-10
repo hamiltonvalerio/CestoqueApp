@@ -39,4 +39,13 @@ export class EntradaService{
             responseType: 'text'
         });
     }
+
+    gerarEtiquetas(obj: EntradaDTO){
+        return this.http.post(`${API_CONFIG.baseUrl}/entradas/geraretiquetas/`,
+        obj,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
+    }
 }

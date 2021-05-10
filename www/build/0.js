@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 699:
+/***/ 698:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(725);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_entrada__ = __webpack_require__(874);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_entrada__ = __webpack_require__(873);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_selectable__ = __webpack_require__(354);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2138,7 +2138,7 @@ var CadastroEntradaPageModule = /** @class */ (function () {
             try {
                 oldLocale = globalLocale._abbr;
                 aliasedRequire = require;
-                __webpack_require__(876)("./" + name);
+                __webpack_require__(875)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {
                 // mark as not found to avoid repeating expensive file require call causing high CPU
@@ -5718,7 +5718,7 @@ var CadastroEntradaPageModule = /** @class */ (function () {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(875)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(874)(module)))
 
 /***/ }),
 
@@ -21014,7 +21014,7 @@ var HideHeaderDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 874:
+/***/ 873:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21166,9 +21166,11 @@ var CadastroEntradaPage = /** @class */ (function () {
                     dataIrradiacao: null,
                     dataVencIrradiacao: null,
                     dataValidade: null,
+                    dataFabricacao: null,
                     quantidade: 0,
                     valor: 0,
-                    valorTotal: 0
+                    valorTotal: 0,
+                    quantidadeetiquetas: 1
                 };
                 itensIns.push(insEnt);
             });
@@ -21245,9 +21247,11 @@ var CadastroEntradaPage = /** @class */ (function () {
             dataIrradiacao: null,
             dataVencIrradiacao: null,
             dataValidade: null,
+            dataFabricacao: null,
             quantidade: 0,
             valor: 0,
-            valorTotal: 0
+            valorTotal: 0,
+            quantidadeetiquetas: 1
         };
         if (this.citensEntrada.insumo.unidade != null) {
             this.unidadeEntrada = this.citensEntrada.insumo.unidade;
@@ -21408,7 +21412,7 @@ var CadastroEntradaPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 875:
+/***/ 874:
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -21437,7 +21441,7 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 876:
+/***/ 875:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -21726,7 +21730,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 876;
+webpackContext.id = 875;
 
 /***/ })
 

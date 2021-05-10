@@ -23,7 +23,7 @@
     <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">
       <ion-icon name="arrow-down"></ion-icon>
       <ion-item>
-        <p>Número da Requisição: {{ent.numRequisicao}}</p>
+        <p>Número da Requisição (LIA): {{ent.numLIA}}</p>
         <p>Data de Entrada: {{ent.dataEntrada}}</p>
         <p>Lote de Recebimento: {{ent.loteRecebimento}}</p>
       </ion-item>
@@ -33,26 +33,17 @@
       <ion-item>
       <ion-list *ngIf="ent.show">
         <ion-label>Detalhes</ion-label>
-        <p>Nº do Documento LIA: {{ent.numLIA}}</p>
-        <ion-list *ngFor="let ient of ent.itens">
-          <ion-row> <ion-col col-2>Produto:</ion-col> <ion-col col-8>{{ient.insumo.nome}}</ion-col>  </ion-row>
-          <ion-row><ion-col col-2>Quantidade Entrada:</ion-col> <ion-col col-8>{{ient.quantidade}}</ion-col></ion-row>
-          <ion-row><ion-col col-2>Quantidade Atual:</ion-col> <ion-col col-8>{{ient.insumo.quantidade}}</ion-col></ion-row>
-          <ion-row><ion-col col-2>Lote Fornecedor:</ion-col> <ion-col col-8>{{ient.loteFornecedor}}</ion-col></ion-row>
-          <ion-row><ion-col col-2>Lote CR: </ion-col><ion-col col-8>{{ient.loteCR}}</ion-col></ion-row>
-          <ion-row><ion-col col-2>Data de Irradiação: </ion-col><ion-col col-8>{{ient.dataIrradiacao | date: 'dd/MM/yyyy H:mm'}}</ion-col></ion-row>
-          <ion-row><ion-col col-2>Data de Validade: </ion-col><ion-col col-8>{{ient.dataValidade | date: 'dd/MM/yyyy'}}</ion-col></ion-row>
-          <ion-row><br></ion-row>
-        </ion-list>
+        <ion-grid *ngFor="let ient of ent.itens" class="tamanho-da-font">
+          <ion-row><ion-col>Produto: {{ient.insumo.nome}} </ion-col></ion-row>
+          <ion-row><ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col></ion-row>
+          <ion-row><ion-col>Lote CR: {{ient.loteCR}}</ion-col></ion-row>
+          <ion-row><ion-col>Data de Validade: {{ient.dataValidade | date: 'dd/MM/yyyy'}}</ion-col><ion-col>Data de Irradiação: {{ient.dataIrradiacao | date: 'dd/MM/yyyy H:mm'}}</ion-col></ion-row>
+          <ion-row><ion-col>Quantidade Entrada: {{ient.quantidade}}</ion-col><ion-col>Quantidade Atual: {{ient.insumo.quantidade}}</ion-col></ion-row>
+          <ion-row><ion-col>Quantidade de etiquetas: <input type="number" [(ngModel)]="ient.quantidadeetiquetas"> </ion-col></ion-row>
+        </ion-grid>
+        <button ion-button (click)="imprimirEtiquetas(ent)">Imprimir etiquetas</button>
       </ion-list>
     </ion-item>
-      <br /><br />
-      <div id="installedPrinters">
-        <label for="installedPrinterName">Select an installed Printer:</label>
-        <select name="installedPrinterName" id="installedPrinterName"></select>
-      </div>
-      <br /><br />
-      <button type="button" onclick="print();">Print Now...</button>
     </ion-card-content>
   </ion-card>
 </ion-content>

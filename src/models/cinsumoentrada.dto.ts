@@ -9,11 +9,14 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
     dataIrradiacao: Date;
     dataVencIrradiacao: Date;
     dataValidade: Date;
+    dataFabricacao: Date;
 
     quantidade: number;
     valor: number;
 
     valorTotal: number;
+
+    quantidadeetiquetas: number;
 
     constructor(ie: InsumoEntradaDTO){
         this.insumo= ie.insumo;
@@ -23,11 +26,13 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
         this.dataIrradiacao= ie.dataIrradiacao;
         this.dataVencIrradiacao= ie.dataVencIrradiacao;
         this.dataValidade = ie.dataValidade;
+        this.dataFabricacao = ie.dataFabricacao;
         this.quantidade= ie.quantidade;
         this.valor= ie.valor;
 
         this.valorTotal= ie.valorTotal;
 
+        this.quantidadeetiquetas = ie.quantidadeetiquetas;
     }
 
    

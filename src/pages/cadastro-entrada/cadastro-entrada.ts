@@ -209,9 +209,11 @@ export class CadastroEntradaPage {
             dataIrradiacao: null, 
             dataVencIrradiacao: null,
             dataValidade: null,
+            dataFabricacao: null,
             quantidade: 0, 
             valor: 0,
-            valorTotal: 0};
+            valorTotal: 0,
+            quantidadeetiquetas: 1};
           
           itensIns.push(insEnt);
         }); 
@@ -315,9 +317,11 @@ export class CadastroEntradaPage {
       dataIrradiacao: null, 
       dataVencIrradiacao: null,
       dataValidade: null,
+      dataFabricacao: null,
       quantidade: 0, 
       valor: 0,
-      valorTotal: 0};
+      valorTotal: 0,
+      quantidadeetiquetas: 1};
 
      if(this.citensEntrada.insumo.unidade != null){
         this.unidadeEntrada = this.citensEntrada.insumo.unidade;
