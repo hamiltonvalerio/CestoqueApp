@@ -35,8 +35,16 @@ export class InsumosPage {
   }
 
   openModal() {
-    console.log("aqui");
     let modal = this.modalCtrl.create('CadastroInsumoPage',{cssClass: 'select-modal' });
+    modal.onDidDismiss(() => {
+      this.getItens();
+    });
+    
+    modal.present();
+  }
+
+  openModalAjuste() {
+    let modal = this.modalCtrl.create('AjusteEstoquePage',{cssClass: 'select-modal' });
     modal.onDidDismiss(() => {
       this.getItens();
     });

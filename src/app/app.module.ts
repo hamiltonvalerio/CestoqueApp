@@ -1,3 +1,4 @@
+import { AjusteEstoqueService } from './../services/domain/ajusteestoque.service';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { DateFormatPipe } from './../utils/date-format';
 import { MovimentacaoService } from './../services/domain/movimentacao.service';
@@ -74,6 +75,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     DateFormatPipe,
     InAppBrowser,
     FileTransfer,
+    AjusteEstoqueService,
   ]
 })
 export class AppModule {}

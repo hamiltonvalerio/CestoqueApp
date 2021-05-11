@@ -56,7 +56,7 @@ export class CadastroEntradaPage {
   numProcesso: string;
   numRequisicao: string;
 
-  dataEntrada= moment().format();;
+  dataEntrada= moment().format();
   
   //itensInsumosx : InsumoDTO;
   
@@ -117,6 +117,7 @@ export class CadastroEntradaPage {
       loteARM: ['',],
       dataIrradiacao: ['',],
       dataValidade: ['',],
+      dataFabricacao: ['',],
       quantidade: ['',[Validators.required]],
       valor: ['',],
       valorTotal: ['',],

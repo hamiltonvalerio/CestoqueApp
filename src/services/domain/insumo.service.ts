@@ -82,5 +82,9 @@ export class InsumoService {
         });
     }
 
+    ajustarInsumo(){
+
+    }
+
 
 }
