@@ -6,6 +6,7 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
 
     loteFornecedor: string;
     loteCR: string;
+    loteARM: string;
     dataIrradiacao: Date;
     dataVencIrradiacao: Date;
     dataValidade: Date;
@@ -23,6 +24,7 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
         
         this.loteFornecedor= ie.loteFornecedor;
         this.loteCR= ie.loteCR;
+        this.loteARM = ie.loteARM;
         this.dataIrradiacao= ie.dataIrradiacao;
         this.dataVencIrradiacao= ie.dataVencIrradiacao;
         this.dataValidade = ie.dataValidade;
