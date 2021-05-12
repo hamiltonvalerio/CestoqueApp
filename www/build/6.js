@@ -1,16 +1,15 @@
 webpackJsonp([6],{
 
-/***/ 703:
+/***/ 716:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroMovimentacaoPageModule", function() { return CadastroMovimentacaoPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(726);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_movimentacao__ = __webpack_require__(883);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalQuantidademinimaPageModule", function() { return ModalQuantidademinimaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_quantidademinima__ = __webpack_require__(896);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,36 +20,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var CadastroMovimentacaoPageModule = /** @class */ (function () {
-    function CadastroMovimentacaoPageModule() {
+var ModalQuantidademinimaPageModule = /** @class */ (function () {
+    function ModalQuantidademinimaPageModule() {
     }
-    CadastroMovimentacaoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
+    ModalQuantidademinimaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_4__cadastro_movimentacao__["a" /* CadastroMovimentacaoPage */],
+                __WEBPACK_IMPORTED_MODULE_3__modal_quantidademinima__["a" /* ModalQuantidademinimaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_4__cadastro_movimentacao__["a" /* CadastroMovimentacaoPage */]),
-                __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__["a" /* IonicSelectableModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__modal_quantidademinima__["a" /* ModalQuantidademinimaPage */]),
                 __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__["a" /* DirectivesModule */]
             ],
+            exports: [__WEBPACK_IMPORTED_MODULE_3__modal_quantidademinima__["a" /* ModalQuantidademinimaPage */]]
         })
-    ], CadastroMovimentacaoPageModule);
-    return CadastroMovimentacaoPageModule;
+    ], ModalQuantidademinimaPageModule);
+    return ModalQuantidademinimaPageModule;
 }());
 
-//# sourceMappingURL=cadastro-movimentacao.module.js.map
+//# sourceMappingURL=modal-quantidademinima.module.js.map
 
 /***/ }),
 
-/***/ 726:
+/***/ 727:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectivesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(727);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(728);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -78,7 +76,7 @@ var DirectivesModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 727:
+/***/ 728:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -153,18 +151,14 @@ var HideHeaderDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 883:
+/***/ 896:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroMovimentacaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(64);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalQuantidademinimaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -177,167 +171,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-
 /**
- * Generated class for the CadastroMovimentacaoPage page.
+ * Generated class for the ModalQuantidademinimaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CadastroMovimentacaoPage = /** @class */ (function () {
-    function CadastroMovimentacaoPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, loadingCtrl, localizacaoService, dateTimeFormatPipe, movimentacaoService) {
+var ModalQuantidademinimaPage = /** @class */ (function () {
+    function ModalQuantidademinimaPage(navCtrl, navParams, viewCtrl, alertCtrl, insumoService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
         this.alertCtrl = alertCtrl;
-        this.formBuilder = formBuilder;
         this.insumoService = insumoService;
-        this.loadingCtrl = loadingCtrl;
-        this.localizacaoService = localizacaoService;
-        this.dateTimeFormatPipe = dateTimeFormatPipe;
-        this.movimentacaoService = movimentacaoService;
-        this.localizacoes = [];
-        this.paralocalizacoes = [];
-        this.te = {};
-        this.page = 0;
-        this.citensInsumos = [];
-        this.insumosLocalizacoes = [];
-        this.movimentacao = {};
-        this.movimentacaogrid = {};
-        this.datamovimentacao = new Date();
-        this.botaoMovimenta = true;
-        this.fieldsGarantiaQualidade = true;
+        this.evento = this.navParams.get('evento');
     }
-    ;
-    CadastroMovimentacaoPage.prototype.ionViewDidLoad = function () {
-        //console.log('ionViewDidLoad CadastroMovimentacaoPage');
-        this.loadLocalizacao();
-        this.loadParaLocalizacao();
+    ModalQuantidademinimaPage.prototype.ionViewDidLoad = function () {
+        console.log("EVENTO" + this.evento);
     };
-    CadastroMovimentacaoPage.prototype.dismiss = function () {
-        //this.navCtrl.push('EntradaPage', {}, {animate: true, direction: 'forward'});
-        this.navCtrl.popToRoot();
-        //this.viewCtrl.dismiss();
+    ModalQuantidademinimaPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
     };
-    CadastroMovimentacaoPage.prototype.reset = function () {
-        //console.log("teste");
-        this.formGroup.reset();
-    };
-    CadastroMovimentacaoPage.prototype.loadLocalizacao = function () {
+    ModalQuantidademinimaPage.prototype.salvarQuantidadeMinima = function (ev) {
         var _this = this;
-        var loader = this.presentLoading();
-        this.localizacaoService.findAllInsumoLocalizacao().subscribe(function (response) {
-            _this.localizacoes = response.sort();
-            loader.dismiss();
-        });
-    };
-    CadastroMovimentacaoPage.prototype.loadParaLocalizacao = function () {
-        var _this = this;
-        var loader = this.presentLoading();
-        this.localizacaoService.findAll().subscribe(function (response) {
-            _this.paralocalizacoes = response.sort();
-            loader.dismiss();
-        });
-    };
-    CadastroMovimentacaoPage.prototype.insumoChange = function (event) {
-        var _this = this;
-        if (event.value) {
-            if (event.value.aprovacao === true) {
-                this.fieldsGarantiaQualidade = false;
-                console.log("teste: " + this.fieldsGarantiaQualidade);
-            }
-            else {
-                this.fieldsGarantiaQualidade = true;
-            }
-            this.citensInsumos = [];
-            this.insumoService.findByLocalizacaoNoPage(event.value.id).subscribe(function (response) {
-                //this.citensInsumos = response.sort();
-                _this.insumosLocalizacoes = response.sort();
-            }, function (error) {
-                //loader.dismiss();
-            });
-        }
-        else {
-            this.citensInsumos = [];
-            this.insumosLocalizacoes = [];
-        }
-    };
-    CadastroMovimentacaoPage.prototype.imprimeItem = function (event) {
-        //this.citemInsumo = event.value;
-    };
-    CadastroMovimentacaoPage.prototype.presentLoading = function () {
-        var loader = this.loadingCtrl.create({
-            content: "Aguarde..."
-        });
-        loader.present();
-        return loader;
-    };
-    CadastroMovimentacaoPage.prototype.doInfinite = function (infiniteScroll) {
-        this.page++;
-        setTimeout(function () {
-            infiniteScroll.component.endInfiniteScroll();
-        }, 1000);
-    };
-    CadastroMovimentacaoPage.prototype.gerarGridMovimentacao = function () {
-        if (this.datamovimentacao == null || this.localizacao == null || this.paralocalizacao == null || (typeof this.insumosLocalizacoesSelecionados == 'undefined')) {
-            console.log("entrou");
-            return;
-        }
-        this.movimentacao = {};
-        var itensInsumosMovimentacao = [];
-        this.de = this.localizacao;
-        this.movimentacao.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
-        this.insumosLocalizacoesSelecionados.forEach(function (value) {
-            var itemMov = {
-                insumo: value.insumo,
-                quantidadeOrigem: value.quantidade,
-                quantidadeMovimentada: 0,
-                loteFornecedor: value.loteFornecedor,
-                loteCR: value.loteCR,
-                loteProducao: value.loteProducao,
-                dataIrradiacao: value.dataIrradiacao,
-                dataValidade: value.dataValidade,
-                dataAprovacao: value.dataAprovacao,
-                dataReproprovacao: value.dataReproprovacao,
-                aprovado: value.aprovado,
-                fieldsGarantiaQualidade: true,
-                loteRecebimento: value.loteRecebimento,
-            };
-            itensInsumosMovimentacao.push(itemMov);
-        });
-        this.movimentacao.localizacaoOrigem = this.localizacao;
-        if (this.localizacao.nome === "GARANTIA DA QUALIDADE") {
-            //this.movimentacao.fieldsGarantiaQualidade = false;
-        }
-        else {
-            //this.movimentacao.fieldsGarantiaQualidade = true;
-        }
-        this.movimentacao.localizacaoDestino = this.paralocalizacao;
-        this.movimentacao.itens = itensInsumosMovimentacao;
-        this.te = this.localizacao;
-        this.botaoMovimenta = false;
-        //console.log(this.movimentacao);
-        //console.log(this.localizacao)
-        //console.log(this.citemInsumoSelecionados);
-        //console.log(this.paralocalizacao);
-        //console.log(this.movimentacao);
-    };
-    CadastroMovimentacaoPage.prototype.inserirMovimentacao = function () {
-        //console.log(this.movimentacao);
-        var _this = this;
-        this.mov = {};
-        this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
-        this.mov.localizacaoOrigem = this.localizacao;
-        this.mov.localizacaoDestino = this.paralocalizacao;
-        this.mov.itens = this.movimentacao.itens;
-        this.movimentacaoService.insert(this.mov).subscribe(function (response) {
-            _this.showInsertOk();
+        this.insumoService.updateQuantidadeMinima(ev.id, ev.quantidademinima).subscribe(function (response) {
+            _this.showInserOk();
         }, function (error) { });
+        //console.log(ev);
     };
-    CadastroMovimentacaoPage.prototype.showInsertOk = function () {
+    ModalQuantidademinimaPage.prototype.showInserOk = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
             title: 'Sucesso',
@@ -354,42 +216,20 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         });
         alert.present();
     };
-    CadastroMovimentacaoPage.prototype.excluiItem = function (insumomovimentacaoDTO) {
-        this.movimentacao.itens.forEach(function (item, index, object) {
-            if (item === insumomovimentacaoDTO) {
-                object.splice(index, 1);
-            }
-        });
-        if (this.movimentacao.itens.length == 0) {
-            this.botaoMovimenta = true;
-        }
-        //this.loadData();
-    };
-    CadastroMovimentacaoPage.prototype.limpar = function () {
-        this.datamovimentacao = null;
-        this.localizacao = null;
-        this.paralocalizacao = null;
-        this.insumosLocalizacoesSelecionados = [];
-    };
-    CadastroMovimentacaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
-            selector: 'page-cadastro-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/'<!--\n\n  Generated template for the CadastroMovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n     Movimentação de Insumos\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Data da Movimentação</ion-label>\n\n    <ion-input type="date" [(ngModel)]="datamovimentacao"> </ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Localização</ion-label>\n\n    <ionic-selectable \n\n      #localizacoesComponent\n\n      item-content\n\n      [(ngModel)]="localizacao"\n\n      [items]="localizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      (onChange)="insumoChange($event)"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Insumos</ion-label>\n\n    <ionic-selectable \n\n      item-content \n\n      [(ngModel)]="insumosLocalizacoesSelecionados"\n\n      [items]="insumosLocalizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nomedoinsumo"\n\n      [hasInfiniteScroll]="true"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      (onChange)="imprimeItem($event)"\n\n      [isMultiple]="true" \n\n      [isEnabled]="localizacoesComponent.value"\n\n      [canClear]="true"\n\n		  [placeholder]="localizacoesComponent.value ? \'\' : \'Selecione a localização primeiro\'">\n\n\n\n      <ng-template ionicSelectableItemTemplate let-item="item">\n\n       \n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.insumo.nome}} \n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label class="label_14">\n\n            Cod Almox: {{item.insumo.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}\n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Lote Fornecedor: {{item.loteFornecedor}} \n\n          </ion-label>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Lote CR: {{item.loteCR}} \n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Data de Validade: {{item.dataValidade}} \n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n\n\n    </ionic-selectable>\n\n  </ion-item>\n\n  \n\n  <ion-item color="item_entrada">\n\n    <ion-label>Movimentar para</ion-label>\n\n    <ionic-selectable \n\n      item-content\n\n      [(ngModel)]="paralocalizacao"\n\n      [items]="paralocalizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item class text-center>\n\n    <button ion-button (click)="gerarGridMovimentacao()">Gerar grid de movimentação</button>\n\n  </ion-item>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-1>\n\n        Cod\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        Insumo\n\n      </ion-col>\n\n      <ion-col col-1>\n\n       Lote Fornecedor\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Quant Movimentação\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Aprovado\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Lote Produção\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Localização de Destino\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Exc\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngFor="let mov of movimentacao.itens" >\n\n      <ion-col col-1>\n\n        {{mov.insumo.codigoalmox}}\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        {{mov.insumo.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        {{mov.loteFornecedor}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <ion-list radio-group [(ngModel)]="mov.aprovado" name="case" [hidden]="fieldsGarantiaQualidade">\n\n          <ion-item>\n\n            <ion-label>Sim</ion-label>\n\n            <ion-radio value="true"></ion-radio>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-label>Não</ion-label>\n\n            <ion-radio value="false"></ion-radio>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-input type="text" [(ngModel)]="mov.loteProducao"> </ion-input>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        {{paralocalizacao.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-12 style="text-align: right;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Inserir Movimentação</button></ion-col>\n\n    </ion-row>\n\n   \n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/,
+    ModalQuantidademinimaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-modal-quantidademinima',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\modal-quantidademinima\modal-quantidademinima.html"*/'<!--\n\n  Generated template for the ModalQuantidademinimaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Atualização de Quantidade Mínima de Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <ion-label>\n\n      {{evento.insumo.nome}}\n\n    </ion-label>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>\n\n      Quantidade Atual:{{evento.quantidade}}\n\n    </ion-label>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Nova quantidade mínima:</ion-label>\n\n    <ion-input type="number" [(ngModel)]="evento.quantidademinima"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>\n\n      <button ion-button class="submit-btn" (click)="salvarQuantidadeMinima(evento)" type="submit">Salvar\n\n      </button>\n\n    </ion-label>\n\n  </ion-item>\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\modal-quantidademinima\modal-quantidademinima.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__["a" /* LocalizacaoService */],
-            __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__["a" /* DateTimeFormatPipe */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__["a" /* MovimentacaoService */]])
-    ], CadastroMovimentacaoPage);
-    return CadastroMovimentacaoPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */]])
+    ], ModalQuantidademinimaPage);
+    return ModalQuantidademinimaPage;
 }());
 
-//# sourceMappingURL=cadastro-movimentacao.js.map
+//# sourceMappingURL=modal-quantidademinima.js.map
 
 /***/ })
 

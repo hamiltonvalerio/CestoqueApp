@@ -1,3 +1,5 @@
+import { InsumoajusteNewDTO } from './../../models/insumoajustenew.dto';
+import { AjusteEstoqueService } from './../../services/domain/ajusteestoque.service';
 import { InsumoajusteDTO } from './../../models/insumoajuste.dto';
 import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
 import { CInsumoEntradaDTO } from './../../models/cinsumoentrada.dto';
@@ -62,6 +64,8 @@ export class AjusteEstoquePage {
 
   page : number = 0;
 
+  teste : InsumoajusteNewDTO;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -75,6 +79,7 @@ export class AjusteEstoquePage {
     public entradaService: EntradaService,
     public dateTimeFormatPipe: DateTimeFormatPipe,
     public unidadeService: UnidadeService,
+    public ajusteEstoqueService: AjusteEstoqueService,
     ) {
 
       this.formGroup = this.formBuilder.group({
@@ -87,8 +92,6 @@ export class AjusteEstoquePage {
         quantidade: ['',[Validators.required]],
         unidade: this.formControl,
       }, {});
-
-
   }
 
   ionViewDidLoad() {
@@ -261,7 +264,33 @@ export class AjusteEstoquePage {
     this.insumoAjusteDTO = this.formGroup.value;
     this.insumoAjusteDTO.localizacao = this.localizacao;
     this.insumoAjusteDTO.dataAjuste = new Date(this.dataAjuste);
-    console.log(this.insumoAjusteDTO);
+
+    /*this.ajusteEstoqueService.insert(this.insumoAjusteDTO).subscribe(response => {
+      this.showInsertOk();
+    },
+    error => {});*/
+    this.ajusteEstoqueService.insert(this.insumoAjusteDTO).subscribe(response => {
+      this.showInsertOk();
+    },
+    error => {});
   }
+
+  showInsertOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Cadastro efetuado com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
 
 }

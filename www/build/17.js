@@ -1,14 +1,14 @@
 webpackJsonp([17],{
 
-/***/ 713:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManualPageModule", function() { return ManualPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MovimentacaoPageModule", function() { return MovimentacaoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__manual__ = __webpack_require__(893);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__movimentacao__ = __webpack_require__(898);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ManualPageModule = /** @class */ (function () {
-    function ManualPageModule() {
+var MovimentacaoPageModule = /** @class */ (function () {
+    function MovimentacaoPageModule() {
     }
-    ManualPageModule = __decorate([
+    MovimentacaoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__manual__["a" /* ManualPage */],
+                __WEBPACK_IMPORTED_MODULE_2__movimentacao__["a" /* MovimentacaoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__manual__["a" /* ManualPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__movimentacao__["a" /* MovimentacaoPage */]),
             ],
         })
-    ], ManualPageModule);
-    return ManualPageModule;
+    ], MovimentacaoPageModule);
+    return MovimentacaoPageModule;
 }());
 
-//# sourceMappingURL=manual.module.js.map
+//# sourceMappingURL=movimentacao.module.js.map
 
 /***/ }),
 
-/***/ 893:
+/***/ 898:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManualPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(362);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovimentacaoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(64);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,34 +59,74 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the ManualPage page.
+ * Generated class for the MovimentacaoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ManualPage = /** @class */ (function () {
-    function ManualPage(navCtrl, navParams, iab) {
+var MovimentacaoPage = /** @class */ (function () {
+    function MovimentacaoPage(navCtrl, navParams, movimentacaoService, insumoService, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.iab = iab;
-        this.url = "https://github.com/hamiltonvalerio/cestoqueManualLaTeX/blob/main/ManualCestoque.pdf";
+        this.movimentacaoService = movimentacaoService;
+        this.insumoService = insumoService;
+        this.loadingCtrl = loadingCtrl;
+        this.movimentacoes = [];
+        this.page = 0;
+        this.showDetails = false;
     }
-    ManualPage.prototype.ionViewDidLoad = function () {
-        window.open(this.url, '_blank', 'location=yes');
+    MovimentacaoPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
     };
-    ManualPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-manual',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\manual\manual.html"*/'<!--\n\n  Generated template for the ManualPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Manual</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\manual\manual.html"*/,
+    MovimentacaoPage.prototype.getItens = function () {
+        var _this = this;
+        console.log("aqui2");
+        this.movimentacaoService.findAll()
+            .subscribe(function (response) {
+            _this.movimentacoes = response.sort();
+            console.log(_this.movimentacoes);
+        }, function (error) { });
+    };
+    MovimentacaoPage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
+        loader.present();
+        return loader;
+    };
+    MovimentacaoPage.prototype.toggleDetails = function (show, i) {
+        this.movimentacoes.map(function (_, index) {
+            if (index == i) {
+                _.show = !_.show;
+            }
+        });
+    };
+    MovimentacaoPage.prototype.openCadastroMovimentacao = function () {
+        var _this = this;
+        this.navCtrl.push('CadastroMovimentacaoPage', {}, {
+            animate: true,
+            direction: 'forward'
+        }).then(function () {
+            _this.navCtrl.getActive().onDidDismiss(function (data) {
+                //console.log(data);
+                _this.getItens();
+            });
+        });
+    };
+    MovimentacaoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/'<!--\n\n  Generated template for the MovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Movimentação de Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroMovimentacao()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let mv of movimentacoes; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(mv.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Data de Movimentação: {{mv.datamovimentacao}}</p>\n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="mv.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <ion-list *ngFor="let ient of mv.itens">\n\n          <ion-row>Insumo: {{ient.insumo.nome}}</ion-row>\n\n          <ion-row>Quantidade da Origem na data de movimentação: {{ient.quantidadeOrigem}}</ion-row>\n\n          <ion-row>Quantidade Movimentada: {{ient.quantidadeMovimentada}}</ion-row>\n\n          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>\n\n          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>\n\n          <ion-row>Data de Irradiação: {{ient.dataIrradiacao}}</ion-row>\n\n          <ion-row>Data de Validade: {{ient.dataValidade}}</ion-row>\n\n          <ion-row><br></ion-row>\n\n        </ion-list>\n\n      </ion-list>\n\n    </ion-item>\n\n    \n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
-    ], ManualPage);
-    return ManualPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__["a" /* MovimentacaoService */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */]])
+    ], MovimentacaoPage);
+    return MovimentacaoPage;
 }());
 
-//# sourceMappingURL=manual.js.map
+//# sourceMappingURL=movimentacao.js.map
 
 /***/ })
 

@@ -15,7 +15,6 @@ export class EntradaService{
     }
 
     insert(obj: EntradaDTO){
-        console.log(obj);
         return this.http.post(`${API_CONFIG.baseUrl}/entradas/`,
         obj,
         {
