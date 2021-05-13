@@ -106,8 +106,8 @@ var Constants = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_CONFIG; });
 var API_CONFIG = {
     //baseUrl: "http://10.0.14.7:8080/cestoque-ipen"
-    //baseUrl: "http://localhost:8080"
-    baseUrl: "http://localhost:8080/cestoque"
+    baseUrl: "http://localhost:8080"
+    //baseUrl: "http://localhost:8080/cestoque"
     //baseUrl: "http://192.168.1.107:8080/cestoque"
 };
 //# sourceMappingURL=api.config.js.map
@@ -800,22 +800,14 @@ var AjusteEstoqueService = /** @class */ (function () {
             responseType: 'text'
         });
     };
-    AjusteEstoqueService.prototype.insert2 = function (obj) {
-        console.log(obj);
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/ajusteestoque/create", obj, {
-            observe: 'response',
-            responseType: 'text'
-        });
-    };
-    AjusteEstoqueService.prototype.findAjusteByDataAtual = function (dataatual) {
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/ajusteestoque/findbydataatual/?dataatual=" + dataatual);
+    AjusteEstoqueService.prototype.findAjusteByLocalizacaoAndDataAtual = function (localizacao_id, dataatual) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/ajusteestoque/buscaAjustesPorDataELocalizacao/?localizacao_id=" + localizacao_id + "&dataAjuste=" + dataatual);
     };
     AjusteEstoqueService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
     ], AjusteEstoqueService);
     return AjusteEstoqueService;
-    var _a;
 }());
 
 //# sourceMappingURL=ajusteestoque.service.js.map

@@ -22,18 +22,8 @@ export class AjusteEstoqueService {
         });
     }
 
-    insert2(obj: InsumoajusteNewDTO){
-        console.log(obj);
-        return this.http.post(`${API_CONFIG.baseUrl}/ajusteestoque/create`,
-        obj,
-        {
-            observe: 'response',
-            responseType: 'text'
-        });
-    }
-
-    findAjusteByDataAtual(dataatual : Date) : Observable<InsumoajusteDTO> {
-        return this.http.get<InsumoajusteDTO>(`${API_CONFIG.baseUrl}/ajusteestoque/findbydataatual/?dataatual=${dataatual}`)
+    findAjusteByLocalizacaoAndDataAtual(localizacao_id: string, dataatual : Date) : Observable<InsumoajusteDTO[]> {
+        return this.http.get<InsumoajusteDTO[]>(`${API_CONFIG.baseUrl}/ajusteestoque/buscaAjustesPorDataELocalizacao/?localizacao_id=${localizacao_id}&dataAjuste=${dataatual}`)
     }
     
 }

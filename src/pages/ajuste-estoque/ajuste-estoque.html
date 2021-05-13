@@ -31,6 +31,7 @@
       itemTextField="nome"
       [canSearch]="true"
       [focusSearchbar]="true"
+      (onChange)="carregarAjustesDoDiaChange($event)"
       [hasVirtualScroll]="true" >
       <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">
         <ion-item>
@@ -57,7 +58,6 @@
         itemTextField="nomecodalmox"
         [canSearch]="true"
         (onSearch)="searchInsumo($event)"
-        (onChange)="insereInsumoEntradaDTO($event)"
         [focusSearchbar]="true"
         [hasInfiniteScroll]="true"
         (onInfiniteScroll)="doInfinite($event)">
