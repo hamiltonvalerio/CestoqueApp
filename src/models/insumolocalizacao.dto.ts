@@ -18,5 +18,6 @@ export interface InsumolocalizacaoDTO{
     aprovado: boolean;
     loteRecebimento: string;
     foiaprovado: string;
+    nomedoinsumo: string;
 
 }

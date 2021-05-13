@@ -19,7 +19,7 @@
 <ion-content padding>
   <ion-item color="item_entrada">
     <ion-label>Data do Ajuste</ion-label>
-    <ion-datetime [(ngModel)]="dataAjuste" disabled displayFormat="DD/MMM/YYYY" displayTimezone="utc"></ion-datetime>
+    <ion-datetime [(ngModel)]="dataAjuste" (ionChange)="carregarAjustesDoDiaChange()"  displayFormat="DD/MMM/YYYY" displayTimezone="utc"></ion-datetime>
   </ion-item>
   <ion-item color="item_entrada">
     <ion-label>Localização</ion-label>
@@ -31,7 +31,7 @@
       itemTextField="nome"
       [canSearch]="true"
       [focusSearchbar]="true"
-      (onChange)="carregarAjustesDoDiaChange($event)"
+      (onChange)="carregarAjustesDoDiaChange()"
       [hasVirtualScroll]="true" >
       <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">
         <ion-item>
@@ -142,4 +142,41 @@
       <button   ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>
     </ion-item>
   </form>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-5>
+        Insumo
+      </ion-col>
+      <ion-col col-2>
+        Lt Forn.
+      </ion-col>
+      <ion-col col-2>
+        Lt CR
+      </ion-col>
+      <ion-col col-2>
+        Lt Receb.
+      </ion-col>
+      <ion-col col-1>
+        Qtd
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let la of listaInsumoAjuste">
+      <ion-col col-5>
+        {{la.insumo.nome}}
+      </ion-col>
+      <ion-col col-2>
+        {{la.loteFornecedor}}
+      </ion-col>
+      <ion-col col-2>
+        {{la.loteCR}}
+      </ion-col>
+      <ion-col col-2>
+        {{la.loteARM}}
+      </ion-col>
+      <ion-col col-1>
+        {{la.quantidade}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

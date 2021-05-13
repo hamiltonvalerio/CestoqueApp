@@ -265,9 +265,9 @@ export class AjusteEstoquePage {
   insereAjuste(){
     this.insumoAjusteDTO = this.formGroup.value;
     this.insumoAjusteDTO.dataAjuste = this.dateTimeFormatPipe.transform(this.dataAjuste);
-    console.log("data 1 "+ this.insumoAjusteDTO.dataAjuste);
+    //console.log("data 1 "+ this.insumoAjusteDTO.dataAjuste);
     let teste = moment(this.dataAjuste).format('MM/DD/YYYY HH:mm');
-    console.log("data 2 "+ teste);
+    //console.log("data 2 "+ teste);
     this.insumoAjusteDTO.localizacao = this.localizacao;
     this.insumoAjusteDTO.dataAjuste = new Date(this.dataAjuste);
 
@@ -277,6 +277,8 @@ export class AjusteEstoquePage {
     error => {});*/
     this.ajusteEstoqueService.insert(this.insumoAjusteDTO).subscribe(response => {
       //this.showInsertOk();
+      this.reset();
+      this.carregarAjustesDoDiaChange();
     },
     error => {});
   }
@@ -298,19 +300,17 @@ export class AjusteEstoquePage {
     alert.present();
   }
 
-  carregarAjustesDoDiaChange(event: {
-    component: IonicSelectableComponent;
-    value: LocalizacaoDTO;
-  }){
-    if (event.value) {
-      //let dataajuste : Date = this.dateTimeFormatPipe.transform(this.dataAjuste);
-      //console.log(dataajuste)
-      this.ajusteEstoqueService.findAjusteByLocalizacaoAndDataAtual(this.localizacao.id, new Date(this.dataAjuste)).subscribe(response => {
-        this.listaInsumoAjuste = response;
-        console.log(this.listaInsumoAjuste);
-      });
-      
-    }
+  carregarAjustesDoDiaChange(){
+
+      if(this.localizacao != null){
+        
+          this.ajusteEstoqueService.findAjusteByLocalizacaoAndDataAtual(this.localizacao.id, new Date(this.dataAjuste)).subscribe(response => {
+            this.listaInsumoAjuste = response;
+            //console.log(this.listaInsumoAjuste);
+        
+        });
+      }
+
   }
 
 }
