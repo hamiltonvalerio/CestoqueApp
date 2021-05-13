@@ -4,7 +4,9 @@ import { InsumoService } from './../../services/domain/insumo.service';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ModalController, ViewController, AlertController} from 'ionic-angular';
-
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 /**
  * Generated class for the LocalizacaoInsumosPage page.
@@ -21,6 +23,7 @@ import { IonicPage, NavController, NavParams, LoadingController, ModalController
 export class LocalizacaoInsumosPage {
   page : number = 0;
   insumosLocalizacao : InsumolocalizacaoDTO[];
+  nomeLocalizacao : string = "";
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -30,6 +33,8 @@ export class LocalizacaoInsumosPage {
     public modal: ModalController,
     public viewCtrl: ViewController,
     public alertCtrl: AlertController) {
+
+      this.nomeLocalizacao = this.navParams.get('localizacao_nome');
   }
 
   ionViewDidLoad() {

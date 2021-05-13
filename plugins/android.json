@@ -39,6 +39,13 @@
     "phonegap-plugin-barcodescanner": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "br.ipen.cestoque"
+    },
+    "cordova-plugin-file-opener2": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "br.ipen.cestoque"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "br.ipen.cestoque"
     }
   },
   "dependent_plugins": {}

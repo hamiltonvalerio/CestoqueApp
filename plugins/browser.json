@@ -36,6 +36,12 @@
     },
     "cordova-plugin-printer": {
       "PACKAGE_NAME": "br.ipen.cestoque"
+    },
+    "cordova-plugin-file-opener2": {
+      "PACKAGE_NAME": "br.ipen.cestoque"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "br.ipen.cestoque"
     }
   },
   "dependent_plugins": {}

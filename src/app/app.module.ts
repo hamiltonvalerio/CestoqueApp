@@ -33,6 +33,9 @@ import { IonicSelectableModule } from 'ionic-selectable';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+
 
 
 
@@ -76,6 +79,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     InAppBrowser,
     FileTransfer,
     AjusteEstoqueService,
+    File,
+    FileOpener,
   ]
 })
 export class AppModule {}
