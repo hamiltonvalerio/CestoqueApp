@@ -19,5 +19,7 @@ export interface InsumolocalizacaoDTO{
     loteRecebimento: string;
     foiaprovado: string;
     nomedoinsumo: string;
+    codigoalmoxarifado: string;
+
 
 }

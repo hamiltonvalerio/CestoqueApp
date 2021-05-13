@@ -16,6 +16,8 @@ import {
 import { File } from "@ionic-native/file/ngx";
 import * as pdfmake from "pdfmake/build/pdfmake";
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
+import { controlNameBinding } from "@angular/forms/src/directives/reactive_directives/form_control_name";
+import moment from "moment";
 /**
  * Generated class for the LocalizacaoInsumosPage page.
  *
@@ -32,6 +34,8 @@ export class LocalizacaoInsumosPage {
   page: number = 0;
   insumosLocalizacao: InsumolocalizacaoDTO[];
   nomeLocalizacao: string = "";
+  data = moment().format('MM/DD/YYYY HH:mm');
+
 
   constructor(
     public navCtrl: NavController,
@@ -95,7 +99,7 @@ export class LocalizacaoInsumosPage {
     let loader = this.presentLoading();
     this.insumosLocalizacao = [];
     //this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
-    this.insumoService
+     this.insumoService
       .findInsumoLocalizacaoByLocalizacao(localizacaoId)
       .subscribe(
         (response) => {
@@ -103,6 +107,7 @@ export class LocalizacaoInsumosPage {
           this.insumosLocalizacao = this.insumosLocalizacao.concat(
             response["content"]
           );
+          console.log(this.insumosLocalizacao);
           let end = this.insumosLocalizacao.length - 1;
           loader.dismiss();
         },
@@ -122,35 +127,114 @@ export class LocalizacaoInsumosPage {
 
   createPdf() {
     pdfmake.vfs = pdfFonts.pdfMake.vfs;
-    var docDefinition = {
-      content: [
-        {
-          columns: [
-            [
-              { text: "SITUAÇÃO ATUAL DO ESTOQUE", style: "header" },
-              { text: this.nomeLocalizacao, style: "sub_header" },
-            ],
-          ],
-        },
-      ],
-      styles: {
-        header: {
-          bold: true,
-          fontSize: 20,
-          alignment: "center",
-        },
-        sub_header: {
-          fontSize: 18,
-          alignment: "center",
-        },
-        url: {
-          fontSize: 16,
-          alignment: "right",
-        },
+    var headers = {
+      fila_0:{
+          col_1:{ text: 'Cod', style: 'tableHeader',rowSpan: 2, alignment: 'center',margin: [0, 5, 0, 0] },
+          col_2:{ text: 'Item', style: 'tableHeader',rowSpan: 2, alignment: 'center',margin: [0, 5, 0, 0] },
+          col_3:{ text: 'Unidade', style: 'tableHeader',rowSpan: 2, alignment: 'center',margin: [0, 5, 0, 0] },
+          col_4:{ text: 'Qtd mínima', style: 'tableHeader',rowSpan: 2, alignment: 'center',margin: [0, 5, 0, 0] },
+          col_5:{ text: 'Estoque', style: 'tableHeader',rowSpan: 2, alignment: 'center',margin: [0, 5, 0, 0] },
+          col_6:{ text: 'Validade', style: 'tableHeader',rowSpan: 2, alignment: 'center',margin: [0, 5, 0, 0] },
       },
-      pageSize: "A4",
-      pageOrientation: "portrait",
-    };
-    pdfmake.createPdf(docDefinition).open();
+      fila_1:{
+          col_1:{ text: 'Header 1', style: 'tableHeader', alignment: 'center' },
+          col_2:{ text: 'Header 2', style: 'tableHeader', alignment: 'center' }, 
+          col_3:{ text: 'Header 3', style: 'tableHeader', alignment: 'center' },
+          col_4:{ text: 'Header 4', style: 'tableHeader', alignment: 'center' }, 
+          col_5:{ text: 'Header 5', style: 'tableHeader', alignment: 'center' },
+          col_6:{ text: 'Header 6', style: 'tableHeader', alignment: 'center' }
+
+      }
   }
+  var rows = this.insumosLocalizacao;
+  
+  var body = [];
+  for (var key in headers){
+      if (headers.hasOwnProperty(key)){
+          var header = headers[key];
+          var row = new Array();
+          row.push( header.col_1 );
+          row.push( header.col_2 );
+          row.push( header.col_3 );
+          row.push( header.col_4 );
+          row.push( header.col_5 );
+          row.push( header.col_6 );
+          body.push(row);
+      }
+  }
+  for (var key in rows) 
+  {
+      if (rows.hasOwnProperty(key))
+      {
+        var data = rows[key];
+        console.log(data)
+          var row = new Array();
+          row.push( data.codigoalmoxarifado );
+          row.push( data.insumo.nome );
+          row.push( data.insumo.unidade.nome );
+          row.push( data.quantidademinima );
+          row.push( data.quantidade );
+          row.push( moment(data.dataValidade).format('MM/DD/YYYY') );
+          body.push(row);
+      }
+  }
+  
+  var dd = {
+          pageSize: "A4",
+          pageMargins: [40,155,40,55],
+          pageOrientation: 'portrait',
+          header: function() {
+              return {
+                  margin: 40,
+                  columns: [
+                    {
+                      },
+                      { text:['ESTOQUE REAGENTES LIOFILIZADOS'], 
+                              alignment: 'center',bold:true,margin:[-250,40,0,0],fontSize: 24}
+                  ]
+              }
+          },
+          footer: function(currentPage, pageCount) {
+              return { text:'Página '+ currentPage.toString() + ' de ' + pageCount, alignment: 'center',margin:[0,30,0,0] };
+          },
+          content: [
+              //{ text: 'Tables', style: 'header' },
+              { text: this.nomeLocalizacao+' - '+this.data, style: "sub_header" },
+              //{ text: 'A simple table (no headers, no width specified, no spans, no styling)', style: 'sta' },
+              //'The following table has nothing more than a body array',
+              {
+                  style: 'sta',
+                  table: {
+                      widths: [ 30, 200, 60, 50, 50, 70 ],
+                      headerRows: 2,
+                      // keepWithHeaderRows: 1,
+                      body: body
+                  }
+              }],
+          styles: {
+              header: {
+                  fontSize: 28,
+                  bold: true
+              },
+              subheader: {
+                  fontSize: 15,
+                  bold: true
+              },
+              quote: {
+                  italics: true
+              },
+              small: {
+                  fontSize: 8
+              },
+              sta: {
+                  fontSize: 11,
+                  bold: false,
+                  alignment: 'center'
+              }
+          }
+  }
+   
+    pdfmake.createPdf(dd).open();
+  }
+   
 }
