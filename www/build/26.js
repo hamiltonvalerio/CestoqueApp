@@ -1,1 +1,130 @@
-webpackJsonp([26],{677:function(l,n,u){"use strict";function e(l){return a["ɵvid"](0,[(l()(),a["ɵeld"](0,0,null,null,54,"ion-grid",[["class","tamanho-da-font grid"]],null,null,null,null,null)),a["ɵdid"](1,16384,null,0,E.a,[],null,null),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](3,0,null,null,4,"ion-row",[["class","row"]],null,null,null,null,null)),a["ɵdid"](4,16384,null,0,C.a,[],null,null),(l()(),a["ɵeld"](5,0,null,null,2,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](6,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](7,null,["Produto: "," "])),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](9,0,null,null,4,"ion-row",[["class","row"]],null,null,null,null,null)),a["ɵdid"](10,16384,null,0,C.a,[],null,null),(l()(),a["ɵeld"](11,0,null,null,2,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](12,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](13,null,["Lote Fornecedor: ",""])),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](15,0,null,null,4,"ion-row",[["class","row"]],null,null,null,null,null)),a["ɵdid"](16,16384,null,0,C.a,[],null,null),(l()(),a["ɵeld"](17,0,null,null,2,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](18,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](19,null,["Lote CR: ",""])),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](21,0,null,null,9,"ion-row",[["class","row"]],null,null,null,null,null)),a["ɵdid"](22,16384,null,0,C.a,[],null,null),(l()(),a["ɵeld"](23,0,null,null,3,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](24,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](25,null,["Data de Validade: ",""])),a["ɵppd"](26,2),(l()(),a["ɵeld"](27,0,null,null,3,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](28,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](29,null,["Data de Irradiação: ",""])),a["ɵppd"](30,2),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](32,0,null,null,7,"ion-row",[["class","row"]],null,null,null,null,null)),a["ɵdid"](33,16384,null,0,C.a,[],null,null),(l()(),a["ɵeld"](34,0,null,null,2,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](35,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](36,null,["Quantidade Entrada: ",""])),(l()(),a["ɵeld"](37,0,null,null,2,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](38,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](39,null,["Quantidade Atual: ",""])),(l()(),a["ɵted"](-1,null,["\n          "])),(l()(),a["ɵeld"](41,0,null,null,12,"ion-row",[["class","row"]],null,null,null,null,null)),a["ɵdid"](42,16384,null,0,C.a,[],null,null),(l()(),a["ɵeld"](43,0,null,null,10,"ion-col",[["class","col"]],null,null,null,null,null)),a["ɵdid"](44,16384,null,0,w.a,[],null,null),(l()(),a["ɵted"](-1,null,["Quantidade de etiquetas: "])),(l()(),a["ɵeld"](46,0,null,null,6,"input",[["type","number"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"input"],[null,"blur"],[null,"compositionstart"],[null,"compositionend"],[null,"change"]],function(l,n,u){var e=!0;if("input"===n){e=!1!==a["ɵnov"](l,47)._handleInput(u.target.value)&&e}if("blur"===n){e=!1!==a["ɵnov"](l,47).onTouched()&&e}if("compositionstart"===n){e=!1!==a["ɵnov"](l,47)._compositionStart()&&e}if("compositionend"===n){e=!1!==a["ɵnov"](l,47)._compositionEnd(u.target.value)&&e}if("change"===n){e=!1!==a["ɵnov"](l,48).onChange(u.target.value)&&e}if("input"===n){e=!1!==a["ɵnov"](l,48).onChange(u.target.value)&&e}if("blur"===n){e=!1!==a["ɵnov"](l,48).onTouched()&&e}if("ngModelChange"===n){e=!1!==(l.context.$implicit.quantidadeetiquetas=u)&&e}return e},null,null)),a["ɵdid"](47,16384,null,0,y.c,[a.Renderer2,a.ElementRef,[2,y.a]],null,null),a["ɵdid"](48,16384,null,0,y.q,[a.Renderer2,a.ElementRef],null,null),a["ɵprd"](1024,null,y.h,function(l,n){return[l,n]},[y.c,y.q]),a["ɵdid"](50,671744,null,0,y.m,[[8,null],[8,null],[8,null],[2,y.h]],{model:[0,"model"]},{update:"ngModelChange"}),a["ɵprd"](2048,null,y.i,null,[y.m]),a["ɵdid"](52,16384,null,0,y.j,[y.i],null,null),(l()(),a["ɵted"](-1,null,[" "])),(l()(),a["ɵted"](-1,null,["\n        "]))],function(l,n){l(n,50,0,n.context.$implicit.quantidadeetiquetas)},function(l,n){l(n,7,0,n.context.$implicit.insumo.nome);l(n,13,0,n.context.$implicit.loteFornecedor);l(n,19,0,n.context.$implicit.loteCR);l(n,25,0,a["ɵunv"](n,25,0,l(n,26,0,a["ɵnov"](n.parent.parent.parent,0),n.context.$implicit.dataValidade,"dd/MM/yyyy")));l(n,29,0,a["ɵunv"](n,29,0,l(n,30,0,a["ɵnov"](n.parent.parent.parent,0),n.context.$implicit.dataIrradiacao,"dd/MM/yyyy H:mm")));l(n,36,0,n.context.$implicit.quantidade);l(n,39,0,n.context.$implicit.insumo.quantidade);l(n,46,0,a["ɵnov"](n,52).ngClassUntouched,a["ɵnov"](n,52).ngClassTouched,a["ɵnov"](n,52).ngClassPristine,a["ɵnov"](n,52).ngClassDirty,a["ɵnov"](n,52).ngClassValid,a["ɵnov"](n,52).ngClassInvalid,a["ɵnov"](n,52).ngClassPending)})}function t(l){return a["ɵvid"](0,[(l()(),a["ɵeld"](0,0,null,null,13,"ion-list",[],null,null,null,null,null)),a["ɵdid"](1,16384,null,0,q.a,[I.a,a.ElementRef,a.Renderer,_.a,x.l,D.a],null,null),(l()(),a["ɵted"](-1,null,["\n        "])),(l()(),a["ɵeld"](3,0,null,null,2,"ion-label",[],null,null,null,null,null)),a["ɵdid"](4,16384,[[7,4]],0,$.a,[I.a,a.ElementRef,a.Renderer,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),a["ɵted"](-1,null,["Detalhes"])),(l()(),a["ɵted"](-1,null,["\n        "])),(l()(),a["ɵand"](16777216,null,null,1,null,e)),a["ɵdid"](8,802816,null,0,k.i,[a.ViewContainerRef,a.TemplateRef,a.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),a["ɵted"](-1,null,["\n        "])),(l()(),a["ɵeld"](10,0,null,null,2,"button",[["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.imprimirEtiquetas(l.parent.context.$implicit)&&e}return e},L.b,L.a)),a["ɵdid"](11,1097728,null,0,M.a,[[8,""],I.a,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,0,["Imprimir etiquetas"])),(l()(),a["ɵted"](-1,null,["\n      "]))],function(l,n){l(n,8,0,n.parent.context.$implicit.itens)},null)}function d(l){return a["ɵvid"](0,[(l()(),a["ɵeld"](0,0,null,null,41,"ion-card",[],null,null,null,null,null)),a["ɵdid"](1,16384,null,0,T.a,[I.a,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,null,["\n    "])),(l()(),a["ɵeld"](3,0,null,null,22,"ion-card-header",[["type","button"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.toggleDetails(l.context.$implicit.show,l.context.index)&&e}return e},null,null)),a["ɵdid"](4,16384,null,0,F.a,[I.a,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,null,["\n      "])),(l()(),a["ɵeld"](6,0,null,null,1,"ion-icon",[["name","arrow-down"],["role","img"]],[[2,"hide",null]],null,null,null,null)),a["ɵdid"](7,147456,null,0,P.a,[I.a,a.ElementRef,a.Renderer],{name:[0,"name"]},null),(l()(),a["ɵted"](-1,null,["\n      "])),(l()(),a["ɵeld"](9,0,null,null,15,"ion-item",[["class","item item-block"]],null,null,null,A.b,A.a)),a["ɵdid"](10,1097728,null,3,O.a,[V.a,I.a,a.ElementRef,a.Renderer,[2,N.a]],null,null),a["ɵqud"](335544320,4,{contentLabel:0}),a["ɵqud"](603979776,5,{_buttons:1}),a["ɵqud"](603979776,6,{_icons:1}),a["ɵdid"](14,16384,null,0,S.a,[],null,null),(l()(),a["ɵted"](-1,2,["\n        "])),(l()(),a["ɵeld"](16,0,null,2,1,"p",[],null,null,null,null,null)),(l()(),a["ɵted"](17,null,["Número da Requisição (LIA): ",""])),(l()(),a["ɵted"](-1,2,["\n        "])),(l()(),a["ɵeld"](19,0,null,2,1,"p",[],null,null,null,null,null)),(l()(),a["ɵted"](20,null,["Data de Entrada: ",""])),(l()(),a["ɵted"](-1,2,["\n        "])),(l()(),a["ɵeld"](22,0,null,2,1,"p",[],null,null,null,null,null)),(l()(),a["ɵted"](23,null,["Lote de Recebimento: ",""])),(l()(),a["ɵted"](-1,2,["\n      "])),(l()(),a["ɵted"](-1,null,["\n    "])),(l()(),a["ɵted"](-1,null,["\n\n    "])),(l()(),a["ɵeld"](27,0,null,null,13,"ion-card-content",[],null,null,null,null,null)),a["ɵdid"](28,16384,null,0,j.a,[I.a,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,null,["\n      "])),(l()(),a["ɵeld"](30,0,null,null,9,"ion-item",[["class","item item-block"]],null,null,null,A.b,A.a)),a["ɵdid"](31,1097728,null,3,O.a,[V.a,I.a,a.ElementRef,a.Renderer,[2,N.a]],null,null),a["ɵqud"](603979776,7,{contentLabel:0}),a["ɵqud"](603979776,8,{_buttons:1}),a["ɵqud"](603979776,9,{_icons:1}),a["ɵdid"](35,16384,null,0,S.a,[],null,null),(l()(),a["ɵted"](-1,2,["\n      "])),(l()(),a["ɵand"](16777216,null,2,1,null,t)),a["ɵdid"](38,16384,null,0,k.j,[a.ViewContainerRef,a.TemplateRef],{ngIf:[0,"ngIf"]},null),(l()(),a["ɵted"](-1,2,["\n    "])),(l()(),a["ɵted"](-1,null,["\n    "])),(l()(),a["ɵted"](-1,null,["\n  "]))],function(l,n){l(n,7,0,"arrow-down");l(n,38,0,n.context.$implicit.show)},function(l,n){l(n,6,0,a["ɵnov"](n,7)._hidden);l(n,17,0,n.context.$implicit.numLIA);l(n,20,0,n.context.$implicit.dataEntrada);l(n,23,0,n.context.$implicit.loteRecebimento)})}function i(l){return a["ɵvid"](0,[a["ɵpid"](0,k.d,[a.LOCALE_ID]),a["ɵqud"](402653184,1,{nav:0}),(l()(),a["ɵted"](-1,null,["\n"])),(l()(),a["ɵeld"](3,0,null,null,32,"ion-header",[],null,null,null,null,null)),a["ɵdid"](4,16384,null,0,Q.a,[I.a,a.ElementRef,a.Renderer,[2,H.a]],null,null),(l()(),a["ɵted"](-1,null,["\n  "])),(l()(),a["ɵeld"](6,0,null,null,28,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,J.b,J.a)),a["ɵdid"](7,49152,null,0,U.a,[Z.a,[2,H.a],[2,z.a],I.a,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,3,["\n    "])),(l()(),a["ɵeld"](9,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==a["ɵnov"](l,11).toggle()&&e}return e},L.b,L.a)),a["ɵdid"](10,1097728,[[2,4]],0,M.a,[[8,""],I.a,a.ElementRef,a.Renderer],null,null),a["ɵdid"](11,1064960,null,0,B.a,[G.a,[2,H.a],[2,M.a],[2,U.a]],{menuToggle:[0,"menuToggle"]},null),a["ɵdid"](12,16384,null,1,K.a,[I.a,a.ElementRef,a.Renderer,[2,W.a],[2,U.a]],null,null),a["ɵqud"](603979776,2,{_buttons:1}),(l()(),a["ɵted"](-1,0,["\n      "])),(l()(),a["ɵeld"](15,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),a["ɵdid"](16,147456,null,0,P.a,[I.a,a.ElementRef,a.Renderer],{name:[0,"name"]},null),(l()(),a["ɵted"](-1,0,["\n    "])),(l()(),a["ɵted"](-1,3,["\n    "])),(l()(),a["ɵeld"](19,0,null,3,2,"ion-title",[],null,null,null,X.b,X.a)),a["ɵdid"](20,49152,null,0,Y.a,[I.a,a.ElementRef,a.Renderer,[2,W.a],[2,U.a]],null,null),(l()(),a["ɵted"](-1,0,["Entradas"])),(l()(),a["ɵted"](-1,3,["\n    "])),(l()(),a["ɵeld"](23,0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),a["ɵdid"](24,16384,null,1,K.a,[I.a,a.ElementRef,a.Renderer,[2,W.a],[2,U.a]],null,null),a["ɵqud"](603979776,3,{_buttons:1}),(l()(),a["ɵted"](-1,null,["\n      "])),(l()(),a["ɵeld"](27,0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.openCadastroEntrada()&&e}return e},L.b,L.a)),a["ɵdid"](28,1097728,[[3,4]],0,M.a,[[8,""],I.a,a.ElementRef,a.Renderer],null,null),(l()(),a["ɵted"](-1,0,["\n      "])),(l()(),a["ɵeld"](30,0,null,0,1,"ion-icon",[["name","add-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),a["ɵdid"](31,147456,null,0,P.a,[I.a,a.ElementRef,a.Renderer],{name:[0,"name"]},null),(l()(),a["ɵted"](-1,0,["\n      "])),(l()(),a["ɵted"](-1,null,["\n    "])),(l()(),a["ɵted"](-1,3,["\n  "])),(l()(),a["ɵted"](-1,null,["\n"])),(l()(),a["ɵted"](-1,null,["\n\n"])),(l()(),a["ɵeld"](37,0,null,null,5,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,ll.b,ll.a)),a["ɵdid"](38,4374528,null,0,nl.a,[I.a,_.a,D.a,a.ElementRef,a.Renderer,Z.a,ul.a,a.NgZone,[2,H.a],[2,z.a]],null,null),(l()(),a["ɵted"](-1,1,["\n  "])),(l()(),a["ɵand"](16777216,null,1,1,null,d)),a["ɵdid"](41,802816,null,0,k.i,[a.ViewContainerRef,a.TemplateRef,a.IterableDiffers],{ngForOf:[0,"ngForOf"]},null),(l()(),a["ɵted"](-1,1,["\n"])),(l()(),a["ɵted"](-1,null,["\n\n"]))],function(l,n){var u=n.component;l(n,11,0,"");l(n,16,0,"menu");l(n,31,0,"add-circle");l(n,41,0,u.itensEntradas)},function(l,n){l(n,6,0,a["ɵnov"](n,7)._hidden,a["ɵnov"](n,7)._sbPadding);l(n,9,0,a["ɵnov"](n,11).isHidden);l(n,15,0,a["ɵnov"](n,16)._hidden);l(n,30,0,a["ɵnov"](n,31)._hidden);l(n,37,0,a["ɵnov"](n,38).statusbarPadding,a["ɵnov"](n,38)._hasRefresher)})}Object.defineProperty(n,"__esModule",{value:!0});var a=u(1),o=(u(0),u(82),u(207)),r=function(){function l(l,n,u,e){this.navCtrl=l,this.navParams=n,this.entradaService=u,this.modalCtrl=e,this.page=0,this.showDetails=!1}return l.prototype.ionViewDidLoad=function(){this.getItens()},l.prototype.getItens=function(){var l=this;this.entradaService.findAll().subscribe(function(n){l.itensEntradas=n.sort(),console.log(l.itensEntradas)},function(l){})},l.prototype.openModal=function(){var l=this;console.log("aqui");var n=this.modalCtrl.create("CadastroEntradaPage");n.onDidDismiss(function(){l.getItens()}),n.present()},l.prototype.openCadastroEntrada=function(){var l=this;this.navCtrl.push("CadastroEntradaPage",{},{animate:!0,direction:"forward"}).then(function(){l.navCtrl.getActive().onDidDismiss(function(n){l.getItens()})})},l.prototype.doRefresh=function(l){this.page=0,this.getItens(),setTimeout(function(){l.complete()},1e3)},l.prototype.doInfinite=function(l){this.page++,this.getItens(),setTimeout(function(){l.complete()},1e3)},l.prototype.toggleDetails=function(l,n){this.itensEntradas.map(function(l,u){u==n&&(l.show=!l.show)})},l.prototype.imprimirEtiquetas=function(l){this.entradaService.gerarEtiquetas(l).subscribe(function(l){},function(l){})},l}(),c=function(){return function(){}}(),s=u(187),m=u(188),p=u(189),f=u(190),g=u(191),v=u(192),h=u(193),R=u(194),b=u(195),E=u(210),C=u(126),w=u(129),y=u(19),q=u(56),I=u(3),_=u(6),x=u(10),D=u(13),$=u(63),k=u(15),L=u(41),M=u(27),T=u(213),F=u(215),P=u(43),A=u(123),O=u(24),V=u(21),N=u(53),S=u(62),j=u(214),Q=u(83),H=u(7),J=u(372),U=u(38),Z=u(12),z=u(30),B=u(200),G=u(35),K=u(122),W=u(42),X=u(197),Y=u(61),ll=u(196),nl=u(31),ul=u(34),el=u(16),tl=u(84),dl=a["ɵcrt"]({encapsulation:2,styles:[],data:{}}),il=a["ɵccf"]("page-entrada",r,function(l){return a["ɵvid"](0,[(l()(),a["ɵeld"](0,0,null,null,1,"page-entrada",[],null,null,null,i,dl)),a["ɵdid"](1,49152,null,0,r,[z.a,el.a,o.a,tl.a],null,null)],null,null)},{},{},[]),al=u(121),ol=u(52);u.d(n,"EntradaPageModuleNgFactory",function(){return rl});var rl=a["ɵcmf"](c,[],function(l){return a["ɵmod"]([a["ɵmpd"](512,a.ComponentFactoryResolver,a["ɵCodegenComponentFactoryResolver"],[[8,[s.a,m.a,p.a,f.a,g.a,v.a,h.a,R.a,b.a,il]],[3,a.ComponentFactoryResolver],a.NgModuleRef]),a["ɵmpd"](4608,k.l,k.k,[a.LOCALE_ID,[2,k.u]]),a["ɵmpd"](4608,y.s,y.s,[]),a["ɵmpd"](4608,y.d,y.d,[]),a["ɵmpd"](512,k.b,k.b,[]),a["ɵmpd"](512,y.p,y.p,[]),a["ɵmpd"](512,y.g,y.g,[]),a["ɵmpd"](512,y.n,y.n,[]),a["ɵmpd"](512,al.a,al.a,[]),a["ɵmpd"](512,al.b,al.b,[]),a["ɵmpd"](512,c,c,[]),a["ɵmpd"](256,ol.a,r,[])])})}});
+webpackJsonp([26],{
+
+/***/ 703:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroFornecedorPageModule", function() { return CadastroFornecedorPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_fornecedor__ = __webpack_require__(882);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var CadastroFornecedorPageModule = /** @class */ (function () {
+    function CadastroFornecedorPageModule() {
+    }
+    CadastroFornecedorPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__cadastro_fornecedor__["a" /* CadastroFornecedorPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_fornecedor__["a" /* CadastroFornecedorPage */]),
+            ],
+        })
+    ], CadastroFornecedorPageModule);
+    return CadastroFornecedorPageModule;
+}());
+
+//# sourceMappingURL=cadastro-fornecedor.module.js.map
+
+/***/ }),
+
+/***/ 882:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroFornecedorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the CadastroFornecedorPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CadastroFornecedorPage = /** @class */ (function () {
+    function CadastroFornecedorPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, fornecedorService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.alertCtrl = alertCtrl;
+        this.formBuilder = formBuilder;
+        this.fornecedorService = fornecedorService;
+        this.formGroup = this.formBuilder.group({
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            cnpj: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
+        }, {});
+    }
+    CadastroFornecedorPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CadastroFornecedorPage');
+    };
+    CadastroFornecedorPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    CadastroFornecedorPage.prototype.cadastrarFornecedor = function () {
+        var _this = this;
+        this.fornecedorService.insert(this.formGroup.value).subscribe(function (response) {
+            _this.showInserOk();
+        }, function (error) { });
+    };
+    CadastroFornecedorPage.prototype.showInserOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro efetuado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    CadastroFornecedorPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-cadastro-fornecedor',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-fornecedor\cadastro-fornecedor.html"*/'<!--\n\n  Generated template for the CadastroFornecedorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Fornecedor\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarFornecedor()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>CNPJ*</ion-label>\n\n      <ion-input formControlName="cnpj" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.cnpj.dirty && formGroup.controls.cnpj.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-fornecedor\cadastro-fornecedor.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_fornecedor_service__["a" /* FornecedorService */]])
+    ], CadastroFornecedorPage);
+    return CadastroFornecedorPage;
+}());
+
+//# sourceMappingURL=cadastro-fornecedor.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=26.js.map

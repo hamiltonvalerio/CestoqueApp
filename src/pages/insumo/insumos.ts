@@ -60,6 +60,21 @@ export class InsumosPage {
     error => {})
   }*/
 
+  searchInsumo(event){
+    let text = event.srcElement.value;
+    if (!text) {
+      this.getItens();
+    }
+    this.itensInsumos = this.filterPorts(this.itensInsumos, text);
+    console.log("aqui: "+this.itensInsumos);
+  }
+
+  filterPorts(ports: InsumoDTO[], text: string) {
+    return ports.filter(port => {
+      return port.nomecodalmox.toLowerCase().indexOf(text) !== -1 ;
+    });
+  }
+
   getItens(){
     let loader = this.presentLoading();
     this.itensInsumos = [];

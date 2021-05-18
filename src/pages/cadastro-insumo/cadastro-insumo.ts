@@ -1,3 +1,5 @@
+import { UnidadeService } from './../../services/domain/unidade.service';
+import { UnidadeDTO } from './../../models/unidade.dto';
 import { CCategoriaDTO } from './../../models/ccategoria.dto';
 import { CategoriaService } from './../../services/domain/categoria.service';
 import { IonicSelectableComponent } from 'ionic-selectable';
@@ -33,6 +35,9 @@ export class CadastroInsumoPage {
 
   categoriasInsumos : CategoriaDTO[] = [];
   categoriasInsumosSelecionados : CategoriaDTO[];
+
+  unidades : UnidadeDTO[] = [];
+  unidade: UnidadeDTO;
   
   constructor(
     public navCtrl: NavController, 
@@ -43,7 +48,8 @@ export class CadastroInsumoPage {
     public insumoService: InsumoService,
     public categoriaService: CategoriaService,
     public loadingCtrl: LoadingController,
-    private brMaskerIonic3: BrMaskerIonic3) {
+    private brMaskerIonic3: BrMaskerIonic3,
+    public unidadeService: UnidadeService) {
 
       this.formGroup = this.formBuilder.group({
         id: ['',''],
@@ -57,6 +63,7 @@ export class CadastroInsumoPage {
         quantidade: [,],
         taxadeconsumo: [,],
         categorias: this.formControl,
+        unidade: ['',],
 
         //codigo_barra: [,],
         //qrcode: [,],
@@ -67,6 +74,7 @@ export class CadastroInsumoPage {
 
   ionViewDidLoad() {
     this.loadCategorias();
+    this.loadUnidades();
     this.itemId = this.navParams.get('itemId');
     if(this.itemId != null){
       this.insumoService.findInsumoById(this.itemId).subscribe((resp) => {
@@ -84,11 +92,21 @@ export class CadastroInsumoPage {
           quantidade: [this.updateInsumoDTO.quantidade,''],
           taxadeconsumo: [this.updateInsumoDTO.taxadeconsumo,],
           categorias: [this.updateInsumoDTO.categorias,],
+          unidade: [this.updateInsumoDTO.unidade,],
         }, {}); 
       });
       
     }
     
+  }
+
+  insereunidadeEntradaDTO(event: {
+    component: IonicSelectableComponent,
+    value: any
+  }) {
+   this.unidade = event.value;
+
+   //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
   }
 
   loadCategorias(){
@@ -97,6 +115,15 @@ export class CadastroInsumoPage {
       this.categoriasInsumos = response.sort();
       loader.dismiss();
     });
+  }
+
+  loadUnidades(){
+    let loader = this.presentLoading();
+    this.unidadeService.findAll().subscribe((response) => {
+      this.unidades = response.sort();
+      loader.dismiss();
+    });
+      
   }
 
   presentLoading() {
@@ -114,6 +141,7 @@ export class CadastroInsumoPage {
   cadastrarInsumo(){
 
     let ins: InsumoDTO = this.formGroup.value;
+
     if(ins.id === null || ins.id === ''){
       this.insumoService.insert(this.formGroup.value).subscribe(response => {
         this.showInserOk();

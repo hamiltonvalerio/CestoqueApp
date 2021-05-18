@@ -31,9 +31,10 @@
   </ion-refresher>
 
   <ion-list>
-
+    <ion-searchbar showcancelbutton="" (ionInput)="searchInsumo($event)"></ion-searchbar>
     <ion-row *ngFor="let item of itensInsumos">
       <ion-col>
+        <h6>Cód: {{item.codigoalmox}}</h6>
         <h3>{{item.nome}}</h3>
       </ion-col>
       <ion-col col-1>

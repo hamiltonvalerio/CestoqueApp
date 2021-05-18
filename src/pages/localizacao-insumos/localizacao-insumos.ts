@@ -18,6 +18,7 @@ import * as pdfmake from "pdfmake/build/pdfmake";
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
 import { controlNameBinding } from "@angular/forms/src/directives/reactive_directives/form_control_name";
 import moment from "moment";
+
 /**
  * Generated class for the LocalizacaoInsumosPage page.
  *
@@ -94,10 +95,7 @@ export class LocalizacaoInsumosPage {
 
   }*/
 
-  teste2(){
-    console.log(this.insumosLocalizacao);
-  }
-
+ 
   getItens() {
     let localizacaoId = this.navParams.get("localizacao_id");
     let loader = this.presentLoading();

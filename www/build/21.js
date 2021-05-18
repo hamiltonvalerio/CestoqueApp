@@ -1,1 +1,158 @@
-webpackJsonp([21],{689:function(l,n,e){"use strict";function u(l){return t["ɵvid"](0,[(l()(),t["ɵted"](-1,null,["\n"])),(l()(),t["ɵeld"](1,0,null,null,20,"ion-header",[],null,null,null,null,null)),t["ɵdid"](2,16384,null,0,v.a,[R.a,t.ElementRef,t.Renderer,[2,y.a]],null,null),(l()(),t["ɵted"](-1,null,["\n  "])),(l()(),t["ɵeld"](4,0,null,null,16,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,w.b,w.a)),t["ɵdid"](5,49152,null,0,E.a,[P.a,[2,y.a],[2,C.a],R.a,t.ElementRef,t.Renderer],null,null),(l()(),t["ɵted"](-1,3,["\n    "])),(l()(),t["ɵeld"](7,0,null,0,8,"button",[["ion-button",""],["menuToggle",""]],[[8,"hidden",0]],[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==t["ɵnov"](l,9).toggle()&&u}return u},_.b,_.a)),t["ɵdid"](8,1097728,[[1,4]],0,k.a,[[8,""],R.a,t.ElementRef,t.Renderer],null,null),t["ɵdid"](9,1064960,null,0,x.a,[S.a,[2,y.a],[2,k.a],[2,E.a]],{menuToggle:[0,"menuToggle"]},null),t["ɵdid"](10,16384,null,1,F.a,[R.a,t.ElementRef,t.Renderer,[2,L.a],[2,E.a]],null,null),t["ɵqud"](603979776,1,{_buttons:1}),(l()(),t["ɵted"](-1,0,["\n      "])),(l()(),t["ɵeld"](13,0,null,0,1,"ion-icon",[["name","menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t["ɵdid"](14,147456,null,0,A.a,[R.a,t.ElementRef,t.Renderer],{name:[0,"name"]},null),(l()(),t["ɵted"](-1,0,["\n    "])),(l()(),t["ɵted"](-1,3,["\n    "])),(l()(),t["ɵeld"](17,0,null,3,2,"ion-title",[],null,null,null,H.b,H.a)),t["ɵdid"](18,49152,null,0,M.a,[R.a,t.ElementRef,t.Renderer,[2,L.a],[2,E.a]],null,null),(l()(),t["ɵted"](-1,0,["Profile"])),(l()(),t["ɵted"](-1,3,["\n  "])),(l()(),t["ɵted"](-1,null,["\n"])),(l()(),t["ɵted"](-1,null,["\n\n"])),(l()(),t["ɵeld"](23,0,null,null,36,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,N.b,N.a)),t["ɵdid"](24,4374528,null,0,T.a,[R.a,D.a,O.a,t.ElementRef,t.Renderer,P.a,j.a,t.NgZone,[2,y.a],[2,C.a]],null,null),(l()(),t["ɵted"](-1,1,["\n    "])),(l()(),t["ɵeld"](26,0,null,1,9,"ion-row",[["class","row"]],null,null,null,null,null)),t["ɵdid"](27,16384,null,0,q.a,[],null,null),(l()(),t["ɵted"](-1,null,["\n      "])),(l()(),t["ɵeld"](29,0,null,null,5,"ion-col",[["class","col"],["style","text-align: center;"],["width-50",""]],null,null,null,null,null)),t["ɵdid"](30,16384,null,0,B.a,[],null,null),(l()(),t["ɵted"](-1,null,["\n        "])),(l()(),t["ɵeld"](32,0,null,null,1,"h2",[["text-center",""]],null,null,null,null,null)),(l()(),t["ɵted"](33,null,["",""])),(l()(),t["ɵted"](-1,null,["\n      "])),(l()(),t["ɵted"](-1,null,["\n    "])),(l()(),t["ɵted"](-1,1,["\n    "])),(l()(),t["ɵeld"](37,0,null,1,9,"ion-row",[["class","row"]],null,null,null,null,null)),t["ɵdid"](38,16384,null,0,q.a,[],null,null),(l()(),t["ɵted"](-1,null,["\n      "])),(l()(),t["ɵeld"](40,0,null,null,5,"ion-col",[["class","col"],["style","text-align: center;"],["width-50",""]],null,null,null,null,null)),t["ɵdid"](41,16384,null,0,B.a,[],null,null),(l()(),t["ɵted"](-1,null,["\n        "])),(l()(),t["ɵeld"](43,0,null,null,1,"p",[["text-center",""]],null,null,null,null,null)),(l()(),t["ɵted"](44,null,["",""])),(l()(),t["ɵted"](-1,null,["\n      "])),(l()(),t["ɵted"](-1,null,["\n    "])),(l()(),t["ɵted"](-1,1,["\n    "])),(l()(),t["ɵeld"](48,0,null,1,10,"ion-row",[["class","row"]],null,null,null,null,null)),t["ɵdid"](49,16384,null,0,q.a,[],null,null),(l()(),t["ɵted"](-1,null,["\n      "])),(l()(),t["ɵeld"](51,0,null,null,6,"ion-col",[["class","col"],["style","text-align: center;"],["width-50",""]],null,null,null,null,null)),t["ɵdid"](52,16384,null,0,B.a,[],null,null),(l()(),t["ɵted"](-1,null,["\n        "])),(l()(),t["ɵeld"](54,0,null,null,2,"button",[["ion-button",""],["outline",""]],null,[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.alterarSenha()&&u}return u},_.b,_.a)),t["ɵdid"](55,1097728,null,0,k.a,[[8,""],R.a,t.ElementRef,t.Renderer],{outline:[0,"outline"]},null),(l()(),t["ɵted"](-1,0,["Alterar senha"])),(l()(),t["ɵted"](-1,null,["\n      "])),(l()(),t["ɵted"](-1,null,["\n    "])),(l()(),t["ɵted"](-1,1,["\n    \n  \n"])),(l()(),t["ɵted"](-1,null,["\n"]))],function(l,n){l(n,9,0,"");l(n,14,0,"menu");l(n,55,0,"")},function(l,n){var e=n.component;l(n,4,0,t["ɵnov"](n,5)._hidden,t["ɵnov"](n,5)._sbPadding);l(n,7,0,t["ɵnov"](n,9).isHidden);l(n,13,0,t["ɵnov"](n,14)._hidden);l(n,23,0,t["ɵnov"](n,24).statusbarPadding,t["ɵnov"](n,24)._hasRefresher);l(n,33,0,null==e.colaborador?null:e.colaborador.nome);l(n,44,0,null==e.colaborador?null:e.colaborador.email)})}Object.defineProperty(n,"__esModule",{value:!0});var t=e(1),a=(e(0),e(82),e(203)),d=e(57),o=function(){function l(l,n,e,u){this.navCtrl=l,this.navParams=n,this.storage=e,this.colaboradorService=u}return l.prototype.ionViewDidLoad=function(){var l=this,n=this.storage.getLocalUser();console.log(n),console.log(n.email),n&&n.email?this.colaboradorService.findByEmail(n.email).subscribe(function(n){l.colaborador=n},function(n){403==n.status&&l.navCtrl.setRoot("HomePage")}):this.navCtrl.setRoot("HomePage")},l.prototype.alterarSenha=function(){this.navCtrl.push("AlterarSenhaPage",{item:this.colaborador})},l}(),r=function(){return function(){}}(),i=e(187),c=e(188),s=e(189),m=e(190),f=e(191),p=e(192),g=e(193),b=e(194),h=e(195),v=e(83),R=e(3),y=e(7),w=e(372),E=e(38),P=e(12),C=e(30),_=e(41),k=e(27),x=e(200),S=e(35),F=e(122),L=e(42),A=e(43),H=e(197),M=e(61),N=e(196),T=e(31),D=e(6),O=e(13),j=e(34),q=e(126),B=e(129),I=e(16),J=t["ɵcrt"]({encapsulation:2,styles:[],data:{}}),U=t["ɵccf"]("page-profile",o,function(l){return t["ɵvid"](0,[(l()(),t["ɵeld"](0,0,null,null,1,"page-profile",[],null,null,null,u,J)),t["ɵdid"](1,49152,null,0,o,[C.a,I.a,d.a,a.a],null,null)],null,null)},{},{},[]),V=e(15),Z=e(19),z=e(121),G=e(52);e.d(n,"ProfilePageModuleNgFactory",function(){return K});var K=t["ɵcmf"](r,[],function(l){return t["ɵmod"]([t["ɵmpd"](512,t.ComponentFactoryResolver,t["ɵCodegenComponentFactoryResolver"],[[8,[i.a,c.a,s.a,m.a,f.a,p.a,g.a,b.a,h.a,U]],[3,t.ComponentFactoryResolver],t.NgModuleRef]),t["ɵmpd"](4608,V.l,V.k,[t.LOCALE_ID,[2,V.u]]),t["ɵmpd"](4608,Z.s,Z.s,[]),t["ɵmpd"](4608,Z.d,Z.d,[]),t["ɵmpd"](512,V.b,V.b,[]),t["ɵmpd"](512,Z.p,Z.p,[]),t["ɵmpd"](512,Z.g,Z.g,[]),t["ɵmpd"](512,Z.n,Z.n,[]),t["ɵmpd"](512,z.a,z.a,[]),t["ɵmpd"](512,z.b,z.b,[]),t["ɵmpd"](512,r,r,[]),t["ɵmpd"](256,G.a,o,[])])})}});
+webpackJsonp([21],{
+
+/***/ 711:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntradaPageModule", function() { return EntradaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(892);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var EntradaPageModule = /** @class */ (function () {
+    function EntradaPageModule() {
+    }
+    EntradaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__entrada__["a" /* EntradaPage */]),
+            ],
+        })
+    ], EntradaPageModule);
+    return EntradaPageModule;
+}());
+
+//# sourceMappingURL=entrada.module.js.map
+
+/***/ }),
+
+/***/ 892:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntradaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the EntradaPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EntradaPage = /** @class */ (function () {
+    function EntradaPage(navCtrl, navParams, entradaService, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.entradaService = entradaService;
+        this.modalCtrl = modalCtrl;
+        this.page = 0;
+        this.showDetails = false;
+    }
+    EntradaPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
+        /*this.printer.pick().then(result => {
+          console.log(result);
+        });*/
+    };
+    EntradaPage.prototype.getItens = function () {
+        var _this = this;
+        this.entradaService.findAll()
+            .subscribe(function (response) {
+            //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+            _this.itensEntradas = response.sort();
+            console.log(_this.itensEntradas);
+        }, function (error) { });
+    };
+    EntradaPage.prototype.openModal = function () {
+        var _this = this;
+        console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroEntradaPage');
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    EntradaPage.prototype.openCadastroEntrada = function () {
+        var _this = this;
+        this.navCtrl.push('CadastroEntradaPage', {}, {
+            animate: true,
+            direction: 'forward'
+        }).then(function () {
+            _this.navCtrl.getActive().onDidDismiss(function (data) {
+                //console.log(data);
+                _this.getItens();
+            });
+        });
+    };
+    EntradaPage.prototype.doRefresh = function (refresher) {
+        this.page = 0;
+        this.getItens();
+        setTimeout(function () {
+            refresher.complete();
+        }, 1000);
+    };
+    EntradaPage.prototype.doInfinite = function (infiniteScroll) {
+        this.page++;
+        this.getItens();
+        setTimeout(function () {
+            infiniteScroll.complete();
+        }, 1000);
+    };
+    EntradaPage.prototype.toggleDetails = function (show, i) {
+        this.itensEntradas.map(function (_, index) {
+            if (index == i) {
+                _.show = !_.show;
+            }
+        });
+    };
+    EntradaPage.prototype.imprimirEtiquetas = function (ent) {
+        this.entradaService.gerarEtiquetas(ent).subscribe(function (response) {
+        }, function (error) { });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('myNav'),
+        __metadata("design:type", Object)
+    ], EntradaPage.prototype, "nav", void 0);
+    EntradaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-entrada',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n\n  Generated template for the EntradaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Entradas</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Número da Requisição (LIA): {{ent.numLIA}}</p>\n\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n\n        <p>Lote de Recebimento: {{ent.loteRecebimento}}</p>\n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="ent.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <ion-grid *ngFor="let ient of ent.itens" class="tamanho-da-font">\n\n          <ion-row><ion-col>Produto: {{ient.insumo.nome}} </ion-col></ion-row>\n\n          <ion-row><ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col></ion-row>\n\n          <ion-row><ion-col>Lote CR: {{ient.loteCR}}</ion-col></ion-row>\n\n          <ion-row><ion-col>Data de Validade: {{ient.dataValidade | date: \'dd/MM/yyyy\'}}</ion-col><ion-col>Data de Irradiação: {{ient.dataIrradiacao | date: \'dd/MM/yyyy H:mm\'}}</ion-col></ion-row>\n\n          <ion-row><ion-col>Quantidade Entrada: {{ient.quantidade}}</ion-col><ion-col>Quantidade Atual: {{ient.insumo.quantidade}}</ion-col></ion-row>\n\n          <ion-row><ion-col>Quantidade de etiquetas: <input type="number" [(ngModel)]="ient.quantidadeetiquetas"> </ion-col></ion-row>\n\n        </ion-grid>\n\n        <button ion-button (click)="imprimirEtiquetas(ent)">Imprimir etiquetas</button>\n\n      </ion-list>\n\n    </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_entrada_service__["a" /* EntradaService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */]])
+    ], EntradaPage);
+    return EntradaPage;
+}());
+
+//# sourceMappingURL=entrada.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=21.js.map

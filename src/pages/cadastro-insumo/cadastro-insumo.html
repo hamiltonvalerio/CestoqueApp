@@ -90,6 +90,39 @@
       <ion-input disabled formControlName="quantidade" type="number"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label >Quantidade Recebida</ion-label>
+      <ion-input type="number" formControlName="quantidade"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Unidade de Entrada</ion-label>
+      <ionic-selectable 
+        item-content 
+        [items]="unidades"
+        formControlName="unidade"
+        itemValueField="id"
+        itemTextField="nome"
+        [canSearch]="true"
+        [focusSearchbar]="true"
+        (onChange)="insereunidadeEntradaDTO($event)">
+  
+        <ng-template ionicSelectableItemTemplate let-port="item">
+         
+          <ion-item>
+            <ion-label text-wrap class="label_12_b">
+              {{port.nome}} 
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label_14">
+              Sigla: {{port.sigla}}
+            </ion-label>
+          </ion-item>
+  
+        </ng-template>
+  
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
       <ion-label stacked>Taxa de Consumo</ion-label>
       <ion-input formControlName="taxadeconsumo" type="number"></ion-input>
     </ion-item>
