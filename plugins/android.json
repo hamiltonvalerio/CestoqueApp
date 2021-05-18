@@ -7,37 +7,37 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-android-permissions": {
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "br.ipen.cestoque"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "br.ipen.cestoque"
+    },
+    "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "br.ipen.cestoque"
-    },
-    "cordova-plugin-ionic-keyboard": {
+    "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
     "cordova-plugin-ionic-webview": {
       "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
-    "cordova-plugin-printer": {
-      "ANDROID_SUPPORT_V4_VERSION": "28.+",
+    "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "br.ipen.cestoque"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "br.ipen.cestoque"
-    },
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
     "phonegap-plugin-barcodescanner": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "br.ipen.cestoque"
+    },
+    "cordova-plugin-printer": {
+      "ANDROID_SUPPORT_V4_VERSION": "28.+",
       "PACKAGE_NAME": "br.ipen.cestoque"
     },
     "cordova-plugin-file-opener2": {

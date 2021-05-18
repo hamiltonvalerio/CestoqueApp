@@ -94,6 +94,10 @@ export class LocalizacaoInsumosPage {
 
   }*/
 
+  teste2(){
+    console.log(this.insumosLocalizacao);
+  }
+
   getItens() {
     let localizacaoId = this.navParams.get("localizacao_id");
     let loader = this.presentLoading();
@@ -107,7 +111,7 @@ export class LocalizacaoInsumosPage {
           this.insumosLocalizacao = this.insumosLocalizacao.concat(
             response["content"]
           );
-          console.log(this.insumosLocalizacao);
+         
           let end = this.insumosLocalizacao.length - 1;
           loader.dismiss();
         },
@@ -162,11 +166,11 @@ export class LocalizacaoInsumosPage {
           body.push(row);
       }
   }
-  for (var key in rows) 
+  for (var keys in rows) 
   {
-      if (rows.hasOwnProperty(key))
+      if (rows.hasOwnProperty(keys))
       {
-        var data = rows[key];
+        var data = rows[keys];
         console.log(data)
           var row = new Array();
           row.push( data.codigoalmoxarifado );

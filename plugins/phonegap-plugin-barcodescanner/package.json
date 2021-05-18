@@ -6,7 +6,7 @@
   "_location": "/phonegap-plugin-barcodescanner",
   "_phantomChildren": {
     "abbrev": "1.1.1",
-    "glob": "7.1.6",
+    "glob": "7.1.7",
     "interpret": "1.4.0",
     "osenv": "0.1.5",
     "rechoir": "0.6.2"
