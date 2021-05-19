@@ -180,6 +180,8 @@ export class LocalizacaoInsumosPage {
           body.push(row);
       }
   }
+
+  var nomelocal = this.nomeLocalizacao;
   
   var dd = {
           pageSize: "A4",
@@ -191,7 +193,7 @@ export class LocalizacaoInsumosPage {
                   columns: [
                     {
                       },
-                      { text:['ESTOQUE REAGENTES LIOFILIZADOS'], 
+                      { text:['ESTOQUE '+nomelocal], 
                               alignment: 'center',bold:true,margin:[-250,40,0,0],fontSize: 24}
                   ]
               }
