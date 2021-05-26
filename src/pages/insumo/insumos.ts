@@ -131,5 +131,13 @@ export class InsumosPage {
     modal.present();
   }
 
+  openPdf() {
+    this.insumoService.relatorioInsumos().subscribe((response) => {
+      const file = new Blob([response], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+    });
+  }
+
 
 }

@@ -86,6 +86,14 @@ export class InsumoService {
         });
     }
 
+    relatorioInsumos(): any{
+        const httpOptions = {
+            responseType: 'arraybuffer' as 'json'
+            // 'responseType'  : 'blob' as 'json'        //This also worked
+          };
+        return this.http.get<any>(`${API_CONFIG.baseUrl}/relatorios/insumos/`, httpOptions);
+    }
+
     ajustarInsumo(){
 
     }
