@@ -78,9 +78,9 @@
   </ion-item>
   
 
-    <ion-item color="item_entrada">
-      <input type="file"  (change)="onUploadChange($event)" multiple/>
-    </ion-item>
+  <ion-item color="item_entrada">
+    <input type="file"  (change)="onUploadChange($event)" multiple/>
+  </ion-item>
 
   
 
@@ -185,6 +185,9 @@
   <ion-item>
     <ion-label>Lote Fabricante</ion-label>
     <ion-input type="text" formControlName="loteFornecedor"> </ion-input>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <input type="file"  (change)="onUploadInsumoLoteChange($event)"/>
   </ion-item>
   <ion-item>
     <ion-label>Lote CR</ion-label>

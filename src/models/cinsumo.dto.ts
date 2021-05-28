@@ -1,3 +1,4 @@
+import { InsumoArquivoDTO } from './insumoarquivo.dto';
 import { CategoriaDTO } from './categoria.dto';
 import { InsumoDTO } from './insumo.dto';
 import { UnidadeDTO } from './unidade.dto';
@@ -18,6 +19,7 @@ export class CInsumoDTO implements InsumoDTO{
     unidade: UnidadeDTO;
     nomecodalmox: string;
     categorias: CategoriaDTO[];
+    insumoArquivo: InsumoArquivoDTO;
 
       constructor(insumo: InsumoDTO){
         this.id= insumo.id;
@@ -36,6 +38,7 @@ export class CInsumoDTO implements InsumoDTO{
         this.unidade = insumo.unidade;
         this.nomecodalmox = insumo.nomecodalmox;
         this.categorias = insumo.categorias;
+        this.insumoArquivo = insumo.insumoArquivo;
     }
 
 

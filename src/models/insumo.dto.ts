@@ -1,3 +1,4 @@
+import { InsumoArquivoDTO } from './insumoarquivo.dto';
 import { CategoriaDTO } from "./categoria.dto";
 import { UnidadeDTO } from "./unidade.dto";
 
@@ -19,4 +20,5 @@ export interface InsumoDTO{
     unidade: UnidadeDTO;
     nomecodalmox: string;
     categorias: CategoriaDTO[];
+    insumoArquivo: InsumoArquivoDTO;   
 }

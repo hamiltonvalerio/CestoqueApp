@@ -1,3 +1,5 @@
+import { ArquivoDTO } from './../../models/arquivo.dto';
+import { InsumoArquivoDTO } from './../../models/insumoarquivo.dto';
 import { UnidadeService } from './../../services/domain/unidade.service';
 import { UnidadeDTO } from './../../models/unidade.dto';
 import { DateTimeFormatPipe } from './../../utils/date-time-format';
@@ -48,6 +50,7 @@ export class CadastroEntradaPage {
   formData = new FormData();
   quantarquivos : number = 0;
   ent : string = '';
+  insumoArquivoDTO : InsumoArquivoDTO;
 
   testeFile : string;
   
@@ -290,19 +293,18 @@ export class CadastroEntradaPage {
       
       this.cie = this.formGroup.value;
       this.cie.insumo.unidade = this.unidadeEntrada;
-    
+      if(this.insumoArquivoDTO.file != null){
+        this.insumoArquivoDTO.insumo = this.cie.insumo;
+        this.insumoArquivoDTO.loteFornecedor = this.cie.loteFornecedor;
+      }
+      this.cie.insumo.insumoArquivo = this.insumoArquivoDTO;
+      console.log(this.cie);
 
 
-      this.citensnovaentrada.push(this.formGroup.value);
-      
-      
-      //calcular e gravar unidades
-
-
+      //this.citensnovaentrada.push(this.formGroup.value);
+      this.citensnovaentrada.push(this.cie);
       this.botaoEntrada = false;
       this.reset();
-      //console.log('this.numeronf',this.numeronf);
-      //console.log('this.formGroup.value',this.citensnovaentrada);
     }
   
     insereInsumoEntradaDTO(event: {
@@ -489,8 +491,6 @@ export class CadastroEntradaPage {
 
   insereLista(){
    
-    
-
   }
 
   onUploadChange(ev) {
@@ -502,6 +502,18 @@ export class CadastroEntradaPage {
 
   }
 
+  onUploadInsumoLoteChange(ev) {
+ 
+    let ia : InsumoArquivoDTO = {
+      id : null,
+      arquivo : null,
+      insumo : null,
+      loteFornecedor : null,
+      file : ev.target.files.item(0)
+    } 
+    this.insumoArquivoDTO = ia;
+    console.log(this.insumoArquivoDTO);
+  }
     
   
 
