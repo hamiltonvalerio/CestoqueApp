@@ -1,3 +1,4 @@
+import { InsumoArquivoDTO } from './../../models/insumoarquivo.dto';
 import { Observable } from 'rxjs/Rx';
 import { API_CONFIG } from './../../config/api.config';
 import { EntradaDTO } from './../../models/entrada.dto';
@@ -31,12 +32,31 @@ export class EntradaService{
 
     insertArquivos(obj: FormData, identrada: string){
         obj.append('identrada', identrada);
-        return this.http.post(`${API_CONFIG.baseUrl}/entradas/inserarquivos/`,
+        return this.http.post(`${API_CONFIG.baseUrl}/entradas/inserearquivos/`,
         obj,
         {
             observe: 'response',
             responseType: 'text'
         });
+    }
+
+    insertArquivosInsumos(insumosArquivosDTO: InsumoArquivoDTO){
+        var fd = new FormData;
+        fd.append('file', insumosArquivosDTO.file, insumosArquivosDTO.file.name);
+        fd.append("idinsumo",insumosArquivosDTO.insumo.id);
+        fd.append("loteFornecedor",insumosArquivosDTO.loteFornecedor);
+        return this.http.post(`${API_CONFIG.baseUrl}/entradas/insereinsumosarquivos/`,
+            fd,
+            {
+                observe: 'response',
+                responseType: 'text'
+            }); 
+    }
+
+    formData(myFormData) {
+        return Object.keys(myFormData).map(function (key) {
+          return encodeURIComponent(key) + '=' + encodeURIComponent(myFormData[key]);
+      }).join('&');
     }
 
     gerarEtiquetas(obj: EntradaDTO){

@@ -20,5 +20,5 @@ export interface InsumoDTO{
     unidade: UnidadeDTO;
     nomecodalmox: string;
     categorias: CategoriaDTO[];
-    insumoArquivo: InsumoArquivoDTO;   
+    arquivos: InsumoArquivoDTO[];   
 }

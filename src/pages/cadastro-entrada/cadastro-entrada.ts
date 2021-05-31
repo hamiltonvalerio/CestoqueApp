@@ -51,6 +51,7 @@ export class CadastroEntradaPage {
   quantarquivos : number = 0;
   ent : string = '';
   insumoArquivoDTO : InsumoArquivoDTO;
+  insumosArquivosDTO : InsumoArquivoDTO[] = [];
 
   testeFile : string;
   
@@ -126,6 +127,7 @@ export class CadastroEntradaPage {
       valorTotal: ['',],
       unidadeRecebida: ['',],
       unidadeEntrada: ['',],
+      fileinsumo: ['',],
     }, {});
     
     
@@ -290,18 +292,15 @@ export class CadastroEntradaPage {
     
 
     insereListaEntrada() {
-      
+      //let itensIns : InsumoEntradaDTO[] = [];
+
       this.cie = this.formGroup.value;
       this.cie.insumo.unidade = this.unidadeEntrada;
       if(this.insumoArquivoDTO.file != null){
         this.insumoArquivoDTO.insumo = this.cie.insumo;
         this.insumoArquivoDTO.loteFornecedor = this.cie.loteFornecedor;
+        this.insumosArquivosDTO.push(this.insumoArquivoDTO);
       }
-      this.cie.insumo.insumoArquivo = this.insumoArquivoDTO;
-      console.log(this.cie);
-
-
-      //this.citensnovaentrada.push(this.formGroup.value);
       this.citensnovaentrada.push(this.cie);
       this.botaoEntrada = false;
       this.reset();
@@ -381,6 +380,7 @@ export class CadastroEntradaPage {
 
     reset() {
       //console.log("teste");
+
       this.formGroup.reset();
     }
 
@@ -426,15 +426,24 @@ export class CadastroEntradaPage {
       this.entradaService.insert(this.entrada).subscribe(response => {
       this.ent = '';
       this.ent = response['body'];
-      console.log(this.ent);
-        if(this.quantarquivos > 0){
-          this.entradaService.insertArquivos(this.formData, this.ent).subscribe(response => {
-            this.showInsertOk();
+      console.log(this.insumosArquivosDTO)
+      if(this.insumosArquivosDTO != null ){
+
+        this.insumosArquivosDTO.forEach(element => {
+          this.entradaService.insertArquivosInsumos(element).subscribe(response => {
           },
           error => {});
-        }else{
+        });
+      }
+            
+      if(this.quantarquivos > 0){
+        this.entradaService.insertArquivos(this.formData, this.ent).subscribe(response => {
           this.showInsertOk();
-        }
+        },
+        error => {});
+      }else{
+        this.showInsertOk();
+      }
         
       },
       error => {});
@@ -511,8 +520,8 @@ export class CadastroEntradaPage {
       loteFornecedor : null,
       file : ev.target.files.item(0)
     } 
+
     this.insumoArquivoDTO = ia;
-    console.log(this.insumoArquivoDTO);
   }
     
   

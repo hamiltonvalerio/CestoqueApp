@@ -163,11 +163,11 @@ var map = {
 		23
 	],
 	"../pages/categorias/categorias.module": [
-		711,
+		710,
 		9
 	],
 	"../pages/dashboard/dashboard.module": [
-		710,
+		711,
 		22
 	],
 	"../pages/entrada/entrada.module": [
@@ -183,7 +183,7 @@ var map = {
 		19
 	],
 	"../pages/insumo/insumos.module": [
-		716,
+		715,
 		4
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
@@ -191,43 +191,43 @@ var map = {
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		715,
+		716,
 		8
 	],
 	"../pages/manual/manual.module": [
-		725,
+		718,
 		18
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		718,
+		719,
 		6
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		719,
+		720,
 		5
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		726,
+		721,
 		17
 	],
 	"../pages/producao/producao.module": [
-		720,
+		722,
 		16
 	],
 	"../pages/produto/produto.module": [
-		721,
+		723,
 		15
 	],
 	"../pages/profile/profile.module": [
-		722,
+		724,
 		14
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
-		724,
+		725,
 		13
 	],
 	"../pages/saida/saida.module": [
-		723,
+		726,
 		12
 	],
 	"../pages/signup/signup.module": [
@@ -655,10 +655,25 @@ var EntradaService = /** @class */ (function () {
     };
     EntradaService.prototype.insertArquivos = function (obj, identrada) {
         obj.append('identrada', identrada);
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/entradas/inserarquivos/", obj, {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/entradas/inserearquivos/", obj, {
             observe: 'response',
             responseType: 'text'
         });
+    };
+    EntradaService.prototype.insertArquivosInsumos = function (insumosArquivosDTO) {
+        var fd = new FormData;
+        fd.append('file', insumosArquivosDTO.file, insumosArquivosDTO.file.name);
+        fd.append("idinsumo", insumosArquivosDTO.insumo.id);
+        fd.append("loteFornecedor", insumosArquivosDTO.loteFornecedor);
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/entradas/insereinsumosarquivos/", fd, {
+            observe: 'response',
+            responseType: 'text'
+        });
+    };
+    EntradaService.prototype.formData = function (myFormData) {
+        return Object.keys(myFormData).map(function (key) {
+            return encodeURIComponent(key) + '=' + encodeURIComponent(myFormData[key]);
+        }).join('&');
     };
     EntradaService.prototype.gerarEtiquetas = function (obj) {
         return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/entradas/geraretiquetas/", obj, {
@@ -668,9 +683,10 @@ var EntradaService = /** @class */ (function () {
     };
     EntradaService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
     ], EntradaService);
     return EntradaService;
+    var _a;
 }());
 
 //# sourceMappingURL=entrada.service.js.map
@@ -940,23 +956,23 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
                     ]
