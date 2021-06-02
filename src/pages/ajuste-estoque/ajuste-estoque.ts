@@ -188,7 +188,10 @@ export class AjusteEstoquePage {
     quantidade: 0, 
     valor: 0,
     valorTotal: 0,
-    quantidadeetiquetas: 1};
+    quantidadeetiquetas: 1,
+    unidadeRecebida: null,
+    quantidadeVolume: 0,
+    unidadeEntrada: null};
 
    if(this.citensEntrada.insumo.unidade != null){
       this.unidadeEntrada = this.citensEntrada.insumo.unidade;
@@ -233,7 +236,10 @@ export class AjusteEstoquePage {
             quantidade: 0, 
             valor: 0,
             valorTotal: 0,
-            quantidadeetiquetas: 1};
+            quantidadeetiquetas: 1,
+            unidadeRecebida: null,
+            quantidadeVolume: 0,
+            unidadeEntrada: null};
           
           itensIns.push(insEnt);
         }); 

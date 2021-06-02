@@ -1,3 +1,4 @@
+import { DateNow } from './../utils/datenow';
 import { AjusteEstoqueService } from './../services/domain/ajusteestoque.service';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { DateFormatPipe } from './../utils/date-format';
@@ -81,6 +82,7 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
     AjusteEstoqueService,
     File,
     FileOpener,
+    DateNow,
   ]
 })
 export class AppModule {}

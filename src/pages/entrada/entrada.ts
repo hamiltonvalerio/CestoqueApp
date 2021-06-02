@@ -53,13 +53,13 @@ export class EntradaPage {
     .subscribe(response => {
       //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
       this.itensEntradas = response.sort();
-      console.log(this.itensEntradas);
+      //console.log(this.itensEntradas);
     },
     error => {}) 
   }
 
   openModal() {
-    console.log("aqui");
+    //console.log("aqui");
     let modal = this.modalCtrl.create('CadastroEntradaPage');
     modal.onDidDismiss(() => {
       this.getItens();

@@ -1,3 +1,4 @@
+import { UnidadeDTO } from './unidade.dto';
 import { InsumoEntradaDTO } from './insumoentrada.dto';
 import { InsumoDTO } from './insumo.dto';
 
@@ -19,6 +20,9 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
 
     quantidadeetiquetas: number;
 
+    unidadeRecebida: UnidadeDTO;
+    quantidadeVolume: number;
+    unidadeEntrada: UnidadeDTO;
     constructor(ie: InsumoEntradaDTO){
         this.insumo= ie.insumo;
         
@@ -35,6 +39,10 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
         this.valorTotal= ie.valorTotal;
 
         this.quantidadeetiquetas = ie.quantidadeetiquetas;
+
+        this.unidadeRecebida = ie.unidadeRecebida;
+        this.quantidadeVolume = ie.quantidadeVolume;
+        this.unidadeEntrada = ie.unidadeEntrada;
     }
 
    

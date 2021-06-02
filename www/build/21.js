@@ -1,6 +1,6 @@
 webpackJsonp([21],{
 
-/***/ 712:
+/***/ 713:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntradaPageModule", function() { return EntradaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(893);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrada__ = __webpack_require__(894);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var EntradaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 893:
+/***/ 894:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85,12 +85,12 @@ var EntradaPage = /** @class */ (function () {
             .subscribe(function (response) {
             //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
             _this.itensEntradas = response.sort();
-            console.log(_this.itensEntradas);
+            //console.log(this.itensEntradas);
         }, function (error) { });
     };
     EntradaPage.prototype.openModal = function () {
         var _this = this;
-        console.log("aqui");
+        //console.log("aqui");
         var modal = this.modalCtrl.create('CadastroEntradaPage');
         modal.onDidDismiss(function () {
             _this.getItens();

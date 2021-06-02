@@ -1,3 +1,4 @@
+import { DateNow } from './../../utils/datenow';
 import { ArquivoDTO } from './../../models/arquivo.dto';
 import { InsumoArquivoDTO } from './../../models/insumoarquivo.dto';
 import { UnidadeService } from './../../services/domain/unidade.service';
@@ -60,7 +61,7 @@ export class CadastroEntradaPage {
   numProcesso: string;
   numRequisicao: string;
 
-  dataEntrada= moment().format();
+  dataEntrada : string;
   
   //itensInsumosx : InsumoDTO;
   
@@ -110,6 +111,7 @@ export class CadastroEntradaPage {
     public entradaService: EntradaService,
     public dateTimeFormatPipe: DateTimeFormatPipe,
     public unidadeService: UnidadeService,
+    public dateNow: DateNow,
     ) {
       
      
@@ -119,13 +121,13 @@ export class CadastroEntradaPage {
       loteFornecedor: ['',], 
       loteCR: ['',], 
       loteARM: ['',],
-      dataIrradiacao: ['',],
       dataValidade: ['',],
       dataFabricacao: ['',],
       quantidade: ['',[Validators.required]],
       valor: ['',],
       valorTotal: ['',],
       unidadeRecebida: ['',],
+      quantidadeVolume: ['',],
       unidadeEntrada: ['',],
       fileinsumo: ['',],
     }, {});
@@ -134,12 +136,15 @@ export class CadastroEntradaPage {
   }
 
   ionViewDidLoad() {
+    this.dataEntrada = this.dateNow.getDateNow();
     this.loadData();
     this.loadFornecedor();
     this.loadLocalizacao();
     this.loadUnidades();
     //console.log("oia"+this.fornecedor);
   }
+
+ 
 
   dismiss() {
     //this.navCtrl.push('EntradaPage', {}, {animate: true, direction: 'forward'});
@@ -221,7 +226,10 @@ export class CadastroEntradaPage {
             quantidade: 0, 
             valor: 0,
             valorTotal: 0,
-            quantidadeetiquetas: 1};
+            quantidadeetiquetas: 1,
+            unidadeRecebida: null,
+            quantidadeVolume: 0,
+            unidadeEntrada: null};
           
           itensIns.push(insEnt);
         }); 
@@ -296,14 +304,19 @@ export class CadastroEntradaPage {
 
       this.cie = this.formGroup.value;
       this.cie.insumo.unidade = this.unidadeEntrada;
-      if(this.insumoArquivoDTO.file != null){
+
+      if(this.insumoArquivoDTO != null){
         this.insumoArquivoDTO.insumo = this.cie.insumo;
         this.insumoArquivoDTO.loteFornecedor = this.cie.loteFornecedor;
         this.insumosArquivosDTO.push(this.insumoArquivoDTO);
       }
       this.citensnovaentrada.push(this.cie);
       this.botaoEntrada = false;
+      
+      console.log(this.cie);
+
       this.reset();
+
     }
   
     insereInsumoEntradaDTO(event: {
@@ -326,7 +339,10 @@ export class CadastroEntradaPage {
       quantidade: 0, 
       valor: 0,
       valorTotal: 0,
-      quantidadeetiquetas: 1};
+      quantidadeetiquetas: 1,
+      unidadeRecebida: null,
+      quantidadeVolume: 0,
+      unidadeEntrada: null};
 
      if(this.citensEntrada.insumo.unidade != null){
         this.unidadeEntrada = this.citensEntrada.insumo.unidade;
@@ -370,8 +386,8 @@ export class CadastroEntradaPage {
       //let newDto : InsumoNewDTO;
       //newDto.nome = dto.nome;
       //newDto.valor = +dto.valor;
-      console.log("aqui");
-      console.log(dto);
+      //console.log("aqui");
+      //console.log(dto);
       /*this.insumoService.insert(this.formGroup.value).subscribe(response => {
         this.showInserOk();
       },
@@ -422,31 +438,52 @@ export class CadastroEntradaPage {
       this.entrada.numProcesso = this.numProcesso;
       this.entrada.numRequisicao = this.numRequisicao;
       this.entrada.itens = this.citensnovaentrada;
-      this.entrada.localizacao = this.localizacao;
-      this.entradaService.insert(this.entrada).subscribe(response => {
-      this.ent = '';
-      this.ent = response['body'];
-      console.log(this.insumosArquivosDTO)
-      if(this.insumosArquivosDTO != null ){
+      
+      if(this.localizacao != null){
 
-        this.insumosArquivosDTO.forEach(element => {
-          this.entradaService.insertArquivosInsumos(element).subscribe(response => {
-          },
-          error => {});
-        });
-      }
-            
-      if(this.quantarquivos > 0){
-        this.entradaService.insertArquivos(this.formData, this.ent).subscribe(response => {
-          this.showInsertOk();
+        this.entrada.localizacao = this.localizacao;
+        this.entradaService.insert(this.entrada).subscribe(response => {
+        this.ent = '';
+        this.ent = response['body'];
+        //console.log(this.insumosArquivosDTO)
+        if(this.insumosArquivosDTO != null ){
+  
+          this.insumosArquivosDTO.forEach(element => {
+            this.entradaService.insertArquivosInsumos(element).subscribe(response => {
+            },
+            error => {});
+          });
+        }
+              
+          if(this.quantarquivos > 0){
+            this.entradaService.insertArquivos(this.formData, this.ent).subscribe(response => {
+              this.showInsertOk();
+            },
+            error => {});
+          }else{
+            this.showInsertOk();
+          }
+          
         },
         error => {});
       }else{
-        this.showInsertOk();
+        this.showLocalizacaoNulo();
       }
-        
-      },
-      error => {});
+
+    }
+
+    showLocalizacaoNulo(){
+      let alert = this.alertCtrl.create({
+        title: 'Erro',
+        message: 'Localização não pode ser nulo!',
+        enableBackdropDismiss: false,
+        buttons: [
+          {
+            text: 'Ok',
+          }
+        ]
+      });
+      alert.present();
     }
 
     showInsertOk(){

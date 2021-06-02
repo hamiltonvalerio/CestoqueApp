@@ -1,3 +1,4 @@
+import { UnidadeDTO } from './unidade.dto';
 import { InsumoDTO } from './insumo.dto';
 export interface InsumoEntradaDTO{
     insumo: InsumoDTO;
@@ -16,4 +17,8 @@ export interface InsumoEntradaDTO{
     valorTotal: number;
 
     quantidadeetiquetas: number;
+
+    unidadeRecebida: UnidadeDTO;
+    quantidadeVolume: number;
+    unidadeEntrada: UnidadeDTO;
 }
