@@ -1,12 +1,11 @@
 page-cadastro-movimentacao {
-    .vertical-align-content > *
-    {
-         display: flex!important;
-         align-content: center!important;
-         align-items: center!important;
+    ion-grid{
+        height: 100%;
     }
-
-    ion-row {
-        text-align: center;
+    ion-row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //height: 2%;
     }
 }

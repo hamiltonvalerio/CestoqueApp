@@ -28244,6 +28244,14 @@ ion-navbar.toolbar {
   align-items: center;
 }
 
+.odd {
+  background-color: #9696f5;
+}
+
+.even {
+  background-color: #c0f39d;
+}
+
 page-alterar-senha .danger {
   color: red;
 }
@@ -28253,22 +28261,23 @@ page-cadastro-entrada .my-center-text {
   width: 100%;
 }
 
-page-cadastro-movimentacao .vertical-align-content > * {
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-align-content: center !important;
-  -ms-flex-line-pack: center !important;
-  align-content: center !important;
-  -webkit-box-align: center !important;
-  -webkit-align-items: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important;
+page-cadastro-movimentacao ion-grid {
+  height: 100%;
 }
 
 page-cadastro-movimentacao ion-row {
-  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .card-vermelho {

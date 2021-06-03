@@ -1,3 +1,4 @@
+import { DateNow } from './../../utils/datenow';
 import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
 import { MovimentacaoService } from './../../services/domain/movimentacao.service';
 import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
@@ -50,7 +51,7 @@ export class CadastroMovimentacaoPage {
   mov : MovimentacaoDTO;
 
   movimentacaogrid: MovimentacaoDTO = {} as any; 
-  datamovimentacao: Date = new Date();
+  datamovimentacao : string;
 
   de: LocalizacaoDTO;
   para: LocalizacaoDTO;
@@ -71,12 +72,14 @@ export class CadastroMovimentacaoPage {
     public loadingCtrl: LoadingController,
     public localizacaoService: LocalizacaoService,
     public dateTimeFormatPipe: DateTimeFormatPipe,
-    public movimentacaoService: MovimentacaoService,) {
+    public movimentacaoService: MovimentacaoService,
+    public dateNow: DateNow,) {
 
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad CadastroMovimentacaoPage');
+    this.datamovimentacao = this.dateNow.getDateNow();
     this.loadLocalizacao();
     this.loadParaLocalizacao();
   }
@@ -159,8 +162,6 @@ export class CadastroMovimentacaoPage {
   
   gerarGridMovimentacao(){
     if(this.datamovimentacao == null || this.localizacao == null || this.paralocalizacao == null || (typeof this.insumosLocalizacoesSelecionados == 'undefined')){
-     
-      console.log("entrou")
       return;
     }
 
@@ -185,6 +186,7 @@ export class CadastroMovimentacaoPage {
         aprovado: value.aprovado,
         fieldsGarantiaQualidade: true,
         loteRecebimento: value.loteRecebimento,
+        loteLEI: value.loteLEI,
       };
       itensInsumosMovimentacao.push(itemMov);
     });
@@ -209,7 +211,7 @@ export class CadastroMovimentacaoPage {
 
   inserirMovimentacao(){
     //console.log(this.movimentacao);
-
+    let qtdvazio : boolean = false;
     this.mov  = {} as any;
 
     this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
@@ -217,10 +219,27 @@ export class CadastroMovimentacaoPage {
     this.mov.localizacaoDestino = this.paralocalizacao;
     this.mov.itens = this.movimentacao.itens;
 
-    this.movimentacaoService.insert(this.mov).subscribe(response => {
-      this.showInsertOk();
-    },
-    error => {});
+    console.log(this.mov.itens);
+
+    this.mov.itens.forEach(element => {
+
+      if(element.quantidadeMovimentada != null){
+        if(element.quantidadeMovimentada == 0){
+          qtdvazio = true;
+        }
+      }
+      
+    });
+
+
+    if(qtdvazio){
+      this.showQtdVazio();
+    }else{
+      this.movimentacaoService.insert(this.mov).subscribe(response => {
+        this.showInsertOk();
+      },
+      error => {});
+    }
   }
 
   showInsertOk(){
@@ -240,6 +259,20 @@ export class CadastroMovimentacaoPage {
     alert.present();
   }
 
+  showQtdVazio(){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Não é possível inserir movimentação sem quantidade!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+        }
+      ]
+    });
+    alert.present();
+  }
+
   excluiItem(insumomovimentacaoDTO: InsumomovimentacaoDTO){
 
   this.movimentacao.itens.forEach(function(item, index, object) {
@@ -247,9 +280,9 @@ export class CadastroMovimentacaoPage {
         object.splice(index, 1);
       }
     });
-  if(this.movimentacao.itens.length == 0){
-    this.botaoMovimenta = true;
-  }
+    if(this.movimentacao.itens.length == 0){
+      this.botaoMovimenta = true;
+    }
   //this.loadData();
   }
 

@@ -21,4 +21,6 @@ export interface InsumoEntradaDTO{
     unidadeRecebida: UnidadeDTO;
     quantidadeVolume: number;
     unidadeEntrada: UnidadeDTO;
+
+    loteLEI: string;
 }

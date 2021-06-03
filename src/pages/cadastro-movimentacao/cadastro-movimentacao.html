@@ -22,7 +22,7 @@
 
   <ion-item color="item_entrada">
     <ion-label>Data da Movimentação</ion-label>
-    <ion-input type="date" [(ngModel)]="datamovimentacao"> </ion-input>
+    <ion-input type="datetime-local" [(ngModel)]="datamovimentacao"> </ion-input>
   </ion-item>
 
   <ion-item color="item_entrada">
@@ -87,6 +87,9 @@
         </ion-item>
         <ion-item>
           <ion-label text-wrap class="label_12_b">
+            Lote LEI: {{item.loteLEI}} 
+          </ion-label>
+          <ion-label text-wrap class="label_12_b">
             Data de Validade: {{item.dataValidade}} 
           </ion-label>
         </ion-item>
@@ -123,14 +126,17 @@
   <ion-grid>
     <ion-row>
       <ion-col col-1>
-        Cod
+        Cod Almox
       </ion-col>
-      <ion-col col-3>
+      <ion-col col-2>
         Insumo
       </ion-col>
       <ion-col col-1>
        Lote Fornecedor
       </ion-col>
+      <ion-col col-1>
+        Quantidade na origem
+       </ion-col>
       <ion-col col-1>
         Quant Movimentação
       </ion-col>
@@ -147,15 +153,19 @@
         Exc
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let mov of movimentacao.itens" >
+    <ion-row *ngFor="let mov of movimentacao.itens; let odd=odd; let even=even;" 
+    [ngClass]="{ odd: odd, even: even } ">
       <ion-col col-1>
         {{mov.insumo.codigoalmox}}
       </ion-col>
-      <ion-col col-3>
+      <ion-col col-2>
         {{mov.insumo.nome}}
       </ion-col>
       <ion-col col-1>
         {{mov.loteFornecedor}}
+      </ion-col>
+      <ion-col col-1>
+        {{mov.quantidadeOrigem}}
       </ion-col>
       <ion-col col-1>
         <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>

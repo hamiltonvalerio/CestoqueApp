@@ -229,7 +229,8 @@ export class CadastroEntradaPage {
             quantidadeetiquetas: 1,
             unidadeRecebida: null,
             quantidadeVolume: 0,
-            unidadeEntrada: null};
+            unidadeEntrada: null,
+            loteLEI: null};
           
           itensIns.push(insEnt);
         }); 
@@ -342,7 +343,8 @@ export class CadastroEntradaPage {
       quantidadeetiquetas: 1,
       unidadeRecebida: null,
       quantidadeVolume: 0,
-      unidadeEntrada: null};
+      unidadeEntrada: null,
+      loteLEI: null};
 
      if(this.citensEntrada.insumo.unidade != null){
         this.unidadeEntrada = this.citensEntrada.insumo.unidade;

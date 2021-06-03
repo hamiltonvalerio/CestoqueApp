@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 709:
+/***/ 708:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10,7 +10,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_movimentacao__ = __webpack_require__(890);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_movimentacao__ = __webpack_require__(889);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,18 +153,19 @@ var HideHeaderDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 890:
+/***/ 889:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroMovimentacaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_datenow__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_insumo_service__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -181,6 +182,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the CadastroMovimentacaoPage page.
  *
@@ -188,7 +190,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var CadastroMovimentacaoPage = /** @class */ (function () {
-    function CadastroMovimentacaoPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, loadingCtrl, localizacaoService, dateTimeFormatPipe, movimentacaoService) {
+    function CadastroMovimentacaoPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, insumoService, loadingCtrl, localizacaoService, dateTimeFormatPipe, movimentacaoService, dateNow) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
@@ -199,6 +201,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         this.localizacaoService = localizacaoService;
         this.dateTimeFormatPipe = dateTimeFormatPipe;
         this.movimentacaoService = movimentacaoService;
+        this.dateNow = dateNow;
         this.localizacoes = [];
         this.paralocalizacoes = [];
         this.te = {};
@@ -207,13 +210,13 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         this.insumosLocalizacoes = [];
         this.movimentacao = {};
         this.movimentacaogrid = {};
-        this.datamovimentacao = new Date();
         this.botaoMovimenta = true;
         this.fieldsGarantiaQualidade = true;
     }
     ;
     CadastroMovimentacaoPage.prototype.ionViewDidLoad = function () {
         //console.log('ionViewDidLoad CadastroMovimentacaoPage');
+        this.datamovimentacao = this.dateNow.getDateNow();
         this.loadLocalizacao();
         this.loadParaLocalizacao();
     };
@@ -284,7 +287,6 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
     };
     CadastroMovimentacaoPage.prototype.gerarGridMovimentacao = function () {
         if (this.datamovimentacao == null || this.localizacao == null || this.paralocalizacao == null || (typeof this.insumosLocalizacoesSelecionados == 'undefined')) {
-            console.log("entrou");
             return;
         }
         this.movimentacao = {};
@@ -306,6 +308,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
                 aprovado: value.aprovado,
                 fieldsGarantiaQualidade: true,
                 loteRecebimento: value.loteRecebimento,
+                loteLEI: value.loteLEI,
             };
             itensInsumosMovimentacao.push(itemMov);
         });
@@ -327,16 +330,30 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         //console.log(this.movimentacao);
     };
     CadastroMovimentacaoPage.prototype.inserirMovimentacao = function () {
-        //console.log(this.movimentacao);
         var _this = this;
+        //console.log(this.movimentacao);
+        var qtdvazio = false;
         this.mov = {};
         this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
         this.mov.localizacaoOrigem = this.localizacao;
         this.mov.localizacaoDestino = this.paralocalizacao;
         this.mov.itens = this.movimentacao.itens;
-        this.movimentacaoService.insert(this.mov).subscribe(function (response) {
-            _this.showInsertOk();
-        }, function (error) { });
+        console.log(this.mov.itens);
+        this.mov.itens.forEach(function (element) {
+            if (element.quantidadeMovimentada != null) {
+                if (element.quantidadeMovimentada == 0) {
+                    qtdvazio = true;
+                }
+            }
+        });
+        if (qtdvazio) {
+            this.showQtdVazio();
+        }
+        else {
+            this.movimentacaoService.insert(this.mov).subscribe(function (response) {
+                _this.showInsertOk();
+            }, function (error) { });
+        }
     };
     CadastroMovimentacaoPage.prototype.showInsertOk = function () {
         var _this = this;
@@ -350,6 +367,19 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
                     handler: function () {
                         _this.navCtrl.pop();
                     }
+                }
+            ]
+        });
+        alert.present();
+    };
+    CadastroMovimentacaoPage.prototype.showQtdVazio = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: 'Não é possível inserir movimentação sem quantidade!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
                 }
             ]
         });
@@ -373,21 +403,13 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         this.insumosLocalizacoesSelecionados = [];
     };
     CadastroMovimentacaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
-            selector: 'page-cadastro-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/'<!--\n\n  Generated template for the CadastroMovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n     Movimentação de Insumos\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Data da Movimentação</ion-label>\n\n    <ion-input type="date" [(ngModel)]="datamovimentacao"> </ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Localização</ion-label>\n\n    <ionic-selectable \n\n      #localizacoesComponent\n\n      item-content\n\n      [(ngModel)]="localizacao"\n\n      [items]="localizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      (onChange)="insumoChange($event)"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Insumos</ion-label>\n\n    <ionic-selectable \n\n      item-content \n\n      [(ngModel)]="insumosLocalizacoesSelecionados"\n\n      [items]="insumosLocalizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nomedoinsumo"\n\n      [hasInfiniteScroll]="true"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      (onChange)="imprimeItem($event)"\n\n      [isMultiple]="true" \n\n      [isEnabled]="localizacoesComponent.value"\n\n      [canClear]="true"\n\n		  [placeholder]="localizacoesComponent.value ? \'\' : \'Selecione a localização primeiro\'">\n\n\n\n      <ng-template ionicSelectableItemTemplate let-item="item">\n\n       \n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.insumo.nome}} \n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label class="label_14">\n\n            Cod Almox: {{item.insumo.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}\n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Lote Fornecedor: {{item.loteFornecedor}} \n\n          </ion-label>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Lote CR: {{item.loteCR}} \n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Data de Validade: {{item.dataValidade}} \n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n\n\n    </ionic-selectable>\n\n  </ion-item>\n\n  \n\n  <ion-item color="item_entrada">\n\n    <ion-label>Movimentar para</ion-label>\n\n    <ionic-selectable \n\n      item-content\n\n      [(ngModel)]="paralocalizacao"\n\n      [items]="paralocalizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item class text-center>\n\n    <button ion-button (click)="gerarGridMovimentacao()">Gerar grid de movimentação</button>\n\n  </ion-item>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-1>\n\n        Cod\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        Insumo\n\n      </ion-col>\n\n      <ion-col col-1>\n\n       Lote Fornecedor\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Quant Movimentação\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Aprovado\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Lote Produção\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Localização de Destino\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Exc\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngFor="let mov of movimentacao.itens" >\n\n      <ion-col col-1>\n\n        {{mov.insumo.codigoalmox}}\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        {{mov.insumo.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        {{mov.loteFornecedor}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <ion-list radio-group [(ngModel)]="mov.aprovado" name="case" [hidden]="fieldsGarantiaQualidade">\n\n          <ion-item>\n\n            <ion-label>Sim</ion-label>\n\n            <ion-radio value="true"></ion-radio>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-label>Não</ion-label>\n\n            <ion-radio value="false"></ion-radio>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-input type="text" [(ngModel)]="mov.loteProducao"> </ion-input>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        {{paralocalizacao.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-12 style="text-align: right;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Inserir Movimentação</button></ion-col>\n\n    </ion-row>\n\n   \n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
+            selector: 'page-cadastro-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/'<!--\n\n  Generated template for the CadastroMovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n     Movimentação de Insumos\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Data da Movimentação</ion-label>\n\n    <ion-input type="datetime-local" [(ngModel)]="datamovimentacao"> </ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Localização</ion-label>\n\n    <ionic-selectable \n\n      #localizacoesComponent\n\n      item-content\n\n      [(ngModel)]="localizacao"\n\n      [items]="localizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      (onChange)="insumoChange($event)"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Insumos</ion-label>\n\n    <ionic-selectable \n\n      item-content \n\n      [(ngModel)]="insumosLocalizacoesSelecionados"\n\n      [items]="insumosLocalizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nomedoinsumo"\n\n      [hasInfiniteScroll]="true"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      (onChange)="imprimeItem($event)"\n\n      [isMultiple]="true" \n\n      [isEnabled]="localizacoesComponent.value"\n\n      [canClear]="true"\n\n		  [placeholder]="localizacoesComponent.value ? \'\' : \'Selecione a localização primeiro\'">\n\n\n\n      <ng-template ionicSelectableItemTemplate let-item="item">\n\n       \n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.insumo.nome}} \n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label class="label_14">\n\n            Cod Almox: {{item.insumo.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}\n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Lote Fornecedor: {{item.loteFornecedor}} \n\n          </ion-label>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Lote CR: {{item.loteCR}} \n\n          </ion-label>\n\n        </ion-item>\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Lote LEI: {{item.loteLEI}} \n\n          </ion-label>\n\n          <ion-label text-wrap class="label_12_b">\n\n            Data de Validade: {{item.dataValidade}} \n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n\n\n    </ionic-selectable>\n\n  </ion-item>\n\n  \n\n  <ion-item color="item_entrada">\n\n    <ion-label>Movimentar para</ion-label>\n\n    <ionic-selectable \n\n      item-content\n\n      [(ngModel)]="paralocalizacao"\n\n      [items]="paralocalizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      [hasVirtualScroll]="true" >\n\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b">\n\n            {{item.nome}}\n\n          </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n  </ion-item>\n\n\n\n  <ion-item class text-center>\n\n    <button ion-button (click)="gerarGridMovimentacao()">Gerar grid de movimentação</button>\n\n  </ion-item>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-1>\n\n        Cod Almox\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Insumo\n\n      </ion-col>\n\n      <ion-col col-1>\n\n       Lote Fornecedor\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Quantidade na origem\n\n       </ion-col>\n\n      <ion-col col-1>\n\n        Quant Movimentação\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Aprovado\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Lote Produção\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        Localização de Destino\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        Exc\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngFor="let mov of movimentacao.itens; let odd=odd; let even=even;" \n\n    [ngClass]="{ odd: odd, even: even } ">\n\n      <ion-col col-1>\n\n        {{mov.insumo.codigoalmox}}\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        {{mov.insumo.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        {{mov.loteFornecedor}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        {{mov.quantidadeOrigem}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <ion-list radio-group [(ngModel)]="mov.aprovado" name="case" [hidden]="fieldsGarantiaQualidade">\n\n          <ion-item>\n\n            <ion-label>Sim</ion-label>\n\n            <ion-radio value="true"></ion-radio>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-label>Não</ion-label>\n\n            <ion-radio value="false"></ion-radio>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-input type="text" [(ngModel)]="mov.loteProducao"> </ion-input>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        {{paralocalizacao.nome}}\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-12 style="text-align: right;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Inserir Movimentação</button></ion-col>\n\n    </ion-row>\n\n   \n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-movimentacao\cadastro-movimentacao.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__["a" /* LocalizacaoService */],
-            __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__["a" /* DateTimeFormatPipe */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__["a" /* MovimentacaoService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["j" /* LoadingController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__["a" /* DateTimeFormatPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__["a" /* DateTimeFormatPipe */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__["a" /* MovimentacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__["a" /* MovimentacaoService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_0__utils_datenow__["a" /* DateNow */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__utils_datenow__["a" /* DateNow */]) === "function" && _l || Object])
     ], CadastroMovimentacaoPage);
     return CadastroMovimentacaoPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
 }());
 
 //# sourceMappingURL=cadastro-movimentacao.js.map

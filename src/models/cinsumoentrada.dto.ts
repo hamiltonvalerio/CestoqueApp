@@ -23,6 +23,7 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
     unidadeRecebida: UnidadeDTO;
     quantidadeVolume: number;
     unidadeEntrada: UnidadeDTO;
+    loteLEI: string;
     constructor(ie: InsumoEntradaDTO){
         this.insumo= ie.insumo;
         
@@ -43,6 +44,7 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
         this.unidadeRecebida = ie.unidadeRecebida;
         this.quantidadeVolume = ie.quantidadeVolume;
         this.unidadeEntrada = ie.unidadeEntrada;
+        this.loteLEI = ie.loteLEI;
     }
 
    
