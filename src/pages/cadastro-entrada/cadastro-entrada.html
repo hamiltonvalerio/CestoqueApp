@@ -119,9 +119,10 @@
 
           </ionic-selectable>
         </ion-item>
+
         <ion-row>
           <ion-col>
-        <ion-row radio-group formControlName="precisairradiacao">
+        <ion-row radio-group formControlName="precisairradiacao" [(ngModel)]="precisairradiacao1">
           <ion-col>
             <ion-item>
               <ion-label>Precisa de Irradiação?</ion-label>
@@ -135,15 +136,16 @@
           </ion-col>
 
           <ion-col>
-            <ion-item no-lines>
+            <ion-item>
               <ion-label>Não</ion-label>
               <ion-radio value="false" ></ion-radio>
             </ion-item>
           </ion-col>
+          
         </ion-row>
       </ion-col>
       <ion-col>
-        <ion-row radio-group formControlName="precisacontrolequalidade">
+        <ion-row radio-group formControlName="precisacontrolequalidade" [(ngModel)]="precisacontrolequalidade1">
           <ion-col>
             <ion-item>
               <ion-label>Precisa de Controle da Qualidade?</ion-label>
@@ -157,7 +159,7 @@
           </ion-col>
 
           <ion-col>
-            <ion-item no-lines>
+            <ion-item>
               <ion-label>Não</ion-label>
               <ion-radio value="false" ></ion-radio>
             </ion-item>
@@ -165,10 +167,10 @@
         </ion-row>
       </ion-col>
       </ion-row>
+
         <ion-row>
           <ion-col>
         <ion-item>
-        
           <ion-label>Unidade de volume</ion-label>
           <ionic-selectable 
             item-content 

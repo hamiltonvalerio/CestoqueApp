@@ -28261,6 +28261,10 @@ page-cadastro-entrada .my-center-text {
   width: 100%;
 }
 
+page-cadastro-entrada ion-label {
+  color: #686868 !important;
+}
+
 page-cadastro-movimentacao ion-grid {
   height: 100%;
 }

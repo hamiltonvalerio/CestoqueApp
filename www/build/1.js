@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 703:
+/***/ 702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ajuste_estoque__ = __webpack_require__(882);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ajuste_estoque__ = __webpack_require__(881);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21224,7 +21224,7 @@ webpackContext.id = 872;
 
 /***/ }),
 
-/***/ 882:
+/***/ 881:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21380,7 +21380,9 @@ var AjusteEstoquePage = /** @class */ (function () {
             unidadeRecebida: null,
             quantidadeVolume: 0,
             unidadeEntrada: null,
-            loteLEI: null
+            loteLEI: null,
+            precisairradiacao: null,
+            precisacontrolequalidade: null,
         };
         if (this.citensEntrada.insumo.unidade != null) {
             this.unidadeEntrada = this.citensEntrada.insumo.unidade;
@@ -21424,7 +21426,9 @@ var AjusteEstoquePage = /** @class */ (function () {
                     unidadeRecebida: null,
                     quantidadeVolume: 0,
                     unidadeEntrada: null,
-                    loteLEI: null
+                    loteLEI: null,
+                    precisairradiacao: null,
+                    precisacontrolequalidade: null,
                 };
                 itensIns.push(insEnt);
             });
@@ -21492,21 +21496,10 @@ var AjusteEstoquePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_8__angular_core__["Component"])({
             selector: 'page-ajuste-estoque',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\ajuste-estoque\ajuste-estoque.html"*/'<!--\n  Generated template for the AjusteEstoquePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Ajuste do Estoque</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item color="item_entrada">\n    <ion-label>Data do Ajuste</ion-label>\n    <ion-datetime [(ngModel)]="dataAjuste" (ionChange)="carregarAjustesDoDiaChange()"  displayFormat="DD/MMM/YYYY" displayTimezone="utc"></ion-datetime>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Localização</ion-label>\n    <ionic-selectable \n      item-content \n      [(ngModel)]="localizacao"\n      [items]="localizacoes"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [focusSearchbar]="true"\n      (onChange)="carregarAjustesDoDiaChange()"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-port="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{port.nome}}\n          </ion-label>\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n  </ion-item>\n\n  <form [formGroup]="formGroup" margin-bottom (ngSubmit)="insereAjuste()">\n    \n    <ion-item>\n      <ion-label>Descrição do Insumo</ion-label>\n      <ionic-selectable \n        item-content \n        [(ngModel)]="citemInsumo"\n        [items]="citensInsumos"\n        formControlName="insumo"\n        itemValueField="id"\n        itemTextField="nomecodalmox"\n        [canSearch]="true"\n        (onSearch)="searchInsumo($event)"\n        [focusSearchbar]="true"\n        [hasInfiniteScroll]="true"\n        (onInfiniteScroll)="doInfinite($event)">\n  \n        <ng-template ionicSelectableItemTemplate let-port="item">\n         \n          <ion-item>\n            <ion-label text-wrap class="label_12_b">\n              {{port.nome}} \n            </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="label_14">\n              Cod Almox: {{port.codigoalmox}}  -  Quantidade atual: {{port.quantidade}}\n            </ion-label>\n          </ion-item>\n  \n        </ng-template>\n  \n      </ionic-selectable>\n    </ion-item>\n    <ion-item>\n      <ion-label >Quantidade</ion-label>\n      <ion-input type="number" formControlName="quantidade"> </ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Unidade</ion-label>\n      <ionic-selectable \n        item-content \n        [(ngModel)]="unidadeEntrada"\n        [items]="unidadesEntrada"\n        formControlName="unidade"\n        itemValueField="id"\n        itemTextField="nome"\n        [canSearch]="true"\n        [focusSearchbar]="true"\n        (onChange)="insereunidadeEntradaDTO($event)">\n  \n        <ng-template ionicSelectableItemTemplate let-port="item">\n         \n          <ion-item>\n            <ion-label text-wrap class="label_12_b">\n              {{port.nome}} \n            </ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label class="label_14">\n              Sigla: {{port.sigla}}\n            </ion-label>\n          </ion-item>\n  \n        </ng-template>\n  \n      </ionic-selectable>\n    </ion-item>\n    <ion-item>\n      <ion-label>Lote Fabricante</ion-label>\n      <ion-input type="text" formControlName="loteFornecedor"> </ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Lote CR</ion-label>\n      <ion-input type="text" formControlName="loteCR"> </ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Lote ARM</ion-label>\n      <ion-input type="text" formControlName="loteARM"> </ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Data de Fabricação</ion-label>\n      <ion-datetime formControlName="dataFabricacao" displayFormat="DD/MMM/YYYY" max="2099" pickerFormat="DD/MMM/YYYY"></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-label>Data Validade do Fabricante</ion-label>\n      <ion-datetime formControlName="dataValidade" displayFormat="DD/MMM/YYYY" max="2099" pickerFormat="DD/MMM/YYYY"></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-badge item-right color="danger" *ngIf="!formGroup.valid">Inválido</ion-badge>\n      <ion-badge item-right color="secondary" *ngIf="formGroup.valid">Válido</ion-badge>\n      <button ion-button (click)="reset()" [disabled]="!formGroup.valid">\n        Limpar\n      </button>\n      <button   ion-button type="submit" [disabled]="!formGroup.valid">Incluir</button>\n    </ion-item>\n  </form>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-5>\n        Insumo\n      </ion-col>\n      <ion-col col-2>\n        Lt Forn.\n      </ion-col>\n      <ion-col col-2>\n        Lt CR\n      </ion-col>\n      <ion-col col-2>\n        Lt Receb.\n      </ion-col>\n      <ion-col col-1>\n        Qtd\n      </ion-col>\n    </ion-row>\n    <ion-row *ngFor="let la of listaInsumoAjuste">\n      <ion-col col-5>\n        {{la.insumo.nome}}\n      </ion-col>\n      <ion-col col-2>\n        {{la.loteFornecedor}}\n      </ion-col>\n      <ion-col col-2>\n        {{la.loteCR}}\n      </ion-col>\n      <ion-col col-2>\n        {{la.loteARM}}\n      </ion-col>\n      <ion-col col-1>\n        {{la.quantidade}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\ajuste-estoque\ajuste-estoque.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_5__services_domain_categoria_service__["a" /* CategoriaService */],
-            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["j" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_4__services_domain_localizacao_service__["a" /* LocalizacaoService */],
-            __WEBPACK_IMPORTED_MODULE_3__services_domain_entrada_service__["a" /* EntradaService */],
-            __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__["a" /* DateTimeFormatPipe */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_unidade_service__["a" /* UnidadeService */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_ajusteestoque_service__["a" /* AjusteEstoqueService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__services_domain_categoria_service__["a" /* CategoriaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_domain_categoria_service__["a" /* CategoriaService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["j" /* LoadingController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_3__services_domain_entrada_service__["a" /* EntradaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_domain_entrada_service__["a" /* EntradaService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__["a" /* DateTimeFormatPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__["a" /* DateTimeFormatPipe */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_unidade_service__["a" /* UnidadeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_unidade_service__["a" /* UnidadeService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_ajusteestoque_service__["a" /* AjusteEstoqueService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_ajusteestoque_service__["a" /* AjusteEstoqueService */]) === "function" && _o || Object])
     ], AjusteEstoquePage);
     return AjusteEstoquePage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 }());
 
 //# sourceMappingURL=ajuste-estoque.js.map

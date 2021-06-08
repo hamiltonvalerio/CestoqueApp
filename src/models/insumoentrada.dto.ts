@@ -23,4 +23,6 @@ export interface InsumoEntradaDTO{
     unidadeEntrada: UnidadeDTO;
 
     loteLEI: string;
+    precisairradiacao: boolean;
+    precisacontrolequalidade: boolean;
 }

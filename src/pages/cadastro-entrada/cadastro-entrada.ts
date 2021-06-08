@@ -68,6 +68,8 @@ export class CadastroEntradaPage {
   formControl : FormControl;
   formGroup : FormGroup;
 
+  valoresIniciaisForm : FormGroup;
+
 
   quantidade : number;
   valor: number;
@@ -98,7 +100,8 @@ export class CadastroEntradaPage {
 
   portsSubscription: Subscription;
 
-  //precisairradiacao: boolean;
+  precisairradiacao1: boolean = false;
+  precisacontrolequalidade1: boolean = false;
 
   constructor(
     public navCtrl: NavController, 
@@ -132,9 +135,11 @@ export class CadastroEntradaPage {
       quantidadeVolume: ['',],
       unidadeEntrada: ['',],
       fileinsumo: ['',],
-      precisairradiacao: ['',], 
-      precisacontrolequalidade: ['',],
+      precisairradiacao: [false,], 
+      precisacontrolequalidade: [false,],
     }, {});
+
+    this.valoresIniciaisForm = this.formGroup.value;
     
     
   }
@@ -234,7 +239,9 @@ export class CadastroEntradaPage {
             unidadeRecebida: null,
             quantidadeVolume: 0,
             unidadeEntrada: null,
-            loteLEI: null};
+            loteLEI: null,
+            precisairradiacao: null,
+            precisacontrolequalidade: null,};
           
           itensIns.push(insEnt);
         }); 
@@ -279,10 +286,8 @@ export class CadastroEntradaPage {
      //this.fornecedor = {insumo: event.value, quantidade: 0, valor: 0};
      let text = event.text.trim().toLowerCase();
      this.fornecedorService.findByNome(text).subscribe((response) => {
-      this.fornecedores = response.sort();
-      //console.log(this.fornecedores);
+     this.fornecedores = response.sort();
     });
-          //console.log('buscaFornecedor::', text);
     }
 
     
@@ -309,6 +314,9 @@ export class CadastroEntradaPage {
 
       this.cie = this.formGroup.value;
       this.cie.insumo.unidade = this.unidadeEntrada;
+      this.cie.insumo.precisairradiacao = this.cie.precisairradiacao;
+      this.cie.insumo.precisacontrolequalidade = this.cie.precisacontrolequalidade;
+
 
       if(this.insumoArquivoDTO != null){
         this.insumoArquivoDTO.insumo = this.cie.insumo;
@@ -330,6 +338,8 @@ export class CadastroEntradaPage {
     }) {
     
     this.insumoEntrada = event.value;
+    this.precisairradiacao1 = this.insumoEntrada.precisairradiacao;
+    this.precisacontrolequalidade1 = this.insumoEntrada.precisacontrolequalidade;
     this.insumoEntrada.unidade = this.unidadeEntrada;
 
      this.citensEntrada = {
@@ -348,7 +358,9 @@ export class CadastroEntradaPage {
       unidadeRecebida: null,
       quantidadeVolume: 0,
       unidadeEntrada: null,
-      loteLEI: null};
+      loteLEI: null,
+      precisairradiacao: null,
+      precisacontrolequalidade: null,};
 
      if(this.citensEntrada.insumo.unidade != null){
         this.unidadeEntrada = this.citensEntrada.insumo.unidade;
@@ -403,7 +415,8 @@ export class CadastroEntradaPage {
     reset() {
       //console.log("teste");
 
-      this.formGroup.reset();
+      this.formGroup.reset(this.valoresIniciaisForm);
+    
     }
 
     excluiItem(cInsumoEntradaDTO: CInsumoEntradaDTO){

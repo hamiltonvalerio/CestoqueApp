@@ -187,6 +187,10 @@ export class CadastroMovimentacaoPage {
         fieldsGarantiaQualidade: true,
         loteRecebimento: value.loteRecebimento,
         loteLEI: value.loteLEI,
+        
+        unidadeRecebida: value.unidadeRecebida,
+        quantidadeVolume: value.quantidadeVolume,
+        unidadeEntrada: value.unidadeEntrada,
       };
       itensInsumosMovimentacao.push(itemMov);
     });
@@ -201,16 +205,9 @@ export class CadastroMovimentacaoPage {
     this.movimentacao.itens = itensInsumosMovimentacao;
     this.te = this.localizacao;
     this.botaoMovimenta = false;
-    //console.log(this.movimentacao);
-
-    //console.log(this.localizacao)
-    //console.log(this.citemInsumoSelecionados);
-    //console.log(this.paralocalizacao);
-    //console.log(this.movimentacao);
   }
 
   inserirMovimentacao(){
-    //console.log(this.movimentacao);
     let qtdvazio : boolean = false;
     this.mov  = {} as any;
 

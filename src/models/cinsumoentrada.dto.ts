@@ -24,6 +24,8 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
     quantidadeVolume: number;
     unidadeEntrada: UnidadeDTO;
     loteLEI: string;
+    precisairradiacao: boolean;
+    precisacontrolequalidade: boolean;
     constructor(ie: InsumoEntradaDTO){
         this.insumo= ie.insumo;
         
@@ -45,6 +47,9 @@ export class CInsumoEntradaDTO implements InsumoEntradaDTO{
         this.quantidadeVolume = ie.quantidadeVolume;
         this.unidadeEntrada = ie.unidadeEntrada;
         this.loteLEI = ie.loteLEI;
+        this.precisairradiacao= ie.precisairradiacao;
+        this.precisacontrolequalidade= ie.precisacontrolequalidade;
+        
     }
 
    
