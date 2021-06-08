@@ -75,22 +75,17 @@ var EntradaPage = /** @class */ (function () {
     }
     EntradaPage.prototype.ionViewDidLoad = function () {
         this.getItens();
-        /*this.printer.pick().then(result => {
-          console.log(result);
-        });*/
     };
     EntradaPage.prototype.getItens = function () {
         var _this = this;
         this.entradaService.findAll()
             .subscribe(function (response) {
-            //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
             _this.itensEntradas = response.sort();
             //console.log(this.itensEntradas);
         }, function (error) { });
     };
     EntradaPage.prototype.openModal = function () {
         var _this = this;
-        //console.log("aqui");
         var modal = this.modalCtrl.create('CadastroEntradaPage');
         modal.onDidDismiss(function () {
             _this.getItens();
@@ -104,7 +99,6 @@ var EntradaPage = /** @class */ (function () {
             direction: 'forward'
         }).then(function () {
             _this.navCtrl.getActive().onDidDismiss(function (data) {
-                //console.log(data);
                 _this.getItens();
             });
         });
@@ -140,7 +134,7 @@ var EntradaPage = /** @class */ (function () {
     ], EntradaPage.prototype, "nav", void 0);
     EntradaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-entrada',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n\n  Generated template for the EntradaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Entradas</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Número da Requisição (LIA): {{ent.numLIA}}</p>\n\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n\n        <p>Lote de Recebimento: {{ent.loteRecebimento}}</p>\n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="ent.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <ion-grid *ngFor="let ient of ent.itens" class="tamanho-da-font">\n\n          <ion-row><ion-col>Produto: {{ient.insumo.nome}} </ion-col></ion-row>\n\n          <ion-row><ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col></ion-row>\n\n          <ion-row>\n\n            <ion-col>Lote CR: {{ient.loteCR}}</ion-col>\n\n            <ion-col>Lote LEI: {{ient.loteLEI}}</ion-col>\n\n          </ion-row>\n\n          <ion-row><ion-col>Data de Validade: {{ient.dataValidade | date: \'dd/MM/yyyy\'}}</ion-col><ion-col>Data de Irradiação: {{ient.dataIrradiacao | date: \'dd/MM/yyyy H:mm\'}}</ion-col></ion-row>\n\n          <ion-row><ion-col>Quantidade Entrada: {{ient.quantidade}}</ion-col><ion-col>Quantidade Atual: {{ient.insumo.quantidade}}</ion-col></ion-row>\n\n          <ion-row><ion-col>Quantidade de etiquetas: <input type="number" [(ngModel)]="ient.quantidadeetiquetas"> </ion-col></ion-row>\n\n        </ion-grid>\n\n        <button ion-button (click)="imprimirEtiquetas(ent)">Imprimir etiquetas</button>\n\n      </ion-list>\n\n    </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/,
+            selector: 'page-entrada',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/'<!--\n\n  Generated template for the EntradaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Entradas</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroEntrada()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let ent of itensEntradas; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(ent.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-item>\n\n        <p>Número da Requisição (LIA): {{ent.numLIA}}</p>\n\n        <p>Data de Entrada: {{ent.dataEntrada}}</p>\n\n        <p>Lote de Recebimento: {{ent.loteRecebimento}}</p>\n\n      </ion-item>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="ent.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <ion-grid *ngFor="let ient of ent.itens" class="tamanho-da-font">\n\n          <ion-row><ion-col>Produto: {{ient.insumo.nome}} </ion-col></ion-row>\n\n          <ion-row>\n\n            <ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col>\n\n            <ion-col>Lote CR: {{ient.loteCR}}</ion-col>\n\n            <ion-col><b>Lote LEI: {{ient.loteLEI}}</b></ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col>Data de Validade: {{ient.dataValidade | date: \'dd/MM/yyyy\'}}</ion-col>\n\n            <ion-col>Data de Irradiação: {{ient.dataIrradiacao | date: \'dd/MM/yyyy H:mm\'}}</ion-col>\n\n          </ion-row>\n\n          <ion-row><ion-col>Quantidade Entrada: {{ient.quantidade}}</ion-col><ion-col>Quantidade Atual: {{ient.insumo.quantidadeTotalAtual}}</ion-col></ion-row>\n\n          <ion-row><ion-col>Quantidade de etiquetas: <input type="number" [(ngModel)]="ient.quantidadeetiquetas"> </ion-col></ion-row>\n\n        </ion-grid>\n\n        <button ion-button (click)="imprimirEtiquetas(ent)">Imprimir etiquetas</button>\n\n      </ion-list>\n\n    </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\entrada\entrada.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],

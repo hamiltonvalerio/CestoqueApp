@@ -98,6 +98,8 @@ export class CadastroEntradaPage {
 
   portsSubscription: Subscription;
 
+  //precisairradiacao: boolean;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -130,6 +132,8 @@ export class CadastroEntradaPage {
       quantidadeVolume: ['',],
       unidadeEntrada: ['',],
       fileinsumo: ['',],
+      precisairradiacao: ['',], 
+      precisacontrolequalidade: ['',],
     }, {});
     
     

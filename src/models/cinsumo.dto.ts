@@ -20,6 +20,9 @@ export class CInsumoDTO implements InsumoDTO{
     nomecodalmox: string;
     categorias: CategoriaDTO[];
     arquivos: InsumoArquivoDTO[];
+    quantidadeTotalAtual: number; 
+    precisairradiacao: boolean;
+    precisacontrolequalidade: boolean;
 
       constructor(insumo: InsumoDTO){
         this.id= insumo.id;
@@ -39,6 +42,9 @@ export class CInsumoDTO implements InsumoDTO{
         this.nomecodalmox = insumo.nomecodalmox;
         this.categorias = insumo.categorias;
         this.arquivos = insumo.arquivos;
+        this.quantidadeTotalAtual = insumo.quantidadeTotalAtual;
+        this.precisairradiacao = insumo.precisairradiacao;
+        this.precisacontrolequalidade = insumo.precisacontrolequalidade;
     }
 
 

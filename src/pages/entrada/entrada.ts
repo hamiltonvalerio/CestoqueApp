@@ -42,16 +42,12 @@ export class EntradaPage {
 
   ionViewDidLoad() {
     this.getItens();
-    /*this.printer.pick().then(result => {
-      console.log(result);
-    });*/
   }
 
   getItens(){
     
     this.entradaService.findAll()
     .subscribe(response => {
-      //this.itensEntradas = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
       this.itensEntradas = response.sort();
       //console.log(this.itensEntradas);
     },
@@ -59,7 +55,6 @@ export class EntradaPage {
   }
 
   openModal() {
-    //console.log("aqui");
     let modal = this.modalCtrl.create('CadastroEntradaPage');
     modal.onDidDismiss(() => {
       this.getItens();
@@ -72,7 +67,6 @@ export class EntradaPage {
       animate: true, 
       direction: 'forward'}).then(() => {
         this.navCtrl.getActive().onDidDismiss(data => {
-          //console.log(data);
           this.getItens();
         });
       });

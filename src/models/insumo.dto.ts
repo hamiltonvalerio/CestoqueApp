@@ -20,5 +20,8 @@ export interface InsumoDTO{
     unidade: UnidadeDTO;
     nomecodalmox: string;
     categorias: CategoriaDTO[];
-    arquivos: InsumoArquivoDTO[];   
+    arquivos: InsumoArquivoDTO[];  
+    quantidadeTotalAtual: number; 
+    precisairradiacao: boolean;
+    precisacontrolequalidade: boolean;
 }

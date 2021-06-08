@@ -20,5 +20,7 @@ export interface InsumoNewDTO{
     rfid: string;
     unidade: UnidadeDTO;
     localizacoes: LocalizacaoDTO[];
+    precisairradiacao: boolean;
+    precisacontrolequalidade: boolean;
     
 }
