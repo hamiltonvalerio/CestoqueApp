@@ -126,81 +126,129 @@
     <button ion-button (click)="gerarGridMovimentacao()">Gerar grid de movimentação</button>
   </ion-item>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col col-1>
-        Cod Almox
+  <ion-card *ngFor="let mov of movimentacao.itens; let i = index; let odd=odd; let even=even;"
+   [ngClass]="{ odd: odd, even: even }" >
+   
+   <ion-card-header type="button" (click)="toggleDetails(mov.show,i)">
+    <ion-icon name="arrow-down"></ion-icon>
+    <ion-grid>
+     <ion-row>
+      <ion-col >
+       <b>Codigo Almox</b>
+        <p>{{mov.insumo.codigoalmox}}</p>
       </ion-col>
-      <ion-col col-2>
-        Insumo
+      <ion-col >
+        <b>Insumo</b>
+        <p>{{mov.insumo.nome}}</p>
       </ion-col>
-      <ion-col col-1>
-       Lote Fornecedor
+      <ion-col >
+        <b>Lote LEI</b>
+        <p>{{mov.loteLEI}}</p>
       </ion-col>
-
-      <ion-col col-1>
-        Quantidade na origem
-       </ion-col>
-      <ion-col col-1>
-        Quant Movimentação
+      <ion-col >
+        <b>Lote Fornecedor</b>
+        <p>{{mov.loteFornecedor}}</p>
       </ion-col>
-      <ion-col col-2>
-        Aprovado
+      <ion-col >
+        <b>Lote CR</b>
+        <p>{{mov.loteCR}}</p>
       </ion-col>
-      <ion-col col-1>
-        Lote Produção
+      <ion-col >
+        <b>Lote ARM</b>
+        <p>{{mov.loteARM}} </p>
       </ion-col>
-      <ion-col col-2>
-        Localização de Destino
+      <ion-col >
+        <b>Localização de Destino</b>
+        <p>{{paralocalizacao.nome}}</p>
       </ion-col>
-      <ion-col col-1>
-        Exc
+      <ion-col >
+        <b>Exc</b>
+        <p><ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon></p>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let mov of movimentacao.itens; let odd=odd; let even=even;" 
-    [ngClass]="{ odd: odd, even: even } ">
-      <ion-col col-1>
-        {{mov.insumo.codigoalmox}}
-      </ion-col>
-      <ion-col col-2>
-        {{mov.insumo.nome}}
-      </ion-col>
-      <ion-col col-1>
-        {{mov.loteFornecedor}}
-      </ion-col>
-      
-      <ion-col col-1>
-        {{mov.quantidadeOrigem}}
-      </ion-col>
-      <ion-col col-1>
-        <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
-      </ion-col>
-      <ion-col col-2>
-        <ion-list radio-group [(ngModel)]="mov.aprovado" name="case" [hidden]="fieldsGarantiaQualidade">
+  </ion-grid>
+  </ion-card-header>
+    <ion-card-content>
+
+      <ion-row *ngIf="mov.show" [hidden]="!fieldsGarantiaQualidade">
+        <ion-col>
+          <ion-item>
+            <ion-label>Quantidade movimentada:</ion-label>
+            <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="mov.show" [hidden]="fieldsGarantiaQualidade">
+        <ion-col>
+          <ion-item>
+            <ion-label>Condições ambientais do local de amostragem:</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>oC:</ion-label>
+            <ion-input type="text" [(ngModel)]="mov.condambamostragemgc"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>%U.R.:</ion-label>
+            <ion-input type="text" [(ngModel)]="mov.condambamostragemur"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="mov.show" [hidden]="fieldsGarantiaQualidade">
+        <ion-col>
+          <ion-item>
+            <ion-label>Quantidades:</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Devolvido para o Almoxarifado do CECRF:</ion-label>
+            <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Quantidade descartada:</ion-label>
+            <ion-input type="number" [(ngModel)]="mov.quantidadeDescartada"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="mov.show" radio-group [(ngModel)]="mov.aprovado" [hidden]="fieldsGarantiaQualidade">
+        <ion-col>
+          <ion-item>
+            <ion-label>Aprovado?</ion-label>
+          </ion-item>
+        </ion-col> 
+        <ion-col>
           <ion-item>
             <ion-label>Sim</ion-label>
             <ion-radio value="true"></ion-radio>
           </ion-item>
+        </ion-col>
+            
+              
+        <ion-col>
           <ion-item>
             <ion-label>Não</ion-label>
             <ion-radio value="false"></ion-radio>
           </ion-item>
-        </ion-list>
-      </ion-col>
-      <ion-col>
-        <ion-input type="text" [(ngModel)]="mov.loteProducao"> </ion-input>
-      </ion-col>
-      <ion-col col-2>
-        {{paralocalizacao.nome}}
-      </ion-col>
-      <ion-col col-1>
-        <ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon>
-      </ion-col>
-    </ion-row>
-    <ion-row>
+        </ion-col>
+      </ion-row>
+
+
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row>
       <ion-col col-12 style="text-align: right;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Inserir Movimentação</button></ion-col>
-    </ion-row>
-   
-  </ion-grid>
+  </ion-row>
+ 
 
 </ion-content>

@@ -92,7 +92,9 @@ export class CadastroMovimentacaoPage {
 
   reset() {
     //console.log("teste");
-    this.formGroup.reset();
+    this.insumosLocalizacoesSelecionados = [];
+    this.movimentacao.itens = [];
+    this.paralocalizacao = null;
   }
 
   loadLocalizacao(){
@@ -116,6 +118,7 @@ export class CadastroMovimentacaoPage {
     value: LocalizacaoDTO;
   }) {
     if (event.value) {
+      this.reset();
       if(event.value.aprovacao === true){
         this.fieldsGarantiaQualidade = false;
         console.log("teste: "+this.fieldsGarantiaQualidade);
@@ -142,7 +145,7 @@ export class CadastroMovimentacaoPage {
     component: IonicSelectableComponent;
     value: CInsumoDTO;
   }) {
-    //this.citemInsumo = event.value;
+    
   }
 
   presentLoading() {
@@ -187,19 +190,26 @@ export class CadastroMovimentacaoPage {
         fieldsGarantiaQualidade: true,
         loteRecebimento: value.loteRecebimento,
         loteLEI: value.loteLEI,
+        loteARM: value.loteARM,
         
         unidadeRecebida: value.unidadeRecebida,
         quantidadeVolume: value.quantidadeVolume,
         unidadeEntrada: value.unidadeEntrada,
+
+        condambamostragemgc: value.condambamostragemgc,
+        condambamostragemur: value.condambamostragemur,
+        quantidadeDescartada: value.quantidadeDescartada,
+
+        show: null,
       };
       itensInsumosMovimentacao.push(itemMov);
     });
     
     this.movimentacao.localizacaoOrigem = this.localizacao;
-    if(this.localizacao.nome === "GARANTIA DA QUALIDADE"){
-      //this.movimentacao.fieldsGarantiaQualidade = false;
+    if(this.localizacao.aprovacao === true){
+      this.fieldsGarantiaQualidade = false;
     }else{
-      //this.movimentacao.fieldsGarantiaQualidade = true;
+      this.fieldsGarantiaQualidade = true;
     }
     this.movimentacao.localizacaoDestino = this.paralocalizacao;
     this.movimentacao.itens = itensInsumosMovimentacao;
@@ -288,6 +298,13 @@ export class CadastroMovimentacaoPage {
     this.localizacao = null;
     this.paralocalizacao = null;
     this.insumosLocalizacoesSelecionados = [];
+  }
+
+  toggleDetails(show, i) {
+    this.movimentacao.itens.map(( _ , index ) => { 
+      if (index == i ) {
+         _.show = !_.show 
+        }});
   }
   
 

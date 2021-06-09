@@ -2,7 +2,7 @@ import { UnidadeDTO } from './unidade.dto';
 import { LocalizacaoDTO } from './localizacao.dto';
 import { InsumoDTO } from "./insumo.dto";
 
-export interface InsumomovimentacaoDTO{
+export interface InsumomovimentacaoDTO extends DadosComunsInsumos{
     
     insumo: InsumoDTO;
     quantidadeOrigem: number;
@@ -18,9 +18,14 @@ export interface InsumomovimentacaoDTO{
     fieldsGarantiaQualidade: boolean;
     loteRecebimento: string;
     loteLEI: string;
+    loteARM: string;
     
     unidadeRecebida: UnidadeDTO;
     quantidadeVolume: number;
     unidadeEntrada: UnidadeDTO;
+
+    show: Boolean;
+
+
 
 }

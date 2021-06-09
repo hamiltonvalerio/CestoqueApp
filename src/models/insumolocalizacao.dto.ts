@@ -2,7 +2,7 @@ import { UnidadeDTO } from './unidade.dto';
 import { LocalizacaoDTO } from './localizacao.dto';
 import { InsumoDTO } from "./insumo.dto";
 
-export interface InsumolocalizacaoDTO{
+export interface InsumolocalizacaoDTO extends DadosComunsInsumos{
     
     id: string;
     insumo: InsumoDTO;
@@ -22,6 +22,7 @@ export interface InsumolocalizacaoDTO{
     nomedoinsumo: string;
     codigoalmoxarifado: string;
     loteLEI: string;
+    loteARM: string;
 
     unidadeRecebida: UnidadeDTO;
     quantidadeVolume: number;
