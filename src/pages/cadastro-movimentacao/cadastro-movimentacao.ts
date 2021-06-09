@@ -232,7 +232,15 @@ export class CadastroMovimentacaoPage {
 
       if(element.quantidadeMovimentada != null){
         if(element.quantidadeMovimentada == 0){
-          qtdvazio = true;
+          if(element.quantidadeDescartada != null){
+            if(element.quantidadeDescartada > 0){
+              qtdvazio = false;
+            }else{
+              qtdvazio = true;
+            }
+          }else{
+            qtdvazio = true;  
+          }
         }
       }
       
