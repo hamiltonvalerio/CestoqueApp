@@ -32,14 +32,14 @@
       <ion-list *ngIf="mv.show">
         <ion-label>Detalhes</ion-label>
         <ion-list *ngFor="let ient of mv.itens">
-          <ion-row>Insumo: {{ient.insumo.nome}}</ion-row>
-          <ion-row>Quantidade da Origem na data de movimentação: {{ient.quantidadeOrigem}}</ion-row>
-          <ion-row>Quantidade Movimentada: {{ient.quantidadeMovimentada}}</ion-row>
-          <ion-row>Lote Fornecedor: {{ient.loteFornecedor}}</ion-row>
-          <ion-row>Lote CR: {{ient.loteCR}}</ion-row>
-          <ion-row>Lote LEI: {{ient.loteLEI}}</ion-row>
-          <ion-row>Data de Irradiação: {{ient.dataIrradiacao}}</ion-row>
-          <ion-row>Data de Validade: {{ient.dataValidade}}</ion-row>
+          <ion-row><ion-col>Insumo: {{ient.insumo.nome}} </ion-col></ion-row>
+          <ion-row><ion-col>Quantidade da Origem na data de movimentação: {{ient.quantidadeOrigem}}</ion-col></ion-row>
+          <ion-row><ion-col>Unidade Movimentada: {{ient.unidadeEntrada ==null?"":ient.unidadeEntrada.nome}}</ion-col><ion-col>Quantidade Movimentada: {{ient.quantidadeMovimentada}}</ion-col></ion-row>
+          <ion-row><ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col>
+          <ion-col>Lote CR: {{ient.loteCR}}</ion-col>
+          <ion-col>Lote LEI: {{ient.loteLEI}}</ion-col></ion-row>
+          <ion-row><ion-col>Data de Irradiação: {{ient.dataIrradiacao}}</ion-col>
+          <ion-col>Data de Validade: {{ient.dataValidade}}</ion-col></ion-row>
           <ion-row><br></ion-row>
         </ion-list>
       </ion-list>

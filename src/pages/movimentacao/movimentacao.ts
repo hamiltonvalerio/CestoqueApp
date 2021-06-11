@@ -38,7 +38,6 @@ export class MovimentacaoPage {
   }
 
   getItens(){
-    console.log("aqui2")
     this.movimentacaoService.findAll()
     .subscribe(response => {
       this.movimentacoes = response.sort();
