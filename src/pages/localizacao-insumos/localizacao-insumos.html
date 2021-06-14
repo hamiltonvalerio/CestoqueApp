@@ -47,7 +47,7 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <h6>Data de Validade: {{ins.dataValidade}}</h6>
+          <h6>Data de Validade: {{ins.dataValidade | date:'dd/MM/yyyy'}}</h6>
         </ion-col>
         <ion-col>
           <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>
@@ -66,8 +66,9 @@
         <ion-col>
         </ion-col>  
       </ion-row>
-      <ion-row>
-        <button ion-button class="submit-btn" (click)="atualizaQtdMinima(ins)" type="submit">Atualizar Quantidade Mínima
+      <ion-row [hidden]="botaoQuantidadeMinima">
+        <button ion-button class="submit-btn" 
+        (click)="atualizaQtdMinima(ins)" type="submit" >Atualizar Quantidade Mínima
         </button>
       </ion-row>
       <ion-row>

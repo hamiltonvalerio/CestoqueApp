@@ -1,3 +1,4 @@
+import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { InsumolocalizacaoDTO } from "./../../models/insumolocalizacao.dto";
 import { ModalQuantidademinimaPage } from "./../modal-quantidademinima/modal-quantidademinima";
 import { InsumoService } from "./../../services/domain/insumo.service";
@@ -37,6 +38,9 @@ export class LocalizacaoInsumosPage {
   nomeLocalizacao: string = "";
   data = moment().format('MM/DD/YYYY HH:mm');
 
+  localizacao: LocalizacaoDTO;
+
+  botaoQuantidadeMinima: boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -63,11 +67,11 @@ export class LocalizacaoInsumosPage {
   }
 
   atualizaQtdMinima(event: Event) {
-    console.log("ENTROU");
-    console.log(event);
     let modalQuantidademinimaPage = this.modal.create(
       "ModalQuantidademinimaPage",
-      { evento: event }
+      { 
+        evento: event 
+      }
     );
     modalQuantidademinimaPage.onDidDismiss(() => {
       this.getItens();
@@ -98,6 +102,11 @@ export class LocalizacaoInsumosPage {
  
   getItens() {
     let localizacaoId = this.navParams.get("localizacao_id");
+    if(this.navParams.get("localizacao_atualizaqtdminima") != null){
+      if(this.navParams.get("localizacao_atualizaqtdminima") === false){
+        this.botaoQuantidadeMinima = true;
+      }
+    }
     let loader = this.presentLoading();
     this.insumosLocalizacao = [];
     //this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)

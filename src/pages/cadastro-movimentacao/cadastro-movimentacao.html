@@ -169,20 +169,7 @@
   </ion-grid>
   </ion-card-header>
     <ion-card-content>
-
-      <ion-row *ngIf="mov.show" [hidden]="!fieldsGarantiaQualidade">
-        <ion-col>
-          <ion-item>
-            <ion-label>Quantidade Origem: {{mov.quantidadeOrigem}}</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>Quantidade movimentada:</ion-label>
-            <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row *ngIf="mov.show" [hidden]="fieldsGarantiaQualidade">
+      <ion-row *ngIf="mov.show" [hidden]="fieldsAlmoxarifadoPrincipal">
         <ion-col>
           <ion-item>
             <ion-label>Condições ambientais do local de amostragem:</ion-label>
@@ -202,16 +189,45 @@
         </ion-col>
       </ion-row>
 
+      <ion-row *ngIf="mov.show" [hidden]="!fieldsGarantiaQualidade">
+        <ion-col>
+          <ion-item>
+            <ion-label>Unidade: {{mov.unidadeEntrada.nome}}</ion-label>
+            <ion-label>Quantidade Origem: {{mov.quantidadeOrigem}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Quantidade movimentada:</ion-label>
+            <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+     
       <ion-row *ngIf="mov.show" [hidden]="fieldsGarantiaQualidade">
         <ion-col>
           <ion-item>
-            <ion-label>Quantidades: {{mov.quantidadeOrigem}}</ion-label>
+            <ion-label>Unidade: {{mov.unidadeEntrada.nome}}</ion-label>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
+            <ion-label>Quantidade: {{mov.quantidadeOrigem}}</ion-label>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row *ngIf="mov.show" [hidden]="fieldsGarantiaQualidade">
+        <ion-col>
+          <ion-item>
             <ion-label>Devolvido para o Almoxarifado do CECRF:</ion-label>
             <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Quantidade Utilizada:</ion-label>
+            <ion-input type="number" [(ngModel)]="mov.quantidadeUtilizada"> </ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
@@ -243,6 +259,29 @@
           </ion-item>
         </ion-col>
       </ion-row>
+
+      <ion-row *ngIf="mov.show" radio-group [(ngModel)]="mov.irradiado" [hidden]="fieldsIrradiacao">
+        <ion-col>
+          <ion-item>
+            <ion-label>Irradiado?</ion-label>
+          </ion-item>
+        </ion-col> 
+        <ion-col>
+          <ion-item>
+            <ion-label>Sim</ion-label>
+            <ion-radio value="true"></ion-radio>
+          </ion-item>
+        </ion-col>
+            
+              
+        <ion-col>
+          <ion-item>
+            <ion-label>Não</ion-label>
+            <ion-radio value="false"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
 
 
 

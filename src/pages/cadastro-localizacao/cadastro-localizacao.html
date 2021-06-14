@@ -26,8 +26,24 @@
       <ion-input formControlName="id" type="hidden"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label stacked>É o almoxarifado principal?</ion-label>
+      <ion-checkbox item-right danger checked formControlName="almoxarifadoprincipal"></ion-checkbox>
+    </ion-item>
+    <ion-item>
       <ion-label stacked>Participa de alguma aprovação?</ion-label>
       <ion-checkbox item-right danger checked formControlName="aprovacao"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>É uma localização para Irradiação?</ion-label>
+      <ion-checkbox item-right danger checked formControlName="irradiacao"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>É uma localização de descarte?</ion-label>
+      <ion-checkbox item-right danger checked formControlName="descarte"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>É uma localização de insumos utilizados?</ion-label>
+      <ion-checkbox item-right danger checked formControlName="utilizado"></ion-checkbox>
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>

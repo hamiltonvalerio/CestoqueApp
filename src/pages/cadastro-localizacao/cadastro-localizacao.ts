@@ -35,7 +35,12 @@ export class CadastroLocalizacaoPage {
       this.formGroup = this.formBuilder.group({
           id: ['',''],
           nome: ['',[Validators.required]],
-          aprovacao: [false,'']
+          aprovacao: [false,''],
+          descarte: [false,''],
+          utilizado: [false,''],
+          almoxarifadoprincipal: [false,''],
+          irradiacao: [false,''],
+
         }, {}); 
 
 
@@ -74,11 +79,6 @@ export class CadastroLocalizacaoPage {
       },
       error => {});
     }
-
-    
-
-
-    
   }
 
   showInserOk(){

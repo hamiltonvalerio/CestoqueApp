@@ -59,7 +59,8 @@ export class CadastroMovimentacaoPage {
   botaoMovimenta: boolean = true;
 
   fieldsGarantiaQualidade: boolean = true;
-
+  fieldsAlmoxarifadoPrincipal: boolean = true;
+  fieldsIrradiacao: boolean = true;
   aprovacao: string;
 
   constructor(
@@ -121,9 +122,18 @@ export class CadastroMovimentacaoPage {
       this.reset();
       if(event.value.aprovacao === true){
         this.fieldsGarantiaQualidade = false;
-        console.log("teste: "+this.fieldsGarantiaQualidade);
       }else{
         this.fieldsGarantiaQualidade = true;
+      }
+      if(event.value.almoxarifadoprincipal === true){
+        this.fieldsAlmoxarifadoPrincipal = false;
+      }else{
+        this.fieldsAlmoxarifadoPrincipal = true;
+      }
+      if(event.value.irradiacao === true){
+        this.fieldsIrradiacao = false;
+      }else{
+        this.fieldsIrradiacao = true;
       }
       this.citensInsumos = [];
       this.insumoService.findByLocalizacaoNoPage(event.value.id).subscribe(response => {
@@ -191,6 +201,7 @@ export class CadastroMovimentacaoPage {
         loteRecebimento: value.loteRecebimento,
         loteLEI: value.loteLEI,
         loteARM: value.loteARM,
+        irradiado: value.irradiado,
         
         unidadeRecebida: value.unidadeRecebida,
         quantidadeVolume: value.quantidadeVolume,

@@ -1,13 +1,11 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
-  "start_url": "index.html",
+  "background_color": "#FFF",
   "display": "standalone",
-  "icons": [{
-    "src": "assets/imgs/logo.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }],
-  "background_color": "#4e8ef7",
-  "theme_color": "#4e8ef7"
+  "name": "Sistema de Controle de Estoque",
+  "short_name": "Sistema de Controle de Estoque",
+  "version": "br.ipen.cestoque",
+  "description": "Controle de estoque e rastreamento de insumos.",
+  "author": "Hamilton Valério Filho",
+  "icons": [],
+  "start_url": "index.html"
 }

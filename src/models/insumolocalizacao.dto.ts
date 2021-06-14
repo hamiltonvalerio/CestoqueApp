@@ -23,6 +23,7 @@ export interface InsumolocalizacaoDTO extends DadosComunsInsumos{
     codigoalmoxarifado: string;
     loteLEI: string;
     loteARM: string;
+    irradiado: boolean;
 
     unidadeRecebida: UnidadeDTO;
     quantidadeVolume: number;

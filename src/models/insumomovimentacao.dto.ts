@@ -19,6 +19,7 @@ export interface InsumomovimentacaoDTO extends DadosComunsInsumos{
     loteRecebimento: string;
     loteLEI: string;
     loteARM: string;
+    irradiado: boolean;
     
     unidadeRecebida?: UnidadeDTO;
     quantidadeVolume?: number;
