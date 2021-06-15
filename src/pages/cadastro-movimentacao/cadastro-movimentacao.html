@@ -220,22 +220,25 @@
       <ion-row *ngIf="mov.show" [hidden]="fieldsGarantiaQualidade">
         <ion-col>
           <ion-item>
-            <ion-label>Devolvido para o Almoxarifado do CECRF:</ion-label>
+            <ion-label>Quantidade Movimentada:</ion-label>
             <ion-input type="number" [(ngModel)]="mov.quantidadeMovimentada"> </ion-input>
           </ion-item>
         </ion-col>
+
         <ion-col>
           <ion-item>
-            <ion-label>Quantidade Utilizada:</ion-label>
-            <ion-input type="number" [(ngModel)]="mov.quantidadeUtilizada"> </ion-input>
+            <ion-label>Utilizado</ion-label>
+            <ion-checkbox color="primary" [(ngModel)]="mov.utilizado" [disabled]="mov.isDisabledutilizado" (click)="valida(mov)"></ion-checkbox>
           </ion-item>
         </ion-col>
+
         <ion-col>
           <ion-item>
-            <ion-label>Quantidade descartada:</ion-label>
-            <ion-input type="number" [(ngModel)]="mov.quantidadeDescartada"> </ion-input>
+            <ion-label>Descartado</ion-label>
+            <ion-checkbox color="secondary" [(ngModel)]="mov.descartado" [disabled]="mov.isDisableddescartado" (click)="valida(mov)"></ion-checkbox>
           </ion-item>
         </ion-col>
+       
       </ion-row>
 
       <ion-row *ngIf="mov.show" radio-group [(ngModel)]="mov.aprovado" [hidden]="fieldsGarantiaQualidade">
@@ -272,14 +275,20 @@
             <ion-radio value="true"></ion-radio>
           </ion-item>
         </ion-col>
-            
-              
         <ion-col>
           <ion-item>
             <ion-label>Não</ion-label>
             <ion-radio value="false"></ion-radio>
           </ion-item>
         </ion-col>
+      </ion-row>
+      <ion-row *ngIf="mov.show" [hidden]="fieldsIrradiacao">
+        <ion-col>
+          <ion-item>
+            <ion-label>Data de Irradiação?</ion-label>
+            <ion-input type="datetime-local" [(ngModel)]="mov.dataIrradiacao"> </ion-input>
+          </ion-item>
+        </ion-col> 
       </ion-row>
 
 

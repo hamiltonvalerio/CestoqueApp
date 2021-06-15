@@ -4,5 +4,6 @@ interface DadosComunsInsumos{
 	condambamostragemur?: string;
 	quantidadeDescartada?: number;
 	quantidadeUtilizada?: number;
+	dataPrevisaoControle?: Date;
 
 }

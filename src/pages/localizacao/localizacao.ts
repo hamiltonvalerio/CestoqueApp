@@ -49,11 +49,12 @@ export class LocalizacaoPage {
     error => {})
   }
 
-  public openItem(itemId: string, itemNome: string, itemAtualizaqtdminima: string): void {  
+  public openItem(itemId: string, itemNome: string, itemAtualizaqtdminima: string, itemControle: string): void {  
     this.navCtrl.push('LocalizacaoInsumosPage', {
       localizacao_id: itemId,
       localizacao_nome: itemNome,
       localizacao_atualizaqtdminima: itemAtualizaqtdminima,
+      localizacao_controle: itemControle,
     });
   }
 

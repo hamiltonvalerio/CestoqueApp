@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 717:
+/***/ 725:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocalizacaoPageModule", function() { return LocalizacaoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localizacao__ = __webpack_require__(900);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__localizacao__ = __webpack_require__(908);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76,7 +76,7 @@ var ConverteListaIonItemDivider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 900:
+/***/ 908:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -131,11 +131,12 @@ var LocalizacaoPage = /** @class */ (function () {
             _this.itensLocalizacoes = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
         }, function (error) { });
     };
-    LocalizacaoPage.prototype.openItem = function (itemId, itemNome, itemAtualizaqtdminima) {
+    LocalizacaoPage.prototype.openItem = function (itemId, itemNome, itemAtualizaqtdminima, itemControle) {
         this.navCtrl.push('LocalizacaoInsumosPage', {
             localizacao_id: itemId,
             localizacao_nome: itemNome,
             localizacao_atualizaqtdminima: itemAtualizaqtdminima,
+            localizacao_controle: itemControle,
         });
     };
     LocalizacaoPage.prototype.excluirItem = function (itemId) {
@@ -151,12 +152,14 @@ var LocalizacaoPage = /** @class */ (function () {
     };
     LocalizacaoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-localizacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/'<!--\n\n  Generated template for the LocalizacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Localizações</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item-group *ngFor="let item of itensLocalizacoes">\n\n    <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n\n\n    <ion-grid>\n\n      <ion-row *ngFor="let l of item.arrayDeItens">\n\n        <ion-col>\n\n          <h3>{{l.nome}}</h3>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="search" (click)="openItem(l.id, l.nome, l.atualizaqtdminima)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="create" (click)="editarItem(l.id)" title="Editar Localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="close-circle" (click)="excluirItem(l.id)" title="Excluir Localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/,
+            selector: 'page-localizacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/'<!--\n\n  Generated template for the LocalizacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Localizações</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item-group *ngFor="let item of itensLocalizacoes">\n\n    <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n\n\n    <ion-grid>\n\n      <ion-row *ngFor="let l of item.arrayDeItens">\n\n        <ion-col>\n\n          <h3>{{l.nome}}</h3>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="search" (click)="openItem(l.id, l.nome, l.atualizaqtdminima, l.aprovacao)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="create" (click)="editarItem(l.id)" title="Editar Localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="close-circle" (click)="excluirItem(l.id)" title="Excluir Localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */]])
     ], LocalizacaoPage);
     return LocalizacaoPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=localizacao.js.map

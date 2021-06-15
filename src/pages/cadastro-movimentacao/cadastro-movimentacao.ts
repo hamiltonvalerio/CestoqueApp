@@ -14,6 +14,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController } from 'ionic-angular';
 import { InsumoDTO } from '../../models/insumo.dto';
 import { Console } from '@angular/core/src/console';
+import moment from 'moment';
 
 /**
  * Generated class for the CadastroMovimentacaoPage page.
@@ -62,6 +63,8 @@ export class CadastroMovimentacaoPage {
   fieldsAlmoxarifadoPrincipal: boolean = true;
   fieldsIrradiacao: boolean = true;
   aprovacao: string;
+
+ 
 
   constructor(
     public navCtrl: NavController, 
@@ -139,11 +142,12 @@ export class CadastroMovimentacaoPage {
       this.insumoService.findByLocalizacaoNoPage(event.value.id).subscribe(response => {
         //this.citensInsumos = response.sort();
         this.insumosLocalizacoes = response.sort();
-        console.log(this.insumosLocalizacoes);
+       
       },
       error => {
         //loader.dismiss();
       });
+     
 
     } else {
       this.citensInsumos = [];
@@ -230,6 +234,7 @@ export class CadastroMovimentacaoPage {
 
   inserirMovimentacao(){
     let qtdvazio : boolean = false;
+    let qtdacimaorigem : boolean = false;
     this.mov  = {} as any;
 
     this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
@@ -238,28 +243,47 @@ export class CadastroMovimentacaoPage {
     this.mov.itens = this.movimentacao.itens;
 
     console.log(this.mov.itens);
+    if(this.mov.localizacaoDestino.aprovacao == true){
+      this.mov.itens.forEach((f) => {
+        f.dataPrevisaoControle = this.dateNow.addDaysStartingNow(15);
+      });
+    }
 
     this.mov.itens.forEach(element => {
-
       if(element.quantidadeMovimentada != null){
         if(element.quantidadeMovimentada == 0){
-          if(element.quantidadeDescartada != null){
-            if(element.quantidadeDescartada > 0){
-              qtdvazio = false;
-            }else{
-              qtdvazio = true;
-            }
-          }else{
-            qtdvazio = true;  
+          qtdvazio = true;  
+        }else if(element.quantidadeMovimentada > element.quantidadeOrigem){
+          qtdacimaorigem = true;
+        }else{
+          qtdvazio = false;
+
+          if(element.utilizado == true){
+            let valor = element.quantidadeMovimentada;
+            element.quantidadeUtilizada = valor;
+            element.quantidadeMovimentada = element.quantidadeOrigem - element.quantidadeMovimentada;
           }
+          if(element.descartado == true){
+            let valor = element.quantidadeMovimentada;
+            element.quantidadeDescartada = valor;
+            element.quantidadeMovimentada = element.quantidadeOrigem - element.quantidadeMovimentada;
+          }
+
         }
+      }else{
+        qtdvazio = true; 
       }
-      
+
+
+      console.log(element)
     });
 
-
+    //console.log(this.mov);
+    
     if(qtdvazio){
       this.showQtdVazio();
+    }else if(qtdacimaorigem){
+      this.showQtdAcimaDaOrigem();
     }else{
       this.movimentacaoService.insert(this.mov).subscribe(response => {
         this.showInsertOk();
@@ -299,6 +323,20 @@ export class CadastroMovimentacaoPage {
     alert.present();
   }
 
+  showQtdAcimaDaOrigem(){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Quantidade de movimentação não pode ser maior que a quantidade de origem!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+        }
+      ]
+    });
+    alert.present();
+  }
+
   excluiItem(insumomovimentacaoDTO: InsumomovimentacaoDTO){
 
   this.movimentacao.itens.forEach(function(item, index, object) {
@@ -324,6 +362,17 @@ export class CadastroMovimentacaoPage {
       if (index == i ) {
          _.show = !_.show 
         }});
+  }
+
+  valida(m : InsumomovimentacaoDTO) {
+    if (m.descartado == true) {
+      m.isDisabledutilizado = true;
+    } else if (m.utilizado == true) {
+      m.isDisableddescartado = true;
+    } else {
+      m.isDisabledutilizado = false;
+      m.isDisableddescartado = false;
+    }
   }
   
 

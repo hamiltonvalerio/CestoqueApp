@@ -27,6 +27,10 @@ export interface InsumomovimentacaoDTO extends DadosComunsInsumos{
 
     show: Boolean;
 
+    utilizado?: boolean;
+    descartado?: boolean;
+    isDisableddescartado?: boolean;
+    isDisabledutilizado?: boolean;
 
 
 }

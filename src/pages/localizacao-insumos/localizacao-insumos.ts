@@ -1,3 +1,5 @@
+import { DateNow } from './../../utils/datenow';
+import { DateTimeFormatPipe } from './../../utils/date-time-format';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { InsumolocalizacaoDTO } from "./../../models/insumolocalizacao.dto";
 import { ModalQuantidademinimaPage } from "./../modal-quantidademinima/modal-quantidademinima";
@@ -41,6 +43,7 @@ export class LocalizacaoInsumosPage {
   localizacao: LocalizacaoDTO;
 
   botaoQuantidadeMinima: boolean = false;
+  dataControle: boolean = true;
 
   constructor(
     public navCtrl: NavController,
@@ -51,7 +54,9 @@ export class LocalizacaoInsumosPage {
     public modal: ModalController,
     public viewCtrl: ViewController,
     public alertCtrl: AlertController,
-    public file: File
+    public file: File,
+    public dateTimeFormatPipe: DateTimeFormatPipe,
+    public dateNow: DateNow,
   ) {
     this.nomeLocalizacao = this.navParams.get("localizacao_nome");
   }
@@ -106,6 +111,9 @@ export class LocalizacaoInsumosPage {
       if(this.navParams.get("localizacao_atualizaqtdminima") === false){
         this.botaoQuantidadeMinima = true;
       }
+      if(this.navParams.get("localizacao_controle") === true){
+        this.dataControle = false;
+      }
     }
     let loader = this.presentLoading();
     this.insumosLocalizacao = [];
@@ -118,7 +126,9 @@ export class LocalizacaoInsumosPage {
           this.insumosLocalizacao = this.insumosLocalizacao.concat(
             response["content"]
           );
-         
+          this.insumosLocalizacao.forEach((il) => {
+            il.dataPrevisaoControle = this.dateTimeFormatPipe.transformhifem(this.dateNow.getDateFormatado(il.dataPrevisaoControle));
+          })
           let end = this.insumosLocalizacao.length - 1;
           loader.dismiss();
         },
@@ -127,6 +137,8 @@ export class LocalizacaoInsumosPage {
         }
       );
   }
+
+
 
   presentLoading() {
     let loader = this.LoadingController.create({

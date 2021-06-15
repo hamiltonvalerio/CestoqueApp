@@ -28,43 +28,64 @@
 <ion-content padding>
 
     <ion-grid *ngFor="let ins of insumosLocalizacao">
-      <ion-row>
-        <h6>{{ins.insumo.nome}}</h6>
+      <ion-row justify-content-center align-items-center>
+        <ion-col><div><b>{{ins.insumo.nome}}</b></div></ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row justify-content-center align-items-center>
         <ion-col>
-          <h6>Quantidade: {{ins.quantidade}}</h6>
+          <div >Quantidade: {{ins.quantidade}}</div>
         </ion-col>
         <ion-col>
-          <h6>Lote Fornecedor: {{ins.loteFornecedor}}</h6>
+          <div >Lote Fornecedor: {{ins.loteFornecedor}}</div>
         </ion-col>
         <ion-col>
-          <h6>Lote CR: {{ins.loteCR}}</h6>
+          <div >Lote CR: {{ins.loteCR}}</div>
         </ion-col>
         <ion-col>
-          <h6>Lote Produção: {{ins.loteProducao}}</h6>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <h6>Data de Validade: {{ins.dataValidade | date:'dd/MM/yyyy'}}</h6>
-        </ion-col>
-        <ion-col>
-          <h6>Data de Irradiação: {{ins.dataIrradiacao}}</h6>
-        </ion-col>
-        <ion-col>
-          <h6>Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</h6>
+          <div >Lote Produção: {{ins.loteProducao}}</div>
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row justify-content-center align-items-center>
         <ion-col>
-          <h6>Lote LEI: {{ins.loteLEI}}</h6>
+          <div >Data de Validade: {{ins.dataValidade | date:'dd/MM/yyyy'}}</div>
         </ion-col>
         <ion-col>
-          <h3>Quantidade mínima: {{ins.quantidademinima}}</h3>
+          <div >Data de Irradiação: {{ins.dataIrradiacao}}</div>
+        </ion-col>
+        <ion-col>
+          <div >Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row justify-content-center align-items-center>
+        <ion-col>
+          <div ><b>Lote LEI: {{ins.loteLEI}}</b></div>
+        </ion-col>
+        <ion-col >
+          <div >Quantidade mínima: {{ins.quantidademinima}}</div>
+        </ion-col>
+        <ion-col>
         </ion-col>
         <ion-col>
         </ion-col>  
+      </ion-row>
+      <ion-row justify-content-center align-items-center [hidden]="dataControle">
+        <ion-col >
+          <div >
+            Previsão do controle:
+          </div>
+        </ion-col>
+        <ion-col >
+            <div>
+              <ion-input type="date" [(ngModel)]="ins.dataPrevisaoControle"> </ion-input>
+            </div>
+        </ion-col>
+        <ion-col>
+
+        </ion-col>
+        <ion-col>
+
+        </ion-col>
       </ion-row>
       <ion-row [hidden]="botaoQuantidadeMinima">
         <button ion-button class="submit-btn" 
