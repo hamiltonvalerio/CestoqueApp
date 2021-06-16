@@ -1,3 +1,4 @@
+import { LocalizacaoFilhaDTO } from './../../models/localizacaofilha.dto';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -24,6 +25,12 @@ export class CadastroLocalizacaoPage {
 
   itemId;
 
+  fieldLocalizacaoFilha: boolean = true;
+
+  localizacoes: LocalizacaoDTO[];
+
+  
+
   constructor(public navCtrl: NavController, 
     public viewCtrl: ViewController,
     public alertCtrl: AlertController,
@@ -40,7 +47,8 @@ export class CadastroLocalizacaoPage {
           utilizado: [false,''],
           almoxarifadoprincipal: [false,''],
           irradiacao: [false,''],
-
+          localizacaofilha: [false,''],
+          localizacao: [,],
         }, {}); 
 
 
@@ -58,7 +66,17 @@ export class CadastroLocalizacaoPage {
         }, {}); 
       });
     }
+
+    this.getItens();
     
+  }
+
+  getItens(){ 
+    this.localizacaoService.findAllOrderByNome()
+    .subscribe(response => {
+      this.localizacoes = response.sort();
+    },
+    error => {})
   }
 
   dismiss() {
@@ -66,18 +84,35 @@ export class CadastroLocalizacaoPage {
   }
 
   cadastrarLocalizacao(){
-    let loc: LocalizacaoDTO = this.formGroup.value;
-    console.log(loc)
-    if(loc.id === null || loc.id === ''){
-      this.localizacaoService.insert(this.formGroup.value).subscribe(response => {
-        this.showInserOk();
-      },
-      error => {});
+    if(this.formGroup.get('localizacaofilha').value === true){
+      let locfilha: LocalizacaoFilhaDTO = this.formGroup.value;
+      locfilha.localizacaopai = locfilha.localizacao; 
+      console.log(locfilha);
+      if(locfilha.id === null || locfilha.id === ''){
+        this.localizacaoService.insertfilha(locfilha).subscribe(response => {
+          this.showInserOk();
+        },
+        error => {});
+      }else{
+        this.localizacaoService.updatefilha(locfilha).subscribe(response => {
+          this.showUpdateOk();
+        },
+        error => {});
+      }
+
     }else{
-      this.localizacaoService.update(this.formGroup.value).subscribe(response => {
-        this.showUpdateOk();
-      },
-      error => {});
+      let loc: LocalizacaoDTO = this.formGroup.value;
+      if(loc.id === null || loc.id === ''){
+        this.localizacaoService.insert(this.formGroup.value).subscribe(response => {
+          this.showInserOk();
+        },
+        error => {});
+      }else{
+        this.localizacaoService.update(this.formGroup.value).subscribe(response => {
+          this.showUpdateOk();
+        },
+        error => {});
+      }
     }
   }
 
@@ -113,6 +148,14 @@ export class CadastroLocalizacaoPage {
       ]
     });
     alert.present();
+  }
+
+  validalocalizacaofilha(){
+    if(this.formGroup.get('localizacaofilha').value === true){
+      this.fieldLocalizacaoFilha = false;
+    }else{
+      this.fieldLocalizacaoFilha = true;
+    }
   }
 
 }

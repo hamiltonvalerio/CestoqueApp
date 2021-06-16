@@ -30,7 +30,7 @@ export class ConverteListaIonItemDivider {
        
         
         });
-
+        console.log(itens)
         return itens;
 
     }

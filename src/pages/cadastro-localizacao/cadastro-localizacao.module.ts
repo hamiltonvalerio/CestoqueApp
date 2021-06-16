@@ -1,3 +1,4 @@
+import { IonicSelectableModule } from 'ionic-selectable';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CadastroLocalizacaoPage } from './cadastro-localizacao';
@@ -8,6 +9,7 @@ import { CadastroLocalizacaoPage } from './cadastro-localizacao';
   ],
   imports: [
     IonicPageModule.forChild(CadastroLocalizacaoPage),
+    IonicSelectableModule,
   ],
 })
 export class CadastroLocalizacaoPageModule {}

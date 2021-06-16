@@ -23,8 +23,8 @@
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text" ></ion-input>
-      <ion-input formControlName="id" type="hidden"></ion-input>
     </ion-item>
+    <ion-input formControlName="id" type="hidden"></ion-input>
     <ion-item>
       <ion-label stacked>É o almoxarifado principal?</ion-label>
       <ion-checkbox item-right danger checked formControlName="almoxarifadoprincipal"></ion-checkbox>
@@ -44,6 +44,30 @@
     <ion-item>
       <ion-label stacked>É uma localização de insumos utilizados?</ion-label>
       <ion-checkbox item-right danger checked formControlName="utilizado"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Esta ligada à uma localização principal?</ion-label>
+      <ion-checkbox item-right danger (click)="validalocalizacaofilha()" checked formControlName="localizacaofilha"></ion-checkbox>
+    </ion-item>
+    <ion-item [hidden]="fieldLocalizacaoFilha">
+      <ion-label stacked>Escolha uma localização</ion-label>
+      <ionic-selectable 
+      item-content
+      formControlName="localizacao"
+      [items]="localizacoes"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      [focusSearchbar]="true"
+      [hasVirtualScroll]="true" >
+      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{item.nome}}
+          </ion-label>
+        </ion-item>
+      </ng-template>
+    </ionic-selectable>
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>

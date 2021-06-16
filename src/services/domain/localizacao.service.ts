@@ -1,3 +1,4 @@
+import { LocalizacaoFilhaDTO } from './../../models/localizacaofilha.dto';
 import { API_CONFIG } from '../../config/api.config';
 import { LocalizacaoDTO } from '../../models/localizacao.dto';
 import { Observable } from 'rxjs/Rx';
@@ -12,6 +13,10 @@ export class LocalizacaoService{
     }
 
     findAll() : Observable<LocalizacaoDTO[]> {
+        return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes`)
+    }
+
+    findAllOrderByNome() : Observable<LocalizacaoDTO[]> {
         return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes`)
     }
 
@@ -49,6 +54,25 @@ export class LocalizacaoService{
 
     findByLocalizacao(localizacao_id : string){
         //return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/buscaporlocalizacao/?localizacao_id=${localizacao_id}`);
+    }
+
+    insertfilha(obj: LocalizacaoFilhaDTO){
+        console.log(obj)
+        return this.http.post(`${API_CONFIG.baseUrl}/localizacoes/insertfilha/`,
+        obj,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
+    }
+
+    updatefilha(obj: LocalizacaoFilhaDTO){
+        return this.http.put(`${API_CONFIG.baseUrl}/localizacoes/updatefilha/`,
+        obj,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
     }
 
 }

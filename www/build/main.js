@@ -124,11 +124,11 @@ var map = {
 		29
 	],
 	"../pages/ajuste-estoque/ajuste-estoque.module": [
-		702,
+		701,
 		1
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
-		701,
+		702,
 		28
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
@@ -148,11 +148,11 @@ var map = {
 		2
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		708,
+		707,
 		25
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
-		707,
+		708,
 		6
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
@@ -160,11 +160,11 @@ var map = {
 		24
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		711,
+		710,
 		23
 	],
 	"../pages/categorias/categorias.module": [
-		710,
+		711,
 		9
 	],
 	"../pages/dashboard/dashboard.module": [
@@ -176,7 +176,7 @@ var map = {
 		21
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		718,
+		714,
 		20
 	],
 	"../pages/home/home.module": [
@@ -184,43 +184,43 @@ var map = {
 		19
 	],
 	"../pages/insumo/insumos.module": [
-		714,
+		716,
 		3
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		716,
+		717,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		725,
+		718,
 		8
 	],
 	"../pages/manual/manual.module": [
-		717,
+		719,
 		18
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		722,
+		720,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		719,
+		721,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		720,
+		722,
 		17
 	],
 	"../pages/producao/producao.module": [
-		728,
+		723,
 		16
 	],
 	"../pages/produto/produto.module": [
-		721,
+		724,
 		15
 	],
 	"../pages/profile/profile.module": [
-		724,
+		725,
 		14
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
@@ -228,15 +228,15 @@ var map = {
 		13
 	],
 	"../pages/saida/saida.module": [
-		723,
+		727,
 		12
 	],
 	"../pages/signup/signup.module": [
-		729,
+		728,
 		11
 	],
 	"../pages/unidade/unidade.module": [
-		727,
+		729,
 		10
 	]
 };
@@ -386,6 +386,9 @@ var LocalizacaoService = /** @class */ (function () {
     LocalizacaoService.prototype.findAll = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes");
     };
+    LocalizacaoService.prototype.findAllOrderByNome = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes");
+    };
     LocalizacaoService.prototype.findAllInsumoLocalizacao = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/findAllInsumoLocalizacao");
     };
@@ -410,6 +413,19 @@ var LocalizacaoService = /** @class */ (function () {
     };
     LocalizacaoService.prototype.findByLocalizacao = function (localizacao_id) {
         //return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/buscaporlocalizacao/?localizacao_id=${localizacao_id}`);
+    };
+    LocalizacaoService.prototype.insertfilha = function (obj) {
+        console.log(obj);
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/insertfilha/", obj, {
+            observe: 'response',
+            responseType: 'text'
+        });
+    };
+    LocalizacaoService.prototype.updatefilha = function (obj) {
+        return this.http.put(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/localizacoes/updatefilha/", obj, {
+            observe: 'response',
+            responseType: 'text'
+        });
     };
     LocalizacaoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
@@ -470,6 +486,56 @@ var UnidadeService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateTimeFormatPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contants__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var DateTimeFormatPipe = /** @class */ (function (_super) {
+    __extends(DateTimeFormatPipe, _super);
+    function DateTimeFormatPipe() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    DateTimeFormatPipe.prototype.transform = function (value, args) {
+        return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_TIME_FMT);
+    };
+    DateTimeFormatPipe.prototype.transformhifem = function (value, args) {
+        return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_TIME_FMT_HIFEN_SEM_HORA);
+    };
+    DateTimeFormatPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Pipe"])({
+            name: 'dateTimeFormat'
+        })
+    ], DateTimeFormatPipe);
+    return DateTimeFormatPipe;
+}(__WEBPACK_IMPORTED_MODULE_1__angular_common__["d" /* DatePipe */]));
+
+//# sourceMappingURL=date-time-format.js.map
+
+/***/ }),
+
+/***/ 356:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ColaboradorService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage_service__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_api_config__ = __webpack_require__(26);
@@ -525,7 +591,7 @@ var ColaboradorService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 356:
+/***/ 357:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -569,57 +635,56 @@ var CategoriaService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 357:
+/***/ 358:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateTimeFormatPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contants__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var DateTimeFormatPipe = /** @class */ (function (_super) {
-    __extends(DateTimeFormatPipe, _super);
-    function DateTimeFormatPipe() {
-        return _super !== null && _super.apply(this, arguments) || this;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateNow; });
+var DateNow = /** @class */ (function () {
+    function DateNow() {
     }
-    DateTimeFormatPipe.prototype.transform = function (value, args) {
-        return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_TIME_FMT);
+    DateNow.prototype.getDateNow = function () {
+        var today = new Date();
+        var date = today.getFullYear() + '-' +
+            (today.getMonth() + 1).toString().padStart(2, '0') + '-' +
+            today.getDate().toString().padStart(2, '0');
+        var time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0');
+        return date + 'T' + time;
     };
-    DateTimeFormatPipe.prototype.transformhifem = function (value, args) {
-        return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_TIME_FMT_HIFEN_SEM_HORA);
+    DateNow.prototype.getDateFormatado = function (today) {
+        return today.toLocaleString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).replace(/\//g, '-');
     };
-    DateTimeFormatPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Pipe"])({
-            name: 'dateTimeFormat'
-        })
-    ], DateTimeFormatPipe);
-    return DateTimeFormatPipe;
-}(__WEBPACK_IMPORTED_MODULE_1__angular_common__["d" /* DatePipe */]));
+    DateNow.prototype.getDateFormatadoComHora = function (today) {
+        return today.toLocaleString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        }).replace(/\//g, '-');
+    };
+    DateNow.prototype.addDaysStartingNow = function (days) {
+        var futureDate = new Date();
+        futureDate.setDate(futureDate.getDate() + days);
+        return futureDate;
+    };
+    DateNow.prototype.addDays = function (futureDate, days) {
+        futureDate.setDate(futureDate.getDate() + days);
+        return futureDate;
+    };
+    return DateNow;
+}());
 
-//# sourceMappingURL=date-time-format.js.map
+//# sourceMappingURL=datenow.js.map
 
 /***/ }),
 
-/***/ 358:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -696,7 +761,7 @@ var EntradaService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 359:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -746,55 +811,6 @@ var FornecedorService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=fornecedor.service.js.map
-
-/***/ }),
-
-/***/ 360:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateNow; });
-var DateNow = /** @class */ (function () {
-    function DateNow() {
-    }
-    DateNow.prototype.getDateNow = function () {
-        var today = new Date();
-        var date = today.getFullYear() + '-' +
-            (today.getMonth() + 1).toString().padStart(2, '0') + '-' +
-            today.getDate().toString().padStart(2, '0');
-        var time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0');
-        return date + 'T' + time;
-    };
-    DateNow.prototype.getDateFormatado = function (today) {
-        return today.toLocaleString('pt-BR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }).replace(/\//g, '-');
-    };
-    DateNow.prototype.getDateFormatadoComHora = function (today) {
-        return today.toLocaleString('pt-BR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        }).replace(/\//g, '-');
-    };
-    DateNow.prototype.addDaysStartingNow = function (days) {
-        var futureDate = new Date();
-        futureDate.setDate(futureDate.getDate() + days);
-        return futureDate;
-    };
-    DateNow.prototype.addDays = function (futureDate, days) {
-        futureDate.setDate(futureDate.getDate() + days);
-        return futureDate;
-    };
-    return DateNow;
-}());
-
-//# sourceMappingURL=datenow.js.map
 
 /***/ }),
 
@@ -917,19 +933,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_datenow__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_datenow__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_ajusteestoque_service__ = __webpack_require__(362);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_file_transfer_ngx__ = __webpack_require__(372);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_date_format__ = __webpack_require__(378);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_movimentacao_service__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_date_time_format__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_entrada_service__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_date_time_format__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_entrada_service__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_domain_insumo_service__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_domain_unidade_service__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_fornecedor_service__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_colaborador_service__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_fornecedor_service__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_colaborador_service__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_auth_service__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_categoria_service__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_categoria_service__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_common_http__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_core__ = __webpack_require__(1);
@@ -1000,35 +1016,35 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_16_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_17__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/administracao/administracao.module#AdministracaoPageModule', name: 'AdministracaoPage', segment: 'administracao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ajuste-estoque/ajuste-estoque.module#AjusteEstoquePageModule', name: 'AjusteEstoquePage', segment: 'ajuste-estoque', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],

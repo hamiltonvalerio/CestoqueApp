@@ -22,6 +22,8 @@ export class LocalizacaoPage {
   itens: LocalizacaoDTO[];
   itensLocalizacoes = [];
 
+  
+
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public localizacaoService: LocalizacaoService,
@@ -33,7 +35,6 @@ export class LocalizacaoPage {
   }
 
   openModal() {
-    console.log("aqui");
     let modal = this.modalCtrl.create('CadastroLocalizacaoPage');
     modal.onDidDismiss(() => {
       this.getItens();
@@ -45,16 +46,18 @@ export class LocalizacaoPage {
     this.localizacaoService.findAll()
     .subscribe(response => {
       this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+      
     },
     error => {})
   }
 
-  public openItem(itemId: string, itemNome: string, itemAtualizaqtdminima: string, itemControle: string): void {  
+  public openItem(itemId: string, itemNome: string, itemAtualizaqtdminima: string, itemControle: string, localizacao_filha: string): void {  
     this.navCtrl.push('LocalizacaoInsumosPage', {
       localizacao_id: itemId,
       localizacao_nome: itemNome,
       localizacao_atualizaqtdminima: itemAtualizaqtdminima,
       localizacao_controle: itemControle,
+      localizacao_filha: localizacao_filha,
     });
   }
 
