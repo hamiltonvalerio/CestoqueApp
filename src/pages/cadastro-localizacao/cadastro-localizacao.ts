@@ -87,33 +87,108 @@ export class CadastroLocalizacaoPage {
     if(this.formGroup.get('localizacaofilha').value === true){
       let locfilha: LocalizacaoFilhaDTO = this.formGroup.value;
       locfilha.localizacaopai = locfilha.localizacao; 
-      console.log(locfilha);
       if(locfilha.id === null || locfilha.id === ''){
-        this.localizacaoService.insertfilha(locfilha).subscribe(response => {
-          this.showInserOk();
-        },
-        error => {});
+        if(locfilha.almoxarifadoprincipal == true){
+            this.showAlmoxPrincFilha();
+        }else{
+          this.localizacaoService.insertfilha(locfilha).subscribe(response => {
+            this.showInserOk();
+          },
+          error => {});
+        }
       }else{
-        this.localizacaoService.updatefilha(locfilha).subscribe(response => {
-          this.showUpdateOk();
-        },
-        error => {});
+        if(locfilha.almoxarifadoprincipal == true){
+          this.showAlmoxPrincFilha();
+        }else{
+          this.localizacaoService.updatefilha(locfilha).subscribe(response => {
+            this.showUpdateOk();
+          },
+          error => {});
+        }
       }
 
     }else{
       let loc: LocalizacaoDTO = this.formGroup.value;
+      let almoxprincipal : LocalizacaoDTO;
+      this.localizacaoService.findAlmoxPrincipal().subscribe((b) => {
+        almoxprincipal = b;
+      });
+      console.log(almoxprincipal);
       if(loc.id === null || loc.id === ''){
-        this.localizacaoService.insert(this.formGroup.value).subscribe(response => {
-          this.showInserOk();
-        },
-        error => {});
+        if(almoxprincipal != null){
+          if(almoxprincipal.almoxarifadoprincipal == true){
+            this.showExisteAlmoxPrinc();
+          }else{
+            this.localizacaoService.insert(loc).subscribe(response => {
+              this.showInserOk();
+            },
+            error => {});
+          }
+        }else{
+          this.localizacaoService.insert(loc).subscribe(response => {
+            this.showInserOk();
+          },
+          error => {});
+        } 
       }else{
-        this.localizacaoService.update(this.formGroup.value).subscribe(response => {
-          this.showUpdateOk();
-        },
-        error => {});
+        if(almoxprincipal != null){
+          if(loc.id == almoxprincipal.id){
+            this.localizacaoService.update(loc).subscribe(response => {
+              this.showUpdateOk();
+            },
+            error => {});
+          }else{
+            if(loc.almoxarifadoprincipal == true){
+              this.showExisteAlmoxPrinc();
+            }else{
+              this.localizacaoService.update(loc).subscribe(response => {
+                this.showUpdateOk();
+              },
+              error => {});
+            }
+          }
+        }else{
+          this.localizacaoService.update(loc).subscribe(response => {
+            this.showUpdateOk();
+          },
+          error => {});
+        }
       }
     }
+  }
+
+  showAlmoxPrincFilha(){
+    let alert = this.alertCtrl.create({
+      title: 'Erra',
+      message: 'Sublocalização não pode ser principal!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+           
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  showExisteAlmoxPrinc(){
+    let alert = this.alertCtrl.create({
+      title: 'Erra',
+      message: 'Já existe um almoxarifado principal!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+           
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   showInserOk(){

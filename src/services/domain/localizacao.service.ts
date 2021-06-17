@@ -75,4 +75,12 @@ export class LocalizacaoService{
         });
     }
 
+    validaAlmoxarifadoPrincipal() : Observable<boolean> {
+        return this.http.get<boolean>(`${API_CONFIG.baseUrl}/localizacoes/validaAlmoxarifadoPrincipal/`)
+    }
+
+    findAlmoxPrincipal() : Observable<LocalizacaoDTO> {
+        return this.http.get<LocalizacaoDTO>(`${API_CONFIG.baseUrl}/localizacoes/findAlmoxPrincipal/`)
+    }
+
 }
