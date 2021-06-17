@@ -41,7 +41,7 @@
       <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
         <ion-item>
           <ion-label text-wrap class="label_12_b">
-            {{item.nome}}
+            {{item.objlocalizacaofilha != null ? item.objlocalizacaofilha.nome+" => "+ item.nome : item.nome}}
           </ion-label>
         </ion-item>
       </ng-template>
@@ -115,7 +115,7 @@
       <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
         <ion-item>
           <ion-label text-wrap class="label_12_b">
-            {{item.nome}}
+            {{item.objlocalizacaofilha != null ? item.objlocalizacaofilha.nome+" => "+ item.nome : item.nome}}
           </ion-label>
         </ion-item>
       </ng-template>

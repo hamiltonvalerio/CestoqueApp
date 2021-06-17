@@ -23,21 +23,7 @@
     <ion-grid *ngFor="let item of itensLocalizacoes">
       <ion-row *ngFor="let l of item.arrayDeItens">
         <ion-col>
-          <h3>{{l.nome}}</h3>
-          <ion-row *ngFor="let f of l.localizacoesfilhas">
-            <ion-col col-9>
-              <h6>{{l.nome}} -> {{f.nome}}</h6>
-            </ion-col>
-            <ion-col col-1>
-              <ion-icon name="search" (click)="openItem(f.id, f.nome, f.atualizaqtdminima, f.aprovacao)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>
-            </ion-col>
-            <ion-col col-1>
-              <ion-icon name="create" (click)="editarItem(f.id)" title="Editar Localização" positionV="bottom"></ion-icon>
-            </ion-col>
-            <ion-col col-1>
-              <ion-icon name="close-circle" (click)="excluirItem(f.id)" title="Excluir Localização" positionV="bottom"></ion-icon>
-            </ion-col>
-          </ion-row>
+          <h6>{{l.objlocalizacaofilha != null ? l.objlocalizacaofilha.nome+" => "+ l.nome : l.nome}}</h6>
         </ion-col>
         <ion-col col-1>
           <ion-icon name="search" (click)="openItem(l.id, l.nome, l.atualizaqtdminima, l.aprovacao, l.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>

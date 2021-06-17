@@ -1,4 +1,3 @@
-import { LocalizacaoFilhaDTO } from './localizacaofilha.dto';
 export interface LocalizacaoDTO{
     id: string;
     nome: string;
@@ -8,6 +7,6 @@ export interface LocalizacaoDTO{
     almoxarifadoprincipal: boolean;
     irradiacao: boolean;
     atualizaqtdminima: boolean;
-    localizacoesfilhas: LocalizacaoFilhaDTO[];
+    objlocalizacaofilha: LocalizacaoDTO;
     localizacaofilha?: boolean;
 }

@@ -1,4 +1,3 @@
-import { LocalizacaoFilhaDTO } from './../../models/localizacaofilha.dto';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -48,7 +47,7 @@ export class CadastroLocalizacaoPage {
           almoxarifadoprincipal: [false,''],
           irradiacao: [false,''],
           localizacaofilha: [false,''],
-          localizacao: [,],
+          objlocalizacaofilha: [,],
         }, {}); 
 
 
@@ -84,6 +83,87 @@ export class CadastroLocalizacaoPage {
   }
 
   cadastrarLocalizacao(){
+    if(this.formGroup.get('localizacaofilha').value === true){
+      let locfilha: LocalizacaoDTO = this.formGroup.value;
+     
+      if(locfilha.id === null || locfilha.id === ''){
+        //INSERT
+        if(locfilha.almoxarifadoprincipal == true){
+            this.showAlmoxPrincFilha();
+        }else{
+          this.localizacaoService.insert(locfilha).subscribe(response => {
+            this.showInserOk();
+          },
+          error => {});
+        }
+      }else{
+        //UPDATE
+        if(locfilha.almoxarifadoprincipal == true){
+          this.showAlmoxPrincFilha();
+        }else{
+          this.localizacaoService.update(locfilha).subscribe(response => {
+            this.showUpdateOk();
+          },
+          error => {});
+        }
+      }
+
+
+
+
+
+
+    }else{
+      let loc: LocalizacaoDTO = this.formGroup.value;
+      let almoxprincipal : LocalizacaoDTO;
+      this.localizacaoService.findAlmoxPrincipal().subscribe((b) => {
+        almoxprincipal = b;
+      });
+      console.log(almoxprincipal);
+      if(loc.id === null || loc.id === ''){
+        if(almoxprincipal != null){
+          if(almoxprincipal.almoxarifadoprincipal == true){
+            this.showExisteAlmoxPrinc();
+          }else{
+            this.localizacaoService.insert(loc).subscribe(response => {
+              this.showInserOk();
+            },
+            error => {});
+          }
+        }else{
+          this.localizacaoService.insert(loc).subscribe(response => {
+            this.showInserOk();
+          },
+          error => {});
+        } 
+      }else{
+        if(almoxprincipal != null){
+          if(loc.id == almoxprincipal.id){
+            this.localizacaoService.update(loc).subscribe(response => {
+              this.showUpdateOk();
+            },
+            error => {});
+          }else{
+            if(loc.almoxarifadoprincipal == true){
+              this.showExisteAlmoxPrinc();
+            }else{
+              this.localizacaoService.update(loc).subscribe(response => {
+                this.showUpdateOk();
+              },
+              error => {});
+            }
+          }
+        }else{
+          this.localizacaoService.update(loc).subscribe(response => {
+            this.showUpdateOk();
+          },
+          error => {});
+        }
+      }
+    }
+  }
+
+  /*cadastrarLocalizacao(){
     if(this.formGroup.get('localizacaofilha').value === true){
       let locfilha: LocalizacaoFilhaDTO = this.formGroup.value;
       locfilha.localizacaopai = locfilha.localizacao; 
@@ -155,7 +235,7 @@ export class CadastroLocalizacaoPage {
         }
       }
     }
-  }
+  }*/
 
   showAlmoxPrincFilha(){
     let alert = this.alertCtrl.create({
