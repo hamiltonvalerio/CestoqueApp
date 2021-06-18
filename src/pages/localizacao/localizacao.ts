@@ -34,13 +34,7 @@ export class LocalizacaoPage {
     this.getItens();
   }
 
-  openModal() {
-    let modal = this.modalCtrl.create('CadastroLocalizacaoPage');
-    modal.onDidDismiss(() => {
-      this.getItens();
-    });
-    modal.present();
-  }
+ 
 
   getItens(){ 
     this.localizacaoService.findAll()
@@ -51,7 +45,11 @@ export class LocalizacaoPage {
     error => {})
   }
 
-  public openItem(itemId: string, itemNome: string, itemAtualizaqtdminima: string, itemControle: string, localizacao_filha: string): void {  
+  excluirItem(itemId: string){
+    this.getItens();
+  }
+
+   public openItem(itemId: string, itemNome: string, itemAtualizaqtdminima: string, itemControle: string, localizacao_filha: string): void {  
     this.navCtrl.push('LocalizacaoInsumosPage', {
       localizacao_id: itemId,
       localizacao_nome: itemNome,
@@ -61,8 +59,12 @@ export class LocalizacaoPage {
     });
   }
 
-  excluirItem(itemId: string){
-    this.getItens();
+  openModal() {
+    let modal = this.modalCtrl.create('CadastroLocalizacaoPage');
+    modal.onDidDismiss(() => {
+      this.getItens();
+    });
+    modal.present();
   }
 
   editarItem(itemId: string){

@@ -61,7 +61,13 @@ export class CadastroLocalizacaoPage {
         this.formGroup = this.formBuilder.group({
           id: [this.updateLocalizacaoDTO.id,''],
           nome: [this.updateLocalizacaoDTO.nome,[Validators.required]],
-          aprovacao: [this.updateLocalizacaoDTO.aprovacao,'']
+          aprovacao: [this.updateLocalizacaoDTO.aprovacao,''],
+          descarte: [this.updateLocalizacaoDTO.descarte,''],
+          utilizado: [this.updateLocalizacaoDTO.utilizado,''],
+          almoxarifadoprincipal: [this.updateLocalizacaoDTO.almoxarifadoprincipal,''],
+          irradiacao: [this.updateLocalizacaoDTO.irradiacao,''],
+          localizacaofilha: [this.updateLocalizacaoDTO.localizacaofilha,''],
+          objlocalizacaofilha: [this.updateLocalizacaoDTO.objlocalizacaofilha,],
         }, {}); 
       });
     }
@@ -85,7 +91,7 @@ export class CadastroLocalizacaoPage {
   cadastrarLocalizacao(){
     if(this.formGroup.get('localizacaofilha').value === true){
       let locfilha: LocalizacaoDTO = this.formGroup.value;
-     
+      
       if(locfilha.id === null || locfilha.id === ''){
         //INSERT
         if(locfilha.almoxarifadoprincipal == true){
@@ -102,18 +108,15 @@ export class CadastroLocalizacaoPage {
           this.showAlmoxPrincFilha();
         }else{
           this.localizacaoService.update(locfilha).subscribe(response => {
+            console.log("aqui")
+            console.log(locfilha)
             this.showUpdateOk();
           },
           error => {});
         }
       }
-
-
-
-
-
-
     }else{
+     
       let loc: LocalizacaoDTO = this.formGroup.value;
       let almoxprincipal : LocalizacaoDTO;
       this.localizacaoService.findAlmoxPrincipal().subscribe((b) => {
@@ -139,6 +142,7 @@ export class CadastroLocalizacaoPage {
       }else{
         if(almoxprincipal != null){
           if(loc.id == almoxprincipal.id){
+            
             this.localizacaoService.update(loc).subscribe(response => {
               this.showUpdateOk();
             },
@@ -147,6 +151,7 @@ export class CadastroLocalizacaoPage {
             if(loc.almoxarifadoprincipal == true){
               this.showExisteAlmoxPrinc();
             }else{
+             
               this.localizacaoService.update(loc).subscribe(response => {
                 this.showUpdateOk();
               },

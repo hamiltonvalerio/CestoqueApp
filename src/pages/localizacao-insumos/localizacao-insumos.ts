@@ -127,9 +127,12 @@ export class LocalizacaoInsumosPage {
             response["content"]
           );
           this.insumosLocalizacao.forEach((il) => {
-            il.dataPrevisaoControle = this.dateTimeFormatPipe.transformhifem(this.dateNow.getDateFormatado(il.dataPrevisaoControle));
+            if(il.dataPrevisaoControle != null){
+              il.dataPrevisaoControle = this.dateTimeFormatPipe.transformhifem(this.dateNow.getDateFormatado(il.dataPrevisaoControle));
+            }
           })
           let end = this.insumosLocalizacao.length - 1;
+          console.log(this.insumosLocalizacao)
           loader.dismiss();
         },
         (error) => {

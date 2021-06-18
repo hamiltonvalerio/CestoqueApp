@@ -128,11 +128,11 @@ var map = {
 		1
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
-		702,
+		703,
 		28
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
-		703,
+		702,
 		27
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
@@ -172,47 +172,47 @@ var map = {
 		22
 	],
 	"../pages/entrada/entrada.module": [
-		713,
+		723,
 		21
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		714,
+		713,
 		20
 	],
 	"../pages/home/home.module": [
-		715,
+		714,
 		19
 	],
 	"../pages/insumo/insumos.module": [
-		716,
+		715,
 		3
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		717,
+		716,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		718,
+		717,
 		8
 	],
 	"../pages/manual/manual.module": [
-		719,
+		718,
 		18
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		720,
+		719,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		721,
+		720,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		722,
+		721,
 		17
 	],
 	"../pages/producao/producao.module": [
-		723,
+		722,
 		16
 	],
 	"../pages/produto/produto.module": [
@@ -314,12 +314,12 @@ var InsumoService = /** @class */ (function () {
     InsumoService.prototype.findInsumoLocalizacaoByLocalizacao = function (localizacao_id, page, linesPerPage) {
         if (page === void 0) { page = 0; }
         if (linesPerPage === void 0) { linesPerPage = 30; }
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/buscainsumolocalizacaoporlocalizacao/?localizacao_id=" + localizacao_id + "&page=" + page + "&linesPerPage=" + linesPerPage);
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/buscainsumolocalizacaoporlocalizacaoSemVazio/?localizacao_id=" + localizacao_id + "&page=" + page + "&linesPerPage=" + linesPerPage);
     };
     InsumoService.prototype.findInsumoLocalizacaoByLocalizacaoPdf = function (localizacao_id, page, linesPerPage) {
         if (page === void 0) { page = 0; }
         if (linesPerPage === void 0) { linesPerPage = 30; }
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/buscainsumolocalizacaoporlocalizacao/?localizacao_id=" + localizacao_id + "&page=" + page + "&linesPerPage=" + linesPerPage);
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/buscainsumolocalizacaoporlocalizacaoSemVazio/?localizacao_id=" + localizacao_id + "&page=" + page + "&linesPerPage=" + linesPerPage);
     };
     InsumoService.prototype.findByLocalizacaoNoPage = function (localizacao_id) {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/buscaporlocalizacaonopage/?localizacao_id=" + localizacao_id);
@@ -350,9 +350,10 @@ var InsumoService = /** @class */ (function () {
     };
     InsumoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
     ], InsumoService);
     return InsumoService;
+    var _a;
 }());
 
 //# sourceMappingURL=insumo.service.js.map
@@ -1010,8 +1011,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/administracao/administracao.module#AdministracaoPageModule', name: 'AdministracaoPage', segment: 'administracao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ajuste-estoque/ajuste-estoque.module#AjusteEstoquePageModule', name: 'AjusteEstoquePage', segment: 'ajuste-estoque', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
@@ -1021,7 +1022,6 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
@@ -1032,6 +1032,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
