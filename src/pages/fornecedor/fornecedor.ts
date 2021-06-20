@@ -50,13 +50,10 @@ export class FornecedorPage {
     this.itensFornecedores = [];
     this.fornecedorService.findTotosPaginado(this.page, 30)
     .subscribe(response => {
-      //this.itensFornecedores = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
       let start = this.itensFornecedores.length;
       this.itensFornecedores = this.itensFornecedores.concat(response['content']);
       let end = this.itensFornecedores.length - 1;
       loader.dismiss();
-      //console.log("pagina"+this.page);
-      //console.log("fornecedor"+this.itensFornecedores);
     },
     error => {
       loader.dismiss();

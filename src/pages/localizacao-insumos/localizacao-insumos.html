@@ -33,7 +33,7 @@
       </ion-row>
       <ion-row justify-content-center align-items-center>
         <ion-col>
-          <div >Quantidade: {{ins.quantidade}}</div>
+          <div >Quantidade: {{ins.quantidade}} {{ins.unidadeEntrada.nome}} (s)</div>
         </ion-col>
         <ion-col>
           <div >Lote Fornecedor: {{ins.loteFornecedor}}</div>
@@ -62,7 +62,7 @@
           <div ><b>Lote LEI: {{ins.loteLEI}}</b></div>
         </ion-col>
         <ion-col >
-          <div >Quantidade mínima: {{ins.quantidademinima}}</div>
+          <div >{{ins.quantidademinima != null?"Quantidade mínima: "+ins.quantidademinima:""}}</div>
         </ion-col>
         <ion-col>
         </ion-col>

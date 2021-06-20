@@ -32,14 +32,28 @@
       <ion-list *ngIf="mv.show">
         <ion-label>Detalhes</ion-label>
         <ion-list *ngFor="let ient of mv.itens">
-          <ion-row><ion-col>Insumo: {{ient.insumo.nome}} </ion-col></ion-row>
-          <ion-row><ion-col>Quantidade da Origem na data de movimentação: {{ient.quantidadeOrigem}}</ion-col></ion-row>
-          <ion-row><ion-col>Unidade Movimentada: {{ient.unidadeEntrada ==null?"":ient.unidadeEntrada.nome}}</ion-col><ion-col>Quantidade Movimentada: {{ient.quantidadeMovimentada}}</ion-col></ion-row>
-          <ion-row><ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col>
-          <ion-col>Lote CR: {{ient.loteCR}}</ion-col>
-          <ion-col>Lote LEI: {{ient.loteLEI}}</ion-col></ion-row>
-          <ion-row><ion-col>Data de Irradiação: {{ient.dataIrradiacao}}</ion-col>
-          <ion-col>Data de Validade: {{ient.dataValidade}}</ion-col></ion-row>
+          <ion-row>
+            <ion-col>Insumo: {{ient.insumo.nome}} </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Quantidade da Origem na data de movimentação: {{ient.quantidadeOrigem}} {{ient.unidadeEntrada.nome}} (s)</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+            {{ient.quantidadeUtilizada != null?"Quantidade Utilizada: "+ient.quantidadeUtilizada+" "+ient.unidadeEntrada.nome+" (s)":""}}
+            {{ient.quantidadeDescartada != null?"Quantidade Descartada: "+ient.quantidadeDescartada+" "+ient.unidadeEntrada.nome+" (s)":""}}
+            </ion-col>
+            <ion-col>
+              {{ient.quantidadeMovimentada > 0?"Quantidade Movimentada: "+ient.quantidadeMovimentada+" "+ient.unidadeEntrada.nome+" (s)":""}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><b>Lote LEI: {{ient.loteLEI}}</b></ion-col>
+            <ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col>
+            <ion-col>Lote CR: {{ient.loteCR}}</ion-col>
+          </ion-row>
+          <ion-row><ion-col>Data de Irradiação: {{ient.dataIrradiacao | date:'dd/MM/yyyy'}}</ion-col>
+          <ion-col>Data de Validade: {{ient.dataValidade | date:'dd/MM/yyyy'}}</ion-col></ion-row>
           <ion-row><br></ion-row>
         </ion-list>
       </ion-list>
