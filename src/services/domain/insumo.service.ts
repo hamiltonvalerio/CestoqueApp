@@ -1,3 +1,4 @@
+import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
 import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
 import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
 import { API_CONFIG } from './../../config/api.config';
@@ -47,11 +48,6 @@ export class InsumoService {
         return this.http.get(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacao/?localizacao_id=${localizacao_id}&page=${page}&linesPerPage=${linesPerPage}`);
     }
 
-    
-    /*findByLocalizacaoNoPage(localizacao_id : string){
-        return this.http.get(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacaonopage/?localizacao_id=${localizacao_id}`);
-    }*/
-
     findInsumoLocalizacaoByLocalizacao(localizacao_id : string, page : number = 0, linesPerPage : number = 30){
         return this.http.get(`${API_CONFIG.baseUrl}/insumos/buscainsumolocalizacaoporlocalizacaoSemVazio/?localizacao_id=${localizacao_id}&page=${page}&linesPerPage=${linesPerPage}`);
     }
@@ -68,10 +64,13 @@ export class InsumoService {
         return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumosLocalizacoesByLoteLEI/?loteLEI=${loteLEI}`);
     }
 
+    findInsumoEntradaByLoteLEI(loteLEI : string): Observable<InsumoEntradaDTO>{
+        return this.http.get<InsumoEntradaDTO>(`${API_CONFIG.baseUrl}/insumos/findInsumoEntradaByLoteLEI/?loteLEI=${loteLEI}`);
+    }
+
     findLotesLEIInsumosLocalizacoes(): Observable<InsumolocalizacaoDTO[]>{
         return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findLotesLEIInsumosLocalizacoes/`);
     }
-
 
     findByMovimentacaoNoPage(movimentacao_id : string){
         return this.http.get<InsumomovimentacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/buscapormovimentacaonopage/?movimentacao_id=${movimentacao_id}`);

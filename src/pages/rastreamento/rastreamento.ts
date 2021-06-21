@@ -1,3 +1,5 @@
+import { EntradaDTO } from './../../models/entrada.dto';
+import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
 import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
 import { IonicSelectableComponent } from 'ionic-selectable';
 import { InsumoService } from './../../services/domain/insumo.service';
@@ -26,6 +28,9 @@ export class RastreamentoPage {
   insumolocalizacao : InsumolocalizacaoDTO;
   insumosLocalizacoes : InsumolocalizacaoDTO[] = [];
   insumosLocalizacoesSelecionados : InsumolocalizacaoDTO[];
+  insumoEntradaDTO : InsumoEntradaDTO;
+  entradaDTO : EntradaDTO;
+
 
   constructor(
     public navCtrl: NavController, 
@@ -58,11 +63,19 @@ export class RastreamentoPage {
     component: IonicSelectableComponent;
     value: InsumolocalizacaoDTO;
   }){
-    console.log(event.value.loteLEI);
+
+    this.insumoService.findInsumoEntradaByLoteLEI(event.value.loteLEI).subscribe(response => {
+      this.insumoEntradaDTO = response;
+      console.log(this.insumoEntradaDTO)
+    },
+    error => {
+      //loader.dismiss();
+    });
+
+
     this.insumoService.findInsumosLocalizacoesByLoteLEI(event.value.loteLEI).subscribe(response => {
-      //this.citensInsumos = response.sort();
       this.insumosLocalizacoesSelecionados = response.sort();
-     
+      console.log(this.insumosLocalizacoesSelecionados)
     },
     error => {
       //loader.dismiss();

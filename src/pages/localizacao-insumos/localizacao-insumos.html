@@ -31,10 +31,18 @@
       <ion-row justify-content-center align-items-center>
         <ion-col><div><b>{{ins.insumo.nome}}</b></div></ion-col>
       </ion-row>
-      <ion-row justify-content-center align-items-center>
+      <ion-row>
         <ion-col>
-          <div >Quantidade: {{ins.quantidade}} {{ins.unidadeEntrada.nome}} (s)</div>
+          <div >Quantidade disponível: {{ins.quantidade}} {{ins.unidadeEntrada.nome}} (s)</div>
         </ion-col>
+        <ion-col>
+          <div >Quantidade Utilizada: {{ins.quantidadeUtilizada}} {{ins.unidadeEntrada.nome}} (s)</div>
+        </ion-col>
+        <ion-col>
+          <div >Quantidade Descartada: {{ins.quantidadeDescartada}} {{ins.unidadeEntrada.nome}} (s)</div>
+        </ion-col>
+      </ion-row>
+      <ion-row justify-content-center align-items-center>
         <ion-col>
           <div >Lote Fornecedor: {{ins.loteFornecedor}}</div>
         </ion-col>
@@ -50,7 +58,7 @@
           <div >Data de Validade: {{ins.dataValidade | date:'dd/MM/yyyy'}}</div>
         </ion-col>
         <ion-col>
-          <div >Data de Irradiação: {{ins.dataIrradiacao}}</div>
+          <div >Data de Irradiação: {{ins.dataIrradiacao | date:'dd/MM/yyyy' }}</div>
         </ion-col>
         <ion-col>
           <div >Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</div>

@@ -28394,6 +28394,14 @@ page-insumos .btncolor {
   --background: var(--ion-color-btn);
 }
 
+page-rastreamento .cell-class {
+  border-color: #837d7d;
+  border-width: .01em;
+  border-style: solid;
+  margin-bottom: -1px;
+  background-color: lightgrey;
+}
+
 page-signup .danger {
   color: red;
 }
