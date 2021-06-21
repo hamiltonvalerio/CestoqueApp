@@ -64,6 +64,15 @@ export class InsumoService {
         return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/buscaporlocalizacaonopage/?localizacao_id=${localizacao_id}`);
     }
 
+    findInsumosLocalizacoesByLoteLEI(loteLEI : string): Observable<InsumolocalizacaoDTO[]>{
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumosLocalizacoesByLoteLEI/?loteLEI=${loteLEI}`);
+    }
+
+    findLotesLEIInsumosLocalizacoes(): Observable<InsumolocalizacaoDTO[]>{
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findLotesLEIInsumosLocalizacoes/`);
+    }
+
+
     findByMovimentacaoNoPage(movimentacao_id : string){
         return this.http.get<InsumomovimentacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/buscapormovimentacaonopage/?movimentacao_id=${movimentacao_id}`);
     }

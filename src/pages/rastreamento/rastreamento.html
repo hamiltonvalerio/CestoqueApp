@@ -6,10 +6,40 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>rastreamento</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Rastreamento de Insumos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-item>
+    <ion-label>Lotes LEI cadastrados</ion-label>
+    <ionic-selectable 
+      #localizacoesComponent
+      item-content
+      [(ngModel)]="insumolocalizacao"
+      [items]="insumosLocalizacoes"
+      itemValueField="id"
+      itemTextField="loteLEI"
+      [canSearch]="true"
+      [focusSearchbar]="true"
+      (onChange)="loteLEIChange($event)"
+      [hasVirtualScroll]="true" >
+      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{item.loteLEI}}
+          </ion-label>
+        </ion-item>
+      </ng-template>
+    </ionic-selectable>
+  </ion-item>
 
+  <ion-grid>
+    <ion-row>
+      
+    </ion-row>
+  </ion-grid>
 </ion-content>

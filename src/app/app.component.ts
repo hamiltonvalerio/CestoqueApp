@@ -35,6 +35,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: 'DashboardPage', img: 'assets/icon/desktop-outline.svg'},
+      { title: 'Rastreamento', component: 'RastreamentoPage', img: 'assets/icon/analytics-outline.svg'},
       { title: 'Produção', component: 'ProducaoPage', img: 'assets/icon/flask-outline.svg' },
       { title: 'Insumos', component: 'InsumosPage', img: 'assets/icon/eyedrop-outline.svg' },
       { title: 'Produtos', component: 'ProdutoPage', img: 'assets/icon/medkit-outline.svg' },
