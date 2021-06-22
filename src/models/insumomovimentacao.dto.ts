@@ -31,6 +31,8 @@ export interface InsumomovimentacaoDTO extends DadosComunsInsumos{
     descartado?: boolean;
     isDisableddescartado?: boolean;
     isDisabledutilizado?: boolean;
+    localizacao?: LocalizacaoDTO;
+    localizacaoOrigem?: LocalizacaoDTO;
 
 
 }

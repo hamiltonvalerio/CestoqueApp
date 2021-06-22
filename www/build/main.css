@@ -28402,6 +28402,14 @@ page-rastreamento .cell-class {
   background-color: lightgrey;
 }
 
+page-rastreamento .my-label {
+  font-size: 2em;
+}
+
+page-rastreamento .alinha_itens_center {
+  text-align: center;
+}
+
 page-signup .danger {
   color: red;
 }

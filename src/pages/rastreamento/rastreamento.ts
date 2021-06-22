@@ -1,3 +1,4 @@
+import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
 import { EntradaDTO } from './../../models/entrada.dto';
 import { InsumoEntradaDTO } from './../../models/insumoentrada.dto';
 import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
@@ -30,6 +31,7 @@ export class RastreamentoPage {
   insumosLocalizacoesSelecionados : InsumolocalizacaoDTO[];
   insumoEntradaDTO : InsumoEntradaDTO;
   entradaDTO : EntradaDTO;
+  insumosMovimentacoes : InsumomovimentacaoDTO[] = [];
 
 
   constructor(
@@ -52,7 +54,6 @@ export class RastreamentoPage {
   loadLotesLEI(){
     this.insumoService.findLotesLEIInsumosLocalizacoes().subscribe(response => {
       this.insumosLocalizacoes = response.sort();
-      console.log(this.insumosLocalizacoes);
     },
     error => {
       //loader.dismiss();
@@ -66,7 +67,6 @@ export class RastreamentoPage {
 
     this.insumoService.findInsumoEntradaByLoteLEI(event.value.loteLEI).subscribe(response => {
       this.insumoEntradaDTO = response;
-      console.log(this.insumoEntradaDTO)
     },
     error => {
       //loader.dismiss();
@@ -75,10 +75,18 @@ export class RastreamentoPage {
 
     this.insumoService.findInsumosLocalizacoesByLoteLEI(event.value.loteLEI).subscribe(response => {
       this.insumosLocalizacoesSelecionados = response.sort();
-      console.log(this.insumosLocalizacoesSelecionados)
     },
     error => {
-      //loader.dismiss();
+      //loader.dismiss();movimentacoesPorLoteLEI
+    });
+
+
+    this.movimentacaoService.movimentacoesPorLoteLEI(event.value.loteLEI).subscribe(response => {
+      this.insumosMovimentacoes = response.sort();
+      console.log(this.insumosMovimentacoes)
+    },
+    error => {
+      //loader.dismiss();movimentacoesPorLoteLEI
     });
   }
 

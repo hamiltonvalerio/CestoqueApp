@@ -1,3 +1,4 @@
+import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
 import { Observable } from 'rxjs/Rx';
 import { API_CONFIG } from './../../config/api.config';
 import { HttpClient } from '@angular/common/http';
@@ -34,6 +35,10 @@ export class MovimentacaoService {
 
     findTodos() : Observable<MovimentacaoDTO[]> {
         return this.http.get<MovimentacaoDTO[]>(`${API_CONFIG.baseUrl}/movimentacoes/findTodos`);
+    }
+
+    movimentacoesPorLoteLEI(loteLEI : string): Observable<InsumomovimentacaoDTO[]>{
+        return this.http.get<InsumomovimentacaoDTO[]>(`${API_CONFIG.baseUrl}/movimentacoes/movimentacoesPorLoteLEI/?loteLEI=${loteLEI}`);
     }
 
 }

@@ -52,7 +52,7 @@
     </ion-row>
     <ion-row>
       <ion-col col-8 class="cell-class">
-       {{insumoEntradaDTO != null?"Insumo: "+insumoEntradaDTO.insumo.nome:"" }}
+       <b>{{insumoEntradaDTO != null?"Insumo: "+insumoEntradaDTO.insumo.nome:"" }}</b>
       </ion-col>
       <ion-col col-4 class="cell-class">
         <b>{{insumoEntradaDTO != null?"Lote LEI: "+insumoEntradaDTO.loteLEI:"" }}</b>
@@ -95,10 +95,39 @@
     </ion-row>
   </ion-grid>
   <ion-grid [hidden]="insumoEntradaDTO != null ? false : true">
-    <ion-row><ion-col><ion-label></ion-label></ion-col></ion-row>
+    <ion-row class="alinha_itens_center"><ion-col ><ion-label class="my-label">Movimentações Realizadas</ion-label></ion-col></ion-row>
     <ion-row>
-      <ion-col>
-
+      <ion-col size="3" class="cell-class">
+        De localização:
+      </ion-col>
+      <ion-col size="1" class="cell-class">
+        Quantidade:
+      </ion-col>
+      <ion-col size="3" class="cell-class">
+        Para localização:
+      </ion-col>
+      <ion-col size="2" class="cell-class">
+        Data da movimentação
+      </ion-col>
+      <ion-col size="3" class="cell-class">
+        Usuário que movimentou
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let im of insumosMovimentacoes">
+      <ion-col size="3" class="cell-class">
+        {{im.localizacaoOrigem.nome}}
+      </ion-col>
+      <ion-col size="1" class="cell-class">
+        {{im.quantidadeMovimentada}}
+      </ion-col>
+      <ion-col size="3" class="cell-class">
+        {{im.localizacao.nome}}
+      </ion-col>
+      <ion-col size="2" class="cell-class">
+        {{im.datalt | date:'dd/MM/yyyy HH:mm'}}
+      </ion-col>
+      <ion-col size="3" class="cell-class">
+        {{im.usualt}}
       </ion-col>
     </ion-row>
   </ion-grid>

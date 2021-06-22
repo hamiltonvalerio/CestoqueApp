@@ -731,11 +731,15 @@ var MovimentacaoService = /** @class */ (function () {
     MovimentacaoService.prototype.findTodos = function () {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/movimentacoes/findTodos");
     };
+    MovimentacaoService.prototype.movimentacoesPorLoteLEI = function (loteLEI) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/movimentacoes/movimentacoesPorLoteLEI/?loteLEI=" + loteLEI);
+    };
     MovimentacaoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
     ], MovimentacaoService);
     return MovimentacaoService;
+    var _a;
 }());
 
 //# sourceMappingURL=movimentacao.service.js.map
