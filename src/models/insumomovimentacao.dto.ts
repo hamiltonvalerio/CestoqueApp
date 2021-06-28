@@ -34,5 +34,7 @@ export interface InsumomovimentacaoDTO extends DadosComunsInsumos{
     localizacao?: LocalizacaoDTO;
     localizacaoOrigem?: LocalizacaoDTO;
 
+    quantidadeRealMovimentada?: number;
+
 
 }

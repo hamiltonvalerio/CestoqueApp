@@ -112,13 +112,19 @@
       <ion-col size="3" class="cell-class">
         Usuário que movimentou
       </ion-col>
+      <ion-col size="1" class="cell-class">
+        Aprovado pelo CQ
+      </ion-col>
+      <ion-col size="1" class="cell-class">
+        Irradiado
+      </ion-col>
     </ion-row>
     <ion-row *ngFor="let im of insumosMovimentacoes">
       <ion-col size="3" class="cell-class">
         {{im.localizacaoOrigem.nome}}
       </ion-col>
       <ion-col size="1" class="cell-class">
-        {{im.quantidadeMovimentada}}
+        {{im.quantidadeRealMovimentada}}
       </ion-col>
       <ion-col size="3" class="cell-class">
         {{im.localizacao.nome}}
@@ -128,6 +134,12 @@
       </ion-col>
       <ion-col size="3" class="cell-class">
         {{im.usualt}}
+      </ion-col>
+      <ion-col size="1" class="cell-class">
+        {{ im.aprovado!=null?(im.aprovado?"Sim":"Não"):""}}
+      </ion-col>
+      <ion-col size="1" class="cell-class">
+        {{ im.irradiado!=null?(im.irradiado?"Sim":"Não"):""}}
       </ion-col>
     </ion-row>
   </ion-grid>

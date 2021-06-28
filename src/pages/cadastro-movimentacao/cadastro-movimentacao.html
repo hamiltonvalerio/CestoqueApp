@@ -73,27 +73,33 @@
           </ion-label>
         </ion-item>
         <ion-item>
-          <ion-label class="label_14">
+          <ion-label class="label_12">
             Cod Almox: {{item.insumo.codigoalmox}}  -  Quantidade atual: {{item.quantidade}}
           </ion-label>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap class="label_12_b">
-            Lote Fornecedor: {{item.loteFornecedor}} 
+          <ion-label position="stacked" text-wrap class="label_12">
+            Lote Fornecedor: <b>{{item.loteFornecedor}}</b> 
           </ion-label>
-          <ion-label text-wrap class="label_12_b">
-            Lote CR: {{item.loteCR}} 
+          <ion-label position="stacked" text-wrap class="label_12">
+            Lote CR: <b>{{item.loteCR}}</b> 
+          </ion-label>
+          <ion-label position="stacked" text-wrap class="label_12">
+            Precisa Irradiação? <b>{{item.insumo.precisairradiacao ? "Sim":"Não"}} </b>
+          </ion-label>
+          <ion-label position="stacked" text-wrap class="label_12">
+            Precisa Controle Qualidade? <b>{{item.insumo.precisacontrolequalidade? "Sim":"Não"}} </b>
           </ion-label>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap class="label_12_b">
-            Lote LEI: {{item.loteLEI}} 
+          <ion-label text-wrap class="label_12">
+            Lote LEI: <b>{{item.loteLEI}}</b> 
           </ion-label>
-          <ion-label text-wrap class="label_12_b">
-            Data de Validade: {{item.dataValidade}} 
+          <ion-label text-wrap class="label_12">
+            Data de Validade: <b>{{item.dataValidade}}</b> 
           </ion-label>
-          <ion-label text-wrap class="label_12_b">
-            Aprovado pelo Controle da Qualidade: {{item.foiaprovado}} 
+          <ion-label text-wrap class="label_12">
+            Aprovado pelo Controle da Qualidade: <b>{{item.foiaprovado}}</b> 
           </ion-label>
         </ion-item>
       </ng-template>

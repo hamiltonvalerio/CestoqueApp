@@ -22,9 +22,21 @@
   <ion-card *ngFor="let mv of movimentacoes; let i = index;">
     <ion-card-header type="button" (click)="toggleDetails(mv.show,i)">
       <ion-icon name="arrow-down"></ion-icon>
-      <ion-item>
-        <p>Data de Movimentação: {{mv.datamovimentacao}}</p>
-      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>Data de Movimentação: <b>{{mv.datamovimentacao}}</b></ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>Localização Origem: <b>{{mv.localizacaoOrigem.nome}}</b></ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>Localização Destino:<b>{{mv.localizacaoDestino.nome}}</b></ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-header>
 
     <ion-card-content>
@@ -40,11 +52,9 @@
           </ion-row>
           <ion-row>
             <ion-col>
-            {{ient.quantidadeUtilizada != null?"Quantidade Utilizada: "+ient.quantidadeUtilizada+" "+ient.unidadeEntrada.nome+" (s)":""}}
-            {{ient.quantidadeDescartada != null?"Quantidade Descartada: "+ient.quantidadeDescartada+" "+ient.unidadeEntrada.nome+" (s)":""}}
-            </ion-col>
-            <ion-col>
-              {{ient.quantidadeMovimentada > 0?"Quantidade Movimentada: "+ient.quantidadeMovimentada+" "+ient.unidadeEntrada.nome+" (s)":""}}
+              {{ient.quantidadeMovimentada > 0?"Quantidade Movimentada: "+ient.quantidadeMovimentada+" "+ient.unidadeEntrada.nome+" (s)  ":""}}
+              {{ient.quantidadeUtilizada != null?"Quantidade Utilizada: "+ient.quantidadeUtilizada+" "+ient.unidadeEntrada.nome+" (s)  ":""}}
+              {{ient.quantidadeDescartada != null?"Quantidade Descartada: "+ient.quantidadeDescartada+" "+ient.unidadeEntrada.nome+" (s)  ":""}}
             </ion-col>
           </ion-row>
           <ion-row>
