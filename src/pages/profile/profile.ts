@@ -35,6 +35,7 @@ export class ProfilePage {
     if(localUser && localUser.email){
       this.colaboradorService.findByEmail(localUser.email).subscribe(response => {
         this.colaborador = response as ColaboradorDTO;
+        console.log(this.colaborador);
       },
       error => {
         if (error.status == 403){

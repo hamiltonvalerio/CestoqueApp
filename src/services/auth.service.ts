@@ -1,3 +1,5 @@
+import { ColaboradorDTO } from './../models/colaborador.dto';
+import { ColaboradorService } from './domain/colaborador.service';
 import { StorageService } from './storage.service';
 import { LocalUser } from './../models/local_user';
 import { API_CONFIG } from './../config/api.config';
@@ -10,8 +12,11 @@ import { JwtHelper } from 'angular2-jwt';
 export class AuthService {
 
     jwtHelper: JwtHelper = new JwtHelper();
+    colaborador: ColaboradorDTO;
 
-    constructor(public http: HttpClient, public storage : StorageService){
+    constructor(public http: HttpClient, 
+        public storage : StorageService,
+        public colaboradorService: ColaboradorService){
 
     }
 
@@ -24,11 +29,12 @@ export class AuthService {
         });
     }
 
-    successfullLogin(authorizationValue : string){
+    successfullLogin(authorizationValue : string, perfis: string[]){
         let tok = authorizationValue.substring(7);
         let user : LocalUser = {
             token: tok,
-            email: this.jwtHelper.decodeToken(tok).sub
+            email: this.jwtHelper.decodeToken(tok).sub,
+            perfis: perfis
         };
         this.storage.setLocalUser(user);
     }

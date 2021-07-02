@@ -7,14 +7,14 @@
 
   <ion-content >
    
-    <ion-list no-lines>
-      <button menuClose="left" ion-item detail-none *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-list no-lines >
 
+      <button menuClose="left" [disabled]="p.disabled" *ngFor="let p of pages" ion-item detail-none  (click)="openPage(p)">
         <div class="center-icons">
           <img style="width: 25px; height: 25px;" [src]="p.img">&nbsp;&nbsp;<b>{{p.title}} </b> 
         </div>
-        
       </button>
+  
     </ion-list>
   </ion-content>
 

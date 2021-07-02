@@ -1,3 +1,5 @@
+import { PaginaService } from './../services/domain/pagina.service';
+import { PerfilParaAcesso } from './../utils/perfil-para-acesso';
 import { DateNow } from './../utils/datenow';
 import { AjusteEstoqueService } from './../services/domain/ajusteestoque.service';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
@@ -83,6 +85,8 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
     File,
     FileOpener,
     DateNow,
+    PerfilParaAcesso,
+    PaginaService
   ]
 })
 export class AppModule {}

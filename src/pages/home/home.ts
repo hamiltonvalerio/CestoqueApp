@@ -1,3 +1,5 @@
+import { ColaboradorService } from './../../services/domain/colaborador.service';
+import { ColaboradorDTO } from './../../models/colaborador.dto';
 import { RecuperaSenhaPage } from './../recupera-senha/recupera-senha';
 import { AuthService } from './../../services/auth.service';
 import { CredenciaisDTO } from './../../models/credenciais.dto';
@@ -41,7 +43,7 @@ export class HomePage {
 
   ionViewDidEnter(){
     this.auth.refreshToken().subscribe(response => {
-      this.auth.successfullLogin(response.headers.get('Authorization'));
+      this.auth.successfullLogin(response.headers.get('Authorization'),[]);
       this.navCtrl.setRoot('DashboardPage');  
     },
     error => {});
@@ -49,11 +51,11 @@ export class HomePage {
 
   login(){
     this.auth.authenticate(this.creds).subscribe(response => {
-      this.auth.successfullLogin(response.headers.get('Authorization'));
+      this.auth.successfullLogin(response.headers.get('Authorization'),[]);
       this.navCtrl.setRoot('DashboardPage');  
     },
     error => {});
-    
+  
   }
 
   signup(){
