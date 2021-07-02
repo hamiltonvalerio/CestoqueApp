@@ -14,32 +14,67 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="paginas">
-      Páginas
-    </ion-segment-button>
-    <ion-segment-button value="perfis">
-      Perfis
-    </ion-segment-button>
+  <ion-segment
+    [(ngModel)]="relationship"
+    color="primary"
+    (ionChange)="segmentChanged($event)"
+  >
+    <ion-segment-button value="paginas"> Páginas </ion-segment-button>
+    <ion-segment-button value="perfis"> Perfis </ion-segment-button>
   </ion-segment>
 
   <div [ngSwitch]="type">
     <ion-list *ngSwitchCase="'paginas'">
-      <ion-item>
-        <ion-thumbnail slot="start">
-
-        </ion-thumbnail>
-        teste paginas
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label> Páginas Cadastradas </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col style="text-align: center">
+          <button ion-button expand="full" (click)="openModalNovaPagina()">
+            Cadastrar Nova Pagina
+          </button>
+          <button
+            ion-button
+            expand="full"
+            color="secondary"
+            (click)="openModalVincularPagina()">
+            Vincular Página ao Usuário
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> </ion-col>
+        <ion-col> </ion-col>
+      </ion-row>
     </ion-list>
 
     <ion-list *ngSwitchCase="'perfis'">
-      <ion-item>
-          <ion-label>Perfis Cadastrados</ion-label>
-      </ion-item>
-      <ion-item>
-        ddd
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label> <b>Perfis Cadastrados</b> </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col style="text-align: center">
+          <button ion-button expand="full" (click)="openModalNovoPerfil()">
+            Cadastrar Novo Perfil
+          </button>
+          <button
+            ion-button
+            expand="full"
+            color="secondary"
+            (click)="openModalVincularPerfil()">
+            Vincular Perfil ao Usuário
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let p of perfis">
+        <ion-col>
+          <ion-item>{{p.nome}}</ion-item></ion-col>
+        <ion-col> <ion-item></ion-item></ion-col>
+      </ion-row>
     </ion-list>
   </div>
 </ion-content>

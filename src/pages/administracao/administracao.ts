@@ -1,3 +1,5 @@
+import { PerfilService } from './../../services/domain/perfil.service';
+import { PerfilDTO } from './../../models/perfil.dto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -16,13 +18,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class AdministracaoPage {
   type: string;
 
+  perfis: PerfilDTO[];
+
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams,) {
+    public navParams: NavParams,
+    public perfilService: PerfilService) {
   }
 
   ionViewDidLoad() {
     this.type = 'paginas';
+    this.loadPerfis();
+  }
+
+  loadPerfis(){
+    this.perfilService.findAll()
+    .subscribe(response => {
+      this.perfis = response.sort();
+      console.log(this.perfis);
+    },
+    error => {})
   }
 
   segmentChanged(ev: any) {
@@ -40,4 +55,19 @@ export class AdministracaoPage {
     }
   }
 
+  openModalNovoPerfil(){
+
+  }
+
+  openModalVincularPerfil(){
+
+  }
+
+  openModalNovaPagina(){
+
+  }
+
+  openModalVincularPagina(){
+    
+  }
 }

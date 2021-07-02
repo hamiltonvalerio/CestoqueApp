@@ -6,9 +6,9 @@ webpackJsonp([31],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ColaboradorService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,10 +66,10 @@ var ColaboradorService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__domain_colaborador_service__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__storage_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_jwt__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -188,7 +188,7 @@ var Constants = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 24:
+/***/ 23:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -212,19 +212,19 @@ var map = {
 		30
 	],
 	"../pages/ajuste-estoque/ajuste-estoque.module": [
-		702,
+		704,
 		1
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
-		704,
+		705,
 		29
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
-		705,
+		706,
 		28
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
-		706,
+		707,
 		7
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
@@ -232,11 +232,11 @@ var map = {
 		27
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
-		707,
+		709,
 		2
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		709,
+		710,
 		26
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
@@ -244,11 +244,11 @@ var map = {
 		6
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
-		710,
+		712,
 		25
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		712,
+		713,
 		24
 	],
 	"../pages/categorias/categorias.module": [
@@ -256,31 +256,31 @@ var map = {
 		9
 	],
 	"../pages/dashboard/dashboard.module": [
-		713,
+		715,
 		23
 	],
 	"../pages/entrada/entrada.module": [
-		715,
+		716,
 		22
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		716,
+		717,
 		21
 	],
 	"../pages/home/home.module": [
-		717,
+		718,
 		20
 	],
 	"../pages/insumo/insumos.module": [
-		718,
+		719,
 		3
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		719,
+		720,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		720,
+		721,
 		8
 	],
 	"../pages/manual/manual.module": [
@@ -288,15 +288,15 @@ var map = {
 		19
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		721,
+		723,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		723,
+		724,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		724,
+		725,
 		18
 	],
 	"../pages/producao/producao.module": [
@@ -304,31 +304,31 @@ var map = {
 		17
 	],
 	"../pages/produto/produto.module": [
-		725,
+		727,
 		16
 	],
 	"../pages/profile/profile.module": [
-		727,
+		728,
 		15
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		728,
+		729,
 		14
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
-		729,
+		731,
 		13
 	],
 	"../pages/saida/saida.module": [
-		731,
+		730,
 		12
 	],
 	"../pages/signup/signup.module": [
-		730,
+		732,
 		11
 	],
 	"../pages/unidade/unidade.module": [
-		732,
+		733,
 		10
 	]
 };
@@ -353,8 +353,8 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumoService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -462,9 +462,9 @@ var InsumoService = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizacaoService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -584,9 +584,9 @@ var DateTimeFormatPipe = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UnidadeService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -678,8 +678,8 @@ var DateNow = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriaService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -721,8 +721,8 @@ var CategoriaService = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovimentacaoService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -779,8 +779,8 @@ var MovimentacaoService = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntradaService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -857,8 +857,8 @@ var EntradaService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FornecedorService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -908,9 +908,53 @@ var FornecedorService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PerfilService = /** @class */ (function () {
+    function PerfilService(http) {
+        this.http = http;
+    }
+    PerfilService.prototype.findAll = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/perfis");
+    };
+    PerfilService.prototype.insert = function (obj) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/perfis/", obj, {
+            observe: "response",
+            responseType: "text",
+        });
+    };
+    PerfilService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+    ], PerfilService);
+    return PerfilService;
+}());
+
+//# sourceMappingURL=perfil.service.js.map
+
+/***/ }),
+
+/***/ 364:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AjusteEstoqueService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -949,13 +993,13 @@ var AjusteEstoqueService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 367:
+/***/ 368:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(373);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -963,43 +1007,44 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_pagina_service__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_perfil_para_acesso__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_datenow__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_ajusteestoque_service__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer_ngx__ = __webpack_require__(375);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_date_format__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_movimentacao_service__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_date_time_format__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_domain_entrada_service__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_insumo_service__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_unidade_service__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_domain_fornecedor_service__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_colaborador_service__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_auth_service__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_domain_categoria_service__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_platform_browser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_common_http__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_component__ = __webpack_require__(696);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__interceptors_error_interceptor__ = __webpack_require__(697);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_storage_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__interceptors_auth_interceptor__ = __webpack_require__(698);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_domain_localizacao_service__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser_animations__ = __webpack_require__(699);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_ionic_selectable__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ionic_native_in_app_browser__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_file_ngx__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_file_opener_ngx__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_pagina_service__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_perfil_para_acesso__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_datenow__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_ajusteestoque_service__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer_ngx__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_date_format__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_domain_movimentacao_service__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_date_time_format__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_entrada_service__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_insumo_service__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_domain_unidade_service__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_fornecedor_service__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_domain_colaborador_service__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_domain_categoria_service__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_platform_browser__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_common_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__app_component__ = __webpack_require__(697);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__interceptors_error_interceptor__ = __webpack_require__(698);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_storage_service__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__interceptors_auth_interceptor__ = __webpack_require__(699);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_domain_localizacao_service__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_platform_browser_animations__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_ionic_selectable__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_in_app_browser__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_file_ngx__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_file_opener_ngx__ = __webpack_require__(702);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1038,88 +1083,90 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_17__angular_core__["NgModule"])({
+        Object(__WEBPACK_IMPORTED_MODULE_18__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_19__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__utils_date_time_format__["a" /* DateTimeFormatPipe */],
-                __WEBPACK_IMPORTED_MODULE_5__utils_date_format__["a" /* DateFormatPipe */]
+                __WEBPACK_IMPORTED_MODULE_20__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_8__utils_date_time_format__["a" /* DateTimeFormatPipe */],
+                __WEBPACK_IMPORTED_MODULE_6__utils_date_format__["a" /* DateFormatPipe */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_15__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_16__angular_common_http__["c" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_26__angular_forms__["e" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_18_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_19__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_16__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_17__angular_common_http__["c" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_27__angular_forms__["e" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_19_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_20__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/ajuste-estoque/ajuste-estoque.module#AjusteEstoquePageModule', name: 'AjusteEstoquePage', segment: 'ajuste-estoque', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/administracao/administracao.module#AdministracaoPageModule', name: 'AdministracaoPage', segment: 'administracao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ajuste-estoque/ajuste-estoque.module#AjusteEstoquePageModule', name: 'AjusteEstoquePage', segment: 'ajuste-estoque', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_28_ionic_selectable__["a" /* IonicSelectableModule */],
+                __WEBPACK_IMPORTED_MODULE_28__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_29_ionic_selectable__["a" /* IonicSelectableModule */],
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_18_ionic_angular__["e" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_19_ionic_angular__["e" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_19__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_20__app_component__["a" /* MyApp */],
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_17__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_18_ionic_angular__["f" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_14__services_domain_categoria_service__["a" /* CategoriaService */],
-                __WEBPACK_IMPORTED_MODULE_11__services_domain_fornecedor_service__["a" /* FornecedorService */],
-                __WEBPACK_IMPORTED_MODULE_10__services_domain_unidade_service__["a" /* UnidadeService */],
-                __WEBPACK_IMPORTED_MODULE_25__services_domain_localizacao_service__["a" /* LocalizacaoService */],
-                __WEBPACK_IMPORTED_MODULE_9__services_domain_insumo_service__["a" /* InsumoService */],
-                __WEBPACK_IMPORTED_MODULE_24__interceptors_auth_interceptor__["a" /* AuthInterceptorProvider */],
-                __WEBPACK_IMPORTED_MODULE_22__interceptors_error_interceptor__["a" /* ErrorInterceptorProvider */],
-                __WEBPACK_IMPORTED_MODULE_13__services_auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_23__services_storage_service__["a" /* StorageService */],
-                __WEBPACK_IMPORTED_MODULE_12__services_domain_colaborador_service__["a" /* ColaboradorService */],
-                __WEBPACK_IMPORTED_MODULE_8__services_domain_entrada_service__["a" /* EntradaService */],
-                __WEBPACK_IMPORTED_MODULE_6__services_domain_movimentacao_service__["a" /* MovimentacaoService */],
-                __WEBPACK_IMPORTED_MODULE_7__utils_date_time_format__["a" /* DateTimeFormatPipe */],
-                __WEBPACK_IMPORTED_MODULE_5__utils_date_format__["a" /* DateFormatPipe */],
-                __WEBPACK_IMPORTED_MODULE_29__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_file_transfer_ngx__["a" /* FileTransfer */],
-                __WEBPACK_IMPORTED_MODULE_3__services_domain_ajusteestoque_service__["a" /* AjusteEstoqueService */],
-                __WEBPACK_IMPORTED_MODULE_30__ionic_native_file_ngx__["a" /* File */],
-                __WEBPACK_IMPORTED_MODULE_31__ionic_native_file_opener_ngx__["a" /* FileOpener */],
-                __WEBPACK_IMPORTED_MODULE_2__utils_datenow__["a" /* DateNow */],
-                __WEBPACK_IMPORTED_MODULE_1__utils_perfil_para_acesso__["a" /* PerfilParaAcesso */],
-                __WEBPACK_IMPORTED_MODULE_0__services_domain_pagina_service__["a" /* PaginaService */]
+                __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_18__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_19_ionic_angular__["f" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_15__services_domain_categoria_service__["a" /* CategoriaService */],
+                __WEBPACK_IMPORTED_MODULE_12__services_domain_fornecedor_service__["a" /* FornecedorService */],
+                __WEBPACK_IMPORTED_MODULE_11__services_domain_unidade_service__["a" /* UnidadeService */],
+                __WEBPACK_IMPORTED_MODULE_26__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+                __WEBPACK_IMPORTED_MODULE_10__services_domain_insumo_service__["a" /* InsumoService */],
+                __WEBPACK_IMPORTED_MODULE_25__interceptors_auth_interceptor__["a" /* AuthInterceptorProvider */],
+                __WEBPACK_IMPORTED_MODULE_23__interceptors_error_interceptor__["a" /* ErrorInterceptorProvider */],
+                __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_24__services_storage_service__["a" /* StorageService */],
+                __WEBPACK_IMPORTED_MODULE_13__services_domain_colaborador_service__["a" /* ColaboradorService */],
+                __WEBPACK_IMPORTED_MODULE_9__services_domain_entrada_service__["a" /* EntradaService */],
+                __WEBPACK_IMPORTED_MODULE_7__services_domain_movimentacao_service__["a" /* MovimentacaoService */],
+                __WEBPACK_IMPORTED_MODULE_8__utils_date_time_format__["a" /* DateTimeFormatPipe */],
+                __WEBPACK_IMPORTED_MODULE_6__utils_date_format__["a" /* DateFormatPipe */],
+                __WEBPACK_IMPORTED_MODULE_30__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer_ngx__["a" /* FileTransfer */],
+                __WEBPACK_IMPORTED_MODULE_4__services_domain_ajusteestoque_service__["a" /* AjusteEstoqueService */],
+                __WEBPACK_IMPORTED_MODULE_31__ionic_native_file_ngx__["a" /* File */],
+                __WEBPACK_IMPORTED_MODULE_32__ionic_native_file_opener_ngx__["a" /* FileOpener */],
+                __WEBPACK_IMPORTED_MODULE_3__utils_datenow__["a" /* DateNow */],
+                __WEBPACK_IMPORTED_MODULE_2__utils_perfil_para_acesso__["a" /* PerfilParaAcesso */],
+                __WEBPACK_IMPORTED_MODULE_1__services_domain_pagina_service__["a" /* PaginaService */],
+                __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__["a" /* PerfilService */]
             ]
         })
     ], AppModule);
@@ -1130,15 +1177,15 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 373:
+/***/ 374:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaginaService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1177,7 +1224,7 @@ var PaginaService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 374:
+/***/ 375:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1189,7 +1236,7 @@ var STORAGE_KEYS = {
 
 /***/ }),
 
-/***/ 381:
+/***/ 382:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1241,7 +1288,7 @@ var DateFormatPipe = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StorageService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_storage_keys_config__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_storage_keys_config__ = __webpack_require__(375);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1281,7 +1328,7 @@ var StorageService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 696:
+/***/ 697:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1387,7 +1434,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 697:
+/***/ 698:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1395,7 +1442,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ErrorInterceptorProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_storage_service__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(65);
@@ -1539,16 +1586,16 @@ var ErrorInterceptorProvider = {
 
 /***/ }),
 
-/***/ 698:
+/***/ 699:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export AuthInterceptor */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthInterceptorProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_storage_service__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1595,5 +1642,5 @@ var AuthInterceptorProvider = {
 
 /***/ })
 
-},[367]);
+},[368]);
 //# sourceMappingURL=main.js.map

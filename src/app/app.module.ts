@@ -1,3 +1,4 @@
+import { PerfilService } from './../services/domain/perfil.service';
 import { PaginaService } from './../services/domain/pagina.service';
 import { PerfilParaAcesso } from './../utils/perfil-para-acesso';
 import { DateNow } from './../utils/datenow';
@@ -86,7 +87,8 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
     FileOpener,
     DateNow,
     PerfilParaAcesso,
-    PaginaService
+    PaginaService,
+    PerfilService
   ]
 })
 export class AppModule {}

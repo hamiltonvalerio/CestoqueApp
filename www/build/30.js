@@ -43,8 +43,9 @@ var AdministracaoPageModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdministracaoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,6 +57,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the AdministracaoPage page.
  *
@@ -63,12 +65,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AdministracaoPage = /** @class */ (function () {
-    function AdministracaoPage(navCtrl, navParams) {
+    function AdministracaoPage(navCtrl, navParams, perfilService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.perfilService = perfilService;
     }
     AdministracaoPage.prototype.ionViewDidLoad = function () {
         this.type = 'paginas';
+        this.loadPerfis();
+    };
+    AdministracaoPage.prototype.loadPerfis = function () {
+        var _this = this;
+        this.perfilService.findAll()
+            .subscribe(function (response) {
+            _this.perfis = response.sort();
+            console.log(_this.perfis);
+        }, function (error) { });
     };
     AdministracaoPage.prototype.segmentChanged = function (ev) {
         console.log('Segment changed', ev.value);
@@ -84,14 +96,22 @@ var AdministracaoPage = /** @class */ (function () {
                 break;
         }
     };
+    AdministracaoPage.prototype.openModalNovoPerfil = function () {
+    };
+    AdministracaoPage.prototype.openModalVincularPerfil = function () {
+    };
+    AdministracaoPage.prototype.openModalNovaPagina = function () {
+    };
+    AdministracaoPage.prototype.openModalVincularPagina = function () {
+    };
     AdministracaoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-administracao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\administracao\administracao.html"*/'<!--\n  Generated template for the AdministracaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Administração</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">\n    <ion-segment-button value="paginas">\n      Páginas\n    </ion-segment-button>\n    <ion-segment-button value="perfis">\n      Perfis\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="type">\n    <ion-list *ngSwitchCase="\'paginas\'">\n      <ion-item>\n        <ion-thumbnail slot="start">\n\n        </ion-thumbnail>\n        teste paginas\n      </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'perfis\'">\n      <ion-item>\n          <ion-label>Perfis Cadastrados</ion-label>\n      </ion-item>\n      <ion-item>\n        ddd\n      </ion-item>\n    </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\administracao\administracao.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'page-administracao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\administracao\administracao.html"*/'<!--\n  Generated template for the AdministracaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Administração</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-segment\n    [(ngModel)]="relationship"\n    color="primary"\n    (ionChange)="segmentChanged($event)"\n  >\n    <ion-segment-button value="paginas"> Páginas </ion-segment-button>\n    <ion-segment-button value="perfis"> Perfis </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="type">\n    <ion-list *ngSwitchCase="\'paginas\'">\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label> Páginas Cadastradas </ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col style="text-align: center">\n          <button ion-button expand="full" (click)="openModalNovaPagina()">\n            Cadastrar Nova Pagina\n          </button>\n          <button\n            ion-button\n            expand="full"\n            color="secondary"\n            (click)="openModalVincularPagina()">\n            Vincular Página ao Usuário\n          </button>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col> </ion-col>\n        <ion-col> </ion-col>\n      </ion-row>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'perfis\'">\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label> <b>Perfis Cadastrados</b> </ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col style="text-align: center">\n          <button ion-button expand="full" (click)="openModalNovoPerfil()">\n            Cadastrar Novo Perfil\n          </button>\n          <button\n            ion-button\n            expand="full"\n            color="secondary"\n            (click)="openModalVincularPerfil()">\n            Vincular Perfil ao Usuário\n          </button>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngFor="let p of perfis">\n        <ion-col>\n          <ion-item>{{p.nome}}</ion-item></ion-col>\n        <ion-col> <ion-item></ion-item></ion-col>\n      </ion-row>\n    </ion-list>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\administracao\administracao.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__["a" /* PerfilService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__["a" /* PerfilService */]) === "function" && _c || Object])
     ], AdministracaoPage);
     return AdministracaoPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=administracao.js.map
