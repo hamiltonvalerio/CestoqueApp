@@ -15,6 +15,10 @@ export class ColaboradorService {
         
     }
 
+    findAll() : Observable<ColaboradorDTO[]> {
+        return this.http.get<ColaboradorDTO[]>(`${API_CONFIG.baseUrl}/colaboradores`)
+    }
+
     findByEmail(email: string) : Observable<ColaboradorDTO>{
         return this.http.get<ColaboradorDTO>(`${API_CONFIG.baseUrl}/colaboradores/email?value=${email}`);
     }

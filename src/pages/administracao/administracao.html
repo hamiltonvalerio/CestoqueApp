@@ -53,8 +53,8 @@
     <ion-list *ngSwitchCase="'perfis'">
       <ion-row>
         <ion-col>
-          <ion-item>
-            <ion-label> <b>Perfis Cadastrados</b> </ion-label>
+          <ion-item style="text-align: center">
+            <ion-label > <b>PERFIS CADASTRADOS</b> </ion-label>
           </ion-item>
         </ion-col>
         <ion-col style="text-align: center">
@@ -70,10 +70,23 @@
           </button>
         </ion-col>
       </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-row >
+            <ion-col><ion-item style="text-align: center"><b>NOME</b></ion-item></ion-col>
+            <ion-col><ion-item style="text-align: center"><b>DESCRIÇÃO</b></ion-item></ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
       <ion-row *ngFor="let p of perfis">
         <ion-col>
-          <ion-item>{{p.nome}}</ion-item></ion-col>
-        <ion-col> <ion-item></ion-item></ion-col>
+          <ion-row>
+            <ion-col><ion-item style="text-align: center">{{p.nome}}</ion-item></ion-col>
+            <ion-col><ion-item style="text-align: center">{{p.descricao}}</ion-item></ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col></ion-col>
       </ion-row>
     </ion-list>
   </div>

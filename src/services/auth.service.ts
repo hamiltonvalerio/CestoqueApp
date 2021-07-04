@@ -7,6 +7,7 @@ import { CredenciaisDTO } from './../models/credenciais.dto';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelper } from 'angular2-jwt';
+import { PerfilDTO } from '../models/perfil.dto';
 
 @Injectable()
 export class AuthService {
@@ -29,7 +30,7 @@ export class AuthService {
         });
     }
 
-    successfullLogin(authorizationValue : string, perfis: string[]){
+    successfullLogin(authorizationValue : string, perfis: PerfilDTO[]){
         let tok = authorizationValue.substring(7);
         let user : LocalUser = {
             token: tok,

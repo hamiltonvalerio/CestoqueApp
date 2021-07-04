@@ -29,7 +29,7 @@ export class CategoriasPage {
   }
 
   openModal() {
-    console.log("aqui");
+    //console.log("aqui");
     let modal = this.modalCtrl.create('CadastroCategoriaPage');
     modal.onDidDismiss(() => {
       this.getItens();

@@ -1,7 +1,7 @@
 import { PerfilService } from './../../services/domain/perfil.service';
 import { PerfilDTO } from './../../models/perfil.dto';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the AdministracaoPage page.
@@ -23,7 +23,8 @@ export class AdministracaoPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public perfilService: PerfilService) {
+    public perfilService: PerfilService,
+    public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -56,11 +57,19 @@ export class AdministracaoPage {
   }
 
   openModalNovoPerfil(){
-
+    let modal = this.modalCtrl.create('CadastroPerfilPage');
+    modal.onDidDismiss(() => {
+      this.loadPerfis();
+    });
+    modal.present();
   }
 
   openModalVincularPerfil(){
-
+    let modal = this.modalCtrl.create('VinculaPerfilUsuarioPage');
+    modal.onDidDismiss(() => {
+      this.loadPerfis();
+    });
+    modal.present();
   }
 
   openModalNovaPagina(){

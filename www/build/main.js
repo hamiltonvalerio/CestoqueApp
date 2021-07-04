@@ -1,4 +1,4 @@
-webpackJsonp([31],{
+webpackJsonp([33],{
 
 /***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -27,6 +27,9 @@ var ColaboradorService = /** @class */ (function () {
         this.http = http;
         this.storage = storage;
     }
+    ColaboradorService.prototype.findAll = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_1__config_api_config__["a" /* API_CONFIG */].baseUrl + "/colaboradores");
+    };
     ColaboradorService.prototype.findByEmail = function (email) {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_1__config_api_config__["a" /* API_CONFIG */].baseUrl + "/colaboradores/email?value=" + email);
     };
@@ -209,7 +212,7 @@ var API_CONFIG = {
 var map = {
 	"../pages/administracao/administracao.module": [
 		703,
-		30
+		32
 	],
 	"../pages/ajuste-estoque/ajuste-estoque.module": [
 		704,
@@ -217,11 +220,11 @@ var map = {
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
 		705,
-		29
+		31
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
 		706,
-		28
+		30
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
 		707,
@@ -229,7 +232,7 @@ var map = {
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
 		708,
-		27
+		29
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
 		709,
@@ -237,98 +240,106 @@ var map = {
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
 		710,
-		26
+		28
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
 		711,
 		6
 	],
-	"../pages/cadastro-saida/cadastro-saida.module": [
+	"../pages/cadastro-perfil/cadastro-perfil.module": [
 		712,
-		25
+		27
+	],
+	"../pages/cadastro-saida/cadastro-saida.module": [
+		713,
+		26
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		713,
-		24
+		714,
+		25
 	],
 	"../pages/categorias/categorias.module": [
-		714,
+		715,
 		9
 	],
 	"../pages/dashboard/dashboard.module": [
-		715,
-		23
+		716,
+		24
 	],
 	"../pages/entrada/entrada.module": [
-		716,
-		22
+		717,
+		23
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		717,
-		21
+		718,
+		22
 	],
 	"../pages/home/home.module": [
-		718,
-		20
+		719,
+		21
 	],
 	"../pages/insumo/insumos.module": [
-		719,
+		720,
 		3
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		720,
+		721,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		721,
+		722,
 		8
 	],
 	"../pages/manual/manual.module": [
-		722,
-		19
+		723,
+		20
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		723,
+		724,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		724,
+		725,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		725,
-		18
+		726,
+		19
 	],
 	"../pages/producao/producao.module": [
-		726,
-		17
+		727,
+		18
 	],
 	"../pages/produto/produto.module": [
-		727,
-		16
+		728,
+		17
 	],
 	"../pages/profile/profile.module": [
-		728,
-		15
+		729,
+		16
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		729,
-		14
+		730,
+		15
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
 		731,
-		13
+		14
 	],
 	"../pages/saida/saida.module": [
-		730,
-		12
+		732,
+		13
 	],
 	"../pages/signup/signup.module": [
-		732,
-		11
+		733,
+		12
 	],
 	"../pages/unidade/unidade.module": [
-		733,
+		734,
+		11
+	],
+	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
+		735,
 		10
 	]
 };
@@ -720,6 +731,50 @@ var CategoriaService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PerfilService = /** @class */ (function () {
+    function PerfilService(http) {
+        this.http = http;
+    }
+    PerfilService.prototype.findAll = function () {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/perfis");
+    };
+    PerfilService.prototype.insert = function (obj) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/perfis/", obj, {
+            observe: "response",
+            responseType: "text",
+        });
+    };
+    PerfilService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+    ], PerfilService);
+    return PerfilService;
+}());
+
+//# sourceMappingURL=perfil.service.js.map
+
+/***/ }),
+
+/***/ 361:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovimentacaoService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
@@ -774,7 +829,7 @@ var MovimentacaoService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 361:
+/***/ 362:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -851,7 +906,7 @@ var EntradaService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 362:
+/***/ 363:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -901,50 +956,6 @@ var FornecedorService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=fornecedor.service.js.map
-
-/***/ }),
-
-/***/ 363:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(23);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var PerfilService = /** @class */ (function () {
-    function PerfilService(http) {
-        this.http = http;
-    }
-    PerfilService.prototype.findAll = function () {
-        return this.http.get(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/perfis");
-    };
-    PerfilService.prototype.insert = function (obj) {
-        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__config_api_config__["a" /* API_CONFIG */].baseUrl + "/perfis/", obj, {
-            observe: "response",
-            responseType: "text",
-        });
-    };
-    PerfilService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
-    ], PerfilService);
-    return PerfilService;
-}());
-
-//# sourceMappingURL=perfil.service.js.map
 
 /***/ }),
 
@@ -1012,19 +1023,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_pagina_service__ = __webpack_require__(374);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_perfil_para_acesso__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_datenow__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_ajusteestoque_service__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer_ngx__ = __webpack_require__(376);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_date_format__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_domain_movimentacao_service__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_domain_movimentacao_service__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_date_time_format__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_entrada_service__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_entrada_service__ = __webpack_require__(362);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_insumo_service__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_domain_unidade_service__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_fornecedor_service__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_fornecedor_service__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_domain_colaborador_service__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_domain_categoria_service__ = __webpack_require__(359);
@@ -1109,6 +1120,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
@@ -1127,10 +1139,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_28__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
