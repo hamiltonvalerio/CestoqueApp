@@ -28252,6 +28252,22 @@ ion-navbar.toolbar {
   background-color: #c0f39d;
 }
 
+page-administracao .cell-class {
+  border-color: #837d7d;
+  border-width: .01em;
+  border-style: solid;
+  margin-bottom: -1px;
+  background-color: lightgrey;
+}
+
+page-administracao .my-label {
+  font-size: 2em;
+}
+
+page-administracao .alinha_itens_center {
+  text-align: center;
+}
+
 page-alterar-senha .danger {
   color: red;
 }

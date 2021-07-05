@@ -41,7 +41,7 @@ export class MovimentacaoPage {
     this.movimentacaoService.findAll()
     .subscribe(response => {
       this.movimentacoes = response.sort();
-      console.log(this.movimentacoes);
+      //console.log(this.movimentacoes);
     },
     error => {})
   }

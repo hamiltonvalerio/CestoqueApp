@@ -1,15 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 735:
+/***/ 716:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VinculaPerfilUsuarioPageModule", function() { return VinculaPerfilUsuarioPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vincula_perfil_usuario__ = __webpack_require__(921);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasPageModule", function() { return CategoriasPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categorias__ = __webpack_require__(903);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,38 +18,74 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var VinculaPerfilUsuarioPageModule = /** @class */ (function () {
-    function VinculaPerfilUsuarioPageModule() {
+var CategoriasPageModule = /** @class */ (function () {
+    function CategoriasPageModule() {
     }
-    VinculaPerfilUsuarioPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+    CategoriasPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__vincula_perfil_usuario__["a" /* VinculaPerfilUsuarioPage */],
+                __WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__vincula_perfil_usuario__["a" /* VinculaPerfilUsuarioPage */]),
-                __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__["a" /* IonicSelectableModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categorias__["a" /* CategoriasPage */]),
             ],
         })
-    ], VinculaPerfilUsuarioPageModule);
-    return VinculaPerfilUsuarioPageModule;
+    ], CategoriasPageModule);
+    return CategoriasPageModule;
 }());
 
-//# sourceMappingURL=vincula-perfil-usuario.module.js.map
+//# sourceMappingURL=categorias.module.js.map
 
 /***/ }),
 
-/***/ 921:
+/***/ 880:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VinculaPerfilUsuarioPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(65);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConverteListaIonItemDivider; });
+var ConverteListaIonItemDivider = /** @class */ (function () {
+    function ConverteListaIonItemDivider() {
+    }
+    /**
+     * name
+     */
+    ConverteListaIonItemDivider.prototype.retornaArrayGroup = function (responseSorte) {
+        var itens = [];
+        var itensOrdenados = [];
+        var letraAtual = "";
+        var itensAtuaisDeRetorno = [];
+        itensOrdenados = responseSorte;
+        itensOrdenados.forEach(function (value, index) {
+            if (value.nome.charAt(0) != letraAtual) {
+                letraAtual = value.nome.charAt(0);
+                var newGroup = {
+                    letra: letraAtual,
+                    arrayDeItens: []
+                };
+                itensAtuaisDeRetorno = newGroup.arrayDeItens;
+                itens.push(newGroup);
+            }
+            itensAtuaisDeRetorno.push(value);
+        });
+        console.log(itens);
+        return itens;
+    };
+    return ConverteListaIonItemDivider;
+}());
+
+//# sourceMappingURL=converte-list-ionitemdivider.js.map
+
+/***/ }),
+
+/***/ 903:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriasPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(880);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,134 +99,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the VinculaPerfilUsuarioPage page.
+ * Generated class for the CategoriasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var VinculaPerfilUsuarioPage = /** @class */ (function () {
-    function VinculaPerfilUsuarioPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, perfilService, colaboradorService) {
+var CategoriasPage = /** @class */ (function () {
+    function CategoriasPage(navCtrl, navParams, CategoriaService, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.alertCtrl = alertCtrl;
-        this.formBuilder = formBuilder;
-        this.perfilService = perfilService;
-        this.colaboradorService = colaboradorService;
+        this.CategoriaService = CategoriaService;
+        this.modalCtrl = modalCtrl;
+        this.itensCategorias = [];
     }
-    VinculaPerfilUsuarioPage.prototype.ionViewDidLoad = function () {
-        this.loadColaboradores();
-        this.loadPerfis();
-    };
-    VinculaPerfilUsuarioPage.prototype.registrar = function () {
-        var result = false;
-        if (this.colaborador == undefined) {
-            this.showSelecionaColaboirador();
-        }
-        else {
-            this.perfis.forEach(function (r) {
-                if (r.selecionado == true) {
-                    result = true;
-                }
-            });
-            if (!result) {
-                this.showSelecionaPerfil();
-            }
-        }
-    };
-    VinculaPerfilUsuarioPage.prototype.changeToggle = function (ev, checked) {
-        console.log(checked);
-        console.log(this.perfis);
-    };
-    VinculaPerfilUsuarioPage.prototype.colaboradorChange = function (event) {
-        this.perfis.forEach(function (p) {
-            if (event.value.perfis.find(function (element) { return element.descricao == p.descricao; }) != undefined) {
-                p.selecionado = true;
-            }
-            else {
-                p.selecionado = false;
-            }
-        });
-    };
-    VinculaPerfilUsuarioPage.prototype.loadPerfis = function () {
+    CategoriasPage.prototype.openModal = function () {
         var _this = this;
-        this.perfilService.findAll()
+        //console.log("aqui");
+        var modal = this.modalCtrl.create('CadastroCategoriaPage');
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    CategoriasPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
+    };
+    CategoriasPage.prototype.getItens = function () {
+        var _this = this;
+        this.CategoriaService.findAll()
             .subscribe(function (response) {
-            _this.perfis = response.sort();
-            console.log(_this.perfis);
+            _this.itensCategorias = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
         }, function (error) { });
     };
-    VinculaPerfilUsuarioPage.prototype.loadColaboradores = function () {
-        var _this = this;
-        this.colaboradorService.findAll()
-            .subscribe(function (response) {
-            _this.colaboradores = response.sort();
-            console.log(_this.colaboradores);
-        }, function (error) { });
-    };
-    VinculaPerfilUsuarioPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    VinculaPerfilUsuarioPage.prototype.showInserOk = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    VinculaPerfilUsuarioPage.prototype.showSelecionaColaboirador = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Erro',
-            message: 'Selecione um usuário!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    VinculaPerfilUsuarioPage.prototype.showSelecionaPerfil = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Erro',
-            message: 'Selecione pelo menos um perfil!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    VinculaPerfilUsuarioPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: 'page-vincula-perfil-usuario',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\vincula-perfil-usuario\vincula-perfil-usuario.html"*/'<!--\n  Generated template for the VinculaPerfilUsuarioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Vincular Perfil ao Usuário\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item color="item_entrada">\n    <ion-label>Usuário</ion-label>\n    <ionic-selectable \n      item-content\n      [(ngModel)]="colaborador"\n      [items]="colaboradores"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [focusSearchbar]="true"\n      (onChange)="colaboradorChange($event)"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{item.nome}}\n          </ion-label>\n        </ion-item>\n      </ng-template>\n    </ionic-selectable>\n  </ion-item>\n  <ion-list *ngFor="let item of perfis">\n    <ion-item>\n      <ion-label>{{ item.nome }}</ion-label>\n      <ion-toggle color="secondary" [(ngModel)]="item.selecionado" (ionChange)="changeToggle($event,item.selecionado)"></ion-toggle>\n    </ion-item>\n  </ion-list>\n  <button ion-button block type="submit" (click)="registrar()">Registrar</button>\n\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\vincula-perfil-usuario\vincula-perfil-usuario.html"*/,
+    CategoriasPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-categorias',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/'<!--\n\n  Generated template for the CategoriasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar class="categoria2">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="categoria2">\n\n\n\n\n\n\n\n<ion-item-group *ngFor="let item of itensCategorias">\n\n\n\n  <ion-item-divider light>{{item.letra}}</ion-item-divider>\n\n  <ion-item *ngFor="let it of item.arrayDeItens">\n\n    <h3>{{it.nome}}</h3>\n\n  </ion-item>\n\n\n\n</ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\categorias\categorias.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__["a" /* PerfilService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__["a" /* PerfilService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]) === "function" && _g || Object])
-    ], VinculaPerfilUsuarioPage);
-    return VinculaPerfilUsuarioPage;
-    var _a, _b, _c, _d, _e, _f, _g;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__["a" /* CategoriaService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ModalController */]])
+    ], CategoriasPage);
+    return CategoriasPage;
 }());
 
-//# sourceMappingURL=vincula-perfil-usuario.js.map
+//# sourceMappingURL=categorias.js.map
 
 /***/ })
 

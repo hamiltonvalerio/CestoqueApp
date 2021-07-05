@@ -42,24 +42,32 @@ export class VinculaPerfilUsuarioPage {
 
   registrar(){
     var result = false;
+    var perfisNovos : PerfilDTO[] = [];
     if(this.colaborador == undefined){
       this.showSelecionaColaboirador()
     }else{
       this.perfis.forEach(r=>{
         if(r.selecionado == true){
           result = true;
+          perfisNovos.push(r);
         }
       });
       if(!result){
         this.showSelecionaPerfil();
+      }else{
+        this.colaborador.perfis = perfisNovos;
+        this.colaboradorService.updateComPerfil(this.colaborador).subscribe(response => {
+          this.showUpdateOk();
+        },
+        error => {});
       }
     }
     
   }
 
   changeToggle(ev: Event,checked: boolean){
-    console.log(checked);
-    console.log(this.perfis);
+    //console.log(checked);
+    //console.log(this.perfis);
   }
 
   colaboradorChange(event: {
@@ -80,7 +88,7 @@ export class VinculaPerfilUsuarioPage {
     this.perfilService.findAll()
     .subscribe(response => {
       this.perfis = response.sort();
-      console.log(this.perfis);
+      //console.log(this.perfis);
     },
     error => {})
   }
@@ -89,7 +97,7 @@ export class VinculaPerfilUsuarioPage {
     this.colaboradorService.findAll()
     .subscribe(response => {
       this.colaboradores = response.sort();
-      console.log(this.colaboradores);
+      //console.log(this.colaboradores);
     },
     error => {})
   }
@@ -98,10 +106,27 @@ export class VinculaPerfilUsuarioPage {
     this.viewCtrl.dismiss();
   }
 
-  showInserOk(){
+  showInsertOk(){
     let alert = this.alertCtrl.create({
       title: 'Sucesso',
       message: 'Cadastro efetuado com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  showUpdateOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Cadastro atualizado com sucesso!',
       enableBackdropDismiss: false,
       buttons: [
         {

@@ -12,44 +12,17 @@
     <ion-title>Administração</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
   <ion-segment
     [(ngModel)]="relationship"
     color="primary"
     (ionChange)="segmentChanged($event)"
   >
-    <ion-segment-button value="paginas"> Páginas </ion-segment-button>
-    <ion-segment-button value="perfis"> Perfis </ion-segment-button>
+  <ion-segment-button value="perfis"> Perfis </ion-segment-button>
+  <ion-segment-button value="paginas"> Páginas </ion-segment-button>
   </ion-segment>
 
   <div [ngSwitch]="type">
-    <ion-list *ngSwitchCase="'paginas'">
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-label> Páginas Cadastradas </ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col style="text-align: center">
-          <button ion-button expand="full" (click)="openModalNovaPagina()">
-            Cadastrar Nova Pagina
-          </button>
-          <button
-            ion-button
-            expand="full"
-            color="secondary"
-            (click)="openModalVincularPagina()">
-            Vincular Página ao Usuário
-          </button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col> </ion-col>
-        <ion-col> </ion-col>
-      </ion-row>
-    </ion-list>
-
     <ion-list *ngSwitchCase="'perfis'">
       <ion-row>
         <ion-col>
@@ -89,5 +62,67 @@
         <ion-col></ion-col>
       </ion-row>
     </ion-list>
+    <ion-list *ngSwitchCase="'paginas'">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label> Páginas Cadastradas </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col style="text-align: center">
+          <button ion-button expand="full" (click)="openModalNovaPagina()">
+            Cadastrar Nova Pagina
+          </button>
+          <button
+            ion-button
+            expand="full"
+            color="secondary"
+            (click)="openModalVincularPagina()">
+            Vincular Página ao Usuário
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> </ion-col>
+        <ion-col> </ion-col>
+      </ion-row>
+    </ion-list>
   </div>
+
+  <ion-card>
+    <ion-card-header type="button" (click)="toggleDetails()">
+      
+      <ion-grid>
+        <ion-row>
+          
+          <ion-label><ion-icon name="arrow-down"></ion-icon> <b>USUÁRIOS</b></ion-label>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-grid *ngIf="show">
+          <ion-row class="alinha_itens_center">
+            <ion-col class="cell-class"><ion-label><b>Nome</b></ion-label></ion-col>
+            <ion-col class="cell-class"><ion-label><b>Email de Login</b></ion-label></ion-col>
+            <ion-col class="cell-class"><ion-label><b>Perfis</b></ion-label></ion-col>
+          </ion-row>
+          <ion-row *ngFor="let c of colaboradores">
+            <ion-col class="cell-class">{{c.nome}}</ion-col>
+            <ion-col class="cell-class">{{c.email}}</ion-col>
+            <ion-col class="cell-class">
+             
+                <ion-label *ngFor="let cp of c.perfis">
+                  {{cp.nome}}
+                </ion-label>
+              
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-item>
+    
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

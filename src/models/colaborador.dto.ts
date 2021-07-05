@@ -5,4 +5,5 @@ export interface ColaboradorDTO {
     nome : string;
     email : string; 
     perfis : PerfilDTO[];
+    show: Boolean;
 }

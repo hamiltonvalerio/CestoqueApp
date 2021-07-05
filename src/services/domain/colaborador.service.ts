@@ -32,6 +32,15 @@ export class ColaboradorService {
         });
     }
 
+    updateComPerfil(obj: ColaboradorDTO){
+        return this.http.put(`${API_CONFIG.baseUrl}/colaboradores/updateComPerfil/`,
+        obj,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
+    }
+
     recuperarSenha(obj: EmailDTO){
         return this.http.post(`${API_CONFIG.baseUrl}/auth/forgot/`,
         obj,

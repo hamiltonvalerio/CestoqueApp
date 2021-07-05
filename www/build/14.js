@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 731:
+/***/ 733:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecuperaSenhaPageModule", function() { return RecuperaSenhaPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SaidaPageModule", function() { return SaidaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recupera_senha__ = __webpack_require__(917);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__saida__ = __webpack_require__(922);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var RecuperaSenhaPageModule = /** @class */ (function () {
-    function RecuperaSenhaPageModule() {
+var SaidaPageModule = /** @class */ (function () {
+    function SaidaPageModule() {
     }
-    RecuperaSenhaPageModule = __decorate([
+    SaidaPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__recupera_senha__["a" /* RecuperaSenhaPage */],
+                __WEBPACK_IMPORTED_MODULE_2__saida__["a" /* SaidaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recupera_senha__["a" /* RecuperaSenhaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__saida__["a" /* SaidaPage */]),
             ],
         })
-    ], RecuperaSenhaPageModule);
-    return RecuperaSenhaPageModule;
+    ], SaidaPageModule);
+    return SaidaPageModule;
 }());
 
-//# sourceMappingURL=recupera-senha.module.js.map
+//# sourceMappingURL=saida.module.js.map
 
 /***/ }),
 
-/***/ 917:
+/***/ 922:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecuperaSenhaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SaidaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,98 +56,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
 /**
- * Generated class for the RecuperaSenhaPage page.
+ * Generated class for the SaidaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var RecuperaSenhaPage = /** @class */ (function () {
-    function RecuperaSenhaPage(navCtrl, navParams, formBuilder, alertCtrl, colaboradorService) {
+var SaidaPage = /** @class */ (function () {
+    function SaidaPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.formBuilder = formBuilder;
-        this.alertCtrl = alertCtrl;
-        this.colaboradorService = colaboradorService;
-        this.botao = true;
-        this.formGroup = this.formBuilder.group({
-            email: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].email]]
-        }, {});
     }
-    RecuperaSenhaPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RecuperaSenhaPage');
+    SaidaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SaidaPage');
     };
-    RecuperaSenhaPage.prototype.recuperaSenhaUser = function () {
-        var _this = this;
-        this.botao = false;
-        this.validFormAndPreventMultipleClicks();
-        this.colaboradorService.recuperarSenha(this.formGroup.value).subscribe(function (response) {
-            _this.showInserOk();
-        }, function (error) {
-            _this.showErro();
-        });
-    };
-    RecuperaSenhaPage.prototype.validFormAndPreventMultipleClicks = function () {
-        if (this.formGroup.invalid == true && this.botao == true) {
-            return true;
-        }
-        else if (this.formGroup.invalid == false && this.botao == false) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
-    RecuperaSenhaPage.prototype.showInserOk = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Recuperação efetuada com sucesso! Verifique seu email.',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    RecuperaSenhaPage.prototype.showErro = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Erro',
-            message: 'Email não cadastrado.',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    RecuperaSenhaPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-recupera-senha',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\recupera-senha\recupera-senha.html"*/'<!--\n\n  Generated template for the RecuperaSenhaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Recupera Senha</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="recuperaSenhaUser()">\n\n    <ion-item>\n\n      <ion-label stacked>Email*</ion-label>\n\n      <ion-input formControlName="email"  type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="validFormAndPreventMultipleClicks()">Recuperar</button>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\recupera-senha\recupera-senha.html"*/,
+    SaidaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-saida',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\saida\saida.html"*/'<!--\n\n  Generated template for the SaidaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Saídas</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only>\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\saida\saida.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])
-    ], RecuperaSenhaPage);
-    return RecuperaSenhaPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]])
+    ], SaidaPage);
+    return SaidaPage;
 }());
 
-//# sourceMappingURL=recupera-senha.js.map
+//# sourceMappingURL=saida.js.map
 
 /***/ })
 
