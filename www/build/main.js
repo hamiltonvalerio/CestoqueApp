@@ -78,7 +78,7 @@ var ColaboradorService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_jwt__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -165,12 +165,13 @@ var PerfilParaAcesso = /** @class */ (function () {
     function PerfilParaAcesso() {
     }
     PerfilParaAcesso.prototype.retornaPermissaoPorPerfil = function (localUser, pagina) {
-        /*if(localUser.perfis.indexOf('ADMIN') > -1){
+        if (pagina == "AdministracaoPage") {
             return false;
-        }else{
-            return true;
-        }*/
-        return false;
+        }
+        if (pagina == "ProfilePage") {
+            return false;
+        }
+        return true;
     };
     return PerfilParaAcesso;
 }());
@@ -218,7 +219,7 @@ var API_CONFIG = {
 var map = {
 	"../pages/administracao/administracao.module": [
 		703,
-		33
+		10
 	],
 	"../pages/ajuste-estoque/ajuste-estoque.module": [
 		704,
@@ -226,19 +227,19 @@ var map = {
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
 		705,
-		32
+		33
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
 		706,
-		31
+		32
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
 		707,
-		8
+		7
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
 		708,
-		30
+		31
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
 		709,
@@ -246,18 +247,18 @@ var map = {
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
 		710,
-		29
+		30
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
-		713,
-		7
+		711,
+		6
 	],
 	"../pages/cadastro-pagina/cadastro-pagina.module": [
-		711,
-		4
+		712,
+		29
 	],
 	"../pages/cadastro-perfil/cadastro-perfil.module": [
-		712,
+		713,
 		28
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
@@ -270,7 +271,7 @@ var map = {
 	],
 	"../pages/categorias/categorias.module": [
 		716,
-		10
+		9
 	],
 	"../pages/dashboard/dashboard.module": [
 		717,
@@ -298,7 +299,7 @@ var map = {
 	],
 	"../pages/localizacao/localizacao.module": [
 		723,
-		9
+		8
 	],
 	"../pages/manual/manual.module": [
 		724,
@@ -306,11 +307,11 @@ var map = {
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
 		725,
-		6
+		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
 		726,
-		5
+		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
 		727,
@@ -1014,13 +1015,13 @@ var AjusteEstoqueService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 369:
+/***/ 368:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(373);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1028,18 +1029,18 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 374:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_perfil_service__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_pagina_service__ = __webpack_require__(375);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_pagina_service__ = __webpack_require__(374);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_perfil_para_acesso__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_datenow__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_ajusteestoque_service__ = __webpack_require__(364);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer_ngx__ = __webpack_require__(377);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_date_format__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_file_transfer_ngx__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_date_format__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_domain_movimentacao_service__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_date_time_format__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_domain_entrada_service__ = __webpack_require__(362);
@@ -1063,8 +1064,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_platform_browser_animations__ = __webpack_require__(700);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_ionic_selectable__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_in_app_browser__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_file_ngx__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_in_app_browser__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_file_ngx__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_file_opener_ngx__ = __webpack_require__(702);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1129,9 +1130,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
@@ -1201,7 +1202,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 375:
+/***/ 374:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1248,7 +1249,7 @@ var PaginaService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 376:
+/***/ 375:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1260,7 +1261,7 @@ var STORAGE_KEYS = {
 
 /***/ }),
 
-/***/ 383:
+/***/ 382:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1312,7 +1313,7 @@ var DateFormatPipe = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StorageService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_storage_keys_config__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_storage_keys_config__ = __webpack_require__(375);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1666,5 +1667,5 @@ var AuthInterceptorProvider = {
 
 /***/ })
 
-},[369]);
+},[368]);
 //# sourceMappingURL=main.js.map

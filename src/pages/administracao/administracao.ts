@@ -1,3 +1,4 @@
+import { PaginasEnum } from './../../enums/paginas.enum';
 import { ColaboradorService } from './../../services/domain/colaborador.service';
 import { ColaboradorDTO } from './../../models/colaborador.dto';
 import { PerfilService } from './../../services/domain/perfil.service';
@@ -25,6 +26,8 @@ export class AdministracaoPage {
 
   show: Boolean = false;
 
+  paginas = [];
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -34,22 +37,34 @@ export class AdministracaoPage {
     public colaboradorService: ColaboradorService) {
   }
 
+  
+
   ionViewDidLoad() {
     this.type = 'perfis';
     this.loadPerfis();
     this.loadColaboradores();
+    this.loadEnumPaginas();
+  }
+
+  loadEnumPaginas(){
+    for (const [propertyKey, propertyValue] of Object.entries(PaginasEnum)) {  
+      if (!Number.isNaN(Number(propertyKey))) {  
+        continue;  
+    }  
+    this.paginas.push({ pagina: propertyValue, nome: propertyKey });  
+    }  
+  
+    console.log(this.paginas); 
   }
 
   toggleDetails() {
     this.show = this.show?false:true;
-    console.log(this.show)
   }
 
   loadColaboradores(){
     this.colaboradorService.findAll()
     .subscribe(response => {
       this.colaboradores = response.sort();
-      console.log(this.colaboradores);
     },
     error => {})
   }

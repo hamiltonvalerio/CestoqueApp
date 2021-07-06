@@ -1,14 +1,14 @@
 webpackJsonp([33],{
 
-/***/ 703:
+/***/ 705:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdministracaoPageModule", function() { return AdministracaoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlterarSenhaPageModule", function() { return AlterarSenhaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__administracao__ = __webpack_require__(886);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alterar_senha__ = __webpack_require__(889);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdministracaoPageModule = /** @class */ (function () {
-    function AdministracaoPageModule() {
+var AlterarSenhaPageModule = /** @class */ (function () {
+    function AlterarSenhaPageModule() {
     }
-    AdministracaoPageModule = __decorate([
+    AlterarSenhaPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__administracao__["a" /* AdministracaoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__alterar_senha__["a" /* AlterarSenhaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__administracao__["a" /* AdministracaoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__alterar_senha__["a" /* AlterarSenhaPage */]),
             ],
         })
-    ], AdministracaoPageModule);
-    return AdministracaoPageModule;
+    ], AlterarSenhaPageModule);
+    return AlterarSenhaPageModule;
 }());
 
-//# sourceMappingURL=administracao.module.js.map
+//# sourceMappingURL=alterar-senha.module.js.map
 
 /***/ }),
 
-/***/ 886:
+/***/ 889:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdministracaoPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlterarSenhaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -61,105 +61,79 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the AdministracaoPage page.
+ * Generated class for the AlterarSenhaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AdministracaoPage = /** @class */ (function () {
-    function AdministracaoPage(navCtrl, navParams, perfilService, modalCtrl, viewCtrl, colaboradorService) {
+var AlterarSenhaPage = /** @class */ (function () {
+    function AlterarSenhaPage(navCtrl, navParams, formBuilder, alertCtrl, colaboradorService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.perfilService = perfilService;
-        this.modalCtrl = modalCtrl;
-        this.viewCtrl = viewCtrl;
+        this.formBuilder = formBuilder;
+        this.alertCtrl = alertCtrl;
         this.colaboradorService = colaboradorService;
-        this.colaboradores = [];
-        this.show = false;
+        this.colab = navParams.get('item');
+        this.formGroup = this.formBuilder.group({
+            senha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            confirmarsenha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
+        }, { validator: this.MatchPassword });
     }
-    AdministracaoPage.prototype.ionViewDidLoad = function () {
-        this.type = 'perfis';
-        this.loadPerfis();
-        this.loadColaboradores();
-    };
-    AdministracaoPage.prototype.toggleDetails = function () {
-        this.show = this.show ? false : true;
-        console.log(this.show);
-    };
-    AdministracaoPage.prototype.loadColaboradores = function () {
-        var _this = this;
-        this.colaboradorService.findAll()
-            .subscribe(function (response) {
-            _this.colaboradores = response.sort();
-            console.log(_this.colaboradores);
-        }, function (error) { });
-    };
-    AdministracaoPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    AdministracaoPage.prototype.loadPerfis = function () {
-        var _this = this;
-        this.perfilService.findAll()
-            .subscribe(function (response) {
-            _this.perfis = response.sort();
-            //console.log(this.perfis);
-        }, function (error) { });
-    };
-    AdministracaoPage.prototype.segmentChanged = function (ev) {
-        //console.log('Segment changed', ev.value);
-        switch (ev.value) {
-            case 'paginas':
-                this.type = 'paginas';
-                break;
-            case 'perfis':
-                this.type = 'perfis';
-                break;
-            default:
-                this.type = 'paginas';
-                break;
+    AlterarSenhaPage.prototype.MatchPassword = function (AC) {
+        var newPassword = AC.get('senha').value; // to get value in input tag
+        var confirmPassword = AC.get('confirmarsenha').value; // to get value in input tag
+        if (newPassword != confirmPassword) {
+            AC.get('confirmarsenha').setErrors({ MatchPassword: true });
+        }
+        else {
+            AC.get('confirmarsenha').setErrors(null);
         }
     };
-    AdministracaoPage.prototype.openModalNovoPerfil = function () {
+    AlterarSenhaPage.prototype.showInserOk = function () {
         var _this = this;
-        var modal = this.modalCtrl.create('CadastroPerfilPage');
-        modal.onDidDismiss(function () {
-            _this.loadPerfis();
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Senha alterada com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
         });
-        modal.present();
+        alert.present();
     };
-    AdministracaoPage.prototype.openModalVincularPerfil = function () {
+    AlterarSenhaPage.prototype.alterPassUser = function () {
         var _this = this;
-        var modal = this.modalCtrl.create('VinculaPerfilUsuarioPage');
-        modal.onDidDismiss(function () {
-            _this.loadPerfis();
-            _this.loadColaboradores();
+        this.colabAlterSenha = this.formGroup.value;
+        this.colabAlterSenha.email = this.colab.email;
+        console.log(this.colab);
+        console.log(this.colabAlterSenha);
+        this.colaboradorService.alterarSenha(this.formGroup.value).subscribe(function (response) {
+            _this.showInserOk();
+        }, function (error) {
         });
-        modal.present();
     };
-    AdministracaoPage.prototype.openModalNovaPagina = function () {
-        var modal = this.modalCtrl.create('CadastroPaginaPage');
-        modal.onDidDismiss(function () {
-            //this.loadPerfis();
-        });
-        modal.present();
+    AlterarSenhaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AlterarSenhaPage');
     };
-    AdministracaoPage.prototype.openModalVincularPagina = function () {
-    };
-    AdministracaoPage = __decorate([
+    AlterarSenhaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-administracao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\administracao\administracao.html"*/'<!--\n  Generated template for the AdministracaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Administração</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-segment\n    [(ngModel)]="relationship"\n    color="primary"\n    (ionChange)="segmentChanged($event)"\n  >\n  <ion-segment-button value="perfis"> Perfis </ion-segment-button>\n  <ion-segment-button value="paginas"> Páginas </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="type">\n    <ion-list *ngSwitchCase="\'perfis\'">\n      <ion-row>\n        <ion-col>\n          <ion-item style="text-align: center">\n            <ion-label > <b>PERFIS CADASTRADOS</b> </ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col style="text-align: center">\n          <button ion-button expand="full" (click)="openModalNovoPerfil()">\n            Cadastrar Novo Perfil\n          </button>\n          <button\n            ion-button\n            expand="full"\n            color="secondary"\n            (click)="openModalVincularPerfil()">\n            Vincular Perfil ao Usuário\n          </button>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <ion-row >\n            <ion-col><ion-item style="text-align: center"><b>NOME</b></ion-item></ion-col>\n            <ion-col><ion-item style="text-align: center"><b>DESCRIÇÃO</b></ion-item></ion-col>\n          </ion-row>\n        </ion-col>\n        <ion-col></ion-col>\n      </ion-row>\n      <ion-row *ngFor="let p of perfis">\n        <ion-col>\n          <ion-row>\n            <ion-col><ion-item style="text-align: center">{{p.nome}}</ion-item></ion-col>\n            <ion-col><ion-item style="text-align: center">{{p.descricao}}</ion-item></ion-col>\n          </ion-row>\n        </ion-col>\n        <ion-col></ion-col>\n      </ion-row>\n    </ion-list>\n    <ion-list *ngSwitchCase="\'paginas\'">\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label> Páginas Cadastradas </ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col style="text-align: center">\n          <button ion-button expand="full" (click)="openModalNovaPagina()">\n            Cadastrar Nova Pagina\n          </button>\n          <button\n            ion-button\n            expand="full"\n            color="secondary"\n            (click)="openModalVincularPagina()">\n            Vincular Página ao Usuário\n          </button>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col> </ion-col>\n        <ion-col> </ion-col>\n      </ion-row>\n    </ion-list>\n  </div>\n\n  <ion-card>\n    <ion-card-header type="button" (click)="toggleDetails()">\n      \n      <ion-grid>\n        <ion-row>\n          \n          <ion-label><ion-icon name="arrow-down"></ion-icon> <b>USUÁRIOS</b></ion-label>\n        </ion-row>\n      </ion-grid>\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-item>\n        <ion-grid *ngIf="show">\n          <ion-row class="alinha_itens_center">\n            <ion-col class="cell-class"><ion-label><b>Nome</b></ion-label></ion-col>\n            <ion-col class="cell-class"><ion-label><b>Email de Login</b></ion-label></ion-col>\n            <ion-col class="cell-class"><ion-label><b>Perfis</b></ion-label></ion-col>\n          </ion-row>\n          <ion-row *ngFor="let c of colaboradores">\n            <ion-col class="cell-class">{{c.nome}}</ion-col>\n            <ion-col class="cell-class">{{c.email}}</ion-col>\n            <ion-col class="cell-class">\n             \n                <ion-label *ngFor="let cp of c.perfis">\n                  {{cp.nome}}\n                </ion-label>\n              \n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    </ion-item>\n    \n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\administracao\administracao.html"*/,
+            selector: 'page-alterar-senha',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\alterar-senha\alterar-senha.html"*/'<!--\n\n  Generated template for the AlterarSenhaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Alterar Senha</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="alterPassUser()">\n\n    <ion-item>\n\n      <ion-label stacked>Senha*</ion-label>\n\n      <ion-input formControlName="senha"  type="password"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Confirmar Senha*</ion-label>\n\n      <ion-input formControlName="confirmarsenha" id="confirmarsenha" type="password"></ion-input>\n\n    </ion-item> \n\n      <ion-label *ngIf="formGroup.controls[\'confirmarsenha\'].errors?.MatchPassword" class="danger">\n\n        Senhas não conferem!\n\n     </ion-label>\n\n     <ion-row>\n\n      <ion-col width-50 style="text-align: center;">\n\n        <button ion-button  type="submit" [disabled]="formGroup.invalid">Alterar</button>\n\n      </ion-col>\n\n    </ion-row>\n\n     \n\n    \n\n    \n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\alterar-senha\alterar-senha.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__["a" /* PerfilService */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])
-    ], AdministracaoPage);
-    return AdministracaoPage;
+    ], AlterarSenhaPage);
+    return AlterarSenhaPage;
 }());
 
-//# sourceMappingURL=administracao.js.map
+//# sourceMappingURL=alterar-senha.js.map
 
 /***/ })
 
