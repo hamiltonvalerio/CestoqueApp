@@ -3,13 +3,13 @@ export class PerfilParaAcesso{
 
     retornaPermissaoPorPerfil(localUser:LocalUser, pagina:string):boolean{
 
-        if(pagina == "AdministracaoPage"){
+        /*if(pagina == "AdministracaoPage"){
             return false
         }
         if(pagina == "ProfilePage"){
             return false
-        }
+        }*/
 
-        return true;
+        return false;
     }
 }

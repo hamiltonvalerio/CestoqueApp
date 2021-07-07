@@ -47,13 +47,15 @@ export class AdministracaoPage {
   }
 
   loadEnumPaginas(){
+    this.paginas = [];
+    
     for (const [propertyKey, propertyValue] of Object.entries(PaginasEnum)) {  
+    
       if (!Number.isNaN(Number(propertyKey))) {  
         continue;  
     }  
-    this.paginas.push({ pagina: propertyValue, nome: propertyKey });  
-    }  
-  
+    this.paginas.push({ pagina: propertyValue, nome: propertyKey});  
+    } 
     console.log(this.paginas); 
   }
 
@@ -77,7 +79,6 @@ export class AdministracaoPage {
     this.perfilService.findAll()
     .subscribe(response => {
       this.perfis = response.sort();
-      //console.log(this.perfis);
     },
     error => {})
   }
@@ -123,6 +124,12 @@ export class AdministracaoPage {
   }
 
   openModalVincularPagina(){
-    
+    let modal = this.modalCtrl.create('VinculaPaginaPerfilPage');
+    modal.onDidDismiss(() => {
+      this.loadPerfis();
+      this.loadColaboradores();
+      this.loadEnumPaginas();
+    });
+    modal.present();
   }
 }

@@ -1,4 +1,4 @@
-webpackJsonp([34],{
+webpackJsonp([35],{
 
 /***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -165,13 +165,13 @@ var PerfilParaAcesso = /** @class */ (function () {
     function PerfilParaAcesso() {
     }
     PerfilParaAcesso.prototype.retornaPermissaoPorPerfil = function (localUser, pagina) {
-        if (pagina == "AdministracaoPage") {
-            return false;
+        /*if(pagina == "AdministracaoPage"){
+            return false
         }
-        if (pagina == "ProfilePage") {
-            return false;
-        }
-        return true;
+        if(pagina == "ProfilePage"){
+            return false
+        }*/
+        return false;
     };
     return PerfilParaAcesso;
 }());
@@ -226,12 +226,12 @@ var map = {
 		1
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
-		705,
-		33
+		706,
+		34
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
-		706,
-		32
+		705,
+		33
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
 		707,
@@ -239,7 +239,7 @@ var map = {
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
 		708,
-		31
+		32
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
 		709,
@@ -247,7 +247,7 @@ var map = {
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
 		710,
-		30
+		31
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
 		711,
@@ -255,19 +255,19 @@ var map = {
 	],
 	"../pages/cadastro-pagina/cadastro-pagina.module": [
 		712,
-		29
+		30
 	],
 	"../pages/cadastro-perfil/cadastro-perfil.module": [
 		713,
-		28
+		29
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
 		714,
-		27
+		28
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
 		715,
-		26
+		27
 	],
 	"../pages/categorias/categorias.module": [
 		716,
@@ -275,19 +275,19 @@ var map = {
 	],
 	"../pages/dashboard/dashboard.module": [
 		717,
-		25
+		26
 	],
 	"../pages/entrada/entrada.module": [
 		718,
-		24
+		25
 	],
 	"../pages/fornecedor/fornecedor.module": [
 		719,
-		23
+		24
 	],
 	"../pages/home/home.module": [
 		720,
-		22
+		23
 	],
 	"../pages/insumo/insumos.module": [
 		721,
@@ -303,7 +303,7 @@ var map = {
 	],
 	"../pages/manual/manual.module": [
 		724,
-		21
+		22
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
 		725,
@@ -315,42 +315,46 @@ var map = {
 	],
 	"../pages/movimentacao/movimentacao.module": [
 		727,
-		20
+		21
 	],
 	"../pages/producao/producao.module": [
 		728,
-		19
+		20
 	],
 	"../pages/produto/produto.module": [
 		729,
-		18
+		19
 	],
 	"../pages/profile/profile.module": [
 		730,
-		17
+		18
 	],
 	"../pages/rastreamento/rastreamento.module": [
 		731,
-		16
+		17
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
 		732,
-		15
+		16
 	],
 	"../pages/saida/saida.module": [
 		733,
-		14
+		15
 	],
 	"../pages/signup/signup.module": [
 		734,
-		13
+		14
 	],
 	"../pages/unidade/unidade.module": [
 		735,
+		13
+	],
+	"../pages/vincula-pagina-perfil/vincula-pagina-perfil.module": [
+		736,
 		12
 	],
 	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
-		736,
+		737,
 		11
 	]
 };
@@ -1124,8 +1128,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/administracao/administracao.module#AdministracaoPageModule', name: 'AdministracaoPage', segment: 'administracao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ajuste-estoque/ajuste-estoque.module#AjusteEstoquePageModule', name: 'AjusteEstoquePage', segment: 'ajuste-estoque', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
@@ -1155,6 +1159,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
                     ]
                 }),

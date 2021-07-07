@@ -1,15 +1,14 @@
 webpackJsonp([16],{
 
-/***/ 731:
+/***/ 732:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RastreamentoPageModule", function() { return RastreamentoPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rastreamento__ = __webpack_require__(919);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecuperaSenhaPageModule", function() { return RecuperaSenhaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recupera_senha__ = __webpack_require__(921);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,40 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var RastreamentoPageModule = /** @class */ (function () {
-    function RastreamentoPageModule() {
+var RecuperaSenhaPageModule = /** @class */ (function () {
+    function RecuperaSenhaPageModule() {
     }
-    RastreamentoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+    RecuperaSenhaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__rastreamento__["a" /* RastreamentoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__recupera_senha__["a" /* RecuperaSenhaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__rastreamento__["a" /* RastreamentoPage */]),
-                __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__["a" /* IonicSelectableModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recupera_senha__["a" /* RecuperaSenhaPage */]),
             ],
         })
-    ], RastreamentoPageModule);
-    return RastreamentoPageModule;
+    ], RecuperaSenhaPageModule);
+    return RecuperaSenhaPageModule;
 }());
 
-//# sourceMappingURL=rastreamento.module.js.map
+//# sourceMappingURL=recupera-senha.module.js.map
 
 /***/ }),
 
-/***/ 919:
+/***/ 921:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RastreamentoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_date_time_format__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(65);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecuperaSenhaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,79 +60,96 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
 /**
- * Generated class for the RastreamentoPage page.
+ * Generated class for the RecuperaSenhaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var RastreamentoPage = /** @class */ (function () {
-    function RastreamentoPage(navCtrl, navParams, dateNow, dateTimeFormatPipe, localizacaoService, movimentacaoService, viewCtrl, alertCtrl, insumoService, loadingCtrl) {
+var RecuperaSenhaPage = /** @class */ (function () {
+    function RecuperaSenhaPage(navCtrl, navParams, formBuilder, alertCtrl, colaboradorService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.dateNow = dateNow;
-        this.dateTimeFormatPipe = dateTimeFormatPipe;
-        this.localizacaoService = localizacaoService;
-        this.movimentacaoService = movimentacaoService;
-        this.viewCtrl = viewCtrl;
+        this.formBuilder = formBuilder;
         this.alertCtrl = alertCtrl;
-        this.insumoService = insumoService;
-        this.loadingCtrl = loadingCtrl;
-        this.insumosLocalizacoes = [];
-        this.insumosMovimentacoes = [];
+        this.colaboradorService = colaboradorService;
+        this.botao = true;
+        this.formGroup = this.formBuilder.group({
+            email: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].email]]
+        }, {});
     }
-    RastreamentoPage.prototype.ionViewDidLoad = function () {
-        this.loadLotesLEI();
+    RecuperaSenhaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RecuperaSenhaPage');
     };
-    RastreamentoPage.prototype.loadLotesLEI = function () {
+    RecuperaSenhaPage.prototype.recuperaSenhaUser = function () {
         var _this = this;
-        this.insumoService.findLotesLEIInsumosLocalizacoes().subscribe(function (response) {
-            _this.insumosLocalizacoes = response.sort();
+        this.botao = false;
+        this.validFormAndPreventMultipleClicks();
+        this.colaboradorService.recuperarSenha(this.formGroup.value).subscribe(function (response) {
+            _this.showInserOk();
         }, function (error) {
-            //loader.dismiss();
+            _this.showErro();
         });
     };
-    RastreamentoPage.prototype.loteLEIChange = function (event) {
+    RecuperaSenhaPage.prototype.validFormAndPreventMultipleClicks = function () {
+        if (this.formGroup.invalid == true && this.botao == true) {
+            return true;
+        }
+        else if (this.formGroup.invalid == false && this.botao == false) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    RecuperaSenhaPage.prototype.showInserOk = function () {
         var _this = this;
-        this.insumoService.findInsumoEntradaByLoteLEI(event.value.loteLEI).subscribe(function (response) {
-            _this.insumoEntradaDTO = response;
-        }, function (error) {
-            //loader.dismiss();
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Recuperação efetuada com sucesso! Verifique seu email.',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
         });
-        this.insumoService.findInsumosLocalizacoesByLoteLEI(event.value.loteLEI).subscribe(function (response) {
-            _this.insumosLocalizacoesSelecionados = response.sort();
-        }, function (error) {
-            //loader.dismiss();movimentacoesPorLoteLEI
-        });
-        this.movimentacaoService.movimentacoesPorLoteLEI(event.value.loteLEI).subscribe(function (response) {
-            _this.insumosMovimentacoes = response.sort();
-            console.log(_this.insumosMovimentacoes);
-        }, function (error) {
-            //loader.dismiss();movimentacoesPorLoteLEI
-        });
+        alert.present();
     };
-    RastreamentoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
-            selector: 'page-rastreamento',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\rastreamento\rastreamento.html"*/'<!--\n  Generated template for the RastreamentoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Rastreamento de Insumos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item>\n    <ion-label>Lotes LEI cadastrados</ion-label>\n    <ionic-selectable \n      #localizacoesComponent\n      item-content\n      [(ngModel)]="insumolocalizacao"\n      [items]="insumosLocalizacoes"\n      itemValueField="id"\n      itemTextField="loteLEI"\n      [canSearch]="true"\n      [focusSearchbar]="true"\n      (onChange)="loteLEIChange($event)"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{item.loteLEI}}\n          </ion-label>\n        </ion-item>\n      </ng-template>\n    </ionic-selectable>\n  </ion-item>\n  <ion-grid [hidden]="insumoEntradaDTO != null ? false : true">\n    <ion-row><ion-col><ion-label></ion-label></ion-col></ion-row>\n    <ion-row><ion-col><ion-label></ion-label></ion-col></ion-row>\n    <ion-row>\n      <ion-col col-4 class="cell-class">\n       {{insumoEntradaDTO != null?"Data e Hora da entrada: "+insumoEntradaDTO.entrada.dataEntrada:"" }}\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Localização de entrada: "+insumoEntradaDTO.entrada.localizacao.nome:"" }}\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Usuário de cadastro: "+insumoEntradaDTO.entrada.usualt:"" }}\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-8 class="cell-class">\n       <b>{{insumoEntradaDTO != null?"Insumo: "+insumoEntradaDTO.insumo.nome:"" }}</b>\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n        <b>{{insumoEntradaDTO != null?"Lote LEI: "+insumoEntradaDTO.loteLEI:"" }}</b>\n       </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-4 class="cell-class">\n       {{insumoEntradaDTO != null?"Lote Fabricante: "+insumoEntradaDTO.loteFornecedor:"" }}\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Lote CR: "+insumoEntradaDTO.loteCR:"" }}\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Lote ARM: "+insumoEntradaDTO.loteARM:"" }}\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Data de Fabricação: "+(insumoEntradaDTO.dataFabricacao | date:\'dd/MM/yyyy\'):" " }}\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Data de Validade: "+(insumoEntradaDTO.dataValidade | date:\'dd/MM/yyyy\'):" " }}\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Quantidade recebida: "+insumoEntradaDTO.quantidadeVolume:" " }}\n        {{insumoEntradaDTO != null?insumoEntradaDTO.unidadeRecebida.nome+" (s)":" " }} \n      </ion-col>\n      <ion-col col-4 class="cell-class">\n        {{insumoEntradaDTO != null?"Quantidade de entrada: "+insumoEntradaDTO.quantidade:" " }}\n        {{insumoEntradaDTO != null?insumoEntradaDTO.unidadeEntrada.nome+" (s)":"" }}\n      </ion-col>\n      <ion-col col-4 class="cell-class">\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid [hidden]="insumoEntradaDTO != null ? false : true">\n    <ion-row class="alinha_itens_center"><ion-col ><ion-label class="my-label">Movimentações Realizadas</ion-label></ion-col></ion-row>\n    <ion-row>\n      <ion-col size="3" class="cell-class">\n        De localização:\n      </ion-col>\n      <ion-col size="1" class="cell-class">\n        Quantidade:\n      </ion-col>\n      <ion-col size="3" class="cell-class">\n        Para localização:\n      </ion-col>\n      <ion-col size="2" class="cell-class">\n        Data da movimentação\n      </ion-col>\n      <ion-col size="3" class="cell-class">\n        Usuário que movimentou\n      </ion-col>\n      <ion-col size="1" class="cell-class">\n        Aprovado pelo CQ\n      </ion-col>\n      <ion-col size="1" class="cell-class">\n        Irradiado\n      </ion-col>\n    </ion-row>\n    <ion-row *ngFor="let im of insumosMovimentacoes">\n      <ion-col size="3" class="cell-class">\n        {{im.localizacaoOrigem.nome}}\n      </ion-col>\n      <ion-col size="1" class="cell-class">\n        {{im.quantidadeRealMovimentada}}\n      </ion-col>\n      <ion-col size="3" class="cell-class">\n        {{im.localizacao.nome}}\n      </ion-col>\n      <ion-col size="2" class="cell-class">\n        {{im.datalt | date:\'dd/MM/yyyy HH:mm\'}}\n      </ion-col>\n      <ion-col size="3" class="cell-class">\n        {{im.usualt}}\n      </ion-col>\n      <ion-col size="1" class="cell-class">\n        {{ im.aprovado!=null?(im.aprovado?"Sim":"Não"):""}}\n      </ion-col>\n      <ion-col size="1" class="cell-class">\n        {{ im.irradiado!=null?(im.irradiado?"Sim":"Não"):""}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\rastreamento\rastreamento.html"*/,
+    RecuperaSenhaPage.prototype.showErro = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: 'Email não cadastrado.',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    RecuperaSenhaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-recupera-senha',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\recupera-senha\recupera-senha.html"*/'<!--\n\n  Generated template for the RecuperaSenhaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Recupera Senha</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="recuperaSenhaUser()">\n\n    <ion-item>\n\n      <ion-label stacked>Email*</ion-label>\n\n      <ion-input formControlName="email"  type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="validFormAndPreventMultipleClicks()">Recuperar</button>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\recupera-senha\recupera-senha.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4__utils_datenow__["a" /* DateNow */],
-            __WEBPACK_IMPORTED_MODULE_3__utils_date_time_format__["a" /* DateTimeFormatPipe */],
-            __WEBPACK_IMPORTED_MODULE_2__services_domain_localizacao_service__["a" /* LocalizacaoService */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__["a" /* MovimentacaoService */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* LoadingController */]])
-    ], RastreamentoPage);
-    return RastreamentoPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])
+    ], RecuperaSenhaPage);
+    return RecuperaSenhaPage;
 }());
 
-//# sourceMappingURL=rastreamento.js.map
+//# sourceMappingURL=recupera-senha.js.map
 
 /***/ })
 

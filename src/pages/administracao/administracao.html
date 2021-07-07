@@ -70,22 +70,35 @@
           </ion-item>
         </ion-col>
         <ion-col style="text-align: center">
-          <button ion-button expand="full" (click)="openModalNovaPagina()">
-            Cadastrar Nova Pagina
-          </button>
           <button
             ion-button
             expand="full"
             color="secondary"
             (click)="openModalVincularPagina()">
-            Vincular Página ao Usuário
+            Vincular Página ao Perfil
           </button>
         </ion-col>
       </ion-row>
+
       <ion-row>
-        <ion-col> </ion-col>
-        <ion-col> </ion-col>
+        <ion-col>
+          <ion-row >
+            <ion-col><ion-item style="text-align: center"><b>NOME</b></ion-item></ion-col>
+            <ion-col><ion-item style="text-align: center"><b>DESCRIÇÃO</b></ion-item></ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col></ion-col>
       </ion-row>
+      <ion-row *ngFor="let pa of paginas">
+        <ion-col>
+          <ion-row>
+            <ion-col><ion-item style="text-align: center">{{pa.pagina}}</ion-item></ion-col>
+            <ion-col><ion-item style="text-align: center">{{pa.nome}}</ion-item></ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    
     </ion-list>
   </div>
 
