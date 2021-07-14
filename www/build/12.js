@@ -1,15 +1,15 @@
 webpackJsonp([12],{
 
-/***/ 736:
+/***/ 737:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VinculaPaginaPerfilPageModule", function() { return VinculaPaginaPerfilPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VinculaPerfilUsuarioPageModule", function() { return VinculaPerfilUsuarioPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vincula_pagina_perfil__ = __webpack_require__(925);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vincula_perfil_usuario__ = __webpack_require__(926);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,53 +20,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var VinculaPaginaPerfilPageModule = /** @class */ (function () {
-    function VinculaPaginaPerfilPageModule() {
+var VinculaPerfilUsuarioPageModule = /** @class */ (function () {
+    function VinculaPerfilUsuarioPageModule() {
     }
-    VinculaPaginaPerfilPageModule = __decorate([
+    VinculaPerfilUsuarioPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__vincula_pagina_perfil__["a" /* VinculaPaginaPerfilPage */],
+                __WEBPACK_IMPORTED_MODULE_3__vincula_perfil_usuario__["a" /* VinculaPerfilUsuarioPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__vincula_pagina_perfil__["a" /* VinculaPaginaPerfilPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__vincula_perfil_usuario__["a" /* VinculaPerfilUsuarioPage */]),
                 __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__["a" /* IonicSelectableModule */],
             ],
         })
-    ], VinculaPaginaPerfilPageModule);
-    return VinculaPaginaPerfilPageModule;
+    ], VinculaPerfilUsuarioPageModule);
+    return VinculaPerfilUsuarioPageModule;
 }());
 
-//# sourceMappingURL=vincula-pagina-perfil.module.js.map
+//# sourceMappingURL=vincula-perfil-usuario.module.js.map
 
 /***/ }),
 
-/***/ 888:
+/***/ 926:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaginasEnum; });
-var PaginasEnum;
-(function (PaginasEnum) {
-    PaginasEnum["administracao"] = "AdministracaoPage";
-    PaginasEnum["ajusteestoque"] = "AjusteEstoquePage";
-    PaginasEnum["alterarsenha"] = "AlterarSenhaPage";
-    PaginasEnum["cadastrocategoria"] = "CadastroCategoriaPage";
-    PaginasEnum["cadastroentrada"] = "CadastroEntradaPage";
-})(PaginasEnum || (PaginasEnum = {}));
-//# sourceMappingURL=paginas.enum.js.map
-
-/***/ }),
-
-/***/ 925:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VinculaPaginaPerfilPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enums_paginas_enum__ = __webpack_require__(888);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VinculaPerfilUsuarioPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -80,26 +64,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the VinculaPaginaPerfilPage page.
+ * Generated class for the VinculaPerfilUsuarioPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var VinculaPaginaPerfilPage = /** @class */ (function () {
-    function VinculaPaginaPerfilPage(navCtrl, navParams, viewCtrl, perfilService, alertCtrl) {
+var VinculaPerfilUsuarioPage = /** @class */ (function () {
+    function VinculaPerfilUsuarioPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, perfilService, colaboradorService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.perfilService = perfilService;
         this.alertCtrl = alertCtrl;
-        this.paginas = [];
-        this.pagina = {};
+        this.formBuilder = formBuilder;
+        this.perfilService = perfilService;
+        this.colaboradorService = colaboradorService;
     }
-    VinculaPaginaPerfilPage.prototype.registrar = function () {
+    VinculaPerfilUsuarioPage.prototype.ionViewDidLoad = function () {
+        this.loadColaboradores();
+        this.loadPerfis();
+    };
+    VinculaPerfilUsuarioPage.prototype.registrar = function () {
+        var _this = this;
         var result = false;
-        if (Object.keys(this.pagina).length == 0) {
-            this.showSelecionaPagina();
+        var perfisNovos = [];
+        if (this.colaborador == undefined) {
+            this.showSelecionaColaboirador();
         }
         else {
             this.perfis.forEach(function (r) {
@@ -112,79 +103,84 @@ var VinculaPaginaPerfilPage = /** @class */ (function () {
                 this.showSelecionaPerfil();
             }
             else {
-                //inserir a pagina
+                this.colaborador.perfis = perfisNovos;
+                this.colaboradorService.updateComPerfil(this.colaborador).subscribe(function (response) {
+                    _this.showUpdateOk();
+                }, function (error) { });
             }
         }
-        var perfisNovos = [];
-        var paginaNova = {
-            id: null,
-            nome: this.pagina.pagina,
-            perfis: [],
-        };
-        this.perfis.forEach(function (r) {
-            if (r.selecionado == true) {
-                perfisNovos.push(r);
-                paginaNova.perfis.push(r);
+    };
+    VinculaPerfilUsuarioPage.prototype.changeToggle = function (ev, checked) {
+        //console.log(checked);
+        //console.log(this.perfis);
+    };
+    VinculaPerfilUsuarioPage.prototype.colaboradorChange = function (event) {
+        this.perfis.forEach(function (p) {
+            if (event.value.perfis.find(function (element) { return element.descricao == p.descricao; }) != undefined) {
+                p.selecionado = true;
+            }
+            else {
+                p.selecionado = false;
             }
         });
-        /* var result = false;
-        var perfisNovos : PerfilDTO[] = [];
-        if(this.colaborador == undefined){
-          this.showSelecionaColaboirador()
-        }else{
-          this.perfis.forEach(r=>{
-            if(r.selecionado == true){
-              result = true;
-              perfisNovos.push(r);
-            }
-          });
-          if(!result){
-            this.showSelecionaPerfil();
-          }else{
-            this.colaborador.perfis = perfisNovos;
-            this.colaboradorService.updateComPerfil(this.colaborador).subscribe(response => {
-              this.showUpdateOk();
-            },
-            error => {});
-          }
-        }*/
     };
-    VinculaPaginaPerfilPage.prototype.ionViewDidLoad = function () {
-        this.loadPerfis();
-        this.loadEnumPaginas();
-    };
-    VinculaPaginaPerfilPage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    VinculaPaginaPerfilPage.prototype.loadEnumPaginas = function () {
-        this.paginas = [];
-        var cont = 0;
-        for (var _i = 0, _a = Object.entries(__WEBPACK_IMPORTED_MODULE_0__enums_paginas_enum__["a" /* PaginasEnum */]); _i < _a.length; _i++) {
-            var _b = _a[_i], propertyKey = _b[0], propertyValue = _b[1];
-            cont++;
-            if (!Number.isNaN(Number(propertyKey))) {
-                continue;
-            }
-            this.paginas.push({ pagina: propertyValue, nome: propertyKey, id: cont });
-        }
-    };
-    VinculaPaginaPerfilPage.prototype.loadPerfis = function () {
+    VinculaPerfilUsuarioPage.prototype.loadPerfis = function () {
         var _this = this;
         this.perfilService.findAll()
             .subscribe(function (response) {
             _this.perfis = response.sort();
+            //console.log(this.perfis);
         }, function (error) { });
     };
-    VinculaPaginaPerfilPage.prototype.changeToggle = function (ev, checked) {
-        console.log(checked);
-        //console.log(this.perfis);
+    VinculaPerfilUsuarioPage.prototype.loadColaboradores = function () {
+        var _this = this;
+        this.colaboradorService.findAll()
+            .subscribe(function (response) {
+            _this.colaboradores = response.sort();
+            //console.log(this.colaboradores);
+        }, function (error) { });
     };
-    VinculaPaginaPerfilPage.prototype.paginaChange = function (ev) {
+    VinculaPerfilUsuarioPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
     };
-    VinculaPaginaPerfilPage.prototype.showSelecionaPagina = function () {
+    VinculaPerfilUsuarioPage.prototype.showInsertOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro efetuado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    VinculaPerfilUsuarioPage.prototype.showUpdateOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Cadastro atualizado com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    VinculaPerfilUsuarioPage.prototype.showSelecionaColaboirador = function () {
         var alert = this.alertCtrl.create({
             title: 'Erro',
-            message: 'Selecione uma página!',
+            message: 'Selecione um usuário!',
             enableBackdropDismiss: false,
             buttons: [
                 {
@@ -196,7 +192,7 @@ var VinculaPaginaPerfilPage = /** @class */ (function () {
         });
         alert.present();
     };
-    VinculaPaginaPerfilPage.prototype.showSelecionaPerfil = function () {
+    VinculaPerfilUsuarioPage.prototype.showSelecionaPerfil = function () {
         var alert = this.alertCtrl.create({
             title: 'Erro',
             message: 'Selecione pelo menos um perfil!',
@@ -211,17 +207,22 @@ var VinculaPaginaPerfilPage = /** @class */ (function () {
         });
         alert.present();
     };
-    VinculaPaginaPerfilPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-vincula-pagina-perfil',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\vincula-pagina-perfil\vincula-pagina-perfil.html"*/'<!--\n  Generated template for the VinculaPaginaPerfilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Vincula Página ao Perfil\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-item color="item_entrada">\n    <ion-label>Páginas</ion-label>\n    <ionic-selectable \n      item-content\n      [(ngModel)]="pagina"\n      [items]="paginas"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [focusSearchbar]="true"\n      (onChange)="paginaChange($event)"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{item.pagina}}\n          </ion-label>\n        </ion-item>\n      </ng-template>\n    </ionic-selectable>\n  </ion-item>\n  <ion-list *ngFor="let item of perfis">\n    <ion-item>\n      <ion-label>{{ item.nome }}</ion-label>\n      <ion-toggle color="secondary" [(ngModel)]="item.selecionado" (ionChange)="changeToggle($event,item.selecionado)"></ion-toggle>\n    </ion-item>\n  </ion-list>\n  <button ion-button block type="submit" (click)="registrar()">Registrar</button>\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\vincula-pagina-perfil\vincula-pagina-perfil.html"*/,
+    VinculaPerfilUsuarioPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+            selector: 'page-vincula-perfil-usuario',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\vincula-perfil-usuario\vincula-perfil-usuario.html"*/'<!--\n  Generated template for the VinculaPerfilUsuarioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Vincular Perfil ao Usuário\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()" >\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item color="item_entrada">\n    <ion-label>Usuário</ion-label>\n    <ionic-selectable \n      item-content\n      [(ngModel)]="colaborador"\n      [items]="colaboradores"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [focusSearchbar]="true"\n      (onChange)="colaboradorChange($event)"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{item.nome}}\n          </ion-label>\n        </ion-item>\n      </ng-template>\n    </ionic-selectable>\n  </ion-item>\n  <ion-list *ngFor="let item of perfis">\n    <ion-item>\n      <ion-label>{{ item.nome }}</ion-label>\n      <ion-toggle color="secondary" [(ngModel)]="item.selecionado" (ionChange)="changeToggle($event,item.selecionado)"></ion-toggle>\n    </ion-item>\n  </ion-list>\n  <button ion-button block type="submit" (click)="registrar()">Registrar</button>\n\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\vincula-perfil-usuario\vincula-perfil-usuario.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__["a" /* PerfilService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__["a" /* PerfilService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
-    ], VinculaPaginaPerfilPage);
-    return VinculaPaginaPerfilPage;
-    var _a, _b, _c, _d, _e;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__["a" /* PerfilService */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])
+    ], VinculaPerfilUsuarioPage);
+    return VinculaPerfilUsuarioPage;
 }());
 
-//# sourceMappingURL=vincula-pagina-perfil.js.map
+//# sourceMappingURL=vincula-perfil-usuario.js.map
 
 /***/ })
 

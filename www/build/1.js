@@ -2135,7 +2135,7 @@ var AjusteEstoquePageModule = /** @class */ (function () {
             try {
                 oldLocale = globalLocale._abbr;
                 aliasedRequire = require;
-                __webpack_require__(880)("./" + name);
+                __webpack_require__(881)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {
                 // mark as not found to avoid repeating expensive file require call causing high CPU
@@ -5715,7 +5715,7 @@ var AjusteEstoquePageModule = /** @class */ (function () {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(879)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(880)(module)))
 
 /***/ }),
 
@@ -20902,7 +20902,7 @@ var AjusteEstoquePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 879:
+/***/ 880:
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -20931,7 +20931,7 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ 880:
+/***/ 881:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -21220,7 +21220,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 880;
+webpackContext.id = 881;
 
 /***/ }),
 
@@ -21229,12 +21229,12 @@ webpackContext.id = 880;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AjusteEstoquePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_ajusteestoque_service__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_ajusteestoque_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_unidade_service__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_entrada_service__ = __webpack_require__(362);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_localizacao_service__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_categoria_service__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_categoria_service__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_core__ = __webpack_require__(1);

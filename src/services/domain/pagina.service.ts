@@ -16,11 +16,11 @@ export class PaginaService {
     }
 
     findByEmail(email: string) : Observable<PaginaDTO>{
-        return this.http.get<PaginaDTO>(`${API_CONFIG.baseUrl}/Paginas/email?value=${email}`);
+        return this.http.get<PaginaDTO>(`${API_CONFIG.baseUrl}/paginas/email?value=${email}`);
     }
 
     insert(obj: PaginaDTO){
-        return this.http.post(`${API_CONFIG.baseUrl}/Paginas/`,
+        return this.http.post(`${API_CONFIG.baseUrl}/paginas/`,
         obj,
         {
             observe: 'response',
@@ -28,6 +28,10 @@ export class PaginaService {
         });
     }
 
+    
+    findByNomePagina(nomepagina: string) : Observable<PaginaDTO>{
+        return this.http.get<PaginaDTO>(`${API_CONFIG.baseUrl}/paginas/buscapaginapornome?value=${nomepagina}`);
+    }
 
 
 

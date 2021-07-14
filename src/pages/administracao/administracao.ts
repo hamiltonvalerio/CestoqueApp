@@ -56,7 +56,6 @@ export class AdministracaoPage {
     }  
     this.paginas.push({ pagina: propertyValue, nome: propertyKey});  
     } 
-    console.log(this.paginas); 
   }
 
   toggleDetails() {
@@ -67,6 +66,7 @@ export class AdministracaoPage {
     this.colaboradorService.findAll()
     .subscribe(response => {
       this.colaboradores = response.sort();
+      console.log(this.colaboradores);
     },
     error => {})
   }

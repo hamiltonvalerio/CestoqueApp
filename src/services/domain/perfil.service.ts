@@ -19,5 +19,11 @@ export class PerfilService {
       responseType: "text",
     });
   }
+
+  findByNomePagina(nomepagina: string) : Observable<PerfilDTO[]>{
+    return this.http.get<PerfilDTO[]>(`${API_CONFIG.baseUrl}/perfis/buscaperfispornomepagina?value=${nomepagina}`);
+  }
+
+  
   
 }
