@@ -48,6 +48,7 @@ export class CadastroLocalizacaoPage {
           irradiacao: [false,''],
           localizacaofilha: [false,''],
           objlocalizacaofilha: [,],
+          gerasublote: [false,''],
         }, {}); 
 
 
@@ -68,6 +69,7 @@ export class CadastroLocalizacaoPage {
           irradiacao: [this.updateLocalizacaoDTO.irradiacao,''],
           localizacaofilha: [this.updateLocalizacaoDTO.localizacaofilha,''],
           objlocalizacaofilha: [this.updateLocalizacaoDTO.objlocalizacaofilha,],
+          gerasublote: [this.updateLocalizacaoDTO.gerasublote,],
         }, {}); 
       });
     }

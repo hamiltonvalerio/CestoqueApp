@@ -61,6 +61,7 @@
             <ion-col><b>Lote LEI: {{ient.loteLEI}}</b></ion-col>
             <ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col>
             <ion-col>Lote CR: {{ient.loteCR}}</ion-col>
+            <ion-col><b>{{ient.subloteLEI != null?"Lote LEI Principal: "+ient.subloteLEI:""}}</b></ion-col>
           </ion-row>
           <ion-row><ion-col>Data de Irradiação: {{ient.dataIrradiacao | date:'dd/MM/yyyy'}}</ion-col>
           <ion-col>Data de Validade: {{ient.dataValidade | date:'dd/MM/yyyy'}}</ion-col></ion-row>

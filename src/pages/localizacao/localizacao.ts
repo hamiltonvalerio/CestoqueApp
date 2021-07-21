@@ -56,6 +56,7 @@ export class LocalizacaoPage {
       localizacao_atualizaqtdminima: itemAtualizaqtdminima,
       localizacao_controle: itemControle,
       localizacao_filha: localizacao_filha,
+      
     });
   }
 

@@ -9,4 +9,5 @@ export interface LocalizacaoDTO{
     atualizaqtdminima: boolean;
     objlocalizacaofilha: LocalizacaoDTO;
     localizacaofilha?: boolean;
+    gerasublote: boolean;
 }
