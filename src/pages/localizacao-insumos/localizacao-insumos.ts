@@ -39,7 +39,7 @@ export class LocalizacaoInsumosPage {
   insumosLocalizacao: InsumolocalizacaoDTO[];
   nomeLocalizacao: string = "";
   data = moment().format('MM/DD/YYYY HH:mm');
-
+  shouldShowCancel: boolean = true;
   localizacao: LocalizacaoDTO;
 
   botaoQuantidadeMinima: boolean = false;
@@ -84,25 +84,40 @@ export class LocalizacaoInsumosPage {
     modalQuantidademinimaPage.present();
   }
 
-  /*getItens(){
-    let localizacaoId = this.navParams.get('localizacao_id');
-    console.log("aqui: "+localizacaoId);
+  buscaInsumo(ev : any, tipo: string){
+    let val = ev.target.value;
+    console.log(val)
+    if (val && val.trim() != '') {
+      switch (tipo){
+        case 'nome':
+          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+            return (item.insumo.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
+          })
+        break;
+        case 'codalmox':
+          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+            return (item.codigoalmoxarifado.toLowerCase().indexOf(val.toLowerCase()) > -1);
+          })
+        break;
+        case 'lotelei':
+          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+            return (item.loteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1);
+          })
+        break;
+        case 'sublotelei':
+          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+            return (item.subloteLEI != null?item.subloteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1:"");
+          })
+        break;
+      }
+    }else{
+      this.getItens();
+    }
+  }
 
-    this.insumoService.findInsumoLocalizacaoByLocalizacao(localizacaoId,this.page, 30)
-    .subscribe(response => {
-      
-      this.insumosLocalizacao = response.sort();
-      
-    },
-    error => {})
-
-    console.log(this.insumosLocalizacao);
-
-    this.insumosLocalizacao.forEach(function (value){
-      console.log(value);
-    })
-
-  }*/
+  onCancel(){
+    this.getItens();
+  }
 
  
   getItens() {

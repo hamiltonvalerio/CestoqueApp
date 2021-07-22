@@ -13,4 +13,6 @@ export interface InsumoajusteDTO{
     dataFabricacao: Date;
     dataValidade: Date;
     dataAjuste: Date;
+    loteLEI: string;
+    subloteLEI: string;
 }

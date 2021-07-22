@@ -10,12 +10,6 @@
       Insumos da Localização: {{nomeLocalizacao}}
     </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="createPdf()" >
-        <span ion-text color="primary" showWhen="ios">Pdf</span>
-        <ion-icon name="md-document"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-buttons end>
       <button ion-button (click)="dismiss()" >
         <span ion-text color="primary" showWhen="ios">Cancel</span>
         <ion-icon name="md-close"></ion-icon>
@@ -26,10 +20,47 @@
 
 
 <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <div >
+          <ion-searchbar
+            placeholder="Busca pelo nome"
+            [showCancelButton]="shouldShowCancel"
+            (ionInput)="buscaInsumo($event,'nome')"
+            (ionCancel)="onCancel()">
+          </ion-searchbar>
+        </div>
+        <div >
+          <ion-searchbar
+            placeholder="Busca por cod. almoxarifado"
+            [showCancelButton]="shouldShowCancel"
+            (ionInput)="buscaInsumo($event,'codalmox')"
+            (ionCancel)="onCancel()">
+          </ion-searchbar>
+        </div>
+        <div >
+          <ion-searchbar
+            placeholder="Busca por Lote LEI"
+            [showCancelButton]="shouldShowCancel"
+            (ionInput)="buscaInsumo($event,'lotelei')"
+            (ionCancel)="onCancel()">
+          </ion-searchbar>
+        </div>
+        <div >
+          <ion-searchbar
+            placeholder="Busca por Lote LEI Principal"
+            [showCancelButton]="shouldShowCancel"
+            (ionInput)="buscaInsumo($event,'sublotelei')"
+            (ionCancel)="onCancel()">
+          </ion-searchbar>
+        </div>
+      </ion-row>
+    </ion-grid>
 
     <ion-grid *ngFor="let ins of insumosLocalizacao">
       <ion-row justify-content-center align-items-center>
         <ion-col><div><b>{{ins.insumo.nome}}</b></div></ion-col>
+        <ion-col><div><b>{{"Cod. Almox: "+ins.codigoalmoxarifado}}</b></div></ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
@@ -58,10 +89,13 @@
           <div >Data de Validade: {{ins.dataValidade | date:'dd/MM/yyyy'}}</div>
         </ion-col>
         <ion-col>
-          <div >Data de Irradiação: {{ins.dataIrradiacao | date:'dd/MM/yyyy' }}</div>
+          <div >Passou pela irradiação em: {{ins.dataIrradiacao | date:'dd/MM/yyyy' }}</div>
         </ion-col>
         <ion-col>
           <div >Aprovado pelo Controle da Qualidade: {{ins.foiaprovado}}</div>
+        </ion-col>
+        <ion-col>
+          <div >Irradiado?: {{ins.irradiado?"SIM":ins.irradiado==false?"NÃO":""}}</div>
         </ion-col>
         <ion-col></ion-col>
       </ion-row>
@@ -69,10 +103,9 @@
         <ion-col>
           <div ><b>Lote LEI: {{ins.loteLEI}}</b></div>
         </ion-col>
+        <ion-col><b>{{ins.subloteLEI != null?"Lote LEI Principal: "+ins.subloteLEI:""}}</b></ion-col>
         <ion-col >
           <div >{{ins.quantidademinima != null?"Quantidade mínima: "+ins.quantidademinima:""}}</div>
-        </ion-col>
-        <ion-col>
         </ion-col>
         <ion-col>
         </ion-col>  

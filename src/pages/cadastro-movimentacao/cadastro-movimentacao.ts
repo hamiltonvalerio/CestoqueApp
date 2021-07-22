@@ -207,7 +207,7 @@ export class CadastroMovimentacaoPage {
         loteLEI: value.loteLEI,
         loteARM: value.loteARM,
         irradiado: value.irradiado,
-        
+        subloteLEI: value.subloteLEI,
         unidadeRecebida: value.unidadeRecebida,
         quantidadeVolume: value.quantidadeVolume,
         unidadeEntrada: value.unidadeEntrada,
