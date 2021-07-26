@@ -194,7 +194,8 @@ export class AjusteEstoquePage {
     unidadeEntrada: null,
     loteLEI: null,
     precisairradiacao: null,
-    precisacontrolequalidade: null,};
+    precisacontrolequalidade: null,
+    cas: null,};
 
    if(this.citensEntrada.insumo.unidade != null){
       this.unidadeEntrada = this.citensEntrada.insumo.unidade;
@@ -245,7 +246,8 @@ export class AjusteEstoquePage {
             unidadeEntrada: null,
             loteLEI: null,
             precisairradiacao: null,
-            precisacontrolequalidade: null,};
+            precisacontrolequalidade: null,
+            cas: null,};
           
           itensIns.push(insEnt);
         }); 
@@ -277,18 +279,10 @@ export class AjusteEstoquePage {
   insereAjuste(){
     this.insumoAjusteDTO = this.formGroup.value;
     this.insumoAjusteDTO.dataAjuste = this.dateTimeFormatPipe.transform(this.dataAjuste);
-    //console.log("data 1 "+ this.insumoAjusteDTO.dataAjuste);
     let teste = moment(this.dataAjuste).format('MM/DD/YYYY HH:mm');
-    //console.log("data 2 "+ teste);
     this.insumoAjusteDTO.localizacao = this.localizacao;
     this.insumoAjusteDTO.dataAjuste = new Date(this.dataAjuste);
-
-    /*this.ajusteEstoqueService.insert(this.insumoAjusteDTO).subscribe(response => {
-      this.showInsertOk();
-    },
-    error => {});*/
     this.ajusteEstoqueService.insert(this.insumoAjusteDTO).subscribe(response => {
-      //this.showInsertOk();
       this.reset();
       this.carregarAjustesDoDiaChange();
     },
@@ -313,16 +307,11 @@ export class AjusteEstoquePage {
   }
 
   carregarAjustesDoDiaChange(){
-
       if(this.localizacao != null){
-        
           this.ajusteEstoqueService.findAjusteByLocalizacaoAndDataAtual(this.localizacao.id, new Date(this.dataAjuste)).subscribe(response => {
             this.listaInsumoAjuste = response;
-            //console.log(this.listaInsumoAjuste);
-        
         });
       }
-
   }
 
 }

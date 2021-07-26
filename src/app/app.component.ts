@@ -57,6 +57,7 @@ export class MyApp {
       { title: 'Movimentações', component: 'MovimentacaoPage', img: 'assets/icon/repeat-outline.svg', disabled: perfilParaAcesso.retornaPermissaoPorPerfil(this.localUser,'MovimentacaoPage')},
       { title: 'Entradas', component: 'EntradaPage', img: 'assets/icon/share-outline.svg', disabled: perfilParaAcesso.retornaPermissaoPorPerfil(this.localUser,'EntradaPage')},
       { title: 'Saídas', component: 'SaidaPage', img: 'assets/icon/exit-outline.svg', disabled: perfilParaAcesso.retornaPermissaoPorPerfil(this.localUser,'SaidaPage')},
+      { title: 'Inventário', component: 'InventarioPage', img: 'assets/icon/clipboard-outline.svg', disabled: perfilParaAcesso.retornaPermissaoPorPerfil(this.localUser,'ProfilePage')},
       { title: 'Profile', component: 'ProfilePage', img: 'assets/icon/person-outline.svg', disabled: perfilParaAcesso.retornaPermissaoPorPerfil(this.localUser,'ProfilePage')},
       { title: 'Manual', component: 'ManualPage', img: 'assets/icon/book-outline.svg', disabled: perfilParaAcesso.retornaPermissaoPorPerfil(this.localUser,'ManualPage')},
       { title: 'Administração', component: 'AdministracaoPage', img: 'assets/icon/build-outline.svg' , disabled: perfilParaAcesso.retornaPermissaoPorPerfil(this.localUser,'AdministracaoPage')},

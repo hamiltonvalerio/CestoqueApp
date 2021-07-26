@@ -15,4 +15,8 @@ export interface InsumoajusteDTO{
     dataAjuste: Date;
     loteLEI: string;
     subloteLEI: string;
+    armario: string;
+    prateleira: string;
+    posicao: string;
+    cas: string;
 }

@@ -37,5 +37,9 @@ export interface InsumomovimentacaoDTO extends DadosComunsInsumos{
 
     quantidadeRealMovimentada?: number;
 
+    armario: string;
+    posicao: string;
+    cas: string;
+
 
 }

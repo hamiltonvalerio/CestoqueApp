@@ -217,6 +217,10 @@ export class CadastroMovimentacaoPage {
         quantidadeDescartada: value.quantidadeDescartada,
 
         show: null,
+
+        armario: value.armario,
+        posicao: value.posicao,
+        cas: value.cas,
       };
       itensInsumosMovimentacao.push(itemMov);
     });

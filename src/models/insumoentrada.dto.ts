@@ -21,4 +21,5 @@ export interface InsumoEntradaDTO{
     loteLEI: string;
     precisairradiacao: boolean;
     precisacontrolequalidade: boolean;
+    cas: string;
 }

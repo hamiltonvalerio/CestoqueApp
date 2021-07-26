@@ -40,7 +40,6 @@ export class LocalizacaoPage {
     this.localizacaoService.findAll()
     .subscribe(response => {
       this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
-      
     },
     error => {})
   }
@@ -56,7 +55,6 @@ export class LocalizacaoPage {
       localizacao_atualizaqtdminima: itemAtualizaqtdminima,
       localizacao_controle: itemControle,
       localizacao_filha: localizacao_filha,
-      
     });
   }
 

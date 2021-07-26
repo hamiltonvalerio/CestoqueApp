@@ -137,6 +137,7 @@ export class CadastroEntradaPage {
       fileinsumo: ['',],
       precisairradiacao: [false,], 
       precisacontrolequalidade: [false,],
+      cas: ['',]
     }, {});
 
     this.valoresIniciaisForm = this.formGroup.value;
@@ -241,7 +242,8 @@ export class CadastroEntradaPage {
             unidadeEntrada: null,
             loteLEI: null,
             precisairradiacao: null,
-            precisacontrolequalidade: null,};
+            precisacontrolequalidade: null,
+            cas: null,};
           
           itensIns.push(insEnt);
         }); 
@@ -360,7 +362,8 @@ export class CadastroEntradaPage {
       unidadeEntrada: null,
       loteLEI: null,
       precisairradiacao: null,
-      precisacontrolequalidade: null,};
+      precisacontrolequalidade: null,
+      cas: null,};
 
      if(this.citensEntrada.insumo.unidade != null){
         this.unidadeEntrada = this.citensEntrada.insumo.unidade;
