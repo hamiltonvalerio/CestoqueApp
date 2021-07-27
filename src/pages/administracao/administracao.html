@@ -14,7 +14,6 @@
 </ion-header>
 <ion-content padding>
   <ion-segment
-    [(ngModel)]="relationship"
     color="primary"
     (ionChange)="segmentChanged($event)"
   >
@@ -65,8 +64,8 @@
     <ion-list *ngSwitchCase="'paginas'">
       <ion-row>
         <ion-col>
-          <ion-item>
-            <ion-label> Páginas Cadastradas </ion-label>
+          <ion-item style="text-align: center">
+            <ion-label > <b>PÁGINAS CADASTRADAS</b> </ion-label>
           </ion-item>
         </ion-col>
         <ion-col style="text-align: center">

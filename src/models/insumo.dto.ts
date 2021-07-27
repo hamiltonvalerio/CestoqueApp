@@ -1,3 +1,4 @@
+import { OrgaoDTO } from './orgao.dto';
 import { InsumoArquivoDTO } from './insumoarquivo.dto';
 import { CategoriaDTO } from "./categoria.dto";
 import { UnidadeDTO } from "./unidade.dto";
@@ -24,4 +25,6 @@ export interface InsumoDTO{
     quantidadeTotalAtual: number; 
     precisairradiacao: boolean;
     precisacontrolequalidade: boolean;
+    controlado: boolean;
+    orgaos: OrgaoDTO[];
 }

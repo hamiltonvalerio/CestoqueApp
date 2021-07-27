@@ -10,7 +10,7 @@ import { LocalizacaoService } from './../../services/domain/localizacao.service'
 import { InsumoService } from './../../services/domain/insumo.service';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController } from 'ionic-angular';
 import { InsumoDTO } from '../../models/insumo.dto';
 import { Console } from '@angular/core/src/console';
@@ -64,6 +64,8 @@ export class CadastroMovimentacaoPage {
   fieldsIrradiacao: boolean = true;
   aprovacao: string;
 
+  @ViewChild('insumoComponent') insumoComponent: IonicSelectableComponent;
+
  
 
   constructor(
@@ -99,6 +101,20 @@ export class CadastroMovimentacaoPage {
     this.insumosLocalizacoesSelecionados = [];
     this.movimentacao.itens = [];
     this.paralocalizacao = null;
+  }
+
+  clear() {
+    this.insumoComponent.clear();
+    this.insumoComponent.close();
+  }
+
+  toggleItems() {
+    this.insumoComponent.toggleItems(this.insumoComponent.itemsToConfirm.length ? false : true);
+  }
+
+  confirm() {
+    this.insumoComponent.confirm();
+    this.insumoComponent.close();
   }
 
   loadLocalizacao(){

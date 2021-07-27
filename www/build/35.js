@@ -5,10 +5,10 @@ webpackJsonp([35],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlterarSenhaPageModule", function() { return AlterarSenhaPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroCategoriaPageModule", function() { return CadastroCategoriaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alterar_senha__ = __webpack_require__(892);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_categoria__ = __webpack_require__(893);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AlterarSenhaPageModule = /** @class */ (function () {
-    function AlterarSenhaPageModule() {
+var CadastroCategoriaPageModule = /** @class */ (function () {
+    function CadastroCategoriaPageModule() {
     }
-    AlterarSenhaPageModule = __decorate([
+    CadastroCategoriaPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__alterar_senha__["a" /* AlterarSenhaPage */],
+                __WEBPACK_IMPORTED_MODULE_2__cadastro_categoria__["a" /* CadastroCategoriaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__alterar_senha__["a" /* AlterarSenhaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_categoria__["a" /* CadastroCategoriaPage */]),
             ],
         })
-    ], AlterarSenhaPageModule);
-    return AlterarSenhaPageModule;
+    ], CadastroCategoriaPageModule);
+    return CadastroCategoriaPageModule;
 }());
 
-//# sourceMappingURL=alterar-senha.module.js.map
+//# sourceMappingURL=cadastro-categoria.module.js.map
 
 /***/ }),
 
-/***/ 892:
+/***/ 893:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlterarSenhaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(24);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroCategoriaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -61,39 +61,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the AlterarSenhaPage page.
+ * Generated class for the CadastroCategoriaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AlterarSenhaPage = /** @class */ (function () {
-    function AlterarSenhaPage(navCtrl, navParams, formBuilder, alertCtrl, colaboradorService) {
+var CadastroCategoriaPage = /** @class */ (function () {
+    function CadastroCategoriaPage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, categoriaService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.formBuilder = formBuilder;
+        this.viewCtrl = viewCtrl;
         this.alertCtrl = alertCtrl;
-        this.colaboradorService = colaboradorService;
-        this.colab = navParams.get('item');
+        this.formBuilder = formBuilder;
+        this.categoriaService = categoriaService;
         this.formGroup = this.formBuilder.group({
-            senha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
-            confirmarsenha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
-        }, { validator: this.MatchPassword });
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["f" /* Validators */].required]]
+        }, {});
     }
-    AlterarSenhaPage.prototype.MatchPassword = function (AC) {
-        var newPassword = AC.get('senha').value; // to get value in input tag
-        var confirmPassword = AC.get('confirmarsenha').value; // to get value in input tag
-        if (newPassword != confirmPassword) {
-            AC.get('confirmarsenha').setErrors({ MatchPassword: true });
-        }
-        else {
-            AC.get('confirmarsenha').setErrors(null);
-        }
+    CadastroCategoriaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CadastroCategoriaPage');
     };
-    AlterarSenhaPage.prototype.showInserOk = function () {
+    CadastroCategoriaPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    CadastroCategoriaPage.prototype.cadastrarCategoria = function () {
+        var _this = this;
+        this.categoriaService.insert(this.formGroup.value).subscribe(function (response) {
+            _this.showInserOk();
+        }, function (error) { });
+    };
+    CadastroCategoriaPage.prototype.showInserOk = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
             title: 'Sucesso',
-            message: 'Senha alterada com sucesso!',
+            message: 'Cadastro efetuado com sucesso!',
             enableBackdropDismiss: false,
             buttons: [
                 {
@@ -106,34 +107,21 @@ var AlterarSenhaPage = /** @class */ (function () {
         });
         alert.present();
     };
-    AlterarSenhaPage.prototype.alterPassUser = function () {
-        var _this = this;
-        this.colabAlterSenha = this.formGroup.value;
-        this.colabAlterSenha.email = this.colab.email;
-        console.log(this.colab);
-        console.log(this.colabAlterSenha);
-        this.colaboradorService.alterarSenha(this.formGroup.value).subscribe(function (response) {
-            _this.showInserOk();
-        }, function (error) {
-        });
-    };
-    AlterarSenhaPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AlterarSenhaPage');
-    };
-    AlterarSenhaPage = __decorate([
+    CadastroCategoriaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-alterar-senha',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\alterar-senha\alterar-senha.html"*/'<!--\n\n  Generated template for the AlterarSenhaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Alterar Senha</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="alterPassUser()">\n\n    <ion-item>\n\n      <ion-label stacked>Senha*</ion-label>\n\n      <ion-input formControlName="senha"  type="password"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Confirmar Senha*</ion-label>\n\n      <ion-input formControlName="confirmarsenha" id="confirmarsenha" type="password"></ion-input>\n\n    </ion-item> \n\n      <ion-label *ngIf="formGroup.controls[\'confirmarsenha\'].errors?.MatchPassword" class="danger">\n\n        Senhas não conferem!\n\n     </ion-label>\n\n     <ion-row>\n\n      <ion-col width-50 style="text-align: center;">\n\n        <button ion-button  type="submit" [disabled]="formGroup.invalid">Alterar</button>\n\n      </ion-col>\n\n    </ion-row>\n\n     \n\n    \n\n    \n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\alterar-senha\alterar-senha.html"*/,
+            selector: 'page-cadastro-categoria',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-categoria\cadastro-categoria.html"*/'<!--\n\n  Generated template for the CadastroCategoriaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Categoria\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarCategoria()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-categoria\cadastro-categoria.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])
-    ], AlterarSenhaPage);
-    return AlterarSenhaPage;
+            __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_categoria_service__["a" /* CategoriaService */]])
+    ], CadastroCategoriaPage);
+    return CadastroCategoriaPage;
 }());
 
-//# sourceMappingURL=alterar-senha.js.map
+//# sourceMappingURL=cadastro-categoria.js.map
 
 /***/ })
 

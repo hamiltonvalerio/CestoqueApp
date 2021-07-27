@@ -52,6 +52,7 @@
     <ion-label>Insumos</ion-label>
     <ionic-selectable 
       item-content 
+      #insumoComponent
       [(ngModel)]="insumosLocalizacoesSelecionados"
       [items]="insumosLocalizacoes"
       itemValueField="id"
@@ -102,6 +103,30 @@
             Aprovado pelo Controle da Qualidade: <b>{{item.foiaprovado}}</b> 
           </ion-label>
         </ion-item>
+      </ng-template>
+
+      <ng-template ionicSelectableFooterTemplate>
+        <ion-toolbar>
+          <ion-row>
+            <ion-col *ngIf="insumoComponent.canClear">
+              <button ion-button full (click)="clear()"
+                [disabled]="!insumoComponent.itemsToConfirm.length">
+                Limpar e sair
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button full (click)="toggleItems()">
+                {{insumoComponent.itemsToConfirm.length ? 'Limpa' : 'Seleciona'}}
+                Todos
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button full (click)="confirm()">
+                {{insumoComponent.confirmButtonText}}
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-toolbar>
       </ng-template>
 
     </ionic-selectable>

@@ -22,5 +22,6 @@ export interface InsumoNewDTO{
     localizacoes: LocalizacaoDTO[];
     precisairradiacao: boolean;
     precisacontrolequalidade: boolean;
+    controlado: boolean;
     
 }

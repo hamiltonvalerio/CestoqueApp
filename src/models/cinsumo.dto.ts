@@ -1,3 +1,4 @@
+import { OrgaoDTO } from './orgao.dto';
 import { InsumoArquivoDTO } from './insumoarquivo.dto';
 import { CategoriaDTO } from './categoria.dto';
 import { InsumoDTO } from './insumo.dto';
@@ -23,6 +24,8 @@ export class CInsumoDTO implements InsumoDTO{
     quantidadeTotalAtual: number; 
     precisairradiacao: boolean;
     precisacontrolequalidade: boolean;
+    controlado: boolean;
+    orgaos: OrgaoDTO[];
 
       constructor(insumo: InsumoDTO){
         this.id= insumo.id;
@@ -45,6 +48,8 @@ export class CInsumoDTO implements InsumoDTO{
         this.quantidadeTotalAtual = insumo.quantidadeTotalAtual;
         this.precisairradiacao = insumo.precisairradiacao;
         this.precisacontrolequalidade = insumo.precisacontrolequalidade;
+        this.controlado = insumo.controlado;
+        this.orgaos = insumo.orgaos;
     }
 
 

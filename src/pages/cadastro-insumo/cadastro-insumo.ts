@@ -38,6 +38,11 @@ export class CadastroInsumoPage {
 
   unidades : UnidadeDTO[] = [];
   unidade: UnidadeDTO;
+
+  editarInsumo: boolean = false;
+
+  precisairradiacao1: boolean = false;
+  precisacontrolequalidade1: boolean = false;
   
   constructor(
     public navCtrl: NavController, 
@@ -59,11 +64,14 @@ export class CadastroInsumoPage {
         codigoalmox: ['',],
         observacao: ['',],
         essencial: [false,],
+        controlado: [false,],
         datavalidade: [,],
         quantidade: [,],
         taxadeconsumo: [,],
         categorias: this.formControl,
         unidade: ['',],
+        precisairradiacao: [false,], 
+        precisacontrolequalidade: [false,],
 
         //codigo_barra: [,],
         //qrcode: [,],
@@ -77,9 +85,10 @@ export class CadastroInsumoPage {
     this.loadUnidades();
     this.itemId = this.navParams.get('itemId');
     if(this.itemId != null){
+      this.editarInsumo = true;
       this.insumoService.findInsumoById(this.itemId).subscribe((resp) => {
         this.updateInsumoDTO = resp;
-        console.log(this.updateInsumoDTO.categorias);
+        console.log(this.updateInsumoDTO);
         this.formGroup = this.formBuilder.group({
           id: [this.updateInsumoDTO.id,''],
           nome: [this.updateInsumoDTO.nome,''],
@@ -88,17 +97,20 @@ export class CadastroInsumoPage {
           codigoalmox: [this.updateInsumoDTO.codigoalmox,],
           observacao: [this.updateInsumoDTO.observacao,''],
           essencial: [this.updateInsumoDTO.essencial,''],
+          controlado: [this.updateInsumoDTO.controlado,''],
           datavalidade: [this.updateInsumoDTO.datavalidade,],
           quantidade: [this.updateInsumoDTO.quantidade,''],
           taxadeconsumo: [this.updateInsumoDTO.taxadeconsumo,],
           categorias: [this.updateInsumoDTO.categorias,],
           unidade: [this.updateInsumoDTO.unidade,],
+          precisairradiacao: [this.updateInsumoDTO.precisairradiacao,''], 
+          precisacontrolequalidade: [this.updateInsumoDTO.precisacontrolequalidade,''],
         }, {}); 
       });
       
     }
     
-  }
+  }//[formControl]="wsForm.controls['wsQuestion1']"
 
   insereunidadeEntradaDTO(event: {
     component: IonicSelectableComponent,

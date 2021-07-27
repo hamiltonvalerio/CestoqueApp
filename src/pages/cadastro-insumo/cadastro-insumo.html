@@ -71,7 +71,7 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>Código Almoxarifado</ion-label>
-      <ion-input formControlName="codigoalmox" type="number"></ion-input>
+      <ion-input formControlName="codigoalmox" type="number" [readonly]="editarInsumo"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Observação</ion-label>
@@ -82,16 +82,16 @@
       <ion-toggle formControlName="essencial" ></ion-toggle>
     </ion-item>
     <ion-item>
+      <ion-label stacked>Controlado?</ion-label>
+      <ion-toggle formControlName="controlado" ></ion-toggle>
+    </ion-item>
+    <ion-item>
       <ion-label stacked>Data de Validade</ion-label>
       <ion-datetime disabled formControlName="datavalidade" ></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label stacked>Quantidade</ion-label>
       <ion-input disabled formControlName="quantidade" type="number"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label >Quantidade Recebida</ion-label>
-      <ion-input type="number" formControlName="quantidade"> </ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Unidade de Entrada</ion-label>
@@ -122,6 +122,38 @@
   
       </ionic-selectable>
     </ion-item>
+
+    <ion-list radio-group
+    [formControl]="formGroup.controls.precisairradiacao" >
+    <ion-list-header>
+      Precisa de Irradiação?
+    </ion-list-header>
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio value="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio value="false"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <ion-list radio-group 
+    [formControl]="formGroup.controls.precisacontrolequalidade">
+    <ion-list-header>
+      Precisa de Controle da Qualidade?
+    </ion-list-header>
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio value="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio value="false"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+
     <ion-item>
       <ion-label stacked>Taxa de Consumo</ion-label>
       <ion-input formControlName="taxadeconsumo" type="number"></ion-input>

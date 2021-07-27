@@ -1,17 +1,17 @@
 webpackJsonp([2],{
 
-/***/ 710:
+/***/ 709:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroInsumoPageModule", function() { return CadastroInsumoPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(740);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__ = __webpack_require__(741);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_insumo__ = __webpack_require__(896);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__ = __webpack_require__(886);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__ = __webpack_require__(887);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -34,7 +34,7 @@ var CadastroInsumoPageModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_4__cadastro_insumo__["a" /* CadastroInsumoPage */]),
-                __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__["a" /* IonicSelectableModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_selectable__["b" /* IonicSelectableModule */],
                 __WEBPACK_IMPORTED_MODULE_0__directives_directives_module__["a" /* DirectivesModule */],
                 __WEBPACK_IMPORTED_MODULE_5_brmasker_ionic_3__["b" /* BrMaskerModule */]
             ],
@@ -47,13 +47,13 @@ var CadastroInsumoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 740:
+/***/ 741:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectivesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(741);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hide_header_hide_header__ = __webpack_require__(742);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -81,7 +81,7 @@ var DirectivesModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 741:
+/***/ 742:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -156,7 +156,7 @@ var HideHeaderDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 886:
+/***/ 887:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -170,7 +170,7 @@ var HideHeaderDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 887:
+/***/ 888:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -506,7 +506,7 @@ BrMaskerIonic3.propDecorators = {
 
 /***/ }),
 
-/***/ 888:
+/***/ 889:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -704,7 +704,7 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_insumo_service__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_brmasker_ionic_3__ = __webpack_require__(886);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_brmasker_ionic_3__ = __webpack_require__(887);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -741,6 +741,9 @@ var CadastroInsumoPage = /** @class */ (function () {
         this.unidadeService = unidadeService;
         this.categoriasInsumos = [];
         this.unidades = [];
+        this.editarInsumo = false;
+        this.precisairradiacao1 = false;
+        this.precisacontrolequalidade1 = false;
         this.formGroup = this.formBuilder.group({
             id: ['', ''],
             nome: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]],
@@ -749,11 +752,14 @@ var CadastroInsumoPage = /** @class */ (function () {
             codigoalmox: ['',],
             observacao: ['',],
             essencial: [false,],
+            controlado: [false,],
             datavalidade: [,],
             quantidade: [,],
             taxadeconsumo: [,],
             categorias: this.formControl,
             unidade: ['',],
+            precisairradiacao: [false,],
+            precisacontrolequalidade: [false,],
         }, {});
     }
     CadastroInsumoPage.prototype.ionViewDidLoad = function () {
@@ -762,9 +768,10 @@ var CadastroInsumoPage = /** @class */ (function () {
         this.loadUnidades();
         this.itemId = this.navParams.get('itemId');
         if (this.itemId != null) {
+            this.editarInsumo = true;
             this.insumoService.findInsumoById(this.itemId).subscribe(function (resp) {
                 _this.updateInsumoDTO = resp;
-                console.log(_this.updateInsumoDTO.categorias);
+                console.log(_this.updateInsumoDTO);
                 _this.formGroup = _this.formBuilder.group({
                     id: [_this.updateInsumoDTO.id, ''],
                     nome: [_this.updateInsumoDTO.nome, ''],
@@ -773,15 +780,18 @@ var CadastroInsumoPage = /** @class */ (function () {
                     codigoalmox: [_this.updateInsumoDTO.codigoalmox,],
                     observacao: [_this.updateInsumoDTO.observacao, ''],
                     essencial: [_this.updateInsumoDTO.essencial, ''],
+                    controlado: [_this.updateInsumoDTO.controlado, ''],
                     datavalidade: [_this.updateInsumoDTO.datavalidade,],
                     quantidade: [_this.updateInsumoDTO.quantidade, ''],
                     taxadeconsumo: [_this.updateInsumoDTO.taxadeconsumo,],
                     categorias: [_this.updateInsumoDTO.categorias,],
                     unidade: [_this.updateInsumoDTO.unidade,],
+                    precisairradiacao: [_this.updateInsumoDTO.precisairradiacao, ''],
+                    precisacontrolequalidade: [_this.updateInsumoDTO.precisacontrolequalidade, ''],
                 }, {});
             });
         }
-    };
+    }; //[formControl]="wsForm.controls['wsQuestion1']"
     CadastroInsumoPage.prototype.insereunidadeEntradaDTO = function (event) {
         this.unidade = event.value;
         //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
@@ -866,7 +876,7 @@ var CadastroInsumoPage = /** @class */ (function () {
     };
     CadastroInsumoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: 'page-cadastro-insumo',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/'<!--\n\n  Generated template for the CadastroInsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">\n\n     <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n      <ion-input formControlName="id" type="hidden"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Nomenclatura*</ion-label>\n\n      <ion-input formControlName="nomenclatura" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>\n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label>Categorias</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="categoriasInsumos"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        formControlName="categorias"\n\n        [hasInfiniteScroll]="true"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="imprimeItem($event)"\n\n        [isMultiple]="true"\n\n        [canClear]="true"\n\n        [placeholder]="\'Selecione a categoria\'">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-item="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{item.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n    \n\n    \n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label stacked>Valor</ion-label>\n\n      <ion-input disabled type="number" formControlName="valor"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Código Almoxarifado</ion-label>\n\n      <ion-input formControlName="codigoalmox" type="number"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Observação</ion-label>\n\n      <ion-textarea formControlName="observacao" type="text"></ion-textarea>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Essencial?</ion-label>\n\n      <ion-toggle formControlName="essencial" ></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Data de Validade</ion-label>\n\n      <ion-datetime disabled formControlName="datavalidade" ></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Quantidade</ion-label>\n\n      <ion-input disabled formControlName="quantidade" type="number"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label >Quantidade Recebida</ion-label>\n\n      <ion-input type="number" formControlName="quantidade"> </ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Unidade de Entrada</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="unidades"\n\n        formControlName="unidade"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="insereunidadeEntradaDTO($event)">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-port="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{port.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-label class="label_14">\n\n              Sigla: {{port.sigla}}\n\n            </ion-label>\n\n          </ion-item>\n\n  \n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Taxa de Consumo</ion-label>\n\n      <ion-input formControlName="taxadeconsumo" type="number"></ion-input>\n\n    </ion-item>\n\n    \n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/,
+            selector: 'page-cadastro-insumo',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/'<!--\n\n  Generated template for the CadastroInsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">\n\n     <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n      <ion-input formControlName="id" type="hidden"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Nomenclatura*</ion-label>\n\n      <ion-input formControlName="nomenclatura" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>\n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label>Categorias</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="categoriasInsumos"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        formControlName="categorias"\n\n        [hasInfiniteScroll]="true"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="imprimeItem($event)"\n\n        [isMultiple]="true"\n\n        [canClear]="true"\n\n        [placeholder]="\'Selecione a categoria\'">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-item="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{item.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n    \n\n    \n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label stacked>Valor</ion-label>\n\n      <ion-input disabled type="number" formControlName="valor"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Código Almoxarifado</ion-label>\n\n      <ion-input formControlName="codigoalmox" type="number" [readonly]="editarInsumo"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Observação</ion-label>\n\n      <ion-textarea formControlName="observacao" type="text"></ion-textarea>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Essencial?</ion-label>\n\n      <ion-toggle formControlName="essencial" ></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Controlado?</ion-label>\n\n      <ion-toggle formControlName="controlado" ></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Data de Validade</ion-label>\n\n      <ion-datetime disabled formControlName="datavalidade" ></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Quantidade</ion-label>\n\n      <ion-input disabled formControlName="quantidade" type="number"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Unidade de Entrada</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="unidades"\n\n        formControlName="unidade"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="insereunidadeEntradaDTO($event)">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-port="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{port.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-label class="label_14">\n\n              Sigla: {{port.sigla}}\n\n            </ion-label>\n\n          </ion-item>\n\n  \n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n\n\n    <ion-list radio-group\n\n    [formControl]="formGroup.controls.precisairradiacao" >\n\n    <ion-list-header>\n\n      Precisa de Irradiação?\n\n    </ion-list-header>\n\n      <ion-item>\n\n        <ion-label>Sim</ion-label>\n\n        <ion-radio value="true"></ion-radio>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label>Não</ion-label>\n\n        <ion-radio value="false"></ion-radio>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list radio-group \n\n    [formControl]="formGroup.controls.precisacontrolequalidade">\n\n    <ion-list-header>\n\n      Precisa de Controle da Qualidade?\n\n    </ion-list-header>\n\n      <ion-item>\n\n        <ion-label>Sim</ion-label>\n\n        <ion-radio value="true"></ion-radio>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label>Não</ion-label>\n\n        <ion-radio value="false"></ion-radio>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label stacked>Taxa de Consumo</ion-label>\n\n      <ion-input formControlName="taxadeconsumo" type="number"></ion-input>\n\n    </ion-item>\n\n    \n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_6_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */],
@@ -894,8 +904,8 @@ var CadastroInsumoPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(887);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(888);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(888);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(889);
 
 
 
@@ -935,9 +945,9 @@ BrMaskerModule.ctorParameters = function () { return []; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(887);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(888);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(888);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(889);
 /* unused harmony namespace reexport */
 
 
