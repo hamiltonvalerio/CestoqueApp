@@ -137,4 +137,27 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item style="text-align: center">
+          <ion-label> <b> ÓRGÃOS/ENTIDADES PARA CONTROLE </b> </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col style="text-align: center">
+        <button
+            ion-button
+            expand="full"
+            color="secondary"
+            (click)="openModalCadastrarOrgao()">
+            CADASTRAR NOVO ÓRGÃO/ENTIDADE
+          </button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let o of orgaos">
+      <ion-col><ion-item style="text-align: center">{{o.nome}}</ion-item></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

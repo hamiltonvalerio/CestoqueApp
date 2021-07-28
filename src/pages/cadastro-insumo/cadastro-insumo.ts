@@ -1,3 +1,5 @@
+import { OrgaoDTO } from './../../models/orgao.dto';
+import { OrgaoService } from './../../services/domain/orgao.service';
 import { UnidadeService } from './../../services/domain/unidade.service';
 import { UnidadeDTO } from './../../models/unidade.dto';
 import { CCategoriaDTO } from './../../models/ccategoria.dto';
@@ -43,6 +45,11 @@ export class CadastroInsumoPage {
 
   precisairradiacao1: boolean = false;
   precisacontrolequalidade1: boolean = false;
+
+  orgaos: OrgaoDTO[];
+  orgaosDesabilitados: OrgaoDTO[];
+
+  toogle: boolean;
   
   constructor(
     public navCtrl: NavController, 
@@ -54,7 +61,8 @@ export class CadastroInsumoPage {
     public categoriaService: CategoriaService,
     public loadingCtrl: LoadingController,
     private brMaskerIonic3: BrMaskerIonic3,
-    public unidadeService: UnidadeService) {
+    public unidadeService: UnidadeService,
+    public orgaoService: OrgaoService) {
 
       this.formGroup = this.formBuilder.group({
         id: ['',''],
@@ -72,23 +80,24 @@ export class CadastroInsumoPage {
         unidade: ['',],
         precisairradiacao: [false,], 
         precisacontrolequalidade: [false,],
+        orgaos: this.formControl,
 
         //codigo_barra: [,],
         //qrcode: [,],
         //rfid: [,],
       }, {});
-
   }
 
   ionViewDidLoad() {
     this.loadCategorias();
     this.loadUnidades();
+    this.loadOrgaos();
+    this.liberaComboOrgao();
     this.itemId = this.navParams.get('itemId');
     if(this.itemId != null){
       this.editarInsumo = true;
       this.insumoService.findInsumoById(this.itemId).subscribe((resp) => {
         this.updateInsumoDTO = resp;
-        console.log(this.updateInsumoDTO);
         this.formGroup = this.formBuilder.group({
           id: [this.updateInsumoDTO.id,''],
           nome: [this.updateInsumoDTO.nome,''],
@@ -105,20 +114,20 @@ export class CadastroInsumoPage {
           unidade: [this.updateInsumoDTO.unidade,],
           precisairradiacao: [this.updateInsumoDTO.precisairradiacao,''], 
           precisacontrolequalidade: [this.updateInsumoDTO.precisacontrolequalidade,''],
+          orgaos: [this.updateInsumoDTO.orgaos,],
         }, {}); 
       });
       
     }
     
-  }//[formControl]="wsForm.controls['wsQuestion1']"
+    
+  }
 
   insereunidadeEntradaDTO(event: {
     component: IonicSelectableComponent,
     value: any
   }) {
    this.unidade = event.value;
-
-   //console.log('insereInsumoEntradaDTO::', this.citensEntrada);
   }
 
   loadCategorias(){
@@ -136,6 +145,13 @@ export class CadastroInsumoPage {
       loader.dismiss();
     });
       
+  }
+
+  loadOrgaos(){
+    this.orgaoService.findAll()
+    .subscribe(response => {
+      this.orgaos = response.sort();
+    })
   }
 
   presentLoading() {
@@ -209,5 +225,8 @@ export class CadastroInsumoPage {
     //this.citemInsumo = event.value;
   }
 
+  liberaComboOrgao() {
+   
+  }
 
 }

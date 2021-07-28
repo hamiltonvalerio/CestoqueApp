@@ -41,7 +41,7 @@
     <ion-row><ion-col><ion-label></ion-label></ion-col></ion-row>
     <ion-row>
       <ion-col col-4 class="cell-class">
-       {{insumoEntradaDTO != null?"Data e Hora da entrada: "+insumoEntradaDTO.entrada.dataEntrada:"" }}
+       {{insumoEntradaDTO != null?"Data e Hora da entrada: "+insumoEntradaDTO.entrada.dataEntrada.toString():"" }}
       </ion-col>
       <ion-col col-4 class="cell-class">
         {{insumoEntradaDTO != null?"Localização de entrada: "+insumoEntradaDTO.entrada.localizacao.nome:"" }}

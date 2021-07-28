@@ -15,4 +15,5 @@ export interface EntradaDTO{
     localizacao: LocalizacaoDTO;
     loteRecebimento: string;
     arquivos: EntradaArquivoDTO[];
+    usualt: string;
 }

@@ -1,3 +1,5 @@
+import { OrgaoDTO } from './../../models/orgao.dto';
+import { OrgaoService } from './../../services/domain/orgao.service';
 import { PaginasEnum } from './../../enums/paginas.enum';
 import { ColaboradorService } from './../../services/domain/colaborador.service';
 import { ColaboradorDTO } from './../../models/colaborador.dto';
@@ -23,6 +25,7 @@ export class AdministracaoPage {
 
   perfis: PerfilDTO[];
   colaboradores: ColaboradorDTO[] = [];
+  orgaos: OrgaoDTO[];
 
   show: Boolean = false;
 
@@ -34,7 +37,8 @@ export class AdministracaoPage {
     public perfilService: PerfilService,
     public modalCtrl: ModalController,
     public viewCtrl: ViewController,
-    public colaboradorService: ColaboradorService) {
+    public colaboradorService: ColaboradorService,
+    public orgaoService: OrgaoService) {
   }
 
   
@@ -44,6 +48,7 @@ export class AdministracaoPage {
     this.loadPerfis();
     this.loadColaboradores();
     this.loadEnumPaginas();
+    this.loadOrgaos();
   }
 
   loadEnumPaginas(){
@@ -66,9 +71,15 @@ export class AdministracaoPage {
     this.colaboradorService.findAll()
     .subscribe(response => {
       this.colaboradores = response.sort();
-      console.log(this.colaboradores);
     },
     error => {})
+  }
+
+  loadOrgaos(){
+    this.orgaoService.findAll()
+    .subscribe(response => {
+      this.orgaos = response.sort();
+    })
   }
 
   dismiss() {
@@ -129,6 +140,14 @@ export class AdministracaoPage {
       this.loadPerfis();
       this.loadColaboradores();
       this.loadEnumPaginas();
+    });
+    modal.present();
+  }
+
+  openModalCadastrarOrgao(){
+    let modal = this.modalCtrl.create('CadastroOrgaoPage');
+    modal.onDidDismiss(() => {
+      this.loadOrgaos();
     });
     modal.present();
   }

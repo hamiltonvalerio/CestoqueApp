@@ -1,3 +1,4 @@
+import { OrgaoService } from './../../services/domain/orgao.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
@@ -22,7 +23,8 @@ export class CadastroOrgaoPage {
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public alertCtrl: AlertController,
-    public formBuilder: FormBuilder,) {
+    public formBuilder: FormBuilder,
+    public orgaoService: OrgaoService,) {
 
       this.formGroup = this.formBuilder.group({
         nome: ['',[Validators.required]],
@@ -56,9 +58,9 @@ export class CadastroOrgaoPage {
   }
 
   cadastrarOrgao(){
-    /*this.categoriaService.insert(this.formGroup.value).subscribe(response => {
+    this.orgaoService.insert(this.formGroup.value).subscribe(response => {
       this.showInserOk();
     },
-    error => {});*/
+    error => {});
   }
 }

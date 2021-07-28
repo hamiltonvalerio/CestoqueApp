@@ -83,7 +83,33 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>Controlado?</ion-label>
-      <ion-toggle formControlName="controlado" ></ion-toggle>
+      <ion-toggle formControlName="controlado"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked >Órgão/Entidade Controlador</ion-label>
+      <ionic-selectable 
+        item-content 
+        [items]="orgaos"
+        itemValueField="id"
+        itemTextField="nome"
+        formControlName="orgaos"
+        [hasInfiniteScroll]="true"
+        [canSearch]="true"
+        [focusSearchbar]="true"
+        (onChange)="imprimeItem($event)"
+        [isMultiple]="true"
+        [canClear]="true">
+  
+        <ng-template ionicSelectableItemTemplate let-item="item">
+         
+          <ion-item>
+            <ion-label text-wrap class="label_12_b">
+              {{item.nome}} 
+            </ion-label>
+          </ion-item>
+        </ng-template>
+  
+      </ionic-selectable>
     </ion-item>
     <ion-item>
       <ion-label stacked>Data de Validade</ion-label>
