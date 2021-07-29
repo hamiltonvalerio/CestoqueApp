@@ -41,8 +41,8 @@ export interface InsumomovimentacaoDTO extends DadosComunsInsumos{
     posicao: string;
     cas: string;
 
-    usualt: string;
-    datalt: Date;
+    usualt?: string;
+    datalt?: Date;
 
 
 }
