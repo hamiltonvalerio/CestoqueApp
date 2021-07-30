@@ -8,4 +8,10 @@ page-cadastro-movimentacao {
         justify-content: center;
         //height: 2%;
     }
+    .cell-class {
+        border-color: rgb(131, 125, 125); 
+        border-width: .01em; 
+        border-style:solid; margin-bottom : -1px;
+        background-color: lightgrey
+      }
 }

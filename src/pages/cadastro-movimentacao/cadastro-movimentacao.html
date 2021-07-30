@@ -164,37 +164,45 @@
     <ion-icon name="arrow-down"></ion-icon>
     <ion-grid>
      <ion-row>
-      <ion-col >
-       <b>Codigo Almox</b>
-        <p>{{mov.insumo.codigoalmox}}</p>
+      <ion-col class="cell-class">
+       <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Codigo Almox</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.insumo.codigoalmox}}</ion-item>
       </ion-col>
-      <ion-col >
-        <b>Insumo</b>
-        <p>{{mov.insumo.nome}}</p>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Insumo</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.insumo.nome}}</ion-item>
       </ion-col>
-      <ion-col >
-        <b>Lote LEI</b>
-        <p>{{mov.loteLEI}}</p>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Lote LEI</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.loteLEI}}</ion-item>
       </ion-col>
-      <ion-col >
-        <b>Lote Fornecedor</b>
-        <p>{{mov.loteFornecedor}}</p>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Lote Fornecedor</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.loteFornecedor}}</ion-item>
       </ion-col>
-      <ion-col >
-        <b>Lote CR</b>
-        <p>{{mov.loteCR}}</p>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Lote CR</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.loteCR}}</ion-item>
       </ion-col>
-      <ion-col >
-        <b>Lote ARM</b>
-        <p>{{mov.loteARM}} </p>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Lote ARM</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.loteARM}} </ion-item>
       </ion-col>
-      <ion-col >
-        <b>Localização de Destino</b>
-        <p>{{paralocalizacao.nome}}</p>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Localização de Destino</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{paralocalizacao.nome}}</ion-item>
+      </ion-col> 
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Aprovado pelo Controle?</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.aprovado == true?"Sim":mov.aprovado == false?"Não":""}}</ion-item>
       </ion-col>
-      <ion-col >
-        <b>Exc</b>
-        <p><ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon></p>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Irradiado</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }">{{mov.irradiado == true?"Sim":mov.aprovado == false?"Não":""}}</ion-item>
+      </ion-col>
+      <ion-col class="cell-class">
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><b>Exc</b></ion-item>
+        <ion-item style="text-align: center" [ngClass]="{ odd: odd, even: even }"><ion-icon name="close-circle" (click)="excluiItem(mov)"></ion-icon></ion-item>
       </ion-col>
     </ion-row>
   </ion-grid>

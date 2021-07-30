@@ -46,12 +46,12 @@
       <ion-checkbox item-right danger checked formControlName="utilizado"></ion-checkbox>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Esta ligada à uma localização principal?</ion-label>
-      <ion-checkbox item-right danger (click)="validalocalizacaofilha()" checked formControlName="localizacaofilha"></ion-checkbox>
-    </ion-item>
-    <ion-item>
       <ion-label stacked>Esta localização pode gerar sublotes?</ion-label>
       <ion-checkbox item-right danger checked formControlName="gerasublote"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Esta ligada à uma localização principal?</ion-label>
+      <ion-checkbox item-right danger (click)="validalocalizacaofilha()" checked formControlName="localizacaofilha"></ion-checkbox>
     </ion-item>
     <ion-item [hidden]="fieldLocalizacaoFilha">
       <ion-label stacked>Escolha uma localização</ion-label>

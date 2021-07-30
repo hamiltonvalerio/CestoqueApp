@@ -358,6 +358,20 @@ export class CadastroMovimentacaoPage {
     alert.present();
   }
 
+  showQtdVazio2(){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Não é possível inserir movimentação sem quantidade!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+        }
+      ]
+    });
+    alert.present();
+  }
+
   excluiItem(insumomovimentacaoDTO: InsumomovimentacaoDTO){
 
   this.movimentacao.itens.forEach(function(item, index, object) {
