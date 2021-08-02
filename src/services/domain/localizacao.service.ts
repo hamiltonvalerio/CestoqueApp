@@ -15,6 +15,10 @@ export class LocalizacaoService{
         return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes`)
     }
 
+    findByAprovacaoTrue() : Observable<LocalizacaoDTO[]> {
+        return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/findByAprovacaoTrue`)
+    }
+
     findAllOrderByNome() : Observable<LocalizacaoDTO[]> {
         return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes`)
     }

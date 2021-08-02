@@ -31,7 +31,6 @@ export class UnidadePage {
   }
 
    openModal() {
-    console.log("aqui");
     let modal = this.modalCtrl.create('CadastroUnidadePage');
     modal.onDidDismiss(() => {
       this.getItens();

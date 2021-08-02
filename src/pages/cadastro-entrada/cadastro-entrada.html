@@ -162,7 +162,8 @@
       <ion-col>
         <ion-item>
           <ion-label>Unidade de volume</ion-label>
-          <ionic-selectable
+          <ionic-selectable 
+            #selectUnidadeVolume
             item-content
             [(ngModel)]="unidadeRecebida"
             [items]="unidadesRecebida"
@@ -170,8 +171,10 @@
             itemValueField="id"
             itemTextField="nome"
             [canSearch]="true"
+            [canClear]="true" 
             [focusSearchbar]="true"
             (onChange)="insereunidadeRecebidaDTO($event)">
+            
             <ng-template ionicSelectableItemTemplate let-port="item">
               <ion-item>
                 <ion-label text-wrap class="label_12_b">
@@ -182,6 +185,7 @@
                 <ion-label class="label_14"> Sigla: {{port.sigla}} </ion-label>
               </ion-item>
             </ng-template>
+
           </ionic-selectable>
         </ion-item>
       </ion-col>
@@ -198,6 +202,7 @@
         <ion-item>
           <ion-label>Unidade de Entrada</ion-label>
           <ionic-selectable
+            #selectUnidadeEntrada
             item-content
             [(ngModel)]="unidadeEntrada"
             [items]="unidadesEntrada"
@@ -205,6 +210,7 @@
             itemValueField="id"
             itemTextField="nome"
             [canSearch]="true"
+            [canClear]="true" 
             [focusSearchbar]="true"
             (onChange)="insereunidadeEntradaDTO($event)">
             <ng-template ionicSelectableItemTemplate let-port="item">
