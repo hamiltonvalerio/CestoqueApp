@@ -1,3 +1,27 @@
 page-controle {
+    .cell-class {
+        border-color: rgb(131, 125, 125); 
+        border-width: .01em; 
+        border-style:solid; 
+        margin-bottom : -1px;
+        background-color: lightgrey
+      }
+
+      .my-label {
+        font-size: 2em;
+      }
+
+      .alinha_itens_center {
+        text-align: center;
+      }
+
+      .cell-class-icon {
+        border-color: rgb(131, 125, 125); 
+        border-width: .01em; 
+        border-style:solid; 
+        margin-bottom : -1px;
+        background-color: lightgrey;
+        text-align: center;
+      }
 
 }

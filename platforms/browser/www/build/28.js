@@ -1,14 +1,15 @@
 webpackJsonp([28],{
 
-/***/ 717:
+/***/ 720:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUnidadePageModule", function() { return CadastroUnidadePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__ = __webpack_require__(906);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ControlePageModule", function() { return ControlePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__controle__ = __webpack_require__(910);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +19,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroUnidadePageModule = /** @class */ (function () {
-    function CadastroUnidadePageModule() {
+
+var ControlePageModule = /** @class */ (function () {
+    function ControlePageModule() {
     }
-    CadastroUnidadePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+    ControlePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */],
+                __WEBPACK_IMPORTED_MODULE_3__controle__["a" /* ControlePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__controle__["a" /* ControlePage */]),
+                __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__["b" /* IonicSelectableModule */],
             ],
         })
-    ], CadastroUnidadePageModule);
-    return CadastroUnidadePageModule;
+    ], ControlePageModule);
+    return ControlePageModule;
 }());
 
-//# sourceMappingURL=cadastro-unidade.module.js.map
+//# sourceMappingURL=controle.module.js.map
 
 /***/ }),
 
-/***/ 906:
+/***/ 910:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUnidadePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(24);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ControlePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -61,68 +64,56 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the CadastroUnidadePage page.
+ * Generated class for the ControlePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CadastroUnidadePage = /** @class */ (function () {
-    function CadastroUnidadePage(navCtrl, viewCtrl, alertCtrl, navParams, formBuilder, unidadeService) {
+var ControlePage = /** @class */ (function () {
+    function ControlePage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, localizacaoService, loadingCtrl) {
         this.navCtrl = navCtrl;
+        this.navParams = navParams;
         this.viewCtrl = viewCtrl;
         this.alertCtrl = alertCtrl;
-        this.navParams = navParams;
         this.formBuilder = formBuilder;
-        this.unidadeService = unidadeService;
-        this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
-            sigla: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
-        }, {});
+        this.localizacaoService = localizacaoService;
+        this.loadingCtrl = loadingCtrl;
+        this.localizacoes = [];
     }
-    CadastroUnidadePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroUnidadePage');
+    ControlePage.prototype.ionViewDidLoad = function () {
+        this.loadLocalizacao();
     };
-    CadastroUnidadePage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    CadastroUnidadePage.prototype.cadastrarUnidade = function () {
+    ControlePage.prototype.loadLocalizacao = function () {
         var _this = this;
-        this.unidadeService.insert(this.formGroup.value).subscribe(function (response) {
-            _this.showInserOk();
-        }, function (error) { });
-    };
-    CadastroUnidadePage.prototype.showInserOk = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
+        var loader = this.presentLoading();
+        this.localizacaoService.findByAprovacaoTrue().subscribe(function (response) {
+            _this.localizacoes = response.sort();
+            loader.dismiss();
         });
-        alert.present();
     };
-    CadastroUnidadePage = __decorate([
+    ControlePage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({
+            content: "Aguarde..."
+        });
+        loader.present();
+        return loader;
+    };
+    ControlePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-cadastro-unidade',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/'<!--\n\n  Generated template for the CadastroUnidadePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Unidade\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  \n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarUnidade()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Sigla*</ion-label>\n\n      <ion-input formControlName="sigla" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.sigla.dirty && formGroup.controls.sigla.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/,
+            selector: 'page-controle',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\controle\controle.html"*/'<!--\n  Generated template for the ControlePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-row>\n      <ion-title>Controle</ion-title>\n      <ionic-selectable\n      item-content\n      [(ngModel)]="localizacao"\n      [items]="localizacoes"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [focusSearchbar]="true"\n      [hasVirtualScroll]="true" \n      placeholder="Localizações">\n      <ng-template\n        ionicSelectableItemTemplate\n        let-port="item"\n        class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b"> {{port.nome}} </ion-label>\n        </ion-item>\n      </ng-template>\n    </ionic-selectable>\n    </ion-row>\n\n\n    \n     \n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  \n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\controle\controle.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__["a" /* UnidadeService */]])
-    ], CadastroUnidadePage);
-    return CadastroUnidadePage;
+            __WEBPACK_IMPORTED_MODULE_0__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */]])
+    ], ControlePage);
+    return ControlePage;
 }());
 
-//# sourceMappingURL=cadastro-unidade.js.map
+//# sourceMappingURL=controle.js.map
 
 /***/ })
 

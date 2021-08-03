@@ -1,3 +1,8 @@
+import { DateNow } from './../../utils/datenow';
+import { DateTimeFormatPipe } from './../../utils/date-time-format';
+import { IonicSelectableComponent } from 'ionic-selectable';
+import { InsumoService } from './../../services/domain/insumo.service';
+import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
 import { FormBuilder } from '@angular/forms';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
@@ -21,6 +26,10 @@ export class ControlePage {
   localizacoes: LocalizacaoDTO[] = [];
   localizacao: LocalizacaoDTO;
 
+  insumosLocalizacao: InsumolocalizacaoDTO[];
+
+  shouldShowCancel: boolean = true;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -28,7 +37,10 @@ export class ControlePage {
     public alertCtrl: AlertController,
     public formBuilder: FormBuilder,
     public localizacaoService: LocalizacaoService,
-    public loadingCtrl: LoadingController,) {
+    public insumoService: InsumoService,
+    public loadingCtrl: LoadingController,
+    public dateTimeFormatPipe: DateTimeFormatPipe,
+    public dateNow: DateNow,) {
 
 
 
@@ -53,5 +65,122 @@ export class ControlePage {
     loader.present();
     return loader;
   }
+
+  carregaObjeto(event: {
+    component: IonicSelectableComponent,
+    value: any
+  }){
+    this.localizacao = event.value;
+    this.carregaInsumos();
+  }
+
+  carregaInsumos(){
+    console.log("lista")
+    console.log(this.insumosLocalizacao)
+    console.log("localizacao")
+    console.log(this.localizacao)
+
+    if(this.localizacao != undefined){
+      let loader = this.presentLoading();
+      this.insumosLocalizacao = [];
+      this.insumoService
+        .findInsumoLocalizacaoByLocalizacao(this.localizacao.id)
+        .subscribe(
+          (response) => {
+            let start = this.insumosLocalizacao.length;
+            this.insumosLocalizacao = this.insumosLocalizacao.concat(
+              response["content"]
+            );
+            this.insumosLocalizacao.forEach((il) => {
+              if(il.dataPrevisaoControle != null){
+                il.dataPrevisaoControle = this.dateTimeFormatPipe.transformhifem(this.dateNow.getDateFormatado(il.dataPrevisaoControle));
+              }
+            })
+            let end = this.insumosLocalizacao.length - 1;
+            console.log(this.insumosLocalizacao)
+            loader.dismiss();
+          },
+          (error) => {
+            loader.dismiss();
+          }
+        );
+    }else{
+      this.showLocalizacaoNulo();
+    }
+  }
+
+  buscaInsumo(ev : any, tipo: string){
+    let val = ev.target.value;
+    if(this.insumosLocalizacao != undefined){
+      if (val && val.trim() != '') {
+          switch (tipo){
+            case 'nome':
+              this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+                return (item.insumo.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
+              })
+            break;
+            case 'codalmox':
+              this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+                return (item.codigoalmoxarifado.toLowerCase().indexOf(val.toLowerCase()) > -1);
+              })
+            break;
+            case 'lotelei':
+              this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+                return (item.loteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1);
+              })
+            break;
+            case 'sublotelei':
+              this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+                return (item.subloteLEI != null?item.subloteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1:"");
+              })
+            break;
+          }
+      }
+    }else{
+      this.showListaVazia();
+    }
+  }
+
+  onCancel(){
+    this.carregaInsumos();
+  }
+
+  showListaVazia(){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Não é possível pesquisar com a lista de insumos vazia!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  showLocalizacaoNulo(){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Localização não pode ser nulo!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  liberarInsumo(){}
+
+  devolverInsumo(){}
+
+  alterarPrevisao(){}
+
 
 }

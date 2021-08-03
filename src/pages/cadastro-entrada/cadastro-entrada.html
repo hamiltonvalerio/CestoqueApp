@@ -171,6 +171,7 @@
             itemValueField="id"
             itemTextField="nome"
             [canSearch]="true"
+            (onOpen)="atualizaListaUnidades()"
             [canClear]="true" 
             [focusSearchbar]="true"
             (onChange)="insereunidadeRecebidaDTO($event)">
@@ -210,9 +211,11 @@
             itemValueField="id"
             itemTextField="nome"
             [canSearch]="true"
+            (onOpen)="atualizaListaUnidades()"
             [canClear]="true" 
             [focusSearchbar]="true"
-            (onChange)="insereunidadeEntradaDTO($event)">
+            (onChange)="insereunidadeEntradaDTO($event)"
+            >
             <ng-template ionicSelectableItemTemplate let-port="item">
               <ion-item>
                 <ion-label text-wrap class="label_12_b">

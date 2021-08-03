@@ -145,6 +145,11 @@ export class CadastroEntradaPage {
     
   }
 
+  atualizaListaUnidades(){
+    console.log("ssss");
+    this.loadUnidades();
+  }
+
   ionViewDidLoad() {
     this.dataEntrada = this.dateNow.getDateNow();
     this.loadData();

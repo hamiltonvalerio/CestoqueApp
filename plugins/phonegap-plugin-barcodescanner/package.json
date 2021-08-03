@@ -5,8 +5,9 @@
   "_integrity": "sha512-WQCDCoH9EQ9WEn2bce+B95jbNJduilAn2Vtske8KfcYAeGu7bdFqRD7zGCLCQao62VwoEwlX0cUvbQ/am12Jwg==",
   "_location": "/phonegap-plugin-barcodescanner",
   "_phantomChildren": {
-    "abbrev": "1.1.1",
-    "osenv": "0.1.5"
+    "glob": "7.1.7",
+    "interpret": "1.4.0",
+    "rechoir": "0.6.2"
   },
   "_requested": {
     "type": "range",

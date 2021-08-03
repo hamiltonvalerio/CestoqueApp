@@ -28300,6 +28300,14 @@ page-cadastro-movimentacao ion-row {
   justify-content: center;
 }
 
+page-cadastro-movimentacao .cell-class {
+  border-color: #837d7d;
+  border-width: .01em;
+  border-style: solid;
+  margin-bottom: -1px;
+  background-color: lightgrey;
+}
+
 .card-vermelho {
   background-color: rgba(255, 0, 0, 0.3);
 }

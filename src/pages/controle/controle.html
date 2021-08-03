@@ -20,7 +20,8 @@
       [canSearch]="true"
       [focusSearchbar]="true"
       [hasVirtualScroll]="true" 
-      placeholder="Localizações">
+      placeholder="Localizações"
+      (onChange)="carregaInsumos($event)">
       <ng-template
         ionicSelectableItemTemplate
         let-port="item"
@@ -31,14 +32,99 @@
       </ng-template>
     </ionic-selectable>
     </ion-row>
-
-
-    
-     
-
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <div >
+        <ion-searchbar
+          placeholder="Busca pelo nome"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'nome')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+      <div >
+        <ion-searchbar
+          placeholder="Busca por cod. almoxarifado"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'codalmox')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+      <div >
+        <ion-searchbar
+          placeholder="Busca por Lote LEI"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'lotelei')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+      <div >
+        <ion-searchbar
+          placeholder="Busca por Lote LEI Principal"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'sublotelei')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+  <ion-row class="alinha_itens_center">
+    <ion-col col-md-1 class="cell-class">
+      <b>COD ALMOX:</b>
+    </ion-col>
+    <ion-col col-md-3 class="cell-class">
+      <b>NOME:</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>QTD:</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>LT FORNECEDOR</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>LT LEI</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>APROVADO</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>IRRADIADO</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>DT PREVISÃO</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>LIBERAR</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
+      <b>DEVOLVER</b>
+    </ion-col>
+  </ion-row>
   
+    <ion-row *ngFor="let ins of insumosLocalizacao">
+      <ion-col col-md-1 class="cell-class"><b>{{ins.codigoalmoxarifado}}</b></ion-col>
+      <ion-col col-md-3 class="cell-class"><b>{{ins.insumo.nome}}</b></ion-col>
+      <ion-col col-md-1 class="cell-class">{{ins.quantidade}} {{ins.unidadeEntrada.nome}}</ion-col>
+      <ion-col col-md-1 class="cell-class">{{ins.loteFornecedor}}</ion-col>
+      <ion-col col-md-1 class="cell-class">{{ins.loteLEI}}</ion-col>
+      <ion-col col-md-1 class="cell-class">{{ins.aprovado}}</ion-col>
+      <ion-col col-md-1 class="cell-class">{{ins.irradiado}}</ion-col>
+      <ion-col col-md-1 class="cell-class" (click)="alterarPrevisao()">
+        {{ins.dataPrevisaoControle | date:'dd/MM/yyyy'}}
+        <ion-icon ios="ios-hammer" md="md-hammer"></ion-icon>
+      </ion-col>
+      <ion-col col-md-1 class="cell-class-icon" >
+          <ion-icon ios="ios-unlock" md="md-unlock" (click)="liberarInsumo()"></ion-icon>
+      </ion-col>
+      <ion-col col-md-1 class="cell-class-icon">
+        <ion-icon ios="ios-repeat" md="md-repeat" (click)="devolverInsumo()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
