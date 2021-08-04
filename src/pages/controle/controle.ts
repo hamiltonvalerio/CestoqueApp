@@ -7,7 +7,7 @@ import { FormBuilder } from '@angular/forms';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController, LoadingController, ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the ControlePage page.
@@ -40,7 +40,8 @@ export class ControlePage {
     public insumoService: InsumoService,
     public loadingCtrl: LoadingController,
     public dateTimeFormatPipe: DateTimeFormatPipe,
-    public dateNow: DateNow,) {
+    public dateNow: DateNow,
+    public modalCtrl: ModalController,) {
 
 
 
@@ -75,11 +76,6 @@ export class ControlePage {
   }
 
   carregaInsumos(){
-    console.log("lista")
-    console.log(this.insumosLocalizacao)
-    console.log("localizacao")
-    console.log(this.localizacao)
-
     if(this.localizacao != undefined){
       let loader = this.presentLoading();
       this.insumosLocalizacao = [];
@@ -97,7 +93,6 @@ export class ControlePage {
               }
             })
             let end = this.insumosLocalizacao.length - 1;
-            console.log(this.insumosLocalizacao)
             loader.dismiss();
           },
           (error) => {
@@ -176,11 +171,25 @@ export class ControlePage {
     alert.present();
   }
 
-  liberarInsumo(){}
+  liberarInsumo(il : InsumolocalizacaoDTO){
+    console.log("liberarInsumo")
+  }
 
-  devolverInsumo(){}
+  receberParaControle(il : InsumolocalizacaoDTO){
+    let modal = this.modalCtrl.create('ReceberNoControlePage',{item : il});
+    modal.onDidDismiss(() => {
+      //this.getItens();
+    });
+    modal.present();
+  }
 
-  alterarPrevisao(){}
+  alterarPrevisao(il : InsumolocalizacaoDTO){
+    let modal = this.modalCtrl.create('AlterarPrevisaoControlePage');
+    modal.onDidDismiss(() => {
+      //this.getItens();
+    });
+    modal.present();
+  }
 
 
 }

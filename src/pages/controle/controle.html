@@ -43,7 +43,8 @@
           placeholder="Busca pelo nome"
           [showCancelButton]="shouldShowCancel"
           (ionInput)="buscaInsumo($event,'nome')"
-          (ionCancel)="onCancel()">
+          (ionCancel)="onCancel()"
+          (ionClear)="onCancel()">
         </ion-searchbar>
       </div>
       <div >
@@ -51,7 +52,8 @@
           placeholder="Busca por cod. almoxarifado"
           [showCancelButton]="shouldShowCancel"
           (ionInput)="buscaInsumo($event,'codalmox')"
-          (ionCancel)="onCancel()">
+          (ionCancel)="onCancel()"
+          (ionClear)="onCancel()">
         </ion-searchbar>
       </div>
       <div >
@@ -59,7 +61,8 @@
           placeholder="Busca por Lote LEI"
           [showCancelButton]="shouldShowCancel"
           (ionInput)="buscaInsumo($event,'lotelei')"
-          (ionCancel)="onCancel()">
+          (ionCancel)="onCancel()"
+          (ionClear)="onCancel()">
         </ion-searchbar>
       </div>
       <div >
@@ -67,11 +70,13 @@
           placeholder="Busca por Lote LEI Principal"
           [showCancelButton]="shouldShowCancel"
           (ionInput)="buscaInsumo($event,'sublotelei')"
-          (ionCancel)="onCancel()">
+          (ionCancel)="onCancel()"
+          (ionClear)="onCancel()">
         </ion-searchbar>
       </div>
     </ion-row>
   </ion-grid>
+ 
   <ion-grid>
   <ion-row class="alinha_itens_center">
     <ion-col col-md-1 class="cell-class">
@@ -96,33 +101,38 @@
       <b>IRRADIADO</b>
     </ion-col>
     <ion-col col-md-1 class="cell-class">
+      <b>RECEBER</b>
+    </ion-col>
+    <ion-col col-md-1 class="cell-class">
       <b>DT PREVISÃO</b>
     </ion-col>
     <ion-col col-md-1 class="cell-class">
       <b>LIBERAR</b>
     </ion-col>
-    <ion-col col-md-1 class="cell-class">
-      <b>DEVOLVER</b>
-    </ion-col>
   </ion-row>
   
     <ion-row *ngFor="let ins of insumosLocalizacao">
-      <ion-col col-md-1 class="cell-class"><b>{{ins.codigoalmoxarifado}}</b></ion-col>
+      <ion-col col-md-1 class="cell-class-icon"><b>{{ins.codigoalmoxarifado}}</b></ion-col>
       <ion-col col-md-3 class="cell-class"><b>{{ins.insumo.nome}}</b></ion-col>
       <ion-col col-md-1 class="cell-class">{{ins.quantidade}} {{ins.unidadeEntrada.nome}}</ion-col>
       <ion-col col-md-1 class="cell-class">{{ins.loteFornecedor}}</ion-col>
       <ion-col col-md-1 class="cell-class">{{ins.loteLEI}}</ion-col>
-      <ion-col col-md-1 class="cell-class">{{ins.aprovado}}</ion-col>
-      <ion-col col-md-1 class="cell-class">{{ins.irradiado}}</ion-col>
-      <ion-col col-md-1 class="cell-class" (click)="alterarPrevisao()">
-        {{ins.dataPrevisaoControle | date:'dd/MM/yyyy'}}
-        <ion-icon ios="ios-hammer" md="md-hammer"></ion-icon>
-      </ion-col>
-      <ion-col col-md-1 class="cell-class-icon" >
-          <ion-icon ios="ios-unlock" md="md-unlock" (click)="liberarInsumo()"></ion-icon>
+      <ion-col col-md-1 class="cell-class-icon">{{ins.aprovado}}</ion-col>
+      <ion-col col-md-1 class="cell-class-icon">{{ins.irradiado}}</ion-col>
+      <ion-col col-md-1 class="cell-class-icon">
+        <button ion-button icon-only (click)="receberParaControle(ins)">
+          <ion-icon ios="ios-cube" md="md-cube"></ion-icon>
+        </button>
       </ion-col>
       <ion-col col-md-1 class="cell-class-icon">
-        <ion-icon ios="ios-repeat" md="md-repeat" (click)="devolverInsumo()"></ion-icon>
+        <button ion-button icon-only (click)="alterarPrevisao(ins)">
+          {{"&nbsp;"+(ins.dataPrevisaoControle | date:'dd/MM/yyyy')+"&nbsp;"}}
+        </button>
+      </ion-col>
+      <ion-col col-md-1 class="cell-class-icon" >
+        <button ion-button icon-only (click)="liberarInsumo(ins)">
+          <ion-icon ios="ios-unlock" md="md-unlock"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
   </ion-grid>

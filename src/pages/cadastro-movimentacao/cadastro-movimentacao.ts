@@ -121,7 +121,6 @@ export class CadastroMovimentacaoPage {
     let loader = this.presentLoading();
     this.localizacaoService.findAllInsumoLocalizacao().subscribe((response) => {
       this.localizacoes = response.sort();
-      console.log(this.localizacoes);
       loader.dismiss();
     });
   }
