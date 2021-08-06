@@ -1,3 +1,4 @@
+import { LocalUserNome } from './../models/local_user_nome';
 import { ColaboradorDTO } from './../models/colaborador.dto';
 import { ColaboradorService } from './domain/colaborador.service';
 import { StorageService } from './storage.service';
@@ -35,7 +36,8 @@ export class AuthService {
         let user : LocalUser = {
             token: tok,
             email: this.jwtHelper.decodeToken(tok).sub,
-            perfis: perfis
+            perfis: perfis,
+            nome: ""
         };
         this.storage.setLocalUser(user);
     }

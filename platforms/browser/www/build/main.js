@@ -1,4 +1,4 @@
-webpackJsonp([38],{
+webpackJsonp([40],{
 
 /***/ 154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -204,8 +204,8 @@ var Constants = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API_CONFIG; });
 var API_CONFIG = {
-    baseUrl: "http://10.0.14.7:8080/cestoque-ipen"
-    //baseUrl: "http://localhost:8080"
+    //baseUrl: "http://10.0.14.7:8080/cestoque-ipen"
+    baseUrl: "http://localhost:8080"
     //baseUrl: "http://localhost:8080/cestoque"
     //baseUrl: "http://192.168.1.107:8080"
 };
@@ -222,151 +222,159 @@ var map = {
 		12
 	],
 	"../pages/ajuste-estoque/ajuste-estoque.module": [
-		709,
+		705,
 		1
 	],
+	"../pages/alterar-previsao-controle/alterar-previsao-controle.module": [
+		706,
+		39
+	],
 	"../pages/alterar-senha/alterar-senha.module": [
+		707,
+		38
+	],
+	"../pages/cadastro-categoria/cadastro-categoria.module": [
 		708,
 		37
 	],
-	"../pages/cadastro-categoria/cadastro-categoria.module": [
-		706,
-		36
-	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
-		705,
+		709,
 		7
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
-		707,
-		35
+		710,
+		36
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
-		712,
+		711,
 		2
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		713,
-		34
+		712,
+		35
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
-		715,
+		713,
 		6
 	],
 	"../pages/cadastro-orgao/cadastro-orgao.module": [
-		710,
-		33
+		714,
+		34
 	],
 	"../pages/cadastro-pagina/cadastro-pagina.module": [
-		711,
-		32
+		715,
+		33
 	],
 	"../pages/cadastro-perfil/cadastro-perfil.module": [
-		714,
-		31
+		717,
+		32
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
+		716,
+		31
+	],
+	"../pages/cadastro-unidade/cadastro-unidade.module": [
 		718,
 		30
 	],
-	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		719,
-		29
-	],
 	"../pages/categorias/categorias.module": [
-		716,
+		719,
 		10
 	],
 	"../pages/controle/controle.module": [
 		720,
-		28
+		29
 	],
 	"../pages/dashboard/dashboard.module": [
-		717,
-		27
+		721,
+		28
 	],
 	"../pages/entrada/entrada.module": [
+		722,
+		27
+	],
+	"../pages/fornecedor/fornecedor.module": [
 		723,
 		26
 	],
-	"../pages/fornecedor/fornecedor.module": [
-		721,
+	"../pages/home/home.module": [
+		724,
 		25
 	],
-	"../pages/home/home.module": [
-		722,
-		24
-	],
 	"../pages/insumo/insumos.module": [
-		724,
+		725,
 		3
 	],
 	"../pages/inventario/inventario.module": [
-		731,
+		726,
 		9
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		725,
+		727,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		727,
+		728,
 		8
 	],
 	"../pages/manual/manual.module": [
-		741,
-		23
+		729,
+		24
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		726,
+		730,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		736,
+		731,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		728,
-		22
+		732,
+		23
 	],
 	"../pages/producao/producao.module": [
-		729,
-		21
+		733,
+		22
 	],
 	"../pages/produto/produto.module": [
-		730,
-		20
+		734,
+		21
 	],
 	"../pages/profile/profile.module": [
-		738,
-		19
+		735,
+		20
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		732,
+		736,
+		19
+	],
+	"../pages/receber-no-controle/receber-no-controle.module": [
+		737,
 		18
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
-		733,
+		738,
 		17
 	],
 	"../pages/saida/saida.module": [
-		734,
+		740,
 		16
 	],
 	"../pages/signup/signup.module": [
-		735,
+		739,
 		15
 	],
 	"../pages/unidade/unidade.module": [
-		737,
+		741,
 		14
 	],
 	"../pages/vincula-pagina-perfil/vincula-pagina-perfil.module": [
-		739,
+		742,
 		11
 	],
 	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
-		740,
+		743,
 		13
 	]
 };
@@ -386,7 +394,7 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 354:
+/***/ 353:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -574,6 +582,55 @@ var LocalizacaoService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateNow; });
+var DateNow = /** @class */ (function () {
+    function DateNow() {
+    }
+    DateNow.prototype.getDateNow = function () {
+        var today = new Date();
+        var date = today.getFullYear() + '-' +
+            (today.getMonth() + 1).toString().padStart(2, '0') + '-' +
+            today.getDate().toString().padStart(2, '0');
+        var time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0');
+        return date + 'T' + time;
+    };
+    DateNow.prototype.getDateFormatado = function (today) {
+        return today.toLocaleString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).replace(/\//g, '-');
+    };
+    DateNow.prototype.getDateFormatadoComHora = function (today) {
+        return today.toLocaleString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        }).replace(/\//g, '-');
+    };
+    DateNow.prototype.addDaysStartingNow = function (days) {
+        var futureDate = new Date();
+        futureDate.setDate(futureDate.getDate() + days);
+        return futureDate;
+    };
+    DateNow.prototype.addDays = function (futureDate, days) {
+        futureDate.setDate(futureDate.getDate() + days);
+        return futureDate;
+    };
+    return DateNow;
+}());
+
+//# sourceMappingURL=datenow.js.map
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateTimeFormatPipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contants__ = __webpack_require__(175);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(34);
@@ -620,7 +677,7 @@ var DateTimeFormatPipe = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 357:
+/***/ 358:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -664,7 +721,7 @@ var UnidadeService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 358:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -708,55 +765,6 @@ var PerfilService = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=perfil.service.js.map
-
-/***/ }),
-
-/***/ 359:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateNow; });
-var DateNow = /** @class */ (function () {
-    function DateNow() {
-    }
-    DateNow.prototype.getDateNow = function () {
-        var today = new Date();
-        var date = today.getFullYear() + '-' +
-            (today.getMonth() + 1).toString().padStart(2, '0') + '-' +
-            today.getDate().toString().padStart(2, '0');
-        var time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0');
-        return date + 'T' + time;
-    };
-    DateNow.prototype.getDateFormatado = function (today) {
-        return today.toLocaleString('pt-BR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }).replace(/\//g, '-');
-    };
-    DateNow.prototype.getDateFormatadoComHora = function (today) {
-        return today.toLocaleString('pt-BR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        }).replace(/\//g, '-');
-    };
-    DateNow.prototype.addDaysStartingNow = function (days) {
-        var futureDate = new Date();
-        futureDate.setDate(futureDate.getDate() + days);
-        return futureDate;
-    };
-    DateNow.prototype.addDays = function (futureDate, days) {
-        futureDate.setDate(futureDate.getDate() + days);
-        return futureDate;
-    };
-    return DateNow;
-}());
-
-//# sourceMappingURL=datenow.js.map
 
 /***/ }),
 
@@ -1151,18 +1159,18 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_orgao_service__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_pagina_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_perfil_para_acesso__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_ajusteestoque_service__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file_transfer_ngx__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_date_format__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_domain_movimentacao_service__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_date_time_format__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_date_time_format__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_entrada_service__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_domain_insumo_service__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_unidade_service__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_domain_insumo_service__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_unidade_service__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_domain_fornecedor_service__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_domain_colaborador_service__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__(156);
@@ -1180,7 +1188,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_domain_localizacao_service__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__ = __webpack_require__(701);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_ionic_selectable__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_ionic_selectable__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_in_app_browser__ = __webpack_require__(369);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_file_ngx__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_file_opener_ngx__ = __webpack_require__(703);
@@ -1241,43 +1249,45 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_20_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_21__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/administracao/administracao.module#AdministracaoPageModule', name: 'AdministracaoPage', segment: 'administracao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ajuste-estoque/ajuste-estoque.module#AjusteEstoquePageModule', name: 'AjusteEstoquePage', segment: 'ajuste-estoque', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-orgao/cadastro-orgao.module#CadastroOrgaoPageModule', name: 'CadastroOrgaoPage', segment: 'cadastro-orgao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/alterar-previsao-controle/alterar-previsao-controle.module#AlterarPrevisaoControlePageModule', name: 'AlterarPrevisaoControlePage', segment: 'alterar-previsao-controle', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-orgao/cadastro-orgao.module#CadastroOrgaoPageModule', name: 'CadastroOrgaoPage', segment: 'cadastro-orgao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/receber-no-controle/receber-no-controle.module#ReceberNoControlePageModule', name: 'ReceberNoControlePage', segment: 'receber-no-controle', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
@@ -1520,7 +1530,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\app\app.html"*/'<ion-menu [content]="content" type="overlay">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content >\n\n   \n\n    <ion-list no-lines >\n\n\n\n      <button menuClose="left" [disabled]="p.disabled" *ngFor="let p of pages" ion-item detail-none  (click)="openPage(p)">\n\n        <div class="center-icons">\n\n          <img style="width: 25px; height: 25px;" [src]="p.img">&nbsp;&nbsp;<b>{{p.title}} </b> \n\n        </div>\n\n      </button>\n\n  \n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\app\app.html"*/'<ion-menu [content]="content" type="overlay">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content >\n\n   \n\n    <ion-list no-lines >\n\n\n\n      <button menuClose="left" [disabled]="p.disabled" *ngFor="let p of pages" ion-item detail-none  (click)="openPage(p)">\n\n        <div class="center-icons">\n\n          <img style="width: 25px; height: 25px;" [src]="p.img">&nbsp;&nbsp;<b>{{p.title}} </b> \n\n        </div>\n\n      </button>\n\n  \n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["p" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* App */],

@@ -36,6 +36,7 @@ export class DashboardPage {
       this.totalinsumos = tot.length;
     })
     this.getPerfisUserLogado();
+    
   }
 
   getPerfisUserLogado(){
@@ -44,6 +45,7 @@ export class DashboardPage {
       this.colaboradorService.findByEmail(localUser.email).subscribe(response => {
         this.colaborador = response;
         localUser.perfis = this.colaborador.perfis;
+        localUser.nome = this.colaborador.nome;
         this.storage.setLocalUser(localUser);
       },
       error => {
@@ -51,8 +53,6 @@ export class DashboardPage {
         console.log(error)
       })
     }
-
-    
   }
 
 }

@@ -1,6 +1,6 @@
 webpackJsonp([9],{
 
-/***/ 731:
+/***/ 726:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InventarioPageModule", function() { return InventarioPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inventario__ = __webpack_require__(923);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inventario__ = __webpack_require__(918);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var InventarioPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 882:
+/***/ 884:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77,12 +77,12 @@ var ConverteListaIonItemDivider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 923:
+/***/ 918:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InventarioPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(882);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__ = __webpack_require__(884);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
@@ -134,7 +134,7 @@ var InventarioPage = /** @class */ (function () {
     };
     InventarioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-inventario',template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\inventario\inventario.html"*/'<!--\n  Generated template for the InventarioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Inventário</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid *ngFor="let item of itensLocalizacoes">\n    <ion-row *ngFor="let l of item.arrayDeItens">\n      <ion-col>\n        <h6>{{l.objlocalizacaofilha != null ? l.objlocalizacaofilha.nome+" => "+ l.nome : l.nome}}</h6>\n      </ion-col>\n      <ion-col col-1>\n        <ion-icon name="search" (click)="openItem(l.id, l.nome, l.atualizaqtdminima, l.aprovacao, l.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\pages\inventario\inventario.html"*/,
+            selector: 'page-inventario',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\inventario\inventario.html"*/'<!--\n\n  Generated template for the InventarioPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Inventário</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-grid *ngFor="let item of itensLocalizacoes">\n\n    <ion-row *ngFor="let l of item.arrayDeItens">\n\n      <ion-col>\n\n        <h6>{{l.objlocalizacaofilha != null ? l.objlocalizacaofilha.nome+" => "+ l.nome : l.nome}}</h6>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="search" (click)="openItem(l.id, l.nome, l.atualizaqtdminima, l.aprovacao, l.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\inventario\inventario.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],

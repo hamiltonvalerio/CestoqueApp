@@ -1,3 +1,4 @@
+import { LocalUser } from './../../models/local_user';
 import { ColaboradorService } from './../../services/domain/colaborador.service';
 import { ColaboradorDTO } from './../../models/colaborador.dto';
 import { StorageService } from './../../services/storage.service';
@@ -24,6 +25,7 @@ export class ReceberNoControlePage {
   il: InsumolocalizacaoDTO;
   formGroup: FormGroup;
   colaborador: ColaboradorDTO;
+  localUser: LocalUser = this.storage.getLocalUser();
 
   constructor(
     public navCtrl: NavController, 
@@ -41,13 +43,10 @@ export class ReceberNoControlePage {
         datarecebimento: [this.dateNow.getDateNow(),''],
       });
      
-     
   }
 
   ionViewDidLoad() {
-    this.carregaColaborador();
     
-   
   }
 
   dismiss() {
@@ -58,12 +57,5 @@ export class ReceberNoControlePage {
 
   }
 
-  carregaColaborador(){
-    this.colaboradorService.findByEmail(this.storage.getLocalUser().email).subscribe(response => {
-      this.colaborador = response;
-    });
-
-    
-  }
-
+  
 }

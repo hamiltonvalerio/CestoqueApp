@@ -20,7 +20,10 @@ export class HomePage {
     senha: ""
   };
 
-  constructor(public navCtrl: NavController, public menu: MenuController, public auth: AuthService) {
+  constructor(
+    public navCtrl: NavController, 
+    public menu: MenuController, 
+    public auth: AuthService) {
 
   }
 
@@ -43,6 +46,9 @@ export class HomePage {
 
   ionViewDidEnter(){
     this.auth.refreshToken().subscribe(response => {
+
+
+
       this.auth.successfullLogin(response.headers.get('Authorization'),[]);
       this.navCtrl.setRoot('DashboardPage');  
     },
@@ -51,7 +57,7 @@ export class HomePage {
 
   login(){
     this.auth.authenticate(this.creds).subscribe(response => {
-      this.auth.successfullLogin(response.headers.get('Authorization'),[]);
+    this.auth.successfullLogin(response.headers.get('Authorization'),[]);
       this.navCtrl.setRoot('DashboardPage');  
     },
     error => {});

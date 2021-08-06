@@ -113,7 +113,8 @@ var AuthService = /** @class */ (function () {
         var user = {
             token: tok,
             email: this.jwtHelper.decodeToken(tok).sub,
-            perfis: perfis
+            perfis: perfis,
+            nome: ""
         };
         this.storage.setLocalUser(user);
     };
@@ -290,19 +291,19 @@ var map = {
 		28
 	],
 	"../pages/entrada/entrada.module": [
-		743,
+		722,
 		27
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		722,
+		723,
 		26
 	],
 	"../pages/home/home.module": [
-		723,
+		724,
 		25
 	],
 	"../pages/insumo/insumos.module": [
-		724,
+		726,
 		3
 	],
 	"../pages/inventario/inventario.module": [
@@ -310,71 +311,71 @@ var map = {
 		9
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		726,
+		727,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		727,
+		728,
 		8
 	],
 	"../pages/manual/manual.module": [
-		728,
+		729,
 		24
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		729,
+		730,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		730,
+		731,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		731,
+		732,
 		23
 	],
 	"../pages/producao/producao.module": [
-		732,
+		733,
 		22
 	],
 	"../pages/produto/produto.module": [
-		733,
+		734,
 		21
 	],
 	"../pages/profile/profile.module": [
-		734,
+		735,
 		20
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		735,
+		736,
 		19
 	],
 	"../pages/receber-no-controle/receber-no-controle.module": [
-		736,
+		737,
 		18
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
-		737,
+		738,
 		17
 	],
 	"../pages/saida/saida.module": [
-		738,
+		739,
 		16
 	],
 	"../pages/signup/signup.module": [
-		739,
+		740,
 		15
 	],
 	"../pages/unidade/unidade.module": [
-		740,
+		741,
 		14
 	],
 	"../pages/vincula-pagina-perfil/vincula-pagina-perfil.module": [
-		741,
+		742,
 		11
 	],
 	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
-		742,
+		743,
 		13
 	]
 };
@@ -582,6 +583,55 @@ var LocalizacaoService = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateNow; });
+var DateNow = /** @class */ (function () {
+    function DateNow() {
+    }
+    DateNow.prototype.getDateNow = function () {
+        var today = new Date();
+        var date = today.getFullYear() + '-' +
+            (today.getMonth() + 1).toString().padStart(2, '0') + '-' +
+            today.getDate().toString().padStart(2, '0');
+        var time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0');
+        return date + 'T' + time;
+    };
+    DateNow.prototype.getDateFormatado = function (today) {
+        return today.toLocaleString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).replace(/\//g, '-');
+    };
+    DateNow.prototype.getDateFormatadoComHora = function (today) {
+        return today.toLocaleString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        }).replace(/\//g, '-');
+    };
+    DateNow.prototype.addDaysStartingNow = function (days) {
+        var futureDate = new Date();
+        futureDate.setDate(futureDate.getDate() + days);
+        return futureDate;
+    };
+    DateNow.prototype.addDays = function (futureDate, days) {
+        futureDate.setDate(futureDate.getDate() + days);
+        return futureDate;
+    };
+    return DateNow;
+}());
+
+//# sourceMappingURL=datenow.js.map
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateTimeFormatPipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contants__ = __webpack_require__(175);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(34);
@@ -625,55 +675,6 @@ var DateTimeFormatPipe = /** @class */ (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_1__angular_common__["d" /* DatePipe */]));
 
 //# sourceMappingURL=date-time-format.js.map
-
-/***/ }),
-
-/***/ 357:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateNow; });
-var DateNow = /** @class */ (function () {
-    function DateNow() {
-    }
-    DateNow.prototype.getDateNow = function () {
-        var today = new Date();
-        var date = today.getFullYear() + '-' +
-            (today.getMonth() + 1).toString().padStart(2, '0') + '-' +
-            today.getDate().toString().padStart(2, '0');
-        var time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0');
-        return date + 'T' + time;
-    };
-    DateNow.prototype.getDateFormatado = function (today) {
-        return today.toLocaleString('pt-BR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }).replace(/\//g, '-');
-    };
-    DateNow.prototype.getDateFormatadoComHora = function (today) {
-        return today.toLocaleString('pt-BR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        }).replace(/\//g, '-');
-    };
-    DateNow.prototype.addDaysStartingNow = function (days) {
-        var futureDate = new Date();
-        futureDate.setDate(futureDate.getDate() + days);
-        return futureDate;
-    };
-    DateNow.prototype.addDays = function (futureDate, days) {
-        futureDate.setDate(futureDate.getDate() + days);
-        return futureDate;
-    };
-    return DateNow;
-}());
-
-//# sourceMappingURL=datenow.js.map
 
 /***/ }),
 
@@ -1162,12 +1163,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_perfil_service__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_pagina_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_perfil_para_acesso__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_ajusteestoque_service__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file_transfer_ngx__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_date_format__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_domain_movimentacao_service__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_date_time_format__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_date_time_format__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_entrada_service__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_domain_insumo_service__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_domain_unidade_service__ = __webpack_require__(358);
@@ -1266,10 +1267,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
@@ -1286,8 +1288,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
@@ -1530,7 +1531,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\app\app.html"*/'<ion-menu [content]="content" type="overlay">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content >\n\n   \n\n    <ion-list no-lines >\n\n\n\n      <button menuClose="left" [disabled]="p.disabled" *ngFor="let p of pages" ion-item detail-none  (click)="openPage(p)">\n\n        <div class="center-icons">\n\n          <img style="width: 25px; height: 25px;" [src]="p.img">&nbsp;&nbsp;<b>{{p.title}} </b> \n\n        </div>\n\n      </button>\n\n  \n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Desenvolvimento_ipen_ionic\CestoqueApp\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\app\app.html"*/'<ion-menu [content]="content" type="overlay">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content >\n\n   \n\n    <ion-list no-lines >\n\n\n\n      <button menuClose="left" [disabled]="p.disabled" *ngFor="let p of pages" ion-item detail-none  (click)="openPage(p)">\n\n        <div class="center-icons">\n\n          <img style="width: 25px; height: 25px;" [src]="p.img">&nbsp;&nbsp;<b>{{p.title}} </b> \n\n        </div>\n\n      </button>\n\n  \n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["p" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* App */],
