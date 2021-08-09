@@ -52,3 +52,23 @@
   .even{
     background-color: rgb(192, 243, 157);
   }
+
+  .card-vermelho {
+    background-color: rgba(255, 0, 0, 0.3); // black
+    //box-shadow: none;
+  }
+
+  .card-amarelo {
+      background-color: rgba(255, 255, 153, 0.6); // black
+      //box-shadow: none;
+    }
+
+  .card-verde {
+      background-color: rgba(0, 255, 0, 0.3); // black
+      //box-shadow: none;
+  }
+
+  .card-azul {
+      background-color:rgba(0, 0, 255, 0.3); // black
+      //box-shadow: none;
+  }

@@ -473,6 +473,7 @@ var CadastroEntradaPage = /** @class */ (function () {
     };
     CadastroEntradaPage.prototype.inserirEntrada = function () {
         var _this = this;
+        this.botaoEntrada = true;
         this.entrada = {};
         this.citensnovaentrada.forEach(function (item, index, object) {
             if (item.loteFornecedor === null || item.loteFornecedor === "") {

@@ -56,9 +56,15 @@
         </div>
       </ion-row>
     </ion-grid>
-
+    <ion-grid>
+      <ion-row>
+        <ion-col col-md-1 class="card-vermelho" style="display: flex; justify-content: center; align-items: center;"><b>reprovado</b></ion-col>
+        <ion-col col-md-1 class="card-amarelo" style="display: flex; justify-content: center; align-items: center;"><b>quarentena</b></ion-col>
+        <ion-col col-md-1 class="card-verde" style="display: flex; justify-content: center; align-items: center;"><b>aprovado</b></ion-col>
+      </ion-row>   
+    </ion-grid>
     <ion-grid *ngFor="let ins of insumosLocalizacao">
-      <ion-row justify-content-center align-items-center>
+      <ion-row justify-content-center align-items-center class="{{ins.farol}}">
         <ion-col><div><b>{{ins.insumo.nome}}</b></div></ion-col>
         <ion-col><div><b>{{"Cod. Almox: "+ins.codigoalmoxarifado}}</b></div></ion-col>
       </ion-row>

@@ -198,48 +198,99 @@ export class CadastroMovimentacaoPage {
       return;
     }
 
-
     this.movimentacao = {} as any; 
     let itensInsumosMovimentacao : InsumomovimentacaoDTO[] = [];
-
     this.de = this.localizacao;
     this.movimentacao.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
-    this.insumosLocalizacoesSelecionados.forEach(function (value){
-      let itemMov : InsumomovimentacaoDTO = {
-        insumo: value.insumo, 
-        quantidadeOrigem: value.quantidade,
-        quantidadeMovimentada: 0,
-        loteFornecedor: value.loteFornecedor,
-        loteCR: value.loteCR,
-        loteProducao: value.loteProducao,
-        dataIrradiacao: value.dataIrradiacao,
-        dataValidade: value.dataValidade,
-        dataAprovacao: value.dataAprovacao,
-        dataReproprovacao: value.dataReproprovacao,
-        aprovado: value.aprovado,
-        fieldsGarantiaQualidade: true,
-        loteRecebimento: value.loteRecebimento,
-        loteLEI: value.loteLEI,
-        loteARM: value.loteARM,
-        irradiado: value.irradiado,
-        subloteLEI: value.subloteLEI,
-        unidadeRecebida: value.unidadeRecebida,
-        quantidadeVolume: value.quantidadeVolume,
-        unidadeEntrada: value.unidadeEntrada,
 
-        condambamostragemgc: value.condambamostragemgc,
-        condambamostragemur: value.condambamostragemur,
-        quantidadeDescartada: value.quantidadeDescartada,
-
-        show: null,
-
-        armario: value.armario,
-        posicao: value.posicao,
-        cas: value.cas,
-      };
-      itensInsumosMovimentacao.push(itemMov);
+    const confirm = this.alertCtrl.create({
+      title: 'QUANTIDADES',
+      message: 'Deseja incluir as quantidades totais nos insumos para movimentação?',
+      buttons: [
+        {
+          text: 'Não',
+          handler: () => {
+            this.insumosLocalizacoesSelecionados.forEach(function (value){
+              let itemMov : InsumomovimentacaoDTO = {
+                insumo: value.insumo, 
+                quantidadeOrigem: value.quantidade,
+                quantidadeMovimentada: 0,
+                loteFornecedor: value.loteFornecedor,
+                loteCR: value.loteCR,
+                loteProducao: value.loteProducao,
+                dataIrradiacao: value.dataIrradiacao,
+                dataValidade: value.dataValidade,
+                dataAprovacao: value.dataAprovacao,
+                dataReproprovacao: value.dataReproprovacao,
+                aprovado: value.aprovado,
+                fieldsGarantiaQualidade: true,
+                loteRecebimento: value.loteRecebimento,
+                loteLEI: value.loteLEI,
+                loteARM: value.loteARM,
+                irradiado: value.irradiado,
+                subloteLEI: value.subloteLEI,
+                unidadeRecebida: value.unidadeRecebida,
+                quantidadeVolume: value.quantidadeVolume,
+                unidadeEntrada: value.unidadeEntrada,
+        
+                condambamostragemgc: value.condambamostragemgc,
+                condambamostragemur: value.condambamostragemur,
+                quantidadeDescartada: value.quantidadeDescartada,
+        
+                show: null,
+        
+                armario: value.armario,
+                posicao: value.posicao,
+                cas: value.cas,
+              };
+              itensInsumosMovimentacao.push(itemMov);
+            });
+          }
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            this.insumosLocalizacoesSelecionados.forEach(function (value){
+              let itemMov : InsumomovimentacaoDTO = {
+                insumo: value.insumo, 
+                quantidadeOrigem: value.quantidade,
+                quantidadeMovimentada: value.quantidade,
+                loteFornecedor: value.loteFornecedor,
+                loteCR: value.loteCR,
+                loteProducao: value.loteProducao,
+                dataIrradiacao: value.dataIrradiacao,
+                dataValidade: value.dataValidade,
+                dataAprovacao: value.dataAprovacao,
+                dataReproprovacao: value.dataReproprovacao,
+                aprovado: value.aprovado,
+                fieldsGarantiaQualidade: true,
+                loteRecebimento: value.loteRecebimento,
+                loteLEI: value.loteLEI,
+                loteARM: value.loteARM,
+                irradiado: value.irradiado,
+                subloteLEI: value.subloteLEI,
+                unidadeRecebida: value.unidadeRecebida,
+                quantidadeVolume: value.quantidadeVolume,
+                unidadeEntrada: value.unidadeEntrada,
+        
+                condambamostragemgc: value.condambamostragemgc,
+                condambamostragemur: value.condambamostragemur,
+                quantidadeDescartada: value.quantidadeDescartada,
+        
+                show: null,
+        
+                armario: value.armario,
+                posicao: value.posicao,
+                cas: value.cas,
+              };
+              itensInsumosMovimentacao.push(itemMov);
+            });
+          }
+        }
+      ]
     });
-    
+    confirm.present();
+
     this.movimentacao.localizacaoOrigem = this.localizacao;
     if(this.localizacao.aprovacao === true){
       this.fieldsGarantiaQualidade = false;
@@ -253,6 +304,7 @@ export class CadastroMovimentacaoPage {
   }
 
   inserirMovimentacao(){
+    this.botaoMovimenta = true;
     let qtdvazio : boolean = false;
     let qtdacimaorigem : boolean = false;
     this.mov  = {} as any;

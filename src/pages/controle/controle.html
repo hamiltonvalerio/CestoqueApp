@@ -76,7 +76,13 @@
       </div>
     </ion-row>
   </ion-grid>
- 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-1 class="card-vermelho" style="display: flex; justify-content: center; align-items: center;"><b>reprovado</b></ion-col>
+      <ion-col col-md-1 class="card-amarelo" style="display: flex; justify-content: center; align-items: center;"><b>quarentena</b></ion-col>
+      <ion-col col-md-1 class="card-verde" style="display: flex; justify-content: center; align-items: center;"><b>aprovado</b></ion-col>
+    </ion-row>   
+  </ion-grid>
   <ion-grid>
   <ion-row class="alinha_itens_center">
     <ion-col col-md-1 class="cell-class">
@@ -112,12 +118,18 @@
   </ion-row>
   
     <ion-row *ngFor="let ins of insumosLocalizacao">
-      <ion-col col-md-1 class="cell-class-icon"><b>{{ins.codigoalmoxarifado}}</b></ion-col>
+      <ion-col col-md-1 class="{{ins.farol}}" style="
+        border-color: rgb(131, 125, 125); 
+        border-width: .01em; 
+        border-style:solid; 
+        display: flex; 
+        justify-content: center;
+        align-items: center;"><b>{{ins.codigoalmoxarifado}}</b></ion-col>
       <ion-col col-md-3 class="cell-class"><b>{{ins.insumo.nome}}</b></ion-col>
       <ion-col col-md-1 class="cell-class">{{ins.quantidade}} {{ins.unidadeEntrada.nome}}</ion-col>
       <ion-col col-md-1 class="cell-class">{{ins.loteFornecedor}}</ion-col>
       <ion-col col-md-1 class="cell-class">{{ins.loteLEI}}</ion-col>
-      <ion-col col-md-1 class="cell-class-icon">{{ins.aprovado}}</ion-col>
+      <ion-col col-md-1 class="cell-class-icon">{{ins.aprovado != null ? ins.aprovado== true ? "SIM":"NÃO":""}}</ion-col>
       <ion-col col-md-1 class="cell-class-icon">{{ins.irradiado}}</ion-col>
       <ion-col col-md-1 class="cell-class-icon">
         <button ion-button icon-only (click)="receberParaControle(ins)">

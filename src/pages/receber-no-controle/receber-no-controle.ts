@@ -54,7 +54,25 @@ export class ReceberNoControlePage {
   }
 
   receberInsumo(){
-
+    const confirm = this.alertCtrl.create({
+      title: 'Receber Insumo',
+      message: '',
+      buttons: [
+        {
+          text: 'Não',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
   

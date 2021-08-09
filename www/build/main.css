@@ -28252,6 +28252,22 @@ ion-navbar.toolbar {
   background-color: #c0f39d;
 }
 
+.card-vermelho {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.card-amarelo {
+  background-color: rgba(255, 255, 153, 0.6);
+}
+
+.card-verde {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+.card-azul {
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
 page-administracao .cell-class {
   border-color: #837d7d;
   border-width: .01em;
@@ -28331,22 +28347,6 @@ page-controle .cell-class-icon {
   margin-bottom: -1px;
   background-color: lightgrey;
   text-align: center;
-}
-
-.card-vermelho {
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-.card-amarelo {
-  background-color: rgba(255, 255, 153, 0.6);
-}
-
-.card-verde {
-  background-color: rgba(0, 255, 0, 0.3);
-}
-
-.card-azul {
-  background-color: rgba(0, 0, 255, 0.3);
 }
 
 .center-icons {

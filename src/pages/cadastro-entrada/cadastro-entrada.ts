@@ -441,6 +441,7 @@ export class CadastroEntradaPage {
     }
 
     inserirEntrada(){
+      this.botaoEntrada=true;
       this.entrada = {} as any;    
       this.citensnovaentrada.forEach(function(item, index, object){
         if(item.loteFornecedor === null || item.loteFornecedor === ""){

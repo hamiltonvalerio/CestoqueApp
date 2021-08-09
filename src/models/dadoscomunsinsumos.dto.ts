@@ -5,5 +5,7 @@ interface DadosComunsInsumos{
 	quantidadeDescartada?: number;
 	quantidadeUtilizada?: number;
 	dataPrevisaoControle?: Date;
+	farol?: string;
+	recebidonocontrole?: boolean;
 
 }
