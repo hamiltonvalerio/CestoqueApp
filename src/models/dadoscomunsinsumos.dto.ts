@@ -7,5 +7,6 @@ interface DadosComunsInsumos{
 	dataPrevisaoControle?: Date;
 	farol?: string;
 	recebidonocontrole?: boolean;
-
+	usuariorecebidonocontrole?: string;
+	datarecebidonocontrole?: Date;
 }

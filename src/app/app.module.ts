@@ -41,6 +41,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 
+import { TooltipsModule } from 'ionic-tooltips';
 
 
 
@@ -58,6 +59,7 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
     IonicModule.forRoot(MyApp),
     BrowserAnimationsModule,
     IonicSelectableModule,
+    TooltipsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

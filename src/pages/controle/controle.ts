@@ -92,6 +92,7 @@ export class ControlePage {
                 il.dataPrevisaoControle = this.dateTimeFormatPipe.transformhifem(this.dateNow.getDateFormatado(il.dataPrevisaoControle));
               }
             })
+            console.log( this.insumosLocalizacao)
             let end = this.insumosLocalizacao.length - 1;
             loader.dismiss();
           },
@@ -102,6 +103,7 @@ export class ControlePage {
     }else{
       this.showLocalizacaoNulo();
     }
+    
   }
 
   buscaInsumo(ev : any, tipo: string){

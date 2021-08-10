@@ -1,5 +1,4 @@
 import { ModalQuantidademinimaPage } from './../modal-quantidademinima/modal-quantidademinima';
-import { TooltipsModule } from 'ionic-tooltips';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { LocalizacaoInsumosPage } from './localizacao-insumos';
@@ -10,7 +9,6 @@ import { LocalizacaoInsumosPage } from './localizacao-insumos';
   ],
   imports: [
     IonicPageModule.forChild(LocalizacaoInsumosPage),
-    TooltipsModule.forRoot(),
   ],
   
 })

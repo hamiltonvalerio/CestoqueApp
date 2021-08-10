@@ -132,7 +132,8 @@
       <ion-col col-md-1 class="cell-class-icon">{{ins.aprovado != null ? ins.aprovado== true ? "SIM":"NÃO":""}}</ion-col>
       <ion-col col-md-1 class="cell-class-icon">{{ins.irradiado}}</ion-col>
       <ion-col col-md-1 class="cell-class-icon">
-        <button ion-button icon-only (click)="receberParaControle(ins)">
+        <button [color]="ins.recebidonocontrole != null?ins.recebidonocontrole == true?'dark':'primary':'primary'" ion-button icon-only (click)="receberParaControle(ins)" 
+        tooltip="I'm a tooltip below a button" positionV="bottom" arrow>
           <ion-icon ios="ios-cube" md="md-cube"></ion-icon>
         </button>
       </ion-col>

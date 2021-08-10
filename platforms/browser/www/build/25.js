@@ -1,12 +1,12 @@
 webpackJsonp([25],{
 
-/***/ 724:
+/***/ 729:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__ = __webpack_require__(371);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(916);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -39,9 +39,9 @@ var HomeModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -105,7 +105,9 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'page-home',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\home\home.html"*/'<ion-content>\n\n  <form class="container2">\n\n    <div>\n\n        <h3>Sistema de Controle de Estoque</h3>\n\n        <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>\n\n\n\n\n\n      <ion-item >\n\n        <ion-label stacked>Email</ion-label>\n\n        <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>\n\n      </ion-item>\n\n      <ion-item >\n\n        <ion-label stacked>Senha</ion-label>\n\n        <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>\n\n      </ion-item>\n\n      <button ion-button block (click)="login()">Entrar</button>\n\n      <button ion-button block outline (click)="signup()">Registrar</button>\n\n      <button ion-button block outline (click)="recuperarSenha()">Esqueci a senha</button>\n\n    </div>\n\n  </form>\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* MenuController */],
+            __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
     ], HomePage);
     return HomePage;
 }());

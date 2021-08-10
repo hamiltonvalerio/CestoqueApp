@@ -1,7 +1,9 @@
+import { TooltipsModule } from 'ionic-tooltips';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ControlePage } from './controle';
+
 
 @NgModule({
   declarations: [
@@ -9,7 +11,7 @@ import { ControlePage } from './controle';
   ],
   imports: [
     IonicPageModule.forChild(ControlePage),
-    IonicSelectableModule,
+    IonicSelectableModule
   ],
 })
 export class ControlePageModule {}

@@ -106,5 +106,14 @@ export class InsumoService {
 
     }
 
+    updateRecebimento(insumolocalizacao_id : string, usuario : string){
+        return this.http.post(`${API_CONFIG.baseUrl}/insumolocalizacao/updateRecebimento/?insumolocalizacao_id=${insumolocalizacao_id}&usuario=${usuario}`,
+        {
+            observe: 'response',
+            responseType: 'text'
+
+        });
+    }
+
 
 }

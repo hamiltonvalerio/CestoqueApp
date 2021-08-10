@@ -1,3 +1,4 @@
+import { InsumoService } from './../../services/domain/insumo.service';
 import { LocalUser } from './../../models/local_user';
 import { ColaboradorService } from './../../services/domain/colaborador.service';
 import { ColaboradorDTO } from './../../models/colaborador.dto';
@@ -35,7 +36,8 @@ export class ReceberNoControlePage {
     public formBuilder: FormBuilder,
     public dateNow: DateNow,
     public storage: StorageService,
-    public colaboradorService: ColaboradorService,) {
+    public colaboradorService: ColaboradorService,
+    public insumoService: InsumoService ) {
 
       this.il = navParams.get('item');
 
@@ -67,12 +69,31 @@ export class ReceberNoControlePage {
         {
           text: 'Sim',
           handler: () => {
-            
+            this.insumoService.updateRecebimento(this.il.id, this.storage.getLocalUser().nome).subscribe(resp => {
+              this.showRecebidoOk();
+            });
           }
         }
       ]
     });
     confirm.present();
+  }
+
+  showRecebidoOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Insumo recebido com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   
