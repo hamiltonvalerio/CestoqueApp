@@ -1,3 +1,27 @@
 page-receber-no-controle {
 
+    .cell-class {
+        border-color: rgb(131, 125, 125); 
+        border-width: .01em; 
+        border-style:solid; 
+        margin-bottom : -1px;
+        background-color: lightgrey;
+        font-size: .8em;
+        
+        //padding: .1em;
+      }
+
+      .row-class {
+        padding: 0.1em;
+        
+      }
+
+      .my-label {
+        font-size: 2em;
+      }
+
+      .alinha_itens_center {
+        text-align: center;
+      }
+      
 }

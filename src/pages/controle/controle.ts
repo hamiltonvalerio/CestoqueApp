@@ -186,7 +186,7 @@ export class ControlePage {
   }
 
   alterarPrevisao(il : InsumolocalizacaoDTO){
-    let modal = this.modalCtrl.create('AlterarPrevisaoControlePage');
+    let modal = this.modalCtrl.create('AlterarPrevisaoControlePage',{item : il});
     modal.onDidDismiss(() => {
       //this.getItens();
     });

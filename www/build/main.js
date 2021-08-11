@@ -78,7 +78,7 @@ var ColaboradorService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_api_config__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_jwt__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -192,6 +192,7 @@ var Constants = /** @class */ (function () {
     Constants.DATE_FMT = 'dd/MM/yyyy';
     Constants.DATE_TIME_FMT = Constants.DATE_FMT + " hh:mm";
     Constants.DATE_TIME_FMT_HIFEN_SEM_HORA = 'yyyy-MM-dd';
+    Constants.DATE_TIME_FMT_FULL = 'yyyy-MM-ddThh:mm';
     return Constants;
 }());
 
@@ -239,39 +240,39 @@ var map = {
 		37
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
-		715,
+		714,
 		6
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
-		714,
+		715,
 		36
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
-		716,
+		720,
 		2
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		717,
+		716,
 		35
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
-		718,
+		717,
 		5
 	],
 	"../pages/cadastro-orgao/cadastro-orgao.module": [
-		719,
+		718,
 		34
 	],
 	"../pages/cadastro-pagina/cadastro-pagina.module": [
-		720,
+		719,
 		33
 	],
 	"../pages/cadastro-perfil/cadastro-perfil.module": [
-		722,
+		721,
 		32
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
-		721,
+		722,
 		31
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
@@ -279,11 +280,11 @@ var map = {
 		30
 	],
 	"../pages/categorias/categorias.module": [
-		725,
+		724,
 		9
 	],
 	"../pages/controle/controle.module": [
-		724,
+		725,
 		29
 	],
 	"../pages/dashboard/dashboard.module": [
@@ -315,15 +316,15 @@ var map = {
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		734,
+		733,
 		7
 	],
 	"../pages/manual/manual.module": [
-		733,
+		735,
 		23
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		735,
+		734,
 		4
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
@@ -339,11 +340,11 @@ var map = {
 		21
 	],
 	"../pages/produto/produto.module": [
-		740,
+		739,
 		20
 	],
 	"../pages/profile/profile.module": [
-		739,
+		740,
 		19
 	],
 	"../pages/rastreamento/rastreamento.module": [
@@ -367,7 +368,7 @@ var map = {
 		14
 	],
 	"../pages/unidade/unidade.module": [
-		748,
+		746,
 		13
 	],
 	"../pages/vincula-pagina-perfil/vincula-pagina-perfil.module": [
@@ -375,7 +376,7 @@ var map = {
 		10
 	],
 	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
-		746,
+		748,
 		12
 	]
 };
@@ -499,11 +500,18 @@ var InsumoService = /** @class */ (function () {
             responseType: 'text'
         });
     };
+    InsumoService.prototype.updatePrevisaoControle = function (insumolocalizacao_id, usuario, data) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumolocalizacao/updatePrevisaoControle/?insumolocalizacao_id=" + insumolocalizacao_id + "&usuario=" + usuario + "&data=" + data, {
+            observe: 'response',
+            responseType: 'text'
+        });
+    };
     InsumoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
     ], InsumoService);
     return InsumoService;
+    var _a;
 }());
 
 //# sourceMappingURL=insumo.service.js.map
@@ -666,11 +674,17 @@ var DateTimeFormatPipe = /** @class */ (function (_super) {
     function DateTimeFormatPipe() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    DateTimeFormatPipe.prototype.transformddmmyyyy = function (value, args) {
+        return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_FMT);
+    };
     DateTimeFormatPipe.prototype.transform = function (value, args) {
         return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_TIME_FMT);
     };
     DateTimeFormatPipe.prototype.transformhifem = function (value, args) {
         return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_TIME_FMT_HIFEN_SEM_HORA);
+    };
+    DateTimeFormatPipe.prototype.transformfull = function (value, args) {
+        return _super.prototype.transform.call(this, value, __WEBPACK_IMPORTED_MODULE_0__contants__["a" /* Constants */].DATE_TIME_FMT_FULL);
     };
     DateTimeFormatPipe = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Pipe"])({
@@ -1146,13 +1160,13 @@ var AjusteEstoqueService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 374:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(375);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(378);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1160,7 +1174,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 379:
+/***/ 378:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1171,8 +1185,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_perfil_para_acesso__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(359);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_domain_ajusteestoque_service__ = __webpack_require__(369);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file_transfer_ngx__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_date_format__ = __webpack_require__(387);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_file_transfer_ngx__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_date_format__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_domain_movimentacao_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_date_time_format__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_domain_entrada_service__ = __webpack_require__(366);
@@ -1186,20 +1200,20 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__app_component__ = __webpack_require__(703);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__interceptors_error_interceptor__ = __webpack_require__(704);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__app_component__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__interceptors_error_interceptor__ = __webpack_require__(702);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_storage_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__interceptors_auth_interceptor__ = __webpack_require__(705);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__interceptors_auth_interceptor__ = __webpack_require__(703);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_domain_localizacao_service__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_forms__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__ = __webpack_require__(706);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__ = __webpack_require__(704);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_ionic_selectable__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_in_app_browser__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_file_ngx__ = __webpack_require__(372);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_file_opener_ngx__ = __webpack_require__(708);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ionic_tooltips__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_in_app_browser__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_file_ngx__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_file_opener_ngx__ = __webpack_require__(706);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ionic_tooltips__ = __webpack_require__(707);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1262,18 +1276,18 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/alterar-previsao-controle/alterar-previsao-controle.module#AlterarPrevisaoControlePageModule', name: 'AlterarPrevisaoControlePage', segment: 'alterar-previsao-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-orgao/cadastro-orgao.module#CadastroOrgaoPageModule', name: 'CadastroOrgaoPage', segment: 'cadastro-orgao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
@@ -1281,22 +1295,22 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/receber-no-controle/receber-no-controle.module#ReceberNoControlePageModule', name: 'ReceberNoControlePage', segment: 'receber-no-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
@@ -1345,7 +1359,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 380:
+/***/ 379:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1357,7 +1371,7 @@ var STORAGE_KEYS = {
 
 /***/ }),
 
-/***/ 387:
+/***/ 386:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1409,7 +1423,7 @@ var DateFormatPipe = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StorageService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_storage_keys_config__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_storage_keys_config__ = __webpack_require__(379);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1449,7 +1463,7 @@ var StorageService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 703:
+/***/ 701:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1459,8 +1473,8 @@ var StorageService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(354);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1557,7 +1571,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 704:
+/***/ 702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1709,7 +1723,7 @@ var ErrorInterceptorProvider = {
 
 /***/ }),
 
-/***/ 705:
+/***/ 703:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1765,5 +1779,5 @@ var AuthInterceptorProvider = {
 
 /***/ })
 
-},[374]);
+},[373]);
 //# sourceMappingURL=main.js.map

@@ -1,4 +1,12 @@
-import { FormBuilder } from '@angular/forms';
+import { DateTimeFormatPipe } from './../../utils/date-time-format';
+import { LocalUser } from './../../models/local_user';
+import { ColaboradorDTO } from './../../models/colaborador.dto';
+import { InsumoService } from './../../services/domain/insumo.service';
+import { ColaboradorService } from './../../services/domain/colaborador.service';
+import { StorageService } from './../../services/storage.service';
+import { DateNow } from './../../utils/datenow';
+import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
@@ -15,13 +23,29 @@ import { IonicPage, NavController, NavParams, ViewController, AlertController } 
   templateUrl: 'alterar-previsao-controle.html',
 })
 export class AlterarPrevisaoControlePage {
+  
+  il: InsumolocalizacaoDTO;
+  formGroup: FormGroup;
+  colaborador: ColaboradorDTO;
+  localUser: LocalUser = this.storage.getLocalUser();
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public alertCtrl: AlertController,
-    public formBuilder: FormBuilder,) {
+    public formBuilder: FormBuilder,
+    public dateNow: DateNow,
+    public dateTimeFormatPipe: DateTimeFormatPipe,
+    public storage: StorageService,
+    public colaboradorService: ColaboradorService,
+    public insumoService: InsumoService) {
+
+      this.il = navParams.get('item'); 
+      this.formGroup = this.formBuilder.group({
+        dataprevisao: [,[Validators.required]],
+      });
+
   }
 
   ionViewDidLoad() {
@@ -49,8 +73,48 @@ export class AlterarPrevisaoControlePage {
     alert.present();
   }
 
-  alterarData(){
-    
+  alterarPrevisao(){
+    const confirm = this.alertCtrl.create({
+      title: 'Receber Insumo',
+      message: '',
+      buttons: [
+        {
+          text: 'Não',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+        
+            let dat : string = this.formGroup.controls['dataprevisao'].value;
+            console.log(dat)
+            this.insumoService.updatePrevisaoControle(this.il.id, this.storage.getLocalUser().nome, dat).subscribe(resp => {
+              this.showAlteradoOk();
+            });
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  showAlteradoOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Data de previsão alterada com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

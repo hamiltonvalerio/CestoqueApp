@@ -115,5 +115,14 @@ export class InsumoService {
         });
     }
 
+    updatePrevisaoControle(insumolocalizacao_id : string, usuario : string, data: string){
+        return this.http.post(`${API_CONFIG.baseUrl}/insumolocalizacao/updatePrevisaoControle/?insumolocalizacao_id=${insumolocalizacao_id}&usuario=${usuario}&data=${data}`,
+        {
+            observe: 'response',
+            responseType: 'text'
+
+        });
+    }
+
 
 }
