@@ -28,6 +28,7 @@ export class AlterarPrevisaoControlePage {
   formGroup: FormGroup;
   colaborador: ColaboradorDTO;
   localUser: LocalUser = this.storage.getLocalUser();
+  dataprevisao: string;
 
   constructor(
     public navCtrl: NavController, 
@@ -42,14 +43,11 @@ export class AlterarPrevisaoControlePage {
     public insumoService: InsumoService) {
 
       this.il = navParams.get('item'); 
-      this.formGroup = this.formBuilder.group({
-        dataprevisao: [,[Validators.required]],
-      });
-
+  
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AlterarPrevisaoControlePage');
+    
   }
 
   dismiss() {
@@ -74,8 +72,9 @@ export class AlterarPrevisaoControlePage {
   }
 
   alterarPrevisao(){
+    let data : Date = this.dateTimeFormatPipe.transform(this.dataprevisao);
     const confirm = this.alertCtrl.create({
-      title: 'Receber Insumo',
+      title: 'Deseja alterar previsão?',
       message: '',
       buttons: [
         {
@@ -87,10 +86,7 @@ export class AlterarPrevisaoControlePage {
         {
           text: 'Sim',
           handler: () => {
-        
-            let dat : string = this.formGroup.controls['dataprevisao'].value;
-            console.log(dat)
-            this.insumoService.updatePrevisaoControle(this.il.id, this.storage.getLocalUser().nome, dat).subscribe(resp => {
+            this.insumoService.updatePrevisaoControle(this.il.id, this.storage.getLocalUser().nome, data).subscribe(resp => {
               this.showAlteradoOk();
             });
           }

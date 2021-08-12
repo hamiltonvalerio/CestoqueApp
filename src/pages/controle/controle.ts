@@ -92,7 +92,6 @@ export class ControlePage {
                 il.dataPrevisaoControle = this.dateTimeFormatPipe.transformhifem(this.dateNow.getDateFormatado(il.dataPrevisaoControle));
               }
             })
-            console.log( this.insumosLocalizacao)
             let end = this.insumosLocalizacao.length - 1;
             loader.dismiss();
           },
@@ -174,7 +173,12 @@ export class ControlePage {
   }
 
   liberarInsumo(il : InsumolocalizacaoDTO){
-    console.log("liberarInsumo")
+    let modal = this.modalCtrl.create('LiberarInsumoControlePage',{item : il});
+    modal.onDidDismiss(() => {
+      //this.getItens();
+    });
+    modal.present();
+
   }
 
   receberParaControle(il : InsumolocalizacaoDTO){
@@ -188,7 +192,7 @@ export class ControlePage {
   alterarPrevisao(il : InsumolocalizacaoDTO){
     let modal = this.modalCtrl.create('AlterarPrevisaoControlePage',{item : il});
     modal.onDidDismiss(() => {
-      //this.getItens();
+      this.carregaInsumos();
     });
     modal.present();
   }

@@ -1,14 +1,14 @@
 webpackJsonp([24],{
 
-/***/ 730:
+/***/ 732:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiberarInsumoControlePageModule", function() { return LiberarInsumoControlePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(917);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__liberar_insumo_controle__ = __webpack_require__(920);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var InsumoPageModule = /** @class */ (function () {
-    function InsumoPageModule() {
+var LiberarInsumoControlePageModule = /** @class */ (function () {
+    function LiberarInsumoControlePageModule() {
     }
-    InsumoPageModule = __decorate([
+    LiberarInsumoControlePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */],
+                __WEBPACK_IMPORTED_MODULE_2__liberar_insumo_controle__["a" /* LiberarInsumoControlePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__liberar_insumo_controle__["a" /* LiberarInsumoControlePage */]),
             ],
         })
-    ], InsumoPageModule);
-    return InsumoPageModule;
+    ], LiberarInsumoControlePageModule);
+    return LiberarInsumoControlePageModule;
 }());
 
-//# sourceMappingURL=insumos.module.js.map
+//# sourceMappingURL=liberar-insumo-controle.module.js.map
 
 /***/ }),
 
-/***/ 917:
+/***/ 920:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LiberarInsumoControlePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_colaborador_service__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_storage_service__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,128 +63,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
+
+
 /**
- * Generated class for the InsumoPage page.
+ * Generated class for the LiberarInsumoControlePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var InsumosPage = /** @class */ (function () {
-    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl, loadingCtrl) {
+var LiberarInsumoControlePage = /** @class */ (function () {
+    function LiberarInsumoControlePage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, dateNow, dateTimeFormatPipe, storage, colaboradorService, insumoService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.alertCtrl = alertCtrl;
+        this.formBuilder = formBuilder;
+        this.dateNow = dateNow;
+        this.dateTimeFormatPipe = dateTimeFormatPipe;
+        this.storage = storage;
+        this.colaboradorService = colaboradorService;
         this.insumoService = insumoService;
-        this.modalCtrl = modalCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.itensInsumos = [];
-        this.page = 0;
     }
-    InsumosPage.prototype.ionViewDidLoad = function () {
-        this.getItens();
+    LiberarInsumoControlePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LiberarInsumoControlePage');
     };
-    InsumosPage.prototype.openModal = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create('CadastroInsumoPage', { cssClass: 'select-modal' });
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
+    LiberarInsumoControlePage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
     };
-    InsumosPage.prototype.openModalAjuste = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create('AjusteEstoquePage', { cssClass: 'select-modal' });
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
-    };
-    /*getItens(){
-      this.insumoService.findAll()
-      .subscribe(response => {
-        this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
-      },
-      error => {})
-    }*/
-    InsumosPage.prototype.searchInsumo = function (event) {
-        var text = event.srcElement.value;
-        if (!text) {
-            this.getItens();
-        }
-        this.itensInsumos = this.filterPorts(this.itensInsumos, text);
-        console.log("aqui: " + this.itensInsumos);
-    };
-    InsumosPage.prototype.filterPorts = function (ports, text) {
-        return ports.filter(function (port) {
-            return port.nomecodalmox.toLowerCase().indexOf(text) !== -1;
-        });
-    };
-    InsumosPage.prototype.getItens = function () {
-        var _this = this;
-        var loader = this.presentLoading();
-        this.itensInsumos = [];
-        this.insumoService.findTotosPaginado(this.page, 30)
-            .subscribe(function (response) {
-            var start = _this.itensInsumos.length;
-            _this.itensInsumos = _this.itensInsumos.concat(response['content']);
-            var end = _this.itensInsumos.length - 1;
-            //console.log( this.itensInsumos);
-            loader.dismiss();
-        }, function (error) {
-            loader.dismiss();
-        });
-    };
-    InsumosPage.prototype.presentLoading = function () {
-        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
-        loader.present();
-        return loader;
-    };
-    InsumosPage.prototype.doRefresh = function (refresher) {
-        this.page = 0;
-        this.itensInsumos = [];
-        this.getItens();
-        setTimeout(function () {
-            refresher.complete();
-        }, 1000);
-    };
-    InsumosPage.prototype.doInfinite = function (infiniteScroll) {
-        this.page++;
-        this.getItens();
-        setTimeout(function () {
-            infiniteScroll.complete();
-        }, 1000);
-    };
-    InsumosPage.prototype.excluirItem = function (itemId) {
-        this.getItens();
-    };
-    InsumosPage.prototype.editarItem = function (itemId) {
-        var _this = this;
-        var modal = this.modalCtrl.create('CadastroInsumoPage', { itemId: itemId });
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
-    };
-    InsumosPage.prototype.openPdf = function () {
-        this.insumoService.relatorioInsumos().subscribe(function (response) {
-            var file = new Blob([response], { type: 'application/pdf' });
-            var fileURL = URL.createObjectURL(file);
-            window.open(fileURL);
-        });
-    };
-    InsumosPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n\n  Generated template for the InsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="openPdf()" >\n\n        <span ion-text color="primary" showWhen="ios">Pdf</span>\n\n        <ion-icon name="md-document"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModalAjuste()">\n\n        <ion-icon name="hammer"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content></ion-refresher-content>\n\n  </ion-refresher>\n\n\n\n  <ion-list>\n\n    <ion-searchbar showcancelbutton="" (ionInput)="searchInsumo($event)"></ion-searchbar>\n\n    <ion-row *ngFor="let item of itensInsumos">\n\n      <ion-col>\n\n        <h6>Cód: {{item.codigoalmox}}</h6>\n\n        <h3>{{item.nome}}</h3>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="create" (click)="editarItem(item.id)" title="Editar Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluirItem(item.id)" title="Excluir Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-list>\n\n\n\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n  </ion-infinite-scroll>\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/,
+    LiberarInsumoControlePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
+            selector: 'page-liberar-insumo-controle',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\liberar-insumo-controle\liberar-insumo-controle.html"*/'<!--\n  Generated template for the LiberarInsumoControlePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title> Liberar Insumo </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\liberar-insumo-controle\liberar-insumo-controle.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
-    ], InsumosPage);
-    return InsumosPage;
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["q" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["q" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__utils_datenow__["a" /* DateNow */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__utils_datenow__["a" /* DateNow */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__["a" /* DateTimeFormatPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__["a" /* DateTimeFormatPipe */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__services_storage_service__["a" /* StorageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_storage_service__["a" /* StorageService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__services_domain_colaborador_service__["a" /* ColaboradorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_domain_colaborador_service__["a" /* ColaboradorService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _k || Object])
+    ], LiberarInsumoControlePage);
+    return LiberarInsumoControlePage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 }());
 
-//# sourceMappingURL=insumos.js.map
+//# sourceMappingURL=liberar-insumo-controle.js.map
 
 /***/ })
 

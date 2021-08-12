@@ -1,4 +1,4 @@
-webpackJsonp([40],{
+webpackJsonp([41],{
 
 /***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -229,55 +229,55 @@ var map = {
 	],
 	"../pages/alterar-previsao-controle/alterar-previsao-controle.module": [
 		711,
-		39
+		40
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
 		712,
-		38
+		39
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
 		713,
-		37
+		38
 	],
 	"../pages/cadastro-entrada/cadastro-entrada.module": [
-		714,
+		715,
 		6
 	],
 	"../pages/cadastro-fornecedor/cadastro-fornecedor.module": [
-		715,
-		36
+		714,
+		37
 	],
 	"../pages/cadastro-insumo/cadastro-insumo.module": [
-		720,
+		716,
 		2
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		716,
-		35
+		717,
+		36
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
-		717,
+		718,
 		5
 	],
 	"../pages/cadastro-orgao/cadastro-orgao.module": [
-		718,
-		34
+		719,
+		35
 	],
 	"../pages/cadastro-pagina/cadastro-pagina.module": [
-		719,
-		33
+		720,
+		34
 	],
 	"../pages/cadastro-perfil/cadastro-perfil.module": [
 		721,
-		32
+		33
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
 		722,
-		31
+		32
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
 		723,
-		30
+		31
 	],
 	"../pages/categorias/categorias.module": [
 		724,
@@ -285,38 +285,42 @@ var map = {
 	],
 	"../pages/controle/controle.module": [
 		725,
-		29
+		30
 	],
 	"../pages/dashboard/dashboard.module": [
 		726,
-		28
+		29
 	],
 	"../pages/entrada/entrada.module": [
 		727,
-		27
+		28
 	],
 	"../pages/fornecedor/fornecedor.module": [
 		728,
-		26
+		27
 	],
 	"../pages/home/home.module": [
 		729,
-		25
+		26
 	],
 	"../pages/insumo/insumos.module": [
 		730,
-		24
+		25
 	],
 	"../pages/inventario/inventario.module": [
 		731,
 		8
 	],
-	"../pages/localizacao-insumos/localizacao-insumos.module": [
+	"../pages/liberar-insumo-controle/liberar-insumo-controle.module": [
 		732,
+		24
+	],
+	"../pages/localizacao-insumos/localizacao-insumos.module": [
+		733,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		733,
+		734,
 		7
 	],
 	"../pages/manual/manual.module": [
@@ -324,55 +328,55 @@ var map = {
 		23
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		734,
+		736,
 		4
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		736,
+		737,
 		3
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		737,
+		738,
 		22
 	],
 	"../pages/producao/producao.module": [
-		738,
+		739,
 		21
 	],
 	"../pages/produto/produto.module": [
-		739,
+		740,
 		20
 	],
 	"../pages/profile/profile.module": [
-		740,
+		741,
 		19
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		741,
+		742,
 		18
 	],
 	"../pages/receber-no-controle/receber-no-controle.module": [
-		742,
+		743,
 		17
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
-		743,
+		744,
 		16
 	],
 	"../pages/saida/saida.module": [
-		744,
+		745,
 		15
 	],
 	"../pages/signup/signup.module": [
-		745,
+		746,
 		14
 	],
 	"../pages/unidade/unidade.module": [
-		746,
+		747,
 		13
 	],
 	"../pages/vincula-pagina-perfil/vincula-pagina-perfil.module": [
-		747,
+		749,
 		10
 	],
 	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
@@ -508,10 +512,9 @@ var InsumoService = /** @class */ (function () {
     };
     InsumoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
     ], InsumoService);
     return InsumoService;
-    var _a;
 }());
 
 //# sourceMappingURL=insumo.service.js.map
@@ -1276,13 +1279,13 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/alterar-previsao-controle/alterar-previsao-controle.module#AlterarPrevisaoControlePageModule', name: 'AlterarPrevisaoControlePage', segment: 'alterar-previsao-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-orgao/cadastro-orgao.module#CadastroOrgaoPageModule', name: 'CadastroOrgaoPage', segment: 'cadastro-orgao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
@@ -1294,10 +1297,11 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/liberar-insumo-controle/liberar-insumo-controle.module#LiberarInsumoControlePageModule', name: 'LiberarInsumoControlePage', segment: 'liberar-insumo-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
@@ -1309,8 +1313,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
