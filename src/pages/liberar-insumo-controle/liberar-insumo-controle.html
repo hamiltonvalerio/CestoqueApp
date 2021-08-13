@@ -17,5 +17,99 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-item color="item_entrada">
+    <ion-label>Data da liberação</ion-label>
+    <ion-input style="padding-left: 10px" type="datetime-local" [(ngModel)]="datamovimentacao"> </ion-input>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Usuário logado:</ion-label>
+    <ion-label style="text-align: right;"><b>{{localUser.nome}}</b></ion-label>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Insumo:</ion-label>
+    <ion-label style="text-align: right;"><b>{{il.insumo.nome}}</b></ion-label>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Quantidade:</ion-label>
+    <ion-label style="text-align: right;"><b>{{il.quantidade}} {{il.unidadeEntrada.nome}}</b></ion-label>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Lote Fornecedor:</ion-label>
+    <ion-label style="text-align: right;"><b>{{il.loteFornecedor}}</b></ion-label>
+  </ion-item>
+  <ion-item color="item_entrada">
+    <ion-label>Lote Lei:</ion-label>
+    <ion-label style="text-align: right;"><b>{{il.loteLEI}}</b></ion-label>
+  </ion-item>
+  
+  <ion-item color="item_entrada" [hidden]="hiddenselect">
+    <ion-label>Liberar para</ion-label>
+    <ionic-selectable 
+      item-content
+      [(ngModel)]="paralocalizacao"
+      [items]="paralocalizacoes"
+      itemValueField="id"
+      itemTextField="nome"
+      [canSearch]="true"
+      [focusSearchbar]="true"
+      [hasVirtualScroll]="true" >
+      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
+        <ion-item>
+          <ion-label text-wrap class="label_12_b">
+            {{item.objlocalizacaofilha != null ? item.objlocalizacaofilha.nome+" => "+ item.nome : item.nome}}
+          </ion-label>
+        </ion-item>
+      </ng-template>
+    </ionic-selectable>
+  </ion-item>
 
+     <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input type="number" placeholder="Quantidade" [(ngModel)]="itemMov.quantidadeMovimentada"> </ion-input>
+        </ion-item>
+      </ion-col> 
+      <ion-col>
+        <ion-item>
+          <ion-label>Utilizado</ion-label>
+      <ion-checkbox color="primary" [(ngModel)]="itemMov.utilizado" [disabled]="mov.isDisabledutilizado" (click)="valida(mov)"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+          
+            
+      <ion-col>
+        <ion-item>
+          <ion-label>Descartado</ion-label>
+      <ion-checkbox color="secondary" [(ngModel)]="itemMov.descartado" [disabled]="mov.isDisableddescartado" (click)="valida(mov)"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row radio-group [(ngModel)]="itemMov.aprovado">
+      <ion-col>
+        <ion-item>
+          <ion-label>Aprovado?</ion-label>
+        </ion-item>
+      </ion-col> 
+      <ion-col>
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio value="true"></ion-radio>
+        </ion-item>
+      </ion-col>
+          
+            
+      <ion-col>
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio value="false"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+      <ion-col col-12 style="text-align: center;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Liberar</button></ion-col>
+  </ion-row>
 </ion-content>

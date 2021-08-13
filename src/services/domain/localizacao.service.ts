@@ -35,6 +35,9 @@ export class LocalizacaoService{
         return this.http.get<LocalizacaoDTO>(`${API_CONFIG.baseUrl}/localizacoes/findbyid/?localizacao_id=${localizacao_id}`)
     }
 
+    findAllLocalizacoesFilhasByLocalizacaoPai(localizacao_id : string) : Observable<LocalizacaoDTO[]> {
+        return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/findAllLocalizacoesFilhasByLocalizacaoPai/?localizacao_id=${localizacao_id}`)
+    }
 
     insert(obj: LocalizacaoDTO){
         console.log(obj)

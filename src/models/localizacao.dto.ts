@@ -10,4 +10,5 @@ export interface LocalizacaoDTO{
     objlocalizacaofilha: LocalizacaoDTO;
     localizacaofilha?: boolean;
     gerasublote: boolean;
+    resultado: boolean;
 }

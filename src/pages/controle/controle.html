@@ -138,12 +138,12 @@
         </button>
       </ion-col>
       <ion-col col-md-1 class="cell-class-icon">
-        <button ion-button icon-only (click)="alterarPrevisao(ins)">
+        <button ion-button icon-only [disabled]="ins.recebidonocontrole != null?ins.recebidonocontrole == true?false:true:true" (click)="alterarPrevisao(ins)">
           {{"&nbsp;"+(ins.dataPrevisaoControle | date:'dd/MM/yyyy')+"&nbsp;"}}
         </button>
       </ion-col>
       <ion-col col-md-1 class="cell-class-icon" >
-        <button ion-button icon-only (click)="liberarInsumo(ins)">
+        <button ion-button icon-only [disabled]="ins.recebidonocontrole != null?ins.recebidonocontrole == true?false:true:true" (click)="liberarInsumo(ins)">
           <ion-icon ios="ios-unlock" md="md-unlock"></ion-icon>
         </button>
       </ion-col>

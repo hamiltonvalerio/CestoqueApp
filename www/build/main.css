@@ -28268,6 +28268,11 @@ ion-navbar.toolbar {
   background-color: rgba(0, 0, 255, 0.3);
 }
 
+.update-profile-modal .modal-wrapper {
+  min-height: 400px;
+  height: auto;
+}
+
 page-administracao .cell-class {
   border-color: #837d7d;
   border-width: .01em;

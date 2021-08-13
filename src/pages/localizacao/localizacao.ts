@@ -67,7 +67,7 @@ export class LocalizacaoPage {
   }
 
   editarItem(itemId: string){
-    let modal = this.modalCtrl.create('CadastroLocalizacaoPage', {itemId: itemId});
+    let modal = this.modalCtrl.create('CadastroLocalizacaoPage', {itemId: itemId}, {cssClass: 'update-profile-modal'});
     modal.onDidDismiss(() => {
       this.getItens();
     });
