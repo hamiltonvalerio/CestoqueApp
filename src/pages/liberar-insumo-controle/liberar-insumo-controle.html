@@ -72,7 +72,7 @@
       <ion-col>
         <ion-item>
           <ion-label>Utilizado</ion-label>
-      <ion-checkbox color="primary" [(ngModel)]="itemMov.utilizado" [disabled]="mov.isDisabledutilizado" (click)="valida(mov)"></ion-checkbox>
+      <ion-checkbox color="primary" [(ngModel)]="itemMov.utilizado" [disabled]="itemMov.isDisabledutilizado" (click)="valida(itemMov)"></ion-checkbox>
         </ion-item>
       </ion-col>
           
@@ -80,7 +80,7 @@
       <ion-col>
         <ion-item>
           <ion-label>Descartado</ion-label>
-      <ion-checkbox color="secondary" [(ngModel)]="itemMov.descartado" [disabled]="mov.isDisableddescartado" (click)="valida(mov)"></ion-checkbox>
+      <ion-checkbox color="secondary" [(ngModel)]="itemMov.descartado" [disabled]="itemMov.isDisableddescartado" (click)="valida(itemMov)"></ion-checkbox>
         </ion-item>
       </ion-col>
     </ion-row>

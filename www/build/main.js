@@ -292,11 +292,11 @@ var map = {
 		29
 	],
 	"../pages/entrada/entrada.module": [
-		728,
+		727,
 		28
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		727,
+		728,
 		27
 	],
 	"../pages/home/home.module": [
@@ -344,19 +344,19 @@ var map = {
 		21
 	],
 	"../pages/produto/produto.module": [
-		748,
+		740,
 		20
 	],
 	"../pages/profile/profile.module": [
-		740,
+		741,
 		19
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		741,
+		742,
 		18
 	],
 	"../pages/receber-no-controle/receber-no-controle.module": [
-		742,
+		743,
 		17
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
@@ -364,19 +364,19 @@ var map = {
 		16
 	],
 	"../pages/saida/saida.module": [
-		743,
+		745,
 		15
 	],
 	"../pages/signup/signup.module": [
-		745,
+		746,
 		14
 	],
 	"../pages/unidade/unidade.module": [
-		746,
+		747,
 		13
 	],
 	"../pages/vincula-pagina-perfil/vincula-pagina-perfil.module": [
-		747,
+		748,
 		10
 	],
 	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
@@ -590,10 +590,9 @@ var LocalizacaoService = /** @class */ (function () {
     };
     LocalizacaoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */]])
     ], LocalizacaoService);
     return LocalizacaoService;
-    var _a;
 }());
 
 //# sourceMappingURL=localizacao.service.js.map
@@ -1296,8 +1295,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
@@ -1309,15 +1308,15 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/receber-no-controle/receber-no-controle.module#ReceberNoControlePageModule', name: 'ReceberNoControlePage', segment: 'receber-no-controle', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
                     ]
                 }),

@@ -175,7 +175,7 @@ export class ControlePage {
   liberarInsumo(il : InsumolocalizacaoDTO){
     let modal = this.modalCtrl.create('LiberarInsumoControlePage',{item : il});
     modal.onDidDismiss(() => {
-      //this.getItens();
+      this.carregaInsumos();
     });
     modal.present();
 
@@ -184,7 +184,7 @@ export class ControlePage {
   receberParaControle(il : InsumolocalizacaoDTO){
     let modal = this.modalCtrl.create('ReceberNoControlePage',{item : il});
     modal.onDidDismiss(() => {
-      //this.getItens();
+      this.carregaInsumos();
     });
     modal.present();
   }

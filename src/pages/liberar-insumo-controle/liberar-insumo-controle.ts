@@ -75,6 +75,7 @@ export class LiberarInsumoControlePage {
               if(val.resultado != null){
                 if(val.resultado == true){
                   this.paralocalizacao = val;
+                  this.hiddenselect = true;
                 }  
               }
             });
@@ -153,6 +154,7 @@ export class LiberarInsumoControlePage {
   }
 
   valida(m : InsumomovimentacaoDTO) {
+    console.log(m)
     if (m.descartado == true) {
       m.isDisabledutilizado = true;
     } else if (m.utilizado == true) {
@@ -164,22 +166,31 @@ export class LiberarInsumoControlePage {
   }
 
   inserirMovimentacao(){
-    this.validarCampos();
-    let qtdvazio : boolean = false;
-    let qtdacimaorigem : boolean = false;
-    this.mov  = {} as any;
-    this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
-    this.mov.localizacaoOrigem = this.localizacao;
-    this.mov.localizacaoDestino = this.paralocalizacao;
-    
-   console.log(this.mov);
+    if(this.validarCampos()){
+      return;
+    }else{
+      let qtdvazio : boolean = false;
+      let qtdacimaorigem : boolean = false;
+      this.mov  = {} as any;
+      this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
+      this.mov.localizacaoOrigem = this.localizacao;
+      this.mov.localizacaoDestino = this.paralocalizacao;
+      
+     console.log(this.mov);
+    }
     
   }
 
   validarCampos(){
     if(this.itemMov.quantidadeMovimentada <= 0){
       this.showMensagem("Campo quantidade não pode ser nulo!")
+      return true;
     }
+    if(!this.itemMov.utilizado && !this.itemMov.descartado){
+      this.showMensagem("Escolha utilizado ou descartado!")
+      return true;
+    }
+    return false;
   }
 
   showMensagem(msg : string){

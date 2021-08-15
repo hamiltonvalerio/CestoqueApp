@@ -202,16 +202,18 @@ var ControlePage = /** @class */ (function () {
         alert.present();
     };
     ControlePage.prototype.liberarInsumo = function (il) {
+        var _this = this;
         var modal = this.modalCtrl.create('LiberarInsumoControlePage', { item: il });
         modal.onDidDismiss(function () {
-            //this.getItens();
+            _this.carregaInsumos();
         });
         modal.present();
     };
     ControlePage.prototype.receberParaControle = function (il) {
+        var _this = this;
         var modal = this.modalCtrl.create('ReceberNoControlePage', { item: il });
         modal.onDidDismiss(function () {
-            //this.getItens();
+            _this.carregaInsumos();
         });
         modal.present();
     };
