@@ -1,3 +1,4 @@
+import { MovimentacaoService } from './../../services/domain/movimentacao.service';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
 import { InsumomovimentacaoDTO } from './../../models/insumomovimentacao.dto';
 import { MovimentacaoDTO } from './../../models/movimentacao.dto';
@@ -62,7 +63,8 @@ export class LiberarInsumoControlePage {
     public colaboradorService: ColaboradorService,
     public insumoService: InsumoService,
     public localizacaoService: LocalizacaoService,
-    public loadingCtrl: LoadingController,) {
+    public loadingCtrl: LoadingController,
+    public movimentacaoService: MovimentacaoService,) {
 
       this.il = navParams.get('item');
       this.localizacao = this.il.localizacao;
@@ -169,13 +171,52 @@ export class LiberarInsumoControlePage {
     if(this.validarCampos()){
       return;
     }else{
+      let im : InsumomovimentacaoDTO[] = [];
+      im.push(this.itemMov);
       let qtdvazio : boolean = false;
       let qtdacimaorigem : boolean = false;
-      this.mov  = {} as any;
+      this.mov  = {} as MovimentacaoDTO;
       this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
       this.mov.localizacaoOrigem = this.localizacao;
       this.mov.localizacaoDestino = this.paralocalizacao;
-      
+      this.mov.itens = im;
+      this.mov.itens.forEach(element => {
+        if(element.quantidadeMovimentada != null){
+          if(element.quantidadeMovimentada == 0){
+            qtdvazio = true;  
+          }else if(element.quantidadeMovimentada > element.quantidadeOrigem){
+            qtdacimaorigem = true;
+          }else{
+            qtdvazio = false;
+  
+            if(element.utilizado == true){
+              let valor = element.quantidadeMovimentada;
+              element.quantidadeUtilizada = valor;
+              element.quantidadeMovimentada = element.quantidadeOrigem - element.quantidadeMovimentada;
+            }
+            if(element.descartado == true){
+              let valor = element.quantidadeMovimentada;
+              element.quantidadeDescartada = valor;
+              element.quantidadeMovimentada = element.quantidadeOrigem - element.quantidadeMovimentada;
+            }
+  
+          }
+        }else{
+          qtdvazio = true; 
+        }
+  
+        if(qtdvazio){
+          this.showQtdVazio();
+        }else if(qtdacimaorigem){
+          this.showQtdAcimaDaOrigem();
+        }else{
+          this.movimentacaoService.insert(this.mov).subscribe(response => {
+            this.showInsertOk();
+          },
+          error => {});
+        }
+        console.log(element)
+      });
      console.log(this.mov);
     }
     
@@ -188,6 +229,10 @@ export class LiberarInsumoControlePage {
     }
     if(!this.itemMov.utilizado && !this.itemMov.descartado){
       this.showMensagem("Escolha utilizado ou descartado!")
+      return true;
+    }
+    if(this.itemMov.aprovado == null){
+      this.showMensagem("Necessário aprovar ou reprovar o insumo para liberação!")
       return true;
     }
     return false;
@@ -207,6 +252,49 @@ export class LiberarInsumoControlePage {
     alert.present();
   }
 
+  showQtdVazio(){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Não é possível inserir movimentação sem quantidade!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+        }
+      ]
+    });
+    alert.present();
+  }
 
+  showQtdAcimaDaOrigem(){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: 'Quantidade de movimentação não pode ser maior que a quantidade de origem!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  showInsertOk(){
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso',
+      message: 'Liberação efetuada com sucesso!',
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
 }
