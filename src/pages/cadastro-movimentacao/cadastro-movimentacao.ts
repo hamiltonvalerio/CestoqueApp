@@ -84,6 +84,7 @@ export class CadastroMovimentacaoPage {
   }
 
   ionViewDidLoad() {
+    //console.log('ionViewDidLoad CadastroMovimentacaoPage');
     this.datamovimentacao = this.dateNow.getDateNow();
     this.loadLocalizacao();
     this.loadParaLocalizacao();
@@ -96,6 +97,7 @@ export class CadastroMovimentacaoPage {
   }
 
   reset() {
+    //console.log("teste");
     this.insumosLocalizacoesSelecionados = [];
     this.movimentacao.itens = [];
     this.paralocalizacao = null;
@@ -135,6 +137,7 @@ export class CadastroMovimentacaoPage {
     component: IonicSelectableComponent;
     value: LocalizacaoDTO;
   }) {
+    console.log(event)
     if (event.value) {
       this.reset();
       if(event.value.aprovacao === true){
@@ -153,7 +156,7 @@ export class CadastroMovimentacaoPage {
         this.fieldsIrradiacao = true;
       }
       this.citensInsumos = [];
-      this.insumoService.findByLocalizacaoNoPage(event.value.id).subscribe(response => {
+      this.insumoService.findByLocalizacaoNoPageMovimentacao(event.value.id).subscribe(response => {
         //this.citensInsumos = response.sort();
         this.insumosLocalizacoes = response.sort();
        
@@ -312,7 +315,7 @@ export class CadastroMovimentacaoPage {
     this.mov.localizacaoDestino = this.paralocalizacao;
     this.mov.itens = this.movimentacao.itens;
 
-
+    console.log(this.mov.itens);
     if(this.mov.localizacaoDestino.aprovacao == true){
       this.mov.itens.forEach((f) => {
         f.dataPrevisaoControle = this.dateNow.addDaysStartingNow(15);
@@ -345,10 +348,10 @@ export class CadastroMovimentacaoPage {
       }
 
 
-
+      console.log(element)
     });
 
-
+    //console.log(this.mov);
     
     if(qtdvazio){
       this.showQtdVazio();

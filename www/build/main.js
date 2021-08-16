@@ -228,11 +228,11 @@ var map = {
 		1
 	],
 	"../pages/alterar-previsao-controle/alterar-previsao-controle.module": [
-		711,
+		712,
 		40
 	],
 	"../pages/alterar-senha/alterar-senha.module": [
-		712,
+		711,
 		39
 	],
 	"../pages/cadastro-categoria/cadastro-categoria.module": [
@@ -272,23 +272,23 @@ var map = {
 		33
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
-		723,
+		722,
 		32
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		722,
+		723,
 		31
 	],
 	"../pages/categorias/categorias.module": [
-		726,
+		724,
 		9
 	],
 	"../pages/controle/controle.module": [
-		724,
+		725,
 		30
 	],
 	"../pages/dashboard/dashboard.module": [
-		725,
+		726,
 		29
 	],
 	"../pages/entrada/entrada.module": [
@@ -296,11 +296,11 @@ var map = {
 		28
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		728,
+		729,
 		27
 	],
 	"../pages/home/home.module": [
-		729,
+		728,
 		26
 	],
 	"../pages/insumo/insumos.module": [
@@ -308,19 +308,19 @@ var map = {
 		25
 	],
 	"../pages/inventario/inventario.module": [
-		731,
+		732,
 		8
 	],
 	"../pages/liberar-insumo-controle/liberar-insumo-controle.module": [
-		732,
+		731,
 		24
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		734,
+		733,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		733,
+		734,
 		7
 	],
 	"../pages/manual/manual.module": [
@@ -464,6 +464,9 @@ var InsumoService = /** @class */ (function () {
     };
     InsumoService.prototype.findByLocalizacaoNoPage = function (localizacao_id) {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/buscaTodosPorLocalizacao/?localizacao_id=" + localizacao_id);
+    };
+    InsumoService.prototype.findByLocalizacaoNoPageMovimentacao = function (localizacao_id) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/buscaporlocalizacaonopage/?localizacao_id=" + localizacao_id);
     };
     InsumoService.prototype.findInsumosLocalizacoesByLoteLEI = function (loteLEI) {
         return this.http.get(__WEBPACK_IMPORTED_MODULE_0__config_api_config__["a" /* API_CONFIG */].baseUrl + "/insumos/findInsumosLocalizacoesByLoteLEI/?loteLEI=" + loteLEI);
@@ -1280,8 +1283,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/administracao/administracao.module#AdministracaoPageModule', name: 'AdministracaoPage', segment: 'administracao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ajuste-estoque/ajuste-estoque.module#AjusteEstoquePageModule', name: 'AjusteEstoquePage', segment: 'ajuste-estoque', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/alterar-previsao-controle/alterar-previsao-controle.module#AlterarPrevisaoControlePageModule', name: 'AlterarPrevisaoControlePage', segment: 'alterar-previsao-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/alterar-senha/alterar-senha.module#AlterarSenhaPageModule', name: 'AlterarSenhaPage', segment: 'alterar-senha', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/alterar-previsao-controle/alterar-previsao-controle.module#AlterarPrevisaoControlePageModule', name: 'AlterarPrevisaoControlePage', segment: 'alterar-previsao-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-categoria/cadastro-categoria.module#CadastroCategoriaPageModule', name: 'CadastroCategoriaPage', segment: 'cadastro-categoria', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
@@ -1291,19 +1294,19 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-orgao/cadastro-orgao.module#CadastroOrgaoPageModule', name: 'CadastroOrgaoPage', segment: 'cadastro-orgao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/liberar-insumo-controle/liberar-insumo-controle.module#LiberarInsumoControlePageModule', name: 'LiberarInsumoControlePage', segment: 'liberar-insumo-controle', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/manual/manual.module#ManualPageModule', name: 'ManualPage', segment: 'manual', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-quantidademinima/modal-quantidademinima.module#ModalQuantidademinimaPageModule', name: 'ModalQuantidademinimaPage', segment: 'modal-quantidademinima', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },

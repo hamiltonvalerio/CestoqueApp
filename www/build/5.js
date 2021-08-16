@@ -219,6 +219,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
     }
     ;
     CadastroMovimentacaoPage.prototype.ionViewDidLoad = function () {
+        //console.log('ionViewDidLoad CadastroMovimentacaoPage');
         this.datamovimentacao = this.dateNow.getDateNow();
         this.loadLocalizacao();
         this.loadParaLocalizacao();
@@ -229,6 +230,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         //this.viewCtrl.dismiss();
     };
     CadastroMovimentacaoPage.prototype.reset = function () {
+        //console.log("teste");
         this.insumosLocalizacoesSelecionados = [];
         this.movimentacao.itens = [];
         this.paralocalizacao = null;
@@ -262,6 +264,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
     };
     CadastroMovimentacaoPage.prototype.insumoChange = function (event) {
         var _this = this;
+        console.log(event);
         if (event.value) {
             this.reset();
             if (event.value.aprovacao === true) {
@@ -283,7 +286,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
                 this.fieldsIrradiacao = true;
             }
             this.citensInsumos = [];
-            this.insumoService.findByLocalizacaoNoPage(event.value.id).subscribe(function (response) {
+            this.insumoService.findByLocalizacaoNoPageMovimentacao(event.value.id).subscribe(function (response) {
                 //this.citensInsumos = response.sort();
                 _this.insumosLocalizacoes = response.sort();
             }, function (error) {
@@ -422,6 +425,7 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
         this.mov.localizacaoOrigem = this.localizacao;
         this.mov.localizacaoDestino = this.paralocalizacao;
         this.mov.itens = this.movimentacao.itens;
+        console.log(this.mov.itens);
         if (this.mov.localizacaoDestino.aprovacao == true) {
             this.mov.itens.forEach(function (f) {
                 f.dataPrevisaoControle = _this.dateNow.addDaysStartingNow(15);
@@ -452,7 +456,9 @@ var CadastroMovimentacaoPage = /** @class */ (function () {
             else {
                 qtdvazio = true;
             }
+            console.log(element);
         });
+        //console.log(this.mov);
         if (qtdvazio) {
             this.showQtdVazio();
         }
