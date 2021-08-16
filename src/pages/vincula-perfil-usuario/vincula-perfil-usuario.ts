@@ -66,8 +66,6 @@ export class VinculaPerfilUsuarioPage {
   }
 
   changeToggle(ev: Event,checked: boolean){
-    //console.log(checked);
-    //console.log(this.perfis);
   }
 
   colaboradorChange(event: {
@@ -88,7 +86,6 @@ export class VinculaPerfilUsuarioPage {
     this.perfilService.findAll()
     .subscribe(response => {
       this.perfis = response.sort();
-      //console.log(this.perfis);
     },
     error => {})
   }
@@ -97,7 +94,6 @@ export class VinculaPerfilUsuarioPage {
     this.colaboradorService.findAll()
     .subscribe(response => {
       this.colaboradores = response.sort();
-      //console.log(this.colaboradores);
     },
     error => {})
   }

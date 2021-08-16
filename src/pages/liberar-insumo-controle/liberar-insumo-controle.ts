@@ -156,7 +156,6 @@ export class LiberarInsumoControlePage {
   }
 
   valida(m : InsumomovimentacaoDTO) {
-    console.log(m)
     if (m.descartado == true) {
       m.isDisabledutilizado = true;
     } else if (m.utilizado == true) {
@@ -215,9 +214,7 @@ export class LiberarInsumoControlePage {
           },
           error => {});
         }
-        console.log(element)
       });
-     console.log(this.mov);
     }
     
   }
@@ -234,6 +231,12 @@ export class LiberarInsumoControlePage {
     if(this.itemMov.aprovado == null){
       this.showMensagem("Necessário aprovar ou reprovar o insumo para liberação!")
       return true;
+    }
+    if (!this.hiddenselect){
+      if(this.paralocalizacao == null){
+        this.showMensagem("Necessário selecionar uma localização de destino!")
+        return true;
+      }
     }
     return false;
   }

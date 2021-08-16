@@ -84,7 +84,6 @@ export class CadastroMovimentacaoPage {
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad CadastroMovimentacaoPage');
     this.datamovimentacao = this.dateNow.getDateNow();
     this.loadLocalizacao();
     this.loadParaLocalizacao();
@@ -97,7 +96,6 @@ export class CadastroMovimentacaoPage {
   }
 
   reset() {
-    //console.log("teste");
     this.insumosLocalizacoesSelecionados = [];
     this.movimentacao.itens = [];
     this.paralocalizacao = null;
@@ -314,7 +312,7 @@ export class CadastroMovimentacaoPage {
     this.mov.localizacaoDestino = this.paralocalizacao;
     this.mov.itens = this.movimentacao.itens;
 
-    console.log(this.mov.itens);
+
     if(this.mov.localizacaoDestino.aprovacao == true){
       this.mov.itens.forEach((f) => {
         f.dataPrevisaoControle = this.dateNow.addDaysStartingNow(15);
@@ -347,10 +345,10 @@ export class CadastroMovimentacaoPage {
       }
 
 
-      console.log(element)
+
     });
 
-    //console.log(this.mov);
+
     
     if(qtdvazio){
       this.showQtdVazio();

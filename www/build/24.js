@@ -185,7 +185,6 @@ var LiberarInsumoControlePage = /** @class */ (function () {
         this.viewCtrl.dismiss();
     };
     LiberarInsumoControlePage.prototype.valida = function (m) {
-        console.log(m);
         if (m.descartado == true) {
             m.isDisabledutilizado = true;
         }
@@ -248,9 +247,7 @@ var LiberarInsumoControlePage = /** @class */ (function () {
                         _this.showInsertOk();
                     }, function (error) { });
                 }
-                console.log(element);
             });
-            console.log(this.mov);
         }
     };
     LiberarInsumoControlePage.prototype.validarCampos = function () {
@@ -265,6 +262,12 @@ var LiberarInsumoControlePage = /** @class */ (function () {
         if (this.itemMov.aprovado == null) {
             this.showMensagem("Necessário aprovar ou reprovar o insumo para liberação!");
             return true;
+        }
+        if (!this.hiddenselect) {
+            if (this.paralocalizacao == null) {
+                this.showMensagem("Necessário selecionar uma localização de destino!");
+                return true;
+            }
         }
         return false;
     };

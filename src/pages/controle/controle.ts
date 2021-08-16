@@ -173,28 +173,51 @@ export class ControlePage {
   }
 
   liberarInsumo(il : InsumolocalizacaoDTO){
-    let modal = this.modalCtrl.create('LiberarInsumoControlePage',{item : il});
-    modal.onDidDismiss(() => {
-      this.carregaInsumos();
-    });
-    modal.present();
-
+    if(il.quantidade == 0){
+        this.showMensagem("Não é possível liberar insumo com quantidade igual a zero!");
+      }else{
+      let modal = this.modalCtrl.create('LiberarInsumoControlePage',{item : il});
+      modal.onDidDismiss(() => {
+        this.carregaInsumos();
+      });
+      modal.present();
+    }
   }
 
   receberParaControle(il : InsumolocalizacaoDTO){
-    let modal = this.modalCtrl.create('ReceberNoControlePage',{item : il});
-    modal.onDidDismiss(() => {
-      this.carregaInsumos();
-    });
-    modal.present();
+    
+      let modal = this.modalCtrl.create('ReceberNoControlePage',{item : il});
+      modal.onDidDismiss(() => {
+        this.carregaInsumos();
+      });
+      modal.present();
+  
   }
 
   alterarPrevisao(il : InsumolocalizacaoDTO){
-    let modal = this.modalCtrl.create('AlterarPrevisaoControlePage',{item : il});
-    modal.onDidDismiss(() => {
-      this.carregaInsumos();
+    if(il.quantidade == 0){
+        this.showMensagem("Não é possível alterar a previsao se a quantidade é igual a zero!");
+      }else{
+      let modal = this.modalCtrl.create('AlterarPrevisaoControlePage',{item : il});
+      modal.onDidDismiss(() => {
+        this.carregaInsumos();
+      });
+      modal.present();
+    }
+  }
+
+  showMensagem(msg : string){
+    let alert = this.alertCtrl.create({
+      title: 'Erro',
+      message: msg,
+      enableBackdropDismiss: false,
+      buttons: [
+        {
+          text: 'Ok',
+        }
+      ]
     });
-    modal.present();
+    alert.present();
   }
 
 
