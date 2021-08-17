@@ -159,6 +159,7 @@ export class CadastroMovimentacaoPage {
       this.insumoService.findByLocalizacaoNoPageMovimentacao(event.value.id).subscribe(response => {
         //this.citensInsumos = response.sort();
         this.insumosLocalizacoes = response.sort();
+        //console.log(this.insumosLocalizacoes)
        
       },
       error => {
