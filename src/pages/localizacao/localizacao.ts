@@ -37,7 +37,7 @@ export class LocalizacaoPage {
  
 
   getItens(){ 
-    this.localizacaoService.findAll()
+    this.localizacaoService.findAllOrdenado()
     .subscribe(response => {
       this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
     },

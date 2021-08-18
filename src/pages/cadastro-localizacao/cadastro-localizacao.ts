@@ -74,6 +74,11 @@ export class CadastroLocalizacaoPage {
           resultado: [this.updateLocalizacaoDTO.resultado,],
 
         }, {}); 
+        if(this.updateLocalizacaoDTO.localizacaofilha != null){
+          if(this.updateLocalizacaoDTO.localizacaofilha == true){
+            this.fieldLocalizacaoFilha = false;
+          } 
+        }
       });
     }
 
