@@ -1,3 +1,4 @@
+import { LocalizacaoOrdenadaDTO } from './../../models/localizacaoordenada.dto';
 import { LocalizacaoInsumosPage } from './../localizacao-insumos/localizacao-insumos';
 import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { Component } from '@angular/core';
@@ -22,7 +23,10 @@ export class LocalizacaoPage {
   itens: LocalizacaoDTO[];
   itensLocalizacoes = [];
 
-  
+  itenslocord: LocalizacaoOrdenadaDTO[];
+  itensLocalizacoesOrd = [];
+
+  showDetails: boolean = false;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -40,6 +44,13 @@ export class LocalizacaoPage {
     this.localizacaoService.findAllOrdenado()
     .subscribe(response => {
       this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+    },
+    error => {})
+
+    this.localizacaoService.findAllOrdenadoFilhas()
+    .subscribe(response => {
+      this.itensLocalizacoesOrd = response.sort();
+      console.log(this.itensLocalizacoesOrd)
     },
     error => {})
   }
@@ -72,6 +83,14 @@ export class LocalizacaoPage {
       this.getItens();
     });
     modal.present();
+  }
+
+  toggleDetails(show, i) {
+    console.log(i)
+    this.itensLocalizacoesOrd.map(( _ , index ) => { 
+      if (index == i ) {
+         _.show = !_.show 
+        }});
   }
 
 }

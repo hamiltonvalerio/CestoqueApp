@@ -3,5 +3,6 @@ export interface LocalizacaoOrdenadaDTO{
 
     localizacao: LocalizacaoDTO;
     localizacoesfilhas: LocalizacaoDTO[];
+    show : Boolean;
 
 }

@@ -112,6 +112,8 @@ var LocalizacaoPage = /** @class */ (function () {
         this.localizacaoService = localizacaoService;
         this.modalCtrl = modalCtrl;
         this.itensLocalizacoes = [];
+        this.itensLocalizacoesOrd = [];
+        this.showDetails = false;
     }
     LocalizacaoPage.prototype.ionViewDidLoad = function () {
         this.getItens();
@@ -121,6 +123,11 @@ var LocalizacaoPage = /** @class */ (function () {
         this.localizacaoService.findAllOrdenado()
             .subscribe(function (response) {
             _this.itensLocalizacoes = new __WEBPACK_IMPORTED_MODULE_0__utils_converte_list_ionitemdivider__["a" /* ConverteListaIonItemDivider */]().retornaArrayGroup(response.sort());
+        }, function (error) { });
+        this.localizacaoService.findAllOrdenadoFilhas()
+            .subscribe(function (response) {
+            _this.itensLocalizacoesOrd = response.sort();
+            console.log(_this.itensLocalizacoesOrd);
         }, function (error) { });
     };
     LocalizacaoPage.prototype.excluirItem = function (itemId) {
@@ -151,9 +158,17 @@ var LocalizacaoPage = /** @class */ (function () {
         });
         modal.present();
     };
+    LocalizacaoPage.prototype.toggleDetails = function (show, i) {
+        console.log(i);
+        this.itensLocalizacoesOrd.map(function (_, index) {
+            if (index == i) {
+                _.show = !_.show;
+            }
+        });
+    };
     LocalizacaoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-localizacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/'<!--\n\n  Generated template for the LocalizacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Localizações</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  \n\n    <ion-grid *ngFor="let item of itensLocalizacoes">\n\n      <ion-row *ngFor="let l of item.arrayDeItens">\n\n        <ion-col>\n\n          <h6>{{l.objlocalizacaofilha != null ? l.objlocalizacaofilha.nome+" => "+ l.nome : l.nome}}</h6>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="search" (click)="openItem(l.id, l.nome, l.atualizaqtdminima, l.aprovacao, l.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="create" (click)="editarItem(l.id)" title="Editar Localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n        <ion-col col-1>\n\n          <ion-icon name="close-circle" (click)="excluirItem(l.id)" title="Excluir Localização" positionV="bottom"></ion-icon>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/,
+            selector: 'page-localizacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/'<!--\n\n  Generated template for the LocalizacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Localizações</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n \n\n\n\n    <ion-card *ngFor="let item of itensLocalizacoesOrd; let i = index;">\n\n      <ion-card-header type="button" (click)="toggleDetails(item.show,i)">\n\n        <ion-icon name="arrow-down"></ion-icon>\n\n        <ion-grid>\n\n          <ion-row>\n\n            <ion-col>\n\n              <h6>{{item.localizacao.objlocalizacaofilha != null ? item.localizacao.objlocalizacaofilha.nome+" => "+ item.localizacao.nome : item.localizacao.nome}}</h6>\n\n            </ion-col>\n\n            <ion-col col-1>\n\n              <ion-icon name="search" (click)="openItem(item.localizacao.id, item.localizacao.nome, item.localizacao.atualizaqtdminima, item.localizacao.aprovacao, item.localizacao.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>\n\n            </ion-col>\n\n            <ion-col col-1>\n\n              <ion-icon name="create" (click)="editarItem(item.localizacao.id)" title="Editar Localização" positionV="bottom"></ion-icon>\n\n            </ion-col>\n\n            <ion-col col-1>\n\n              <ion-icon name="close-circle" (click)="excluirItem(item.localizacao.id)" title="Excluir Localização" positionV="bottom"></ion-icon>\n\n            </ion-col>\n\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-card-header>\n\n      <ion-card-content>\n\n        <ion-list *ngIf="item.show">\n\n          <ion-list *ngFor="let itemloc of item.localizacoesfilhas">\n\n            <ion-row>\n\n              <ion-col>\n\n                <h4>{{itemloc.objlocalizacaofilha.id == item.localizacao.id ? itemloc.nome:itemloc.objlocalizacaofilha.nome+" - "+itemloc.nome}}</h4>\n\n                \n\n              </ion-col>\n\n              <ion-col col-1>\n\n                <ion-icon name="search" (click)="openItem(itemloc.id, itemloc.nome, itemloc.atualizaqtdminima, itemloc.aprovacao, itemloc.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>\n\n              </ion-col>\n\n              <ion-col col-1>\n\n                <ion-icon name="create" (click)="editarItem(itemloc.id)" title="Editar Localização" positionV="bottom"></ion-icon>\n\n              </ion-col>\n\n              <ion-col col-1>\n\n                <ion-icon name="close-circle" (click)="excluirItem(itemloc.id)" title="Excluir Localização" positionV="bottom"></ion-icon>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-list>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\localizacao\localizacao.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_domain_localizacao_service__["a" /* LocalizacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */]) === "function" && _d || Object])
     ], LocalizacaoPage);

@@ -1,3 +1,4 @@
+import { LocalizacaoOrdenadaDTO } from './../../models/localizacaoordenada.dto';
 import { API_CONFIG } from '../../config/api.config';
 import { LocalizacaoDTO } from '../../models/localizacao.dto';
 import { Observable } from 'rxjs/Rx';
@@ -17,6 +18,10 @@ export class LocalizacaoService{
 
     findAllOrdenado() : Observable<LocalizacaoDTO[]> {
         return this.http.get<LocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/findAllOrdenado`)
+    }
+
+    findAllOrdenadoFilhas() : Observable<LocalizacaoOrdenadaDTO[]> {
+        return this.http.get<LocalizacaoOrdenadaDTO[]>(`${API_CONFIG.baseUrl}/localizacoes/findAllOrdenadoFilhas`)
     }
 
     findByAprovacaoTrue() : Observable<LocalizacaoDTO[]> {

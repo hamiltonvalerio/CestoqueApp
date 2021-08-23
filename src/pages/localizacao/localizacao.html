@@ -19,22 +19,52 @@
 </ion-header>
 
 <ion-content padding>
-  
-    <ion-grid *ngFor="let item of itensLocalizacoes">
-      <ion-row *ngFor="let l of item.arrayDeItens">
-        <ion-col>
-          <h6>{{l.objlocalizacaofilha != null ? l.objlocalizacaofilha.nome+" => "+ l.nome : l.nome}}</h6>
-        </ion-col>
-        <ion-col col-1>
-          <ion-icon name="search" (click)="openItem(l.id, l.nome, l.atualizaqtdminima, l.aprovacao, l.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>
-        </ion-col>
-        <ion-col col-1>
-          <ion-icon name="create" (click)="editarItem(l.id)" title="Editar Localização" positionV="bottom"></ion-icon>
-        </ion-col>
-        <ion-col col-1>
-          <ion-icon name="close-circle" (click)="excluirItem(l.id)" title="Excluir Localização" positionV="bottom"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+ 
+
+    <ion-card *ngFor="let item of itensLocalizacoesOrd; let i = index;">
+      <ion-card-header type="button" (click)="toggleDetails(item.show,i)">
+        <ion-icon name="arrow-down"></ion-icon>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h6>{{item.localizacao.objlocalizacaofilha != null ? item.localizacao.objlocalizacaofilha.nome+" => "+ item.localizacao.nome : item.localizacao.nome}}</h6>
+            </ion-col>
+            <ion-col col-1>
+              <ion-icon name="search" (click)="openItem(item.localizacao.id, item.localizacao.nome, item.localizacao.atualizaqtdminima, item.localizacao.aprovacao, item.localizacao.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>
+            </ion-col>
+            <ion-col col-1>
+              <ion-icon name="create" (click)="editarItem(item.localizacao.id)" title="Editar Localização" positionV="bottom"></ion-icon>
+            </ion-col>
+            <ion-col col-1>
+              <ion-icon name="close-circle" (click)="excluirItem(item.localizacao.id)" title="Excluir Localização" positionV="bottom"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list *ngIf="item.show">
+          <ion-list *ngFor="let itemloc of item.localizacoesfilhas">
+            <ion-row>
+              <ion-col>
+                <h4>{{itemloc.objlocalizacaofilha.id == item.localizacao.id ? itemloc.nome:itemloc.objlocalizacaofilha.nome+" - "+itemloc.nome}}</h4>
+                
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon name="search" (click)="openItem(itemloc.id, itemloc.nome, itemloc.atualizaqtdminima, itemloc.aprovacao, itemloc.localizacao_filha)" title="Visualizar insumos da localização" positionV="bottom"></ion-icon>
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon name="create" (click)="editarItem(itemloc.id)" title="Editar Localização" positionV="bottom"></ion-icon>
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon name="close-circle" (click)="excluirItem(itemloc.id)" title="Excluir Localização" positionV="bottom"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-list>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+
+
 
 </ion-content>

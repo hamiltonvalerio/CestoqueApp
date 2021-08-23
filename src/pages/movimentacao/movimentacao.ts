@@ -53,6 +53,7 @@ export class MovimentacaoPage {
   }
 
   toggleDetails(show, i) {
+    console.log(i)
     this.movimentacoes.map(( _ , index ) => { 
       if (index == i ) {
          _.show = !_.show 

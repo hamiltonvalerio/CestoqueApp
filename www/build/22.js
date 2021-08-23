@@ -1,6 +1,6 @@
 webpackJsonp([22],{
 
-/***/ 738:
+/***/ 737:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MovimentacaoPageModule", function() { return MovimentacaoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__movimentacao__ = __webpack_require__(928);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__movimentacao__ = __webpack_require__(927);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var MovimentacaoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 928:
+/***/ 927:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -94,6 +94,7 @@ var MovimentacaoPage = /** @class */ (function () {
         return loader;
     };
     MovimentacaoPage.prototype.toggleDetails = function (show, i) {
+        console.log(i);
         this.movimentacoes.map(function (_, index) {
             if (index == i) {
                 _.show = !_.show;
@@ -116,13 +117,10 @@ var MovimentacaoPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'page-movimentacao',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/'<!--\n\n  Generated template for the MovimentacaoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Movimentação de Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openCadastroMovimentacao()">\n\n      <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card *ngFor="let mv of movimentacoes; let i = index;">\n\n    <ion-card-header type="button" (click)="toggleDetails(mv.show,i)">\n\n      <ion-icon name="arrow-down"></ion-icon>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-label>Data de Movimentação: <b>{{mv.datamovimentacao}}</b></ion-label>\n\n          </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-label>Localização Origem: <b>{{mv.localizacaoOrigem.nome}}</b></ion-label>\n\n          </ion-col>\n\n          <ion-col>\n\n            <ion-label>Localização Destino: <b>{{mv.localizacaoDestino.nome}}</b></ion-label>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-item>\n\n      <ion-list *ngIf="mv.show">\n\n        <ion-label>Detalhes</ion-label>\n\n        <ion-list *ngFor="let ient of mv.itens">\n\n          <ion-row>\n\n            <ion-col>Insumo: {{ient.insumo.nome}} </ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col>Quantidade da Origem na data de movimentação: {{ient.quantidadeOrigem}} {{ient.unidadeEntrada.nome}} (s)</ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col>\n\n              {{ient.quantidadeMovimentada > 0?"Quantidade Movimentada: "+ient.quantidadeMovimentada+" "+ient.unidadeEntrada.nome+" (s)  ":""}}\n\n              {{ient.quantidadeUtilizada != null?"Quantidade Utilizada: "+ient.quantidadeUtilizada+" "+ient.unidadeEntrada.nome+" (s)  ":""}}\n\n              {{ient.quantidadeDescartada != null?"Quantidade Descartada: "+ient.quantidadeDescartada+" "+ient.unidadeEntrada.nome+" (s)  ":""}}\n\n            </ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col><b>Lote LEI: {{ient.loteLEI}}</b></ion-col>\n\n            <ion-col>Lote Fornecedor: {{ient.loteFornecedor}}</ion-col>\n\n            <ion-col>Lote CR: {{ient.loteCR}}</ion-col>\n\n            <ion-col><b>{{ient.subloteLEI != null?"Lote LEI Principal: "+ient.subloteLEI:""}}</b></ion-col>\n\n          </ion-row>\n\n          <ion-row><ion-col>Data de Irradiação: {{ient.dataIrradiacao | date:\'dd/MM/yyyy\'}}</ion-col>\n\n          <ion-col>Data de Validade: {{ient.dataValidade | date:\'dd/MM/yyyy\'}}</ion-col></ion-row>\n\n          <ion-row><br></ion-row>\n\n        </ion-list>\n\n      </ion-list>\n\n    </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\movimentacao\movimentacao.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__["a" /* MovimentacaoService */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__["a" /* MovimentacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_domain_movimentacao_service__["a" /* MovimentacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */]) === "function" && _e || Object])
     ], MovimentacaoPage);
     return MovimentacaoPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=movimentacao.js.map
