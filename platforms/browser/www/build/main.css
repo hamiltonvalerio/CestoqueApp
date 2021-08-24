@@ -28268,6 +28268,11 @@ ion-navbar.toolbar {
   background-color: rgba(0, 0, 255, 0.3);
 }
 
+.update-profile-modal .modal-wrapper {
+  min-height: 400px;
+  height: auto;
+}
+
 page-administracao .cell-class {
   border-color: #837d7d;
   border-width: .01em;
@@ -28322,6 +28327,22 @@ page-cadastro-movimentacao .cell-class {
   border-style: solid;
   margin-bottom: -1px;
   background-color: lightgrey;
+}
+
+page-cadastro-movimentacao .card-vermelho {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+page-cadastro-movimentacao .card-amarelo {
+  background-color: rgba(255, 255, 153, 0.6);
+}
+
+page-cadastro-movimentacao .card-verde {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+page-cadastro-movimentacao .card-azul {
+  background-color: rgba(0, 0, 255, 0.3);
 }
 
 page-controle .cell-class {
@@ -28456,6 +28477,27 @@ page-rastreamento .my-label {
 }
 
 page-rastreamento .alinha_itens_center {
+  text-align: center;
+}
+
+page-receber-no-controle .cell-class {
+  border-color: #837d7d;
+  border-width: .01em;
+  border-style: solid;
+  margin-bottom: -1px;
+  background-color: lightgrey;
+  font-size: .8em;
+}
+
+page-receber-no-controle .row-class {
+  padding: 0.1em;
+}
+
+page-receber-no-controle .my-label {
+  font-size: 2em;
+}
+
+page-receber-no-controle .alinha_itens_center {
   text-align: center;
 }
 

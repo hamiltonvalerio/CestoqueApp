@@ -5,10 +5,10 @@ webpackJsonp([25],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(916);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(917);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,28 +18,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HomeModule = /** @class */ (function () {
-    function HomeModule() {
+var InsumoPageModule = /** @class */ (function () {
+    function InsumoPageModule() {
     }
-    HomeModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]],
-            imports: [__WEBPACK_IMPORTED_MODULE_0_ionic_angular_module__["b" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */])]
+    InsumoPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */]),
+            ],
         })
-    ], HomeModule);
-    return HomeModule;
+    ], InsumoPageModule);
+    return InsumoPageModule;
 }());
 
-//# sourceMappingURL=home.module.js.map
+//# sourceMappingURL=insumos.module.js.map
 
 /***/ }),
 
-/***/ 916:
+/***/ 917:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__(158);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -54,65 +58,128 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, menu, auth) {
+/**
+ * Generated class for the InsumoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var InsumosPage = /** @class */ (function () {
+    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
-        this.menu = menu;
-        this.auth = auth;
-        this.creds = {
-            email: "",
-            senha: ""
-        };
+        this.navParams = navParams;
+        this.insumoService = insumoService;
+        this.modalCtrl = modalCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.itensInsumos = [];
+        this.page = 0;
     }
-    HomePage.prototype.ionViewDidLoad = function () {
-        this.setDisableScroll(true);
+    InsumosPage.prototype.ionViewDidLoad = function () {
+        this.getItens();
     };
-    HomePage.prototype.setDisableScroll = function (disable) {
-        var scroll = this.content.getScrollElement();
-        scroll.style.overflowY = disable ? 'hidden' : 'scroll';
-    };
-    HomePage.prototype.ionViewWillEnter = function () {
-        this.menu.swipeEnable(false);
-    };
-    HomePage.prototype.ionViewDidLeave = function () {
-        this.menu.swipeEnable(true);
-    };
-    HomePage.prototype.ionViewDidEnter = function () {
+    InsumosPage.prototype.openModal = function () {
         var _this = this;
-        this.auth.refreshToken().subscribe(function (response) {
-            _this.auth.successfullLogin(response.headers.get('Authorization'), []);
-            _this.navCtrl.setRoot('DashboardPage');
-        }, function (error) { });
+        var modal = this.modalCtrl.create('CadastroInsumoPage', { cssClass: 'select-modal' });
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
     };
-    HomePage.prototype.login = function () {
+    InsumosPage.prototype.openModalAjuste = function () {
         var _this = this;
-        this.auth.authenticate(this.creds).subscribe(function (response) {
-            _this.auth.successfullLogin(response.headers.get('Authorization'), []);
-            _this.navCtrl.setRoot('DashboardPage');
-        }, function (error) { });
+        var modal = this.modalCtrl.create('AjusteEstoquePage', { cssClass: 'select-modal' });
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
     };
-    HomePage.prototype.signup = function () {
-        this.navCtrl.push('SignupPage');
+    /*getItens(){
+      this.insumoService.findAll()
+      .subscribe(response => {
+        this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
+      },
+      error => {})
+    }*/
+    InsumosPage.prototype.searchInsumo = function (event) {
+        var text = event.srcElement.value;
+        if (!text) {
+            this.getItens();
+        }
+        this.itensInsumos = this.filterPorts(this.itensInsumos, text);
+        console.log("aqui: " + this.itensInsumos);
     };
-    HomePage.prototype.recuperarSenha = function () {
-        this.navCtrl.push('RecuperaSenhaPage');
+    InsumosPage.prototype.filterPorts = function (ports, text) {
+        return ports.filter(function (port) {
+            return port.nomecodalmox.toLowerCase().indexOf(text) !== -1;
+        });
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */])
-    ], HomePage.prototype, "content", void 0);
-    HomePage = __decorate([
+    InsumosPage.prototype.getItens = function () {
+        var _this = this;
+        var loader = this.presentLoading();
+        this.itensInsumos = [];
+        this.insumoService.findTotosPaginado(this.page, 30)
+            .subscribe(function (response) {
+            var start = _this.itensInsumos.length;
+            _this.itensInsumos = _this.itensInsumos.concat(response['content']);
+            var end = _this.itensInsumos.length - 1;
+            //console.log( this.itensInsumos);
+            loader.dismiss();
+        }, function (error) {
+            loader.dismiss();
+        });
+    };
+    InsumosPage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
+        loader.present();
+        return loader;
+    };
+    InsumosPage.prototype.doRefresh = function (refresher) {
+        this.page = 0;
+        this.itensInsumos = [];
+        this.getItens();
+        setTimeout(function () {
+            refresher.complete();
+        }, 1000);
+    };
+    InsumosPage.prototype.doInfinite = function (infiniteScroll) {
+        this.page++;
+        this.getItens();
+        setTimeout(function () {
+            infiniteScroll.complete();
+        }, 1000);
+    };
+    InsumosPage.prototype.excluirItem = function (itemId) {
+        this.getItens();
+    };
+    InsumosPage.prototype.editarItem = function (itemId) {
+        var _this = this;
+        var modal = this.modalCtrl.create('CadastroInsumoPage', { itemId: itemId });
+        modal.onDidDismiss(function () {
+            _this.getItens();
+        });
+        modal.present();
+    };
+    InsumosPage.prototype.openPdf = function () {
+        this.insumoService.relatorioInsumos().subscribe(function (response) {
+            var file = new Blob([response], { type: 'application/pdf' });
+            var fileURL = URL.createObjectURL(file);
+            window.open(fileURL);
+        });
+    };
+    InsumosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\home\home.html"*/'<ion-content>\n\n  <form class="container2">\n\n    <div>\n\n        <h3>Sistema de Controle de Estoque</h3>\n\n        <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>\n\n\n\n\n\n      <ion-item >\n\n        <ion-label stacked>Email</ion-label>\n\n        <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>\n\n      </ion-item>\n\n      <ion-item >\n\n        <ion-label stacked>Senha</ion-label>\n\n        <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>\n\n      </ion-item>\n\n      <button ion-button block (click)="login()">Entrar</button>\n\n      <button ion-button block outline (click)="signup()">Registrar</button>\n\n      <button ion-button block outline (click)="recuperarSenha()">Esqueci a senha</button>\n\n    </div>\n\n  </form>\n\n  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\home\home.html"*/
+            selector: 'page-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n\n  Generated template for the InsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="openPdf()" >\n\n        <span ion-text color="primary" showWhen="ios">Pdf</span>\n\n        <ion-icon name="md-document"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModalAjuste()">\n\n        <ion-icon name="hammer"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content></ion-refresher-content>\n\n  </ion-refresher>\n\n\n\n  <ion-list>\n\n    <ion-searchbar showcancelbutton="" (ionInput)="searchInsumo($event)"></ion-searchbar>\n\n    <ion-row *ngFor="let item of itensInsumos">\n\n      <ion-col>\n\n        <h6>Cód: {{item.codigoalmox}}</h6>\n\n        <h3>{{item.nome}}</h3>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="create" (click)="editarItem(item.id)" title="Editar Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluirItem(item.id)" title="Excluir Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-list>\n\n\n\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n  </ion-infinite-scroll>\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
-    ], HomePage);
-    return HomePage;
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
+    ], InsumosPage);
+    return InsumosPage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=insumos.js.map
 
 /***/ })
 

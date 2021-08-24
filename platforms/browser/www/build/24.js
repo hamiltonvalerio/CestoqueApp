@@ -1,14 +1,15 @@
 webpackJsonp([24],{
 
-/***/ 730:
+/***/ 731:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InsumoPageModule", function() { return InsumoPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__insumos__ = __webpack_require__(917);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiberarInsumoControlePageModule", function() { return LiberarInsumoControlePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__liberar_insumo_controle__ = __webpack_require__(919);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +19,43 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var InsumoPageModule = /** @class */ (function () {
-    function InsumoPageModule() {
+
+var LiberarInsumoControlePageModule = /** @class */ (function () {
+    function LiberarInsumoControlePageModule() {
     }
-    InsumoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+    LiberarInsumoControlePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */],
+                __WEBPACK_IMPORTED_MODULE_3__liberar_insumo_controle__["a" /* LiberarInsumoControlePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__insumos__["a" /* InsumosPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__liberar_insumo_controle__["a" /* LiberarInsumoControlePage */]),
+                __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__["b" /* IonicSelectableModule */],
             ],
         })
-    ], InsumoPageModule);
-    return InsumoPageModule;
+    ], LiberarInsumoControlePageModule);
+    return LiberarInsumoControlePageModule;
 }());
 
-//# sourceMappingURL=insumos.module.js.map
+//# sourceMappingURL=liberar-insumo-controle.module.js.map
 
 /***/ }),
 
-/***/ 917:
+/***/ 919:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InsumosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LiberarInsumoControlePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_colaborador_service__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_storage_service__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_datenow__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,128 +68,287 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
+
+
+
+
 /**
- * Generated class for the InsumoPage page.
+ * Generated class for the LiberarInsumoControlePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var InsumosPage = /** @class */ (function () {
-    function InsumosPage(navCtrl, navParams, insumoService, modalCtrl, loadingCtrl) {
+var LiberarInsumoControlePage = /** @class */ (function () {
+    function LiberarInsumoControlePage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, dateNow, dateTimeFormatPipe, storage, colaboradorService, insumoService, localizacaoService, loadingCtrl, movimentacaoService) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.alertCtrl = alertCtrl;
+        this.formBuilder = formBuilder;
+        this.dateNow = dateNow;
+        this.dateTimeFormatPipe = dateTimeFormatPipe;
+        this.storage = storage;
+        this.colaboradorService = colaboradorService;
         this.insumoService = insumoService;
-        this.modalCtrl = modalCtrl;
+        this.localizacaoService = localizacaoService;
         this.loadingCtrl = loadingCtrl;
-        this.itensInsumos = [];
-        this.page = 0;
-    }
-    InsumosPage.prototype.ionViewDidLoad = function () {
-        this.getItens();
-    };
-    InsumosPage.prototype.openModal = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create('CadastroInsumoPage', { cssClass: 'select-modal' });
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
-    };
-    InsumosPage.prototype.openModalAjuste = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create('AjusteEstoquePage', { cssClass: 'select-modal' });
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
-    };
-    /*getItens(){
-      this.insumoService.findAll()
-      .subscribe(response => {
-        this.itensInsumos = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
-      },
-      error => {})
-    }*/
-    InsumosPage.prototype.searchInsumo = function (event) {
-        var text = event.srcElement.value;
-        if (!text) {
-            this.getItens();
+        this.movimentacaoService = movimentacaoService;
+        this.localizacoes = [];
+        this.paralocalizacoes = [];
+        this.insumosLocalizacoes = [];
+        this.movimentacao = {};
+        this.mov = {};
+        this.movimentacaogrid = {};
+        this.localUser = this.storage.getLocalUser();
+        this.hiddenselect = true;
+        this.il = navParams.get('item');
+        this.localizacao = this.il.localizacao;
+        if (this.localizacao.aprovacao != null) {
+            if (this.localizacao.aprovacao == true) {
+                this.localizacaoService.findAllLocalizacoesFilhasByLocalizacaoPai(this.localizacao.id).subscribe(function (resp) {
+                    _this.localizacoes = resp;
+                    _this.localizacoes.forEach(function (val) {
+                        if (val.resultado != null) {
+                            if (val.resultado == true) {
+                                _this.paralocalizacao = val;
+                                _this.hiddenselect = true;
+                            }
+                        }
+                    });
+                });
+                if (this.paralocalizacao == null) {
+                    this.hiddenselect = false;
+                }
+            }
+            else {
+                this.hiddenselect = false;
+            }
         }
-        this.itensInsumos = this.filterPorts(this.itensInsumos, text);
-        console.log("aqui: " + this.itensInsumos);
+        else {
+            this.hiddenselect = false;
+        }
+        this.movimentacao = {};
+        this.itemMov = {
+            insumo: this.il.insumo,
+            quantidadeOrigem: this.il.quantidade,
+            quantidadeMovimentada: 0,
+            loteFornecedor: this.il.loteFornecedor,
+            loteCR: this.il.loteCR,
+            loteProducao: this.il.loteProducao,
+            dataIrradiacao: this.il.dataIrradiacao,
+            dataValidade: this.il.dataValidade,
+            dataAprovacao: this.il.dataAprovacao,
+            dataReproprovacao: this.il.dataReproprovacao,
+            aprovado: this.il.aprovado,
+            fieldsGarantiaQualidade: true,
+            loteRecebimento: this.il.loteRecebimento,
+            loteLEI: this.il.loteLEI,
+            loteARM: this.il.loteARM,
+            irradiado: this.il.irradiado,
+            subloteLEI: this.il.subloteLEI,
+            unidadeRecebida: this.il.unidadeRecebida,
+            quantidadeVolume: this.il.quantidadeVolume,
+            unidadeEntrada: this.il.unidadeEntrada,
+            condambamostragemgc: this.il.condambamostragemgc,
+            condambamostragemur: this.il.condambamostragemur,
+            quantidadeDescartada: this.il.quantidadeDescartada,
+            show: null,
+            armario: this.il.armario,
+            posicao: this.il.posicao,
+            cas: this.il.cas,
+        };
+    }
+    LiberarInsumoControlePage.prototype.ionViewDidLoad = function () {
+        this.datamovimentacao = this.dateNow.getDateNow();
+        this.loadParaLocalizacao();
     };
-    InsumosPage.prototype.filterPorts = function (ports, text) {
-        return ports.filter(function (port) {
-            return port.nomecodalmox.toLowerCase().indexOf(text) !== -1;
-        });
-    };
-    InsumosPage.prototype.getItens = function () {
+    LiberarInsumoControlePage.prototype.loadParaLocalizacao = function () {
         var _this = this;
         var loader = this.presentLoading();
-        this.itensInsumos = [];
-        this.insumoService.findTotosPaginado(this.page, 30)
-            .subscribe(function (response) {
-            var start = _this.itensInsumos.length;
-            _this.itensInsumos = _this.itensInsumos.concat(response['content']);
-            var end = _this.itensInsumos.length - 1;
-            //console.log( this.itensInsumos);
-            loader.dismiss();
-        }, function (error) {
+        this.localizacaoService.findAll().subscribe(function (response) {
+            _this.paralocalizacoes = response.sort();
             loader.dismiss();
         });
     };
-    InsumosPage.prototype.presentLoading = function () {
-        var loader = this.loadingCtrl.create({ content: "Aguarde..." });
+    LiberarInsumoControlePage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({
+            content: "Aguarde..."
+        });
         loader.present();
         return loader;
     };
-    InsumosPage.prototype.doRefresh = function (refresher) {
-        this.page = 0;
-        this.itensInsumos = [];
-        this.getItens();
-        setTimeout(function () {
-            refresher.complete();
-        }, 1000);
+    LiberarInsumoControlePage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
     };
-    InsumosPage.prototype.doInfinite = function (infiniteScroll) {
-        this.page++;
-        this.getItens();
-        setTimeout(function () {
-            infiniteScroll.complete();
-        }, 1000);
+    LiberarInsumoControlePage.prototype.valida = function (m) {
+        if (m.descartado == true) {
+            m.isDisabledutilizado = true;
+        }
+        else if (m.utilizado == true) {
+            m.isDisableddescartado = true;
+        }
+        else {
+            m.isDisabledutilizado = false;
+            m.isDisableddescartado = false;
+        }
     };
-    InsumosPage.prototype.excluirItem = function (itemId) {
-        this.getItens();
-    };
-    InsumosPage.prototype.editarItem = function (itemId) {
+    LiberarInsumoControlePage.prototype.inserirMovimentacao = function () {
         var _this = this;
-        var modal = this.modalCtrl.create('CadastroInsumoPage', { itemId: itemId });
-        modal.onDidDismiss(function () {
-            _this.getItens();
-        });
-        modal.present();
+        if (this.validarCampos()) {
+            return;
+        }
+        else {
+            var im = [];
+            im.push(this.itemMov);
+            var qtdvazio_1 = false;
+            var qtdacimaorigem_1 = false;
+            this.mov = {};
+            this.mov.datamovimentacao = this.dateTimeFormatPipe.transform(this.datamovimentacao);
+            this.mov.localizacaoOrigem = this.localizacao;
+            this.mov.localizacaoDestino = this.paralocalizacao;
+            this.mov.itens = im;
+            this.mov.itens.forEach(function (element) {
+                if (element.quantidadeMovimentada != null) {
+                    if (element.quantidadeMovimentada == 0) {
+                        qtdvazio_1 = true;
+                    }
+                    else if (element.quantidadeMovimentada > element.quantidadeOrigem) {
+                        qtdacimaorigem_1 = true;
+                    }
+                    else {
+                        qtdvazio_1 = false;
+                        if (element.utilizado == true) {
+                            var valor = element.quantidadeMovimentada;
+                            element.quantidadeUtilizada = valor;
+                            element.quantidadeMovimentada = element.quantidadeOrigem - element.quantidadeMovimentada;
+                        }
+                        if (element.descartado == true) {
+                            var valor = element.quantidadeMovimentada;
+                            element.quantidadeDescartada = valor;
+                            element.quantidadeMovimentada = element.quantidadeOrigem - element.quantidadeMovimentada;
+                        }
+                    }
+                }
+                else {
+                    qtdvazio_1 = true;
+                }
+                if (qtdvazio_1) {
+                    _this.showQtdVazio();
+                }
+                else if (qtdacimaorigem_1) {
+                    _this.showQtdAcimaDaOrigem();
+                }
+                else {
+                    _this.movimentacaoService.insert(_this.mov).subscribe(function (response) {
+                        _this.showInsertOk();
+                    }, function (error) { });
+                }
+            });
+        }
     };
-    InsumosPage.prototype.openPdf = function () {
-        this.insumoService.relatorioInsumos().subscribe(function (response) {
-            var file = new Blob([response], { type: 'application/pdf' });
-            var fileURL = URL.createObjectURL(file);
-            window.open(fileURL);
-        });
+    LiberarInsumoControlePage.prototype.validarCampos = function () {
+        if (this.itemMov.quantidadeMovimentada <= 0) {
+            this.showMensagem("Campo quantidade não pode ser nulo!");
+            return true;
+        }
+        if (!this.itemMov.utilizado && !this.itemMov.descartado) {
+            this.showMensagem("Escolha utilizado ou descartado!");
+            return true;
+        }
+        if (this.itemMov.aprovado == null) {
+            this.showMensagem("Necessário aprovar ou reprovar o insumo para liberação!");
+            return true;
+        }
+        if (!this.hiddenselect) {
+            if (this.paralocalizacao == null) {
+                this.showMensagem("Necessário selecionar uma localização de destino!");
+                return true;
+            }
+        }
+        return false;
     };
-    InsumosPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-insumos',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/'<!--\n\n  Generated template for the InsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Insumos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="openPdf()" >\n\n        <span ion-text color="primary" showWhen="ios">Pdf</span>\n\n        <ion-icon name="md-document"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModalAjuste()">\n\n        <ion-icon name="hammer"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="openModal()">\n\n      <ion-icon name="add-circle" ></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content></ion-refresher-content>\n\n  </ion-refresher>\n\n\n\n  <ion-list>\n\n    <ion-searchbar showcancelbutton="" (ionInput)="searchInsumo($event)"></ion-searchbar>\n\n    <ion-row *ngFor="let item of itensInsumos">\n\n      <ion-col>\n\n        <h6>Cód: {{item.codigoalmox}}</h6>\n\n        <h3>{{item.nome}}</h3>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="create" (click)="editarItem(item.id)" title="Editar Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n      <ion-col col-1>\n\n        <ion-icon name="close-circle" (click)="excluirItem(item.id)" title="Excluir Insumo" positionV="bottom"></ion-icon>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-list>\n\n\n\n  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n\n  </ion-infinite-scroll>\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\insumo\insumos.html"*/,
+    LiberarInsumoControlePage.prototype.showMensagem = function (msg) {
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: msg,
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                }
+            ]
+        });
+        alert.present();
+    };
+    LiberarInsumoControlePage.prototype.showQtdVazio = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: 'Não é possível inserir movimentação sem quantidade!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                }
+            ]
+        });
+        alert.present();
+    };
+    LiberarInsumoControlePage.prototype.showQtdAcimaDaOrigem = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: 'Quantidade de movimentação não pode ser maior que a quantidade de origem!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                }
+            ]
+        });
+        alert.present();
+    };
+    LiberarInsumoControlePage.prototype.showInsertOk = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Sucesso',
+            message: 'Liberação efetuada com sucesso!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                    handler: function () {
+                        _this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    LiberarInsumoControlePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_8__angular_core__["Component"])({
+            selector: 'page-liberar-insumo-controle',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\liberar-insumo-controle\liberar-insumo-controle.html"*/'<!--\n  Generated template for the LiberarInsumoControlePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar>\n    <ion-title> Liberar Insumo </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="dismiss()">\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item color="item_entrada">\n    <ion-label>Data da liberação</ion-label>\n    <ion-input style="padding-left: 10px" type="datetime-local" [(ngModel)]="datamovimentacao"> </ion-input>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Usuário logado:</ion-label>\n    <ion-label style="text-align: right;"><b>{{localUser.nome}}</b></ion-label>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Insumo:</ion-label>\n    <ion-label style="text-align: right;"><b>{{il.insumo.nome}}</b></ion-label>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Quantidade:</ion-label>\n    <ion-label style="text-align: right;"><b>{{il.quantidade}} {{il.unidadeEntrada.nome}}</b></ion-label>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Lote Fornecedor:</ion-label>\n    <ion-label style="text-align: right;"><b>{{il.loteFornecedor}}</b></ion-label>\n  </ion-item>\n  <ion-item color="item_entrada">\n    <ion-label>Lote Lei:</ion-label>\n    <ion-label style="text-align: right;"><b>{{il.loteLEI}}</b></ion-label>\n  </ion-item>\n  \n  <ion-item color="item_entrada" [hidden]="hiddenselect">\n    <ion-label>Liberar para</ion-label>\n    <ionic-selectable \n      item-content\n      [(ngModel)]="paralocalizacao"\n      [items]="paralocalizacoes"\n      itemValueField="id"\n      itemTextField="nome"\n      [canSearch]="true"\n      [focusSearchbar]="true"\n      [hasVirtualScroll]="true" >\n      <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n        <ion-item>\n          <ion-label text-wrap class="label_12_b">\n            {{item.objlocalizacaofilha != null ? item.objlocalizacaofilha.nome+" => "+ item.nome : item.nome}}\n          </ion-label>\n        </ion-item>\n      </ng-template>\n    </ionic-selectable>\n  </ion-item>\n\n     <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-input type="number" placeholder="Quantidade" [(ngModel)]="itemMov.quantidadeMovimentada"> </ion-input>\n        </ion-item>\n      </ion-col> \n      <ion-col>\n        <ion-item>\n          <ion-label>Utilizado</ion-label>\n      <ion-checkbox color="primary" [(ngModel)]="itemMov.utilizado" [disabled]="itemMov.isDisabledutilizado" (click)="valida(itemMov)"></ion-checkbox>\n        </ion-item>\n      </ion-col>\n          \n            \n      <ion-col>\n        <ion-item>\n          <ion-label>Descartado</ion-label>\n      <ion-checkbox color="secondary" [(ngModel)]="itemMov.descartado" [disabled]="itemMov.isDisableddescartado" (click)="valida(itemMov)"></ion-checkbox>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n    <ion-row radio-group [(ngModel)]="itemMov.aprovado">\n      <ion-col>\n        <ion-item>\n          <ion-label>Aprovado?</ion-label>\n        </ion-item>\n      </ion-col> \n      <ion-col>\n        <ion-item>\n          <ion-label>Sim</ion-label>\n          <ion-radio value="true"></ion-radio>\n        </ion-item>\n      </ion-col>\n          \n            \n      <ion-col>\n        <ion-item>\n          <ion-label>Não</ion-label>\n          <ion-radio value="false"></ion-radio>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n\n\n    <ion-row>\n      <ion-col col-12 style="text-align: center;" ><button ion-button color="secondary" [disabled]="botaoMovimenta" (click)="inserirMovimentacao()">Liberar</button></ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\liberar-insumo-controle\liberar-insumo-controle.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */]])
-    ], InsumosPage);
-    return InsumosPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_6__utils_datenow__["a" /* DateNow */],
+            __WEBPACK_IMPORTED_MODULE_2__utils_date_time_format__["a" /* DateTimeFormatPipe */],
+            __WEBPACK_IMPORTED_MODULE_5__services_storage_service__["a" /* StorageService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_domain_colaborador_service__["a" /* ColaboradorService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["j" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_movimentacao_service__["a" /* MovimentacaoService */]])
+    ], LiberarInsumoControlePage);
+    return LiberarInsumoControlePage;
 }());
 
-//# sourceMappingURL=insumos.js.map
+//# sourceMappingURL=liberar-insumo-controle.js.map
 
 /***/ })
 
