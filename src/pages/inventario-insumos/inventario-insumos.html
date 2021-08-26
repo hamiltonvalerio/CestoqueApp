@@ -1,0 +1,147 @@
+<!--
+  Generated template for the InventarioInsumosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Inventário - Insumos da Localização: {{nomeLocalizacao}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()" >
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row>
+      <div >
+        <ion-searchbar
+          placeholder="Nome"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'nome')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+      <div >
+        <ion-searchbar
+          placeholder="Cod. Almox."
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'codalmox')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+      <div >
+        <ion-searchbar
+          placeholder="Lote LEI"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'lotelei')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+      <div >
+        <ion-searchbar
+          placeholder="Lote LEI Principal"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="buscaInsumo($event,'sublotelei')"
+          (ionCancel)="onCancel()">
+        </ion-searchbar>
+      </div>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-1 class="card-vermelho" style="display: flex; justify-content: center; align-items: center;"><b>reprovado</b></ion-col>
+      <ion-col col-md-1 class="card-amarelo" style="display: flex; justify-content: center; align-items: center;"><b>quarentena</b></ion-col>
+      <ion-col col-md-1 class="card-verde" style="display: flex; justify-content: center; align-items: center;"><b>aprovado</b></ion-col>
+    </ion-row>   
+  </ion-grid>
+
+  
+
+  <ion-list *ngFor="let ins of insumosLocalizacao">
+    <ion-item>
+      <div><b>{{ins.insumo.nome}}</b></div>
+      <div><b>{{"Cod. Almox: "+ins.codigoalmoxarifado}}</b></div>
+      <div ><b>Lote LEI: {{ins.loteLEI}}</b></div>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Lote Fornecedor</ion-label>
+      <ion-input type="text" [(ngModel)]="ins.loteFornecedor"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Lote CR</ion-label>
+      <ion-input type="text" [(ngModel)]="ins.loteCR"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>CAS</ion-label>
+      <ion-input type="text" [(ngModel)]="ins.cas"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Data Validade</ion-label>
+      <ion-input type="date" [(ngModel)]="ins.dataValidade"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Quantidade disponível</ion-label>
+      <ion-input type="number" [(ngModel)]="ins.quantidade"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Aprovado pelo CQ?</ion-label>
+    </ion-item>
+      <ion-list  radio-group [(ngModel)]="ins.aprovado">
+        <ion-item>
+          <ion-label>SIM</ion-label>
+          <ion-radio value="true">SIM</ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>NÃO</ion-label>
+          <ion-radio value="false">NÃO</ion-radio>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-label stacked>Irradiado?</ion-label>
+      </ion-item>
+        <ion-list  radio-group [(ngModel)]="ins.irradiado">
+          <ion-item>
+            <ion-label>SIM</ion-label>
+            <ion-radio value="true">SIM</ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>NÃO</ion-label>
+            <ion-radio value="false">NÃO</ion-radio>
+          </ion-item>
+        </ion-list>
+      <ion-item>
+        <ion-label stacked>Armario</ion-label>
+        <ion-input type="text" [(ngModel)]="ins.armario"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Prateleira</ion-label>
+        <ion-input type="text" [(ngModel)]="ins.prateleira"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Posição</ion-label>
+        <ion-input type="text" [(ngModel)]="ins.posicao"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button color="secondary" (click)="salvarAlteracao(ins)">Salvar Alteração</button>
+      </ion-item>
+  </ion-list>
+  
+ 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

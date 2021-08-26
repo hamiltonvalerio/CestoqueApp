@@ -1,3 +1,4 @@
+import { LocalizacaoOrdenadaDTO } from './../../models/localizacaoordenada.dto';
 import { ConverteListaIonItemDivider } from './../../utils/converte-list-ionitemdivider';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { LocalizacaoService } from './../../services/domain/localizacao.service';
@@ -21,6 +22,11 @@ export class InventarioPage {
   itens: LocalizacaoDTO[];
   itensLocalizacoes = [];
 
+  itenslocord: LocalizacaoOrdenadaDTO[];
+  itensLocalizacoesOrd = [];
+
+  showDetails: boolean = false;
+
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
     public localizacaoService: LocalizacaoService,
@@ -32,22 +38,36 @@ export class InventarioPage {
   }
 
   getItens(){ 
-    this.localizacaoService.findAll()
+    this.localizacaoService.findAllOrdenado()
     .subscribe(response => {
       this.itensLocalizacoes = new ConverteListaIonItemDivider().retornaArrayGroup(response.sort());
-      
+    },
+    error => {})
+
+    this.localizacaoService.findAllOrdenadoFilhas()
+    .subscribe(response => {
+      this.itensLocalizacoesOrd = response.sort();
+      console.log(this.itensLocalizacoesOrd)
     },
     error => {})
   }
 
   public openItem(itemId: string, itemNome: string, itemAtualizaqtdminima: string, itemControle: string, localizacao_filha: string): void {  
-    this.navCtrl.push('LocalizacaoInsumosPage', {
+    this.navCtrl.push('InventarioInsumosPage', {
       localizacao_id: itemId,
       localizacao_nome: itemNome,
       localizacao_atualizaqtdminima: itemAtualizaqtdminima,
       localizacao_controle: itemControle,
       localizacao_filha: localizacao_filha,
     });
+  }
+
+  toggleDetails(show, i) {
+    console.log(i)
+    this.itensLocalizacoesOrd.map(( _ , index ) => { 
+      if (index == i ) {
+         _.show = !_.show 
+        }});
   }
 
   

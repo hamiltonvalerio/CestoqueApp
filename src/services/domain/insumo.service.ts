@@ -128,5 +128,28 @@ export class InsumoService {
         });
     }
 
+    findInsumoLocalizacaoByNome(localizacao_id : string, nome : string){
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoByNome/?localizacao_id=${localizacao_id}&nome=${nome}`);
+    }
 
+    findInsumoLocalizacaoByCodalmox(localizacao_id : string, codalmox : string){
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoByCodalmox/?localizacao_id=${localizacao_id}&codalmox=${codalmox}`);
+    }
+
+    findInsumoLocalizacaoByLotelei(localizacao_id : string, lotelei : string){
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoByCodalmox/?localizacao_id=${localizacao_id}&lotelei=${lotelei}`);
+    }
+
+    findInsumoLocalizacaoBySublotelei(localizacao_id : string, sublotelei : string){
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoByCodalmox/?localizacao_id=${localizacao_id}&sublotelei=${sublotelei}`);
+    }
+
+    updateInsumoLocalizacaoInventario(insumolocalizacao: InsumolocalizacaoDTO){
+        return this.http.put(`${API_CONFIG.baseUrl}/insumolocalizacao/updateInsumoLocalizacaoInventario/`,
+        insumolocalizacao,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
+    }
 }

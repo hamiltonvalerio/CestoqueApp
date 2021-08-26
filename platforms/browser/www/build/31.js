@@ -1,14 +1,15 @@
 webpackJsonp([31],{
 
-/***/ 722:
+/***/ 733:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUnidadePageModule", function() { return CadastroUnidadePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__ = __webpack_require__(910);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ControlePageModule", function() { return ControlePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__controle__ = __webpack_require__(924);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +19,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroUnidadePageModule = /** @class */ (function () {
-    function CadastroUnidadePageModule() {
+
+var ControlePageModule = /** @class */ (function () {
+    function ControlePageModule() {
     }
-    CadastroUnidadePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+    ControlePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */],
+                __WEBPACK_IMPORTED_MODULE_3__controle__["a" /* ControlePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_unidade__["a" /* CadastroUnidadePage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__controle__["a" /* ControlePage */]),
+                __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__["b" /* IonicSelectableModule */]
             ],
         })
-    ], CadastroUnidadePageModule);
-    return CadastroUnidadePageModule;
+    ], ControlePageModule);
+    return ControlePageModule;
 }());
 
-//# sourceMappingURL=cadastro-unidade.module.js.map
+//# sourceMappingURL=controle.module.js.map
 
 /***/ }),
 
-/***/ 910:
+/***/ 924:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUnidadePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(46);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ControlePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_datenow__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_insumo_service__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_domain_localizacao_service__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,69 +66,208 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 /**
- * Generated class for the CadastroUnidadePage page.
+ * Generated class for the ControlePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var CadastroUnidadePage = /** @class */ (function () {
-    function CadastroUnidadePage(navCtrl, viewCtrl, alertCtrl, navParams, formBuilder, unidadeService) {
+var ControlePage = /** @class */ (function () {
+    function ControlePage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, localizacaoService, insumoService, loadingCtrl, dateTimeFormatPipe, dateNow, modalCtrl) {
         this.navCtrl = navCtrl;
+        this.navParams = navParams;
         this.viewCtrl = viewCtrl;
         this.alertCtrl = alertCtrl;
-        this.navParams = navParams;
         this.formBuilder = formBuilder;
-        this.unidadeService = unidadeService;
-        this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
-            sigla: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
-        }, {});
+        this.localizacaoService = localizacaoService;
+        this.insumoService = insumoService;
+        this.loadingCtrl = loadingCtrl;
+        this.dateTimeFormatPipe = dateTimeFormatPipe;
+        this.dateNow = dateNow;
+        this.modalCtrl = modalCtrl;
+        this.localizacoes = [];
+        this.shouldShowCancel = true;
     }
-    CadastroUnidadePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroUnidadePage');
+    ControlePage.prototype.ionViewDidLoad = function () {
+        this.loadLocalizacao();
     };
-    CadastroUnidadePage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    CadastroUnidadePage.prototype.cadastrarUnidade = function () {
+    ControlePage.prototype.loadLocalizacao = function () {
         var _this = this;
-        this.unidadeService.insert(this.formGroup.value).subscribe(function (response) {
-            _this.showInserOk();
-        }, function (error) { });
+        var loader = this.presentLoading();
+        this.localizacaoService.findByAprovacaoTrue().subscribe(function (response) {
+            _this.localizacoes = response.sort();
+            loader.dismiss();
+        });
     };
-    CadastroUnidadePage.prototype.showInserOk = function () {
+    ControlePage.prototype.presentLoading = function () {
+        var loader = this.loadingCtrl.create({
+            content: "Aguarde..."
+        });
+        loader.present();
+        return loader;
+    };
+    ControlePage.prototype.carregaObjeto = function (event) {
+        this.localizacao = event.value;
+        this.carregaInsumos();
+    };
+    ControlePage.prototype.carregaInsumos = function () {
         var _this = this;
+        if (this.localizacao != undefined) {
+            var loader_1 = this.presentLoading();
+            this.insumosLocalizacao = [];
+            this.insumoService
+                .findInsumoLocalizacaoByLocalizacao(this.localizacao.id)
+                .subscribe(function (response) {
+                var start = _this.insumosLocalizacao.length;
+                _this.insumosLocalizacao = _this.insumosLocalizacao.concat(response["content"]);
+                _this.insumosLocalizacao.forEach(function (il) {
+                    if (il.dataPrevisaoControle != null) {
+                        il.dataPrevisaoControle = _this.dateTimeFormatPipe.transformhifem(_this.dateNow.getDateFormatado(il.dataPrevisaoControle));
+                    }
+                });
+                var end = _this.insumosLocalizacao.length - 1;
+                loader_1.dismiss();
+            }, function (error) {
+                loader_1.dismiss();
+            });
+        }
+        else {
+            this.showLocalizacaoNulo();
+        }
+    };
+    ControlePage.prototype.buscaInsumo = function (ev, tipo) {
+        var val = ev.target.value;
+        if (this.insumosLocalizacao != undefined) {
+            if (val && val.trim() != '') {
+                switch (tipo) {
+                    case 'nome':
+                        this.insumosLocalizacao = this.insumosLocalizacao.filter(function (item) {
+                            return (item.insumo.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
+                        });
+                        break;
+                    case 'codalmox':
+                        this.insumosLocalizacao = this.insumosLocalizacao.filter(function (item) {
+                            return (item.codigoalmoxarifado.toLowerCase().indexOf(val.toLowerCase()) > -1);
+                        });
+                        break;
+                    case 'lotelei':
+                        this.insumosLocalizacao = this.insumosLocalizacao.filter(function (item) {
+                            return (item.loteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1);
+                        });
+                        break;
+                    case 'sublotelei':
+                        this.insumosLocalizacao = this.insumosLocalizacao.filter(function (item) {
+                            return (item.subloteLEI != null ? item.subloteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1 : "");
+                        });
+                        break;
+                }
+            }
+        }
+        else {
+            this.showListaVazia();
+        }
+    };
+    ControlePage.prototype.onCancel = function () {
+        this.carregaInsumos();
+    };
+    ControlePage.prototype.showListaVazia = function () {
         var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
+            title: 'Erro',
+            message: 'Não é possível pesquisar com a lista de insumos vazia!',
             enableBackdropDismiss: false,
             buttons: [
                 {
                     text: 'Ok',
                     handler: function () {
-                        _this.navCtrl.pop();
                     }
                 }
             ]
         });
         alert.present();
     };
-    CadastroUnidadePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
-            selector: 'page-cadastro-unidade',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/'<!--\n\n  Generated template for the CadastroUnidadePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Unidade\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  \n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarUnidade()">\n\n    <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Sigla*</ion-label>\n\n      <ion-input formControlName="sigla" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.sigla.dirty && formGroup.controls.sigla.errors" margin-left >Valor inválido</p>\n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n  </form>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-unidade\cadastro-unidade.html"*/,
+    ControlePage.prototype.showLocalizacaoNulo = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: 'Localização não pode ser nulo!',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                }
+            ]
+        });
+        alert.present();
+    };
+    ControlePage.prototype.liberarInsumo = function (il) {
+        var _this = this;
+        if (il.quantidade == 0) {
+            this.showMensagem("Não é possível liberar insumo com quantidade igual a zero!");
+        }
+        else {
+            var modal = this.modalCtrl.create('LiberarInsumoControlePage', { item: il });
+            modal.onDidDismiss(function () {
+                _this.carregaInsumos();
+            });
+            modal.present();
+        }
+    };
+    ControlePage.prototype.receberParaControle = function (il) {
+        var _this = this;
+        var modal = this.modalCtrl.create('ReceberNoControlePage', { item: il });
+        modal.onDidDismiss(function () {
+            _this.carregaInsumos();
+        });
+        modal.present();
+    };
+    ControlePage.prototype.alterarPrevisao = function (il) {
+        var _this = this;
+        if (il.quantidade == 0) {
+            this.showMensagem("Não é possível alterar a previsao se a quantidade é igual a zero!");
+        }
+        else {
+            var modal = this.modalCtrl.create('AlterarPrevisaoControlePage', { item: il });
+            modal.onDidDismiss(function () {
+                _this.carregaInsumos();
+            });
+            modal.present();
+        }
+    };
+    ControlePage.prototype.showMensagem = function (msg) {
+        var alert = this.alertCtrl.create({
+            title: 'Erro',
+            message: msg,
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Ok',
+                }
+            ]
+        });
+        alert.present();
+    };
+    ControlePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
+            selector: 'page-controle',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\controle\controle.html"*/'<!--\n\n  Generated template for the ControlePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-row>\n\n      <ion-title>Controle</ion-title>\n\n      <ionic-selectable\n\n      item-content\n\n      [(ngModel)]="localizacao"\n\n      [items]="localizacoes"\n\n      itemValueField="id"\n\n      itemTextField="nome"\n\n      [canSearch]="true"\n\n      [focusSearchbar]="true"\n\n      [hasVirtualScroll]="true" \n\n      placeholder="Localizações"\n\n      (onChange)="carregaInsumos($event)">\n\n      <ng-template\n\n        ionicSelectableItemTemplate\n\n        let-port="item"\n\n        class="my-center-text">\n\n        <ion-item>\n\n          <ion-label text-wrap class="label_12_b"> {{port.nome}} </ion-label>\n\n        </ion-item>\n\n      </ng-template>\n\n    </ionic-selectable>\n\n    </ion-row>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <div >\n\n        <ion-searchbar\n\n          placeholder="Busca pelo nome"\n\n          [showCancelButton]="shouldShowCancel"\n\n          (ionInput)="buscaInsumo($event,\'nome\')"\n\n          (ionCancel)="onCancel()"\n\n          (ionClear)="onCancel()">\n\n        </ion-searchbar>\n\n      </div>\n\n      <div >\n\n        <ion-searchbar\n\n          placeholder="Busca por cod. almoxarifado"\n\n          [showCancelButton]="shouldShowCancel"\n\n          (ionInput)="buscaInsumo($event,\'codalmox\')"\n\n          (ionCancel)="onCancel()"\n\n          (ionClear)="onCancel()">\n\n        </ion-searchbar>\n\n      </div>\n\n      <div >\n\n        <ion-searchbar\n\n          placeholder="Busca por Lote LEI"\n\n          [showCancelButton]="shouldShowCancel"\n\n          (ionInput)="buscaInsumo($event,\'lotelei\')"\n\n          (ionCancel)="onCancel()"\n\n          (ionClear)="onCancel()">\n\n        </ion-searchbar>\n\n      </div>\n\n      <div >\n\n        <ion-searchbar\n\n          placeholder="Busca por Lote LEI Principal"\n\n          [showCancelButton]="shouldShowCancel"\n\n          (ionInput)="buscaInsumo($event,\'sublotelei\')"\n\n          (ionCancel)="onCancel()"\n\n          (ionClear)="onCancel()">\n\n        </ion-searchbar>\n\n      </div>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-md-1 class="card-vermelho" style="display: flex; justify-content: center; align-items: center;"><b>reprovado</b></ion-col>\n\n      <ion-col col-md-1 class="card-amarelo" style="display: flex; justify-content: center; align-items: center;"><b>quarentena</b></ion-col>\n\n      <ion-col col-md-1 class="card-verde" style="display: flex; justify-content: center; align-items: center;"><b>aprovado</b></ion-col>\n\n    </ion-row>   \n\n  </ion-grid>\n\n  <ion-grid>\n\n  <ion-row class="alinha_itens_center">\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>COD ALMOX:</b>\n\n    </ion-col>\n\n    <ion-col col-md-3 class="cell-class">\n\n      <b>NOME:</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>QTD:</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>LT FORNECEDOR</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>LT LEI</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>APROVADO</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>IRRADIADO</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>RECEBER</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>DT PREVISÃO</b>\n\n    </ion-col>\n\n    <ion-col col-md-1 class="cell-class">\n\n      <b>LIBERAR</b>\n\n    </ion-col>\n\n  </ion-row>\n\n  \n\n    <ion-row *ngFor="let ins of insumosLocalizacao">\n\n      <ion-col col-md-1 class="{{ins.farol}}" style="\n\n        border-color: rgb(131, 125, 125); \n\n        border-width: .01em; \n\n        border-style:solid; \n\n        display: flex; \n\n        justify-content: center;\n\n        align-items: center;"><b>{{ins.codigoalmoxarifado}}</b></ion-col>\n\n      <ion-col col-md-3 class="cell-class"><b>{{ins.insumo.nome}}</b></ion-col>\n\n      <ion-col col-md-1 class="cell-class">{{ins.quantidade}} {{ins.unidadeEntrada.nome}}</ion-col>\n\n      <ion-col col-md-1 class="cell-class">{{ins.loteFornecedor}}</ion-col>\n\n      <ion-col col-md-1 class="cell-class">{{ins.loteLEI}}</ion-col>\n\n      <ion-col col-md-1 class="cell-class-icon">{{ins.aprovado != null ? ins.aprovado== true ? "SIM":"NÃO":""}}</ion-col>\n\n      <ion-col col-md-1 class="cell-class-icon">{{ins.irradiado}}</ion-col>\n\n      <ion-col col-md-1 class="cell-class-icon">\n\n        <button [color]="ins.recebidonocontrole != null?ins.recebidonocontrole == true?\'dark\':\'primary\':\'primary\'" ion-button icon-only (click)="receberParaControle(ins)" \n\n        tooltip="I\'m a tooltip below a button" positionV="bottom" arrow>\n\n          <ion-icon ios="ios-cube" md="md-cube"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-md-1 class="cell-class-icon">\n\n        <button ion-button icon-only [disabled]="ins.recebidonocontrole != null?ins.recebidonocontrole == true?false:true:true" (click)="alterarPrevisao(ins)">\n\n          {{"&nbsp;"+(ins.dataPrevisaoControle | date:\'dd/MM/yyyy\')+"&nbsp;"}}\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-md-1 class="cell-class-icon" >\n\n        <button ion-button icon-only [disabled]="ins.recebidonocontrole != null?ins.recebidonocontrole == true?false:true:true" (click)="liberarInsumo(ins)">\n\n          <ion-icon ios="ios-unlock" md="md-unlock"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\controle\controle.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_unidade_service__["a" /* UnidadeService */]])
-    ], CadastroUnidadePage);
-    return CadastroUnidadePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__services_domain_localizacao_service__["a" /* LocalizacaoService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1__utils_date_time_format__["a" /* DateTimeFormatPipe */],
+            __WEBPACK_IMPORTED_MODULE_0__utils_datenow__["a" /* DateNow */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["l" /* ModalController */]])
+    ], ControlePage);
+    return ControlePage;
 }());
 
-//# sourceMappingURL=cadastro-unidade.js.map
+//# sourceMappingURL=controle.js.map
 
 /***/ })
 

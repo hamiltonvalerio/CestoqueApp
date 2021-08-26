@@ -1,21 +1,23 @@
 <ion-content>
-  <form class="container2">
+  <form class="container3">
     <div>
         <h3>Sistema de Controle de Estoque</h3>
         <img src="assets/imgs/cuidados-de-saude-e-medicos 128px.png" alt="logo"/>
 
 
       <ion-item >
-        <ion-label stacked>Email</ion-label>
-        <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>
+        <ion-input [(ngModel)]="creds.email" placeholder="Email" name="email" type="text"></ion-input>
       </ion-item>
       <ion-item >
-        <ion-label stacked>Senha</ion-label>
-        <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
+        <ion-input [(ngModel)]="creds.senha" placeholder="Senha"  name="senha" type="password"></ion-input>
       </ion-item>
-      <button ion-button block (click)="login()">Entrar</button>
-      <button ion-button block outline (click)="signup()">Registrar</button>
-      <button ion-button block outline (click)="recuperarSenha()">Esqueci a senha</button>
+      <ion-item >
+        <button ion-button block (click)="login()">Entrar</button>
+      </ion-item>
+      <ion-item >
+        <button ion-button block outline (click)="signup()">Registrar</button>
+        <button ion-button block outline (click)="recuperarSenha()">Esqueci a senha</button>
+      </ion-item>
     </div>
   </form>
   

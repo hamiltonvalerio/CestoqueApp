@@ -1,14 +1,14 @@
 webpackJsonp([40],{
 
-/***/ 711:
+/***/ 712:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlterarPrevisaoControlePageModule", function() { return AlterarPrevisaoControlePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlterarSenhaPageModule", function() { return AlterarSenhaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alterar_previsao_controle__ = __webpack_require__(897);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alterar_senha__ = __webpack_require__(901);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,39 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AlterarPrevisaoControlePageModule = /** @class */ (function () {
-    function AlterarPrevisaoControlePageModule() {
+var AlterarSenhaPageModule = /** @class */ (function () {
+    function AlterarSenhaPageModule() {
     }
-    AlterarPrevisaoControlePageModule = __decorate([
+    AlterarSenhaPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__alterar_previsao_controle__["a" /* AlterarPrevisaoControlePage */],
+                __WEBPACK_IMPORTED_MODULE_2__alterar_senha__["a" /* AlterarSenhaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__alterar_previsao_controle__["a" /* AlterarPrevisaoControlePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__alterar_senha__["a" /* AlterarSenhaPage */]),
             ],
         })
-    ], AlterarPrevisaoControlePageModule);
-    return AlterarPrevisaoControlePageModule;
+    ], AlterarSenhaPageModule);
+    return AlterarSenhaPageModule;
 }());
 
-//# sourceMappingURL=alterar-previsao-controle.module.js.map
+//# sourceMappingURL=alterar-senha.module.js.map
 
 /***/ }),
 
-/***/ 897:
+/***/ 901:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlterarPrevisaoControlePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_colaborador_service__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_storage_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_datenow__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(46);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlterarSenhaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,41 +60,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-
 /**
- * Generated class for the AlterarPrevisaoControlePage page.
+ * Generated class for the AlterarSenhaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AlterarPrevisaoControlePage = /** @class */ (function () {
-    function AlterarPrevisaoControlePage(navCtrl, navParams, viewCtrl, alertCtrl, formBuilder, dateNow, dateTimeFormatPipe, storage, colaboradorService, insumoService) {
+var AlterarSenhaPage = /** @class */ (function () {
+    function AlterarSenhaPage(navCtrl, navParams, formBuilder, alertCtrl, colaboradorService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.alertCtrl = alertCtrl;
         this.formBuilder = formBuilder;
-        this.dateNow = dateNow;
-        this.dateTimeFormatPipe = dateTimeFormatPipe;
-        this.storage = storage;
+        this.alertCtrl = alertCtrl;
         this.colaboradorService = colaboradorService;
-        this.insumoService = insumoService;
-        this.localUser = this.storage.getLocalUser();
-        this.il = navParams.get('item');
+        this.colab = navParams.get('item');
+        this.formGroup = this.formBuilder.group({
+            senha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            confirmarsenha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
+        }, { validator: this.MatchPassword });
     }
-    AlterarPrevisaoControlePage.prototype.ionViewDidLoad = function () {
+    AlterarSenhaPage.prototype.MatchPassword = function (AC) {
+        var newPassword = AC.get('senha').value; // to get value in input tag
+        var confirmPassword = AC.get('confirmarsenha').value; // to get value in input tag
+        if (newPassword != confirmPassword) {
+            AC.get('confirmarsenha').setErrors({ MatchPassword: true });
+        }
+        else {
+            AC.get('confirmarsenha').setErrors(null);
+        }
     };
-    AlterarPrevisaoControlePage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    AlterarPrevisaoControlePage.prototype.showInserOk = function () {
+    AlterarSenhaPage.prototype.showInserOk = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
             title: 'Sucesso',
-            message: 'Cadastro efetuado com sucesso!',
+            message: 'Senha alterada com sucesso!',
             enableBackdropDismiss: false,
             buttons: [
                 {
@@ -111,66 +106,34 @@ var AlterarPrevisaoControlePage = /** @class */ (function () {
         });
         alert.present();
     };
-    AlterarPrevisaoControlePage.prototype.alterarPrevisao = function () {
+    AlterarSenhaPage.prototype.alterPassUser = function () {
         var _this = this;
-        var data = this.dateTimeFormatPipe.transform(this.dataprevisao);
-        var confirm = this.alertCtrl.create({
-            title: 'Deseja alterar previsão?',
-            message: '',
-            buttons: [
-                {
-                    text: 'Não',
-                    handler: function () {
-                    }
-                },
-                {
-                    text: 'Sim',
-                    handler: function () {
-                        _this.insumoService.updatePrevisaoControle(_this.il.id, _this.storage.getLocalUser().nome, data).subscribe(function (resp) {
-                            _this.showAlteradoOk();
-                        });
-                    }
-                }
-            ]
+        this.colabAlterSenha = this.formGroup.value;
+        this.colabAlterSenha.email = this.colab.email;
+        console.log(this.colab);
+        console.log(this.colabAlterSenha);
+        this.colaboradorService.alterarSenha(this.formGroup.value).subscribe(function (response) {
+            _this.showInserOk();
+        }, function (error) {
         });
-        confirm.present();
     };
-    AlterarPrevisaoControlePage.prototype.showAlteradoOk = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Sucesso',
-            message: 'Data de previsão alterada com sucesso!',
-            enableBackdropDismiss: false,
-            buttons: [
-                {
-                    text: 'Ok',
-                    handler: function () {
-                        _this.navCtrl.pop();
-                    }
-                }
-            ]
-        });
-        alert.present();
+    AlterarSenhaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AlterarSenhaPage');
     };
-    AlterarPrevisaoControlePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_6__angular_core__["Component"])({
-            selector: 'page-alterar-previsao-controle',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\alterar-previsao-controle\alterar-previsao-controle.html"*/'<!--\n\n  Generated template for the AlterarPrevisaoControlePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title> Alterar previsão de controle </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()">\n\n        <span ion-text color="primary" showWhen="ios">Cancel </span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item color="item_entrada">\n\n    <ion-label>Data atual de previsão de controle:</ion-label>\n\n    <ion-label><b>{{il.dataPrevisaoControle | date:\'dd/MM/yyyy\'}}</b></ion-label>\n\n  </ion-item> \n\n  <ion-item color="item_entrada">\n\n    <ion-label>Nova data de previsão:</ion-label>\n\n    <ion-input type="datetime-local" [(ngModel)]="dataprevisao"> </ion-input>\n\n  </ion-item>  \n\n  <ion-item color="item_entrada">\n\n    <ion-label>Usuário logado:</ion-label>\n\n    <ion-label><b>{{localUser.nome}}</b></ion-label>\n\n  </ion-item>\n\n  \n\n  <button ion-button  type="submit" (click)="alterarPrevisao()">Alterar</button>\n\n        \n\n    \n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\alterar-previsao-controle\alterar-previsao-controle.html"*/,
+    AlterarSenhaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: 'page-alterar-senha',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\alterar-senha\alterar-senha.html"*/'<!--\n\n  Generated template for the AlterarSenhaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Alterar Senha</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <form [formGroup]="formGroup" (ngSubmit)="alterPassUser()">\n\n    <ion-item>\n\n      <ion-label stacked>Senha*</ion-label>\n\n      <ion-input formControlName="senha"  type="password"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Confirmar Senha*</ion-label>\n\n      <ion-input formControlName="confirmarsenha" id="confirmarsenha" type="password"></ion-input>\n\n    </ion-item> \n\n      <ion-label *ngIf="formGroup.controls[\'confirmarsenha\'].errors?.MatchPassword" class="danger">\n\n        Senhas não conferem!\n\n     </ion-label>\n\n     <ion-row>\n\n      <ion-col width-50 style="text-align: center;">\n\n        <button ion-button  type="submit" [disabled]="formGroup.invalid">Alterar</button>\n\n      </ion-col>\n\n    </ion-row>\n\n     \n\n    \n\n    \n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\alterar-senha\alterar-senha.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_4__utils_datenow__["a" /* DateNow */],
-            __WEBPACK_IMPORTED_MODULE_0__utils_date_time_format__["a" /* DateTimeFormatPipe */],
-            __WEBPACK_IMPORTED_MODULE_3__services_storage_service__["a" /* StorageService */],
-            __WEBPACK_IMPORTED_MODULE_2__services_domain_colaborador_service__["a" /* ColaboradorService */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_insumo_service__["a" /* InsumoService */]])
-    ], AlterarPrevisaoControlePage);
-    return AlterarPrevisaoControlePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_0__services_domain_colaborador_service__["a" /* ColaboradorService */]])
+    ], AlterarSenhaPage);
+    return AlterarSenhaPage;
 }());
 
-//# sourceMappingURL=alterar-previsao-controle.js.map
+//# sourceMappingURL=alterar-senha.js.map
 
 /***/ })
 

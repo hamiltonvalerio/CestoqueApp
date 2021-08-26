@@ -31,6 +31,7 @@ export interface InsumolocalizacaoDTO extends DadosComunsInsumos{
     unidadeEntrada: UnidadeDTO;
 
     armario: string;
+    prateleira: string;
     posicao: string;
     cas: string;
 

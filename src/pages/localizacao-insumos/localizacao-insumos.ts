@@ -45,6 +45,8 @@ export class LocalizacaoInsumosPage {
   botaoQuantidadeMinima: boolean = false;
   dataControle: boolean = true;
 
+  localizacaoId: string;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -86,33 +88,52 @@ export class LocalizacaoInsumosPage {
 
   buscaInsumo(ev : any, tipo: string){
     let val = ev.target.value;
-    console.log(val)
     if (val && val.trim() != '') {
       switch (tipo){
         case 'nome':
-          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+          this.insumoService.findInsumoLocalizacaoByNome(this.localizacaoId,val).subscribe((response) => {
+            this.insumosLocalizacao = response.sort();
+          });
+          /*this.insumosLocalizacao.filter((item) => {
             return (item.insumo.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
-          })
+          })*/
         break;
         case 'codalmox':
-          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+          this.insumoService.findInsumoLocalizacaoByCodalmox(this.localizacaoId,val).subscribe((response) => {
+            this.insumosLocalizacao = response.sort();
+          });
+          /*this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
             return (item.codigoalmoxarifado.toLowerCase().indexOf(val.toLowerCase()) > -1);
-          })
+          })*/
         break;
         case 'lotelei':
-          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+          this.insumoService.findInsumoLocalizacaoByLotelei(this.localizacaoId,val).subscribe((response) => {
+            this.insumosLocalizacao = response.sort();
+          });
+          /*this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
             return (item.loteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1);
-          })
+          })*/
         break;
         case 'sublotelei':
-          this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
+          this.insumoService.findInsumoLocalizacaoBySublotelei(this.localizacaoId,val).subscribe((response) => {
+            this.insumosLocalizacao = response.sort();
+          });
+          /*this.insumosLocalizacao = this.insumosLocalizacao.filter((item) => {
             return (item.subloteLEI != null?item.subloteLEI.toLowerCase().indexOf(val.toLowerCase()) > -1:"");
-          })
+          })*/
         break;
       }
     }else{
       this.getItens();
     }
+  }
+
+  ajustaDataControle(){
+    this.insumosLocalizacao.forEach((il) => {
+      if(il.dataPrevisaoControle != null){
+        il.dataPrevisaoControle = this.dateTimeFormatPipe.transformhifem(this.dateNow.getDateFormatado(il.dataPrevisaoControle));
+      }
+    })
   }
 
   onCancel(){
@@ -121,7 +142,10 @@ export class LocalizacaoInsumosPage {
 
  
   getItens() {
-    let localizacaoId = this.navParams.get("localizacao_id");
+
+    let loader = this.presentLoading();
+
+    this.localizacaoId = this.navParams.get("localizacao_id");
     if(this.navParams.get("localizacao_atualizaqtdminima") != null){
       if(this.navParams.get("localizacao_atualizaqtdminima") === false){
         this.botaoQuantidadeMinima = true;
@@ -130,11 +154,11 @@ export class LocalizacaoInsumosPage {
         this.dataControle = false;
       }
     }
-    let loader = this.presentLoading();
+    
     this.insumosLocalizacao = [];
     //this.insumoService.findByLocalizacao(localizacaoId,this.page, 30)
      this.insumoService
-      .findInsumoLocalizacaoByLocalizacao(localizacaoId)
+      .findInsumoLocalizacaoByLocalizacao(this.localizacaoId, this.page, 30)
       .subscribe(
         (response) => {
           let start = this.insumosLocalizacao.length;
@@ -147,7 +171,6 @@ export class LocalizacaoInsumosPage {
             }
           })
           let end = this.insumosLocalizacao.length - 1;
-          console.log(this.insumosLocalizacao)
           loader.dismiss();
         },
         (error) => {
@@ -164,6 +187,23 @@ export class LocalizacaoInsumosPage {
     });
     loader.present();
     return loader;
+  }
+
+  doRefresh(refresher){
+    this.page = 0;
+    this.insumosLocalizacao = [];
+    this.getItens();
+    setTimeout(()=>{
+      refresher.complete();
+    },1000);
+  }
+
+  doInfinite(infiniteScroll){
+    this.page++;
+    this.getItens();
+    setTimeout(() => {
+      infiniteScroll.complete();
+    }, 1000);
   }
 
   createPdf() {
@@ -208,7 +248,6 @@ export class LocalizacaoInsumosPage {
       if (rows.hasOwnProperty(keys))
       {
         var data = rows[keys];
-        console.log(data)
           var row = new Array();
           row.push( data.codigoalmoxarifado );
           row.push( data.insumo.nome );
