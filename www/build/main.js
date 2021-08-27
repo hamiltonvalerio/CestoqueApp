@@ -252,11 +252,11 @@ var map = {
 		3
 	],
 	"../pages/cadastro-localizacao/cadastro-localizacao.module": [
-		718,
+		717,
 		37
 	],
 	"../pages/cadastro-movimentacao/cadastro-movimentacao.module": [
-		717,
+		718,
 		6
 	],
 	"../pages/cadastro-orgao/cadastro-orgao.module": [
@@ -276,11 +276,11 @@ var map = {
 		33
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		724,
+		723,
 		32
 	],
 	"../pages/categorias/categorias.module": [
-		723,
+		724,
 		10
 	],
 	"../pages/controle/controle.module": [
@@ -288,11 +288,11 @@ var map = {
 		31
 	],
 	"../pages/dashboard/dashboard.module": [
-		726,
+		727,
 		30
 	],
 	"../pages/entrada/entrada.module": [
-		727,
+		726,
 		29
 	],
 	"../pages/fornecedor/fornecedor.module": [
@@ -308,11 +308,11 @@ var map = {
 		26
 	],
 	"../pages/inventario-insumos/inventario-insumos.module": [
-		731,
+		732,
 		1
 	],
 	"../pages/inventario/inventario.module": [
-		732,
+		731,
 		9
 	],
 	"../pages/liberar-insumo-controle/liberar-insumo-controle.module": [
@@ -352,11 +352,11 @@ var map = {
 		21
 	],
 	"../pages/profile/profile.module": [
-		743,
+		742,
 		20
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		742,
+		743,
 		19
 	],
 	"../pages/receber-no-controle/receber-no-controle.module": [
@@ -1316,22 +1316,22 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-entrada/cadastro-entrada.module#CadastroEntradaPageModule', name: 'CadastroEntradaPage', segment: 'cadastro-entrada', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-fornecedor/cadastro-fornecedor.module#CadastroFornecedorPageModule', name: 'CadastroFornecedorPage', segment: 'cadastro-fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-insumo/cadastro-insumo.module#CadastroInsumoPageModule', name: 'CadastroInsumoPage', segment: 'cadastro-insumo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-localizacao/cadastro-localizacao.module#CadastroLocalizacaoPageModule', name: 'CadastroLocalizacaoPage', segment: 'cadastro-localizacao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-orgao/cadastro-orgao.module#CadastroOrgaoPageModule', name: 'CadastroOrgaoPage', segment: 'cadastro-orgao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fornecedor/fornecedor.module#FornecedorPageModule', name: 'FornecedorPage', segment: 'fornecedor', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomeModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insumo/insumos.module#InsumoPageModule', name: 'InsumosPage', segment: 'insumos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inventario-insumos/inventario-insumos.module#InventarioInsumosPageModule', name: 'InventarioInsumosPage', segment: 'inventario-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inventario/inventario.module#InventarioPageModule', name: 'InventarioPage', segment: 'inventario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inventario-insumos/inventario-insumos.module#InventarioInsumosPageModule', name: 'InventarioInsumosPage', segment: 'inventario-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/liberar-insumo-controle/liberar-insumo-controle.module#LiberarInsumoControlePageModule', name: 'LiberarInsumoControlePage', segment: 'liberar-insumo-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao-insumos/localizacao-insumos.module#LocalizacaoInsumosPageModule', name: 'LocalizacaoInsumosPage', segment: 'localizacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/localizacao/localizacao.module#LocalizacaoPageModule', name: 'LocalizacaoPage', segment: 'localizacao', priority: 'low', defaultHistory: [] },
@@ -1341,8 +1341,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/receber-no-controle/receber-no-controle.module#ReceberNoControlePageModule', name: 'ReceberNoControlePage', segment: 'receber-no-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
