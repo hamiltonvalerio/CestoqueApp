@@ -137,11 +137,11 @@ export class InsumoService {
     }
 
     findInsumoLocalizacaoByLotelei(localizacao_id : string, lotelei : string){
-        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoByCodalmox/?localizacao_id=${localizacao_id}&lotelei=${lotelei}`);
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoByLotelei/?localizacao_id=${localizacao_id}&lotelei=${lotelei}`);
     }
 
     findInsumoLocalizacaoBySublotelei(localizacao_id : string, sublotelei : string){
-        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoByCodalmox/?localizacao_id=${localizacao_id}&sublotelei=${sublotelei}`);
+        return this.http.get<InsumolocalizacaoDTO[]>(`${API_CONFIG.baseUrl}/insumos/findInsumoLocalizacaoBySublotelei/?localizacao_id=${localizacao_id}&sublotelei=${sublotelei}`);
     }
 
     updateInsumoLocalizacaoInventario(insumolocalizacao: InsumolocalizacaoDTO){

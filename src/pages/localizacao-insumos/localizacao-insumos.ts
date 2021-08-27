@@ -5,7 +5,7 @@ import { InsumolocalizacaoDTO } from "./../../models/insumolocalizacao.dto";
 import { ModalQuantidademinimaPage } from "./../modal-quantidademinima/modal-quantidademinima";
 import { InsumoService } from "./../../services/domain/insumo.service";
 import { LocalizacaoService } from "./../../services/domain/localizacao.service";
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import {
   IonicPage,
   NavController,
@@ -14,6 +14,7 @@ import {
   ModalController,
   ViewController,
   AlertController,
+  Searchbar,
 } from "ionic-angular";
 
 import { File } from "@ionic-native/file/ngx";
@@ -47,6 +48,7 @@ export class LocalizacaoInsumosPage {
 
   localizacaoId: string;
 
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -67,6 +69,7 @@ export class LocalizacaoInsumosPage {
     console.log("ionViewDidLoad LocalizacaoInsumosPage");
     //this.loadData();
     this.getItens();
+
   }
 
   dismiss() {
