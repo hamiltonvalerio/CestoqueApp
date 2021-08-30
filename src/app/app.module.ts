@@ -42,8 +42,7 @@ import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 import { TooltipsModule } from 'ionic-tooltips';
-
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -92,7 +91,8 @@ import { TooltipsModule } from 'ionic-tooltips';
     PerfilParaAcesso,
     PaginaService,
     PerfilService,
-    OrgaoService
+    OrgaoService,
+    BarcodeScanner
   ]
 })
 export class AppModule {}

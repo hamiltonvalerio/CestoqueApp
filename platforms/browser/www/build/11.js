@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VinculaPaginaPerfilPageModule", function() { return VinculaPaginaPerfilPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vincula_pagina_perfil__ = __webpack_require__(941);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var VinculaPaginaPerfilPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 892:
+/***/ 893:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63,11 +63,11 @@ var PaginasEnum;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VinculaPaginaPerfilPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_pagina_service__ = __webpack_require__(369);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__enums_paginas_enum__ = __webpack_require__(892);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_pagina_service__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__enums_paginas_enum__ = __webpack_require__(893);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_perfil_service__ = __webpack_require__(362);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

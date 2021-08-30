@@ -20,40 +20,51 @@
 
 
 <ion-content padding>
-    <ion-grid>
+    <ion-grid fixed>
       <ion-row>
-        <div >
+        <ion-col >
           <ion-searchbar
-            placeholder="Busca pelo nome"
+            placeholder="Nome"
             [showCancelButton]="shouldShowCancel"
             (ionInput)="buscaInsumo($event,'nome')"
             (ionCancel)="onCancel()">
           </ion-searchbar>
-        </div>
-        <div >
+        </ion-col>
+        <ion-col >
           <ion-searchbar
-            placeholder="Busca por cod. almoxarifado"
+            placeholder="Cod. almoxarifado"
             [showCancelButton]="shouldShowCancel"
             (ionInput)="buscaInsumo($event,'codalmox')"
             (ionCancel)="onCancel()">
           </ion-searchbar>
-        </div>
-        <div >
+        </ion-col>
+        <ion-col >
           <ion-searchbar
-            placeholder="Busca por Lote LEI"
-            [showCancelButton]="shouldShowCancel"
-            (ionInput)="buscaInsumo($event,'lotelei')"
-            (ionCancel)="onCancel()">
-          </ion-searchbar>
-        </div>
-        <div >
-          <ion-searchbar
-            placeholder="Busca por Lote LEI Principal"
+            placeholder="Lote LEI Principal"
             [showCancelButton]="shouldShowCancel"
             (ionInput)="buscaInsumo($event,'sublotelei')"
             (ionCancel)="onCancel()">
           </ion-searchbar>
-        </div>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col col-11>
+          <ion-searchbar
+            placeholder="Lote LEI"
+            [showCancelButton]="shouldShowCancel"
+            (ionInput)="buscaInsumo($event,'lotelei')"
+            (ionCancel)="onCancel()"
+            [(ngModel)]="scannedData">
+          </ion-searchbar>
+        </ion-col>
+        <ion-col col-1 [hidden]="plataforma">
+          <div>
+            <button ion-button (click)="scan()" >
+              <ion-icon name="md-barcode"></ion-icon>
+            </button>
+          </div>
+        </ion-col>
+        
       </ion-row>
     </ion-grid>
     <ion-grid>

@@ -28480,6 +28480,10 @@ page-rastreamento .alinha_itens_center {
   text-align: center;
 }
 
+page-rastreamento .ionic-selectable {
+  max-width: 90%;
+}
+
 page-receber-no-controle .cell-class {
   border-color: #837d7d;
   border-width: .01em;

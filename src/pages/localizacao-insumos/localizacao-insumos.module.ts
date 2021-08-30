@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { LocalizacaoInsumosPage } from './localizacao-insumos';
 
+
+
 @NgModule({
   declarations: [
     LocalizacaoInsumosPage
@@ -10,6 +12,7 @@ import { LocalizacaoInsumosPage } from './localizacao-insumos';
   imports: [
     IonicPageModule.forChild(LocalizacaoInsumosPage),
   ],
+ 
   
 })
 export class LocalizacaoInsumosPageModule {}

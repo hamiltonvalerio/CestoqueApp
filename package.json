@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@capacitor/core": "2.4.7",
     "@ionic-native/android-permissions": "^5.31.1",
-    "@ionic-native/barcode-scanner": "^5.32.1",
+    "@ionic-native/barcode-scanner": "^4.20.0",
     "@ionic-native/core": "^4.20.0",
     "@ionic-native/file": "^5.33.0",
     "@ionic-native/file-opener": "^5.33.0",
@@ -87,9 +87,7 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-android-permissions": {},
-      "phonegap-plugin-barcodescanner": {
-        "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      },
+      "phonegap-plugin-barcodescanner": {},
       "cordova-plugin-printer": {
         "ANDROID_SUPPORT_V4_VERSION": "28.+"
       },

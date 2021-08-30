@@ -1,3 +1,4 @@
+import { BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
 import { InsumolocalizacaoDTO } from './../../models/insumolocalizacao.dto';
 import { LocalizacaoDTO } from './../../models/localizacao.dto';
 import { DateNow } from './../../utils/datenow';
@@ -12,7 +13,8 @@ import {
   LoadingController, 
   ModalController, 
   ViewController, 
-  AlertController 
+  AlertController,
+  Platform
 } from 'ionic-angular';
 
 import { File } from "@ionic-native/file/ngx";
@@ -46,6 +48,12 @@ export class InventarioInsumosPage {
 
   localizacaoId: string;
 
+  options: BarcodeScannerOptions;
+  encodeText: string='';
+  encodeData: any={};
+  scannedData:string='';
+  plataforma:boolean=true;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -58,11 +66,44 @@ export class InventarioInsumosPage {
     public file: File,
     public dateTimeFormatPipe: DateTimeFormatPipe,
     public dateNow: DateNow,
+    private scanner: BarcodeScanner,
+    public platform : Platform,
     ) {
       this.nomeLocalizacao = this.navParams.get("localizacao_nome");
   }
 
+  scan(){
+    this.options={
+    prompt: 'Posicione o código de barras!'
+  };
+  this.scanner.scan(this.options).then((data) => {
+    this.scannedData = data.text;
+    this.buscaInsumoPorLoteLei(this.scannedData)
+  }, (err) => {
+    console.log('Erro: ', err);
+  })
+}
+
+encode(){
+  this.scanner.encode(this.scanner.Encode.TEXT_TYPE, this.encodeText).then((data) => {
+    this.encodeData = data;
+  }, (err) => {
+    console.log('Erro: ', err);
+  })
+}
+
+buscaInsumoPorLoteLei(loteLei : string){
+  this.insumoService.findInsumoLocalizacaoByLotelei(this.localizacaoId,loteLei).subscribe((response) => {
+    this.insumosLocalizacao = response.sort();
+  });
+}
+
   ionViewDidLoad() {
+    if (this.platform.is('mobile')) {
+        this.plataforma = false;
+    }else{
+      this.plataforma = true;
+    }
     this.getItens();
   }
 

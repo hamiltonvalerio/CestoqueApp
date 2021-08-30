@@ -14,8 +14,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Lotes LEI cadastrados</ion-label>
+  <ion-row>
+    <ion-col>
     <ionic-selectable 
       #localizacoesComponent
       item-content
@@ -26,7 +26,8 @@
       [canSearch]="true"
       [focusSearchbar]="true"
       (onChange)="loteLEIChange($event)"
-      [hasVirtualScroll]="true" >
+      [hasVirtualScroll]="true"
+      placeholder="Lotes LEI cadastrados">
       <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
         <ion-item>
           <ion-label text-wrap class="label_12_b">
@@ -35,7 +36,15 @@
         </ion-item>
       </ng-template>
     </ionic-selectable>
-  </ion-item>
+  </ion-col>
+  <ion-col col-1>
+    <button ion-button (click)="scan()" >
+      <ion-icon name="md-barcode"></ion-icon>
+    </button>
+  </ion-col>
+  </ion-row>
+
+  
   <ion-grid [hidden]="insumoEntradaDTO != null ? false : true">
     <ion-row><ion-col><ion-label></ion-label></ion-col></ion-row>
     <ion-row><ion-col><ion-label></ion-label></ion-col></ion-row>
