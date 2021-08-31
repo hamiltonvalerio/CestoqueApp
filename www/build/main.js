@@ -268,123 +268,123 @@ var map = {
 		35
 	],
 	"../pages/cadastro-perfil/cadastro-perfil.module": [
-		722,
+		723,
 		34
 	],
 	"../pages/cadastro-saida/cadastro-saida.module": [
-		723,
+		722,
 		33
 	],
 	"../pages/cadastro-unidade/cadastro-unidade.module": [
-		724,
+		750,
 		32
 	],
 	"../pages/categorias/categorias.module": [
-		725,
+		751,
 		10
 	],
 	"../pages/controle/controle.module": [
-		726,
+		724,
 		31
 	],
 	"../pages/dashboard/dashboard.module": [
-		727,
+		725,
 		30
 	],
 	"../pages/entrada/entrada.module": [
-		728,
+		726,
 		29
 	],
 	"../pages/fornecedor/fornecedor.module": [
-		729,
+		727,
 		28
 	],
 	"../pages/home/home.module": [
-		730,
+		728,
 		27
 	],
 	"../pages/insumo/insumos.module": [
-		731,
+		729,
 		26
 	],
 	"../pages/inventario-insumos/inventario-insumos.module": [
-		732,
+		730,
 		1
 	],
 	"../pages/inventario/inventario.module": [
-		733,
+		731,
 		9
 	],
 	"../pages/liberar-insumo-controle/liberar-insumo-controle.module": [
-		734,
+		732,
 		25
 	],
 	"../pages/localizacao-insumos/localizacao-insumos.module": [
-		735,
+		733,
 		0
 	],
 	"../pages/localizacao/localizacao.module": [
-		736,
+		734,
 		8
 	],
 	"../pages/manual/manual.module": [
-		737,
+		735,
 		24
 	],
 	"../pages/modal-quantidademinima/modal-quantidademinima.module": [
-		738,
+		736,
 		5
 	],
 	"../pages/movimentacao-insumos/movimentacao-insumos.module": [
-		739,
+		737,
 		4
 	],
 	"../pages/movimentacao/movimentacao.module": [
-		740,
+		738,
 		23
 	],
 	"../pages/producao/producao.module": [
-		741,
+		739,
 		22
 	],
 	"../pages/produto/produto.module": [
-		746,
+		740,
 		21
 	],
 	"../pages/profile/profile.module": [
-		742,
+		741,
 		20
 	],
 	"../pages/rastreamento/rastreamento.module": [
-		743,
+		742,
 		19
 	],
 	"../pages/receber-no-controle/receber-no-controle.module": [
-		744,
+		743,
 		18
 	],
 	"../pages/recupera-senha/recupera-senha.module": [
-		745,
+		744,
 		17
 	],
 	"../pages/saida/saida.module": [
-		747,
+		745,
 		16
 	],
 	"../pages/signup/signup.module": [
-		748,
+		746,
 		15
 	],
 	"../pages/unidade/unidade.module": [
-		749,
+		747,
 		14
 	],
 	"../pages/vincula-pagina-perfil/vincula-pagina-perfil.module": [
-		750,
+		748,
 		11
 	],
 	"../pages/vincula-perfil-usuario/vincula-perfil-usuario.module": [
-		751,
+		749,
 		13
 	]
 };
@@ -1322,10 +1322,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cadastro-movimentacao/cadastro-movimentacao.module#CadastroMovimentacaoPageModule', name: 'CadastroMovimentacaoPage', segment: 'cadastro-movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-orgao/cadastro-orgao.module#CadastroOrgaoPageModule', name: 'CadastroOrgaoPage', segment: 'cadastro-orgao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-pagina/cadastro-pagina.module#CadastroPaginaPageModule', name: 'CadastroPaginaPage', segment: 'cadastro-pagina', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cadastro-saida/cadastro-saida.module#CadastroSaidaPageModule', name: 'CadastroSaidaPage', segment: 'cadastro-saida', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-perfil/cadastro-perfil.module#CadastroPerfilPageModule', name: 'CadastroPerfilPage', segment: 'cadastro-perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/controle/controle.module#ControlePageModule', name: 'ControlePage', segment: 'controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/entrada/entrada.module#EntradaPageModule', name: 'EntradaPage', segment: 'entrada', priority: 'low', defaultHistory: [] },
@@ -1342,16 +1340,18 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/movimentacao-insumos/movimentacao-insumos.module#MovimentacaoInsumosPageModule', name: 'MovimentacaoInsumosPage', segment: 'movimentacao-insumos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/movimentacao/movimentacao.module#MovimentacaoPageModule', name: 'MovimentacaoPage', segment: 'movimentacao', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/producao/producao.module#ProducaoPageModule', name: 'ProducaoPage', segment: 'producao', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rastreamento/rastreamento.module#RastreamentoPageModule', name: 'RastreamentoPage', segment: 'rastreamento', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/receber-no-controle/receber-no-controle.module#ReceberNoControlePageModule', name: 'ReceberNoControlePage', segment: 'receber-no-controle', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recupera-senha/recupera-senha.module#RecuperaSenhaPageModule', name: 'RecuperaSenhaPage', segment: 'recupera-senha', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/produto/produto.module#ProdutoPageModule', name: 'ProdutoPage', segment: 'produto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/saida/saida.module#SaidaPageModule', name: 'SaidaPage', segment: 'saida', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/unidade/unidade.module#UnidadePageModule', name: 'UnidadePage', segment: 'unidade', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/vincula-pagina-perfil/vincula-pagina-perfil.module#VinculaPaginaPerfilPageModule', name: 'VinculaPaginaPerfilPage', segment: 'vincula-pagina-perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/vincula-perfil-usuario/vincula-perfil-usuario.module#VinculaPerfilUsuarioPageModule', name: 'VinculaPerfilUsuarioPage', segment: 'vincula-perfil-usuario', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule', name: 'CadastroUnidadePage', segment: 'cadastro-unidade', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/categorias/categorias.module#CategoriasPageModule', name: 'CategoriasPage', segment: 'categorias', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_29__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
