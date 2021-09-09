@@ -35,12 +35,22 @@ export class InsumosPage {
   }
 
   openModal() {
-    let modal = this.modalCtrl.create('CadastroInsumoPage',{cssClass: 'select-modal' });
+
+    this.navCtrl.push('CadastroInsumoPage', {
+      cssClass: 'select-modal'
+    }).then(() => {
+      this.navCtrl.getActive().onDidDismiss(data => {
+        this.getItens();
+      });
+    });
+
+    /*let modal = this.modalCtrl.create('CadastroInsumoPage',{
+      cssClass: 'select-modal' });
     modal.onDidDismiss(() => {
       this.getItens();
     });
     
-    modal.present();
+    modal.present();*/
   }
 
   openModalAjuste() {
@@ -124,11 +134,19 @@ export class InsumosPage {
   }
 
   editarItem(itemId: string){
-    let modal = this.modalCtrl.create('CadastroInsumoPage', {itemId: itemId});
+    this.navCtrl.push('CadastroInsumoPage', {
+      itemId: itemId
+    }).then(() => {
+      this.navCtrl.getActive().onDidDismiss(data => {
+        this.getItens();
+      });
+    });
+
+    /*let modal = this.modalCtrl.create('CadastroInsumoPage', {itemId: itemId});
     modal.onDidDismiss(() => {
       this.getItens();
     });
-    modal.present();
+    modal.present();*/
   }
 
   openPdf() {

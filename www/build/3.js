@@ -698,14 +698,15 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroInsumoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_domain_orgao_service__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_unidade_service__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_categoria_service__ = __webpack_require__(364);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_brmasker_ionic_3__ = __webpack_require__(896);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enums_tipoconsumo_enum__ = __webpack_require__(943);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_orgao_service__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_unidade_service__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_categoria_service__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_domain_insumo_service__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_brmasker_ionic_3__ = __webpack_require__(896);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -715,6 +716,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -747,10 +749,11 @@ var CadastroInsumoPage = /** @class */ (function () {
         this.editarInsumo = false;
         this.precisairradiacao1 = false;
         this.precisacontrolequalidade1 = false;
+        this.tiposconsumos = [];
         this.formGroup = this.formBuilder.group({
             id: ['', ''],
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]],
-            nomenclatura: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]],
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required]],
+            nomenclatura: ['', [__WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required]],
             valor: ['',],
             codigoalmox: ['',],
             observacao: ['',],
@@ -764,6 +767,7 @@ var CadastroInsumoPage = /** @class */ (function () {
             precisairradiacao: [false,],
             precisacontrolequalidade: [false,],
             orgaos: this.formControl,
+            consumo: ['',],
         }, {});
     }
     CadastroInsumoPage.prototype.ionViewDidLoad = function () {
@@ -772,6 +776,8 @@ var CadastroInsumoPage = /** @class */ (function () {
         this.loadUnidades();
         this.loadOrgaos();
         this.liberaComboOrgao();
+        this.loadEnumTiposConsumos();
+        console.log(this.tiposconsumos);
         this.itemId = this.navParams.get('itemId');
         if (this.itemId != null) {
             this.editarInsumo = true;
@@ -794,12 +800,25 @@ var CadastroInsumoPage = /** @class */ (function () {
                     precisairradiacao: [_this.updateInsumoDTO.precisairradiacao, ''],
                     precisacontrolequalidade: [_this.updateInsumoDTO.precisacontrolequalidade, ''],
                     orgaos: [_this.updateInsumoDTO.orgaos,],
+                    consumo: ['',],
                 }, {});
             });
         }
     };
     CadastroInsumoPage.prototype.insereunidadeEntradaDTO = function (event) {
         this.unidade = event.value;
+    };
+    CadastroInsumoPage.prototype.loadEnumTiposConsumos = function () {
+        this.tiposconsumos = [];
+        for (var _i = 0, _a = Object.entries(__WEBPACK_IMPORTED_MODULE_0__enums_tipoconsumo_enum__["a" /* TipoConsumoEnum */]); _i < _a.length; _i++) {
+            var _b = _a[_i], propertyKey = _b[0], propertyValue = _b[1];
+            if (!Number.isNaN(Number(propertyKey))) {
+                continue;
+            }
+            this.tiposconsumos.push({ id: propertyValue, nome: propertyKey });
+        }
+    };
+    CadastroInsumoPage.prototype.tipoConsumoChange = function (event) {
     };
     CadastroInsumoPage.prototype.loadCategorias = function () {
         var _this = this;
@@ -889,21 +908,21 @@ var CadastroInsumoPage = /** @class */ (function () {
     CadastroInsumoPage.prototype.liberaComboOrgao = function () {
     };
     CadastroInsumoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["Component"])({
-            selector: 'page-cadastro-insumo',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/'<!--\n\n  Generated template for the CadastroInsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">\n\n     <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n      <ion-input formControlName="id" type="hidden"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Nomenclatura*</ion-label>\n\n      <ion-input formControlName="nomenclatura" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>\n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label>Categorias</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="categoriasInsumos"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        formControlName="categorias"\n\n        [hasInfiniteScroll]="true"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="imprimeItem($event)"\n\n        [isMultiple]="true"\n\n        [canClear]="true"\n\n        [placeholder]="\'Selecione a categoria\'">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-item="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{item.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n    \n\n    \n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label stacked>Valor</ion-label>\n\n      <ion-input disabled type="number" formControlName="valor"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Código Almoxarifado</ion-label>\n\n      <ion-input formControlName="codigoalmox" type="number" [readonly]="editarInsumo"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Observação</ion-label>\n\n      <ion-textarea formControlName="observacao" type="text"></ion-textarea>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Essencial?</ion-label>\n\n      <ion-toggle formControlName="essencial" ></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Controlado?</ion-label>\n\n      <ion-toggle formControlName="controlado"></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked >Órgão/Entidade Controlador</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="orgaos"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        formControlName="orgaos"\n\n        [hasInfiniteScroll]="true"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="imprimeItem($event)"\n\n        [isMultiple]="true"\n\n        [canClear]="true">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-item="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{item.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Data de Validade</ion-label>\n\n      <ion-datetime disabled formControlName="datavalidade" ></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Quantidade</ion-label>\n\n      <ion-input disabled formControlName="quantidade" type="number"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Unidade de Entrada</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="unidades"\n\n        formControlName="unidade"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="insereunidadeEntradaDTO($event)">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-port="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{port.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-label class="label_14">\n\n              Sigla: {{port.sigla}}\n\n            </ion-label>\n\n          </ion-item>\n\n  \n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n\n\n    <ion-list radio-group\n\n    [formControl]="formGroup.controls.precisairradiacao" >\n\n    <ion-list-header>\n\n      Precisa de Irradiação?\n\n    </ion-list-header>\n\n      <ion-item>\n\n        <ion-label>Sim</ion-label>\n\n        <ion-radio value="true"></ion-radio>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label>Não</ion-label>\n\n        <ion-radio value="false"></ion-radio>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list radio-group \n\n    [formControl]="formGroup.controls.precisacontrolequalidade">\n\n    <ion-list-header>\n\n      Precisa de Controle da Qualidade?\n\n    </ion-list-header>\n\n      <ion-item>\n\n        <ion-label>Sim</ion-label>\n\n        <ion-radio value="true"></ion-radio>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label>Não</ion-label>\n\n        <ion-radio value="false"></ion-radio>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label stacked>Taxa de Consumo</ion-label>\n\n      <ion-input formControlName="taxadeconsumo" type="number"></ion-input>\n\n    </ion-item>\n\n    \n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_7_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]]
+        Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["Component"])({
+            selector: 'page-cadastro-insumo',template:/*ion-inline-start:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/'<!--\n\n  Generated template for the CadastroInsumoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>\n\n      Cadastro de Insumo\n\n    </ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="dismiss()" >\n\n        <span ion-text color="primary" showWhen="ios">Cancel</span>\n\n        <ion-icon name="md-close"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">\n\n    <ion-item>\n\n      <ion-label stacked>Código Almoxarifado</ion-label>\n\n      <ion-input formControlName="codigoalmox" type="number" [readonly]="editarInsumo"></ion-input>\n\n    </ion-item>\n\n     <ion-item>\n\n      <ion-label stacked>Nome*</ion-label>\n\n      <ion-input formControlName="nome" type="text"></ion-input>\n\n      <ion-input formControlName="id" type="hidden"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left >Valor inválido</p>\n\n    <ion-item>\n\n      <ion-label stacked>Nomenclatura*</ion-label>\n\n      <ion-input formControlName="nomenclatura" type="text"></ion-input>\n\n    </ion-item>\n\n    <p class="danger" *ngIf="formGroup.controls.nomenclatura.dirty && formGroup.controls.nomenclatura.errors" margin-left >Valor inválido</p>\n\n    \n\n    \n\n    <ion-item>\n\n      <ion-label>Categorias</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="categoriasInsumos"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        formControlName="categorias"\n\n        [hasInfiniteScroll]="true"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="imprimeItem($event)"\n\n        [isMultiple]="true"\n\n        [canClear]="true"\n\n        [placeholder]="\'Selecione a categoria\'">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-item="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{item.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n  \n\n\n\n      <ion-grid >\n\n        <ion-row style="justify-content: center;">Unidades e Quantidades de Consumo/Movimentação</ion-row>\n\n        <ion-row></ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col>\n\n            <ionic-selectable \n\n              item-content\n\n              [items]="tiposconsumos"\n\n              formControlName="consumo"\n\n              itemValueField="id"\n\n              itemTextField="nome"\n\n              [focusSearchbar]="true"\n\n              (onChange)="tipoConsumoChange($event)"\n\n              [hasVirtualScroll]="true"\n\n              >\n\n              <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">\n\n                <ion-item>\n\n                  <ion-label text-wrap class="label_12_b">\n\n                    {{(item.nome == "ENTRADA" || item.nome == "SAIDA") ? "COMO EU DOU "+item.nome :"COMO EU "+item.nome}}\n\n                  </ion-label>\n\n                </ion-item>\n\n              </ng-template>\n\n            </ionic-selectable>\n\n          </ion-col>\n\n          <ion-col>\n\n\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n      </ion-grid>\n\n\n\n\n\n    <ion-item>\n\n      <ion-label stacked>Valor</ion-label>\n\n      <ion-input disabled type="number" formControlName="valor"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item>\n\n      <ion-label stacked>Observação</ion-label>\n\n      <ion-textarea formControlName="observacao" type="text"></ion-textarea>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Essencial?</ion-label>\n\n      <ion-toggle formControlName="essencial" ></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Controlado?</ion-label>\n\n      <ion-toggle formControlName="controlado"></ion-toggle>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked >Órgão/Entidade Controlador</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="orgaos"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        formControlName="orgaos"\n\n        [hasInfiniteScroll]="true"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="imprimeItem($event)"\n\n        [isMultiple]="true"\n\n        [canClear]="true">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-item="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{item.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Data de Validade</ion-label>\n\n      <ion-datetime disabled formControlName="datavalidade" ></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Quantidade</ion-label>\n\n      <ion-input disabled formControlName="quantidade" type="number"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Unidade de Entrada</ion-label>\n\n      <ionic-selectable \n\n        item-content \n\n        [items]="unidades"\n\n        formControlName="unidade"\n\n        itemValueField="id"\n\n        itemTextField="nome"\n\n        [canSearch]="true"\n\n        [focusSearchbar]="true"\n\n        (onChange)="insereunidadeEntradaDTO($event)">\n\n  \n\n        <ng-template ionicSelectableItemTemplate let-port="item">\n\n         \n\n          <ion-item>\n\n            <ion-label text-wrap class="label_12_b">\n\n              {{port.nome}} \n\n            </ion-label>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-label class="label_14">\n\n              Sigla: {{port.sigla}}\n\n            </ion-label>\n\n          </ion-item>\n\n  \n\n        </ng-template>\n\n  \n\n      </ionic-selectable>\n\n    </ion-item>\n\n\n\n    <ion-list radio-group\n\n    [formControl]="formGroup.controls.precisairradiacao" >\n\n    <ion-list-header>\n\n      Precisa de Irradiação?\n\n    </ion-list-header>\n\n      <ion-item>\n\n        <ion-label>Sim</ion-label>\n\n        <ion-radio value="true"></ion-radio>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label>Não</ion-label>\n\n        <ion-radio value="false"></ion-radio>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-list radio-group \n\n    [formControl]="formGroup.controls.precisacontrolequalidade">\n\n    <ion-list-header>\n\n      Precisa de Controle da Qualidade?\n\n    </ion-list-header>\n\n      <ion-item>\n\n        <ion-label>Sim</ion-label>\n\n        <ion-radio value="true"></ion-radio>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label>Não</ion-label>\n\n        <ion-radio value="false"></ion-radio>\n\n      </ion-item>\n\n    </ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label stacked>Taxa de Consumo</ion-label>\n\n      <ion-input formControlName="taxadeconsumo" type="number"></ion-input>\n\n    </ion-item>\n\n\n\n\n\n    \n\n    \n\n    <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>\n\n </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\DesenvolvimentoApp\CestoqueApp\src\pages\cadastro-insumo\cadastro-insumo.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_8_brmasker_ionic_3__["a" /* BrMaskerIonic3 */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["q" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_6__services_domain_insumo_service__["a" /* InsumoService */],
-            __WEBPACK_IMPORTED_MODULE_2__services_domain_categoria_service__["a" /* CategoriaService */],
-            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_7_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
-            __WEBPACK_IMPORTED_MODULE_1__services_domain_unidade_service__["a" /* UnidadeService */],
-            __WEBPACK_IMPORTED_MODULE_0__services_domain_orgao_service__["a" /* OrgaoService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["o" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["q" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_7__services_domain_insumo_service__["a" /* InsumoService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_domain_categoria_service__["a" /* CategoriaService */],
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_8_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
+            __WEBPACK_IMPORTED_MODULE_2__services_domain_unidade_service__["a" /* UnidadeService */],
+            __WEBPACK_IMPORTED_MODULE_1__services_domain_orgao_service__["a" /* OrgaoService */]])
     ], CadastroInsumoPage);
     return CadastroInsumoPage;
 }());
@@ -967,6 +986,22 @@ BrMaskerModule.ctorParameters = function () { return []; };
 
 
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 943:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TipoConsumoEnum; });
+var TipoConsumoEnum;
+(function (TipoConsumoEnum) {
+    TipoConsumoEnum[TipoConsumoEnum["MOVIMENTO"] = 1] = "MOVIMENTO";
+    TipoConsumoEnum[TipoConsumoEnum["CONSUMO"] = 2] = "CONSUMO";
+    TipoConsumoEnum[TipoConsumoEnum["ENTRADA"] = 3] = "ENTRADA";
+    TipoConsumoEnum[TipoConsumoEnum["SAIDA"] = 4] = "SAIDA";
+})(TipoConsumoEnum || (TipoConsumoEnum = {}));
+//# sourceMappingURL=tipoconsumo.enum.js.map
 
 /***/ })
 

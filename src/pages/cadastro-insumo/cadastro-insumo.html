@@ -21,6 +21,10 @@
 <ion-content>
 
   <form [formGroup]="formGroup" (ngSubmit)="cadastrarInsumo()">
+    <ion-item>
+      <ion-label stacked>Código Almoxarifado</ion-label>
+      <ion-input formControlName="codigoalmox" type="number" [readonly]="editarInsumo"></ion-input>
+    </ion-item>
      <ion-item>
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
@@ -61,18 +65,46 @@
   
       </ionic-selectable>
     </ion-item>
-    
-    
-    
-    
+  
+
+      <ion-grid >
+        <ion-row style="justify-content: center;">Unidades e Quantidades de Consumo/Movimentação</ion-row>
+        <ion-row></ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ionic-selectable 
+              item-content
+              [items]="tiposconsumos"
+              formControlName="consumo"
+              itemValueField="id"
+              itemTextField="nome"
+              [focusSearchbar]="true"
+              (onChange)="tipoConsumoChange($event)"
+              [hasVirtualScroll]="true"
+              >
+              <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
+                <ion-item>
+                  <ion-label text-wrap class="label_12_b">
+                    {{(item.nome == "ENTRADA" || item.nome == "SAIDA") ? "COMO EU DOU "+item.nome :"COMO EU "+item.nome}}
+                  </ion-label>
+                </ion-item>
+              </ng-template>
+            </ionic-selectable>
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+
     <ion-item>
       <ion-label stacked>Valor</ion-label>
       <ion-input disabled type="number" formControlName="valor"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label stacked>Código Almoxarifado</ion-label>
-      <ion-input formControlName="codigoalmox" type="number" [readonly]="editarInsumo"></ion-input>
-    </ion-item>
+    
     <ion-item>
       <ion-label stacked>Observação</ion-label>
       <ion-textarea formControlName="observacao" type="text"></ion-textarea>
@@ -179,11 +211,13 @@
       </ion-item>
     </ion-list>
 
-
     <ion-item>
       <ion-label stacked>Taxa de Consumo</ion-label>
       <ion-input formControlName="taxadeconsumo" type="number"></ion-input>
     </ion-item>
+
+
+    
     
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>
  </form>

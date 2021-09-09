@@ -79,11 +79,20 @@ var InsumosPage = /** @class */ (function () {
     };
     InsumosPage.prototype.openModal = function () {
         var _this = this;
-        var modal = this.modalCtrl.create('CadastroInsumoPage', { cssClass: 'select-modal' });
-        modal.onDidDismiss(function () {
-            _this.getItens();
+        this.navCtrl.push('CadastroInsumoPage', {
+            cssClass: 'select-modal'
+        }).then(function () {
+            _this.navCtrl.getActive().onDidDismiss(function (data) {
+                _this.getItens();
+            });
         });
-        modal.present();
+        /*let modal = this.modalCtrl.create('CadastroInsumoPage',{
+          cssClass: 'select-modal' });
+        modal.onDidDismiss(() => {
+          this.getItens();
+        });
+        
+        modal.present();*/
     };
     InsumosPage.prototype.openModalAjuste = function () {
         var _this = this;
@@ -153,11 +162,18 @@ var InsumosPage = /** @class */ (function () {
     };
     InsumosPage.prototype.editarItem = function (itemId) {
         var _this = this;
-        var modal = this.modalCtrl.create('CadastroInsumoPage', { itemId: itemId });
-        modal.onDidDismiss(function () {
-            _this.getItens();
+        this.navCtrl.push('CadastroInsumoPage', {
+            itemId: itemId
+        }).then(function () {
+            _this.navCtrl.getActive().onDidDismiss(function (data) {
+                _this.getItens();
+            });
         });
-        modal.present();
+        /*let modal = this.modalCtrl.create('CadastroInsumoPage', {itemId: itemId});
+        modal.onDidDismiss(() => {
+          this.getItens();
+        });
+        modal.present();*/
     };
     InsumosPage.prototype.openPdf = function () {
         this.insumoService.relatorioInsumos().subscribe(function (response) {

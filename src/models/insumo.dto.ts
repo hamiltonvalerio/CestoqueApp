@@ -1,3 +1,4 @@
+import { ConsumoDTO } from './consumo.dto';
 import { OrgaoDTO } from './orgao.dto';
 import { InsumoArquivoDTO } from './insumoarquivo.dto';
 import { CategoriaDTO } from "./categoria.dto";
@@ -27,4 +28,6 @@ export interface InsumoDTO{
     precisacontrolequalidade: boolean;
     controlado: boolean;
     orgaos: OrgaoDTO[];
+    consumos: ConsumoDTO[];
+    
 }

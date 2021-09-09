@@ -1,3 +1,4 @@
+import { TipoConsumoEnum } from './../../enums/tipoconsumo.enum';
 import { OrgaoDTO } from './../../models/orgao.dto';
 import { OrgaoService } from './../../services/domain/orgao.service';
 import { UnidadeService } from './../../services/domain/unidade.service';
@@ -50,6 +51,8 @@ export class CadastroInsumoPage {
   orgaosDesabilitados: OrgaoDTO[];
 
   toogle: boolean;
+
+  tiposconsumos = [];
   
   constructor(
     public navCtrl: NavController, 
@@ -81,7 +84,7 @@ export class CadastroInsumoPage {
         precisairradiacao: [false,], 
         precisacontrolequalidade: [false,],
         orgaos: this.formControl,
-
+        consumo: ['',],
         //codigo_barra: [,],
         //qrcode: [,],
         //rfid: [,],
@@ -93,6 +96,8 @@ export class CadastroInsumoPage {
     this.loadUnidades();
     this.loadOrgaos();
     this.liberaComboOrgao();
+    this.loadEnumTiposConsumos()
+    console.log(this.tiposconsumos)
     this.itemId = this.navParams.get('itemId');
     if(this.itemId != null){
       this.editarInsumo = true;
@@ -115,6 +120,7 @@ export class CadastroInsumoPage {
           precisairradiacao: [this.updateInsumoDTO.precisairradiacao,''], 
           precisacontrolequalidade: [this.updateInsumoDTO.precisacontrolequalidade,''],
           orgaos: [this.updateInsumoDTO.orgaos,],
+          consumo: ['',],
         }, {}); 
       });
       
@@ -128,6 +134,25 @@ export class CadastroInsumoPage {
     value: any
   }) {
    this.unidade = event.value;
+  }
+
+  loadEnumTiposConsumos(){
+    this.tiposconsumos = [];
+    
+    for (const [propertyKey, propertyValue] of Object.entries(TipoConsumoEnum)) {  
+    
+      if (!Number.isNaN(Number(propertyKey))) {  
+        continue;  
+    }  
+    this.tiposconsumos.push({ id: propertyValue, nome: propertyKey});  
+    } 
+  }
+
+  tipoConsumoChange(event: {
+    component: IonicSelectableComponent,
+    value: TipoConsumoEnum
+  }){ 
+    
   }
 
   loadCategorias(){

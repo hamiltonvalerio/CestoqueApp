@@ -28322,6 +28322,19 @@ page-cadastro-entrada ion-label {
   color: #686868 !important;
 }
 
+page-cadastro-insumo .ion-item-border {
+  --border-width-top: 1;
+  --border-width-right: 1;
+  --border-width-bottom: 1;
+  --border-width-left: 1;
+}
+
+page-cadastro-insumo .cell-class {
+  border-color: #181616;
+  border-width: .01em;
+  border-style: solid;
+}
+
 page-cadastro-movimentacao ion-grid {
   height: 100%;
 }
