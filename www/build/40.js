@@ -75,8 +75,8 @@ var AlterarSenhaPage = /** @class */ (function () {
         this.colaboradorService = colaboradorService;
         this.colab = navParams.get('item');
         this.formGroup = this.formBuilder.group({
-            senha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
-            confirmarsenha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
+            senha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]],
+            confirmarsenha: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]]
         }, { validator: this.MatchPassword });
     }
     AlterarSenhaPage.prototype.MatchPassword = function (AC) {

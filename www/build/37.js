@@ -9,7 +9,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_selectable__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_localizacao__ = __webpack_require__(909);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_localizacao__ = __webpack_require__(910);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ var CadastroLocalizacaoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 909:
+/***/ 910:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80,7 +80,7 @@ var CadastroLocalizacaoPage = /** @class */ (function () {
         this.fieldLocalizacaoFilha = true;
         this.formGroup = this.formBuilder.group({
             id: ['', ''],
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]],
             aprovacao: [false, ''],
             descarte: [false, ''],
             utilizado: [false, ''],
@@ -100,7 +100,7 @@ var CadastroLocalizacaoPage = /** @class */ (function () {
                 _this.updateLocalizacaoDTO = resp;
                 _this.formGroup = _this.formBuilder.group({
                     id: [_this.updateLocalizacaoDTO.id, ''],
-                    nome: [_this.updateLocalizacaoDTO.nome, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
+                    nome: [_this.updateLocalizacaoDTO.nome, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]],
                     aprovacao: [_this.updateLocalizacaoDTO.aprovacao, ''],
                     descarte: [_this.updateLocalizacaoDTO.descarte, ''],
                     utilizado: [_this.updateLocalizacaoDTO.utilizado, ''],

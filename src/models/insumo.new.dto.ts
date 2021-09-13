@@ -1,3 +1,5 @@
+import { ConsumoDTO } from './consumo.dto';
+import { OrgaoDTO } from './orgao.dto';
 import { UnidadeDTO } from './unidade.dto';
 import { RefDTO } from './ref.dto';
 import { InsumoDTO } from "./insumo.dto";
@@ -23,5 +25,7 @@ export interface InsumoNewDTO{
     precisairradiacao: boolean;
     precisacontrolequalidade: boolean;
     controlado: boolean;
+    orgaos: OrgaoDTO[];
+    consumos: ConsumoDTO[];
     
 }

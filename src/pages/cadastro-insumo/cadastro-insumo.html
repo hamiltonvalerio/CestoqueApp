@@ -39,7 +39,7 @@
     
     
     <ion-item>
-      <ion-label>Categorias</ion-label>
+      <ion-label stacked >Categorias</ion-label>
       <ionic-selectable 
         item-content 
         [items]="categoriasInsumos"
@@ -52,7 +52,7 @@
         (onChange)="imprimeItem($event)"
         [isMultiple]="true"
         [canClear]="true"
-        [placeholder]="'Selecione a categoria'">
+        >
   
         <ng-template ionicSelectableItemTemplate let-item="item">
          
@@ -66,35 +66,138 @@
       </ionic-selectable>
     </ion-item>
   
+    <ion-item></ion-item>
 
-      <ion-grid >
-        <ion-row style="justify-content: center;">Unidades e Quantidades de Consumo/Movimentação</ion-row>
-        <ion-row></ion-row>
-
-        <ion-row>
-          <ion-col>
-            <ionic-selectable 
-              item-content
-              [items]="tiposconsumos"
-              formControlName="consumo"
-              itemValueField="id"
-              itemTextField="nome"
-              [focusSearchbar]="true"
-              (onChange)="tipoConsumoChange($event)"
-              [hasVirtualScroll]="true"
-              >
-              <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
-                <ion-item>
-                  <ion-label text-wrap class="label_12_b">
-                    {{(item.nome == "ENTRADA" || item.nome == "SAIDA") ? "COMO EU DOU "+item.nome :"COMO EU "+item.nome}}
-                  </ion-label>
-                </ion-item>
-              </ng-template>
-            </ionic-selectable>
-          </ion-col>
+      <ion-grid class="cell-class">
+        <ion-row style="justify-content: center;">
           <ion-col>
 
           </ion-col>
+          <ion-col>
+            Unidades e Quantidades de Consumo/Movimentação  
+          </ion-col>
+          <ion-col>
+            
+              <ion-icon name="md-add-circle" color="primary" (click)="addConsumo()"></ion-icon>
+            
+          </ion-col>
+          
+        </ion-row>
+
+
+        <ion-row *ngFor="let it of consumos.controls;"> 
+          <ion-col>
+          <ion-row [formGroup]="it">
+            <ion-col col-3>
+              <ion-item>
+              <ion-label>Tipo de Consumo</ion-label>
+              <ionic-selectable 
+                class="ionic-sel"
+                item-content
+                [items]="tiposconsumos"
+                formControlName="tipoconsumo"
+                itemValueField="id"
+                itemTextField="nomefield"
+                [focusSearchbar]="true"
+                [hasVirtualScroll]="true"
+                >
+                <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
+                  <ion-item>
+                    <ion-label text-wrap class="label_12_b">
+                      {{(item.nome == "ENTRADA" || item.nome == "SAIDA") ? "COMO EU DOU "+item.nome :"COMO EU "+item.nome}}
+                    </ion-label>
+                  </ion-item>
+                </ng-template>
+              </ionic-selectable>
+            </ion-item>
+            </ion-col>
+            <ion-col col-2>
+              <ion-item>
+                <ion-label>Unidade tipo</ion-label>
+              <ionic-selectable 
+                class="ionic-sel"
+                item-content 
+                [items]="unidades"
+                formControlName="unidadetipo"
+                itemValueField="id"
+                itemTextField="nome"
+                [canSearch]="true"
+                [focusSearchbar]="true"
+                >
+          
+                <ng-template ionicSelectableItemTemplate let-port="item">
+                
+                  <ion-item>
+                    <ion-label text-wrap class="label_12_b">
+                      {{port.nome}} 
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label class="label_14">
+                      Sigla: {{port.sigla}}
+                    </ion-label>
+                  </ion-item>
+          
+                </ng-template>
+          
+              </ionic-selectable>
+            </ion-item>
+            </ion-col>
+            <ion-col col-1>
+              <ion-item>
+                
+              <ion-label>
+                COM
+              </ion-label>
+            </ion-item>
+            </ion-col >
+            <ion-col col-2>
+              <ion-item>
+                <ion-label>Quantidade</ion-label>
+              <ion-input formControlName="quantidadecon" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-2>
+              <ion-item>
+                <ion-label>Unidade Consumo</ion-label>
+              <ionic-selectable 
+                class="ionic-sel"
+                item-content 
+                [items]="unidades"
+                formControlName="unidadecon"
+                itemValueField="id"
+                itemTextField="nome"
+                [canSearch]="true"
+                [focusSearchbar]="true"
+                >
+          
+                <ng-template ionicSelectableItemTemplate let-port="item">
+                
+                  <ion-item>
+                    <ion-label text-wrap class="label_12_b">
+                      {{port.nome+" (s)"}}  
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label class="label_14">
+                      Sigla: {{port.sigla}}
+                    </ion-label>
+                  </ion-item>
+          
+                </ng-template>
+          
+              </ionic-selectable>
+              </ion-item>
+            </ion-col>
+            <ion-col col-1>
+              <ion-item>
+              <ion-label>
+                CADA
+              </ion-label>
+            </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-col>
         </ion-row>
 
       </ion-grid>
@@ -152,7 +255,7 @@
       <ion-input disabled formControlName="quantidade" type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Unidade de Entrada</ion-label>
+      <ion-label stacked >Unidade de Entrada</ion-label>
       <ionic-selectable 
         item-content 
         [items]="unidades"
@@ -184,7 +287,8 @@
     <ion-list radio-group
     [formControl]="formGroup.controls.precisairradiacao" >
     <ion-list-header>
-      Precisa de Irradiação?
+      <ion-label stacked >Precisa de Irradiação?</ion-label>
+      
     </ion-list-header>
       <ion-item>
         <ion-label>Sim</ion-label>
@@ -199,7 +303,7 @@
     <ion-list radio-group 
     [formControl]="formGroup.controls.precisacontrolequalidade">
     <ion-list-header>
-      Precisa de Controle da Qualidade?
+      <ion-label stacked >Precisa de Controle da Qualidade?</ion-label>
     </ion-list-header>
       <ion-item>
         <ion-label>Sim</ion-label>
@@ -216,9 +320,6 @@
       <ion-input formControlName="taxadeconsumo" type="number"></ion-input>
     </ion-item>
 
-
-    
-    
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Registrar</button>
  </form>
 

@@ -231,7 +231,7 @@ var CadastroEntradaPage = /** @class */ (function () {
             loteARM: ['',],
             dataValidade: ['',],
             dataFabricacao: ['',],
-            quantidade: ['', [__WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* Validators */].required]],
+            quantidade: ['', [__WEBPACK_IMPORTED_MODULE_6__angular_forms__["g" /* Validators */].required]],
             valor: ['',],
             valorTotal: ['',],
             unidadeRecebida: ['',],

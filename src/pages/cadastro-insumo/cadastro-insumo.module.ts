@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { DirectivesModule } from './../../directives/directives.module';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { BrMaskerModule, BrMaskerIonic3 } from 'brmasker-ionic-3';
     IonicPageModule.forChild(CadastroInsumoPage),
     IonicSelectableModule,
     DirectivesModule,
-    BrMaskerModule
+    BrMaskerModule,
+    ReactiveFormsModule
   ],
 })
 export class CadastroInsumoPageModule {}

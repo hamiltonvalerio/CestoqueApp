@@ -1,3 +1,4 @@
+@import url(~ionic-selectable/esm5/ionic-selectable.component.min.css);
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -28333,6 +28334,11 @@ page-cadastro-insumo .cell-class {
   border-color: #181616;
   border-width: .01em;
   border-style: solid;
+}
+
+page-cadastro-insumo .ionic-sel {
+  display: block;
+  max-width: 100%;
 }
 
 page-cadastro-movimentacao ion-grid {

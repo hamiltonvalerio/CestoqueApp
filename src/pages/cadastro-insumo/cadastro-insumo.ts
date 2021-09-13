@@ -1,3 +1,4 @@
+import { ConsumoDTO } from './../../models/consumo.dto';
 import { TipoConsumoEnum } from './../../enums/tipoconsumo.enum';
 import { OrgaoDTO } from './../../models/orgao.dto';
 import { OrgaoService } from './../../services/domain/orgao.service';
@@ -9,7 +10,7 @@ import { IonicSelectableComponent } from 'ionic-selectable';
 import { CategoriaDTO } from './../../models/categoria.dto';
 import { InsumoNewDTO } from './../../models/insumo.new.dto';
 import { InsumoDTO } from './../../models/insumo.dto';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ViewController, LoadingController } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
@@ -53,6 +54,10 @@ export class CadastroInsumoPage {
   toogle: boolean;
 
   tiposconsumos = [];
+
+  get consumos(): FormArray {
+    return this.formGroup.get("consumos") as FormArray;
+  }
   
   constructor(
     public navCtrl: NavController, 
@@ -84,7 +89,7 @@ export class CadastroInsumoPage {
         precisairradiacao: [false,], 
         precisacontrolequalidade: [false,],
         orgaos: this.formControl,
-        consumo: ['',],
+        consumos: this.formBuilder.array([this.createFormGroup()]),
         //codigo_barra: [,],
         //qrcode: [,],
         //rfid: [,],
@@ -96,8 +101,8 @@ export class CadastroInsumoPage {
     this.loadUnidades();
     this.loadOrgaos();
     this.liberaComboOrgao();
-    this.loadEnumTiposConsumos()
-    console.log(this.tiposconsumos)
+    this.loadEnumTiposConsumos();
+    console.log(this.tiposconsumos);
     this.itemId = this.navParams.get('itemId');
     if(this.itemId != null){
       this.editarInsumo = true;
@@ -120,13 +125,29 @@ export class CadastroInsumoPage {
           precisairradiacao: [this.updateInsumoDTO.precisairradiacao,''], 
           precisacontrolequalidade: [this.updateInsumoDTO.precisacontrolequalidade,''],
           orgaos: [this.updateInsumoDTO.orgaos,],
-          consumo: ['',],
+          consumos: this.formBuilder.array([this.createFormGroup()]),
         }, {}); 
       });
       
     }
     
-    
+  }
+
+  createFormGroup() {
+    return this.formBuilder.group({
+      tipoconsumo: new FormControl(),
+      unidadetipo: new FormControl(),
+      quantidadecon: new FormControl(),
+      unidadecon: new FormControl(),
+    });
+  }
+
+  addConsumo() {
+    const cons = <FormArray>this.formGroup.controls['consumos'];
+    cons.push(this.createFormGroup());
+
+
+   //this.consumos.push(this.createFormGroup());
   }
 
   insereunidadeEntradaDTO(event: {
@@ -144,7 +165,8 @@ export class CadastroInsumoPage {
       if (!Number.isNaN(Number(propertyKey))) {  
         continue;  
     }  
-    this.tiposconsumos.push({ id: propertyValue, nome: propertyKey});  
+    this.tiposconsumos.push({ id: propertyValue, nome: propertyKey, 
+      nomefield: propertyKey=="ENTRADA" || propertyKey=="saida"?"COMO EU DOU "+propertyKey:"COMO EU "+propertyKey});  
     } 
   }
 
@@ -154,7 +176,7 @@ export class CadastroInsumoPage {
   }){ 
     
   }
-
+  
   loadCategorias(){
     let loader = this.presentLoading();
     this.categoriaService.findAll().subscribe((response) => {
@@ -192,7 +214,7 @@ export class CadastroInsumoPage {
   }
 
   cadastrarInsumo(){
-
+    console.log("SSssss")
     let ins: InsumoDTO = this.formGroup.value;
 
     if(ins.id === null || ins.id === ''){

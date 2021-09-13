@@ -1,3 +1,4 @@
+import { ConsumoDTO } from './consumo.dto';
 import { OrgaoDTO } from './orgao.dto';
 import { InsumoArquivoDTO } from './insumoarquivo.dto';
 import { CategoriaDTO } from './categoria.dto';
@@ -26,6 +27,7 @@ export class CInsumoDTO implements InsumoDTO{
     precisacontrolequalidade: boolean;
     controlado: boolean;
     orgaos: OrgaoDTO[];
+    consumos: ConsumoDTO[];
 
       constructor(insumo: InsumoDTO){
         this.id= insumo.id;
@@ -50,6 +52,7 @@ export class CInsumoDTO implements InsumoDTO{
         this.precisacontrolequalidade = insumo.precisacontrolequalidade;
         this.controlado = insumo.controlado;
         this.orgaos = insumo.orgaos;
+        this.consumos = insumo.consumos;
     }
 
 

@@ -75,7 +75,7 @@ var CadastroCategoriaPage = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.categoriaService = categoriaService;
         this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["f" /* Validators */].required]]
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_0__angular_forms__["g" /* Validators */].required]]
         }, {});
     }
     CadastroCategoriaPage.prototype.ionViewDidLoad = function () {

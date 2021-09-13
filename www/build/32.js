@@ -1,6 +1,6 @@
 webpackJsonp([32],{
 
-/***/ 724:
+/***/ 723:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75,8 +75,8 @@ var CadastroUnidadePage = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.unidadeService = unidadeService;
         this.formGroup = this.formBuilder.group({
-            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]],
-            sigla: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required]]
+            nome: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]],
+            sigla: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]]
         }, {});
     }
     CadastroUnidadePage.prototype.ionViewDidLoad = function () {
