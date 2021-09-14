@@ -254,36 +254,6 @@
       <ion-label stacked>Quantidade</ion-label>
       <ion-input disabled formControlName="quantidade" type="number"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label stacked >Unidade de Entrada</ion-label>
-      <ionic-selectable 
-        item-content 
-        [items]="unidades"
-        formControlName="unidade"
-        itemValueField="id"
-        itemTextField="nome"
-        [canSearch]="true"
-        [focusSearchbar]="true"
-        (onChange)="insereunidadeEntradaDTO($event)">
-  
-        <ng-template ionicSelectableItemTemplate let-port="item">
-         
-          <ion-item>
-            <ion-label text-wrap class="label_12_b">
-              {{port.nome}} 
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="label_14">
-              Sigla: {{port.sigla}}
-            </ion-label>
-          </ion-item>
-  
-        </ng-template>
-  
-      </ionic-selectable>
-    </ion-item>
-
     <ion-list radio-group
     [formControl]="formGroup.controls.precisairradiacao" >
     <ion-list-header>

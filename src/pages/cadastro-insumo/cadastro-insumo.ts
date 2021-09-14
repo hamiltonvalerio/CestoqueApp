@@ -55,6 +55,8 @@ export class CadastroInsumoPage {
 
   tiposconsumos = [];
 
+  arrayConsumos: FormArray;
+
   get consumos(): FormArray {
     return this.formGroup.get("consumos") as FormArray;
   }
@@ -85,11 +87,12 @@ export class CadastroInsumoPage {
         quantidade: [,],
         taxadeconsumo: [,],
         categorias: this.formControl,
-        unidade: ['',],
+        //unidade: ['',],
         precisairradiacao: [false,], 
         precisacontrolequalidade: [false,],
         orgaos: this.formControl,
-        consumos: this.formBuilder.array([this.createFormGroup()]),
+        consumos: this.formBuilder.array([this.createFormGroup(null)]),
+        //consumos: this.formBuilder.array([this.createFormGroup(null)]),
         //codigo_barra: [,],
         //qrcode: [,],
         //rfid: [,],
@@ -102,12 +105,20 @@ export class CadastroInsumoPage {
     this.loadOrgaos();
     this.liberaComboOrgao();
     this.loadEnumTiposConsumos();
-    console.log(this.tiposconsumos);
     this.itemId = this.navParams.get('itemId');
     if(this.itemId != null){
       this.editarInsumo = true;
       this.insumoService.findInsumoById(this.itemId).subscribe((resp) => {
         this.updateInsumoDTO = resp;
+
+        if(this.updateInsumoDTO.consumos.length > 0){
+          this.updateInsumoDTO.consumos.forEach((c) => {
+            this.consumos.push(this.createFormGroupArray(c));
+          })
+        }
+
+        console.log(this.consumos)
+
         this.formGroup = this.formBuilder.group({
           id: [this.updateInsumoDTO.id,''],
           nome: [this.updateInsumoDTO.nome,''],
@@ -121,33 +132,46 @@ export class CadastroInsumoPage {
           quantidade: [this.updateInsumoDTO.quantidade,''],
           taxadeconsumo: [this.updateInsumoDTO.taxadeconsumo,],
           categorias: [this.updateInsumoDTO.categorias,],
-          unidade: [this.updateInsumoDTO.unidade,],
+          //unidade: [this.updateInsumoDTO.unidade,],
           precisairradiacao: [this.updateInsumoDTO.precisairradiacao,''], 
           precisacontrolequalidade: [this.updateInsumoDTO.precisacontrolequalidade,''],
           orgaos: [this.updateInsumoDTO.orgaos,],
-          consumos: this.formBuilder.array([this.createFormGroup()]),
-        }, {}); 
+          consumos: this.consumos.length > 0 ? this.consumos :this.formBuilder.array([this.createFormGroup(this.updateInsumoDTO)]),
+        }, {
+
+        }); 
       });
-      
     }
     
   }
 
-  createFormGroup() {
+  createFormGroupArray(consumo : ConsumoDTO) {
+
     return this.formBuilder.group({
-      tipoconsumo: new FormControl(),
-      unidadetipo: new FormControl(),
-      quantidadecon: new FormControl(),
-      unidadecon: new FormControl(),
-    });
+        insumo: [consumo.insumo,],
+        tipoconsumo: [consumo.tipoconsumo,],
+        unidadetipo: [consumo.unidadetipo,],
+        quantidadecon: [consumo.quantidadecon,],
+        unidadecon: [consumo.unidadecon,],
+      });
+    
+  }
+
+  createFormGroup(insumo : InsumoDTO) {
+
+    return this.formBuilder.group({
+        insumo: [insumo,],
+        tipoconsumo: new FormControl(),
+        unidadetipo: new FormControl(),
+        quantidadecon: new FormControl(),
+        unidadecon: new FormControl(),
+      });
+    
   }
 
   addConsumo() {
     const cons = <FormArray>this.formGroup.controls['consumos'];
-    cons.push(this.createFormGroup());
-
-
-   //this.consumos.push(this.createFormGroup());
+    cons.push(this.createFormGroup(this.updateInsumoDTO));
   }
 
   insereunidadeEntradaDTO(event: {
@@ -214,16 +238,17 @@ export class CadastroInsumoPage {
   }
 
   cadastrarInsumo(){
-    console.log("SSssss")
+    
     let ins: InsumoDTO = this.formGroup.value;
 
     if(ins.id === null || ins.id === ''){
+
       this.insumoService.insert(this.formGroup.value).subscribe(response => {
         this.showInserOk();
       },
       error => {});
     }else{
-      console.log(ins)
+
       this.insumoService.update(ins).subscribe(response => {
         this.showUpdateOk();
       },
