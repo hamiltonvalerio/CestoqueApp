@@ -15,6 +15,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ViewController, LoadingController } from 'ionic-angular';
 import { InsumoService } from '../../services/domain/insumo.service';
 import { BrMaskerIonic3, BrMaskModel } from 'brmasker-ionic-3';
+
 /**
  * Generated class for the CadastroInsumoPage page.
  *
@@ -147,9 +148,18 @@ export class CadastroInsumoPage {
 
   createFormGroupArray(consumo : ConsumoDTO) {
 
+    //aqui 
+    
+    console.log(
+
+      this.getEnumKeyByEnumValue(TipoConsumoEnum, 1)
+
+    );
+
     return this.formBuilder.group({
         insumo: [consumo.insumo,],
-        tipoconsumo: [consumo.tipoconsumo,],
+        tipoconsumo: [TipoConsumoEnum[consumo.tipoconsumo_id],],
+        tipoconsumo_id : [consumo.tipoconsumo_id,],
         unidadetipo: [consumo.unidadetipo,],
         quantidadecon: [consumo.quantidadecon,],
         unidadecon: [consumo.unidadecon,],
@@ -157,17 +167,25 @@ export class CadastroInsumoPage {
     
   }
 
+  getEnumKeyByEnumValue(myEnum, enumValue) {
+    let keys = Object.keys(myEnum).filter(x => myEnum[x] == enumValue);
+    return keys.length > 0 ? keys[0] : null;
+  }
+
   createFormGroup(insumo : InsumoDTO) {
 
     return this.formBuilder.group({
         insumo: [insumo,],
         tipoconsumo: new FormControl(),
+        tipoconsumo_id : new FormControl(),
         unidadetipo: new FormControl(),
         quantidadecon: new FormControl(),
         unidadecon: new FormControl(),
       });
     
   }
+
+
 
   addConsumo() {
     const cons = <FormArray>this.formGroup.controls['consumos'];

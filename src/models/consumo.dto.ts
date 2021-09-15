@@ -7,6 +7,7 @@ export interface ConsumoDTO {
     id : string;
     insumo : InsumoDTO;
     tipoconsumo : TipoConsumoEnum;
+    tipoconsumo_id : number;
     unidadetipo : UnidadeDTO;
     quantidadecon : number;
     unidadecon : UnidadeDTO;
