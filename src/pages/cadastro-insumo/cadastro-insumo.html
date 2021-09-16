@@ -100,11 +100,12 @@
                 itemTextField="nomefield"
                 [focusSearchbar]="true"
                 [hasVirtualScroll]="true"
+                (onChange)="testeTipo($event)"
                 >
                 <ng-template ionicSelectableItemTemplate let-item="item" class="my-center-text">
                   <ion-item>
                     <ion-label text-wrap class="label_12_b">
-                      {{(item.nome == "ENTRADA" || item.nome == "SAIDA") ? "COMO EU DOU "+item.nome+"d"+item.id :"COMO EU "+item.nome}}
+                      {{(item.nome == "ENTRADA" || item.nome == "SAIDA") ? "COMO EU DOU "+item.nome:"COMO EU "+item.nome}}
                     </ion-label>
                   </ion-item>
                 </ng-template>

@@ -58,6 +58,8 @@ export class CadastroInsumoPage {
 
   arrayConsumos: FormArray;
 
+  t : TipoConsumoEnum;
+
   get consumos(): FormArray {
     return this.formGroup.get("consumos") as FormArray;
   }
@@ -92,7 +94,7 @@ export class CadastroInsumoPage {
         precisairradiacao: [false,], 
         precisacontrolequalidade: [false,],
         orgaos: this.formControl,
-        consumos: this.formBuilder.array([this.createFormGroup(null)]),
+        consumos: this.formBuilder.array([]),
         //consumos: this.formBuilder.array([this.createFormGroup(null)]),
         //codigo_barra: [,],
         //qrcode: [,],
@@ -107,18 +109,25 @@ export class CadastroInsumoPage {
     this.liberaComboOrgao();
     this.loadEnumTiposConsumos();
     this.itemId = this.navParams.get('itemId');
+
     if(this.itemId != null){
+
+
+      
+
       this.editarInsumo = true;
       this.insumoService.findInsumoById(this.itemId).subscribe((resp) => {
         this.updateInsumoDTO = resp;
-
         if(this.updateInsumoDTO.consumos.length > 0){
           this.updateInsumoDTO.consumos.forEach((c) => {
-            this.consumos.push(this.createFormGroupArray(c));
+            console.log("a2")
+            this.consumos.push(this.createFormGroupArray(c,this.updateInsumoDTO));
           })
         }
 
-        console.log(this.consumos)
+        console.log(this.itemId)
+        console.log("this.consumos")
+        console.log(this.consumos.length)
 
         this.formGroup = this.formBuilder.group({
           id: [this.updateInsumoDTO.id,''],
@@ -137,7 +146,7 @@ export class CadastroInsumoPage {
           precisairradiacao: [this.updateInsumoDTO.precisairradiacao,''], 
           precisacontrolequalidade: [this.updateInsumoDTO.precisacontrolequalidade,''],
           orgaos: [this.updateInsumoDTO.orgaos,],
-          consumos: this.consumos.length > 0 ? this.consumos :this.formBuilder.array([this.createFormGroup(this.updateInsumoDTO)]),
+          consumos: this.consumos.length > 0 ? this.consumos :this.formBuilder.array([this.createFormGroup(this.updateInsumoDTO, "b")]),
         }, {
 
         }); 
@@ -146,19 +155,28 @@ export class CadastroInsumoPage {
     
   }
 
-  createFormGroupArray(consumo : ConsumoDTO) {
+  createFormGroupArray(consumo : ConsumoDTO, insumo : InsumoDTO) {
 
-    //aqui 
-    
-    console.log(
+    console.log("createFormGroupArray"); 
+    console.log(insumo); 
+    console.log(consumo); 
+    /*console.log(
 
       this.getEnumKeyByEnumValue(TipoConsumoEnum, 1)
 
     );
 
+    var d = {
+      id : 4,
+      nome : "SAIDA"
+    }*/
+    
+    
+      
     return this.formBuilder.group({
-        insumo: [consumo.insumo,],
-        tipoconsumo: [TipoConsumoEnum[consumo.tipoconsumo_id],],
+        //inserir id
+        insumo: [insumo,],
+        tipoconsumo: [consumo.tipoconsumo,],
         tipoconsumo_id : [consumo.tipoconsumo_id,],
         unidadetipo: [consumo.unidadetipo,],
         quantidadecon: [consumo.quantidadecon,],
@@ -172,8 +190,23 @@ export class CadastroInsumoPage {
     return keys.length > 0 ? keys[0] : null;
   }
 
-  createFormGroup(insumo : InsumoDTO) {
+  testeTipo(event: {
+    component: IonicSelectableComponent,
+    value: any
+  }) {
 
+    console.log(TipoConsumoEnum.CONSUMO)
+    
+    this.t = event.value;
+    
+    console.log(this.t)
+
+  }
+
+  createFormGroup(insumo : InsumoDTO, a : string) {
+    console.log("createFormGroup");
+    console.log(insumo); 
+    console.log("a: "+a);
     return this.formBuilder.group({
         insumo: [insumo,],
         tipoconsumo: new FormControl(),
@@ -189,7 +222,7 @@ export class CadastroInsumoPage {
 
   addConsumo() {
     const cons = <FormArray>this.formGroup.controls['consumos'];
-    cons.push(this.createFormGroup(this.updateInsumoDTO));
+    cons.push(this.createFormGroup(this.updateInsumoDTO, "addConsumo"));
   }
 
   insereunidadeEntradaDTO(event: {
@@ -258,6 +291,18 @@ export class CadastroInsumoPage {
   cadastrarInsumo(){
     
     let ins: InsumoDTO = this.formGroup.value;
+
+    console.log("ins")
+    console.log(ins)
+
+    ins.consumos.forEach((c,index) => {
+      if(c.insumo == null){
+        ins.consumos.splice(index,1);
+      }
+    })
+
+    console.log("ins1")
+    console.log(ins)
 
     if(ins.id === null || ins.id === ''){
 
