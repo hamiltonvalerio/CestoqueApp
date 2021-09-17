@@ -120,14 +120,9 @@ export class CadastroInsumoPage {
         this.updateInsumoDTO = resp;
         if(this.updateInsumoDTO.consumos.length > 0){
           this.updateInsumoDTO.consumos.forEach((c) => {
-            console.log("a2")
             this.consumos.push(this.createFormGroupArray(c,this.updateInsumoDTO));
           })
         }
-
-        console.log(this.itemId)
-        console.log("this.consumos")
-        console.log(this.consumos.length)
 
         this.formGroup = this.formBuilder.group({
           id: [this.updateInsumoDTO.id,''],
@@ -156,25 +151,8 @@ export class CadastroInsumoPage {
   }
 
   createFormGroupArray(consumo : ConsumoDTO, insumo : InsumoDTO) {
-
-    console.log("createFormGroupArray"); 
-    console.log(insumo); 
-    console.log(consumo); 
-    /*console.log(
-
-      this.getEnumKeyByEnumValue(TipoConsumoEnum, 1)
-
-    );
-
-    var d = {
-      id : 4,
-      nome : "SAIDA"
-    }*/
-    
-    
-      
     return this.formBuilder.group({
-        //inserir id
+        id: [consumo.id,],
         insumo: [insumo,],
         tipoconsumo: [consumo.tipoconsumo,],
         tipoconsumo_id : [consumo.tipoconsumo_id,],
@@ -195,18 +173,15 @@ export class CadastroInsumoPage {
     value: any
   }) {
 
-    console.log(TipoConsumoEnum.CONSUMO)
+
     
     this.t = event.value;
     
-    console.log(this.t)
+
 
   }
 
   createFormGroup(insumo : InsumoDTO, a : string) {
-    console.log("createFormGroup");
-    console.log(insumo); 
-    console.log("a: "+a);
     return this.formBuilder.group({
         insumo: [insumo,],
         tipoconsumo: new FormControl(),
