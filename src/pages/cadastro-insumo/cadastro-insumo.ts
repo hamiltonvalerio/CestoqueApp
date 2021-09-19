@@ -58,7 +58,7 @@ export class CadastroInsumoPage {
 
   arrayConsumos: FormArray;
 
-  t : TipoConsumoEnum;
+  t = [];
 
   get consumos(): FormArray {
     return this.formGroup.get("consumos") as FormArray;
@@ -111,10 +111,6 @@ export class CadastroInsumoPage {
     this.itemId = this.navParams.get('itemId');
 
     if(this.itemId != null){
-
-
-      
-
       this.editarInsumo = true;
       this.insumoService.findInsumoById(this.itemId).subscribe((resp) => {
         this.updateInsumoDTO = resp;
@@ -123,7 +119,6 @@ export class CadastroInsumoPage {
             this.consumos.push(this.createFormGroupArray(c,this.updateInsumoDTO));
           })
         }
-
         this.formGroup = this.formBuilder.group({
           id: [this.updateInsumoDTO.id,''],
           nome: [this.updateInsumoDTO.nome,''],
@@ -151,6 +146,7 @@ export class CadastroInsumoPage {
   }
 
   createFormGroupArray(consumo : ConsumoDTO, insumo : InsumoDTO) {
+    console.log("aa")
     return this.formBuilder.group({
         id: [consumo.id,],
         insumo: [insumo,],
@@ -174,14 +170,20 @@ export class CadastroInsumoPage {
   }) {
 
 
+    this.t.push(event.value);
     
-    this.t = event.value;
-    
-
+    console.log(this.t)
 
   }
 
+  addConsumo() {
+    const cons = <FormArray>this.formGroup.controls['consumos'];
+    cons.push(this.createFormGroup(this.updateInsumoDTO, "addConsumo"));
+  }
+
   createFormGroup(insumo : InsumoDTO, a : string) {
+    console.log("bb")
+    console.log(insumo)
     return this.formBuilder.group({
         insumo: [insumo,],
         tipoconsumo: new FormControl(),
@@ -193,12 +195,6 @@ export class CadastroInsumoPage {
     
   }
 
-
-
-  addConsumo() {
-    const cons = <FormArray>this.formGroup.controls['consumos'];
-    cons.push(this.createFormGroup(this.updateInsumoDTO, "addConsumo"));
-  }
 
   insereunidadeEntradaDTO(event: {
     component: IonicSelectableComponent,
@@ -267,14 +263,12 @@ export class CadastroInsumoPage {
     
     let ins: InsumoDTO = this.formGroup.value;
 
-    console.log("ins")
-    console.log(ins)
 
-    ins.consumos.forEach((c,index) => {
+    /*ins.consumos.forEach((c,index) => {
       if(c.insumo == null){
         ins.consumos.splice(index,1);
       }
-    })
+    })*/
 
     console.log("ins1")
     console.log(ins)

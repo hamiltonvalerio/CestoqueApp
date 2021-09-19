@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 716:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_selectable__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cadastro_insumo__ = __webpack_require__(905);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cadastro_insumo__ = __webpack_require__(907);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_brmasker_ionic_3__ = __webpack_require__(896);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -163,9 +163,9 @@ var HideHeaderDirective = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(907);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(909);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(908);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(910);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__directives__["a"]; });
 
 
@@ -696,12 +696,12 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 905:
+/***/ 907:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroInsumoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enums_tipoconsumo_enum__ = __webpack_require__(906);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enums_tipoconsumo_enum__ = __webpack_require__(908);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_domain_orgao_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_domain_unidade_service__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_domain_categoria_service__ = __webpack_require__(364);
@@ -753,6 +753,7 @@ var CadastroInsumoPage = /** @class */ (function () {
         this.precisairradiacao1 = false;
         this.precisacontrolequalidade1 = false;
         this.tiposconsumos = [];
+        this.t = [];
         this.formGroup = this.formBuilder.group({
             id: ['', ''],
             nome: ['', [__WEBPACK_IMPORTED_MODULE_4__angular_forms__["g" /* Validators */].required]],
@@ -820,6 +821,7 @@ var CadastroInsumoPage = /** @class */ (function () {
         }
     };
     CadastroInsumoPage.prototype.createFormGroupArray = function (consumo, insumo) {
+        console.log("aa");
         return this.formBuilder.group({
             id: [consumo.id,],
             insumo: [insumo,],
@@ -835,9 +837,16 @@ var CadastroInsumoPage = /** @class */ (function () {
         return keys.length > 0 ? keys[0] : null;
     };
     CadastroInsumoPage.prototype.testeTipo = function (event) {
-        this.t = event.value;
+        this.t.push(event.value);
+        console.log(this.t);
+    };
+    CadastroInsumoPage.prototype.addConsumo = function () {
+        var cons = this.formGroup.controls['consumos'];
+        cons.push(this.createFormGroup(this.updateInsumoDTO, "addConsumo"));
     };
     CadastroInsumoPage.prototype.createFormGroup = function (insumo, a) {
+        console.log("bb");
+        console.log(insumo);
         return this.formBuilder.group({
             insumo: [insumo,],
             tipoconsumo: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
@@ -846,10 +855,6 @@ var CadastroInsumoPage = /** @class */ (function () {
             quantidadecon: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
             unidadecon: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
         });
-    };
-    CadastroInsumoPage.prototype.addConsumo = function () {
-        var cons = this.formGroup.controls['consumos'];
-        cons.push(this.createFormGroup(this.updateInsumoDTO, "addConsumo"));
     };
     CadastroInsumoPage.prototype.insereunidadeEntradaDTO = function (event) {
         this.unidade = event.value;
@@ -903,13 +908,11 @@ var CadastroInsumoPage = /** @class */ (function () {
     CadastroInsumoPage.prototype.cadastrarInsumo = function () {
         var _this = this;
         var ins = this.formGroup.value;
-        console.log("ins");
-        console.log(ins);
-        ins.consumos.forEach(function (c, index) {
-            if (c.insumo == null) {
-                ins.consumos.splice(index, 1);
-            }
-        });
+        /*ins.consumos.forEach((c,index) => {
+          if(c.insumo == null){
+            ins.consumos.splice(index,1);
+          }
+        })*/
         console.log("ins1");
         console.log(ins);
         if (ins.id === null || ins.id === '') {
@@ -977,7 +980,7 @@ var CadastroInsumoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 906:
+/***/ 908:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -993,7 +996,7 @@ var TipoConsumoEnum;
 
 /***/ }),
 
-/***/ 907:
+/***/ 909:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1037,7 +1040,7 @@ BrMaskerModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 908:
+/***/ 910:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
